@@ -1,4 +1,4 @@
-<h2 id="top">js数据类型判断<h2>
+<h2 id="top">js数据类型判断</h2>
 
 - [1. js六大数据类型](#data-types)
 - [2. 数据类型判断之typeof](#typeof)
