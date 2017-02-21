@@ -1,4 +1,6 @@
-##Bridging CSS and JS with Custom Properties -- [top](#top)
+##Bridging CSS and JS with Custom Properties
+
+-- [top](#top)
 
 - [1. CSS variable](#CSS-variable)
   - [1.1 CSS变量var()语法和用法](#CSS变量var语法和用法)
@@ -13,7 +15,8 @@
 
 <h4 id="CSS变量var语法和用法">1.1 CSS变量var()语法和用法<h4>
 
-CSS中原生的变量定义语法是：`--*`，变量使用语法是：`var(--*)`
+- CSS中原生的变量定义语法是： `--*`
+- 变量使用语法是：  `var(--*)`
 
 ```css
 body {
@@ -22,7 +25,7 @@ body {
 }
 ```
 
-<h4 id="CSS变量的空格尾随特性">1.2 CSS变量的空格尾随特性<h4>
+<h4 id="CSS变量的空格尾随特性">1.2 CSS变量的空格尾随特性</h4>
 
 ```css
 body {
@@ -47,7 +50,7 @@ body {
 
 [back to top](#top)
 
-<h4 id="CSS变量的相互传递特性">1.3 CSS变量的相互传递特性  ---`variable-name: var(--another-variable-name);`<h4>
+<h4 id="CSS变量的相互传递特性">1.3 CSS变量的相互传递特性  ---`variable-name: var(--another-variable-name);`</h4>
 
 ```css
 body {
@@ -69,7 +72,7 @@ body {
 
 [back to top](#top)
 
-<h4 id="CSS变量的作用域">1.4 CSS变量的作用域<h4>
+<h4 id="CSS变量的作用域">1.4 CSS变量的作用域</h4>
 
 - 使用:root 作用域来定义全局变量
 - 局部作用域： 让某个变量只在部分元素/组件下可见，只需要在特定的元素下定义该变量著作权归作者所有。
