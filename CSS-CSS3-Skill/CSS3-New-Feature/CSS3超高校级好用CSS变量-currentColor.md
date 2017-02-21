@@ -66,4 +66,5 @@ li > svg { fill: currentColor; }
 
 > Reference
 
-http://www.zhangxinxu.com/wordpress/2014/10/currentcolor-css3-powerful-css-keyword/
+- http://www.zhangxinxu.com/wordpress/2014/10/currentcolor-css3-powerful-css-keyword/
+- http://www.zhangxinxu.com/wordpress/2014/07/svg-sprites-fill-color-currentcolor/
