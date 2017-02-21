@@ -5,18 +5,20 @@
 - [1. currentColor的使用与表现](#currentColor的使用与表现)
 - [2. currentColor的实战表演秀](#currentColor的实战表演秀)
   - [2.1 背景色镂空技术](#背景色镂空技术)
-  - [1.2 CSS变量的空格尾随特性](#CSS变量的空格尾随特性)
-  - [1.3 CSS变量的相互传递特性  ---`variable-name: var(--another-variable-name);`](#CSS变量的相互传递特性)
-  - [1.4 CSS变量的作用域](#CSS变量的作用域)
-- [3. One variable, many changes](#One-variable-many-changes)
+  - [2.2 CSS3图标生成与hover控制](#CSS3图标生成与hover控制)
+- [3. SVG内联图标支持当前色currentColor](#SVG内联图标支持当前色currentColor)
+
 
 <h3 id="CSS-variable">1. currentColor的使用与表现</h3>
 
 currentColor表示“当前的标签所继承的文字颜色”:   `img[src$='mm1.jpg'] { border: 1em solid currentColor; }`
 
+- border和box-shadow默认的颜色就是当前的文字颜色，也就是类似currentColor；
+- 在iOS Safari浏览器下(iOS8)下，currentColor还是有一些bug的，例如伪元素hover时候，background:currentColor的背景色不会跟着变化，怎么办呢？等升级，或者使用border来模拟
+
 <h3 id="currentColor的实战表演秀">2. currentColor的实战表演秀</h3>
 
-<h4 id="currentColor的实战表演秀">[2.1 背景色镂空技术](http://www.zhangxinxu.com/study/201410/background-hollow-currentcolor.html)</h4>
+<h4 id="currentColor的实战表演秀">2.1 背景色镂空技术</h4>
 
 ```html
   <style>
@@ -49,9 +51,16 @@ currentColor表示“当前的标签所继承的文字颜色”:   `img[src$='mm
 
 [back to top](#top)
 
-<h4 id="currentColor的实战表演秀">[2.1 背景色镂空技术](http://www.zhangxinxu.com/study/201307/background-color-insert-background-image.html)</h4>
+<h4 id="CSS3图标生成与hover控制">2.2 CSS3图标生成与hover控制</h4>
 
+`http://www.zhangxinxu.com/study/201410/css3-icons-currentcolor.html`
 
+<h3 id="SVG内联图标支持当前色">3. SVG内联图标支持当前色currentColor</h3>
+
+```css
+li { color: #369; }
+li > svg { fill: currentColor; }
+```
 
 [back to top](#top)
 
