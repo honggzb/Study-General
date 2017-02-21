@@ -21,6 +21,11 @@
 │   ├── js控制css伪元素内容（before，after）.md
 │   ├── responsiveTable.md
 │   ├── 中文或英文两端对齐.md
+│   └──
+│
+├── Debug-Skill调试技巧
+│   ├── chrome developer tool 调试技巧.md
+│   ├── 
 │   └── 
 │
 ├── Design Pattern
