@@ -13,7 +13,7 @@
 
 <h3 id="CSS-variable">1. CSS variable</h3>
 
-<h4 id="CSS变量var语法和用法">1.1 CSS变量var()语法和用法<h4>
+<h4 id="CSS变量var语法和用法">1.1 CSS变量var()语法和用法</h4>
 
 - CSS中原生的变量定义语法是： `--*`
 - 变量使用语法是：  `var(--*)`
