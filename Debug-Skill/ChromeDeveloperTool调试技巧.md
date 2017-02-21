@@ -1,7 +1,5 @@
 ## chrome developer tool 调试技巧
 
--- [top](#top)
-
 - 1. Beautify Javascript
 - [2. 查看元素绑定了哪些事件](#查看元素绑定了哪些事件)
 - [3. Ajax时中断](#Ajax时中断)
@@ -9,8 +7,8 @@
 - [5. Javascript 异常时中断](#Javascript 异常时中断)
 - [6. DOM Level 3 Event 事件中断](#Event事件中断)
 - [7. 所有 js 文件中搜索&查找 js 函数定义](#文件中搜索)
-- [8. command line api](#command-line-api)  --**非常有用**
-- [9. Edit Mode: Edit any text on the page](#Edit-Mode)  --**非常有用**
+- [8. command line api](#command-line-api)  --**非常有用  `$0等`**
+- [9. Edit Mode: Edit any text on the page](#Edit-Mode)  --**非常有用  `document.designMode = "on"`**
 - [10. console中执行的代码可断点](#console中执行的代码可断点)
 
 <h3 id="查看元素绑定了哪些事件">2. 查看元素绑定了哪些事件</h3>
