@@ -1,3 +1,5 @@
+自定义的reduce, filter, find功能，可以避免写很多的loop
+
 ```javascript
 const heroes = [
     {name: 'Hulk', strength: 90000, sex: 'm'},
