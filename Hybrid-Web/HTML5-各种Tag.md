@@ -2,9 +2,10 @@
   
   - [1. html5调用手机摄像头)](#html5调用手机摄像头)
   - [2. input只能输入数字或小数点后几位](#input只能输入数字或小数点后几位)
-  - [3. html5背景音乐不自动播放解密(bug)](#html5背景音乐不自动播放解密)
-  - [4. ios不支持fixed属性解决](#ios不支持fixed属性解决)
-  - [5. input输入手机号之间间隔  例如：xxx--xxxx--xxxx](#input输入手机号之间间隔)
+  - [3. 文本框不许输入数字以外的字符](#文本框不许输入数字以外的字符)
+  - [4. html5背景音乐不自动播放解密(bug)](#html5背景音乐不自动播放解密)
+  - [5. ios不支持fixed属性解决](#ios不支持fixed属性解决)
+  - [6. input输入手机号之间间隔  例如：xxx--xxxx--xxxx](#input输入手机号之间间隔)
 
 <h3 id="html5调用手机摄像头">1. html5调用手机摄像头</h3>
 
@@ -131,7 +132,37 @@ $(function(){
 
 [back to top](#top)
 
-<h3 id="html5背景音乐不自动播放解密">3. html5背景音乐不自动播放解密(bug)</h3>
+<h3 id="文本框不许输入数字以外的字符">3. 文本框不许输入数字以外的字符</h3>
+
+```javascript
+/*文本框只能输入文字*/
+var just_num = function(obj){
+       obj.val(obj.val().replace(/\D|^0/g,''));
+}
+//用法
+$('.test').keyup(function(){
+    just_num($(this));
+})
+//在手机下存在一个bug，就是不能在中间插入数字，（原因也很简单，因为keyup的时候，文本执行了一次替换，所以光标就不在原来位置了）
+var just_num2 = function(event){
+      if(!$.browser.mozilla) {   // IE
+           if (event.keyCode && (event.keyCode < 48 || event.keyCode > 57))  /如果keyCode不是数字，直接event.preventDefault(); 禁用js原生事件
+                 event.preventDefault();   /
+            }else{     //firefox
+                if(event.charCode && (event.charCode < 48 || event.charCode > 57))
+                 event.preventDefault();
+             }
+        }
+}
+//拒绝输入数字以外的字符
+$('input[type=number]').keypress(function(event){
+   just_num2(event);
+})
+```
+
+[back to top](#top)
+
+<h3 id="html5背景音乐不自动播放解密">4. html5背景音乐不自动播放解密(bug)</h3>
 
 为了防止不必要的自动播放浪费流量，手机网页访问带有audio的页面是不会自动播放的。 Safari屏蔽了autoplay，必须由用户交互事件触发，因为autoplay在移动网络环境下可能会造成用户流量费剧增
 
@@ -140,7 +171,7 @@ $(function(){
 
 [back to top](#top)
 
-<h3 id="ios不支持fixed属性解决笔记">4. ios不支持fixed属性解决</h3>
+<h3 id="ios不支持fixed属性解决笔记">5. ios不支持fixed属性解决</h3>
 
 特别是当页面中有input ，当这个input获取焦点的时候，问题特别明显， 这个问题也称之为  “ input focus ios fixed 无效”。
 
@@ -160,7 +191,7 @@ $(function(){
 
 [back to top](#top)
 
-<h3 id="input输入手机号之间间隔">5. input输入手机号之间间隔  例如：xxx--xxxx--xxxx</h3>
+<h3 id="input输入手机号之间间隔">6. input输入手机号之间间隔  例如：xxx--xxxx--xxxx</h3>
 
 `<input id="ph-no" oninput="this.value = this.value.replace(/((^\d{3})(?=\d)|(\d{4})(?=\d))/g, '$1 ')" autocomplete="off" placeholder="支持移动、联通、电信" maxlength="13" type="tel">`
 
