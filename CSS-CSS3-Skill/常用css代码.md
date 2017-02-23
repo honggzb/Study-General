@@ -2,10 +2,8 @@
 
 - [1. 垂直居中](#垂直居中)
 - [2. 文字截断](#文字截断)
-- [3. CSS Transform](#CSS-Transform)
+- [3. :nth-child() 选择器写法  兼容ie8以上](#选择器写法)
 - [4. Will-Change](#Will-Change)
-- [5. CSS自定义属性制作动画](#CSS自定义属性制作动画)
-- [](#)
 
 <h3 id="垂直居中">1. 垂直居中</h3>
 
@@ -59,3 +57,9 @@ p:nth-of-type(even) |双排的 p
 p:nth-of-type(2n+0)| 第2n个p
 
 [back to top](#top)
+
+> References
+
+- [aming的小屋](http://www.qdfuns.com/house/26716/note)
+
+
