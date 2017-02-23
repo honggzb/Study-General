@@ -146,8 +146,8 @@ $('.test').keyup(function(){
 //在手机下存在一个bug，就是不能在中间插入数字，（原因也很简单，因为keyup的时候，文本执行了一次替换，所以光标就不在原来位置了）
 var just_num2 = function(event){
       if(!$.browser.mozilla) {   // IE
-           if (event.keyCode && (event.keyCode < 48 || event.keyCode > 57))  /如果keyCode不是数字，直接event.preventDefault(); 禁用js原生事件
-                 event.preventDefault();   /
+           if (event.keyCode && (event.keyCode < 48 || event.keyCode > 57))
+                 event.preventDefault();   //如果keyCode不是数字，直接event.preventDefault(); 禁用js原生事件
             }else{     //firefox
                 if(event.charCode && (event.charCode < 48 || event.charCode > 57))
                  event.preventDefault();
