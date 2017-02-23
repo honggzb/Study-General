@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>移动鼠标改变图片的旋转角度值</title>
+  <style>
+     :root {
+       --mouse-x: .1;
+       --mouse-y: .1;
+       --mouse: .1;
+       --base: #1497AD;
+     }
+     .photo {
+       transform: rotateX(calc(50deg * var(--mouse-x, .1))) rotateY(calc(50deg * var(--mouse-y, .1))) rotateZ(calc(50deg * var(--mouse, .1)));
+       transition: all 0.5s;
+       border: 20px solid white;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     }
+     body {
+       text-align: center;
+       background: #ffc600;
+       color: white;
+       font-family: 'helvetica neue', sans-serif;
+       font-weight: 100;
+       font-size: 50px;
+     }
+     .display {perspective: 800px;}
+  </style>
+</head>
+<body>
+  <div class="display">
+      <img class="photo" src="http://unsplash.it/800/500?image=1011">
+  </div>
+  <script type="text/javascript">
+  (function changeVar() {
+    var root = document.documentElement;
+    document.addEventListener('mousemove', function(e) {
+        var x = e.clientX / innerWidth;
+        var y = e.clientY / innerHeight;
+        var z = (e.clientX - e.clientY) / (innerWidth - innerHeight);
+        root.style.setProperty('--mouse-x', x);
+        root.style.setProperty('--mouse-y', y);
+        root.style.setProperty('--mouse', z);
+    });
+  })();
+  </script>
+</html>
