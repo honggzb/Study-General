@@ -267,7 +267,7 @@ h1 {
 }
 ```
 
-modify
+[modify](https://github.com/honggzb/Study-General/blob/master/CSS-CSS3-Skill/CSS3-New-Feature/mustache.html)
 
 ```HTML
 <style>
@@ -292,6 +292,8 @@ modify
 </script>
 ```
 
+[移动鼠标改变图片的旋转角度值](https://github.com/honggzb/Study-General/blob/master/CSS-CSS3-Skill/CSS3-New-Feature/%E7%A7%BB%E5%8A%A8%E9%BC%A0%E6%A0%87%E6%94%B9%E5%8F%98%E5%9B%BE%E7%89%87%E7%9A%84%E6%97%8B%E8%BD%AC%E8%A7%92%E5%BA%A6%E5%80%BC.html)
+
 [back to top](#top)
 
 > reference
@@ -299,4 +301,4 @@ modify
 - [CSS3 Transition](http://www.w3cplus.com/content/css3-transition)
 - [CSS3 Animation](http://www.w3cplus.com/content/css3-animation)
 - [CSS动画简介](http://www.ruanyifeng.com/blog/2014/02/css_transition_and_animation.html)
-- 
+- [CSS自定义属性制作动画](#http://www.w3cplus.com/css3/create-animation-with-css-variables.html)
