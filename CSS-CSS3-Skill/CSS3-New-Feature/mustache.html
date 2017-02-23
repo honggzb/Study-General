@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mustache</title>
+  <style>
+  :root {
+    --mouse-x: 0.1;
+    --mouse-y: 0.1;
+    --rotate: 0.1;
+  }
+  body { cursor: move; width: 100vw; height: 100vh; }
+  .mustache {
+    width: 180px; height: 180px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0; 
+    left: calc(1000px * var(--mouse-x, 0.1));   /* left=100px*/
+    color: black;
+    box-shadow: 150px 240px 0 0 currentColor, 300px 240px 0 0 currentColor;
+  }
+  .mustache:before {
+    content: '';
+    position: absolute;
+    width: 210px; height: 120px;
+    border-bottom: solid 180px currentColor;
+    left: 30px; top: 120px;
+    border-radius: 0 0 0 100%;
+    transform: rotate(calc(-40deg * var(--rotate, 0.1)));
+    transform-origin: right 210px;
+  }
+  .mustache:after {
+    content: '';
+    position: absolute;
+    width: 210px; height: 120px;
+    border-bottom: solid 180px currentColor;
+    left: 390px; top: 120px;
+    border-radius: 0 0 100% 0;
+    transform: rotate(calc(40deg * var(--rotate, 0.1)));
+    transform-origin: left 210px;
+  }
+  </style>
+</head>
+<body>
+  <div class="mustache"></div>
+  <script type="text/javascript">
+      (function changeVar() { 
+        var root = document.documentElement; 
+        document.addEventListener('mousemove', function(e) { 
+          var x = e.clientX / innerWidth; 
+          var y = e.clientY / innerHeight; 
+          var deg = Math.random()*(e.clientX - e.clientY) / e.clientX; root.style.setProperty('--mouse-x', x); root.style.setProperty('--mouse-y', y); root.style.setProperty('--rotate', deg); }); 
+      })();
+  </script>
+</html>
