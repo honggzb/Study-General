@@ -4,6 +4,7 @@
 - [2. 文字截断](#文字截断)
 - [3. :nth-child() 选择器写法  兼容ie8以上](#选择器写法)
 - [4. Will-Change](#Will-Change)
+- [5. Linking（链接）的技巧](#Linking链接的技巧)
 
 <h3 id="垂直居中">1. 垂直居中</h3>
 
@@ -58,8 +59,39 @@ p:nth-of-type(2n+0)| 第2n个p
 
 [back to top](#top)
 
+<h3 id="Linking链接的技巧">5. Linking（链接）的技巧</h3>
+
+```css
+a[href^="http://"] {
+    background:transparent url(../images/external.png) center right no-repeat;
+    display:inline-block;
+    padding-right:15px;
+}
+a[href$='.pdf'] {
+    background:transparent url(../images/pdf.png) center left no-repeat;
+}
+a[href^="mailto:"] {
+    background:transparent url(../images/mailto.png) center left no-repeat;
+}
+/*比如说“.zip”、“.rar”、“.gzip”文件，如果想给这类链接设置同一个“icon”*/
+a[href$='.zip'], a[href$='.rar'], a[href$='.gzip'] {
+    background:transparent url(../images/zip.png) center left no-repeat;
+    display:inline-block;
+    padding-left:20px;
+}
+<a href="#" lang="fr">En Français</a>
+<a href="#" lang="zh">中国</a>
+a[lang|='zh'] {
+    background: url('lang.gif') no-repeat 0 50%;
+}
+```
+
+[back to top](#top)
 > References
 
 - [aming的小屋](http://www.qdfuns.com/house/26716/note)
+- [八个制作Linking（链接）的技巧](#http://www.w3cplus.com/blog/180.html)
+
+
 
 
