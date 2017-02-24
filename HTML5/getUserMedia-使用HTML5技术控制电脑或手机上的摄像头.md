@@ -81,4 +81,5 @@ var video = document.getElementById("video"),
             }
 ```
 
-http://www.open-open.com/lib/view/open1338995506281.html
+- http://www.open-open.com/lib/view/open1338995506281.html
+- [Capturing Audio & Video in HTML5](#https://www.html5rocks.com/en/tutorials/getusermedia/intro/)
