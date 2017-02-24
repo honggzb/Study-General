@@ -1,7 +1,7 @@
 [top](#top)
 
 - [1. select跳转](#1. select跳转)
-- [6.2 parametrizing pipes && chaining pipes](#parametrizing-pipes)
+- [2. 判断http协议+Chrome和版本](#判断Chrome和版本)
 - [6.3 'Pure' Pipe limitation && 'Impure' pipe](#Impure-pipe)
 
 <h3 id="select跳转">1. select跳转</h3>
@@ -39,3 +39,23 @@ function setsubmit(){
 </select>
 <input type="button" id="btn" value="提交" onclick="setsubmit(this)" />
 ```
+
+[back to top](#top)
+
+<h3 id="判断Chrome和版本">2. 判断http协议+Chrome和版本</h3>
+
+```javascript
+if (!location.protocol.match('https')) {
+  showErrorMsg('You may need to run this app from https.');
+}
+if (!(navigator.userAgent.match('Chrome') &&
+      parseInt(navigator.userAgent.match(/Chrome\/(.*) /)[1]) >= 26)) {
+  showErrorMsg('You need Chrome 26+ to run this demo properly.');
+}
+if (e.code == e.PERMISSION_DENIED) {
+      showErrorMsg('PERMISSION_DENIED. Are you no SSL? Have you enabled the --enable-usermedia-screen-capture flag?');
+}
+```
+
+[back to top](#top)
+
