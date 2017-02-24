@@ -90,4 +90,4 @@ a[lang|='zh'] {
 > References
 
 - [aming的小屋](http://www.qdfuns.com/house/26716/note)
-- [八个制作Linking（链接）的技巧](#http://www.w3cplus.com/blog/180.html)
+- [八个制作Linking（链接）的技巧](http://www.w3cplus.com/blog/180.html)
