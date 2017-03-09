@@ -53,11 +53,20 @@
 │   ├── getUserMedia-使用HTML5技术控制电脑或手机上的摄像头.md
 │   ├── 
 │   └── 
-│
+
 ├── Javascript   --javascript学习过程中的小tip
 │   ├── js数据类型判断.md
 │   ├── javascript判断数组中是否包含指定元素.md
 │   ├── avoid-loop-by-using-userdefined.md      -自定义的reduce, filter, find功能，可以避免写很多的loop
+│   └── 
+│
+├── Theory
+│   ├── Progressive Web App设计.md
+│   │     ├── your-first-offline-app.rar
+│   │     ├── your-first-pwapp-master
+│   │     └── you-first-push-notifications-master.rar
+│   ├── 
+│   ├── 
 │   └── 
 │
 ├── study-tips.md    --学习过程中的小tip
