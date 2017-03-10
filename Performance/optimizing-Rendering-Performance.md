@@ -1,4 +1,4 @@
-Steps to Render a Page
+**Steps to Render a Page**
 
 1. begin constructing the DOM by parsing HTML
 2. Request CSS,JS resources
@@ -6,13 +6,15 @@ Steps to Render a Page
 4. Merge DOM and CSSOM into the Render tree
 5. Run layout, paint
 
-1) Opitmizing DOM
+![](http://i.imgur.com/QVV7qNP.png)
+
+**1) Opitmizing DOM**
 
 - minify
 - compress
 - cache
 
-2) Unblocking css with the media queries
+**2) Unblocking css with the media queries**
 
 ```css
 /** 1) using media queries in css**/
@@ -27,7 +29,7 @@ Steps to Render a Page
 <link rel="stylesheet" href="style-print.css" media="print">
 ```
 
-3) Opitimizing JS
+**3) Opitimizing JS**
 
 - Defer Javascript exception
 - Async JS
