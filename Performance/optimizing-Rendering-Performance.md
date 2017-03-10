@@ -1,10 +1,10 @@
 Steps to Render a Page
 
--1 begin constructing the DOM by parsing HTML
--2 Request CSS,JS resources
--3 Parse CSS and construct the CSSOM tree
--4 Merge DOM and CSSOM into the Render tree
--5 Run layout, paint
+- 1 begin constructing the DOM by parsing HTML
+- 2 Request CSS,JS resources
+- 3 Parse CSS and construct the CSSOM tree
+- 4 Merge DOM and CSSOM into the Render tree
+- 5 Run layout, paint
 
 1) Opitmizing DOM
 
