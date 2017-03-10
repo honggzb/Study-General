@@ -6,7 +6,7 @@
 4. Merge DOM and CSSOM into the Render tree
 5. Run layout, paint
 
-![](http://i.imgur.com/QVV7qNP.png)
+![](http://i.imgur.com/dKTlPCM.png)
 
 **1) Opitmizing DOM**
 
