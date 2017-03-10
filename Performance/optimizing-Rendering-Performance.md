@@ -5,6 +5,7 @@
   - [2.1 Opitmizing DOM](#Optimizing-DOM)
   - [2.2 Unblocking css with the media queries](#Unblocking-css-with-the-media-queries)
   - [2.3 Opitimizing JS](#Opitimizing-JS)
+  - [2.4 Preload scanner](#Preload-scanner)
 - [3. Sample of Optimized Portofolios](#Optimizing)
 
 <h3 id="Steps-to-Render-a-Page">1. Steps to Render a Page</h3>
@@ -49,6 +50,44 @@
 
 ```html
 <script src="analytics.js" async><script>
+```
+
+[back to top](#top)
+
+<h4 id="Preload-scanner">2.4 [Preload scanner](https://w3c.github.io/preload/) - preload, prefetch, prerender</h4>
+
+```html
+<!-- preload stylesheet resource via declarative markup -->
+<link rel="preload" href="/styles/other.css" as="style">
+<!-- or, preload stylesheet resource via JavaScript -->
+<script>
+  var res = document.createElement("link");
+  res.rel = "preload";
+  res.as = "style";
+  res.href = "styles/other.css";
+  document.head.appendChild(res);
+</script>
+<!-- some Use cases -is non-normative.  -->
+<!-- 1)  -->
+<link rel="preload" href="/assets/font.woff2" as="font" type="font/woff2">
+<link rel="preload" href="/style/other.css" as="style">
+<link rel="preload" href="//example.com/resource">
+<link rel="preload" href="https://fonts.example.com/font.woff2" as="font" crossorigin type="font/woff2">
+<!-- 2) listen for load and error events  -->
+<script>
+  function preloadFinished(e) { ... }
+  function preloadError(e)  { ... }
+</script>
+<link rel="preload" href="app.js" as="script" onload="preloadFinished()" onerror="preloadError()">
+<!-- 3) Developer, server, and proxy-initiated fetching  -->
+<link rel="preload" href="//example.com/widget.html" as="document">
+<script>
+  var res = document.createElement("link");
+  res.rel = "preload";
+  res.as = "document";
+  res.href = "/other/widget.html";
+  document.head.appendChild(res);
+</script>
 ```
 
 [back to top](#top)
