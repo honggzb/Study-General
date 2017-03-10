@@ -1,4 +1,12 @@
-**Steps to Render a Page**
+[top](#top)
+
+- [1. Steps to Render a Page](#Steps-to-Render-a-Page)
+- [2. Optimizing Strategies](#Optimizing)
+  - [2.1 Opitmizing DOM](#Optimizing-DOM)
+  - [2.2 Unblocking css with the media queries](#Unblocking-css-with-the-media-queries)
+  - [2.3 Opitimizing JS](#Opitimizing-JS)
+
+<h3 id="Steps-to-Render-a-Page">1. Steps to Render a Page</h3>
 
 1. begin constructing the DOM by parsing HTML
 2. Request CSS,JS resources
@@ -8,13 +16,17 @@
 
 ![](http://i.imgur.com/dKTlPCM.png)
 
-**1) Opitmizing DOM**
+[back to top](#top)
+
+<h3 id="Optimizing">2. Optimizing Strategies</h3>
+
+<h4 id="Optimizing-DOM">2.1 Opitmizing DOM</h4>
 
 - minify
 - compress
 - cache
 
-**2) Unblocking css with the media queries**
+<h4 id="Unblocking-css-with-the-media-queries">2.2 Unblocking css with the media queries</h4>
 
 ```css
 /** 1) using media queries in css**/
@@ -29,7 +41,7 @@
 <link rel="stylesheet" href="style-print.css" media="print">
 ```
 
-**3) Opitimizing JS**
+<h4 id="Opitimizing-JS">2.3 Opitimizing JS</h4>
 
 - Defer Javascript exception
 - Async JS
