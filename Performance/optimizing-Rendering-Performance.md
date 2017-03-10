@@ -18,7 +18,7 @@
 
 ![](http://i.imgur.com/dKTlPCM.png)
 
-![](http://i.imgur.com/oemFpbo.png)
+![](http://i.imgur.com/j7AksZ5.png)
 
 [back to top](#top)
 
