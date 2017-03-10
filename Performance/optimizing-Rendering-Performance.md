@@ -18,6 +18,8 @@
 
 ![](http://i.imgur.com/dKTlPCM.png)
 
+![](http://i.imgur.com/oemFpbo.png)
+
 [back to top](#top)
 
 <h3 id="Optimizing">2. Optimizing Strategies</h3>
