@@ -90,7 +90,24 @@
   res.href = "/other/widget.html";
   document.head.appendChild(res);
 </script>
+<!-- 4) Dns-prefetch -Dns-prefetching is the process of initiating the dns resolution of each domain where we have hosted resources, before the browser makes a request for them, with the goal to save the DNS resolution time when the resource is requested -->
+<link rel='dns-prefetch' href='//g-ecx.images-amazon.com'>
+<link rel='dns-prefetch' href='//completion.amazon.com'>
+<!-- 5) other  -->
+<link rel="preconnect" href="//example.com">
+<link rel="prefetch" href="//example.com/next-page.html" as="html" crossorigin="use-credentials">
+<link rel="prefetch" href="/library.js" as="script">
+<link rel='prerender' href='//pagetoprerender/landing.html'>
+<!--  Hint probability: The pr attribute expects a float value in the [0.0-1.0] range, there is 0.75 possible to prefetch resource -->
+<link rel="prefetch" href="//example.com/next-page.html" pr="0.75">
 ```
+
+- [前端性能优化－－预加载技术](http://blog.csdn.net/franktaoge/article/details/51473823)
+- [Resource Hints](https://medium.com/@luisvieira_gmr/html5-prefetch-1e54f6dda15d#.vx04es2cz)
+- [Slides from a talk by Ilya Grigorik called Preconnect, prerender, prefetch](https://docs.google.com/presentation/d/18zlAdKAxnc51y_kj-6sWLmnjl6TLnaru_WH0LJTjP-o/present?slide=id.p19)
+- [reload Hints For Web Fonts](http://www.bramstein.com/writing/preload-hints-for-web-fonts.html)
+- [Front-end performance for web designers and front-end developers](https://csswizardry.com/2013/01/front-end-performance-for-web-designers-and-front-end-developers/#section:dns-prefetching)
+- [Slides from a talk by Ilya Grigorik called Preconnect, prerender, prefetch](https://docs.google.com/presentation/d/18zlAdKAxnc51y_kj-6sWLmnjl6TLnaru_WH0LJTjP-o/present?slide=id.p19)
 
 [back to top](#top)
 
