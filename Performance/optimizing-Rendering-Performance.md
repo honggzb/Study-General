@@ -5,6 +5,7 @@
   - [2.1 Opitmizing DOM](#Optimizing-DOM)
   - [2.2 Unblocking css with the media queries](#Unblocking-css-with-the-media-queries)
   - [2.3 Opitimizing JS](#Opitimizing-JS)
+- [3. Sample of Optimized Portofolios](#Optimizing)
 
 <h3 id="Steps-to-Render-a-Page">1. Steps to Render a Page</h3>
 
@@ -49,3 +50,30 @@
 ```html
 <script src="analytics.js" async><script>
 ```
+
+[back to top](#top)
+
+<h3 id="Optimizing">3. [Sample of Optimized Portofolios](https://discussions.udacity.com/t/optimized-portfolios/16161/22)</h3>
+
+```
+http://yipstar.github.io/udportfolio/274
+
+Page Speed Insights Results:
+Mobile: 93
+Desktop: 95
+
+Optimizations:
+Added media="print" to print.css link
+Inlined style.css.
+Load google analytics async. 
+Moved all javascript loading to the bottom of the body tag.
+optimize the pizzeria image, shrink it to 100 pixels wide.
+converted profilepic.jpg to profilepic.png
+Change to googles Webfont Loader to load the web fonts async.
+```
+
+[back to top](#top)
+
+> Reference
+
+- [Udacity Discussion Forum](https://discussions.udacity.com/c/standalone-courses/website-performance-optimization)
