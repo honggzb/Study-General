@@ -60,12 +60,17 @@
 │   ├── avoid-loop-by-using-userdefined.md      -自定义的reduce, filter, find功能，可以避免写很多的loop
 │   └── 
 │
-├── Theory
+├── Theory 理论和源码
 │   ├── Progressive Web App设计.md
 │   │     ├── your-first-offline-app.rar
 │   │     ├── your-first-pwapp-master
 │   │     └── you-first-push-notifications-master.rar
 │   ├── 
+│   ├── 
+│   └── 
+│
+├── Performance 性能分析
+│   ├── optimizing-Rendering-Performance.md
 │   ├── 
 │   └── 
 │
