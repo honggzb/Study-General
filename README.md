@@ -58,7 +58,9 @@
 │   ├── js数据类型判断.md
 │   ├── javascript判断数组中是否包含指定元素.md
 │   ├── avoid-loop-by-using-userdefined.md      -自定义的reduce, filter, find功能，可以避免写很多的loop
-│   └── 
+│   ├── javascript之文件上传下载.md
+│   ├── 去掉js数组中的重复项.md
+│   └──  	
 │
 ├── Theory 理论和源码
 │   ├── Progressive Web App设计.md
