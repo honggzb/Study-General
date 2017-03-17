@@ -6,7 +6,7 @@
   - [1.3 使用 Ajax 上传](#使用Ajax上传)
 - [2. URL对象之文件上传](#URL对象之文件上传)
 - [3. 文件读写操作](#文件读写操作)
-  -[3.1 HTML5 File API之FileReader接口](#FileReader接口)
+  - [3.1 HTML5 File API之FileReader接口](#FileReader接口)
     - [FileReader对象的方法](#FileReader对象的方法)
     - [FileReader对象的处理事件](#FileReader对象的处理事件)
     - [案例1： 读取本地图片文件并显示](#读取本地图片文件并显示)
