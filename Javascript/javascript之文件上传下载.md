@@ -520,6 +520,19 @@ if (Browser.isIE){
 </script>
 ```
 
+"另存为"实现
+
+```html
+<a href=# onclick="window.open('temp.html');return(false);">下载文件</a>
+<button onclick="javascript:document.execCommand('SaveAs');">保存本页面</button>
+<script>
+if (typeof(window.opener) != 'undefined'){   //判断打开方式，若去掉后打开文件就弹出下载框
+	document.execCommand('SaveAs');
+	window.close();
+}
+</script>
+```
+
 - [用javascript 上传文件](http://blog.csdn.net/jianyi7659/article/details/8708857)
 - [前端文件上传专题](http://www.jb51.net/Special/567.htm)
 - [Javascript URL对象的createObjectURL与revokeObjectURL使用](https://my.oschina.net/ososchina/blog/505408)
