@@ -14,7 +14,7 @@
     - [Progress events （进度事件）](#进度事件)
     - [File API定义了四种错误类型](#四种错误类型)
   - [3.2 Blob 对象](#Blob对象)
-  
+- [4. URL对象之文件下载](#URL对象之文件下载)
 
 使用 javascript 来操作文件，是严格被禁止的，因为你不想一打开网页，硬盘灯就狂闪，然后把你硬盘的文件/列表都慢慢的上传上去，那么你就危险了。所以一般情况下，javascript 操作文件，都是在网页中提供文件上传控件。此时，需要允许，才会使此网页获得相应的文件的信息。
 
@@ -421,7 +421,7 @@ h.init();
 
 [back to top](#top)
 
-<h4>File API定义了四种错误类型</h4>
+<h4 id="四种错误类型">File API定义了四种错误类型</h4>
 
 事件|描述
 ---|---
@@ -498,7 +498,27 @@ function sliceBlob(blob, start, end, type) {
 
 上传大文件的时候，此方法非常有用，可以将大文件分割分段，然后各自上传，因为分割之后的 Blob 对象和原始的是独立存在的。例如，Flickr 的工程师就使用此方法将照片中的需要使用的 exif 信息截取出来，而不是等到其传到服务器上之后，才处理的，并且一旦选择要上传照片，则同时传输文件数据和 Exif 数据，这样几乎就可以在上传照片的时候同时显示照片的信息了。
 
+[back to top](#top)
 
+<h3 id="URL对象之文件下载">4. URL对象之文件下载</h3>
+
+```html
+<a class="ot-button ot-admin-download" download="db-translation-template.pot">Download</a>
+<script>
+var file = new Blob([output.join("\n\n")], {'type' : "text/x-gettext-translation"});
+var downloadEl = $(".ot-admin-download");
+if (Browser.isIE){
+						downloadEl.addEventListener("click", function() {
+							var name = this.getAttribute("download");
+							window.navigator.msSaveBlob(file, name); 
+						}, false);
+}else{
+						var url = (window.URL || window.webkitURL).createObjectURL(file);
+						downloadEl.setAttribute("href", url);
+						self.internalProperty("generate-db-url", url);
+}
+</script>
+```
 
 - [用javascript 上传文件](http://blog.csdn.net/jianyi7659/article/details/8708857)
 - [前端文件上传专题](http://www.jb51.net/Special/567.htm)
