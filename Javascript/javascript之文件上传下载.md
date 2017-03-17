@@ -508,14 +508,14 @@ function sliceBlob(blob, start, end, type) {
 var file = new Blob([output.join("\n\n")], {'type' : "text/x-gettext-translation"});
 var downloadEl = $(".ot-admin-download");
 if (Browser.isIE){
-						downloadEl.addEventListener("click", function() {
-							var name = this.getAttribute("download");
-							window.navigator.msSaveBlob(file, name); 
-						}, false);
+	downloadEl.addEventListener("click", function() {
+		var name = this.getAttribute("download");
+		window.navigator.msSaveBlob(file, name); 
+	}, false);
 }else{
-						var url = (window.URL || window.webkitURL).createObjectURL(file);
-						downloadEl.setAttribute("href", url);
-						self.internalProperty("generate-db-url", url);
+	var url = (window.URL || window.webkitURL).createObjectURL(file);
+	downloadEl.setAttribute("href", url);
+	self.internalProperty("generate-db-url", url);
 }
 </script>
 ```
