@@ -40,8 +40,8 @@
 │   └── 
 │ 
 ├── Debug-Skill调试技巧
-│   ├── chrome developer tool 调试技巧.md
-│   ├── 
+│   ├── chrome developer tool调试技巧.md
+│   ├── Chrome DevTools技巧.md
 │   └── 
 │
 ├── Design Pattern
