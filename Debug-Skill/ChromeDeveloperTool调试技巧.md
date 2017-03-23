@@ -1,6 +1,6 @@
 ## [chrome developer tool 调试技巧](#top)
 
-- 1. Beautify Javascript
+- [1. Beautify Javascript](#)
 - [2. 查看元素绑定了哪些事件](#查看元素绑定了哪些事件)
 - [3. Ajax时中断](#Ajax时中断)
 - [4. 页面事件中断](#页面事件中断)
@@ -10,6 +10,8 @@
 - [8. command line api](#command-line-api)  --**非常有用  `$0等`**
 - [9. Edit Mode: Edit any text on the page](#Edit-Mode)  --**非常有用  `document.designMode = "on"`**
 - [10. console中执行的代码可断点](#console中执行的代码可断点)
+- [11. Run snippets of code from any page](#snippets)
+- [12. paint profiler in Chrome DevTools](#paint-profiler)
 
 <h3 id="查看元素绑定了哪些事件">2. 查看元素绑定了哪些事件</h3>
 
@@ -62,11 +64,17 @@ Pretty print 左侧的按钮是开启 js 抛异常时中断的开关, 有两种�
 
 在 console 中输入代码的最后一行加上 //@ sourceURL=filename.js, 会在 Scripts 面板中有个叫 filename.js 的文件, 然后他就和外部 js 文件一样了
 
-### 5. Snippet code
+<h3 id="snippets">11. Run snippets of code from any page</h3>
 
 - [Run snippets of code from any page
 ](https://developers.google.com/web/tools/chrome-devtools/debug/snippets/?hl=en) - `Source -> Snippets`
 - the snippet code will behave the same as your application code with regards to DOM access, relative URLs, cookies, and CORSs stuff
+
+<h3 id="paint-profiler">12. paint profiler in Chrome DevTools</h3>
+
+need to click on the Paint event in the Event Log tab first. On the right-hand side, you will then see a Preview section with a Paint Profiler link
+
+![](http://i.imgur.com/5aLaA9f.png)
 
 > Reference
 
