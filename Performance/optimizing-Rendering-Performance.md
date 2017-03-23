@@ -1,4 +1,4 @@
-[top](#top)
+[index](#top)
 
 - [1. Steps to Render a Page](#Steps-to-Render-a-Page)
 - [2. Optimizing Strategies](#Optimizing)
