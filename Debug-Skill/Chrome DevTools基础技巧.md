@@ -8,6 +8,7 @@ Ctrl+G -> :num|跳到指定行
 鼠标点击+Ctrl|多光标
 Ctrl+D|选中下一个匹配项
 Shift+鼠标点击|在颜色预览中，可在rgba,hsl和hexadecimal三种格式中，来回切换
+Ctrl+F, 在filter中输入GC|在Timeline的Summary中，查看Garbage collection
 
 ### 1. 在控制台(Console)中获取DOM元素- $0 in console
 
