@@ -2,13 +2,12 @@
 
 - [1. Steps to Render a Page](#Steps-to-Render-a-Page)
 - [2. Optimizing Strategies](#Optimizing)
-  - [2.1 Opitmizing DOM](#Optimizing-DOM)
-  - [2.2 Unblocking css with the media queries](#Unblocking-css-with-the-media-queries)
-  - [2.3 Opitimizing JS](#Opitimizing-JS)
-  - [2.4 Preload scanner](#Preload-scanner)
+  - [2.1 The sequences standard of page Optimizing](#sequences-standard)
+  - [2.2 Opitmizing DOM](#Optimizing-DOM)
+  - [2.3 Unblocking css with the media queries](#Unblocking-css-with-the-media-queries)
+  - [2.4 Opitimizing JS](#Opitimizing-JS)
+  - [2.5 Preload scanner](#Preload-scanner)
 - [3. Sample of Optimized Portofolios](#Optimizing)
-
-![](http://i.imgur.com/JxOAtxO.png)
 
 <h3 id="Steps-to-Render-a-Page">1. Steps to Render a Page</h3>
 
@@ -26,7 +25,46 @@
 
 <h3 id="Optimizing">2. Optimizing Strategies</h3>
 
-<h4 id="Optimizing-DOM">2.1 Opitmizing DOM</h4>
+<h4 id="sequences-standard">2.1 The sequences standard of page Optimizing</h4>
+
+![](http://i.imgur.com/JxOAtxO.png)
+
+```javascript
+// bad performances
+function changeSize(size){
+  for(var i=0;i<document.querySelectorAll(".randomContainer").length;i++){
+    var dx = determineDx(document.querySelectorAll(".randomContainer")[i], size);
+    var newWidth = (document.querySelectorAll(".randomContainer")[i].offsetWidth + dx)+"px";
+    document.querySelectorAll(".randomContainer")[i].style.width = newWidth;
+  }
+}
+// improvement
+function changeSize(size){
+  var randomPizzas = document.querySelectorAll(".randomContainer");
+  for(var i=0;i<randomPizzas.length;i++){
+    var dx = determineDx(randomPizzas[i], size);
+    var newWidth = (randomPizzas[i].offsetWidth + dx)+"px";
+    randomPizzas[i].style.width = newWidth;
+  }
+}
+// more efficience improvement
+function changeSize(size){
+  switch (size) {
+    case "1": newWidth =25;break;
+    case "2": newWidth =33.3;break;
+    case "3": newWidth =50;break;
+    default: console.log("bug in sizeSwitcher");
+  }
+  var randomPizzas = document.querySelectorAll(".randomContainer");
+  for(var i=0;i<randomPizzas.length;i++){
+    randomPizzas[i].style.width = newWidth+"%";
+  }
+}
+```
+
+[back to top](#top)
+
+<h4 id="Optimizing-DOM">2.2 Opitmizing DOM</h4>
 
 - minify
 - compress
@@ -47,7 +85,7 @@
 <link rel="stylesheet" href="style-print.css" media="print">
 ```
 
-<h4 id="Opitimizing-JS">2.3 Opitimizing JS</h4>
+<h4 id="Opitimizing-JS">2.4 Opitimizing JS</h4>
 
 - Defer Javascript exception
 - Async JS
@@ -58,7 +96,7 @@
 
 [back to top](#top)
 
-<h4 id="Preload-scanner">2.4 [Preload scanner](https://w3c.github.io/preload/) - preload, prefetch, prerender</h4>
+<h4 id="Preload-scanner">2.5 [Preload scanner](https://w3c.github.io/preload/) - preload, prefetch, prerender</h4>
 
 ```html
 <!-- preload stylesheet resource via declarative markup -->
@@ -104,13 +142,6 @@
 <link rel="prefetch" href="//example.com/next-page.html" pr="0.75">
 ```
 
-- [前端性能优化－－预加载技术](http://blog.csdn.net/franktaoge/article/details/51473823)
-- [Resource Hints](https://medium.com/@luisvieira_gmr/html5-prefetch-1e54f6dda15d#.vx04es2cz)
-- [Slides from a talk by Ilya Grigorik called Preconnect, prerender, prefetch](https://docs.google.com/presentation/d/18zlAdKAxnc51y_kj-6sWLmnjl6TLnaru_WH0LJTjP-o/present?slide=id.p19)
-- [reload Hints For Web Fonts](http://www.bramstein.com/writing/preload-hints-for-web-fonts.html)
-- [Front-end performance for web designers and front-end developers](https://csswizardry.com/2013/01/front-end-performance-for-web-designers-and-front-end-developers/#section:dns-prefetching)
-- [Slides from a talk by Ilya Grigorik called Preconnect, prerender, prefetch](https://docs.google.com/presentation/d/18zlAdKAxnc51y_kj-6sWLmnjl6TLnaru_WH0LJTjP-o/present?slide=id.p19)
-
 [back to top](#top)
 
 <h3 id="Optimizing">3. Sample of Optimized Portofolios</h3>
@@ -139,3 +170,11 @@ Change to googles Webfont Loader to load the web fonts async.
 > Reference
 
 - [Udacity Discussion Forum](https://discussions.udacity.com/c/standalone-courses/website-performance-optimization)
+- [前端性能优化－－预加载技术](http://blog.csdn.net/franktaoge/article/details/51473823)
+- [Resource Hints](https://medium.com/@luisvieira_gmr/html5-prefetch-1e54f6dda15d#.vx04es2cz)
+- [Slides from a talk by Ilya Grigorik called Preconnect, prerender, prefetch](https://docs.google.com/presentation/d/18zlAdKAxnc51y_kj-6sWLmnjl6TLnaru_WH0LJTjP-o/present?slide=id.p19)
+- [reload Hints For Web Fonts](http://www.bramstein.com/writing/preload-hints-for-web-fonts.html)
+- [Front-end performance for web designers and front-end developers](https://csswizardry.com/2013/01/front-end-performance-for-web-designers-and-front-end-developers/#section:dns-prefetching)
+- [Slides from a talk by Ilya Grigorik called Preconnect, prerender, prefetch](https://docs.google.com/presentation/d/18zlAdKAxnc51y_kj-6sWLmnjl6TLnaru_WH0LJTjP-o/present?slide=id.p19)
+
+[back to top](#top)
