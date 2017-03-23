@@ -1,6 +1,6 @@
 [top](#top)
 
-- [1. select跳转](#1. select跳转)
+- [1. select跳转](#select跳转)
 - [2. 判断http协议+Chrome和版本](#判断Chrome和版本)
 - [6.3 'Pure' Pipe limitation && 'Impure' pipe](#Impure-pipe)
 
