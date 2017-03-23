@@ -4,7 +4,7 @@
 - [2. 查看元素绑定了哪些事件](#查看元素绑定了哪些事件)
 - [3. Ajax时中断](#Ajax时中断)
 - [4. 页面事件中断](#页面事件中断)
-- [5. Javascript 异常时中断](#Javascript 异常时中断)
+- [5. Javascript 异常时中断](#Javascript异常时中断)
 - [6. DOM Level 3 Event 事件中断](#Event事件中断)
 - [7. 所有 js 文件中搜索&查找 js 函数定义](#文件中搜索)
 - [8. command line api](#command-line-api)  --**非常有用  `$0等`**
@@ -25,7 +25,7 @@
 
 除了给设定常规断点外, 还可以在某一特定事件发生时中断(不针对元素) , 在Scripts面板右侧, 有个 Event Listener Breakpoints, 这里列出了支持的所有事件, 不仅 click, keyup 等事件, 还支持 Timer(在 setTimeout setInterval 处理函数开始执行时中断), onload, scroll 等事件.
 
-<h3 id="Javascript 异常时中断">5. Javascript 异常时中断</h3>
+<h3 id="Javascript异常时中断">5. Javascript 异常时中断</h3>
 
 Pretty print 左侧的按钮是开启 js 抛异常时中断的开关, 有两种模式：在所有异常处中断, 在未捕获的异常处中断. 在异常处中断后就可以查看为什么抛出异常了
 
