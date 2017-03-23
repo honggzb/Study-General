@@ -75,7 +75,7 @@
 │
 ├── Performance 性能分析
 │   ├── optimizing-Rendering-Performance.md
-│   ├── 
+│   ├── requestAnimationFrame优化动画.md
 │   └── 
 │
 ├── study-tips.md    --学习过程中的小tip
