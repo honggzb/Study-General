@@ -1,4 +1,4 @@
-## chrome developer tool 调试技巧
+## [chrome developer tool 调试技巧](#top)
 
 - 1. Beautify Javascript
 - [2. 查看元素绑定了哪些事件](#查看元素绑定了哪些事件)
