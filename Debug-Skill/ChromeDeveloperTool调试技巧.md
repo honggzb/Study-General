@@ -12,6 +12,7 @@
 - [10. console中执行的代码可断点](#console中执行的代码可断点)
 - [11. Run snippets of code from any page](#snippets)
 - [12. paint profiler in Chrome DevTools](#paint-profiler)
+- [13. Layers Panel](#Layers-Panel)
 
 <h3 id="查看元素绑定了哪些事件">2. 查看元素绑定了哪些事件</h3>
 
@@ -75,6 +76,18 @@ Pretty print 左侧的按钮是开启 js 抛异常时中断的开关, 有两种�
 need to click on the Paint event in the Event Log tab first. On the right-hand side, you will then see a Preview section with a Paint Profiler link
 
 ![](http://i.imgur.com/5aLaA9f.png)
+
+<h3 id="Layers-Panel">13. Layers Panel</h3>
+
+1. Go to chrome://flags and enable “Enable Developer Tools experiments.”
+2. Restart Chrome
+3. Open Chrome DevTools
+4. Click “Settings” (the gear icon in the upper right corner)
+5. Click on “Experiments” in the left menu
+6. Check the “Layers panel” option
+7. Close, then re-open Chrome DevTools
+
+Now you should see the “Layers” tab (https://www.sencha.com/blog/hidden-gems-in-chrome-developer-tools/)
 
 > Reference
 
