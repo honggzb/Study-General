@@ -1,4 +1,4 @@
-[top](#top)
+[index](#top)
 
 - [1. Critical rendering Path](#Critical-rendering-Path)
 - [2. Optimizing Strategies](#Optimizing)
