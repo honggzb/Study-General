@@ -8,6 +8,8 @@
   - [2.4 Preload scanner](#Preload-scanner)
 - [3. Sample of Optimized Portofolios](#Optimizing)
 
+![](http://i.imgur.com/JxOAtxO.png)
+
 <h3 id="Steps-to-Render-a-Page">1. Steps to Render a Page</h3>
 
 1. begin constructing the DOM by parsing HTML
@@ -111,7 +113,9 @@
 
 [back to top](#top)
 
-<h3 id="Optimizing">3. [Sample of Optimized Portofolios](https://discussions.udacity.com/t/optimized-portfolios/16161/22) </h3>
+<h3 id="Optimizing">3. Sample of Optimized Portofolios</h3>
+
+S[ample of Optimized Portofolios](https://discussions.udacity.com/t/optimized-portfolios/16161/22)
 
 ```
 http://yipstar.github.io/udportfolio/274
