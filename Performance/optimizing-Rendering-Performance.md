@@ -111,7 +111,7 @@
 
 [back to top](#top)
 
-<h3 id="Optimizing">3. [Sample of Optimized Portofolios](https://discussions.udacity.com/t/optimized-portfolios/16161/22)</h3>
+<h3 id="Optimizing">3. [Sample of Optimized Portofolios](https://discussions.udacity.com/t/optimized-portfolios/16161/22) </h3>
 
 ```
 http://yipstar.github.io/udportfolio/274
