@@ -58,7 +58,9 @@ function hideStory(id) {
   }
 ```
 
-<h3 id="all-know-bugs">[List of all know bugs](https://github.com/udacity/news-aggregator/blob/gh-pages/hints/all-bugs.md)</h3>
+<h3 id="all-know-bugs">List of all know bugs</h3>
+
+https://github.com/udacity/news-aggregator/blob/gh-pages/hints/all-bugs.md
 
 #### CSS issues
 
@@ -67,28 +69,28 @@ function hideStory(id) {
 - Triple(!) shadow on .story__score and .story-details
 - Promoted every single child element in .story-details. GO ME. This one will show up when they have visited a few stories. If they check the layers panel they'll see it too.
 
-####onStoryData
+#### onStoryData
 
 - Loops through manually rather than using a querySelector to get the right element.
 - Makes visual changes outside of a rAF.
 
-####onStoryClick
+#### onStoryClick
 
 - Uses a setTimeout to start showing the story.
 - Just splats the DOM in rather than using a rAF.
 - Same for the comments.
 
-####showStory
+#### showStory
 
 - Adds an overbroad class on the body.
 - Uses setTimeout for animation and runs it every 4ms
 - Causes forced sync layouts if it runs multiple times per frame due to getBoundingClientRect and storyDetails left style setting.
 
-####hideStory
+#### hideStory
 
 - Same as above.
 
-####colorizeAndScaleStories
+#### colorizeAndScaleStories
 
 - Completely unnecessary effect (interesting to see if any students drop it altogether - they should consider it imo, but if not there's loads they can do).
 - Colors every single score.
@@ -96,16 +98,16 @@ function hideStory(id) {
 - Then reads it back to figure the color it needs (way daft).
 - Triggers layout thrashing in the process.
 
-####touchstart
+#### touchstart
 
 - This just shouldn't be here and it just periodically kills touch input, so hopefully they'll realize what a bad thing touch handlers can be.
 
-####scroll
+#### scroll
 
 - Really, we don't want to color and scale the scores.
 - Should be in a requestAnimationFrame as it makes visual changes.
 
-####loadStoryBatch
+#### loadStoryBatch
 
 - Making visual changes outside of a requestAnimationFrame.
 
