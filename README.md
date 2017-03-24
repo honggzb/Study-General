@@ -76,7 +76,8 @@
 ├── Performance 性能分析
 │   ├── optimizing-Rendering-Performance.md
 │   ├── requestAnimationFrame优化动画.md
-│   └── 
+│   ├── Front End performance案例分析.md
+│   └──
 │
 ├── study-tips.md    --学习过程中的小tip
 ├── 常用node模块.md
