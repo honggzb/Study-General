@@ -1,6 +1,5 @@
 
-
-## Automation with npm
+### Automation with npm]
 
 编辑package.json, 加入：
 
@@ -15,7 +14,7 @@
 
 在命令行直接执行：  `npm start` 或 `npm run dev`(前提是装了git, open是git的命令)
 
-## node-inspector:  npm debugger(server side debug)
+### node-inspector:  npm debugger(server side debug)
 
 `npm install -g node-inspector`
 
@@ -31,7 +30,7 @@
 
 在命令行直接执行： `npm run debug`
 
-## Grunt常用的插件
+### Grunt常用的插件
 
 - grunt-contrib-clean：删除文件或目录的插件
 - grunt-contrib-copy：复制文件或目录的插件
