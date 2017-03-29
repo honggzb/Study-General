@@ -473,7 +473,7 @@ gulp.task("webpack", function(callback) {
 
 [back to top](#top)
 
-<h4 id="版本控制">7.2 版本控制([hash缓存](http://webpack.github.io/docs/long-term-caching.html))</h4>
+<h4 id="版本控制">7.2 版本控制(hash缓存,对文件做revision)(http://webpack.github.io/docs/long-term-caching.html))</h4>
 
 对于静态资源的版本控制，目前微信项目采取办法是版本号作为请求参数，版本号为发布日期，但有两个问题：
 
