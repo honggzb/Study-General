@@ -32,12 +32,13 @@
 │
 ├── Configuration Study - Build tools 
 │   ├──  Webpack
-│   │    ├── webpack-multiple-bundles/
-│   │    ├── webpack-production/
-│   │    ├── webpack-seperate-css/
-│   │    ├── Exercise Files.rar
+│   │    ├── samples
+│   │    │   ├── webpack-multiple-bundles.rar
+│   │    │   ├── webpack-production.rar
+│   │    │   ├── webpack-seperate-css.rar
+│   │    │   └── webpack-demos-master.rar
 │   │    ├── webPackStudy.md
-│   │    └── hash.png
+│   │    └── 
 │   ├──  Gulp
 │   │    └── GulpStudy.md
 │   └──  Grunt
