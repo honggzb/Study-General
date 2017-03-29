@@ -194,6 +194,10 @@ module: {
 
 <h4 id="Multiple-entry-files">4.3 Multiple entry files</h4>
 
+![](http://i.imgur.com/h3EJCLa.png)
+
+![](http://i.imgur.com/uWigEAN.png)
+
 ```html
 <html>
   <body>
@@ -481,6 +485,8 @@ gulp.task("webpack", function(callback) {
 2. 没有发生变更的文件也被赋上新版本
 
 Webpack的做法是，生成hash，区分文件, 参考[LONG TERM CACHING](http://webpack.github.io/docs/long-term-caching.html)
+
+![](http://i.imgur.com/Cj6rejv.png)
 
 ```javascript
 //所有代码块添加hash
