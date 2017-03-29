@@ -10,13 +10,13 @@ Function
 
 - [1 模块化- Module System](#模块化)
 - [2 Basic](Basic)
-- [运行 webpack](#运行-webpack)
-- [3 运行 webpack](#运行webpack)
-	- [3.1 using command line](#command-line)
-	- [3.2 using `webpack.config.js`](#webpack-config)
-	- [3.3 using webpack-dev-server](#webpack-dev-server)
+	- [2.1 using command line](#command-line)
+	- [2.2 using `webpack.config.js`](#webpack-config)
+- [3 运行 webpack](#运行-webpack)
+	- [3.1 命令行执行](#命令行执行)
+	- [3.2 using webpack-dev-server](#webpack-dev-server)
 - [4 webpack的配置方式](#webpack的配置方式)
-	-  [4.1 using `require` and `webpack.config.js` to organize](#require)
+	- [4.1 using `require` and `webpack.config.js` to organize](#using-require)
 	- [4.2 using loader to organize  - such as babel-loader](#loader)
 	- [4.3 Multiple entry files](#Multiple-entry-files)
 	- [4.4 Working with ES6 Modules](#ES6-Modules)
@@ -28,7 +28,10 @@ Function
 	- [5.2 HTML Webpack Plugin and Open Browser Webpack Plugin](#HTML-Webpack)
 - [6. `webpack.config.js` 配置说明](#配置说明)
 - [7. 补充](#补充)
-
+	- [7.1 与 grunt/gulp 配合](#gulp配合)
+	- [7.2 版本控制([hash缓存](http://webpack.github.io/docs/long-term-caching.html))](#版本控制)
+	- [7.3 不同的common模块](#不同的common模块)
+	- [7.4 使用CDN/远程文件](#使用CDN/远程文件)
 
 <h3 id="模块化">1 模块化-Using a Module System</h3>
 
@@ -63,11 +66,14 @@ module.exports = {
     ]
 };
 ```
-## 2 Basic
+
+[back to top](#top)
+
+<h3 id="Basic">2 Basic</h3>
 
 `npm install webpack -g`
 
-### 2.1 using command line
+<h4 id="command-line">2.1 using command line</h4>
 
 ```
 webpack ./app.js bundle.js
@@ -75,7 +81,7 @@ webpack ./app.js bundle.js
 <script src="bundle.js"></script>
 ```
 
-### 2.2 using `webpack.config.js`
+<h4 id="webpack-config">2.2 using `webpack.config.js`</h4>
 
 ```javascript
 module.exports = {
@@ -86,9 +92,13 @@ module.exports = {
 }
 ```
 
-在命令行执行： `webpack`
+[back to top](#top)
 
-## 3 运行 webpack
+<h3 id="运行-webpack">3 运行 webpack</h3>
+
+<h4 id="命令行执行">3.1 命令行执行</h4>
+
+在命令行执行： `webpack`
 
 ```shell
 webpack --config XXX.js   //使用另一份配置文件（比如webpack.config2.js）来打包
@@ -99,7 +109,8 @@ webpack -d    //生成map映射文件，告知哪些模块被最终打包到哪�
 webpack --display-error-details  //方便出错时能查阅更详尽的信息（比如 webpack 寻找模块的过程）(http://webpack.github.io/docs/configuration.html#resolve-modulesdirectories)
 webpack --colors // for making things pretty
 ```
-### 3.1 using webpack-dev-server
+
+<h4 id="webpack-dev-server">3.2 using webpack-dev-server</h4>
 
 `npm install -g webpack-dev-server`
 
@@ -133,10 +144,11 @@ webpack-dev-server 提供了两种模式用于自动刷新页面：
   // ...
 }
 ```
+[back to top](#top)
 
-## 4 webpack的配置方式
+<h3 id="webpack的配置方式">4 webpack的配置方式</h3>
 
-### 4.1 using `require` and `webpack.config.js` to organize
+<h4 id="using-require">4.1 using `require` and `webpack.config.js` to organize</h4>
 
 ```javascript
 entry: ["./utils.js","./app.js"],
@@ -144,7 +156,7 @@ entry: ["./utils.js","./app.js"],
 require('./login');
 ```
 
-### 4.2 using loader to organize - such as babel-loader
+<h4 id="loader">4.2 using loader to organize - such as babel-loader</h4>
 
 ```json
 "devDependencies": {
@@ -178,7 +190,9 @@ module: {
 }
 ```
 
-### 4.3 Multiple entry files
+[back to top](#top)
+
+<h4 id="Multiple-entry-files">4.3 Multiple entry files</h4>
 
 ```html
 <html>
@@ -201,7 +215,9 @@ module.exports = {
 };
 ```
 
-### 4.4 Working with ES6 Modules
+[back to top](#top)
+
+<h4 id="ES6-Modules">4.4 Working with ES6 Modules</h4>
 
 ```
 npm install --save-dev babel-preset-es2015
@@ -211,14 +227,18 @@ npm install --save-dev babel-preset-es2015
 }
 ```
 
-### 4.5 Adding Source Maps support
+[back to top](#top)
+
+<h4 id="Source-Maps">4.5 Adding Source Maps support</h4>
 
 `webpack -d    //生成map映射文件，告知哪些模块被最终打包到哪里了`
 
 - 在utils.js中加入 `debugger;`
 - 即使使用` webpack-dev-server -d -p`，在chrome developer tools, using `ctrl+p` 仍然可以找到未压缩的源文件
 
-### 4.6 Creating Multiple Bundles
+[back to top](#top)
+
+<h4 id="Multiple-Bundles">4.6 Creating Multiple Bundles</h4>
 
 ```javascript
 var path = require('path');
@@ -251,7 +271,9 @@ module.exports = {
 }
 ```
 
-### 4.7 Add CSS/SCSS/LESS and images, fonts to build
+[back to top](#top)
+
+<h4 id="SCSS">4.7 Add CSS/SCSS/LESS and images, fonts to build</h4>
 
 [CSS 及图片的引用](https://github.com/petehunt/webpack-howto#5-stylesheets-and-images)
 
@@ -346,9 +368,11 @@ module: {
 	},
 ```
 
-## 5 plugins
+[back to top](#top)
 
-### 5.1 UglifyJs Plugin
+<h3 id="plugins">5 plugins</h3>
+
+<h4 id="UglifyJs">5.1 UglifyJs Plugin</h4>
 
 ```javascript
 var webpack = require('webpack');
@@ -364,7 +388,9 @@ module.exports = {
 };
 ```
 
-### 5.2 HTML Webpack Plugin and Open Browser Webpack Plugin 
+[back to top](#top)
+
+<h4 id="HTML-Webpack">5.2 HTML Webpack Plugin and Open Browser Webpack Plugin</h4>
 
 [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) could create index.html for you, and [open-browser-webpack-plugin](https://github.com/baldore/open-browser-webpack-plugin) could open a new browser tab when Webpack loads.
 
@@ -378,7 +404,9 @@ plugins: [
   ]
 ```
 
-## 6 `webpack.config.js` 配置说明
+[back to top](#top)
+
+<h3 id="配置说明">6 `webpack.config.js` 配置说明</h3>
 
 ```javascript
 var webpack = require('webpack');
@@ -420,11 +448,13 @@ module.exports = {
 ```
 
 - 可以点[这里](http://webpack.github.io/docs/list-of-loaders.html)查阅全部的 loader 列表
-- 关于 webpack.config.js 更详尽的配置可以参考[这里](http://webpack.github.io/docs/configuration.html)。
+- 关于 webpack.config.js 更详尽的配置可以参考[这里](http://webpack.github.io/docs/configuration.html)
 
-## 7 补充
+[back to top](#top)
 
-### 7.2 与 grunt/gulp 配合
+<h3 id="补充">7 补充</h3>
+
+<h4 id="gulp配合">7.1 与 grunt/gulp 配合</h4>
 
 ```javascript
 gulp.task("webpack", function(callback) {
@@ -441,7 +471,9 @@ gulp.task("webpack", function(callback) {
 
 更多参照信息请参阅：[grunt配置](http://webpack.github.io/docs/usage-with-grunt.html) / [gulp配置](http://webpack.github.io/docs/usage-with-gulp.html)
 
-### 7.3 版本控制([hash缓存](http://webpack.github.io/docs/long-term-caching.html))
+[back to top](#top)
+
+<h4 id="版本控制">7.2 版本控制([hash缓存](http://webpack.github.io/docs/long-term-caching.html))</h4>
 
 对于静态资源的版本控制，目前微信项目采取办法是版本号作为请求参数，版本号为发布日期，但有两个问题：
 
@@ -494,7 +526,9 @@ module.exports = {
 }
 ```
 
-### 7.4 不同的common模块
+[back to top](#top)
+
+<h4 id="不同的common模块">7.3 不同的common模块</h4>
 
 CommonsChunkPlugin插件来提取多个页面之间的公共模块，并将该模块打包为common.js, 有时候我们希望能更加个性化一些，可以这样配置
 
@@ -524,7 +558,9 @@ module.exports = {
 // admin-page2.html: commons.js, admin-commons.js, ap2.js
 ```
 
-### 7.5 使用CDN/远程文件
+[back to top](#top)
+
+<h4 id="使用CDN/远程文件">7.4 使用CDN/远程文件</h4>
 
 有时候希望某些模块走CDN并以<script>的形式挂载到页面上来加载，但又希望能在 webpack 的模块中使用上。这时候可以在配置文件里使用 externals 属性
 
