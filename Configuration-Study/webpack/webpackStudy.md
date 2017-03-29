@@ -39,7 +39,7 @@ Function
 
 Webpack处理后，输出的静态文件只剩下js与png，而css、less、jade其他的文件都合并到了js中。在Webpack当中，所有资源的都是模块，模块都需要通过AMD或者CMD规范加载，就像css样式文件，不再在HTML中以<link>标签加载。
 
-![Module](976828298-55dcf4647738e_articlex.png)
+![](http://i.imgur.com/5nMDrfq.png)
 
 **代码切分**
 
@@ -66,8 +66,6 @@ module.exports = {
     ]
 };
 ```
-
-![](http://i.imgur.com/5nMDrfq.png)
 
 [back to top](#top)
 
