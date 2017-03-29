@@ -6,6 +6,16 @@
   - [2.2 gulp五个方法](#gulp五个方法)
 - [3 Installing](#Installing)
 - [4. Gulp plugins](#Gulp-plugins)
+  - [4.1 JSHint - Code Quality](#JSHint)
+  - [4.2 JSCS-CSS Style](#JSCS-CSS)
+  - [4.3 gulp-browserify](#gulp-browserify)
+  - [4.4 imagemin--压缩图片的工具(包括PNG、JPEG、GIF和SVG图片)](#imagemin)
+  - [4.6 gulp-usemin](#gulp-usemin)
+  - [4.7 gulp-uglify](#gulp-uglify)
+  - [4.8 gulp-sourcemaps](#gulp-sourcemaps
+  - [4.9 gulp-inject](#gulp-inject)
+  - [4.10 gulp-concat -连接合并文件](#gulp-concat)
+- [5. 项目git案例](#项目git案例)
 
 <h3 id="Gulp">1. Gulp</h3>
 
@@ -136,30 +146,7 @@ gulp通过gulpfile.js文件来完成相关任务，因此项目根目录中必�
 
 [back to top](#top)
 
-<h3 id="项目git案例">5. 项目git案例</h3>
-
-**项目git案例1**
-
-配置好的项目已经放到github上。
-
-- 下载地址：https://github.com/dbpoo/gulp
-- git clone地址：git@github.com:dbpoo/gulp.git
-
-**项目git案例2**
-
-这个任务会让所有的文件匹配js/*.js（比如js目录下的所有JavaScript文件），并且执行JSHint，然后打印输出结果，取消文件缩进，最后把他们合并起来，保存为build/app.js
-```javascript
-	gulp.task('js', function () {
-		return gulp.src('js/*.js')
-		      .pipe(jshint())
-		      .pipe(jshint.reporter('default'))
-		      .pipe(uglify())
-		      .pipe(concat('app.js'))
-		      .pipe(gulp.dest('build'));
-	});
-```
-
-<h3 id="JSHint">6. JSHint - Code Quality</h3>
+<h4 id="JSHint">4.1 JSHint - Code Quality</h4>
 
 - Detects potential errors
 - 是一个侦测javascript代码中错误和潜在问题的工具
@@ -177,12 +164,16 @@ gulp通过gulpfile.js文件来完成相关任务，因此项目根目录中必�
 	});
 ```
 
-###JSCS-CSS Style
+[back to top](#top)
+
+<h4 id="JSCS-CSS">4.2 JSCS-CSS Style</h4>
 
 - Enforces coding conventions
 - Easily Configurable
 
-###gulp-browserify
+[back to top](#top)
+
+<h4 id="gulp-browserify">4.3 gulp-browserify</h4>
 
 browserify可以为浏览器编译node风格的遵循`commonjs`的模块。 它搜索文件中的`require()`调用， 递归的建立模块依赖图。
 ```javascript
@@ -197,7 +188,9 @@ browserify可以为浏览器编译node风格的遵循`commonjs`的模块。 它�
 	});
 ```
 
-###imagemin--压缩图片的工具(包括PNG、JPEG、GIF和SVG图片)
+[back to top](#top)
+
+<h4 id="imagemin">4.4 imagemin--压缩图片的工具(包括PNG、JPEG、GIF和SVG图片)</h4>
 
 ```javascript
 gulp.task('default', function () {
@@ -265,7 +258,9 @@ gulp-imagemin其他参数 [具体参看](https://github.com/sindresorhus/gulp-im
 	});
 ```
 
-###gulp-usemin
+[back to top](#top)
+
+<h4 id="gulp-usemin">4.6 gulp-usemin</h4>
 
 用来将HTML 文件中（或者templates/views）中没有优化的script 和stylesheets 替换为优化过的版本。
 
@@ -286,7 +281,9 @@ usemin块如下定义：
 	<!-- build:remove -->
 	<!-- endbuild -->
 ```
+
 gulp-usemin用法如下：
+
 ```javascript
 	var usemin = require('gulp-usemin');
 	var uglify = require('gulp-uglify');
@@ -304,7 +301,9 @@ gulp-usemin用法如下：
 	})
 ```
 
-###gulp-uglify
+[back to top](#top)
+
+<h4 id="gulp-uglify">4.7 gulp-uglify</h4>
 
 uglify是一款javascript代码优化工具，可以解析，压缩和美化javascript
 
@@ -319,19 +318,25 @@ uglify是一款javascript代码优化工具，可以解析，压缩和美化java
 - gulp.src(['src/js/index.js','src/js/detail.js']) //多个文件以数组形式传入
 - 匹配符“!”，“*”，“**”，“{}”
 
+```
 		//压缩src/js目录下的所有js文件
 		//除了test1.js和test2.js（**匹配src/js的0个或多个子文件夹）
 		//! 
 		gulp.src(['src/js/*.js', '!src/js/**/{test1,test2}.js'])
+```
 
 - gulp-uglify其他参数 [具体参看](https://github.com/terinjokes/gulp-uglify#user-content-options)
 
+```
 		pipe(uglify({
             mangle: true,//类型：Boolean 默认：true 是否修改变量名
             compress: true//类型：Boolean 默认：true 是否完全压缩
         }))
+```
 
-###gulp-sourcemaps
+[back to top](#top)
+
+<h4 id="gulp-sourcemaps">4.8 gulp-sourcemaps</h4>
 
 在现代javascript开发中， JavaScript脚本正变得越来越复杂。大部分源码（尤其是各种函数库和框架）都要经过转换，才能投入生产环境。
 常见的转换情况：
@@ -343,6 +348,7 @@ uglify是一款javascript代码优化工具，可以解析，压缩和美化java
 这三种情况，都使得实际运行的代码不同于开发代码，除错（debug）变得困难重重。
 
 Source map就是一个信息文件，里面储存着位置信息。也就是说，转换后的代码的每一个位置，所对应的转换前的位置。有了它，出错的时候，除错工具将直接显示原始代码，而不是转换后的代码
+
 ```javascript
 	var gulp = require('gulp');
 	var plugin1 = require('gulp-plugin1');
@@ -357,11 +363,15 @@ Source map就是一个信息文件，里面储存着位置信息。也就是说�
 	    .pipe(gulp.dest('dist'));
 	});
 ```
-###gulp-inject
+
+[back to top](#top)
+
+<h4 id="gulp-inject">4.9 gulp-inject</h4>
 
 可以注入css,javascript和web组件，不需手工更新ndex.html
 
 index.html
+
 ```html
 	<!DOCTYPE html>
 	<html>
@@ -376,7 +386,9 @@ index.html
 	</body>
 	</html>
 ```
+
 gulpfile.js
+
 ```javascript
 	var gulp = require('gulp');
 	var inject = require("gulp-inject");
@@ -388,9 +400,13 @@ gulpfile.js
 	    .pipe(gulp.dest('./src'));
 	});
 ```
-###gulp-concat -连接合并文件
+
+[back to top](#top)
+
+<h4 id="gulp-concat">4.10 gulp-concat -连接合并文件</h4>
 
 使用gulp-concat合并javascript文件，减少网络请求
+
 ```javascript
 	gulp.task('scripts', function() {
 	  gulp.src('./lib/*.js')
@@ -398,7 +414,33 @@ gulpfile.js
 	    .pipe(gulp.dest('./dist/'))
 	});
 ```
-##更多的文章
+
+[back to top](#top)
+
+<h3 id="项目git案例">5. 项目git案例</h3>
+
+**项目git案例1**
+
+配置好的项目已经放到github上。
+
+- 下载地址：https://github.com/dbpoo/gulp
+- git clone地址：git@github.com:dbpoo/gulp.git
+
+**项目git案例2**
+
+这个任务会让所有的文件匹配js/*.js（比如js目录下的所有JavaScript文件），并且执行JSHint，然后打印输出结果，取消文件缩进，最后把他们合并起来，保存为build/app.js
+```javascript
+	gulp.task('js', function () {
+		return gulp.src('js/*.js')
+		      .pipe(jshint())
+		      .pipe(jshint.reporter('default'))
+		      .pipe(uglify())
+		      .pipe(concat('app.js'))
+		      .pipe(gulp.dest('build'));
+	});
+```
+
+> References
 
 - [Gulp 中文网](http://www.gulpjs.com.cn/)
 - [Recipes](https://github.com/gulpjs/gulp/tree/master/docs/recipes#recipes)
@@ -414,4 +456,3 @@ gulpfile.js
 - [gulp教程之gulp-minify-css](http://www.ydcss.com/archives/41)
 - [gulp教程之gulp-rev-append](http://www.ydcss.com/archives/49)
 - [gulp教程之gulp-autoprefixer](http://www.ydcss.com/archives/94)
-
