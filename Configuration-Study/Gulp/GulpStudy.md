@@ -12,7 +12,7 @@
   - [4.4 imagemin--压缩图片的工具(包括PNG、JPEG、GIF和SVG图片)](#imagemin)
   - [4.6 gulp-usemin](#gulp-usemin)
   - [4.7 gulp-uglify](#gulp-uglify)
-  - [4.8 gulp-sourcemaps](#gulp-sourcemaps
+  - [4.8 gulp-sourcemaps](#gulp-sourcemaps)
   - [4.9 gulp-inject](#gulp-inject)
   - [4.10 gulp-concat -连接合并文件](#gulp-concat)
 - [5. 项目git案例](#项目git案例)
