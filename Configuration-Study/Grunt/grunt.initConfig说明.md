@@ -2,10 +2,10 @@
 
 - [1. 任务配置和目标](#任务配置和目标)
 - [2. options属性](#options属性)
-- 文件
-- 动态构建文件对象
-- 模板
-- 导入外部数据
+- [3. 文件](#文件)
+- [4. 动态构建文件对象](#动态构建文件对象)
+- [5. 模板](#模板)
+- [6. 导入外部数据](#导入外部数据)
 
 <h3 id="任务配置和目标">1 任务配置和目标</h3>
 
@@ -31,6 +31,8 @@ grunt.initConfig({
 
 运行`grunt concat:foo`或者`grunt concat:bar`
 
+[back to top](#top)
+
 <h3 id="options属性">2 options属性</h3>
 
 - options属性可以用来指定覆盖内置属性的默认值。此外，每一个目标（target）中还可以拥有一个专门针对此目标（target）的options属性
@@ -54,7 +56,9 @@ grunt.initConfig({
 });
 ```
 
-### 3 文件
+[back to top](#top)
+
+<h3 id="文件">3 文件</h3>
 
 由于大多的任务都是执行文件操作，Grunt有一个强大的抽象层用于声明任务应该操作哪些文件
 
@@ -132,7 +136,9 @@ grunt.initConfig({
 {src: ['foo/*.js', '<%= jshint.all.src %>'], dest: ...}
 ```
 
-### 4 动态构建文件对象
+[back to top](#top)
+
+<h3 id="动态构建文件对象">4 动态构建文件对象</h3>
 
 当你希望处理大量的单个文件时，这里有一些附加的属性可以用来动态的构建一个文件列表。这些属性都可以用于Compact和Files Array文件映射格式。
 
@@ -179,7 +185,9 @@ grunt.initConfig({
 });
 ```
 
-### 5 模板
+[back to top](#top)
+
+<h3 id="模板">5 模板</h3>
 
 - 使用<% %>分隔符指定的模板会在任务从它们的配置中读取相应的数据时将自动扩展扫描。模板会被递归的展开，直到配置中不再存在遗留的模板相关的信息(与模板匹配的)
 - 整个配置对象决定了属性上下文(模板中的属性)。此外，在模板中使用grunt以及它的方法都是有效的，例如： <%= grunt.template.today('yyyy-mm-dd') %>。
@@ -207,8 +215,9 @@ grunt.initConfig({
 });
 ```
 
+[back to top](#top)
 
-### 导入外部数据
+<h3 id="导入外部数据">6 导入外部数据</h3>
 
 项目的元数据是从package.json文件中导入到Grunt配置中的，并且grunt-contrib-uglify 插件中的 uglify 任务被配置用于压缩一个源文件以及使用该元数据动态的生成一个banner注释。
 
