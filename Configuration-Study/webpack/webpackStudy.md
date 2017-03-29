@@ -6,30 +6,31 @@ Function
 - Transpilation
 - Linting
 
-## Index
+[Index](top)
 
-1. [模块化-Using a Module System](#模块化-Using a Module System)
-1. [Basic](#2 Basic)
-	1. [using command line](#)
-	1. [using `webpack.config.js`](#)
-1. [运行 webpack](#)
-  - 3.1 [using webpack-dev-server](#)
-1. [webpack的配置方式](#)
-  - 4.1 [using `require` and `webpack.config.js` to organize](#)
-  - 4.2 [using loader to organize  - such as babel-loader](#)
-  - 4.3 [Multiple entry files](#)
-  - 4.4 [Working with ES6 Modules](#)
-  - 4.5 [Adding Source Maps support](#)
-  - 4.6 [Creating Multiple Bundles](#)
-  - 4.7 [Add CSS/SCSS/LESS and images, fonts to build](#)
-1. [Plugin](#)
-  - 5.1 [UglifyJs Plugin](#)
-  - 5.2 [HTML Webpack Plugin and Open Browser Webpack Plugin](#)
-1. [`webpack.config.js` 配置说明](#)
-1. [补充](#)
+- [1 模块化- Module System](#模块化)
+- [2 Basic](Basic)
+- [运行 webpack](#运行-webpack)
+- [3 运行 webpack](#运行webpack)
+	- [3.1 using command line](#command-line)
+	- [3.2 using `webpack.config.js`](#webpack-config)
+	- [3.3 using webpack-dev-server](#webpack-dev-server)
+- [4 webpack的配置方式](#webpack的配置方式)
+	-  [4.1 using `require` and `webpack.config.js` to organize](#require)
+	- [4.2 using loader to organize  - such as babel-loader](#loader)
+	- [4.3 Multiple entry files](#Multiple-entry-files)
+	- [4.4 Working with ES6 Modules](#ES6-Modules)
+	- [4.5 Adding Source Maps support](#Source-Maps)
+	- [4.6 Creating Multiple Bundles](#Multiple-Bundles)
+	- [4.7 Add CSS/SCSS/LESS and images, fonts to build](#SCSS)
+- [5. Plugin](#Plugin)
+	- [5.1 UglifyJs Plugin](#UglifyJs)
+	- [5.2 HTML Webpack Plugin and Open Browser Webpack Plugin](#HTML-Webpack)
+- [6. `webpack.config.js` 配置说明](#配置说明)
+- [7. 补充](#补充)
 
 
-## 1 模块化-Using a Module System
+<h3 id="模块化">1 模块化-Using a Module System</h3>
 
 **所有资源都是模块**
 
