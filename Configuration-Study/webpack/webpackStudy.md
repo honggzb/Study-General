@@ -29,7 +29,7 @@ Function
 - [6. `webpack.config.js` 配置说明](#配置说明)
 - [7. 补充](#补充)
 	- [7.1 与 grunt/gulp 配合](#gulp配合)
-	- [7.2 版本控制([hash缓存](http://webpack.github.io/docs/long-term-caching.html))](#版本控制)
+	- [7.2 版本控制(hash缓存)](http://webpack.github.io/docs/long-term-caching.html))](#版本控制)
 	- [7.3 不同的common模块](#不同的common模块)
 	- [7.4 使用CDN/远程文件](#使用CDN/远程文件)
 
