@@ -67,6 +67,8 @@ module.exports = {
 };
 ```
 
+![](http://i.imgur.com/5nMDrfq.png)
+
 [back to top](#top)
 
 <h3 id="Basic">2 Basic</h3>
