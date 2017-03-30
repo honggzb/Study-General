@@ -1,0 +1,1 @@
+- [A Case Study on Boosting Front-End Performance](https://css-tricks.com/case-study-boosting-front-end-performance/?utm_source=frontendfocus&utm_medium=email)
