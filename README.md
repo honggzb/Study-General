@@ -77,7 +77,12 @@
 │   ├── avoid-loop-by-using-userdefined.md      -自定义的reduce, filter, find功能，可以避免写很多的loop
 │   ├── javascript之文件上传下载.md
 │   ├── 去掉js数组中的重复项.md
-│   └──  	
+│   └──  
+│
+├── Miscellaneous杂项
+│   ├── convert-octet-stream-to-image.md     - http的octex-stream类型（binary file)处理，转换为<img src="" />
+│   ├── 
+│   └── 
 │
 ├── Theory 理论和源码
 │   ├── Progressive Web App设计.md
