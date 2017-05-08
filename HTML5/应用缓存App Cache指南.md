@@ -9,24 +9,29 @@
   - [2.3 监听缓存](#监听缓存)
   - [2.4 AppCache 事件](#AppCache事件)
 
-使用缓存接口HTML5 ApplicationCache可为应用带来以下三个优势：
+HTML5引入了应用程序缓存技术，意味着web应用可进行缓存，并在没有网络的情况下使用，通过创建cache manifest文件，可以轻松的创建离线应用, 使用缓存接口HTML5 ApplicationCache(用于存储静态资源)可为应用带来以下三个优势：
 
 - 离线浏览 - 用户可在离线时浏览您的完整网站
 - 速度 - 缓存资源为本地资源，因此加载速度较快。
-- 服务器负载更少 - 浏览器只会从发生了更改的服务器下载资源。
+- 降低服务器压力(服务器负载更少) - 浏览器只会从发生了更改的服务器下载资源。
 
-应用缓存（又称 AppCache）可让开发人员指定浏览器应缓存哪些文件以供离线用户访问。即使用户在离线状态下按了刷新按钮，您的应用也会正常加载和运行。
+应用缓存（又称 AppCache）可让开发人员指定浏览器应缓存哪些文件以供离线用户访问。即使用户在离线状态下按了刷新按钮，应用也会正常加载和运行。
 
 <h3 id="缓存清单文件">1. 缓存清单文件manifest</h3>
 
-<h4 id="缓存清单文件">1.1 引用清单文件</h4>
+<h4 id="引用清单文件">1.1 引用清单文件</h4>
+
+Application Cache的使用要做两方面的工作：
+
+- 服务器端需要维护一个manifest清单
+- 浏览器上只需要一个简单的设置即可
 
 ```html
 <html manifest="example.appcache">
 ```
 
 - manifest 属性可指向绝对网址或相对路径，但绝对网址必须与相应的网络应用同源
-- 清单文件可使用任何文件扩展名，但必须以正确的MIME类型提供, 清单文件必须以`text/cache-manifest MIME`类型提供。可能需要向网络服务器或.htaccess 配置添加自定义文件类型, 
+- 清单文件可使用任何文件扩展名，但必须以正确的MIME类型提供, 清单文件必须以`text/cache-manifest MIME`类型提供, 否则报错`Application Cache Error event: Manifest fetch failed (404)`。必须在web服务器上进行配置，不同的服务器不一样, 需要向网络服务器或.htaccess 配置添加自定义文件类型
   - 在Apache中提供此MIME类型，在配置文件中添加一行内容：`AddType text/cache-manifest .appcache`
   - 在 Google App Engine的app.yaml文件中提供MIME类型，添加以下内容：
 
@@ -51,8 +56,8 @@ scripts/main.js
 
 清单可包括以下三个不同部分：CACHE、NETWORK 和 FALLBACK(这些部分可按任意顺序排列，且每个部分均可在同一清单中重复出现)
 
-- CACHE：这是条目的默认部分。系统会在首次下载此标头下列出的文件（或紧跟在 CACHE MANIFEST 后的文件）后显式缓存这些文件
-- NETWORK：此部分下列出的文件是需要连接到服务器的白名单资源。无论用户是否处于离线状态，对这些资源的所有请求都会绕过缓存。可使用通配符
+- CACHE：这是条目的默认部分。系统会在首次缓存此标头下列出的文件（或紧跟在 CACHE MANIFEST 后的文件）
+- NETWORK：此部分下列出的文件是需要连接到服务器的白名单资源（在此标题下列出的文件需要与服务器的链接，且不会被缓存）。无论用户是否处于离线状态，对这些资源的所有请求都会绕过缓存。可使用通配符
 - FALLBACK：此部分是可选的，用于指定无法访问资源时的后备网页。其中第一个 URI 代表资源，第二个代表后备网页。两个 URI 必须相关，并且必须与清单文件同源。可使用通配符
 
 ```shell
@@ -62,21 +67,24 @@ CACHE MANIFEST   #在第一行，且必不可少
 # Explicitly cached entries
 index.html
 css/style.css
+
 # offline.html will be displayed if the user is offline
 FALLBACK:
 / /offline.html
-# All other resources (e.g. sites) require the user to be online. 
+
+# All other resources (e.g. sites) require the user to be online. 不需要缓存的
 NETWORK:
 *
-# Additional resources to cache
-CACHE:
+
+# Additional resources to cache, 需要缓存的列表
+CACHE:  
 images/logo1.png
 images/logo2.png
 images/logo3.png
 
 # 案例2
 CACHE MANIFEST   #在第一行，且必不可少
-# 2010-06-18:v2
+# 2010-06-18:v2  #version表示当前manifest的版本，当version发生变化的时候，此时当用户再次加载的时候，会将CACHE标签下列出的所有文件重新下载一次
 # Explicitly cached 'master entries'.
 CACHE:
 /favicon.ico
@@ -85,6 +93,7 @@ stylesheet.css
 images/logo.png
 scripts/main.js
 # Resources that require the user to be online.
+
 NETWORK:
 login.php
 /myapi
@@ -92,7 +101,8 @@ http://api.twitter.com
 # static.html will be served if main.py is inaccessible
 # offline.jpg will be served in place of all images in images/large/
 # offline.html will be served in place of all other .html files
-FALLBACK:
+
+FALLBACK:  #访问缓存失败后，备用访问的资源, 第一个是访问源，第二个是替换文件
 /main.py /static.html
 images/large/ images/offline.jpg
 *.html /offline.html
@@ -153,8 +163,10 @@ switch (appCache.status) {
 ```JavaScript
 appCache.update();       // 1) Attempt to update the user's cache. 先调用 applicationCache.update()。此操作将尝试更新用户的缓存（前提是已更改清单文件）
 //...
-if (appCache.status == window.applicationCache.UPDATEREADY) {
+if(appCache.status == window.applicationCache.UPDATEREADY) {
   appCache.swapCache();  // 2) The fetch was successful, swap in the new cache.  applicationCache.status处于UPDATEREADY状态时，调用 applicationCache.swapCache()即可将原缓存换成新缓存
+}else{
+   console.log("manifest 没有改变");   //manifest文件没有变化
 }
 ```
 
@@ -175,10 +187,10 @@ window.addEventListener('load', function(e) {
       // Swap it in and reload the page to get the new hotness.
       window.applicationCache.swapCache();
       if (confirm('A new version of this site is available. Load it?')) {
-        window.location.reload();
+        window.location.reload();   //重新加载当前页面
       }
     } else {
-      // Manifest didn't changed. Nothing new to server.
+      console.log("manifest 没有改变");   // Manifest didn't changed. Nothing new to server.
     }
   }, false);
 }, false);
@@ -217,7 +229,18 @@ appCache.addEventListener('updateready', handleCacheEvent, false);
 
 [back to top](#top)
 
+**另外我们还可以通过navaigator对象的onLine属性来判断当前浏览器是否在线，该属性属于只读属性，会返回boolean类型的值**
+
+```javascript
+if(window.navigator.onLine) {
+    //在线
+} else {
+    //离线
+}
+```
+
 > Reference
 
 - [应用缓存初级使用指南](https://www.html5rocks.com/zh/tutorials/appcache/beginner/)
+- [HTML5应用程序缓存Application Cache](http://www.cnblogs.com/yexiaochai/p/4271834.html)
 - [ApplicationCache API 规范](http://www.whatwg.org/specs/web-apps/current-work/#applicationcache)
