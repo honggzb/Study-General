@@ -135,7 +135,7 @@ web worker的一些可能的使用场景:
 - transform
 - css mask
 
-常见的使用场景有: polished buttons via gradients, replicate many other effects
+常见的使用场景有: [polished buttons via gradients](http://cubiq.org/dropbox/cssgrad.html), replicate many other effects(http://www.phpied.com/css-performance-ui-with-fewer-images/)
 
 [back to top](#top)
 
