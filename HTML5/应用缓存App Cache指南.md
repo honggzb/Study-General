@@ -1,5 +1,6 @@
 [应用缓存App Cache指南](#top)
 
+- [WebView的缓存](#WebView的缓存)
 - [1. 缓存清单文件manifest](#缓存清单文件)
   - [1.1 引用清单文件](#引用清单文件)
   - [1.2 清单文件结构](#清单文件结构)
@@ -8,14 +9,31 @@
   - [2.2 更新缓存](#更新缓存)
   - [2.3 监听缓存](#监听缓存)
   - [2.4 AppCache 事件](#AppCache事件)
+  
 
-HTML5引入了应用程序缓存技术，意味着web应用可进行缓存，并在没有网络的情况下使用，通过创建cache manifest文件，可以轻松的创建离线应用, 使用缓存接口HTML5 ApplicationCache(用于存储静态资源)可为应用带来以下三个优势：
+AppCache（又称 HTML5应用缓存）可让开发人员指定浏览器应缓存哪些文件以供离线用户访问。即使用户在离线状态下按了刷新按钮，应用也会正常加载和运行。
+
+AppCache主要用于存储静态资源，在没有网络的情况下使用，通过创建cache manifest文件，可以轻松的创建离线应用, AppCache可为应用带来以下三个优势：
 
 - 离线浏览 - 用户可在离线时浏览您的完整网站
-- 速度 - 缓存资源为本地资源，因此加载速度较快。
-- 降低服务器压力(服务器负载更少) - 浏览器只会从发生了更改的服务器下载资源。
+- 速度 - 缓存资源为本地资源，因此加载速度较快
+- 降低服务器压力(服务器负载更少) - 浏览器只会从发生了更改的服务器下载资源
 
-应用缓存（又称 AppCache）可让开发人员指定浏览器应缓存哪些文件以供离线用户访问。即使用户在离线状态下按了刷新按钮，应用也会正常加载和运行。
+<h3 id="WebView的缓存">WebView的缓存</h3>
+
+- 页面缓存: 指加载一个网页时的html、JS、CSS等页面或者资源数据。这些缓存资源是由于浏览器的行为而产生，开发者只能通过配置HTTP响应头影响浏览器的行为才能间接地影响到这些缓存数据。
+  - 索引存放在/data/data/package_name/databases下
+  - 文件存放在/data/data/package_name/cache/xxxwebviewcachexxx下。文件夹的名字在2.x和4.x上有所不同，但都文件夹名字中都包含webviewcache
+- 数据缓存: 数据缓存分为两种：AppCache和DOM Storage（Web Storage）。他们是因为页面开发者的直接行为而产生。所有的缓存数据都由开发者直接完全地掌控
+  - AppCache: AppCache使我们能够有选择的缓冲web浏览器中所有的东西，从页面、图片到脚本、css等等。尤其在涉及到应用于网站的多个页面上的CSS和JavaScript文件的时候非常有用。其大小目前通常是5M。
+    - 在Android上需要手动开启（setAppCacheEnabled），并设置路径（setAppCachePath）和容量（setAppCacheMaxSize）
+    - Android中Webkit使用一个db文件来保存AppCache数据（my_path/ApplicationCache.db）
+   - DOM Storage（Web Storage）: 根据作用范围的不同，有Session Storage和Local Storage两种，分别用于会话级别的存储（页面关闭即消失）和本地化存储（除非主动删除，否则数据永远不会过期）
+     - 在Android中可以手动开启DOM Storage（setDomStorageEnabled），设置存储路径（setDatabasePath）
+     - Android中Webkit会为DOM Storage产生两个文件（my_path/localstorage/http_h5.m.taobao.com_0.localstorage和my_path/localstorage/Databases.db）
+     - 另外，在Android中清除缓存时，如果需要清除Local Storage的话，仅仅删除Local Storage的本地存储文件是不够的，内存里面有缓存数据。如果再次进入页面，Local Storage中的缓存数据同样存在。需要杀死程序运行的当前进程再重新启动才可以
+
+[back to top](#top)
 
 <h3 id="缓存清单文件">1. 缓存清单文件manifest</h3>
 
@@ -244,3 +262,4 @@ if(window.navigator.onLine) {
 - [应用缓存初级使用指南](https://www.html5rocks.com/zh/tutorials/appcache/beginner/)
 - [HTML5应用程序缓存Application Cache](http://www.cnblogs.com/yexiaochai/p/4271834.html)
 - [ApplicationCache API 规范](http://www.whatwg.org/specs/web-apps/current-work/#applicationcache)
+- [HTML 5 Web 存储 与 应用缓存](http://blog.csdn.net/bamboolsu/article/details/49885955)
