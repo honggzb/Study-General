@@ -69,8 +69,9 @@
 │   ├── Web Worker- JS多线程编程.md
 │   │   ├── Web Worker- JS多线程编程源码
 │   │   └── web-workers-demo-master.zip
+│   ├── 让web app更快的HTML5最佳实践.md
 │   └── 
-
+│
 ├── Javascript   --javascript学习过程中的小tip
 │   ├── js数据类型判断.md
 │   ├── javascript判断数组中是否包含指定元素.md
