@@ -79,7 +79,8 @@
 │   ├── avoid-loop-by-using-userdefined.md      -自定义的reduce, filter, find功能，可以避免写很多的loop
 │   ├── javascript之文件上传下载.md
 │   ├── 去掉js数组中的重复项.md
-│   └──  
+│   ├── 利用ES6新特性对数组实现的一些hack方法.md
+│   └── 
 │
 ├── Miscellaneous杂项
 │   ├── convert-octet-stream-to-image.md     - http的octex-stream类型（binary file)处理，转换为<img src="" />
