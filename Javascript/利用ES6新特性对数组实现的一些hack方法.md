@@ -157,3 +157,4 @@ let arr = [...obj];   // TypeError: Cannot spread non-iterable object  -没有it
 > Reference
 
 - [JavaScript 巧学巧用](http://www.open-open.com/lib/view/open1493174129086.html#articleHeader1)
+- [es6 扩展运算符 三个点（...）](http://blog.csdn.net/qq_30100043/article/details/53391308)
