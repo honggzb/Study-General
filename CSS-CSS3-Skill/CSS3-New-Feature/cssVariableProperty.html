@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css variable</title>
+  <style>
+  :root {  
+    --tx: 0;
+    --ty: 0;
+    --tz: 0;
+    --rx: 0deg;
+    --ry: 0deg;
+    --rz: 0deg;
+    --sx: 1;
+    --sy: 1;
+    --sz: 1;
+  }
+  
+  li {
+    --h: 220;
+    --duration: 2000ms;
+    
+    width: 10vmin;
+    height: 10vmin;
+    width: 10vmax;
+    height: 10vmax;
+    background: hsl(var(--h), 80%, 50%);
+    backface-visibility: visible;
+    will-change: transform;
+    
+    transform: translate3d(var(--tx), var(--ty), var(--tz)) rotateX(var(--rx)) rotateY(var(--ry)) rotateZ(var(--rz)) scale(var(--sx));
+    
+    transition: transform var(--duration, 1200ms) linear;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+  }
+  
+  
+  @supports ((clip-path: polygon(50% 0%, 100% 25%)) or (-webkit-clip-path: polygon(50% 0%, 100% 25%))) {
+    li {
+      -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+  /*  
+    @media all and (orientation: landscape) {
+      ul:nth-of-type(1) {
+        transform: translateY(6vmax)
+      }
+      ul:nth-of-type(2) {
+        transform: translateY(4vmax)
+      }
+      ul:nth-of-type(3) {
+        transform: translateY(2vmax)
+      }
+      ul:nth-last-of-type(1) {
+        transform: translateY(-6vmax)
+      }
+      ul:nth-last-of-type(2) {
+        transform: translateY(-4vmax)
+      }
+      ul:nth-last-of-type(3) {
+        transform: translateY(-2vmax)
+      }
+    }
+    */
+  }
+  
+  
+  
+  
+  
+  
+  body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #16161c;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  main {
+    animation: fade-it-on-in 1200ms 0ms 1 forwards ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media all and (orientation: landscape) {
+    main {
+      flex-direction: column;
+    }
+    ul {
+      flex-direction: row;
+    }
+  }
+  @keyframes fade-it-on-in {
+    0% {
+      opacity: 0;
+    }
+  }
+  a {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%,0%);
+    color: white;
+    z-index: 10;
+    font-size: .8rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    padding: 1rem;
+  }
+  a:hover, a:active {
+    background: rgba(255, 255, 255, .15);
+  }
+  a:focus {
+    border: 1px solid rgba(255, 255, 255, .25);
+  }
+  </style>
+</head>
+<body>
+<main>
+  <ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+</main>
+<script>
+var lis = Array.from(document.querySelectorAll('li'));
+
+var hueDifference = 32;
+var hueOffset = 0;
+
+lis.forEach(function(li) {
+  var slowness = Math.random() * 1860 + 2000;
+  li.style.setProperty('--h', Math.floor(Math.random() * hueDifference) + hueOffset);
+  li.style.setProperty('--duration', Math.floor(slowness) + 'ms');
+});
+
+var style = document.documentElement.style;
+var interval = 2400;
+
+var variations = {
+  tx: function() { 
+    style.setProperty('--tx', (Math.random() * 10 - 5) + 'vmin'); 
+  },
+  ty: function() { 
+    style.setProperty('--ty', (Math.random() * 10 - 5) + 'vmin'); 
+  },
+  tz: function() { 
+    style.setProperty('--tz', (Math.random() * 10 - 5) + 'vmin'); 
+  },
+  rx: function() { 
+    style.setProperty('--rx', (Math.random() * 720 - 360) + 'deg'); 
+  },
+  ry: function() { 
+    style.setProperty('--ry', (Math.random() * 170 - 85) + 'deg'); 
+  },
+  rz: function() { 
+    style.setProperty('--rz', (Math.random() * 170 - 85) + 'deg'); 
+  },
+  sx: function() { 
+    style.setProperty('--sx', (Math.random() * .5) + .5); 
+  },
+  startOne: function(delay, fn) {
+    setTimeout(function() {
+      fn();
+      setInterval(function() {
+        fn();
+      }, interval);
+    }, delay);
+  }
+}
+
+variations.startOne(600, variations.tx);
+variations.startOne(1000, variations.ty);
+variations.startOne(1400, variations.tz);
+variations.startOne(1800, variations.rz);
+variations.startOne(2000, variations.ry);
+variations.startOne(2200, variations.rx);
+variations.startOne(2400, variations.sx);
+
+
+function changeHue() {
+  hueOffset = Math.random() * (360);
+
+  lis.forEach(function(li) {
+    li.style.setProperty('--h', Math.floor(Math.random() * hueDifference) + hueOffset);
+  });
+}
+document.body.addEventListener('click', changeHue);
+document.body.addEventListener('touchend', changeHue);
+
+/*
+setInterval(function() {
+  style.setProperty('--sx', 1); 
+  style.setProperty('--tx', 0); 
+  style.setProperty('--ty', 0); 
+  style.setProperty('--tz', 0); 
+  style.setProperty('--rx', 0); 
+  style.setProperty('--ry', 0); 
+  style.setProperty('--rz', 0); 
+}, Math.random() * 15000 + 30000);
+*/
+</script>
+</body>
+</html>
