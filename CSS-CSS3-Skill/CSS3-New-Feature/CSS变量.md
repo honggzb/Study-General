@@ -590,6 +590,11 @@ function freeJump() {
 </html>
 ```
 
+> Note: calc() does not always work as expected across the browsers
+
+- [the differences in browser support for calc](https://codepen.io/thebabydino/pen/wfraH)
+- [simplified calc use cases](https://codepen.io/danwilson/pen/ZKbxRv)
+
 [back to top](#top)
 
 > Reference
