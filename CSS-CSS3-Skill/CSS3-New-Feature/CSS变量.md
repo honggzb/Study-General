@@ -1,6 +1,4 @@
-##Bridging CSS and JS with Custom Properties
-
--- [top](#top)
+[Bridging CSS and JS with Custom Properties](#top)
 
 - [1. CSS variable](#CSS-variable)
   - [1.1 CSS变量var()语法和用法](#CSS变量var语法和用法)
@@ -13,6 +11,11 @@
 
 <h3 id="CSS-variable">1. CSS variable</h3>
 
+unique abilities of Custom Properties
+
+- cascade
+- the ability to modify values with Javascript
+
 <h4 id="CSS变量var语法和用法">1.1 CSS变量var()语法和用法</h4>
 
 - CSS中原生的变量定义语法是： `--*`
@@ -23,6 +26,31 @@ body {
   --深蓝: #369;
   background-color: var(--深蓝);
 }
+//cascading using
+.view { 
+  transform: 
+    translateX(var(--tx, 0))
+    rotate(var(--deg, 0))
+    scale(var(--scale, 1))
+    translateY(var(--ty, 0));
+}
+.view.activated {
+  --tx: 10vmin;
+  --deg: 90deg;
+}
+.view.minimize {
+  --scale: .8;
+}
+.view.priority {
+  --ty: 10vmin;
+}
+//working with calc()
+.colorful {
+  --translation: 10;
+  transform: 
+    translateX(calc(var(--translation) * 1vw))
+    translateY(calc(var(--translation) * 1vh));
+  filter: hue-rotate(calc(var(--translation) * 4.5deg));
 ```
 
 <h4 id="CSS变量的空格尾随特性">1.2 CSS变量的空格尾随特性</h4>
@@ -287,3 +315,4 @@ for (let el of backgroundList) {
 - [小tips:了解CSS/CSS3原生变量var](http://www.zhangxinxu.com/wordpress/2016/11/css-css3-variables-var/comment-page-1/)
 - [深入学习CSS自定义属性（CSS变量）](http://www.w3cplus.com/css3/css-properties-in-depth.html?utm_source=tuicool&utm_medium=referral)
 - [Communicating Between JavaScript and CSS Using CSS Variables](https://eager.io/blog/communicating-between-javascript-and-css-with-css-variables/)
+- [Making Custom Properties (CSS Variables) More Dynamic](https://css-tricks.com/making-custom-properties-css-variables-dynamic/)
