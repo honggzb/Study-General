@@ -5,9 +5,14 @@
   - [1.2 CSS变量的空格尾随特性](#CSS变量的空格尾随特性)
   - [1.3 CSS变量的相互传递特性  ---`variable-name: var(--another-variable-name);`](#CSS变量的相互传递特性)
   - [1.4 CSS变量的作用域](#CSS变量的作用域)
-  - [1.5 在JS中使用原生属性](#在JS中使用原生属性)
+    - CSS变量与响应式布局实例demo
+  - [1.5 在JS中使用原生属性](#在JS中使用原生属性)
+    - 案例1： 显示当前设备类型
+    - 案例2：改变元素颜色
 - [2. Passing values between CSS and JavaScript](#Passing-values-between-CSS-and-JavaScript)
+  - 例子: 鼠标跟随
 - [3. One variable, many changes](#One-variable-many-changes)
+- [4. working with calc()](#working-with-calc)
 
 <h3 id="CSS-variable">1. CSS variable</h3>
 
@@ -304,6 +309,285 @@ const backgroundList = document.querySelectorAll('.js-update-background');
 for (let el of backgroundList) {
   el.style.setProperty('background-color', newColor);
 }
+```
+
+[back to top](#top)
+
+<h3 id="working-with-calc">4. working with calc()</h3>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css variable</title>
+  <style>
+  :root {
+    --translation: 0;
+  }
+  .colorful {
+    transform: 
+      translateX(calc(var(--translation) * 1vw))
+      translateY(calc(var(--translation) * 1vh));/*
+      rotate(calc(var(--translation) * .025turn));*/
+    filter: hue-rotate(calc(var(--translation) * 4.5deg));
+    
+    transition: transform 5000ms ease-in-out, filter 5000ms linear;
+    
+    width: 10vmin;
+    height: 10vmin;
+    border-radius: 2.5vmin;
+    background: hsl(0, 50%, 50%);
+    will-change: transform, filter;
+  }
+  .go {
+    --translation: 80;
+  }
+  body {
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    background: hsl(0, 50%, 12%);
+  }
+  </style>
+</head>
+<body>
+<div class="colorful"></div>
+<script>
+  var colorful = document.querySelector('.colorful');
+  colorful.addEventListener('transitionend', function(e){
+    if(e.propertyName == 'transform'){
+      document.documentElement.classList.toggle('go');
+    }
+  });
+  setTimeout(function(){
+    document.documentElement.classList.add('go');
+  }, 10);
+</script>
+</body>
+</html>
+```
+
+**use unitless variables + calc to vary rotations and easings in relation to one another**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css variable</title>
+  <style>
+  :root {
+    /* transform properties that will be updated via JS */
+    --x: 0;
+    --y: 0;
+    --z: 0;
+    --r: 0deg;
+    --rotation: var(--r);
+    --scale: .875;
+    /* the four separat parts of the x and y cubic beziers */
+    --cubic1-1: .85;
+    --cubic1-2: .18;
+    --cubic1-3: .44;
+    --cubic1-4: 1.2;
+    --cubic2-1: .75;
+    --cubic2-2: -0.35;
+    --cubic2-3: 0;
+    --cubic2-4: .9;
+    /* if advanced calc is supported, this will be used to give an additional easing variance to each item in the stack */
+    --cubic1-change: 1;
+    --cubic2-change: 1;
+    /*treated like Sass/LESS variables */
+    --primary: hsl(156, 70%, 60%);
+    --secondary: hsl(203, 70%, 60%);
+    --dim: 6vmin;
+    --duration: 3200ms;
+  }
+  span, p, b, i {
+    display: block;
+    width: var(--dim);
+    height: var(--dim);
+    border-radius: 10%;
+    background: var(--primary);
+  }
+  .x:nth-of-type(2n + 2) .r {
+    background: var(--secondary);
+  }
+  div {
+    will-change: transform;
+    transition: transform var(--duration) ease-in-out;
+  }
+  .x {
+    transform: translateX(calc(var(--x) * 1px));
+    transition-timing-function: cubic-bezier(.85,.18,.44,1.2);
+    transition-timing-function: cubic-bezier(var(--cubic1-1),var(--cubic1-2),var(--cubic1-3),var(--cubic1-4));
+    position: absolute;
+  }
+  .advanced-calc .x {
+    transition-timing-function: 
+      cubic-bezier(
+        calc(var(--cubic1-1) * var(--cubic1-change)),
+        calc(var(--cubic1-2) * var(--cubic1-change)),
+        calc(var(--cubic1-3) * var(--cubic1-change)),
+        calc(var(--cubic1-4) * var(--cubic1-change)));
+  }
+  .y {
+    transform: translateY(calc(var(--y) * 1px));
+    transition-timing-function: cubic-bezier(.75,-0.35,.07,.9);
+    transition-timing-function: cubic-bezier(var(--cubic2-1),var(--cubic2-2),var(--cubic2-3),var(--cubic2-4));
+  }
+  .advanced-calc .y {
+    transition-timing-function: 
+      cubic-bezier(
+        calc(var(--cubic2-1) * var(--cubic2-change)),
+        calc(var(--cubic2-2) * var(--cubic2-change)),
+        calc(var(--cubic2-3) * var(--cubic2-change)),
+        calc(var(--cubic2-4) * var(--cubic2-change)));
+  }
+  .z {
+    transform: translateZ(calc(var(--z) * 1px));
+    transition-timing-function: ease-in-out;
+  }
+  .r {
+    transform: translate3d(-50%, -50%, 0) scale(var(--scale));
+    transform: translate3d(-50%, -50%, 0) scale(var(--scale)) rotate(var(--rotation));
+    transition: transform 1200ms ease-in-out;
+  }
+  /* give an extra amount of spin to different elements */
+  .advanced-calc b.r {
+    --rotation: calc(var(--r) * .5);
+  }
+  .advanced-calc p.r {
+    --rotation: calc(var(--r) * 1.5);
+  }
+  body {
+    min-height: 100vh;
+    overflow: hidden;
+    background: hsl(203, 28%, 12%);
+    perspective: 1000px;
+    perspective-origin: center center;
+  }
+  </style>
+</head>
+<body>
+  <div class="z">
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+    <div class="x"><div class="y"><span class="r"></span></div></div>
+    <div class="x"><div class="y"><b class="r"></b></div></div>
+  </div>
+<script>
+//Determine if we can use unitless variables + calc to vary rotations and easings in relation to one another
+document.documentElement.classList.add(isCalcSupported() ? 'advanced-calc' : 'basic-calc');
+//All Items are stacked on top of each other with absolute positioning, make the front element the smallest scale. This function also sets up the relational cubic bezier offset. That is what sets up the additional motion effect in Chrome/Opera/Safari.
+setupItems();
+//Perform action on press end
+if (window.PointerEvent) {
+  document.body.addEventListener('pointerup', jumpFromInteraction);
+} else {
+  document.body.addEventListener('mouseup', jumpFromInteraction);
+  document.body.addEventListener('touchend', jumpFromInteraction);
+}
+var style = document.documentElement.style;
+function jumpFromInteraction(e) {
+  if (beforeInteractionInterval) {
+    clearInterval(beforeInteractionInterval);
+    beforeInteractionInterval = undefined;
+  }
+  jump(e);
+}
+//Translate to the new point and rotate a randomized amount
+function jump(e) {
+  var x = e.clientX || e.changedTouches[0].clientX;
+  var y = e.clientY || e.changedTouches[0].clientY;
+  var r = Math.random() * 720 - 360;
+  style.setProperty('--x', x);
+  style.setProperty('--y', y);
+  style.setProperty('--r', r + 'deg');
+  changeEasing();
+}
+//Change the four points of the cubic-bezier to up the non-linear ante
+function changeEasing() {
+  style.setProperty('--cubic1-1', part(.8, .15));
+  style.setProperty('--cubic1-2', part(.1, .2));
+  style.setProperty('--cubic1-3', part(.35, .25));
+  style.setProperty('--cubic1-4', part(1, .25));
+  
+  style.setProperty('--cubic2-1', part(.7, .15));
+  style.setProperty('--cubic2-2', part(-.35, .35));
+  style.setProperty('--cubic2-3', part(0, .1));
+  style.setProperty('--cubic2-4', part(.8, .2));
+}
+function part(min, offset) {
+  return Math.random() * offset + min;
+}
+//each square has a slightly offset scale and cubic-bezier multiplier that builds on the previous element.  When the cubic bezier is randomized on each press, each element will multiply each part of the cubic bezier by its cubic-change offset defined here.
+function setupItems() {
+  var items = document.querySelectorAll('.x');
+  var l = items.length;
+  for (var i = 0; i < l; ++i) {
+    items[i].style.setProperty('--cubic1-change', .5 + i * .5/l);
+    items[i].style.setProperty('--cubic2-change', 1 - i * .5/l);
+    items[i].style.setProperty('--scale', 1 - i * .5/l);
+  }
+}
+
+//Support functions
+function isCalcSupported() {
+  document.body.style.transitionTimingFunction = 'cubic-bezier(calc(1 * 1),1,1,1)';
+  return getComputedStyle(document.body).transitionTimingFunction != 'ease';
+}
+//Do automatic animations while waiting for viewer to interact
+setTimeout(freeJump,100);
+var beforeInteractionInterval = setInterval(freeJump, 3200);
+var freeJumpCount=0;
+function freeJump() {
+  jump({
+    clientX: Math.floor(((freeJumpCount) % 4 < 2 ? (Math.random() * .3 + .7) : (Math.random() * .4 + .01)) * window.innerWidth),
+    clientY:  Math.floor(((freeJumpCount++) % 2 == 0 ? (Math.random() * .2 + .8) : (Math.random() * .2 + .01)) * window.innerHeight)
+  });
+}
+</script>
+</body>
+</html>
 ```
 
 [back to top](#top)
