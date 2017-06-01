@@ -1,7 +1,7 @@
 [webpack 2 Study](#top)
 
 - [1 Webpack简介- 模块化- Module System](#模块化)
-- [2 Basic](Basic)
+- [2 Basic using](Basic)
 	- [2.1 using command line](#command-line)
 	- [2.2 using `webpack.config.js`](#webpack-config)
 - [3 运行 webpack](#运行-webpack)
@@ -64,7 +64,7 @@ module.exports = {
 
 [back to top](#top)
 
-<h3 id="Basic">2. Basic</h3>
+<h3 id="Basic">2. Basic Using</h3>
 
 ```shell
 npm install webpack --save-dev   #install locally
@@ -82,12 +82,14 @@ webpack ./app.js bundle.js
 <h4 id="webpack-config">2.2 using `webpack.config.js`</h4>
 
 ```javascript
+var path = require('path');
 module.exports = {
-  entry: "./app.js",
+  entry: './app/index.js',
   output: {
-    filename: "bundle.js"
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
   }
-}
+};
 ```
 
 [back to top](#top)
