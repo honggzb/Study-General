@@ -1,12 +1,6 @@
 [webpack 2 Study](#top)
 
-- Combining Files
-- Minfying files
-- Maintaining File order
-- Transpilation
-- Linting
-
-- [1 模块化- Module System](#模块化)
+- [1 Webpack简介- 模块化- Module System](#模块化)
 - [2 Basic](Basic)
 	- [2.1 using command line](#command-line)
 	- [2.2 using `webpack.config.js`](#webpack-config)
@@ -31,7 +25,13 @@
 	- [7.3 不同的common模块](#不同的common模块)
 	- [7.4 使用CDN/远程文件](#使用CDN/远程文件)
 
-<h3 id="模块化">1. 模块化-Using a Module System</h3>
+<h3 id="模块化">1. Webpack简介- 模块化- Module System</h3>
+
+- Combining Files
+- Minfying files
+- Maintaining File order
+- Transpilation
+- Linting
 
 **所有资源都是模块**
 
