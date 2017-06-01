@@ -1,12 +1,10 @@
-Function
+[webpack 2 Study](#top)
 
 - Combining Files
 - Minfying files
 - Maintaining File order
 - Transpilation
 - Linting
-
-[Index](top)
 
 - [1 模块化- Module System](#模块化)
 - [2 Basic](Basic)
@@ -33,7 +31,7 @@ Function
 	- [7.3 不同的common模块](#不同的common模块)
 	- [7.4 使用CDN/远程文件](#使用CDN/远程文件)
 
-<h3 id="模块化">1 模块化-Using a Module System</h3>
+<h3 id="模块化">1. 模块化-Using a Module System</h3>
 
 **所有资源都是模块**
 
@@ -69,7 +67,7 @@ module.exports = {
 
 [back to top](#top)
 
-<h3 id="Basic">2 Basic</h3>
+<h3 id="Basic">2. Basic</h3>
 
 `npm install webpack -g`
 
@@ -580,6 +578,7 @@ module.exports = {
 
 > references
 
+- [offical tutorial](https://webpack.js.org/guides/get-started)
 - [webpack入门指谜](http://segmentfault.com/a/1190000002551952)
 - [Setting up React for ES6 with Webpack and Babel](https://www.twilio.com/blog/2015/08/setting-up-react-for-es6-with-webpack-and-babel-2.html)
 - [一小时包教会 —— webpack 入门指南](http://www.cnblogs.com/vajoy/p/4650467.html)
