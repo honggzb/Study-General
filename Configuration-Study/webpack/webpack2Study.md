@@ -44,9 +44,6 @@ Webpack处理后，输出的静态文件只剩下js与png，而css、less、jade
 - 切分点（split point）: 切分点定义中依赖的所有模块，合起来就是一个代码块。说白了就是，一个页面引用一个代码块
 - 代码块（Chunk）
 
-![](3188713104-55dd140d36f0a_articlex.png)
-![](3188713104-55dd140d36f0a_articlex2.png)
-
 ```javascript
 var path = require("path");
 var CommonsChunkPlugin = require("../../node_modules/webpack/lib/optimize/CommonsChunkPlugin");
@@ -69,7 +66,10 @@ module.exports = {
 
 <h3 id="Basic">2. Basic</h3>
 
-`npm install webpack -g`
+```shell
+npm install webpack --save-dev   #install locally
+npm install webpack -g           #install globally
+```
 
 <h4 id="command-line">2.1 using command line</h4>
 
