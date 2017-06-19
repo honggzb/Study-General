@@ -44,8 +44,11 @@ let newArr3 = arr3.map((e, i) => e * 10); // 给数组每一项乘以10, [10, 20
 <h3 id="保留或移除当前项">4. 利用filter()保留或移除当前项并生成一个新的数组</h3>
 
 ```javascript
-let arr3 = [1, 2, 3, 4, 5];
-let newArr3 = arr3.map((e, i) => e * 10); // 给数组每一项乘以10, [10, 20, 30, 40, 50]
+var r,arr = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
+r=arr.filter(function(element,index,self){
+    return self.indexOf(element) == index;     //indexOf只返回元素在数组中第一次出现的位置，如果与元素位置不一致，说明该元素在前面已经出现过，是重复元素
+})
+console.log(r.toString());
 ```
 
 [back to top](#top)
