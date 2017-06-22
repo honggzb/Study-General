@@ -1,9 +1,9 @@
-## js控制css伪元素内容（before，after）
+## [js控制css伪元素内容（before，after）](#top)
 
 - [一、伪元素](#伪元素)
 - [二、Javascript获取CSS伪元素属性](#Javascript获取CSS伪元素属性)
 - [三. 更改伪元素的样式](#更改伪元素的样式)
-  - [方法1. 更换class来实现伪元素属性值的更改](#更换class来实现伪元素属性值的更改)
+  - [方法1. 用class名来重写样式- (简单粗暴)更换class来实现伪元素属性值的更改](#更换class来实现伪元素属性值的更改)
   - [方法2. 使用CSSStyleSheet的insertRule来为伪元素修改样式](#使用CSSStyleSheet的insertRule来为伪元素修改样式)
   - [方法3. 在head标签中插入style的内部样式](#在head标签中插入style的内部样式)
 - [四、修改伪元素的content的属性值](#修改伪元素的content的属性值)
@@ -14,8 +14,9 @@
   - [5.2 清除浮动](#清除浮动)
   - [5.3 特效妙用](#特效妙用)
   - [5.4 特殊形状的实现](#特殊形状的实现)
-  - [5.5 需要修改伪元素的content属性，使用attr函数，伪元素的content属性支持这个方法](#需要修改伪元素的content属性)
-  
+  - [5.5 需要修改伪元素的content属性，使用attr函数，伪元素的content属性支持这个方法](#需要修改伪元素的content属性)
+- [六、自定义功能](#自定义功能)
+
 <h3 id="伪元素">一、伪元素</h3>
 
 伪元素有六个，分别是 `::after、::before、::first-line、::first-letter、::selection、::backdrop`, 在各大网页中最常用的伪元素，是`::after`和`::before`。
@@ -49,9 +50,26 @@ getPropertyValue()方法在IE9+和其他现代浏览器中都支持；在IE6~8�
 
 <h3 id="更改伪元素的样式">三. 更改伪元素的样式</h3>
 
-<h4 id="更换class来实现伪元素属性值的更改">方法1. 更换class来实现伪元素属性值的更改</h4>
+<h4 id="更换class来实现伪元素属性值的更改">方法1. 用class名来重写样式- (简单粗暴)更换class来实现伪元素属性值的更改</h4>
 
 ```html
+<style>
+p:after{content:'我是后缀'}
+p.change{content:'我是修改过的后缀'}
+</style>
+<!--  -->
+<style>
+span.change:after { content: 'bar' }
+</style>
+<span>example</span>
+<hr />
+<button>change</button>
+<script>
+v$('button').click(function(){
+    $('span').addClass('change');
+});
+</script>
+<!--  -->
 <style>
   .red::before { content: "red"; color: red; }
   .green::before { content: "green"; color: green;}
@@ -81,6 +99,24 @@ sheet.insertRule('.red::before { color: green }', 0); // 支持非IE的现代浏
 $('<style>.red::before{color:green}</style>').appendTo('head');
 ```
 
+```javascript
+<div class="htmlbox_close"></div>
+var str = window.getComputedStyle($('.htmlbox_close')[0], '::before').getPropertyValue('top');
+    console.log(str);
+document.styleSheets[0].addRule('.htmlbox_close::before', 'top:100px');
+document.styleSheets[0].insertRule('.htmlbox_close::before { top:100px }', 0);
+document.styleSheets[0].addRule('.htmlbox_close::after', 'top:100px');
+document.styleSheets[0].insertRule('.htmlbox_close::before { top:100px }', 0);
+var str = window.getComputedStyle($('.htmlbox_close')[0], '::before').getPropertyValue('top');
+//firefox浏览器不支持addRule()方法，IE8-浏览器不支持insertRule()方法。兼容写法
+function insertRule(sheet,ruleKey,ruleValue,index){
+    　　return sheet.insertRule ? sheet.insertRule(ruleKey+ '{' + ruleValue + '}',index) : sheet.addRule(ruleKey,ruleValue,index);
+} 
+insertRule(document.styleSheets[0],'#box:before','content:"前缀";color: red;',0)
+```
+
+> [缺点]该方法必须有内部<style>或用<link>链接外部样式，否则若不存在样式表，则document.styleSheets为空列表，则报错
+
 [back to top](#top)
 
 <h3 id="修改伪元素的content的属性值">四、修改伪元素的content的属性值</h3>
@@ -104,6 +140,18 @@ var formerContent = window.getComputedStyle($('.red'), '::before').getPropertyVa
 <div class="red" data-attr="red">内容内容内容内容</div>
 <script>
   $('.red').attr('data-attr', 'green');
+</script>
+```
+
+如果有频繁的切换，进化版- 利用css中，伪元素的content是读取到data属性
+
+```html
+<style>
+p:after{content: attr(data-content);}
+p.change:after{content: attr(data-content);}
+</style>
+<script>
+$(this).addClass('change').attr('data-content', content);
 </script>
 ```
 
@@ -302,6 +350,50 @@ The whole example
 }( jQuery ));
 ```
 
+[back to top](#top)
+
+<h3 id="自定义功能">六、自定义功能</h3>
+
+```html
+<!DOCTYPE html>
+<title>CSS</title>
+<style>
+    body {
+        font: 200%/1.45 charter;
+    }
+    ref::before {
+        content: '\00A7';
+        letter-spacing: .1em;
+    }
+</style>
+<article>The seller can, under Business Law <ref>1782</ref>, offer a full refund to buyers. </article>
+<script>
+    function ruleSelector(selector) {
+        function uni(selector) {
+            return selector.replace(/::/g, ':')
+        }
+        return Array.prototype.filter.call(Array.prototype.concat.apply([], Array.prototype.map.call(document.styleSheets, function(x) {
+            return Array.prototype.slice.call(x.cssRules);
+        })), function(x) {
+            return uni(x.selectorText) === uni(selector);
+        });
+    }
+    var toggle = false, pseudo = ruleSelector("ref::before").slice(-1);
+    document.querySelector("article").onclick = function() {
+        pseudo.forEach(function(rule) {
+            if (toggle = !toggle)
+                rule.style.color = "red";
+            else
+                rule.style.color = "black";
+        });
+    }
+</script>
+```
+
 > Reference
 
--[JS控制伪元素的方法汇总](http://www.jb51.net/article/81984.htm)
+- [JS控制伪元素的方法汇总](http://www.jb51.net/article/81984.htm)
+- [如何用js控制css伪类after](https://segmentfault.com/q/1010000002452755)
+- [js设置before和after伪元素效果的方法总结](http://www.111cn.net/wy/js-ajax/98445.htm)
+- https://stackoverflow.com/questions/9798210/is-there-any-way-to-reset-after-before-css-rules-for-an-element
+- http://jsfiddle.net/1dw7h4s3/
