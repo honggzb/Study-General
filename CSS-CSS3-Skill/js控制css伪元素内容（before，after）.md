@@ -9,13 +9,14 @@
 - [四、修改伪元素的content的属性值](#修改伪元素的content的属性值)
   - [方法1. 使用CSSStyleSheet的insertRule来为伪元素修改样式](#使用CSSStyleSheet的insertRule来为伪元素修改样式)
   - [方法2. 使用DOM元素的`data-*`属性来更改content的值](#使用DOM元素的data属性来更改content的值)
-- [五、:before和:after伪元素的常见用法总结)](#before和after伪元素的常见用法总结)
+  - [方法3. 自定义功能](#自定义功能)
+- [五、`:before`和`:after`伪元素的常见用法总结)](#before和after伪元素的常见用法总结)
   - [5.1 利用content属性，为元素添加内容修饰](#利用content属性，为元素添加内容修饰)
-  - [5.2 清除浮动](#清除浮动)
+  - [5.2 用于清除浮动](#清除浮动)
   - [5.3 特效妙用](#特效妙用)
-  - [5.4 特殊形状的实现](#特殊形状的实现)
+  - [5.4 特殊形状的实现- 对话气泡](#特殊形状的实现)
   - [5.5 需要修改伪元素的content属性，使用attr函数，伪元素的content属性支持这个方法](#需要修改伪元素的content属性)
-- [六、自定义功能](#自定义功能)
+  - [5.6 调用计数器](#调用计数器)
 
 <h3 id="伪元素">一、伪元素</h3>
 
@@ -175,12 +176,14 @@ h:before { counter-increment: chapter; content: "Chapter " counter(chapter) ". "
 
 <h4 id="清除浮动">5.2 清除浮动</h4>
 
+清除浮动是一个时常会遇到的问题，不少人的解决办法是添加一个空的 div 应用 clear:both; 属性。现在，无需增加没有意义的元素，仅需要以下样式即可在元素尾部自动清除浮动：
+
 ```css
-.clear-fix { *overflow: hidden; *zoom: 1; }
+.clear-fix { *overflow: hidden; *zoom: 1; }   /**IE 兼容写法*/
 .clear-fix:after { display: table; content: ""; width: 0; clear: both; }
 ```
 
-<h4 id="清除浮动">5.3 特效妙用</h4>
+<h4 id="特效妙用">5.3 特效妙用</h4>
 
 ```css
 a {
@@ -203,9 +206,13 @@ a:hover::after { content: "\5D"; right: -20px; }
 /*HTML代码
 <a href="#">我是个超链接</a>
 */
+/*调用引号字符open-quote close-quote*/
+.demo:before{ content: open-quote; }
+.demo:after{ content: close-quote; }
+/*HTML代码   <div class="demo"></div>   */
 ```
 
-<h4 id="特殊形状的实现">5.4 特殊形状的实现</h4>
+<h4 id="特殊形状的实现">5.4 特殊形状的实现- 对话气泡</h4>
 
 ```css
 .tooltip {
@@ -272,6 +279,8 @@ document.querySelector("article").onclick = function() {
 }
 </script>
 ```
+
+[back to top](#top)
 
 <h4 id="需要修改伪元素的content属性">5.5 需要修改伪元素的content属性，使用attr函数，伪元素的content属性支持这个方法</h4>
 
@@ -351,6 +360,41 @@ The whole example
 ```
 
 [back to top](#top)
+
+<h4 id="调用计数器">5.6 调用计数器</h4>
+
+- counter-increment属性递增一个或多个计数器值。 
+- counter-increment属性通常用于counter-reset属性和content属性。 
+- counter相当于一个变量，根据css规则的增加一跟踪使用次数； 
+- counter-reset重置计数器默认值； 
+- counter-increment增加计数器； 
+- counter()和counters()获取计数；用于增加计数值，默认的步长值是”1″，同样我们可以改变它，如counter-increment:photocount 2;定义步长为2
+
+如对部分和子部分进行编号:  
+
+```html
+<style>
+body {counter-reset:section;}
+h1 {counter-reset:subsection;}
+h1:before{ 
+    counter-increment:section;
+    content:"Section " counter(section) ". ";
+}
+h2:before {
+    counter-increment:subsection;
+    content:counter(section) "." counter(subsection) " ";
+}
+</style>
+<body>
+<p><b>Note:</b> IE8 supports these properties only if a !DOCTYPE is specified.</p>
+<h1>HTML tutorials</h1>
+<h2>HTML Tutorial</h2>
+<h2>XHTML Tutorial</h2>
+<h2>CSS Tutorial</h2>
+<h1>Scripting tutorials</h1>
+<h2>JavaScript</h2>
+<h2>VBScript</h2>
+```
 
 <h3 id="自定义功能">六、自定义功能</h3>
 
