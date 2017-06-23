@@ -13,7 +13,8 @@
 │   │     ├── CSS选择器中的正则表达式.md
 │   │     ├── 自动聚焦输入框纯CSS实现SimulateInputFocus.md - focus输入框的时候，外面容器的灰色边框要高亮(不使用JavaScript,纯CSS实现)
 │   │     ├── 中文或英文两端对齐.md
-│   │     └── CSS3利用伪元素与伪类自定义滚动条样式
+│   │     ├── 纯CSS实现垂直居中总结.md
+│   │     └── CSS3利用伪元素与伪类自定义滚动条样式.md
 │   ├──  CSS3-New-Feature新功能
 │   │     ├── CSS变量.md
 │   │     ├── CSS3超高校级好用CSS变量-currentColor.md
