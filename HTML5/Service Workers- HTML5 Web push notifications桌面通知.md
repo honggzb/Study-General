@@ -45,6 +45,9 @@ interface Notification : EventTarget {
 - createHTMLNotification - 该方法类似于 createNotification ，若页面有权限显示 notification 它会返回一个相关的对象。该方法使用了一个 URL 参数来加载要显示的 HTML 内容。
 - checkPermission - 该方法返回该页面使用 notification 的整形权限值。PERMISSION_ALLOWED = 0, PERMISSION_NOT_ALLOWED = 1, 或者 PERMISSION_DENIED = 2
 - requestPermission - 该方法将向用户请求询问显示提示框的权限
+	- default 用户没有接收或拒绝授权请求 不能显示通知  
+	- granted 用户接受授权请求 允许显示通知  
+	- denied  用户拒绝授权请求 不允许显示通知 
 
 ```javascript
 interface NotificationCenter {  
@@ -78,8 +81,7 @@ interface Window {
  function browser_support_notification(){
      return window.webkitNotifications;
  }
- function request_permission()  
-{  
+ function request_permission(){  
     // 0 means we have permission to display notifications  
     if (window.webkitNotifications.checkPermission() == 0) {  
         window.webkitNotifications.createNotification();  
