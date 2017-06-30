@@ -1,16 +1,50 @@
 [Service Workers- HTML5 Web push notifications桌面通知](#top)
 
-- [1. Notification API](#Notification-API)
-  - [1.1 Notification 对象](#Notification-对象)
-  - [1.2 NotificationCenter 接口](#Notification-接口)
+- [1. Service Worker](#Service-Worker)
+  - [1.1 Service Worker的生命周期](#生命周期)
+  - [1.2 chaches polyfill+HTTPS的支持 - 写码之前](#chaches-polyfill)
+- [2. Notification API](#Notification-API)
+  - [2.1 Notification 对象](#Notification-对象)
+  - [2.2 NotificationCenter 接口](#Notification-接口)
 - [2. 检查浏览器是否支持 Notification](#检查浏览器是否支持Notification)
+- [3. 使用Service Worker](#使用Service-Worker)
 
-<h3 id="Notification-API">1. Notification API</h3>
+<h3 id="Service-Worker">1. Service Worker</h3>
+
+<h4 id="生命周期">1.1 Service Worker的生命周期</h4>
+
+Service worker拥有一个完全独立于Web页面的生命周期。
+
+- 要让一个service worker在网站上生效，需先在你的网页中注册它。注册一个service worker之后，浏览器会在后台默默启动一个service worker的安装过程。
+- 在安装过程中，浏览器会加载并缓存一些静态资源。如果所有的文件被缓存成功，service worker就安装成功了。如果有任何文件加载或缓存失败，那么安装过程就会失败，service worker就不能被激活（也即没能安装成功）。如果发生这样的问题，别担心，它会在下次再尝试安装。
+- 当安装完成后，service worker的下一步是激活，在这一阶段，你还可以升级一个service worker的版本
+- 在激活之后，service worker将接管所有在自己管辖域范围内的页面，但是如果一个页面是刚刚注册了service worker，那么它这一次不会被接管，到下一次加载页面的时候，service worker才会生效。
+- 当service worker接管了页面之后，它可能有两种状态：要么被终止以节省内存，要么会处理fetch和message事件，这两个事件分别产生于一个网络请求出现或者页面上发送了一个消息。
+
+下图是一个简化了的service worker初次安装的生命周期：
+
+![](http://i.imgur.com/GNZidTA.png)
+
+[back to top](#top)
+
+<h4 id="chaches-polyfill">1.2 chaches polyfill+HTTPS的支持 - 写码之前</h4>
+
+**[chaches polyfill项目地址](https://github.com/coonsta/cache-polyfill)**, 这个polyfill支持CacheStorate.match，Cache.add和Cache.addAll，而现在Chrome M40实现的Cache API还没有支持这些方法
+
+`importScripts('serviceworker-cache-polyfill.js');`
+
+**HTTPS的支持**
+
+service worker权限很大，所以要防止它本身被坏人篡改利用, 阅读帮助文档并通过[Mozilla's SSL config generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/)了解最佳实践。
+
+[back to top](#top)
+
+<h3 id="Notification-API">2. Notification API</h3>
 
 - notification 对象
 - NotificationCenter 接口
 
-<h4 id="Notification-对象">1.1 Notification 对象</h4>
+<h4 id="Notification-对象">2.1 Notification 对象</h4>
 
 ```javascript
 interface Notification : EventTarget {  
@@ -69,9 +103,7 @@ interface Window {
 } 
 ```
 
-[back to top](#top)
-
-<h3 id="检查浏览器是否支持Notification">2. 检查浏览器是否支持 Notification</h3>
+<h3 id="检查浏览器是否支持Notification">3. 检查浏览器是否支持 Notification</h3>
 
 ```javascript
 /**
@@ -145,9 +177,32 @@ function html_notification(url)  {
 </html>
 ```
 
+[back to top](#top)
+
+<h3 id="使用Service-Worker">3. 使用Service Worker</h3>
+
+3.1 注册和安装service worker
 
 ```javascript
-//完整的案例
+//检查service worker API是否可用，如果可用，service worker /sw.js 被注册
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(function(registration) {
+    // Registration was successful
+    console.log('ServiceWorker registration successful with scope: ',    registration.scope);
+  }).catch(function(err) {
+    // registration failed :(
+    console.log('ServiceWorker registration failed: ', err);
+  });
+}
+```
+
+- 如果这个service worker已经被注册过，浏览器会自动忽略上面的代码
+- 有一个需要特别说明的是service worker文件的路径，你一定注意到了在这个例子中，service worker文件被放在这个域的根目录下，这意味着service worker和网站同源。换句话说，这个service work将会收到这个域下的所有fetch事件。如果我将service worker文件注册为/example/sw.js，那么，service worker只能收到/example/路径下的fetch事件（例如： /example/page1/, /example/page2/）
+- 查看:  `chrome://inspect/#service-workers`
+
+
+```javascript
+//sw.js完整的案例
 function showMsgNotification(title, msg){
   var Notification = window.Notification || window.mozNotification || window.webkitNotification;
   if (Notification && Notification.permission === "granted") {
@@ -214,6 +269,3 @@ function showMsgNotification(title, msg){
 - [Service Worker API - Web API 接口 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API)
 - [Web push notifications](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)
 - [html5桌面通知(Web Notifications)实例解析](http://blog.csdn.net/caichang8/article/details/49796469)
-
-
-
