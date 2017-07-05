@@ -265,6 +265,7 @@ function showMsgNotification(title, msg){
 [back to top](#top)
 
 - [Service Worker 入门](https://www.w3ctech.com/topic/866)
+- [使用 Web Notifications](https://developer.mozilla.org/zh-CN/docs/Web/API/notification/Using_Web_Notifications)
 - [Service Workers: an Introduction](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)
 - [Service Worker API - Web API 接口 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API)
 - [Web push notifications](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)
