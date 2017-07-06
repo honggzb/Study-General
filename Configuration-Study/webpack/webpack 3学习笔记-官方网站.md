@@ -13,8 +13,7 @@
   - [2.7 Targets](#Targets)
   - [2.8 Hot Module Replacement模块热替换](#模块热替换)
 - [3. Asset Management](#Asset-Management)
-- [4. 添加link转入不同语言](#加link转入不同语言)
-- [5. i18n after ejection](#i18n after ejection)
+- [4. Output Management](#Output-Management)
 
 <h3 id="Basic-setup">1. Basic setup - using `webpack.config.js`</h3>
 
