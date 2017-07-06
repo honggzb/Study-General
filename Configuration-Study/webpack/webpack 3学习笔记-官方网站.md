@@ -13,7 +13,15 @@
   - [2.7 Targets](#Targets)
   - [2.8 Hot Module Replacement模块热替换](#模块热替换)
 - [3. Asset Management](#Asset-Management)
-- [4. Output Management](#Output-Management)
+- [4. Output Managemnt](#Output-Management)
+- [5. Production](#Production)
+  - [5.1 The Automatic Way](#The Automatic Way)
+  - [5.2 The Manual Way](#Manual)
+- [6. Code Splitting](#code-splitting)
+  - [6.1 using entry points](#entry-points)
+  - [6.2 Dynamic loading](#Dynamic-loading)
+- [7. Lazy Loading](#Lazy-Loading)
+- [8. Caching](#Caching)
 
 <h3 id="Basic-setup">1. Basic setup - using `webpack.config.js`</h3>
 
@@ -68,6 +76,23 @@ npm install --save-dev serve
 ```
 
 **2) Watch Mode with Chrome DevTools Workspaces**[Webpack your Chrome DevTools Workspaces](https://medium.com/@rafaelideleon/webpack-your-chrome-devtools-workspaces-cb9cca8d50da)
+
+```javascript
+//webpack.config.js
+devtool: ‘inline-source-map’,
+//Use in command line or package.json
+webpack --watch
+``
+
+devtool|configuration
+---|---
+eval|每个模块都用eval执行
+source-map|触发SourceMap，详情看output.sourceMapFilename
+hidden-source-map|同上，但不会在包中添加引用注释。
+inline-source-map|SourceMap被作为dataurl加入到js文件中。
+eval-source-map|每个模块都用eval执行，并且SourceMap被作为dataurl加入到eval中。
+cheap-source-map|没有映射的sourcemap，loaders的sourcemap不会启用。
+cheap-module-source-map|没有映射的sourcemap，sourcemap就简单的映射到每一行。
 
 **3)[webpack-dev-server](https://webpack.js.org/configuration/dev-server)** -provides you with a server and live reloading
 
@@ -473,8 +498,9 @@ import './styles.css';
  └── webpack.config.js
 ```
 
+webpack.config.js
+
 ```javascript
-//webpack.config.js
 var path = require('path');
 module.exports = {
     entry: './src/index.js',
@@ -583,10 +609,378 @@ module.exports = {
 - **The Manifest**:  to track how all modules map to the output bundles
   - [WebpackManifestPlugin](https://github.com/danethurber/webpack-manifest-plugin)
   - [ChunkManifestPlugin](https://github.com/soundcloud/chunk-manifest-webpack-plugin)
+  
+[back to top](#top)
+  
+<h3 id="Production">5. Production</h3>
+
+<h4 id="Automatic">5.1 The Automatic Way</h4>
+
+```shell
+webpack -p
+#equal to
+webpack --optimize-minimize --define process.env.NODE_ENV="'production'"
+```
+
+It will performs the following steps
+
+- Minification using UglifyJsPlugin
+- Runs the LoaderOptionsPlugin
+- Sets the NodeJS environment variable triggering certain packages to compile differently
+
+[back to top](#top)
+
+<h4 id="Manual">5.2 The Manual Way</h4>
+
+1) Simple Approach: two independent configuration files
+
+```javascript
+//webpack.dev.js
+module.exports = {
+  devtool: 'cheap-module-source-map',
+  output: {
+    path: path.join(__dirname, '/../dist/assets'),
+    filename: '[name].bundle.js',
+    publicPath: publicPath,
+    sourceMapFilename: '[name].map'
+  },
+  devServer: {
+    port: 7777,
+    host: 'localhost',
+    historyApiFallback: true,
+    noInfo: false,
+    stats: 'minimal',
+    publicPath: publicPath
+  }
+}
+//webpack.prod.js
+module.exports = {
+  output: {
+    path: path.join(__dirname, '/../dist/assets'),
+    filename: '[name].bundle.js',
+    publicPath: publicPath,
+    sourceMapFilename: '[name].map'
+  },
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      beautify: false,
+      mangle: {
+        screw_ie8: true,
+        keep_fnames: true
+      },
+      compress: {
+        screw_ie8: true
+      },
+      comments: false
+    })
+  ]
+}
+//package.json
+"scripts": {
+  ...
+  "build:dev": "webpack --env=dev --progress --profile --colors",
+  "build:dist": "webpack --env=prod --progress --profile --colors"
+}
+//webpack.config.js
+module.exports = function(env) {
+  return require(`./webpack.${env}.js`)
+}
+```
+
+1) Advanced Approach: two seperate configuration file
+
+One base configuration file, containing the configuration common to both environments, and then merge that with environment specific configurations(by using [webpack-merge](https://github.com/survivejs/webpack-merge))
+
+```javascript
+//webpack.common.js
+module.exports = {
+  entry: {
+    'polyfills': './src/polyfills.ts',
+    'vendor': './src/vendor.ts',
+    'main': './src/main.ts'
+  },
+  output: {
+    path: path.join(__dirname, '/../dist/assets'),
+    filename: '[name].bundle.js',
+    publicPath: publicPath,
+    sourceMapFilename: '[name].map'
+  },
+  resolve: {
+    extensions: ['.ts', '.js', '.json'],
+    modules: [path.join(__dirname, 'src'), 'node_modules']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        exclude: [/\.(spec|e2e)\.ts$/],
+        use: [
+          'awesome-typescript-loader',
+          'angular2-template-loader'
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: ['to-string-loader', 'css-loader']
+      },
+      {
+        test: /\.(jpg|png|gif)$/,
+        use: 'file-loader'
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 100000
+          }
+        }
+      }
+    ]
+  },
+  plugins: [
+    new ForkCheckerPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['polyfills', 'vendor'].reverse()
+    }),
+
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      chunksSortMode: 'dependency'
+    })
+  ]
+}
+//webpack.prod.js
+//3) moved the output property to webpack.common.js as it is common to all environments
+const Merge = require('webpack-merge');    //1) Use webpack-merge to combine it with the 'webpack.common.js'
+const CommonConfig = require('./webpack.common.js');
+module.exports = Merge(CommonConfig, {
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
+    new webpack.DefinePlugin({
+      //2) defined 'process.env.NODE_ENV' as 'production' using the DefinePlugin only in webpack.prod.js
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      beautify: false,
+      mangle: {
+        screw_ie8: true,
+        keep_fnames: true
+      },
+      compress: {
+        screw_ie8: true
+      },
+      comments: false
+    })
+  ]
+})
+```
+
+[back to top](#top)
+
+<h3 id="code-splitting">6. Code Splitting</h3>
+
+There are three general approaches to code splitting available:
+
+- Entry Points: Manually split code using entry configuration.
+- Prevent Duplication: Use the CommonsChunkPlugin to dedupe and split chunks.
+- Dynamic Imports: Split code via inline function calls within modules.
+
+<h4 id="entry-points">6.1 using Entry Points</h4>
+
+```javascript
+//webpack.config.js
+var path = require('path');
+const webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+module.exports = {
+  devtool: "inline-source-map",
+  entry: {
+    index: './src/index.js',
+    another: './src/another-module.js'
+  },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  plugins: [
+    new HtmlWebpackPlugin({title: 'Code Splitting'}),
+    new webpack.optimize.CommonsChunkPlugin({     //use CommonsChunkPlugin to remove duplication
+        name: 'common'                            // Specify the common bundle's name.
+      })
+  ]
+};
+```
+
+index.js和another-module.js均含有同一个import module(`import _ from 'lodash';`), 最后的结果是生成三个js文件，其中一个是common.bundle.js
+
+```
+├── /node_modules
+├── dist
+│   ├── index.bundle.js 
+│   ├── another.bundle.js
+│   ├── common.bundle.js      // extract common dependencies
+│   └── index.html
+├── src
+│   ├── another-module.js
+│   └── index.js
+├── package.json
+└── webpack.config.js
+```
+
+[back to top](#top)
+
+<h4 id="Dynamic-loading">6.2 Dynamic loading</h4>
+
+```javascript
+//index.js
+function getComponent() {
+  return import(/* webpackChunkName: "lodash" */ 'lodash').then(_ => {  //dynamic loading
+    var element = document.createElement('div'); 
+    // Lodash, now imported by this script
+    element.classList.add('hello');
+    // Add the image to our existing div.
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    return element;
+  }).catch(error => 'An error occurred while loading the component');;
+}
+getComponent().then(component => {
+  document.body.appendChild(component);
+})
+//webpack.config.js
+var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+module.exports = {
+  devtool: "inline-source-map",
+  entry: {
+    index: './src/index.js'
+  },
+  output: {
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',    //dynamic
+    path: path.resolve(__dirname, 'dist')
+  },
+  plugins: [
+    new HtmlWebpackPlugin({title: 'Code Splitting'})
+  ]
+};
+```
+
+project
+
+```
+├── /node_modules
+├── dist
+│   ├── index.bundle.js 
+│   ├── lodash.bundle.js      //dynamic loading
+│   └── index.html
+├── src
+│   └── index.js
+├── package.json
+└── webpack.config.js
+```
+
+[back to top](#top)
+
+<h3 id="Lazy-Loading">7. Lazy Loading</h3>
+
+```javascript
+//index.js
+import _ from 'lodash';
+function component() {
+    var element = document.createElement('div'); 
+    var button = document.createElement('button');
+    var br = document.createElement('br');
+    button.innerHTML = 'Click me and look at the console!';
+    // Lodash, now imported by this script
+    element.classList.add('hello');
+    // Add the image to our existing div.
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    element.appendChild(br);
+    element.appendChild(button);
+    button.onclick = e => import(/* webpackChunkName: "print" */ './print').then(module => {
+      var print = module.default;
+      print();
+    });
+   return element;
+}
+
+document.body.appendChild(component());
+//webpack.config.js- no change
+//print.js
+console.log('The print.js module has loaded! See the network tab in dev tools...');
+export default () => {
+  console.log('Button Clicked: Here\'s "some text"!');
+}
+```
+
+project
+
+```
+├── /node_modules
+├── dist
+│   ├── index.bundle.js 
+│   ├── print.bundle.js      //dynamic loading
+│   └── index.html
+├── src
+│   ├── print.js 
+│   └── index.js
+├── package.json
+└── webpack.config.js
+```
+
+[back to top](#top)
+
+<h3 id="Caching">8. Caching</h3>
+
+为了能够长期缓存webpack生成的静态资源:
+
+- 使用[chunkhash]向每个文件添加一个依赖于内容的缓存杀手(cache-buster)
+- 将webpack mainfest提取到一个单独的文件中去
+- 对于一组依赖关系相同的资源，确保包含引导代码的入口起点模块(entry chunk)不会随时间改变它的哈希值
+
+对于更优化的设置:
+
+- 当需要在HTML中加载资源时，使用编译器统计信息(compiler stats)来获取文件名
+- 生成模块清单(chunk manifest)的JSON内容，并在页面资源加载之前内联进HTML中去
+
+**1) 通过包含输出占位符，每次webpack构建时都会生成一个唯一的哈希值用来构成文件名**
+
+```javascript
+// webpack.config.js
+const path = require("path");
+module.exports = {
+  entry: {
+    vendor: "./src/vendor.js",
+    main: "./src/index.js"
+  },
+  output: {
+    path: path.join(__dirname, "build"),
+    filename: "[name].[hash].js"
+  }
+};
+```
+
+> 补充： 选项(Options)之output.chunkFilename
+
+- [id] 被chunk的id替换
+- [name] 被chunk的name替换（或者，在 chunk 没有 name 时使用 id 替换）
+- [hash] 被compilation生命周期的hash替换
+- [chunkhash] 被chunk的hash替换
+
 
 [back to top](#top)
 
 - [webpack2.2中文文档](http://www.css88.com/doc/webpack2/)
-- https://webpack.js.org
+- [Webpack3](https://webpack.js.org)
 - https://devopen.club/course/webpack2.html
 - [使用可视化图表对 Webpack 2 的编译与打包进行统计分析](http://www.cnblogs.com/parry/p/webpack2-Statistics.html)
