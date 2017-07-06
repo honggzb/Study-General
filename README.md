@@ -5,7 +5,7 @@
 │   ├── Accessibility应用之focus篇.md
 │   ├── 创建无障碍的对话框.md
 │   ├── 响应式设计(responsive design)中的Assesibility.md
-│   └── 
+│   └── resources.md
 │ 
 ├── CSS+CSS3-Skill - css技巧
 │   ├──  CSS-Pure
@@ -45,8 +45,8 @@
 │   │    │   ├── webpack-production.rar
 │   │    │   ├── webpack-seperate-css.rar
 │   │    │   └── webpack-demos-master.rar
-│   │    ├── webPackStudy.md
-│   │    └── 
+│   │    ├── webPack 2 Study.md
+│   │    └── webpack 3学习笔记-官方网站.md
 │   ├──  Gulp
 │   │    └── GulpStudy.md
 │   └──  Grunt
