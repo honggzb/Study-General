@@ -588,3 +588,4 @@ module.exports = {
 - [webpack Samples](https://github.com/zero1036/TGWebS/tree/dev/TGWebS/nodeJS/webpack)
 - [建立react webpack 工具包](http://www.checkme.tw/wordpress/react-webpack-generator/)
 - [webpack-demos](https://github.com/ruanyf/webpack-demos#demo07-uglifyjs-plugin-source)
+- [(三)webpack入门——webpack功能集合的demo](http://www.cnblogs.com/erduyang/p/5617917.html)
