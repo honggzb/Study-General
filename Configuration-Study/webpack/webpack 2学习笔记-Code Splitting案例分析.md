@@ -1,6 +1,6 @@
-##webpack 2学习笔记-Code Splitting案例分析
+## webpack 2学习笔记-Code Splitting案例分析
 
-###project structure
+### project structure
 
 ```
 ├── /assets
@@ -21,7 +21,7 @@ image_viewer.js|Renders an image
 
 ![](http://i.imgur.com/ylUNW4v.png)
 
-###index.js- 使用`System.import`输入image_viewer的module
+### index.js- 使用`System.import`输入image_viewer的module
 
 ```javascript
 const button = document.createElement('button');
@@ -34,7 +34,7 @@ button.onclick = (event) => {
 document.body.appendChild(button);
 ```
 
-###image_viewer.js- 将代码包装为一个module
+### image_viewer.js- 将代码包装为一个module
 
 ```javascript
 import big from '../assets/big.jpg';
