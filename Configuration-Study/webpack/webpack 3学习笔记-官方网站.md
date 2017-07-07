@@ -15,13 +15,22 @@
 - [3. Asset Management](#Asset-Management)
 - [4. Output Managemnt](#Output-Management)
 - [5. Production](#Production)
-  - [5.1 The Automatic Way](#The Automatic Way)
+  - [5.1 The Automatic Way](#Automatic)
   - [5.2 The Manual Way](#Manual)
 - [6. Code Splitting](#code-splitting)
   - [6.1 using entry points](#entry-points)
   - [6.2 Dynamic loading](#Dynamic-loading)
 - [7. Lazy Loading](#Lazy-Loading)
 - [8. Caching](#Caching)
+- [References](#references)
+
+command|function
+---|---
+`webpack --display-error-details`|出错时能查阅更详尽的信息
+`webpack --config XXX.js`|使用另一份配置文件（比如webpack.config2.js）来打包
+`webpack --watch`|监听变动并自动打包
+`webpack -p`|压缩混淆脚本，这个非常非常重要！
+`webpack -d`|生成map映射文件，告知哪些模块被最终打包到哪里了
 
 <h3 id="Basic-setup">1. Basic setup - using `webpack.config.js`</h3>
 
@@ -77,22 +86,24 @@ npm install --save-dev serve
 
 **2) Watch Mode with Chrome DevTools Workspaces**[Webpack your Chrome DevTools Workspaces](https://medium.com/@rafaelideleon/webpack-your-chrome-devtools-workspaces-cb9cca8d50da)
 
-```javascript
-//webpack.config.js
-devtool: ‘inline-source-map’,
-//Use in command line or package.json
+```shell
+#1) first-key: webpack.config.js
+devtool: 'inline-source-map',
+#2) second-key: Use in command line or package.json
 webpack --watch
 ``
+
+> 补充： devtool的参数说明
 
 devtool|configuration
 ---|---
 eval|每个模块都用eval执行
-source-map|触发SourceMap，详情看output.sourceMapFilename
-hidden-source-map|同上，但不会在包中添加引用注释。
-inline-source-map|SourceMap被作为dataurl加入到js文件中。
-eval-source-map|每个模块都用eval执行，并且SourceMap被作为dataurl加入到eval中。
-cheap-source-map|没有映射的sourcemap，loaders的sourcemap不会启用。
-cheap-module-source-map|没有映射的sourcemap，sourcemap就简单的映射到每一行。
+source-map|触发SourceMap，详情看`output.sourceMapFilename`
+hidden-source-map|同上，但不会在包中添加引用注释
+inline-source-map|SourceMap被作为dataurl加入到js文件中
+eval-source-map|每个模块都用eval执行，并且SourceMap被作为dataurl加入到eval中
+cheap-source-map|没有映射的sourcemap，loaders的sourcemap不会启用
+cheap-module-source-map|没有映射的sourcemap，sourcemap就简单的映射到每一行
 
 **3)[webpack-dev-server](https://webpack.js.org/configuration/dev-server)** -provides you with a server and live reloading
 
@@ -116,14 +127,15 @@ npm install webpack@3.0.0 --save-dev
 yarn add webpack@3.0.0 --dev
 ```
 
-concept | description
+concept|description
 ---|---
 entry|入口, contextual root(根上下文)或app第一个启动文件
 output|出口 
 loaders|加载器, webpack 把每个文件(.css, .html, .scss, .jpg, etc.)都作为模块处理, loader 会将这些文件转换为模块，而转换后的文件会被添加到依赖图表中
 plugins|插件, [list of plugins插件列表](https://webpack.js.org/plugins/)
 
-```JavaScript
+
+```javascript
 var path = require('path');
 const config = {
   entry: './path/to/my/entry/file.js',     //entry, 可是文件路径(file path)数组
@@ -821,14 +833,14 @@ module.exports = {
 };
 ```
 
-index.js和another-module.js均含有同一个import module(`import _ from 'lodash';`), 最后的结果是生成三个js文件，其中一个是common.bundle.js
+> 自定义公共模块提取: index.js和another-module.js均含有同一个import module(`import _ from 'lodash';`), 最后的结果是生成三个js文件，其中一个是common.bundle.js
 
 ```
 ├── /node_modules
 ├── dist
 │   ├── index.bundle.js 
 │   ├── another.bundle.js
-│   ├── common.bundle.js      // extract common dependencies
+│   ├── common.bundle.js      // 自定义公共模块提取extract common dependencies
 │   └── index.html
 ├── src
 │   ├── another-module.js
@@ -913,7 +925,6 @@ function component() {
     });
    return element;
 }
-
 document.body.appendChild(component());
 //webpack.config.js- no change
 //print.js
@@ -984,3 +995,19 @@ module.exports = {
 - [Webpack3](https://webpack.js.org)
 - https://devopen.club/course/webpack2.html
 - [使用可视化图表对 Webpack 2 的编译与打包进行统计分析](http://www.cnblogs.com/parry/p/webpack2-Statistics.html)
+
+
+> reference
+
+1. package.json参考示例
+
+```json
+"scripts": {
+    "clean": "rimraf dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.js",
+    "build": "NODE_ENV=production npm run clean && webpack -p",
+    "serve": "webpack-dev-server",
+    "watch": "webpack --watch --config webpack.config.js"
+  }
+```
