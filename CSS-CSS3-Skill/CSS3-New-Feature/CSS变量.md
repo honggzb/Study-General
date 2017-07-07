@@ -599,7 +599,7 @@ function freeJump() {
 
 [back to top](#top)
 
-<h3 id="Modular>5. Modular Scale with CSS variables</h3>
+<h3 id="Modular">5. Modular Scale with CSS variables</h3>
 
 ```css
 :root {
@@ -628,7 +628,7 @@ h2 {font-size: var(--font-size-5);}
 
 [back to top](#top)
 
-<h3 id="Responsive>6. Responsive design with CSS Variables</h3>
+<h3 id="Responsive">6. Responsive design with CSS Variables</h3>
 
 ```scss
 // All the logic and setting of properties goes first.
