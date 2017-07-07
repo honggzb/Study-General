@@ -13,6 +13,8 @@
   - 例子: 鼠标跟随
 - [3. One variable, many changes](#One-variable-many-changes)
 - [4. working with calc()](#working-with-calc)
+- [5. Modular Scale with CSS variables](#Modular)
+- [6. Responsive design with CSS Variable](#Responsive)
 
 <h3 id="CSS-variable">1. CSS variable</h3>
 
@@ -597,6 +599,127 @@ function freeJump() {
 
 [back to top](#top)
 
+<h3 id="Modular>5. Modular Scale with CSS variables</h3>
+
+```css
+:root {
+  /* scale for 1.2 */
+  --font-size-1: 1rem;
+  --font-size-2: 1.2rem;
+  --font-size-3: 1.44rem;
+  --font-size-4: 1.728rem;
+  --font-size-5: 2.074rem;
+  --font-size-6: 2.488rem;
+}
+@media screen and (min-width: 800px) {
+  :root {
+    /* scale for 1.33 */
+    --font-size-1: 1rem;     
+    --font-size-2: 1.333rem; 
+    --font-size-3: 1.777rem;
+    --font-size-4: 2.369rem; 
+    --font-size-5: 3.157rem;
+    --font-size-6: 4.209rem;
+  }
+}
+h1 {font-size: var(--font-size-6);}
+h2 {font-size: var(--font-size-5);}
+```
+
+[back to top](#top)
+
+<h3 id="Responsive>6. Responsive design with CSS Variables</h3>
+
+```scss
+// All the logic and setting of properties goes first.
+// For static vars use Sass
+$breakpoint-small: 450px;
+$breakpoint-med: 900px;
+$inverse-background: #222;
+$inverse-text: #F0F0F0;
+// For dynamically scoped vars use CSS Custom Props
+:root {
+	--container-display: block;
+	--card-figure-display: none;
+	--title-font-size: 1.2rem; 
+	--card-background: #F0F0F0;
+}
+// CSS variables do not work in media query conditions 
+// this is why we use sass variables
+@media screen and (min-width: $breakpoint-small) {
+	:root {
+		--card-figure-display: inline-block;
+		--title-font-size: 1.75rem; 
+	}
+}
+@media screen and (min-width: $breakpoint-med) {
+	:root {
+		--container-display: flex;
+		--title-font-size: 2rem; 
+	}
+}
+// Dynamically scoped can include elements
+.card-a, .card-c {
+	--card-background: $inverse-background;
+	--card-text-color: $inverse-text;
+} 
+// or elements within media queries
+@media screen and (min-width: $breakpoint-med) { 
+	.card-c {
+		// I can force these variables to inherit from the :root
+		--card-background: inherit;
+		--card-text-color: inherit;
+	}
+	.card-a, .card-d {
+		--card-background: #222;
+		--card-text-color: #FAFAFA;
+	} 
+}
+// End of variable declarations, now we start applying property declarations
+// No media queries needed beyond this point.
+// This is the 'logic fold'
+html {
+	font-family: 'Open Sans';
+}
+body {
+	margin: 1rem auto;
+	width: 85%;
+	max-width: 1000px;
+}
+h1 { 
+	font-size: var(--title-font-size); 
+	font-weight: bold;
+	margin: 0 1rem .5rem 1rem;
+	line-height: 1.2;
+}
+.card-container {
+	display: var(--container-display);
+}
+.card {
+  display: flex;
+	line-height: 1.15;
+  align-items: flex-start;
+	background: var(--card-background);
+	color: var(--card-text-color);
+	border: solid 1px #ccc;
+	padding: 20px;
+	margin: 1em;
+}
+.card-figure {
+  margin-right: 1em;
+	display: var(--card-figure-display);
+}
+.card-body {
+  flex: 1;
+}
+.card-title {
+	font-weight: bold;
+	margin: 0 0 .5em 0;
+}
+```
+
+[back to top](#top)
+
 > Reference
 
 - [CSS Custom Properties - The Basics](https://sgom.es/posts/2017-01-27-css-custom-properties-the-basics/)
@@ -604,4 +727,5 @@ function freeJump() {
 - [小tips:了解CSS/CSS3原生变量var](http://www.zhangxinxu.com/wordpress/2016/11/css-css3-variables-var/comment-page-1/)
 - [深入学习CSS自定义属性（CSS变量）](http://www.w3cplus.com/css3/css-properties-in-depth.html?utm_source=tuicool&utm_medium=referral)
 - [Communicating Between JavaScript and CSS Using CSS Variables](https://eager.io/blog/communicating-between-javascript-and-css-with-css-variables/)
+- [Using CSS variables correctly](https://madebymike.com.au/writing/using-css-variables/?utm_source=frontendfocus&utm_medium=email)
 - [Making Custom Properties (CSS Variables) More Dynamic](https://css-tricks.com/making-custom-properties-css-variables-dynamic/)
