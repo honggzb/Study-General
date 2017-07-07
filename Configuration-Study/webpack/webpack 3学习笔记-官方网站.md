@@ -135,7 +135,7 @@ loaders|加载器, webpack 把每个文件(.css, .html, .scss, .jpg, etc.)都作
 plugins|插件, [list of plugins插件列表](https://webpack.js.org/plugins/)
 
 
-```javascript
+```shell
 var path = require('path');
 const config = {
   entry: './path/to/my/entry/file.js',     //entry, 可是文件路径(file path)数组
@@ -163,7 +163,7 @@ module.exports = config;
 - Single entry: `entry: string|Array<string>`
 - Object Syntax: `entry: {[entryChunkName: string]: string|Array<string>}`
 
-```javascript
+```json
 //实际用例
 //1) 分离应用程序(app)和公共库(vendor) 入口
 const config = {
@@ -295,7 +295,7 @@ module.exports = {
     filename: 'foo.bundle.js'
   }
 };
-//多个 Target(这个是webpack2的例子，是否兼容webpack3????)
+//多个Target(这个是webpack2的例子，是否兼容webpack3????)
 var path = require('path');
 var webpack = require('webpack');
 var webpackMerge = require('webpack-merge');
@@ -988,16 +988,107 @@ module.exports = {
 - [hash] 被compilation生命周期的hash替换
 - [chunkhash] 被chunk的hash替换
 
+**2) 从webpack编译统计中获取文件名- 为在生产环境中HTML中引用正确的文件**
+
+在开发模式下，你只要在HTML中直接引用JavaScript文件：
+
+```HTML
+<script src="vendor.js"></script>
+<script src="main.js"></script>
+```
+
+而每次在生产环境中构建，我们都会得到不同的文件名。类似这样：
+
+```HTML
+<script src="vendor.50cfb8f89ce2262e5325.js"></script>
+<script src="main.70b594fe8b07bcedaa98.js"></script>
+```
+
+- 方法1: 使用下面这个插件
+
+```javascript
+const path = require("path");
+module.exports = {
+  plugins: [
+    function() {
+      this.plugin("done", function(stats) {
+        require("fs").writeFileSync(
+          path.join(__dirname, "build", "stats.json"),
+          JSON.stringify(stats.toJson()));
+      });
+    }
+  ]
+};
+```
+
+- 方法2: 使用以下其中一个插件去导出JSON文件：
+  - https://www.npmjs.com/package/webpack-manifest-plugin
+  - https://www.npmjs.com/package/assets-webpack-plugin
+
+如使用WebpackManifestPlugin后会在root目录生成manifest.json， 其中包含
+
+```json
+{
+  "main.js": "main.155567618f4367cd1cb8.js",
+  "vendor.js": "vendor.c2330c22cd2decb5da5a.js"
+}
+```
+
+**3) 确定性（固定）的哈希值 - Deterministic hashes**
+
+```javascript
+var path = require("path");
+var webpack = require("webpack");
+var ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");    //
+var WebpackChunkHash = require("webpack-chunk-hash");
+module.exports = {
+  entry: {
+    vendor: "./src/vendor.js", // vendor reference file(s)
+    main: "./src/index.js" // application code
+  },
+  output: {
+    path: path.join(__dirname, "build"),
+    filename: "[name].[chunkhash].js",
+    chunkFilename: "[name].[chunkhash].js"
+  },
+  plugins: [
+//extract the runtime into a separate entry
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ["vendor", "manifest"], // vendor libs + extracted manifest
+      minChunks: Infinity,
+    }),
+    new webpack.HashedModuleIdsPlugin(),  
+//the hashes for the files should be based on the file content, using webpack-chunk-hash or webpack-md5-hash  
+    new WebpackChunkHash(),
+//ChunkManifestWebpackPlugin will extract the manifest to a separate JSON file
+    new ChunkManifestPlugin({
+      filename: "chunk-manifest.json",
+      manifestVariable: "webpackManifest",
+      inlineManifest: true
+    })
+  ]
+};
+```
+
+通过在HTML中内联JSON的内容
+
+```html
+<html>
+  <head>
+    <script>
+    //<![CDATA[
+    window.webpackManifest = {"0":"main.5f020f80c23aa50ebedf.js","1":"vendor.81adc64d405c8b218485.js"}
+    //]]>
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+```
 
 [back to top](#top)
 
-- [webpack2.2中文文档](http://www.css88.com/doc/webpack2/)
-- [Webpack3](https://webpack.js.org)
-- https://devopen.club/course/webpack2.html
-- [使用可视化图表对 Webpack 2 的编译与打包进行统计分析](http://www.cnblogs.com/parry/p/webpack2-Statistics.html)
-
-
-> reference
+<h3 id="references">References</h3>
 
 1. package.json参考示例
 
@@ -1011,3 +1102,10 @@ module.exports = {
     "watch": "webpack --watch --config webpack.config.js"
   }
 ```
+
+[back to top](#top)
+
+- [webpack2.2中文文档](http://www.css88.com/doc/webpack2/)
+- [Webpack3](https://webpack.js.org)
+- https://devopen.club/course/webpack2.html
+- [使用可视化图表对 Webpack 2 的编译与打包进行统计分析](http://www.cnblogs.com/parry/p/webpack2-Statistics.html)
