@@ -96,6 +96,7 @@
 │   ├── 去掉js数组中的重复项.md
 │   ├── 利用ES6新特性对数组实现的一些hack方法.md
 │   ├── 19 个JavaScript 常用的简写技术.md
+│   ├── javascript实现英文首字母大写
 │   ├── javascript操作JSON常用方法
 │   └── javascript常用技巧.md
 │
