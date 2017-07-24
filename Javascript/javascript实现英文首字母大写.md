@@ -1,9 +1,9 @@
 [javascript实现英文首字母大写](#top)
 
 - [方法一](#方法一)
-- [方法一](#方法一)
-- [方法一](#方法一)
-- [方法一](#方法一)
+- [方法二](#方法二)
+- [方法三](#方法三)
+- [方法四](#方法四)
 
 ### 方法一
 
@@ -60,22 +60,38 @@ function ucfirst(str){
 ### 方法三
 
 ```javascript
-
+function ucfirst(str) {
+ var str = str.toLowerCase();
+ str = str.replace(/\b\w+\b/g, function(word){
+   return word.substring(0,1).toUpperCase()+word.substring(1);
+});
+return str; 
 ```
  
 [back to top](#top)
  
 ### 方法四
 
-```javascript
+CSS来实现
 
+```html
+<html>
+ <head>
+ <style type="text/css"> 
+  h1 {text-transform: uppercase} 
+  p.uppercase {text-transform: uppercase}   
+  p.lowercase {text-transform: lowercase}  
+  p.capitalize {text-transform: capitalize } 
+ </style>
+ </head>
+ <body>
+  <h1>This Is An H1 Element</h1>
+   <p class="uppercase">This is a test.</p><p class="lowercase">This is a test.</p><p class="capitalize">This is a test.</p>
+ </body>
+</html>
 ```
  
 [back to top](#top)
  
-### 方法五
-
-```javascript
-
-```
+http://www.jb51.net/article/64680.htm
  
