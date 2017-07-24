@@ -1,0 +1,81 @@
+[javascript实现英文首字母大写](#top)
+
+- [方法一](#方法一)
+- [方法一](#方法一)
+- [方法一](#方法一)
+- [方法一](#方法一)
+
+### 方法一
+
+```javascript
+function replaceStr(str){ // 正则法
+ str = str.toLowerCase();
+ var reg = /\b(\w)|\s(\w)/g; //  \b判断边界\s判断空格
+ return str.replace(reg,function(m){ 
+  return m.toUpperCase()
+ });
+}
+ 
+function replaceStr1(str){
+ str = str.toLowerCase();
+ var strTemp = ""; //新字符串
+ for(var i=0;i<str.length;i++){
+  if(i == 0){
+   strTemp += str[i].toUpperCase(); //第一个
+   continue;
+  }
+  if(str[i] == " " && i< str.length-1){ //空格后
+   strTemp += " ";
+   strTemp += str[i+1].toUpperCase();
+   i++;
+   continue;
+  }
+  strTemp += str[i];
+ }
+  return strTemp;
+ }
+var text = "abcd ABCD efGH";
+console.log(replaceStr(text));//Abcd Abcd Efgh
+console.log(replaceStr1(text));//Abcd Abcd Efgh
+ ```
+ 
+[back to top](#top)
+ 
+### 方法二
+
+```javascript
+function ucfirst(str){
+  var str = str.toLowerCase();
+  var strarr = str.split(' ');
+  var result = '';
+  for(var i in strarr){
+    result += strarr[i].substring(0,1).toUpperCase()+strarr[i].substring(1)+' ';
+  }
+  return result;
+}
+```
+ 
+[back to top](#top)
+ 
+### 方法三
+
+```javascript
+
+```
+ 
+[back to top](#top)
+ 
+### 方法四
+
+```javascript
+
+```
+ 
+[back to top](#top)
+ 
+### 方法五
+
+```javascript
+
+```
+ 
