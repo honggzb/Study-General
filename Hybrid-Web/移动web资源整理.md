@@ -1,13 +1,13 @@
 [移动web资源整理](#top)
 
 - [meta基础知识](#meta基础知识)
-  - [H5页面窗口自动调整到设备宽度，并禁止用户缩放页面](#H5页面窗口自动调整到设备宽度，并禁止用户缩放页面)
-  - [忽略将页面中的数字识别为电话号码](#忽略将页面中的数字识别为电话号码)
-  - [忽略Android平台中对邮箱地址的识别](#忽略Android平台中对邮箱地址的识别)
-  - [当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new)](#当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new))
-  - [将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式](#将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式)
-- [viewport模板 (new)](#viewport模板 (new))
-- 常见问题
+  - H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
+  - 忽略将页面中的数字识别为电话号码
+  - 忽略Android平台中对邮箱地址的识别](#忽略Android平台中对邮箱地址的识别)
+  - 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new)](#当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new))
+  - 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式](#将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式)
+- [viewport模板](#viewport模板)
+- [常见问题](#常见问题)
   - 移动端如何定义字体font-family
   - 移动端字体单位font-size选择px还是rem (new)
   - 移动端touch事件(区分webkit 和 winphone) (new)
@@ -44,45 +44,33 @@
   - 微信浏览器、UC浏览器成功禁用触摸时的弹出层失败
   - 模拟按钮hover效果的两种实现方式，第一种在微信没反应，第二种页面引用了zepto.js,写了方法但是和默认的滑动有冲突，不能流畅的滑动了
   - ios虚拟键盘“go”按钮的实现
-- 常用的移动端框架
+- [常用的移动端框架](#常用的移动端框架)
   - zepto.js
   - iscroll.js
   - underscore.js
   - 滑屏框架
   - Sea.js
-- flex布局
+- [flex布局](#flex布局)
 
 ### meta基础知识
 
-#### 1. H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
-
 ```html
+<!-- 1. H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-```
-
-#### 2. 忽略将页面中的数字识别为电话号码
-
-`<meta name="format-detection" content="telephone=no" />`
-
-#### 3. 忽略Android平台中对邮箱地址的识别
-
-`<meta name="format-detection" content="email=no" />`
-
-当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari
-
-```html
+<!-- 2. 忽略将页面中的数字识别为电话号码-->
+<meta name="format-detection" content="telephone=no" />
+<!-- 3. 忽略Android平台中对邮箱地址的识别-->
+<meta name="format-detection" content="email=no" />
+<!-- 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari-->
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <!-- ios7.0版本以后，safari上已看不到效果 -->
-```
-
-体验demo，解决在主屏幕打开页面后，点击页面链接不会跳转到系统自带的Safari
-
-#### 4. 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式
-
-```html
+<!-- 体验demo，解决在主屏幕打开页面后，点击页面链接不会跳转到系统自带的Safari-->
+<!-- 4. 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式-->
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <!-- 可选default、black、black-translucent -->
 ```
+
+[back to top](#top)
 
 ### viewport模板
 
@@ -555,14 +543,16 @@ HTML5 deviceMotion：封装了运动传感器数据的事件，可以获取手�
 
 > 参考[《border-radius 移动之伤》](https://github.com/yisibl/blog/issues/2)
 
-<h5>25. 设计高性能CSS3动画的几个要素</h5>
+<h4 id="设计高性能CSS3动画的几个要素">25. 设计高性能CSS3动画的几个要素</h4>
 
     •	尽可能地使用合成属性transform和opacity来设计CSS3动画，不使用position的left和top来定位
     •	利用translate3D开启GPU加速
 
 参考《High Performance Animations》
 
-<h5>26. fixed bug</h5>
+[back to top](#top)
+
+<h4 id="fixed-bug">26. fixed bug</h4>
 
     •	ios下fixed元素容易定位出错，软键盘弹出时，影响fixed元素定位
     •	android下fixed表现要比iOS更好，软键盘弹出时，不会影响fixed元素定位
@@ -574,14 +564,18 @@ HTML5 deviceMotion：封装了运动传感器数据的事件，可以获取手�
     [《移动端web页面使用position:fixed问题总结》](https://github.com/maxzhang/maxzhang.github.com/issues/2)
     [《使用iScroll.js解决ios4下不支持position:fixed的问题》](http://www.cnblogs.com/PeunZhang/archive/2013/06/14/3117589.html)
 
-<h5>27. 如何阻止windows Phone的默认触摸事件</h5>
+[back to top](#top)
+
+<h4 id="如何阻止windows-Phone的默认触摸事件">27. 如何阻止windows Phone的默认触摸事件</h4>
 
 winphone下默认触摸事件事件使用e.preventDefault是无效的, 目前解决方法是使用样式来禁用
 `html{-ms-touch-action: none;}/* 禁止winphone默认触摸事件 */`
 
 > 参考[《Windows phone 8 touch support》](http://stackoverflow.com/questions/13396297/windows-phone-8-touch-support)
 
-<h5>28. 播放视频不全屏</h5>
+[back to top](#top)
+
+<h4 id="播放视频不全屏">28. 播放视频不全屏</h4>
 
 ```html
 <!--
@@ -596,13 +590,17 @@ webkit-playsinline="true"
 
 > 体验demo：http://1.peunzhang.sinaapp.com/demo/video/index.html
 
-<h5>29. FastClick</h5>
+[back to top](#top)
+
+<h4 id="FastClick">29. FastClick</h4>
 
 消除在移动浏览器上触发click事件与一个物理Tap(敲击)之间的300延迟
 
 > 参考《[FastClick](https://github.com/ftlabs/fastclick)》
 
-<h5>20. android内置浏览器能成功禁用触摸时的弹出层，但是微信浏览器、UC浏览器均失败。请教下：这几种浏览器下如何解决此问题呢？</h5>
+[back to top](#top)
+
+<h4 id="android内置浏览器能成功禁用触摸时的弹出层">20. android内置浏览器能成功禁用触摸时的弹出层，但是微信浏览器、UC浏览器均失败。请教下：这几种浏览器下如何解决此问题呢？</h4>
 
 ```javascript
 //为特定元素排除默认事件
@@ -613,7 +611,9 @@ document.addEventListener("touchstart", function (e) {
 
 `.css{-webkit-touch-callout: none}`
 
-<h5>21. 白树大神，模拟按钮hover效果的两种实现方式，第一种在微信没反应，第二种页面引用了zepto.js,写了方法但是和默认的滑动有冲突，不能</h5>
+[back to top](#top)
+
+<h4 id="模拟按钮hover效果的两种实现方式">21. 白树大神，模拟按钮hover效果的两种实现方式，第一种在微信没反应，第二种页面引用了zepto.js,写了方法但是和默认的滑动有冲突，不能</h4>
 
 @  ┛自命菜菜
 这样写就不会冲突！
@@ -656,7 +656,7 @@ for(var i = 0 ,l = _btn.length; i < l; i++){
 }
 ```
 
-<h5>22. ios虚拟键盘“go”按钮的实现</h5>
+<h4 id="ios虚拟键盘">22. ios虚拟键盘“go”按钮的实现</h4>
 
 `<form action=".">`
 
@@ -664,7 +664,9 @@ for(var i = 0 ,l = _btn.length; i < l; i++){
 
 如果模拟“search”按钮，除了在`form`加`action`外则在input中加入`name="search"`或`type="search"`
 
-## 常用的移动端框架
+[back to top](#top)
+
+### 常用的移动端框架
 
 - zepto.js
 
@@ -697,12 +699,13 @@ for(var i = 0 ,l = _btn.length; i < l; i++){
 - fullpage.js
 - swiper.js
 - Sea.js 
+  - 提供简单、极致的模块化开发体验
+  - 简单友好的模块定义规范：Sea.js 遵循 CMD 规范，可以像 Node.js 一般书写模块代码
+  - 自然直观的代码组织方式：依赖的自动加载、配置的简洁清晰，可以让我们更多地享受编码的乐趣
 
-    提供简单、极致的模块化开发体验
-    •	简单友好的模块定义规范：Sea.js 遵循 CMD 规范，可以像 Node.js 一般书写模块代码。
-    •	自然直观的代码组织方式：依赖的自动加载、配置的简洁清晰，可以让我们更多地享受编码的乐趣。
-
-## flex布局
+[back to top](#top)
+    
+### flex布局
 
 flex布局目前可使用在移动中，并非所有的语法都全兼容，但以下写法笔者实践过，效果良好~
 
