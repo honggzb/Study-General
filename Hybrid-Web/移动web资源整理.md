@@ -1,10 +1,12 @@
-- meta基础知识
-  - H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
-  - 忽略将页面中的数字识别为电话号码
-  - 忽略Android平台中对邮箱地址的识别
-  - 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new)
-  - 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式
-- viewport模板 (new)
+[移动web资源整理](#top)
+
+- [meta基础知识](#meta基础知识)
+  - [H5页面窗口自动调整到设备宽度，并禁止用户缩放页面](#H5页面窗口自动调整到设备宽度，并禁止用户缩放页面)
+  - [忽略将页面中的数字识别为电话号码](#忽略将页面中的数字识别为电话号码)
+  - [忽略Android平台中对邮箱地址的识别](#忽略Android平台中对邮箱地址的识别)
+  - [当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new)](#当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new))
+  - [将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式](#将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式)
+- [viewport模板 (new)](#viewport模板 (new))
 - 常见问题
   - 移动端如何定义字体font-family
   - 移动端字体单位font-size选择px还是rem (new)
@@ -50,19 +52,19 @@
   - Sea.js
 - flex布局
 
-## meta基础知识
+### meta基础知识
 
-<h5>1. H5页面窗口自动调整到设备宽度，并禁止用户缩放页面</h5>
+#### 1. H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
 
 ```html
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 ```
 
-<h5>2. 忽略将页面中的数字识别为电话号码</h5>
+#### 2. 忽略将页面中的数字识别为电话号码
 
 `<meta name="format-detection" content="telephone=no" />`
 
-<h5>3. 忽略Android平台中对邮箱地址的识别</h5>
+#### 3. 忽略Android平台中对邮箱地址的识别
 
 `<meta name="format-detection" content="email=no" />`
 
@@ -75,16 +77,16 @@
 
 体验demo，解决在主屏幕打开页面后，点击页面链接不会跳转到系统自带的Safari
 
-<h5>4. 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式</h5>
+#### 4. 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式
 
 ```html
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <!-- 可选default、black、black-translucent -->
 ```
 
-## viewport模板
+### viewport模板
 
-<h5>1. viewport模板——通用</h5>
+#### 1. viewport模板——通用
 
 ```html
 <!DOCTYPE html>
@@ -770,8 +772,8 @@ flex布局目前可使用在移动中，并非所有的语法都全兼容，但�
 
 > 参考：
 
-    [flexyboxes](http://the-echoplex.net/flexyboxes/)
-    [“老”的Flexbox和“新”的Flexbox](http://www.w3cplus.com/css3/old-flexbox-and-new-flexbox.html)
-    [跨浏览器的Flexbox](http://www.w3cplus.com/css3/advanced-cross-browser-flexbox.html)
+- [flexyboxes](http://the-echoplex.net/flexyboxes/)
+- [“老”的Flexbox和“新”的Flexbox](http://www.w3cplus.com/css3/old-flexbox-and-new-flexbox.html)
+- [跨浏览器的Flexbox](http://www.w3cplus.com/css3/advanced-cross-browser-flexbox.html)
 
 > reference:  http://peunzhang.cnblogs.com/
