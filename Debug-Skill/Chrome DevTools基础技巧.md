@@ -8,8 +8,6 @@
 - [5. Snippet code](#Snippet)
 - [6. 利用Chrome的工作空间，编辑本地文件](#利用Chrome的工作空间)
 - [7. Search, Find and Edit with Chrome DevTools](#Search)
-  - 7.1 Searching within all sources
-  - 7.2 Searching within all sources
 
 <h3 id="快捷键">快捷键</h3>
 
@@ -78,7 +76,7 @@ Searching file names and URL search values|network panel|win: Ctrl+f, mac: Cmd+f
 Searching a .css file for specific selector|source panel|Shift+Ctrl+o, mac: Shift+Cmd+o
 Searching a .js file for specific function|source panel|Shift+Ctrl+o, mac: Shift+Cmd+o
 Finding a DOM node using a selector - 1|elements panel|win: Ctrl+f, mac: Cmd+f -> Enter a CSS selector, such as `.km.content`
-Finding a DOM node using a selector - 1|console panel| Enter:[`$$('selector')`](https://developers.google.com/web/tools/chrome-devtools/console/command-line-reference#selector)
+Finding a DOM node using a selector - 2|console panel| Enter:[`$$('selector')`](https://developers.google.com/web/tools/chrome-devtools/console/command-line-reference#selector)
 
 http://developer.telerik.com/featured/16-ways-to-search-find-and-edit-with-chrome-devtools/
 
