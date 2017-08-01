@@ -59,8 +59,8 @@ https://stackoverflow.com/questions/33601165/scrolling-slow-on-mobile-ios-when-u
 ```css
 .scrolling-content {
    overflow-y: scroll;
-   -webkit-overflow-scrolling: touch;    //adding '-webkit-overflow-scrolling:touch' to scrolling element
-   height:100%; //A value other than height:auto needs to be set
+   -webkit-overflow-scrolling: touch;    /*adding `-webkit-overflow-scrolling:touch` to scrolling element*/
+   height:100%;                          /*A value other than height:auto needs to be set*/
 }
 ```
 
