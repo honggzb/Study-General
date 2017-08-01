@@ -1,12 +1,12 @@
 [移动web平时开发问题小结](#top)
 
-- [1. css](#css)
+- [1. CSS](#css)
   - [1.1 Background image not showing on iPad and iPhone](#background-image)
   - [1.2 Scrolling slow on mobile/ios](#Scrolling)
 
-<h3 id="css">1. css</h3>
+<h2 id="css">1. CSS</h2>
 
-<h4 id="background-image">1.1 Background image not showing on iPad and iPhone</h4>
+<h3 id="background-image">1.1 Background image not showing on iPad and iPhone</h3>
 
 See [background-size](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size_. This property must be specified after background-position, separated with the '/' character.
 
@@ -52,7 +52,7 @@ section {
 
 [back to top)(#top)
 
-<h4 id="Scrolling">1.2 Scrolling slow on mobile/ios</h4>
+<h3 id="Scrolling">1.2 Scrolling slow on mobile/ios</h3>
 
 https://stackoverflow.com/questions/33601165/scrolling-slow-on-mobile-ios-when-using-overflowscroll
 
