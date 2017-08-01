@@ -2,6 +2,7 @@
 
 - [1. css](#css)
   - [1.1 Background image not showing on iPad and iPhone](#background-image)
+  - [1.2 Scrolling slow on mobile/ios](#Scrolling)
 
 <h3 id="css">1. css</h3>
 
@@ -46,6 +47,20 @@ section {
 #section4 {  //safari work only this way
     background: url(http://placehold.it/350x150) 0 0;
     background-size: cover;
+}
+```
+
+[back to top)(#top)
+
+<h4 id="Scrolling">1.2 Scrolling slow on mobile/ios</h4>
+
+https://stackoverflow.com/questions/33601165/scrolling-slow-on-mobile-ios-when-using-overflowscroll
+
+```css
+.scrolling-content {
+   overflow-y: scroll;
+   -webkit-overflow-scrolling: touch;    //adding '-webkit-overflow-scrolling:touch' to scrolling element
+   height:100%; //A value other than height:auto needs to be set
 }
 ```
 
