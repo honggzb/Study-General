@@ -1,7 +1,9 @@
-移动端触屏框架的使用Hammer.js
+[移动端触屏框架的使用Hammer.js](#top)
 
 - [1. Hammerjs Events事件](#Events事件)
 - [2. codes sample](#codes)
+- [3. ghostClick问题](#ghostClick问题)
+- [4.stopPropagation()问题-Hammer.js 2.0](#stopPropagation)
 
 <h3 id="Events事件">1. Events事件</h3>
 
@@ -63,6 +65,37 @@ function goNext() {
 ```
 
 [back to top](#top)
+
+<h3 id="ghostClick问题">3. ghostClick问题</h3>
+
+[Tips ‘n Tricks](http://hammerjs.github.io/tips/)
+
+**“After a tap, also a click is being triggered, I don’t want that!”**
+
+That click event is also being called a ‘ghost click’. I’ve created a small function to prevent clicks after a touchend.
+
+https://gist.github.com/jtangelder/361052976f044200ea17
+
+[back to top](#top)
+
+<h3 id="stopPropagation">4.stopPropagation()问题-Hammer.js 2.0</h3>
+
+https://stackoverflow.com/questions/26027362/how-to-stoppropagation-w-hammer-js-2-0
+
+Hammer is able to trigger DOM events with the option domEvents: true. This will give your methods like stopPropagation(), so you can use event delegation. Hammer will not unbind the bound events.
+
+```javascript
+var mc = new Hammer.Manager(elem);
+mc.options.domEvents=true; // enable dom events
+var pinch = new Hammer.Pinch();
+mc.add(pinch);
+mc.get('pinch').set({ enable: true });
+mc.on("pinch",function(e){e.srcEvent.stopPropagation();});
+//or
+var hammertime = new Hammer(elem);
+hammertime.domEvents = true;
+hammertime.on("panstart", function(e){e.srcEvent.stopPropagation();});
+```
 
 > Reference
 
