@@ -8,6 +8,7 @@
 - [5. Snippet code](#Snippet)
 - [6. 利用Chrome的工作空间，编辑本地文件](#利用Chrome的工作空间)
 - [7. Search, Find and Edit with Chrome DevTools](#Search)
+- [8. 其他](#其他)
 
 <h3 id="快捷键">快捷键</h3>
 
@@ -20,6 +21,7 @@ Ctrl+G -> :num|跳到指定行
 Ctrl+D|选中下一个匹配项
 Shift+鼠标点击|在颜色预览中，可在rgba,hsl和hexadecimal三种格式中，来回切换
 Ctrl+F, 在filter中输入GC|在Timeline的Summary中，查看Garbage collection
+ctrl+shift+p|command menu
 
 <h3 id="在控制台">1. 在控制台(Console)中获取DOM元素- $0 in console</h3>
 
@@ -79,6 +81,16 @@ Finding a DOM node using a selector - 1|elements panel|win: Ctrl+f, mac: Cmd+f -
 Finding a DOM node using a selector - 2|console panel| Enter:[`$$('selector')`](https://developers.google.com/web/tools/chrome-devtools/console/command-line-reference#selector)
 
 http://developer.telerik.com/featured/16-ways-to-search-find-and-edit-with-chrome-devtools/
+
+[back to top](#top)
+
+<h3 id="其他">8. 其他</h3>
+
+new console
+- quick source
+
+Lighthouse is integrated directly into the Chrome Developer Tools, under the "Audits" panel.
+https://github.com/GoogleChrome/lighthouse
 
 [back to top](#top)
 
