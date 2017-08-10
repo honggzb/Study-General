@@ -100,7 +100,8 @@
 │   ├── 19 个JavaScript 常用的简写技术.md
 │   ├── javascript实现英文首字母大写
 │   ├── javascript操作JSON常用方法
-│   └── javascript常用技巧.md
+│   ├── javascript常用技巧.md
+│   └── 经典代码.md
 │
 ├── JQuery
 │   ├── jQuery中的text()、html()和val()以及innerText、innerHTML和value.md
