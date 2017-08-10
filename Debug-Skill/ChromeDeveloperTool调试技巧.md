@@ -13,6 +13,7 @@
 - [11. Run snippets of code from any page](#snippets)
 - [12. paint profiler in Chrome DevTools](#paint-profiler)
 - [13. Layers Panel](#Layers-Panel)
+- [14. memory Panel](#memory-Panel)
 
 <h3 id="查看元素绑定了哪些事件">2. 查看元素绑定了哪些事件</h3>
 
@@ -57,6 +58,8 @@ Pretty print 左侧的按钮是开启 js 抛异常时中断的开关, 有两种�
 - 更多 console api 请 console.log(console) 或 [【点击】](http://getfirebug.com/wiki/index.php/Console_API#console.trace.28.29)
 - 更多 command line api  [【点击】](http://getfirebug.com/wiki/index.php/Command_Line_API)
 
+[back to top](#top)
+
 <h3 id="Edit-Mode">9. Edit Mode: Edit any text on the page</h3>
 
 - type `document.designMode = "on"` in console to turn on design mode, then click and type any text on the page
@@ -77,6 +80,8 @@ need to click on the Paint event in the Event Log tab first. On the right-hand s
 
 ![](http://i.imgur.com/5aLaA9f.png)
 
+[back to top](#top)
+
 <h3 id="Layers-Panel">13. Layers Panel</h3>
 
 1. Go to chrome://flags and enable “Enable Developer Tools experiments.”
@@ -88,6 +93,16 @@ need to click on the Paint event in the Event Log tab first. On the right-hand s
 7. Close, then re-open Chrome DevTools
 
 Now you should see the “Layers” tab (https://www.sencha.com/blog/hidden-gems-in-chrome-developer-tools/)
+
+[back to top](#top)
+
+<h3 id="memory-Panel">14. memory Panel</h3>
+
+- Snapshot, save, import heap profile
+- use comparison view to identify potential memory leaks
+- use summary view to identify DOM leaks
+
+[back to top](#top)
 
 > Reference
 
