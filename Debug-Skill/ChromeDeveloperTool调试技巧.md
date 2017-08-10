@@ -25,6 +25,7 @@
   - [16.7 追踪函数的调用轨迹-console.trace()](#追踪函数的调用轨迹)
   - [16.8 显示代码的运行时间-console.time()和console.timeEnd()](显示代码的运行时间)
   - [16.9 性能分析-console.profile()](#性能分析)
+- [17. debug nodeJS](#nodeJS)
 
 <h3 id="查看元素绑定了哪些事件">2. 查看元素绑定了哪些事件</h3>
 
@@ -248,6 +249,14 @@ console.profile('性能分析器');
 All();
 console.profileEnd();
 ```
+
+[back to top](#top)
+
+<h3 id="nodeJS">17. debug nodeJS</h3>
+
+`node2 --inspect backend/app.js`
+
+will generate a url, copy it to browser url, you will see the backend node js file and debug it
 
 [back to top](#top)
 
