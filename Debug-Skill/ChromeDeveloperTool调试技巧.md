@@ -15,6 +15,16 @@
 - [13. Layers Panel](#Layers-Panel)
 - [14. memory Panel](#memory-Panel)
 - [15. Save as HDR in network Panel](#HDR)
+- [16. using the console](#console)
+  - [16.1 console.assert(expression, object)](#consolelog)
+  - [16.2 console.table()- quick way to see data](#consoletable)
+  - [16.3 占位符](#占位符)
+  - [16.4 分组显示-console.group()和console.groupEnd()](#分组显示)
+  - [16.5 查看对象的信息-console.dir()](#查看对象的信息)
+  - [16.6 显示某个节点的内容-console.dirxml()](#显示某个节点的内容)
+  - [16.7 追踪函数的调用轨迹-console.trace()](#追踪函数的调用轨迹)
+  - [16.8 显示代码的运行时间-console.time()和console.timeEnd()](显示代码的运行时间)
+  - [16.9 性能分析-console.profile()](#性能分析)
 
 <h3 id="查看元素绑定了哪些事件">2. 查看元素绑定了哪些事件</h3>
 
@@ -102,6 +112,140 @@ Now you should see the “Layers” tab (https://www.sencha.com/blog/hidden-gems
 - Snapshot, save, import heap profile
 - use comparison view to identify potential memory leaks
 - use summary view to identify DOM leaks
+
+[back to top](#top)
+
+<h3 id="console">16. using the console</h3>
+
+```javascript
+console.info("这是info");
+console.debug("这是debug");
+console.warn("这是warn");
+console.error("这是error");
+console.clear();
+```
+
+<h4 id="consolelog">16.1 console.assert(expression, object)</h4>
+
+console.assert()用来判断一个表达式或变量是否为真。如果结果为否，则在控制台输出一条相应信息，并且抛出一个异常
+
+```javascript
+var myArray = [];
+console.assert(myArray.length>=1, 'myArray length was not greater than 1.')
+```
+
+<h4 id="consoletable">16.2 console.table()- quick way to see data</h4>
+
+```javascript
+function fourthFunction(){
+  totalFunctionCalled++;
+  $.getJson('data/data.json', function(data){
+    var items=[], className='';
+    $.each(data, function (i) {
+      className = ( i===4) ? 'highlight' : '';
+      items.push('<li id="obj" + data[i].index +'" class="'+'</li>)
+    });
+    $('<ul/>', {
+      'class': 'person-list', html: items.join('')
+    }).appendTo('.list-container');
+    console.clear();
+    console.table(data, ['name','gender','email']);
+  })
+}
+```
+
+<h4 id="占位符">16.3 占位符</h4>
+
+支持的占位符有：字符（`%s`）、整数（`%d`或`%i`）、浮点数（`%f`）和对象（`%o`）
+
+```javascript
+console.log("%d年%d月%d日",2011,3,26);
+console.log("圆周率是%f",3.1415926);
+//%o占位符，可以用来查看一个对象内部情况
+var dog = {} ;
+dog.name = "大毛" ;
+dog.color = "黄色";
+console.log("%o",dog);
+```
+
+<h4 id="分组显示">16.4 分组显示-console.group()和console.groupEnd()</h4>
+
+```javascript
+console.group("第一组信息");
+  console.log("第一组第一条");
+  console.log("第一组第二条");
+console.groupEnd();
+console.group("第二组信息");
+  console.log("第二组第一条");
+  console.log("第二组第二条");
+console.groupEnd();
+```
+
+<h4 id="查看对象的信息">16.5 查看对象的信息-console.dir()</h4>
+
+console.dir()可以显示一个对象所有的属性和方法。
+
+```javascript
+var info = {
+  blog:"http://www.jb51.net",
+  QQGroup:80535344,
+  message:"程序爱好者欢迎你的加入"
+};
+console.dir(info);
+```
+
+<h4 id="显示某个节点的内容">16.6 显示某个节点的内容-console.dirxml()</h4>
+
+console.dir()可以显示一个对象所有的属性和方法。
+
+```javascript
+var info = document.getElementById('info');
+console.dirxml(info);    //将显示节点id为info的html内容
+```
+
+<h4 id="追踪函数的调用轨迹">16.7 追踪函数的调用轨迹-console.trace()</h4>
+
+```javascript
+function add(a,b){
+  console.trace();
+　return a+b;
+}
+var x = add3(1,1);
+function add3(a,b){return add2(a,b);}
+function add2(a,b){return add1(a,b);}
+function add1(a,b){return add(a,b);}
+```
+
+<h4 id="显示代码的运行时间">16.8 显示代码的运行时间-console.time()和console.timeEnd()</h4>
+
+```javascript
+console.time("控制台计时器一");
+for(var i=0;i<1000;i++){
+　　for(var j=0;j<1000;j++){}
+}
+console.timeEnd("控制台计时器一");   //输出‘控制台计时器一: 4.0439453125ms’
+```
+
+<h4 id="显示代码的运行时间">16.9 性能分析-console.profile()</h4>
+
+```javascript
+function All(){
+  alert(11);
+　for(var i=0;i<10;i++){
+    funcA(1000);
+  }
+  funcB(10000);
+}
+function funcA(count){
+  for(var i=0;i<count;i++){}
+}
+function funcB(count){
+　for(var i=0;i<count;i++){}
+}
+console.profile('性能分析器');
+All();
+console.profileEnd();
+```
 
 [back to top](#top)
 
