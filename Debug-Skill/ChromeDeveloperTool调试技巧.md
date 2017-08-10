@@ -117,6 +117,8 @@ Now you should see the “Layers” tab (https://www.sencha.com/blog/hidden-gems
 
 <h3 id="console">16. using the console</h3>
 
+[Console命令详解,让调试js代码变得更简单](http://www.cnblogs.com/kiter/p/3943342.html)
+
 ```javascript
 console.info("这是info");
 console.debug("这是debug");
@@ -254,3 +256,4 @@ console.profileEnd();
 - https://developers.google.com/web/tools/chrome-devtools/
 - [Twelve Fancy Chrome DevTools Tips](https://hackernoon.com/twelve-fancy-chrome-devtools-tips-dc1e39d10d9d)
 - http://www.cnblogs.com/suizhikuo/archive/2012/06/05/2537290.html
+- [Console命令详解,让调试js代码变得更简单](http://www.cnblogs.com/kiter/p/3943342.html)
