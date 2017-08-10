@@ -14,6 +14,7 @@
 - [12. paint profiler in Chrome DevTools](#paint-profiler)
 - [13. Layers Panel](#Layers-Panel)
 - [14. memory Panel](#memory-Panel)
+- [15. Save as HDR in network Panel](#HDR)
 
 <h3 id="查看元素绑定了哪些事件">2. 查看元素绑定了哪些事件</h3>
 
