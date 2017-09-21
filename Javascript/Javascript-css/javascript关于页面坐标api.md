@@ -5,25 +5,25 @@
       <th></th>
   </thead>
   <tbody> 
-    <tr>
+    <tr border="1">
       <td rowspan="2" align="center">网页可见区域</td>
       <td>网页可见区域宽</td>
       <td>document.body.clientWidth;</td>
     </tr>
-    <tr>
+    <tr border="1">
       <td>网页可见区域高</td>
       <td>document.body.clientHeight;</td>
     </tr>
-    <tr>
+    <tr border="1">
       <td rowspan="2" align="center">网页可见区域(包括边线的宽)</td>
       <td>网页可见区域宽</td>
       <td>document.body.offsetWidth(包括边线的宽)</td>
     </tr>
-    <tr>
+    <tr border="1">
       <td>网页可见区域高</td>
       <td>document.body.offsetHeight;(包括边线的宽)</td>
     </tr>
-    <tr>
+    <tr border="1">
       <td rowspan="2">网页正文全文</td>
       <td>网页正文全文宽</td>
       <td>document.body.scrollWidth;</td>
@@ -32,7 +32,7 @@
       <td>网页正文全文高</td>
       <td>document.body.scrollHeight;</td>
     </tr>
-    <tr>
+    <tr border="1">
       <td rowspan="2" align="center">网页被卷去的</td>
       <td>网页被卷去的左</td>
       <td>document.body.scrollLeft;</td>
@@ -41,7 +41,7 @@
       <td>网页被卷去的高</td>
       <td>document.body.scrollTop;</td>
     </tr>
-    <tr>
+    <tr border="1">
       <td rowspan="2" align="center">网页正文部分</td>
       <td>网页正文部分上</td>
       <td>window.screenTop; //返回当前窗口距离屏幕顶端的距离</td>
@@ -59,7 +59,7 @@
       <td>屏幕的宽</td>
       <td>window.screen.width;</td>
     </tr>
-    <tr>
+    <tr border="1">
       <td rowspan="2" align="center">屏幕可用工作区</td>
       <td>屏幕可用工作区高度</td>
       <td>window.screen.availHeight;</td>
