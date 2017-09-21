@@ -1,12 +1,12 @@
 <table border="1" cellspacing="0" cellpadding="5">
   <thead> 
       <th align="center">页面坐标api</th>
-      <th>说明</th>
+      <th align="center">说明</th>
       <th></th>
   </thead>
   <tbody> 
     <tr>
-      <td rowspan="2">网页可见区域</td>
+      <td rowspan="2" align="center">网页可见区域</td>
       <td>网页可见区域宽</td>
       <td>document.body.clientWidth;</td>
     </tr>
@@ -15,7 +15,7 @@
       <td>document.body.clientHeight;</td>
     </tr>
     <tr>
-      <td rowspan="2">网页可见区域(包括边线的宽)</td>
+      <td rowspan="2" align="center">网页可见区域(包括边线的宽)</td>
       <td>网页可见区域宽</td>
       <td>document.body.offsetWidth(包括边线的宽)</td>
     </tr>
@@ -33,7 +33,7 @@
       <td>document.body.scrollHeight;</td>
     </tr>
     <tr>
-      <td rowspan="2">网页被卷去的</td>
+      <td rowspan="2" align="center">网页被卷去的</td>
       <td>网页被卷去的左</td>
       <td>document.body.scrollLeft;</td>
     </tr>
@@ -42,7 +42,7 @@
       <td>document.body.scrollTop;</td>
     </tr>
     <tr>
-      <td rowspan="2">网页正文部分</td>
+      <td rowspan="2" align="center">网页正文部分</td>
       <td>网页正文部分上</td>
       <td>window.screenTop; //返回当前窗口距离屏幕顶端的距离</td>
     </tr>
@@ -51,7 +51,7 @@
       <td>window.screenLeft;</td>
     </tr>
     <tr>
-      <td rowspan="2">屏幕</td>
+      <td rowspan="2" align="center">屏幕</td>
       <td>屏幕的高</td>
       <td>window.screen.height;</td>
     </tr>
@@ -60,7 +60,7 @@
       <td>window.screen.width;</td>
     </tr>
     <tr>
-      <td rowspan="2">屏幕可用工作区</td>
+      <td rowspan="2" align="center">屏幕可用工作区</td>
       <td>屏幕可用工作区高度</td>
       <td>window.screen.availHeight;</td>
     </tr>
@@ -71,6 +71,7 @@
   </tbody>
 </table>
 
+![](https://i.imgur.com/Kd3r5pp.png)
 
 | Header One     | Header Two     |
 | :------------- | :------------- |
