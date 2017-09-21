@@ -1,4 +1,4 @@
-<table border="1" cellspacing="0" cellpadding="5">
+<table cellspacing="0" cellpadding="5">
   <thead> 
       <th align="center">页面坐标api</th>
       <th align="center">说明</th>
