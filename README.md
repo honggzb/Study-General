@@ -97,6 +97,7 @@
 │   ├── avoid-loop-by-using-userdefined.md      -自定义的reduce, filter, find功能，可以避免写很多的loop
 │   ├── javascript之文件上传下载.md
 │   ├── 去掉js数组中的重复项.md
+│   ├── javascript中复制数组.md
 │   ├── 利用ES6新特性对数组实现的一些hack方法.md
 │   ├── 19 个JavaScript 常用的简写技术.md
 │   ├── javascript实现英文首字母大写
