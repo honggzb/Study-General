@@ -12,6 +12,7 @@
 - [10. JS 替换非法字符主要用在密码验证上出现的特殊字符](#替换非法字符主要用在密码验证上出现的特殊字符)
 - [11. Js 去掉空格方法](#去掉空格方法)
 - [12. 获取当前时间](#获取当前时间)
+- [13. 获取字符串最后和第一位方法](#获取字符串最后和第一位方法)
 
 <h3 id="手机类型判断">1. 手机类型判断</h3>
 
@@ -274,6 +275,19 @@ function add_zero(temp) {
 
 [back to top](#top)
 
+<h3 id="获取字符串最后和第一位方法">12.13. 获取字符串最后和第一位方法</h3>
+
+```javascript
+//最后一位
+str.charAt(str.length – 1);
+str.substr(str.length-1,1);
+//第一位
+"abcdef".charAt(0);     // 'a'
+//去除第一位的剩余字符串
+"abcdef".substr(1);    //"bcdef"
+```
+
+[back to top](#top)
 
 > Reference
 
