@@ -91,7 +91,7 @@ npm install --save-dev serve
 devtool: 'inline-source-map',
 #2) second-key: Use in command line or package.json
 webpack --watch
-``
+```
 
 > 补充： devtool的参数说明
 
