@@ -28,8 +28,9 @@
 
 <h3 id="Gulp">1. Gulp</h3>
 
-![Grunt bulid flow](http://i.imgur.com/FDslcyq.png)
-![Gulp build flow](http://i.imgur.com/V1DzqTk.png)
+`读取文件 ->  代码检查 -> 合并 -> 压缩 -> 输出到目标`
+
+![](https://i.imgur.com/QPfhNaD.png)
 
 <h3 id="Gulp-api">2. Gulp API</h3>
 
@@ -93,6 +94,8 @@ gulp通过gulpfile.js文件来完成相关任务，因此项目根目录中必�
 |`+(pattern|pattern|pattern)`|匹配括号中给定的任一模式至少1次，类似于js正则中的`(pattern|pattern|pattern)+`|
 |`*(pattern|pattern|pattern)`|匹配括号中给定的任一模式0次或多次，类似于js正则中的`(pattern|pattern|pattern)*`|
 |`@(pattern|pattern|pattern)`|匹配括号中给定的任一模式1次，类似于js正则中的`(pattern|pattern|pattern)`|
+
+简单案例
 
 ```javascript
 		gulp.src(['client/*.js', '!client/b*.js', 'client/c.js'])    //!是排除某些文件
