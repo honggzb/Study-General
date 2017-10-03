@@ -1,6 +1,4 @@
-## Media Queries for Standard Devices
-
---[top](#top)
+## [Media Queries for Standard Devices](#top)
 
 - [1 Phones and Handhelds](#Phones-and-Handhelds)
   - [1.1 iPhones](#iPhones)
