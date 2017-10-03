@@ -3,14 +3,14 @@
 - [1. meta基础知识](#meta基础知识)
   - H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
   - 忽略将页面中的数字识别为电话号码
-  - 忽略Android平台中对邮箱地址的识别](#忽略Android平台中对邮箱地址的识别)
-  - 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new)](#当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new))
-  - 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式](#将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式)
+  - 忽略Android平台中对邮箱地址的识别
+  - 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new)
+  - 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式
 - [2. viewport模板](#viewport模板)
 - [3. 常见问题](#常见问题)
-  - 移动端如何定义字体font-family
-  - 移动端字体单位font-size选择px还是rem (new)
-  - 移动端touch事件(区分webkit 和 winphone) (new)
+  - [移动端如何定义字体font-family](#移动端如何定义字体)
+  - [移动端字体单位font-size选择px还是rem (new)](#移动端字体单位)
+  - [移动端touch事件(区分webkit 和 winphone) (new)](#移动端touch事件)
   - 移动端click屏幕产生200-300 ms的延迟响应
   - 触摸事件的响应顺序
   - 什么是Retina 显示屏，带来了什么问题
@@ -158,7 +158,7 @@ html{font-size:10px}
 
 [back to top](#top)
 
-<h5>3. 移动端touch事件(区分webkit 和 winphone)</h5>
+<h3 id="移动端touch事件">3.3 移动端touch事件(区分webkit 和 winphone)</h3>
 
 当用户手指放在移动设备在屏幕上滑动会触发的touch事件
 
@@ -689,6 +689,7 @@ for(var i = 0 ,l = _btn.length; i < l; i++){
   - 解决页面不支持弹性滚动，不支持fixed引起的问题~
   - 实现下拉刷新，滑屏，缩放等功能~
   - 官网：http://cubiq.org/iscroll-5
+  - [用JS有效解决移动web浏览器中HTML元素的overflow:scroll滚动属性失效问题](http://blog.csdn.net/kaosini/article/details/25101493): iscroll的一些常用方法和注意事项
 - underscore.js
   - 该库提供了一整套函数式编程的实用功能，但是没有扩展任何JavaScript内置对象。
   - 官网：http://underscorejs.org/
