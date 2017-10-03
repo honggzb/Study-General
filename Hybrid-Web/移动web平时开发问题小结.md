@@ -3,6 +3,7 @@
 - [1. CSS](#css)
   - [1.1 Background image not showing on iPad and iPhone](#background-image)
   - [1.2 Scrolling slow on mobile/ios](#Scrolling)
+  - [1.3 Scrolling issue with Fix div or background on mobile/ios](#fix-Scrolling)
 - [2. ios horizontal bug](#ios-horizontal-bug) 
 
 <h2 id="css">1. CSS</h2>
@@ -72,6 +73,49 @@ https://stackoverflow.com/questions/33601165/scrolling-slow-on-mobile-ios-when-u
 ```
 
 http://patrickmuff.ch/blog/2014/10/01/how-we-fixed-the-webkit-overflow-scrolling-touch-bug-on-ios/
+
+[back to top](#top)
+
+<h3 id="fix-Scrolling">1.3 Scrolling issue with Fix div or background on mobile/ios</h3>
+
+```css
+/* Original CSS */
+.what-we-do-cards {
+  @include clearfix;
+  border-top: 10px solid rgba(255, 255, 255, .46);
+  background-color: white;
+  background: url('/img/front/strategy.jpg') no-repeat center center;
+  background-attachment: fixed;    /* GPU-intensive features */
+  background-size: cover;          /* GPU-intensive features */
+  color: $white;
+  padding-bottom: 4em;
+}
+/* GPU-friendly CSS: Scrolling will no longer cause repainting once the image sits in its own layer */
+.what-we-do-cards {
+  @include clearfix;
+  border-top: 10px solid rgba(255, 255, 255, .46);
+  color: $white;
+  padding-bottom: 4em;
+  overflow: hidden;     /* added for pseudo-element*/
+  position: relative; /* added for pseudo-element*/
+  /* Fixed-position background image*/
+  &::before {
+    content: ' ';
+    position: fixed;    /* instead of background-attachment */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    background: url('/img/front/strategy.jpg') no-repeat center center;
+    background-size: cover;
+    will-change: transform;        /* creates a new paint layer*/
+    z-index: -1;
+  }
+}
+```
+
+[Fix scrolling performance with CSS will-change property](https://www.fourkitchens.com/blog/article/fix-scrolling-performance-css-will-change-property/)
 
 [back to top](#top)
 
