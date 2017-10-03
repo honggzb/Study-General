@@ -11,7 +11,6 @@
 
 See [background-size](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size_. This property must be specified after background-position, separated with the '/' character.
 
-
 ```css
 background: url([URL]) 0 0 / auto 749px;
 /* or 1) */
@@ -51,7 +50,7 @@ section {
 }
 ```
 
-[back to top)(#top)
+[back to top](#top)
 
 <h3 id="Scrolling">1.2 Scrolling slow on mobile/ios</h3>
 
@@ -65,7 +64,7 @@ https://stackoverflow.com/questions/33601165/scrolling-slow-on-mobile-ios-when-u
 }
 ```
 
-[back to top)(#top)
+[back to top](#top)
 
 <h2 id="ios-horizontal-bug">2. ios horizontal bug</h2>
 
@@ -101,7 +100,7 @@ function isTouchDevice(){
 }  
 ```
 
-[back to top)(#top)
+[back to top](#top)
 
 > Reference
 
