@@ -122,9 +122,11 @@
 
 > 参考案例：http://action.weixin.qq.com/payact/readtemplate?t=mobile/2015/wxzfsht/index_tmpl
 
-<h2 id="v常见问题">3. 常见问题</h2>
+[back to top](#top)
 
-<h3 id="移动端如何定义字体">3.1 移动端如何定义字体font-family</3>
+<h2 id="常见问题">3. 常见问题</h2>
+
+<h3 id="移动端如何定义字体">3.1 移动端如何定义字体font-family</h3>
 
 中文字体使用系统默认即可，英文用Helvetica
 
@@ -132,7 +134,9 @@
 
 > 参考[《移动端使用字体的思考》](http://www.cnblogs.com/PeunZhang/p/3592096.html)
 
-<h5>2. 移动端字体单位font-size选择px还是rem</h5>
+[back to top](#top)
+
+<h3 id="移动端字体单位">2. 移动端字体单位font-size选择px还是rem</h3>
 
 - 对于只需要适配少部分手机设备，且分辨率对页面影响不大的，使用px即可
 - 对于需要适配各种移动设备，使用rem，例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备
@@ -151,6 +155,8 @@ html{font-size:10px}
 ```
 
 > 体验demo：http://1.peunzhang.sinaapp.com/demo/rem/index.html
+
+[back to top](#top)
 
 <h5>3. 移动端touch事件(区分webkit 和 winphone)</h5>
 
