@@ -7,6 +7,7 @@
   - 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new)
   - 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式
   - 桌面图标
+  - 顶部状态栏背景色
   - 启动画面
   - 浏览器私有及其它meta
 - [2. viewport模板](#viewport模板)
@@ -84,7 +85,14 @@
 <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" />
 <!-- 桌面图标: 去掉光泽效果，还原设计图的效果 -->
 <link rel="apple-touch-icon-precomposed" href="touch-icon-iphone.png" />
-<!-- 8. 启动画面 -->
+<!-- 8. 顶部状态栏背景色 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<!-- 除非你先使用apple-mobile-web-app-capable指定全屏模式，否则这个meta标签不会起任何作用
+- 如果content设置为default，则状态栏正常显示。如果设置为blank，则状态栏会有一个黑色的背景。如果设置为blank-translucent，则状态栏显示为黑色半透明
+- 如果设置为default或blank，则页面显示在状态栏的下方，即状态栏占据上方部分，页面占据下方部分，二者没有遮挡对方或被遮挡
+- 如果设置为blank-translucent，则页面会充满屏幕，其中页面顶部会被状态栏遮盖住（会覆盖页面20px高度，而iphone4和itouch4的Retina屏幕为40px）
+- 默认值是default -->
+<!-- 9. 启动画面 -->
 <link rel="apple-touch-startup-image" href="start.png"/>
 <!-- iOS下页面启动加载时显示的画面图片，避免加载时的白屏。可以通过madia来指定不同的大小：-->
 <!--iPhone-->
