@@ -11,39 +11,39 @@
   - [移动端如何定义字体font-family](#移动端如何定义字体)
   - [移动端字体单位font-size选择px还是rem (new)](#移动端字体单位)
   - [移动端touch事件(区分webkit 和 winphone) (new)](#移动端touch事件)
-  - 移动端click屏幕产生200-300 ms的延迟响应
-  - 触摸事件的响应顺序
-  - 什么是Retina 显示屏，带来了什么问题
-  - ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉
-  - 部分android系统中元素被点击时产生的边框怎么去掉
-  - winphone系统a、input标签被点击时产生的半透明灰色背景怎么去掉
-  - webkit表单元素的默认外观怎么重置 (new)
-  - webkit表单输入框placeholder的颜色值能改变么
-  - webkit表单输入框placeholder的文字能换行么
-  - IE10（winphone8）表单元素默认外观如何重置
-  - 禁止ios 长按时不触发系统的菜单，禁止ios&android长按时下载图片
-  - 禁止ios和android用户选中文字
-  - 打电话发短信写邮件怎么实现
-  - 模拟按钮hover效果
-  - 屏幕旋转的事件和样式
-  - audio元素和video元素在ios和andriod中无法自动播放
-  - 摇一摇功能  (new)
-  - 手机拍照和上传图片
-  - 微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整
-  - 消除transition闪屏
-  - 开启硬件加速
-  - 取消input在ios下，输入的时候英文首字母的默认大写
-  - android上去掉语音输入按钮
-  - android 2.3 bug
-  - android 4.x bug
-  - 设计高性能CSS3动画的几个要素
-  - fixed bug
-  - 如何阻止windows Phone的默认触摸事件
-  - 播放视频不全屏
-  - FastClick:消除在移动浏览器上触发click事件与一个物理Tap(敲击)之间的300延迟
-  - 微信浏览器、UC浏览器成功禁用触摸时的弹出层失败
-  - 模拟按钮hover效果的两种实现方式，第一种在微信没反应，第二种页面引用了zepto.js,写了方法但是和默认的滑动有冲突，不能流畅的滑动了
-  - ios虚拟键盘“go”按钮的实现
+  - [移动端click屏幕产生200-300 ms的延迟响应](#移动端click屏幕产生)
+  - [触摸事件的响应顺序](#触摸事件的响应顺序)
+  - [什么是Retina 显示屏，带来了什么问题](#什么是Retina 显示屏)
+  - [ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉](#ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉)
+  - [部分android系统中元素被点击时产生的边框怎么去掉](#部分android系统中元素被点击时产生的边框怎么去掉)
+  - [winphone系统a、input标签被点击时产生的半透明灰色背景怎么去掉](#半透明灰色背景)
+  - [webkit表单元素的默认外观怎么重置 (new)](#)
+  - [webkit表单输入框placeholder的颜色值能改变么](#)
+  - [webkit表单输入框placeholder的文字能换行么](#)
+  - [IE10（winphone8）表单元素默认外观如何重置](#)
+  - [禁止ios 长按时不触发系统的菜单，禁止ios&android长按时下载图片](#)
+  - [禁止ios和android用户选中文字](#)
+  - [打电话发短信写邮件怎么实现](#)
+  - [模拟按钮hover效果](#)
+  - [屏幕旋转的事件和样式](#)
+  - [audio元素和video元素在ios和andriod中无法自动播放](#)
+  - [摇一摇功能  (new)](#)
+  - [手机拍照和上传图片](#)
+  - [微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整](#)
+  - [消除transition闪屏](#)
+  - [开启硬件加速](#)
+  - [取消input在ios下，输入的时候英文首字母的默认大写](#)
+  - [android上去掉语音输入按钮](#)
+  - [android 2.3 bug](#)
+  - [android 4.x bug](#)
+  - [设计高性能CSS3动画的几个要素](#)
+  - [fixed bug](#)
+  - [如何阻止windows Phone的默认触摸事件](#)
+  - [播放视频不全屏](#)
+  - [FastClick:消除在移动浏览器上触发click事件与一个物理Tap(敲击)之间的300延迟](#)
+  - [微信浏览器、UC浏览器成功禁用触摸时的弹出层失败](#)
+  - [模拟按钮hover效果的两种实现方式，第一种在微信没反应，第二种页面引用了zepto.js,写了方法但是和默认的滑动有冲突，不能流畅的滑动了](#)
+  - [ios虚拟键盘“go”按钮的实现](#)
 - [常用的移动端框架](#常用的移动端框架)
   - zepto.js
   - iscroll.js
@@ -187,7 +187,9 @@ html{font-size:10px}
 - MSPointerMove——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用css的html{-ms-touch-action: none;}可以阻止默认情况的发生：阻止页面滚动
 - MSPointerUp——当手指离开屏幕时触发
 
-<h5>4. 移动端click屏幕产生200-300 ms的延迟响应</h5>
+[back to top](#top)
+
+<h3 id="移动端click屏幕产生">3.4 移动端click屏幕产生200-300 ms的延迟响应</h3>
 
 移动设备上的web网页是有300ms延迟的，玩玩会造成按钮点击延迟甚至是点击失效。
 
@@ -206,14 +208,18 @@ html{font-size:10px}
 
 触摸事件的响应顺序
 
+```
     1、ontouchstart 
     2、ontouchmove 
     3、ontouchend 
     4、onclick
+```
 
 解决300ms延迟的问题，也可以通过绑定ontouchstart事件，加快对事件的响应
 
-<h5>5. 什么是Retina 显示屏，带来了什么问题</h5>
+[back to top](#top)
+
+<h3 id="什么是Retina">3.5 什么是Retina 显示屏，带来了什么问题</h3>
 
 **retina**：一种具备超高像素密度的液晶屏，同样大小的屏幕上显示的像素点由1个变为多个，如在同样带下的屏幕上，苹果设备的retina显示屏中，像素点1个变为4个, 在高清显示屏中的位图被放大，图片会变得模糊，因此移动端的视觉稿通常会设计为传统PC的2倍, 那么，前端的应对方案是：
 
@@ -230,34 +236,40 @@ html{font-size:10px}
 
 > 参考[《高清显示屏原理及设计方案》](http://www.cnblogs.com/PeunZhang/p/3441110.html)
 
-<h5>6. ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉</h5>
+[back to top](#top)
+
+<h3 id="ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉">3.6 ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉</h3>
 
 ios用户点击一个链接，会出现一个半透明灰色遮罩, 如果想要禁用，可设置`-webkit-tap-highlight-color`的`alpha`值为`0`，也就是属性值的最后一位设置为0就可以去除半透明灰色遮罩
 
 `a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0;)}`
 
-<h5>7. 部分android系统中元素被点击时产生的边框怎么去掉</h5>
+[back to top](#top)
+
+<h3 id="部分android系统中元素被点击时产生的边框怎么去掉">3.7 部分android系统中元素被点击时产生的边框怎么去掉</h3>
 
 android用户点击一个链接，会出现一个边框或者半透明灰色遮罩, 不同生产商定义出来额效果不一样，可设置`-webkit-tap-highlight-color`的`alpha`值为`0`去除部分机器自带的效果
 
 ```css
 a,button,input,textarea{
--webkit-tap-highlight-color: rgba(0,0,0,0;)
--webkit-user-modify:read-write-plaintext-only; 
+  -webkit-tap-highlight-color: rgba(0,0,0,0;)
+  -webkit-user-modify:read-write-plaintext-only; 
 }
 ```
 
-    -webkit-user-modify有个副作用，就是输入法不再能够输入多个字符
-    另外，有些机型去除不了，如小米2
-    对于按钮类还有个办法，不使用a或者input标签，直接用div标签
+- `-webkit-user-modify`有个副作用，就是输入法不再能够输入多个字符
+- 另外，有些机型去除不了，如小米2
+- 对于按钮类还有个办法，不使用a或者input标签，直接用div标签
 
 > 参考[《如何去除android上a标签产生的边框》](http://www.cnblogs.com/PeunZhang/archive/2013/02/28/2907708.html)
 
-<h5>8. winphone系统a、input标签被点击时产生的半透明灰色背景怎么去掉</h5>
+[back to top](#top)
+
+<h3 id="半透明灰色背景怎么去掉">3.8 winphone系统a、input标签被点击时产生的半透明灰色背景怎么去掉</h3>
 
 `<meta name="msapplication-tap-highlight" content="no">`
 
-<h5>9. webkit表单元素的默认外观怎么重置</h5>
+<h3 id="webkit表单元素的默认外观怎么重置">3.9 webkit表单元素的默认外观怎么重置</h3>
 
 **通用**
 
@@ -277,7 +289,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 ```
 
-<h5>10. webkit表单输入框placeholder的颜色值能改变么</h5>
+[back to top](#top)
+
+<h3 id="webkit表单输入框placeholder的颜色值能改变么">3.10 webkit表单输入框placeholder的颜色值能改变么</h3>
 
 ```css
 input::-webkit-input-placeholder{color:#AAAAAA;}
