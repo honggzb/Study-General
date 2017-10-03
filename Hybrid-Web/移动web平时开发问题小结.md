@@ -3,6 +3,7 @@
 - [1. CSS](#css)
   - [1.1 Background image not showing on iPad and iPhone](#background-image)
   - [1.2 Scrolling slow on mobile/ios](#Scrolling)
+- [2. ios horizontal bug](#ios-horizontal-bug) 
 
 <h2 id="css">1. CSS</h2>
 
@@ -66,6 +67,43 @@ https://stackoverflow.com/questions/33601165/scrolling-slow-on-mobile-ios-when-u
 
 [back to top)(#top)
 
+<h2 id="ios-horizontal-bug">2. ios horizontal bug</h2>
+
+if you are trying to achieve horizontal div scrolling with touch on mobile, the updated CSS fix does not work (tested on Android Chrome and iOS Safari multiple versions), eg: `-webkit-overflow-scrolling: touch`
+
+http://chris-barr.com/2010/05/scrolling_a_overflowauto_element_on_a_touch_screen_device/
+
+```javascript
+//Usage:
+touchHorizScroll('divIDtoScroll');
+//Functions:
+function touchHorizScroll(id){
+    if(isTouchDevice()){ //if touch events exist...
+        var el=document.getElementById(id);
+        var scrollStartPos=0;
+
+        document.getElementById(id).addEventListener("touchstart", function(event) {
+            scrollStartPos=this.scrollLeft+event.touches[0].pageX;              
+        },false);
+
+        document.getElementById(id).addEventListener("touchmove", function(event) {
+            this.scrollLeft=scrollStartPos-event.touches[0].pageX;              
+        },false);
+    }
+}
+function isTouchDevice(){
+    try{
+        document.createEvent("TouchEvent");
+        return true;
+    }catch(e){
+        return false;
+    }
+}  
+```
+
+[back to top)(#top)
+
 > Reference
 
 - https://stackoverflow.com/questions/18999660/background-image-not-showing-on-ipad-and-iphone
+- https://stackoverflow.com/questions/3845445/how-to-get-the-scroll-bar-with-css-overflow-on-ios
