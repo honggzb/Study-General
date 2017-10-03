@@ -1,13 +1,13 @@
 [移动web资源整理](#top)
 
-- [meta基础知识](#meta基础知识)
+- [1. meta基础知识](#meta基础知识)
   - H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
   - 忽略将页面中的数字识别为电话号码
   - 忽略Android平台中对邮箱地址的识别](#忽略Android平台中对邮箱地址的识别)
   - 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new)](#当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new))
   - 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式](#将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式)
-- [viewport模板](#viewport模板)
-- [常见问题](#常见问题)
+- [2. viewport模板](#viewport模板)
+- [3. 常见问题](#常见问题)
   - 移动端如何定义字体font-family
   - 移动端字体单位font-size选择px还是rem (new)
   - 移动端touch事件(区分webkit 和 winphone) (new)
@@ -52,13 +52,15 @@
   - Sea.js
 - [flex布局](#flex布局)
 
-### meta基础知识
+<h2 id="meta基础知识">1. meta基础知识</h2>
 
 ```html
 <!-- 1. H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <!-- 2. 忽略将页面中的数字识别为电话号码-->
 <meta name="format-detection" content="telephone=no" />
+<!-- html5调用安卓或者ios的拨号功能 -->
+<a href="tel:10010">10010</a>
 <!-- 3. 忽略Android平台中对邮箱地址的识别-->
 <meta name="format-detection" content="email=no" />
 <!-- 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari-->
@@ -68,13 +70,15 @@
 <!-- 4. 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式-->
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <!-- 可选default、black、black-translucent -->
+<!-- 5. 设置Web应用是否以全屏模式运行, 可以通过只读属性window.navigator.standalone来确定网页是否以全屏模式显示 -->
+<meta name="apple-mobile-web-app-capable" content="yes">
 ```
 
 [back to top](#top)
 
-### viewport模板
+<h2 id="viewport模板">2. viewport模板</h2>
 
-#### 1. viewport模板——通用
+<h3 id="通用">2.1 viewport模板 —— 通用</h3>
 
 ```html
 <!DOCTYPE html>
@@ -95,7 +99,7 @@
 </html>
 ```
 
-<h5>2. viewport模板 - target-densitydpi=device-dpi，android 2.3.5以下版本不支持</h5>
+<h3 id="其他模板">2.2 viewport模板 - target-densitydpi=device-dpi，android 2.3.5以下版本不支持</h3>
 
 ```html
 <!DOCTYPE html>
@@ -118,9 +122,9 @@
 
 > 参考案例：http://action.weixin.qq.com/payact/readtemplate?t=mobile/2015/wxzfsht/index_tmpl
 
-## 常见问题
+<h2 id="v常见问题">3. 常见问题</h2>
 
-<h5>1. 移动端如何定义字体font-family</h5>
+<h3 id="移动端如何定义字体">3.1 移动端如何定义字体font-family</3>
 
 中文字体使用系统默认即可，英文用Helvetica
 
