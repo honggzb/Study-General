@@ -58,11 +58,42 @@ https://stackoverflow.com/questions/33601165/scrolling-slow-on-mobile-ios-when-u
 
 ```css
 .scrolling-content {
-   overflow-y: scroll;
+   overflow-y: scroll;                 //must be scroll, can not use auto
    -webkit-overflow-scrolling: touch;    /*adding `-webkit-overflow-scrolling:touch` to scrolling element*/
    height:100%;                          /*A value other than height:auto needs to be set*/
 }
+/* -webkit-overflow-scrolling: touch; breaks in Apple's iOS8 */
+/*The solution I: to remove all the CSS that tricks the browser into using the GPU:/
+-webkit-transform: translateZ(0px);
+-webkit-transform: translate3d(0,0,0);
+-webkit-perspective: 1000;
+/*The solution II: */
+.dashboardScroll-inner { height: calc(100% + 1px);}
 ```
+
+http://patrickmuff.ch/blog/2014/10/01/how-we-fixed-the-webkit-overflow-scrolling-touch-bug-on-ios/
+
+[back to top](#top)
+
+<h3 id="flicker">1.3 flicker on webkit-transition on mobile/ios</h3>
+
+- Add `-webkit-transform-style: preserve-3d;` to the elements that are flickering
+- Add `-webkit-backface-visibility: hidden;` to the elements that are flickering
+- Add `webkit-transform: translate3d(0, 0, 0);` to all its children
+- move the animating element outside of the parent the flickeringelements are within
+- if your element is bigger than 2000x2000 it has to create multiple textures. see http://trac.webkit.org/wiki/CoordinatedGraphicsSystem
+
+```css
+/*keep animation smooth in Safari above 2000px*/
+@media ( min-width: 2000px ) {
+    .boxContent {
+        -webkit-backface-visibility: hidden;
+    }
+}  
+```
+
+- https://stackoverflow.com/questions/15751012/css-transform-causes-flicker-in-safari-but-only-when-the-browser-is-2000px-w
+- http://www.viget.com/inspire/webkit-transform-kill-the-flash/
 
 [back to top](#top)
 
