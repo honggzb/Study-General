@@ -6,6 +6,9 @@
   - 忽略Android平台中对邮箱地址的识别
   - 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new)
   - 将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式
+  - 桌面图标
+  - 启动画面
+  - 浏览器私有及其它meta
 - [2. viewport模板](#viewport模板)
 - [3. 常见问题](#常见问题)
   - [移动端如何定义字体font-family](#移动端如何定义字体)
@@ -72,6 +75,57 @@
 <!-- 可选default、black、black-translucent -->
 <!-- 5. 设置Web应用是否以全屏模式运行, 可以通过只读属性window.navigator.standalone来确定网页是否以全屏模式显示 -->
 <meta name="apple-mobile-web-app-capable" content="yes">
+<!-- 6. 不使用cache -->
+<meta http-equiv="Cache-Control" content="no-cache" />
+<!-- 7. 桌面图标: iOS下针对不同设备定义不同的桌面图标。如果不定义则以当前屏幕截图作为图标, 图片尺寸可以设定为57*57（px）或者Retina可以定为114*114（px），ipad尺寸为72*72（px) -->
+<link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" />
+<!-- 桌面图标: 去掉光泽效果，还原设计图的效果 -->
+<link rel="apple-touch-icon-precomposed" href="touch-icon-iphone.png" />
+<!-- 8. 启动画面 -->
+<link rel="apple-touch-startup-image" href="start.png"/>
+<!-- iOS下页面启动加载时显示的画面图片，避免加载时的白屏。可以通过madia来指定不同的大小：-->
+<!--iPhone-->
+<link href="apple-touch-startup-image-320x460.png" media="(device-width: 320px)" rel="apple-touch-startup-image" />
+<!-- iPhone Retina -->
+<link href="apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+<!-- iPhone 5 -->
+<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="apple-touch-startup-image-640x1096.png">
+<!-- iPad portrait -->
+<link href="apple-touch-startup-image-768x1004.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image" />
+<!-- iPad landscape -->
+<link href="apple-touch-startup-image-748x1024.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image" />
+<!-- iPad Retina portrait -->
+<link href="apple-touch-startup-image-1536x2008.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+<!-- iPad Retina landscape -->
+<link href="apple-touch-startup-image-1496x2048.png"media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"rel="apple-touch-startup-image" />
+<!-- 浏览器私有及其它meta -->
+<!-- QQ浏览器私有 -->
+<!-- 全屏模式 -->
+<meta name="x5-fullscreen" content="true">
+<!-- 强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+<!-- 强制横屏 -->
+<meta name="x5-orientation" content="landscape">
+<!-- 应用模式 -->
+<meta name="x5-page-mode" content="app">
+<!-- UC浏览器私有 -->
+<!-- 全屏模式 -->
+<meta name="full-screen" content="yes">
+<!-- 强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+<!-- 强制横屏 -->
+<meta name="screen-orientation" content="landscape">
+<!-- 应用模式 -->
+<meta name="browsermode" content="application">
+<!--其它,针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓-->
+<meta name="HandheldFriendly" content="true">
+<!--微软的老式浏览器-->
+<meta name="MobileOptimized" content="320">
+<!--windows phone 点击无高光-->
+<meta name="msapplication-tap-highlight" content="no">
 ```
 
 [back to top](#top)
