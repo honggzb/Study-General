@@ -10,7 +10,7 @@
 - [3. 常见问题](#常见问题)
   - [移动端如何定义字体font-family](#移动端如何定义字体)
   - [移动端字体单位font-size选择px还是rem (new)](#移动端字体单位)
-  - [移动端touch事件(区分webkit 和 winphone) (new)](#移动端touch事件)
+  - [移动端touch事件(区分webkit 和 winphone)(new)](#移动端touch事件)
   - [移动端click屏幕产生200-300 ms的延迟响应](#移动端click屏幕产生)
   - [触摸事件的响应顺序](#触摸事件的响应顺序)
   - [什么是Retina 显示屏，带来了什么问题](#什么是Retina 显示屏)
@@ -206,7 +206,9 @@ html{font-size:10px}
 - fastclick可以解决在手机上点击事件的300ms延迟
 - zepto的touch模块，tap事件也是为了解决在click的延迟问题
 
-触摸事件的响应顺序
+[back to top](#top)
+
+<h3 id="触摸事件的响应顺序">触摸事件的响应顺序</h3>
 
 ```
     1、ontouchstart 
