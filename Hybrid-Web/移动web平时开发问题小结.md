@@ -3,8 +3,8 @@
 - [1. CSS](#css)
   - [1.1 Background image not showing on iPad and iPhone](#background-image)
   - [1.2 Scrolling slow on mobile/ios(-webkit-overflow-scrolling: touch)](#Scrolling)
-    - bug of dynamic add -webkit-overflow-scrolling: touch 
-    - bug of 在body里使用 -webkit-overflow-scrolling: touch;无效
+    - bug of dynamic add `-webkit-overflow-scrolling: touch;` 
+    - bug of 在body里使用 `-webkit-overflow-scrolling: touch;`无效
   - [1.3 Scrolling issue with Fix div or background on mobile/ios(use will-change提高性能)](#fix-Scrolling)
 - [2. ios horizontal bug](#ios-horizontal-bug) 
 - [3. 移动端web页面input+fixed布局bug - 软键盘唤起的情况下](#移动端web页面input+fixed布局)
