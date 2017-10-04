@@ -6,7 +6,7 @@
     - bug of dynamic add `-webkit-overflow-scrolling: touch;`
     - bug of 在body里使用 `-webkit-overflow-scrolling: touch;`无效
   - [1.3 Scrolling issue with Fix div or background on mobile/ios(use will-change提高性能)](#fix-Scrolling)
-  - [1.4 flicker on webkit-transition on mobile/ios](#flicker)
+  - [1.4 flicker when using webkit-transition on mobile/ios](#flicker)
 - [2. ios horizontal scroll bug](#ios-horizontal-bug) 
 
 <h2 id="css">1. CSS</h2>
