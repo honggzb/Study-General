@@ -3,6 +3,8 @@
 - [1. CSS](#css)
   - [1.1 Background image not showing on iPad and iPhone](#background-image)
   - [1.2 Scrolling slow on mobile/ios(-webkit-overflow-scrolling: touch)](#Scrolling)
+    - bug of dynamic add -webkit-overflow-scrolling: touch 
+    - bug of 在body里使用 -webkit-overflow-scrolling: touch;无效
   - [1.3 Scrolling issue with Fix div or background on mobile/ios(use will-change提高性能)](#fix-Scrolling)
 - [2. ios horizontal bug](#ios-horizontal-bug) 
 - [3. 移动端web页面input+fixed布局bug - 软键盘唤起的情况下](#移动端web页面input+fixed布局)
@@ -87,7 +89,20 @@ http://patrickmuff.ch/blog/2014/10/01/how-we-fixed-the-webkit-overflow-scrolling
 .inner { height: calc(100% + 1px); }
 ```
 
-http://patrickmuff.ch/blog/2014/10/01/how-we-fixed-the-webkit-overflow-scrolling-touch-bug-on-ios/
+[bug of 在body里使用 -webkit-overflow-scrolling: touch;无效](https://segmentfault.com/q/1010000009348207)
+
+直接给body写overflow-scrolling: touch在iOS手机并没有回弹的效果 但是给单个div写会有回弹的效果
+
+```css
+/*1) 解决方案1： 需要同时设置html和body才能起作用*/
+html,body{
+    height: 100%;
+    overflow: auto;
+   -webkit-overflow-scrolling: touch;
+}
+/*2) 解决方案2：给body加个overflow：hidden，再加这个-webkit-overflow-scrolling: touch;是有效果*/
+/*3) 解决方案3：在body下添加个容器 把-webkit-overflow-scrolling: touch; 写到容器里*/
+```
 
 [back to top](#top)
 
