@@ -15,7 +15,7 @@
 - [13、圆角bug:  某些Android手机圆角失效](#某些Android手机圆角失效)
 - [14、IOS中input键盘事件keyup、keydown、keypress支持不是很好](#顶部状态栏背景色)
 - [15、h5网站input设置为type=number的问题](#h5网站input设置为type=number的问题)
-- [16、ios设置input 按钮样式会被默认样式覆盖](#ios设置input 按钮样式会被默认样式覆盖)
+- [16、ios设置input按钮样式会被默认样式覆盖](#ios设置input按钮样式会被默认样式覆盖)
 - [17、IOS键盘字母输入，默认首字母大写](#IOS键盘字母输入)
 - [18、select 下拉选择设置右对齐](#下拉选择设置右对齐)
 - [19、通过transform进行skew变形，rotate旋转会造成出现锯齿现象](#通过transform进行skew变形)
