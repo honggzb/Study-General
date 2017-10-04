@@ -59,6 +59,18 @@ section {
 
 <h3 id="Scrolling">1.2 Scrolling slow on mobile/ios</h3>
 
+`-webkit-overflow-scrolling`是一个只有 iOS 设备支持的非标准属性。苹果自己的解释：指定是否在 overflow: scroll 的元素中使用“原生”的滚动方式, 包含两个可选值：auto 和 touch
+
+- auto：就是普通的无惯性滚动效果
+- touch：原生的滚动效果。使用此效果会构造一个stacking context
+
+`-webkit-overflow-scrolling`引发了那些坑？(http://www.cnblogs.com/chris-oil/p/6164966.html)
+
+- 滚动中 scrollTop 属性不会变化
+- 手势可穿过其他元素触发元素滚动
+- 运行时通过 JS 动态添加元素溢出高度导致滚动失效, [Google 上一搜一片](http://patrickmuff.ch/blog/2014/10/01/how-we-fixed-the-webkit-overflow-scrolling-touch-bug-on-ios/)
+- 滚动时暂停其他transition
+
 https://stackoverflow.com/questions/33601165/scrolling-slow-on-mobile-ios-when-using-overflowscroll
 
 ```css
