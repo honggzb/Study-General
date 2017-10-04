@@ -2,7 +2,7 @@
 
 - [1. CSS](#css)
   - [1.1 Background image not showing on iPad and iPhone](#background-image)
-  - [1.2 Scrolling slow on mobile/ios](#Scrolling)
+  - [1.2 Scrolling slow on mobile/ios(-webkit-overflow-scrolling: touch)](#Scrolling)
   - [1.3 Scrolling issue with Fix div or background on mobile/ios](#fix-Scrolling)
 - [2. ios horizontal bug](#ios-horizontal-bug) 
 - [3. 移动端web页面input+fixed布局bug - 软键盘唤起的情况下](#移动端web页面input+fixed布局)
@@ -72,6 +72,19 @@ https://stackoverflow.com/questions/33601165/scrolling-slow-on-mobile-ios-when-u
 -webkit-perspective: 1000;
 /*The solution II: */
 .dashboardScroll-inner { height: calc(100% + 1px);}
+```
+
+http://patrickmuff.ch/blog/2014/10/01/how-we-fixed-the-webkit-overflow-scrolling-touch-bug-on-ios/
+
+**dynamically add content to a div with `-webkit-overflow-scrolling: touch;`** that exceeds the div in height, it becomes broken and unscrollable. You can fix this by constantly having an inner div, that triggers the scrollbar because its 1px higher than the outer div:
+
+```css
+.outer {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  /* More properties for a fixed height ... */
+}
+.inner { height: calc(100% + 1px); }
 ```
 
 http://patrickmuff.ch/blog/2014/10/01/how-we-fixed-the-webkit-overflow-scrolling-touch-bug-on-ios/
