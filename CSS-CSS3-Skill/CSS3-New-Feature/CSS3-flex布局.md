@@ -1,12 +1,12 @@
 
 [css3的flex布局- `display: flex;`](#top)
 
-- [一：容器的样式](#容器的样式)
+- [一：弹性容器的样式](#容器的样式)
   - [1.1 伸缩容器主轴的排列方向和换行 - flex-direction, flex-wrap, flex-flow](#伸缩容器主轴的排列方向和换行)
   - [1.2 伸缩项目在主轴上的对齐方式 - justify-content](#伸缩项目在主轴上的对齐方式)
   - [1.3 伸缩项目在交叉轴(侧轴)上的对齐方式 - align-items](#伸缩项目在交叉轴(侧轴)上的对齐方式)
   - [1.4 伸缩项目在多根轴线的对齐方式 - align-content](#伸缩项目在多根轴线的对齐方式)
-- [二：元素样式的属性 - order, flex-grow, flex-shrink, flex-basic, flex, align-self](#元素样式的属性)
+- [二：弹性项目样式的属性 - order, flex-grow, flex-shrink, flex-basic, flex, align-self](#元素样式的属性)
 - [三：flex布局浏览器兼容处理](#flex布局浏览器兼容处理)
 - [四：flex布局经典案例](#flex布局经典案例)
   - [4.1 水平和垂直居中](#水平和垂直居中)
@@ -37,7 +37,7 @@ Flexbox布局主要有三种语法版本：
 混合版本|display|flexbox|inline-flexbox
 最老版本|display|box|inline-box
 
-<h3 id="容器的样式">一：容器的样式</h3>
+<h3 id="容器的样式">一：弹性容器的样式</h3>
 
 <h4 id="伸缩容器主轴的排列方向和换行">1.1 伸缩容器主轴的排列方向和换行- flex-direction, flex-wrap, flex-flow</h4>
 
@@ -134,9 +134,9 @@ Flexbox布局主要有三种语法版本：
 
 [back to top](#top)
 
-<h3 id="元素样式的属性">二：元素样式的属性 - order, flex-grow, flex-shrink, flex-basic, flex, align-self</h3>
+<h3 id="元素样式的属性">二：弹性项目样式的属性 - order, flex-grow, flex-shrink, flex-basic, flex, align-self</h3>
 
-`flex: flex-grow flex-shrink flex-basis|auto|initial|inherit;`
+写在一起的写法： `flex: flex-grow flex-shrink flex-basis|auto|initial|inherit;`
 
 - `flex-grow:0;` 定义弹性盒子项的拉伸因子，即子项分配父项剩余空间的比，默认值为0
 - `flex-shrink:1;` 指定了flex元素的收缩规则，子项的收缩所占的份数，默认值为1[当所有子项相加的宽度大于父项的宽度，每个子项减少的多出的父项宽度的1/n]
