@@ -136,11 +136,25 @@ Flexbox布局主要有三种语法版本：
 
 <h3 id="元素样式的属性">二：弹性项目样式的属性 - order, flex-grow, flex-shrink, flex-basic, flex, align-self</h3>
 
-写在一起的写法： `flex: flex-grow flex-shrink flex-basis|auto|initial|inherit;`
+写在一起的写法： `flex: flex-grow flex-shrink flex-basis;`
 
-- `flex-grow:0;` 定义弹性盒子项的拉伸因子，即子项分配父项剩余空间的比，默认值为0
-- `flex-shrink:1;` 指定了flex元素的收缩规则，子项的收缩所占的份数，默认值为1[当所有子项相加的宽度大于父项的宽度，每个子项减少的多出的父项宽度的1/n]
-- `felx-basis:auto;` 指定了flex元素在主轴方向上的初始大小，即子项的宽度
+- flex的默认值是 `0 1 auto`
+- `flex-grow`      定义弹性盒子项的拉伸因子，即子项分配父项剩余空间的比，默认值为0
+- `flex-shrink;`   指定了flex元素的收缩规则，子项的收缩所占的份数，默认值为1[当所有子项相加的宽度大于父项的宽度，每个子项减少的多出的父项宽度的1/n]
+- `felx-basis`     指定了flex元素在主轴方向上的初始大小，即子项的宽度
+
+|flex缩写 | 等同于 |
+| :------------- | :------------- |
+| `flex: auto;` |`flex: 1 1 auto;`|
+| `flex: none;` |`flex: 0 0 auto;`|
+| `flex: 1;` |`flex: 1 1 0%;`|
+| `flex: 2 3;` |`flex: 2 3 0%;`|
+| `flex: 2 333px;` |`flex: 2 1 333px;`|
+| `flex: 0%;` |`flex: 1 1 0%;`|
+| `flex: 24px;` |`flex: 1 1 24px;`|
+| `flex: 2 3;` |`flex: 2 3 0%;`|
+
+[flex设置成1和auto有什么区别](http://www.cnblogs.com/chris-oil/p/5430137.html)
 
 **1、order样式** - 元素(项目)的排列顺序。数值越小，排列越靠前，默认为0
 
