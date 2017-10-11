@@ -1,5 +1,5 @@
 
-## css3的flex布局 - `display: flex;`     [--**](#top)
+[css3的flex布局- `display: flex;`](#top)
 
 - [一：容器的样式](#容器的样式)
   - [1.1 伸缩容器主轴的排列方向和换行 - flex-direction, flex-wrap, flex-flow](#伸缩容器主轴的排列方向和换行)
