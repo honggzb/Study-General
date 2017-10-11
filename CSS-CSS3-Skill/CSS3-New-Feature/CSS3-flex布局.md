@@ -52,7 +52,7 @@ Flexbox布局主要有三种语法版本：
 
 - column-reverse:   主轴为水平方向，起点在右端
 - column:           主轴为垂直方向，起点在上沿，并且支持换行 
-- row（默认值）:      主轴为水平方向，起点在左端, 从左到右排列，并且子元素的宽度会自动伸缩铺满整个容器的宽度 
+- row（默认值）:     主轴为水平方向，起点在左端, 从左到右排列，并且子元素的宽度会自动伸缩铺满整个容器的宽度 
 - row-reverse:      主轴为水平方向，起点在右端, 从右到左排列，并且子元素的宽度会自动伸缩铺满整个容器的宽度
 
 `flex-wrap: nowrap | wrap | wrap-reverse;`  - 如果一条轴线排不下，如何换行
@@ -135,6 +135,12 @@ Flexbox布局主要有三种语法版本：
 [back to top](#top)
 
 <h3 id="元素样式的属性">二：元素样式的属性 - order, flex-grow, flex-shrink, flex-basic, flex, align-self</h3>
+
+`flex: flex-grow flex-shrink flex-basis|auto|initial|inherit;`
+
+- `flex-grow:0;` 定义弹性盒子项的拉伸因子，即子项分配父项剩余空间的比，默认值为0
+- `flex-shrink:1;` 指定了flex元素的收缩规则，子项的收缩所占的份数，默认值为1[当所有子项相加的宽度大于父项的宽度，每个子项减少的多出的父项宽度的1/n]
+- `felx-basis:auto;` 指定了flex元素在主轴方向上的初始大小，即子项的宽度
 
 **1、order样式** - 元素(项目)的排列顺序。数值越小，排列越靠前，默认为0
 
