@@ -19,7 +19,11 @@ Weinre的本意是Web Inspector Remote，它是一种远程调试工具。功能
 
 1) 打开cmd，输入 `weinre.jar --httpPort 8910 --boundHost -all-`
 
-或在weinre所在文件夹的地址栏 `java -jar weinre.jar --httpPort 8081 --boundHost -all-`
+或在weinre所在文件夹的地址栏 `java -jar d:\tools\weinre-jar\weinre.jar --httpPort 8081 --boundHost -all-`
+
+- httpPort是指定服务端口
+- boundHost参数说明可以使用IP访问
+- all参数代表支持所有的host
 
 2) 打开浏览器，输入 `http://localhost:Port`， 或 http://192.8.104.20:8910/
 
