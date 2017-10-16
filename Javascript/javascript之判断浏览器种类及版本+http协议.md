@@ -1,4 +1,13 @@
-1. JS获取浏览器信息
+[javascript之判断浏览器种类及版本](#top)
+
+- [1. JS获取浏览器的信息](#JS获取浏览器的信息)
+- [2. js判断IE浏览器的四种方法](#js判断IE浏览器的四种方法)
+- [3. 判断浏览器综合案例)](#判断浏览器综合案例)
+  - [3.1 判断操作系统](#判断操作系统)
+  - [3.2 判断浏览器的内核](#判断浏览器的内核)
+- [4. 判断http协议](#判断http协议)
+
+<h3 id="JS获取浏览器的信息">1. JS获取浏览器的信息</h3>
 
 - 浏览器代码名称：navigator.appCodeName
 - 浏览器名称：navigator.appName
@@ -9,7 +18,7 @@
 - 插件（数组）：navigator.plugins
 - 用户代理：navigator.userAgent
 
-2. js判断IE浏览器的四种方法：
+<h3 id="js判断IE浏览器的四种方法">2. js判断IE浏览器的四种方法</h3>
 
 ```javascript
 //1)
@@ -40,7 +49,16 @@ else alert("这不是ie浏览器");
 // 注释：IE9及以上版本会弹出“这不是IE浏览器”
 ```
 
-3. 综合案例
+[back to top](#top)
+
+<h3 id="判断浏览器综合案例">3. 判断浏览器综合案例</h3>
+
+JavaScript判断浏览器类型一般有两种办法
+
+- 一种是根据各种浏览器独有的属性来分辨，
+- 一种是通过分析浏览器的userAgent属性来判断的
+
+下面对浏览器各自的userAgent特点做一分析，并给出判断方法： 
 
 ```javascript
 function myBrowser(){
@@ -80,9 +98,7 @@ function myBrowser(){
 }  
 ```
 
-4. JavaScript判断浏览器类型一般有两种办法，一种是根据各种浏览器独有的属性来分辨，另 一种是通过分析浏览器的userAgent属性来判断的。本文对浏览器各自的userAgent特点做一分析，并给出判断方法： 
-
-Windows操作系统浏览器系列： 
+**Windows操作系统浏览器系列**
 
 浏览器|特征表现|判断方法
 ---|---|---
@@ -94,7 +110,7 @@ Windows版Safari：|以"mozilla/"开头，同时含有"windows nt","applewebkit/
 
 小结：Windows操作系统上的浏览器userAgent均包含"windows nt"字符串来表征windows操作系统。 
 
-iPhone平台浏览器系列： 
+**iPhone平台浏览器系列** 
 
 浏览器|特征表现|判断方法
 ---|---|---
@@ -103,7 +119,7 @@ iPhone版Opera Mobile|以"opera/"开头，含有"iphone"字符串，同时含有
 
 小结：iPhone手机上的浏览器userAgent均包含"iphone"字符串 
 
-Android平台浏览器系列： 
+**Android平台浏览器系列** 
 
 浏览器|特征表现|判断方法
 ---|---|---
@@ -115,9 +131,9 @@ Android版Firefox|以"mozilla/"开头，含有"android"和"linux" 字符串，�
 
 以上对windows、iphone、android三大平台的主流浏览器解析就基本结束了，其他平台的linux估计至少与android平台应该类似，而采用了Mac OS的iPad和麦金塔应该与iphone平台类似，故而暂时先不做解析，也因为手头没有那么多设备和操作系统来测试，希望日后能够补上。 
 
-现在的网站产品开发要求跟以前又不一样了，因为不仅要满足电脑浏览，还需要满足用户通过智能手机（这里仅指iphone、android、windows phone等真正的智能手机，blackberry和palm这样的小众半智能系统暂时不考虑，至于symbian这个伪智能系统就一边玩去吧）通过以上三个具有代表性的平台，也大致可以推测出根据浏览器userAgent判断用户设备的解决方案了。 
+**小结**
 
-4.1 如果需要判断操作系统，方法比较简单，在userAgent里面检索以下字符串： 
+<h4 id="判断操作系统">3.1 如果需要判断操作系统，方法比较简单，在userAgent里面检索以下字符串</h4>
 
 - 含有"windows nt"：显而易见了，windows操作系统，nt后面的版本号可以判断OS版本； 
 - 含有"mac"：苹果的Mac OS X或者其他Mac OS内核的系统； 
@@ -128,7 +144,7 @@ Android版Firefox|以"mozilla/"开头，含有"android"和"linux" 字符串，�
 - 含有"unix","sunos","bsd"三者之一：Unix系统，其实对这个系统的用户体验问题，目前几乎可以不用考虑了； 
 - 含有"ubuntu"：ubuntu定制版的linux 
 
-4.2 判断浏览器的内核，方法也不困难，我自己琢磨出来的，不一定都对啊： 
+<h4 id="判断浏览器的内核">3.2 判断浏览器的内核，方法也不困难，我自己琢磨出来的，不一定都对啊</h4>
 
 - IE（Trident）内核（IE for Mac, IEs4Linux之类的就不用说了，只考虑windows下的）：以"mozilla/"开头，含有"windows nt"和"msie"字符串； 
 - Firefox（Gecko）内核：以"mozilla/"开头，含有"firefox/"和"gecko/"字符串的就是啦，其中Android版的还带有"fennec/"字符串； 
@@ -136,5 +152,24 @@ Android版Firefox|以"mozilla/"开头，含有"android"和"linux" 字符串，�
 - Webkit内核：以"mozilla/"开头，含有"applewebkit/"和"safari/"字符串，其中带有"chrome/"的就是Chrome浏览器，不带的就是Safari或其他； 
 
 浏览器内核才是解决兼容性的关键问题所在，然而，这个兼容性问题已经有jQuery和Extjs等框架帮你解决了，因此这个判断只针对个别页面的CSS样式在不同内核渲染效果不同的情况下使用，当然了，同样的内核在智能手机和电脑等不同设备上渲染结果也不同，这一点也需要注意。
+
+[back to top](#top)
+
+<h3 id="判断http协议">4. 判断http协议</h3>
+
+```javascript
+if (!location.protocol.match('https')) {
+  showErrorMsg('You may need to run this app from https.');
+}
+if (!(navigator.userAgent.match('Chrome') &&
+      parseInt(navigator.userAgent.match(/Chrome\/(.*) /)[1]) >= 26)) {
+  showErrorMsg('You need Chrome 26+ to run this demo properly.');
+}
+if (e.code == e.PERMISSION_DENIED) {
+      showErrorMsg('PERMISSION_DENIED. Are you no SSL? Have you enabled the --enable-usermedia-screen-capture flag?');
+}
+```
+
+[back to top](#top)
 
 - [JS通过分析userAgent属性来判断浏览器的类型及版本](http://www.jb51.net/article/48532.htm)
