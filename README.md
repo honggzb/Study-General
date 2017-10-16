@@ -67,7 +67,7 @@
 │   ├── 移动web平时开发问题小结.md
 │   ├── iso虚拟键盘遮挡input输入框问题&fixed+input布局bug.md
 │   ├── 移动web开发tip.md
-│   ├──常见的移动端Web页面问题解决方案.md
+│   ├── 常见的移动端Web页面问题解决方案.md
 │   ├── 移动web资源整理.md
 │   ├── 移动端Web开发调试之Weinre调试.md
 │   ├── 移动端触屏框架iscroll.js的使用.md
@@ -119,8 +119,8 @@
 │   ├── javascript常用技巧.md
 │   ├── 经典代码.md
 │   ├── 深入理解javascript原型和闭包.md
+│   ├── javascript之判断浏览器种类及版本+http协议
 │   ├── js标准对象之Date.md
-│   ├── 
 │   └──javascript知识点积累.md
 │
 ├── JQuery
