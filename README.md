@@ -93,7 +93,7 @@
 │   ├── 应用缓存App Cache指南.md
 │   └── Service Workers- HTML5 Web push notifications桌面通知.md
 │
-├── JAVA-Study   --javascript学习过程中的小tip
+├── JAVA-Study
 │   ├── configuration-study
 │   │   ├── ant学习.md
 │   │   └──
