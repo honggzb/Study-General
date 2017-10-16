@@ -14,6 +14,7 @@
 - [18.Object[key]简写- 如编写通用验证函数](#Object[key]简写)
 - [19.双重非位运算简写](#双重非位运算简写)
 - [补1：字符串转换为数字](#字符串转换为数字)
+- [补2：利用Object.assign快速创建并复制对象](#快速创建并复制对象)
 
 <h3 id="短路求值简写方式">2.短路求值简写方式</h3>
 
@@ -265,3 +266,22 @@ console.log(+(str))
 ```
 
 [back to top](#top)
+
+<h3 id="快速创建并复制对象">补2：利用Object.assign快速创建并复制对象</h3>
+
+```javascript
+//对象
+var a ={name: "will", age: 45};
+var b = Object.assign({}, a, {name:"grace"});  //{name: "grace", age: 45}
+//数组，还可用concat,filter等来快速创建并复制对象
+var a = [1,2,3];
+var b = a.concat(4);               //[1,2,3,4]
+var b = a.filter(val => val!==2);  // [1, 3]
+//结合使用
+var a = {name: "will", things: [0,1,2]};
+var b = Object.assign({}, a, {name:"grace"});    
+b.things = a.things.concat(3);   // {name: "grace", things: [0,1,2, ]}
+```
+
+[back to top](#top)
+
