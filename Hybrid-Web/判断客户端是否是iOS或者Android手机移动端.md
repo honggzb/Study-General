@@ -7,6 +7,10 @@
 var u = navigator.userAgent;
 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
 var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+//另一种方法
+var ios = userAgent.match(/(iPad|iPhone|iPod)\s+OS\s([\d_\.]+)/);
+var ios5below = ios && ios[2] && (parseInt(ios[2].replace(/_/g, ‘.‘), 10) < 5);   //iphone4/4s
+var operaMini = /Opera Mini/i.test(userAgent);
 ```
 
 <h3 id="比较全面的浏览器检查函数">2. 比较全面的浏览器检查函数</h3>
