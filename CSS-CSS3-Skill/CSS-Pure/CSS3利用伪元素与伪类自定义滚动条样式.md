@@ -3,6 +3,7 @@
 - [1. 滚动条组成](#滚动条组成)
 - [2. 详细设置](#详细设置)
 - [3. demo](#demo)
+- [4. 实现隐藏滚动条同时又可以滚动](#实现隐藏滚动条同时又可以滚动)
 
 <h3 id="滚动条组成">1. 滚动条组成</h3>
 
@@ -386,6 +387,35 @@
 
 [back to top](#top)
 
+<h3 id="实现隐藏滚动条同时又可以滚动">4. 实现隐藏滚动条同时又可以滚动</h3>
+
+应用如下 CSS 可以隐藏滚动条： `.element::-webkit-scrollbar {display:none}`
+
+如果要兼容 PC 其他浏览器（IE、Firefox 等），国外一位才人 John Kurlak 也研究出了一种办法。在容器外面再嵌套一层 overflow:hidden 内部内容再限制尺寸和外部嵌套层一样，就变相隐藏了
+
+```css
+.outer-container,.content {
+    width: 200px; height: 200px;
+}
+.outer-container {
+    position: relative;
+    overflow: hidden;
+}
+.inner-container {
+    position: absolute; left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+ /* for Chrome */
+.inner-container::-webkit-scrollbar {
+    display: none;
+}
+```
+
+[back to top](#top)
+
 - http://blog.csdn.net/hanshileiai/article/details/40398177
 - http://www.xuanfengge.com/css3-webkit-scrollbar.html
+- [Styling Scrollbars](https://webkit.org/blog/363/styling-scrollbars/)
+- [Custom Scrollbars in WebKit](https://css-tricks.com/custom-scrollbars-in-webkit/)
 
