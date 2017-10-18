@@ -1,4 +1,4 @@
-  -- [top](#top)
+  -- [HTML5-各种Tag](#top)
   
   - [1. html5调用手机摄像头)](#html5调用手机摄像头)
   - [2. input只能输入数字或小数点后几位](#input只能输入数字或小数点后几位)
@@ -179,7 +179,7 @@ $('input[type=number]').keypress(function(event){
 
 [back to top](#top)
 
-<h3 id="ios不支持fixed属性解决笔记">5. ios不支持fixed属性解决</h3>
+<h3 id="ios不支持fixed属性解决">5. ios不支持fixed属性解决</h3>
 
 特别是当页面中有input ，当这个input获取焦点的时候，问题特别明显， 这个问题也称之为  “ input focus ios fixed 无效”。
 
