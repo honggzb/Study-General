@@ -191,6 +191,17 @@ $('.btnHide').on('click',function(){
 
 <h2 id="微信中虚拟键盘遮挡input输入框问题解决方案">3. 微信中虚拟键盘遮挡input输入框问题解决方案</h2>
 
+基本HTML结构
+
+```html
+<div class="nav"></div>
+<div class="content"></div>
+<div id="returnframe">
+   <input type="text" name="inputframe" class='inputframe'>
+   <div class="returnframe_button">发送</div>
+</div>
+```
+
 ```css
 /*聊天窗口_顶部*/
 .nav{
