@@ -7,6 +7,12 @@
   - [5. ios不支持fixed属性解决](#ios不支持fixed属性解决)
   - [6. input输入手机号之间间隔  例如：xxx--xxxx--xxxx](#input输入手机号之间间隔)
 
+| HTML input tag | feature  |
+| :------------- | :------------- |
+|`<input type="email" value="">`<br>`<input type="tel" value="">`<br>`<input type="url" value="">`<br>`<input type="password" value="">`|![](https://i.imgur.com/tO7JNaj.jpg)|
+|`<input type="time" value="">`<br>`<input type="datetime-local" value="">`<br>`<input type="month" value="">`|![](https://i.imgur.com/QvRMAfG.jpg)|
+|`<input type="text" pattern="\d*" value="">`, note: patterns which do not work on the Android side for now|![](https://i.imgur.com/dVZUDTB.jpg)|
+
 <h3 id="html5调用手机摄像头">1. html5调用手机摄像头</h3>
 
 ```html
