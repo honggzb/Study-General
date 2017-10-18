@@ -11,7 +11,7 @@
 | :------------- | :------------- |
 |`<input type="email" value="">`<br>`<input type="tel" value="">`<br>`<input type="url" value="">`<br>`<input type="password" value="">`|![](https://i.imgur.com/tO7JNaj.jpg)|
 |`<input type="time" value="">`<br>`<input type="datetime-local" value="">`<br>`<input type="month" value="">`|![](https://i.imgur.com/QvRMAfG.jpg)|
-|`<input type="text" pattern="\d*" value="">`<br>note: patterns which do not work on the Android side for now|![](https://i.imgur.com/dVZUDTB.jpg)|
+|`<input type="text" pattern="\d*" value="">`, note: patterns which do not work on the Android side for now|![](https://i.imgur.com/dVZUDTB.jpg)|
 
 http://www.myflashlabs.com/how-to-control-the-the-virtual-keyboard-layout-in-ios-and-android-using-javascript-and-html/
 
