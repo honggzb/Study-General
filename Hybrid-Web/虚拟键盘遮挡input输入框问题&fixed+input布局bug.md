@@ -1,4 +1,4 @@
-- [虚拟键盘遮挡input输入框问题&fixed+input布局bug](#top)
+[虚拟键盘遮挡input输入框问题&fixed+input布局bug](#top)
 
 - [ios](#top)
     - [1. 移动端web页面input+fixed布局bug - 软键盘唤起的情况下](#移动端web页面input+fixed布局)
@@ -9,6 +9,7 @@
  - [android](#top)
     - [1. window.top.document.body.scrollTop not working in Chrome or FireFox](#chrome)
     - [2. Textbox hidden below keyboard in Android webview](#Textbox)
+    - [3. 移动端android浏览器中input框被软键盘遮住的问题解决方案](#移动端android浏览器)
 
 **常见的需求**
 
@@ -366,12 +367,36 @@ body {
 
 [back to top](#top)
 
-
 <h2 id="Android">Android</h2>
+
+```javascript
+$(commentInput).focus(function(event){
+  event.currentTarget.parentElement.scrollIntoView(true);
+  event.currentTarget.parentElement.scrollIntoViewIfNeeded();
+}).blur(function(event) {
+  document.querySelector(".ot-modal-dialog-header").scrollIntoView(true);
+	document.querySelector(".ot-modal-dialog-header").scrollIntoViewIfNeeded();
+});
+```
 
 <h3 id="chrome">1. window.top.document.body.scrollTop not working in Chrome or FireFox</h3>
 
-`var scrollTop = (document.documentElement || document.body.parentNode || document.body).scrollTop;`
+```javascript
+var scrollTop = (document.documentElement || document.body.parentNode || document.body).scrollTop;
+// or use jQuery
+$('#yourFineElement').offset({ top: X, left Y)});
+jQuery(document).ready(function($) {
+  $(".scroll").click(function(event){     
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top}, 1500);
+  });
+});
+<a href="#top" class="scroll"></a>
+//
+$("body").animate({ scrollTop: 50 },  800,  function(){
+    $("body").clearQueue();
+});
+```
 
 <h3 id="Textbox">2. Textbox hidden below keyboard in Android webview</h3>
 
@@ -385,6 +410,31 @@ function androidScroll() {
     // Webview focus call (pushes the modal over keyboard)
   $('.control-sidebar-open ').scrollTop($('.control-sidebar-open ')[0].scrollHeight);
 }
+```
+
+[back to top](#top)
+
+<h3 id="移动端android浏览器">3. 移动端android浏览器中input框被软键盘遮住的问题解决方案</h3>
+
+安卓浏览器在软键盘弹出后不会像ios浏览器那样重新计算window的高度，所以导致安卓浏览器window的高度在软键盘弹出的时候为“软键盘的高度＋（window的高度－软键盘的高度）”；而其实，此时，合理的高度应该是页面的高度＋软键盘弹出的高度；就此解决方案为如下：
+
+```javascript
+var winHeight = $(window).height(); //获取当前页面高度
+$(window).resize(function() {
+      var thisHeight = $(this).height();
+      if (winHeight - thisHeight > 50) {
+          $('body').css('height', winHeight + 'px');   //当软键盘弹出，在这里面操作
+      } else {
+          $('body').css('height', '100%');  //当软键盘收起，在此处操作
+      }
+});
+```
+
+[back to top](#top)
+
+- Remove both width=device-width, height=device-height from the viewport meta tag.
+- Use this CSS: `html, body { width: 100%; height: 100%; overflow: hidden; }`
+- Use `position:absolute` in you footer instead of position: fixed.
 ```
 
 > Reference
