@@ -8,6 +8,7 @@
     - [5. ios对于fixed属性不兼容的解决方案- use classList](#ios对于fixed属性不兼容的解决方案)
  - [android](#top)
     - [1. window.top.document.body.scrollTop not working in Chrome or FireFox](#chrome)
+    - [2. Textbox hidden below keyboard in Android webview](#Textbox)
 
 **常见的需求**
 
@@ -371,6 +372,20 @@ body {
 <h3 id="chrome">1. window.top.document.body.scrollTop not working in Chrome or FireFox</h3>
 
 `var scrollTop = (document.documentElement || document.body.parentNode || document.body).scrollTop;`
+
+<h3 id="Textbox">2. Textbox hidden below keyboard in Android webview</h3>
+
+```javascript
+$("body").on("click", ".jstree-search-input", function () {  
+    setTimeout(function(){ 
+        androidScroll(); 
+    }, 500);
+});
+function androidScroll() {
+    // Webview focus call (pushes the modal over keyboard)
+  $('.control-sidebar-open ').scrollTop($('.control-sidebar-open ')[0].scrollHeight);
+}
+```
 
 > Reference
 
