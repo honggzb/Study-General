@@ -1,10 +1,13 @@
-[iso虚拟键盘遮挡input输入框问题&fixed+input布局bug](#top)
+- [虚拟键盘遮挡input输入框问题&fixed+input布局bug](#top)
 
-- [1. 移动端web页面input+fixed布局bug - 软键盘唤起的情况下](#移动端web页面input+fixed布局)
-- [2. IOS Safari浏览器下固定定位position:fixed带来的问题与解决方案](#Safari浏览器下固定定位)
-- [3. 微信中虚拟键盘遮挡input输入框问题解决方案](#微信中虚拟键盘遮挡input输入框问题解决方案)
-- [4. 2016-11-04完美解决方案](#完美解决方案)
-- [5. ios对于fixed属性不兼容的解决方案- use classList](#ios对于fixed属性不兼容的解决方案)
+- [ios](#top)
+    - [1. 移动端web页面input+fixed布局bug - 软键盘唤起的情况下](#移动端web页面input+fixed布局)
+    - [2. IOS Safari浏览器下固定定位position:fixed带来的问题与解决方案](#Safari浏览器下固定定位)
+    - [3. 微信中虚拟键盘遮挡input输入框问题解决方案](#微信中虚拟键盘遮挡input输入框问题解决方案)
+    - [4. 2016-11-04完美解决方案](#完美解决方案)
+    - [5. ios对于fixed属性不兼容的解决方案- use classList](#ios对于fixed属性不兼容的解决方案)
+ - [android](#top)
+    - [1. window.top.document.body.scrollTop not working in Chrome or FireFox](#chrome)
 
 **常见的需求**
 
@@ -116,7 +119,7 @@ content.addEventListener('touchmove', function (e) {
 
 [back to top](#top)
 
-<h2 id="Safari浏览器下固定定位">2. IOS Safari浏览器下固定定位position:fixed带来的问题与解决方案</h2>
+<h3 id="Safari浏览器下固定定位">2. IOS Safari浏览器下固定定位position:fixed带来的问题与解决方案</h3>
 
 移动端页面时使用固定定位position:fixed时会发现，在IOS的safari浏览器或原生APP下运行会出现几个**问题**:
 
@@ -189,7 +192,7 @@ $('.btnHide').on('click',function(){
 
 [back to top](#top)
 
-<h2 id="微信中虚拟键盘遮挡input输入框问题解决方案">3. 微信中虚拟键盘遮挡input输入框问题解决方案</h2>
+<h3 id="微信中虚拟键盘遮挡input输入框问题解决方案">3. 微信中虚拟键盘遮挡input输入框问题解决方案</h3>
 
 基本HTML结构
 
@@ -256,7 +259,7 @@ $("input.inputframe").focus(function(){//在这里‘input.inputframe’是我�
 
 [back to top](#top)
 
-<h2 id="完美解决方案">4. 2016-11-04完美解决方案</h2>
+<h3 id="完美解决方案">4. 2016-11-04完美解决方案</h3>
 
 ```
 // CSS
@@ -311,7 +314,7 @@ if(isAndroid) {
 
 [back to top](#top)
 
-<h2 id="ios对于fixed属性不兼容的解决方案">5. ios对于fixed属性不兼容的解决方案- use classList</h2>
+<h3 id="ios对于fixed属性不兼容的解决方案">5. ios对于fixed属性不兼容的解决方案- use classList</h3>
 
 ```html
 <footer class='footer' id='footerFixed'>
@@ -359,6 +362,15 @@ body {
   }
 </style>
 ```
+
+[back to top](#top)
+
+
+<h2 id="Android">Android</h2>
+
+<h3 id="chrome">1. window.top.document.body.scrollTop not working in Chrome or FireFox</h3>
+
+`var scrollTop = (document.documentElement || document.body.parentNode || document.body).scrollTop;`
 
 > Reference
 
