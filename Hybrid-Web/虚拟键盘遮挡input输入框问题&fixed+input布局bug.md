@@ -10,13 +10,17 @@
     - [1. window.top.document.body.scrollTop not working in Chrome or FireFox](#chrome)
     - [2. Textbox hidden below keyboard in Android webview](#Textbox)
     - [3. 移动端android浏览器中input框被软键盘遮住的问题解决方案](#移动端android浏览器)
+- [相关文章推荐](#相关文章推荐)
+
 
 **常见的需求**
 
 - 在屏幕底部定位一个div，然后里面有个的input的，此时的安卓出现的软键盘的会把这个定位的div推到上面去，但是得ios的情况吧fixed的效果失效的，或产生很大的间隔,  而且在没有focus的时候的，这个div的属性不发生改变的，当focus的让这个div的fixed变成的absoluted(需在body修改)，blur的时候的又变成大fixed的bug
 - 有fixed元素和输入框(input元素)同时存在的情况。 但是fixed元素在底部输入框软键盘被唤起以后，再次滑动页面，会出现许多莫名其妙的问题
 
-<h2 id="移动端web页面input+fixed布局">1. 移动端web页面input+fixed布局bug - 软键盘唤起的情况下</h2>
+<h2 id="ios">IOS</h2>
+
+<h3 id="移动端web页面input+fixed布局">1. 移动端web页面input+fixed布局bug - 软键盘唤起的情况下</h3>
 
 移动端业务开发，iOS下经常会有fixed元素和输入框(input元素)同时存在的情况。 但是fixed元素在底部输入框软键盘被唤起以后，再次滑动页面，会出现许多莫名其妙的问题
 
@@ -437,6 +441,64 @@ $(window).resize(function() {
 - Use `position:absolute` in you footer instead of position: fixed.
 ```
 
+[back to top](#top)
+
+<h2 id="移动端android浏览器">相关文章推荐</h2>
+
+- [[Cordova/Phonegap] Cordova iOS 应用在第三方输入法的键盘弹出（点击输入框）时，页面不上移，导致输入框被键盘遮挡 的解决办法](http://blog.csdn.net/lovelyelfpop/article/details/52033045)
+- [Ionic Cordova实现软键盘的监听 以及操作大全](http://blog.csdn.net/sean_css/article/details/70243893)
+- [在cordova中处理原生键盘相关问题的总结，mark供参考](http://blog.csdn.net/openglnewbee/article/details/70014521)
+- [Cordova 混合应用处理输入法相关事件](http://blog.csdn.net/jiangbo_phd/article/details/48654695)
+- [IONIC键盘弹出防止页面Header（title位置）自动上移位置（消失）](http://blog.csdn.net/jiangbo_phd/article/details/52438418)
+- [iOS解决键盘弹出遮挡输入框问题](http://blog.csdn.net/winer888/article/details/51084756)
+- [关于手机端IOS系统微信中虚拟键盘遮挡input输入框问题的解决方案](http://blog.csdn.net/github_37533433/article/details/66471962)
+- [h5键盘遮挡输入框问题 、模仿微信输入框失去焦点时隐藏iphone的软键盘和聚焦时出现输入框](http://blog.csdn.net/github_35549695/article/details/53232144)
+- [H5 ios input获取焦点挂起软键盘 输入框被遮盖 页面被顶起](http://blog.csdn.net/song_song666/article/details/70914905)
+- [iOS下Html页面中input获取焦点弹出键盘时挡住input解决方案](http://blog.csdn.net/s3590024/article/details/53203695)
+- [js解决软键盘遮挡输入框问题](http://blog.csdn.net/s3590024/article/details/53203695)
+- [Phonegap+Sencha Touch 移动开发24 打包wp8.1的App，运行时输入框聚焦弹出软键盘之后，界面上移而不恢复原位的解决办法](http://blog.csdn.net/lovelyelfpop/article/details/30992497)
+- [iOS TextField 弹出键盘时实现view整体上移下移：防止弹出键盘遮挡输入框](http://blog.csdn.net/doubleface999/article/details/73771950)
+- [移动端web开发之坑--IOS8下 上传图片点击取消后，弹出了软键盘遮挡输入框](http://blog.csdn.net/screaming_color/article/details/54945592)
+- [IOS中输入框被软键盘遮挡的解决办法](http://blog.csdn.net/u011005737/article/details/45200233)
+- [IOS中输入框被软键盘遮挡的解决办法](http://blog.csdn.net/it_zgc/article/details/51120466)
+- [IOS中输入框被软键盘遮挡的解决办法](http://blog.csdn.net/qq_17007915/article/details/50216797)
+- [IOS中输入框被软键盘遮挡的解决办法](http://blog.csdn.net/enuola/article/details/7917221)
+- [键盘弹出后输入框上移的解决方案](http://blog.csdn.net/tcthek/article/details/42522319)
+- [隐藏状态栏设置全屏时,点击输入框弹出软键盘使状态栏处于隐藏状态](http://blog.csdn.net/andy_l1/article/details/71449763)
+- [输入框被键盘遮挡时 让整个view上移](http://blog.csdn.net/shenhaifeiniao/article/details/52192638)
+- [ios输入框被键盘挡住的解决办法](http://blog.csdn.net/u010843544/article/details/38775627)
+- [ios输入框被键盘挡住的解决办法](http://blog.csdn.net/yangchen9931/article/details/46697551)
+- [弹出键盘 输入框上移](http://blog.csdn.net/iridescent_amazing/article/details/48860023)
+- [scrollview,键盘遮挡输入框，上移](http://blog.csdn.net/yyyyccll/article/details/75640098)
+- [iOS 隐藏键盘，输入法，防止遮挡输入框](http://blog.csdn.net/hherima/article/details/8662997)
+- [iOS键盘弹出遮挡输入框问题](http://blog.csdn.net/u012701023/article/details/50535757)
+- [Android各种键盘挡住输入框解决办法](http://blog.csdn.net/cishaohui/article/details/71403036)
+- [android全屏／沉浸式状态栏下，各种键盘挡住输入框解决办法](http://blog.csdn.net/smileiam/article/details/69055963)
+- [android全屏／沉浸式状态栏下，各种键盘挡住输入框解决办法](http://blog.csdn.net/wanghao940101/article/details/72409784)
+- [H5移动端弹出键盘时遮挡输入框](http://blog.csdn.net/qq_37231097/article/details/76614702)
+- [IOS TextField弹出键盘挡住输入框的问题(续)](http://blog.csdn.net/dexin5195/article/details/38844463)
+- [swift实现ios类似微信输入框跟随键盘弹出的效果](http://blog.csdn.net/walkerwqp/article/details/51325643)
+- [Swift 实现 iOS 类似微信输入框跟随键盘弹出的效果](http://blog.csdn.net/magic_castle/article/details/50438029)
+- [解决android软键盘弹出有时会遮住EditText输入框的一种方法](http://blog.csdn.net/chzjy/article/details/73162671)
+- [仿QQ空间登录UI,解决软键盘弹出挡住输入框的问题](http://blog.csdn.net/u011404611/article/details/43153757)
+- [封装弹窗输入框PopupWindow，并解决输入法弹出将其遮挡解决方法](http://blog.csdn.net/qq944639839/article/details/54667547)
+- [解决 android 输入法弹出输入框被遮挡的问题](http://blog.csdn.net/dmh594820/article/details/51525464)
+- [移动端虚拟键盘遮挡页面输入框等元素的解决方案](http://blog.csdn.net/deeplies/article/details/74388061)
+- [ios解决软键盘遮挡输入框问题](http://blog.csdn.net/leochang130731/article/details/10011875)
+- [Android WebView 输入框键盘不弹出](http://blog.csdn.net/tu_bingbing/article/details/41810473)
+- [EditText弹出软键盘遮住输入框问题](http://blog.csdn.net/u012523122/article/details/52101303)
+- [Viewpager+Fragment+webview中的输入框不弹出软键盘的坑](http://blog.csdn.net/wcsandlili/article/details/53611504)
+- [UITextField输入框响应键盘的弹出做高度的自适应](http://blog.csdn.net/qq_22026331/article/details/51787867)
+- [Android 输入框第一次弹出数字键盘, 后面可以随意切换](http://blog.csdn.net/wufeng55/article/details/70184209)
+- [Android如何避免输入法弹出时遮挡住按钮或输入框](http://blog.csdn.net/yuge8930/article/details/51886255)
+- [键盘和输入框上移](http://blog.csdn.net/c_ios/article/details/50508135) 动画和键盘一起向上平移定义两个属性
+- [iOS中输入框被软键盘遮挡了怎么办？](http://blog.csdn.net/zhangyuanlaifen/article/details/45115611)
+- [EditText 软键盘弹出方式探究 以及手动解决浸入式布局软键盘不顶起输入框或者顶掉整个UI的问题](http://blog.csdn.net/qq_34247200/article/details/62418653)
+- [长按输入框跳出select all，cut，input method等菜单，点击input method跳出所有得到的输入法列表](http://blog.csdn.net/happy_6678/article/details/6292283)
+- [解决键盘遮挡输入框（UITextField）问题](http://blog.csdn.net/intheair100/article/details/38639043)
+- [LinearLayout详解四:彻底解决软键盘遮挡输入框的问题](http://blog.csdn.net/zjh171/article/details/26062301)
+- [一招解决全局键盘遮挡输入框问题](http://blog.csdn.net/l_nna/article/details/51199210)
+
 > Reference
 
 - [移动端web页面input+fixed布局bug总结](http://blog.csdn.net/ly2983068126/article/details/49306427)
@@ -448,4 +510,3 @@ $(window).resize(function() {
 - [Web移动端Css Fixed方式的布局方案](http://efe.baidu.com/blog/mobile-fixed-layout/?utm_source=tuicool&utm_medium=referral)
 - [苹果全系列fixed定位bug检测报告](#http://blog.csdn.net/cdnight/article/details/51693951)
 - [ios对于fixed属性不兼容的解决方案](http://blog.csdn.net/zhooson/article/details/75789659)
-- [Android软键盘挡住输入框问题的终极解决方案](http://blog.csdn.net/luckchoudog/article/details/53099239)
