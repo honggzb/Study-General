@@ -448,3 +448,4 @@ $(window).resize(function() {
 - [Web移动端Css Fixed方式的布局方案](http://efe.baidu.com/blog/mobile-fixed-layout/?utm_source=tuicool&utm_medium=referral)
 - [苹果全系列fixed定位bug检测报告](#http://blog.csdn.net/cdnight/article/details/51693951)
 - [ios对于fixed属性不兼容的解决方案](http://blog.csdn.net/zhooson/article/details/75789659)
+- [Android软键盘挡住输入框问题的终极解决方案](http://blog.csdn.net/luckchoudog/article/details/53099239)
