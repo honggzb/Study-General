@@ -470,7 +470,6 @@ $(window).resize(function() {
 
 <h2 id="移动端android浏览器">相关文章推荐</h2>
 
-- [Cordova PhonegapCordova iOS 应用在第三方输入法的键盘弹出（点击输入框）时，页面不上移，导致输入框被键盘遮挡 的解决办法](http://blog.csdn.net/lovelyelfpop/article/details/52033045)
 - [Ionic Cordova实现软键盘的监听以及操作大全](http://blog.csdn.net/sean_css/article/details/70243893)
 - [在cordova中处理原生键盘相关问题的总结，mark供参考](http://blog.csdn.net/openglnewbee/article/details/70014521)
 - [Cordova 混合应用处理输入法相关事件](http://blog.csdn.net/jiangbo_phd/article/details/48654695)
