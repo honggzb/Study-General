@@ -463,14 +463,11 @@ $(window).resize(function() {
 
 - Remove both width=device-width, height=device-height from the viewport meta tag.
 - Use this CSS: `html, body { width: 100%; height: 100%; overflow: hidden; }`
-- Use `position:absolute` in you footer instead of position: fixed.
-```
+- Use `position:absolute` in you footer instead of `position: fixed`
 
 [back to top](#top)
 
 <h2 id="相关文章推荐">相关文章推荐</h2>
-
-相关文章推荐
 
 - [Cordova PhonegapCordova iOS 应用在第三方输入法的键盘弹出（点击输入框）时，页面不上移，导致输入框被键盘遮挡 的解决办法](http://blog.csdn.net/lovelyelfpop/article/details/52033045)
 - [Ionic Cordova实现软键盘的监听以及操作大全](http://blog.csdn.net/sean_css/article/details/70243893)
