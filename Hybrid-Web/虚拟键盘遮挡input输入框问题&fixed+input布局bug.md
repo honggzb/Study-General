@@ -373,14 +373,39 @@ body {
 
 <h2 id="Android">Android</h2>
 
+for INPUT and TEXTAREA tag
+
 ```javascript
-$(commentInput).focus(function(event){
-  event.currentTarget.parentElement.scrollIntoView(true);
-  event.currentTarget.parentElement.scrollIntoViewIfNeeded();
+$(this.contentArea()).css("position", "absolute");  // 1) css
+$('html').css({ "width": "100%", "height": "100%", "overflow": "hidden" });    // 1) css
+$('body').css({ "width": "100%", "height": "100%", "overflow": "hidden" });    // 1) css
+$(commentInput).focus(function(event){     // 2)
+  window.setTimeout(function() {           //3) 
+    event.currentTarget.parentElement.scrollIntoView(true);     //4)
+    event.currentTarget.parentElement.scrollIntoViewIfNeeded();  //4)
+  },0);
 }).blur(function(event) {
-  document.querySelector(".ot-modal-dialog-header").scrollIntoView(true);
-	document.querySelector(".ot-modal-dialog-header").scrollIntoViewIfNeeded();
+  window.setTimeout(function() {
+    document.querySelector(".ot-modal-dialog-header").scrollIntoView(true);
+  	document.querySelector(".ot-modal-dialog-header").scrollIntoViewIfNeeded();
+  },0);
 });
+```
+
+> 补充： 不能设置`width: 100%;`和`height: 4rem;`
+
+[scroll in to focused textbox in android + phonegap?](https://stackoverflow.com/questions/16810233/how-to-scroll-in-to-focused-textbox-in-android-phonegap?noredirect=1&lq=1):  not sure belowing code is necessary: some android device did not trigger resize
+
+```javascript
+if(/Android [4-6]/.test(navigator.appVersion)) {
+   window.addEventListener("resize", function() {
+      if(document.activeElement.tagName=="INPUT" || document.activeElement.tagName=="TEXTAREA") {
+         window.setTimeout(function() {
+            document.activeElement.scrollIntoViewIfNeeded();
+         },0);
+      }
+   })
+}
 ```
 
 <h3 id="chrome">1. window.top.document.body.scrollTop not working in Chrome or FireFox</h3>
@@ -445,7 +470,7 @@ $(window).resize(function() {
 
 <h2 id="移动端android浏览器">相关文章推荐</h2>
 
-- [[Cordova/Phonegap] Cordova iOS 应用在第三方输入法的键盘弹出（点击输入框）时，页面不上移，导致输入框被键盘遮挡 的解决办法](http://blog.csdn.net/lovelyelfpop/article/details/52033045)
+- [Cordova/PhonegapCordova iOS 应用在第三方输入法的键盘弹出（点击输入框）时，页面不上移，导致输入框被键盘遮挡 的解决办法](http://blog.csdn.net/lovelyelfpop/article/details/52033045)
 - [Ionic Cordova实现软键盘的监听 以及操作大全](http://blog.csdn.net/sean_css/article/details/70243893)
 - [在cordova中处理原生键盘相关问题的总结，mark供参考](http://blog.csdn.net/openglnewbee/article/details/70014521)
 - [Cordova 混合应用处理输入法相关事件](http://blog.csdn.net/jiangbo_phd/article/details/48654695)
