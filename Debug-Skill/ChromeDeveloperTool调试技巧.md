@@ -26,6 +26,7 @@
   - [16.8 显示代码的运行时间-console.time和console.timeEnd](显示代码的运行时间)
   - [16.9 性能分析-console.profile](#性能分析)
   - [16.10 Quick-find a function to debug](#Quick-find)
+  - [16.11 自定义console输出信息提示](#自定义console输出信息提示)
 - [17. debug nodeJS](#nodeJS)
 
 <h3 id="查看元素绑定了哪些事件">2. 查看元素绑定了哪些事件</h3>
@@ -281,13 +282,40 @@ type `debug(car.funcY)` in the console, it will stop in debug mode when it gets 
 
 [back to top](#top)
 
-<h3 id="nodeJS">17. debug nodeJS</h3>
+<h4 id="自定义console输出信息提示">16.11 自定义console输出信息提示</h4>
+
+可自定义一些console的信息格式，如颜色，背景颜色等
+
+```javascript
+console.todo = function(msg) {
+	console.log(‘ % c % s % s % s‘, ‘color: yellow; background - color: black;’, ‘–‘, msg, ‘–‘);
+}
+console.important = function(msg) {
+	console.log(‘ % c % s % s % s’, ‘color: brown; font - weight: bold; text - decoration: underline;’, ‘–‘, msg, ‘–‘);
+}
+console.todo(“This is something that’ s need to be fixed”);
+console.important(‘This is an important message’);
+```
+
+[back to top](#top)
+
+<h3 id="Break">17. Break on node change</h3>
+
+Chrome lets you pause when a DOM element changes. You can even monitor its attributes. In Chrome Inspector, right click on the element and pick a break on setting to use:
+
+![](https://i.imgur.com/XwOwBAa.png)
+
+[back to top](#top)
+
+<h3 id="nodeJS">18. debug nodeJS</h3>
 
 `node2 --inspect backend/app.js`
 
 will generate a url, copy it to browser url, you will see the backend node js file and debug it
 
 [back to top](#top)
+
+
 
 > Reference
 
