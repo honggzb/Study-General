@@ -260,6 +260,8 @@ the most common way is
 1. Find the line in your inspector and add a breakpoint
 2. Add a debugger in your script
 
+**Quick way**
+
 ```javascript
 var func1 = function() {
 	func2();
