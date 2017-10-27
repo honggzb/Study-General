@@ -19,12 +19,12 @@
   - [16.1 console.assert(expression, object)](#consolelog)
   - [16.2 console.table()- quick way to see data](#consoletable)
   - [16.3 占位符](#占位符)
-  - [16.4 分组显示-console.group()和console.groupEnd()](#分组显示)
-  - [16.5 查看对象的信息-console.dir()](#查看对象的信息)
-  - [16.6 显示某个节点的内容-console.dirxml()](#显示某个节点的内容)
-  - [16.7 追踪函数的调用轨迹-console.trace()](#追踪函数的调用轨迹)
-  - [16.8 显示代码的运行时间-console.time()和console.timeEnd()](显示代码的运行时间)
-  - [16.9 性能分析-console.profile()](#性能分析)
+  - [16.4 分组显示-console.group()和console.groupEnd](#分组显示)
+  - [16.5 查看对象的信息-console.dir](#查看对象的信息)
+  - [16.6 显示某个节点的内容-console.dirxml](#显示某个节点的内容)
+  - [16.7 追踪函数的调用轨迹-console.trace](#追踪函数的调用轨迹)
+  - [16.8 显示代码的运行时间-console.time和console.timeEnd](显示代码的运行时间)
+  - [16.9 性能分析-console.profile](#性能分析)
 - [17. debug nodeJS](#nodeJS)
 
 <h3 id="查看元素绑定了哪些事件">2. 查看元素绑定了哪些事件</h3>
