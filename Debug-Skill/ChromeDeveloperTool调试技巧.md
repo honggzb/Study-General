@@ -27,7 +27,8 @@
   - [16.9 性能分析-console.profile](#性能分析)
   - [16.10 Quick-find a function to debug](#Quick-find)
   - [16.11 自定义console输出信息提示](#自定义console输出信息提示)
-- [17. debug nodeJS](#nodeJS)
+- [17. Break on node change](#Break)
+- [18. debug nodeJS](#nodeJS)
 
 <h3 id="查看元素绑定了哪些事件">2. 查看元素绑定了哪些事件</h3>
 
@@ -323,3 +324,4 @@ will generate a url, copy it to browser url, you will see the backend node js fi
 - [Twelve Fancy Chrome DevTools Tips](https://hackernoon.com/twelve-fancy-chrome-devtools-tips-dc1e39d10d9d)
 - http://www.cnblogs.com/suizhikuo/archive/2012/06/05/2537290.html
 - [Console命令详解,让调试js代码变得更简单](http://www.cnblogs.com/kiter/p/3943342.html)
+- [The 14 JavaScript debugging tips you probably didn't know](https://raygun.com/javascript-debugging-tips?utm_source=cooperpress&utm_medium=primary&utm_campaign=cooperpress-javascript)
