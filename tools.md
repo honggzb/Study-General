@@ -1,3 +1,8 @@
+- [在线工具集合](http://tool.oschina.net/)
+- [常用对照表](http://tool.oschina.net/commons)
+
+**一些强大有用的工具**
+
 - [1. Apowersoft](#Apowersoft)
 - [2. 百度脑图](#百度脑图)
 - [3. ProcessOn](#ProcessOn)
