@@ -408,6 +408,8 @@ if(/Android [4-6]/.test(navigator.appVersion)) {
 }
 ```
 
+> 依旧无法解决（摩托罗拉ME863手机），则使用input:text类型而非password类型，并设置其设置 -webkit-text-security: disc; 隐藏输入密码从而解决。
+
 <h3 id="chrome">1. window.top.document.body.scrollTop not working in Chrome or FireFox</h3>
 
 ```javascript
