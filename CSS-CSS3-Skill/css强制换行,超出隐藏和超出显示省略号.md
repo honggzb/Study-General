@@ -1,5 +1,5 @@
 - [一、强制换行](#强制换行)
-- [二、禁止换行](#禁止换行)
+- [二、禁止换行并超出显示省略号](#禁止换行)
 
 <h2 id="强制换行">一、强制换行</h2>
 
@@ -14,9 +14,13 @@ word-break:break-all 和 word-wrap:break-word 都是能使其容器如DIV的内�
 
 > 注意：设置强制将英文单词断行，需要将行内元素设置为块级元素。
 
-<h2 id="禁止换行">二、禁止换行</h2>
+<h2 id="禁止换行">二、禁止换行并超出显示省略号</h2>
 
-`white-space:nowrap; overflow:hidden; text-overflow:ellipsis;`
+```css
+white-space:nowrap; 
+overflow:hidden; 
+text-overflow:ellipsis;
+```
 
 - white-space:nowrap; 是禁止换行
 - overflow:hidden; 是让多出的内容隐藏起来，否则多出的内容会撑破容器。
