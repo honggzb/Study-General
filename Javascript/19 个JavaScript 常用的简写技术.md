@@ -13,7 +13,7 @@
 - [17.Array.find简写 -数组中查找某个值](#Array-find简写)
 - [18.Object[key]简写- 如编写通用验证函数](#Object[key]简写)
 - [19.双重非位运算简写](#双重非位运算简写)
-- [补1：利用parseInt(str)字符串转换为数字](#字符串转换为数字)
+- [补1：利用parseInt(str)字符串转换为数字- 简写`+(str)`](#字符串转换为数字)
 - [补3：利用Array.prototype.contcat对象转换为字符串](#对象转换为字符串)
 - [补2：利用Object.assign快速创建并复制对象](#快速创建并复制对象)
 
