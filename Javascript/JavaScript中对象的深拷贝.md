@@ -7,7 +7,7 @@
   - [2.1 方法一：使用JSON.parse方法](#parse方法)
   - [2.2 方法二：递归拷贝](#递归拷贝)
   - [2.3 方法三：使用Object.create方法](#create方法)
-- [jQuery.extend()方法的实现对象的深拷贝](#方法的实现对象的深拷贝)
+- [jQuery.extend()方法和lodash的实现对象的深拷贝](#方法的实现对象的深拷贝)
 
 ![](https://i.imgur.com/9lnKKr0.png)
 
@@ -124,11 +124,12 @@ function deepClone(initalObj, finalObj) {
   
 [back to top](#top)
 
-<h2 id="方法的实现对象的深拷贝">jQuery.extend()方法的实现对象的深拷贝</h2>
+<h2 id="方法的实现对象的深拷贝">jQuery.extend()方法和lodash的实现对象的深拷贝</h2>
 
 官方链接地址：https://github.com/jquery/jquery/blob/master/src/core.js
   
 ```JavaScript
+//jquery
 var $ = require('jquery');
 var obj1 = {
     a: 1,
@@ -137,7 +138,16 @@ var obj1 = {
 };
 var obj2 = $.extend(true, {}, obj1);
 console.log(obj1.b.f === obj2.b.f);   // false
-```  
+//lodash
+var _ = require('lodash');
+var obj1 = {
+    a: 1,
+    b: { f: { g: 1 } },
+    c: [1, 2, 3]
+};
+var obj2 = _.cloneDeep(obj1);
+console.log(obj1.b.f === obj2.b.f);   // false
+```
   
 [back to top](#top)
 
