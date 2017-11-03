@@ -1,6 +1,16 @@
 [目录](top)
 
 - [1. 垂直居中](#垂直居中)
+    - 方法1：table-cell
+    - 方法2：display:flex
+    - 方法3：绝对定位和负边距
+    - 方法4：绝对定位和0
+    - 方法5：translate
+    - 方法6：display:inline-block
+    - 方法7：display:flex和margin:auto
+    - 方法8：display:-webkit-box
+    - 方法9：display:-webkit-box
+    - 
 - [2. 文字截断](#文字截断)
 - [3. :nth-child() 选择器写法  兼容ie8以上](#选择器写法)
 - [4. Will-Change](#Will-Change)
@@ -8,7 +18,61 @@
 
 <h3 id="垂直居中">1. 垂直居中</h3>
 
+```html
+<div class="box box1">
+    <span>垂直居中</span>
+</div>
+```
+
+[纯CSS实现垂直居中的几种方法](http://www.cnblogs.com/hutuzhu/p/4450850.html)
+
 ```css
+/* 方法1：table-cell */
+.box1{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;        
+}
+/* 方法2：display:flex */
+.box2{
+    display: flex;
+    justify-content:center;
+    align-items:Center;
+}
+/* 方法3：绝对定位和负边距 */
+.box3{position:relative;}
+.box3 span{
+            position: absolute;
+            width:100px;
+            height: 50px;
+            top:50%;
+            left:50%;
+            margin-left:-50px;
+            margin-top:-25px;
+            text-align: center;
+}
+/* 方法4：绝对定位和0 */
+.box4 span{
+  width: 50%; 
+  height: 50%; 
+  background: #000;
+  overflow: auto; 
+  margin: auto; 
+  position: absolute; 
+  top: 0; left: 0; bottom: 0; right: 0; 
+}
+/* 这种方法跟上面的有些类似，但是这里是通过margin:auto和top,left,right,bottom都设置为0实现居中，很神奇吧。不过这里得确定内部元素的高度，可以用百分比，比较适合移动端 */
+
+/* 方法5：translate */
+.box6 span{
+            position: absolute;
+            top:50%;
+            left:50%;
+            width:100%;
+            transform:translate(-50%,-50%);
+            text-align: center;
+}
+/* 或 */
 .verticalcenter{
     position: relative;
     top: 50%;
@@ -17,6 +81,57 @@
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+/* 方法6：display:inline-block */
+.box7{
+  text-align:center;
+  font-size:0;
+}
+.box7 span{
+  vertical-align:middle;
+  display:inline-block;
+  font-size:16px;
+}
+.box7:after{
+  content:'';
+  width:0;
+  height:100%;
+  display:inline-block;
+  vertical-align:middle;
+}
+/* 这种方法确实巧妙...通过:after来占位 */
+/* 方法7：display:flex和margin:auto */
+.box8{
+    display: flex;
+    text-align: center;
+}
+.box8 span{margin: auto;}
+/* 方法8：display:-webkit-box */
+.box9{
+    display: -webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    -webkit-box-orient: vertical;
+    text-align: center
+}
+/* 方法9：display:-webkit-box */
+/* 在 content 元素外插入一个 div。 content 清除浮动，并显示在中间 */
+<div class="floater"></div>  
+<div class="content"> Content here </div>  
+.floater {
+    float:left; 
+    height:50%; 
+    margin-bottom:-120px;
+}
+.content {
+    clear:both; 
+    height:240px; 
+    position:relative;
+}
+/*优点： 
+适用于所有浏览器 
+没有足够空间时(例如：窗口缩小) content 不会被截断，滚动条出现
+缺点： 
+需要额外的空元素了*/
 ```
 
 [back to top](#top)
