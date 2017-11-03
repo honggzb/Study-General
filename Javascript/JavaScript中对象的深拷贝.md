@@ -128,6 +128,17 @@ function deepClone(initalObj, finalObj) {
 
 官方链接地址：https://github.com/jquery/jquery/blob/master/src/core.js
   
+```JavaScript
+var $ = require('jquery');
+var obj1 = {
+    a: 1,
+    b: { f: { g: 1 } },
+    c: [1, 2, 3]
+};
+var obj2 = $.extend(true, {}, obj1);
+console.log(obj1.b.f === obj2.b.f);   // false
+```  
+  
 [back to top](#top)
 
 > References
