@@ -13,7 +13,8 @@
 - [17.Array.find简写 -数组中查找某个值](#Array-find简写)
 - [18.Object[key]简写- 如编写通用验证函数](#Object[key]简写)
 - [19.双重非位运算简写](#双重非位运算简写)
-- [补1：字符串转换为数字](#字符串转换为数字)
+- [补1：利用parseInt(str)字符串转换为数字](#字符串转换为数字)
+- [补3：利用Array.prototype.contcat对象转换为字符串](#对象转换为字符串)
 - [补2：利用Object.assign快速创建并复制对象](#快速创建并复制对象)
 
 <h3 id="短路求值简写方式">2.短路求值简写方式</h3>
@@ -266,6 +267,17 @@ console.log(+(str))
 ```
 
 [back to top](#top)
+
+<h3 id="对象转换为字符串">补3：利用Array.prototype.contcat对象转换为字符串</h3>
+
+```javascript
+function newSay(){
+     say.apply(null, ['张三'].concat(Array.prototype.slice.call(arguments));
+}
+```
+
+[back to top](#top)
+
 
 <h3 id="快速创建并复制对象">补2：利用Object.assign快速创建并复制对象</h3>
 
