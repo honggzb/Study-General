@@ -10,7 +10,6 @@
     - 方法7：display:flex和margin:auto
     - 方法8：display:-webkit-box
     - 方法9：display:-webkit-box
-    - 
 - [2. 文字截断](#文字截断)
 - [3. :nth-child() 选择器写法  兼容ie8以上](#选择器写法)
 - [4. Will-Change](#Will-Change)
