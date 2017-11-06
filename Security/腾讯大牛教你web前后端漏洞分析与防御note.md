@@ -1,7 +1,7 @@
 [腾讯大牛教你web前后端漏洞分析与防御](#top)
 
 - [一般概念](#一般概念)
-- [XSS](#XSS)
+- [XSS攻击](#XSS攻击)
   - 防御方法1： 转义、黑名单、白名单、第三方库
   - 防御方法2： CSP
   - 防御方法3： PHP中防御XSS
@@ -30,7 +30,7 @@
 
 [back to top](#top)
 
-## XSS
+<h2 id="XSS攻击">XSS攻击</h2>
 
 **Crossing Site Scripting跨站脚本攻击类型**
 
@@ -151,45 +151,9 @@ header("Content-Security-Policy:script-src 'self'");
 
 [back to top](#top)
 
-## CSRF攻击
+<h2 id="CSRF攻击">CSRF攻击</h2>
 
 - Cross Site Request Forgy跨站请求伪造
-
-
-**防御方法1：禁止第三方网站带Cookie**
-
-- 利用SameSite属性(https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/set-cookie), `ctx.cookies.set('userId', user.id, {httpOnly:false, sameSite: 'strict'});`(http://koajs.com/, https://github.com/pillarjs/cookies)
-- 只有chrome和Opera支持
-
-**防御方法2：不访问A网站的前端**
-
-- 在前端页面加入验证信息
-  - 验证码: 如[ccap](https://github.com/DoubleSpout/ccap)
-  - token： 必须经过前端网页取得token才能通过
-
-```javascript
-//1） 验证码 -controllers/site.js
-exports.addComment = async function(ctx, next){
-	try{
-  //...
-  //图形二维码
-  if(!data.captcha){    //防止验证码为空的错误
-    throw new Error('验证码错误');
-  }
-  var captcha = require('../tools/captcha');
-  var captchaResult = captcha.validCache(ctx.cookies.get('userId')， data.captcha);
-  console.log(captchaResult);
-  if(!captchaResult){
-    throw new Error('验证码错误')；
-  }
-  //...
-//2） post.html
-<input name="captcha" placeholder="验证码" />
-<img src="/captcha" />
-//3）tools/captcha.js
-//4）routes/site.js
-router.get('/captcha', captcha.captcha);
-```
 
 如<a>,<img>均可产生get请求，可以被CSRF利用
 
@@ -209,4 +173,85 @@ exports.addComment = async function(ctx, next){
 //在页面就可以利用<a>,<img>均产生get请求
 <a href="http://localhost:1521/ajax/addComment?postId=12&content=..."></a>
 ```
+
+**防御方法1：禁止第三方网站带Cookie**
+
+- 利用SameSite属性(https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/set-cookie), `ctx.cookies.set('userId', user.id, {httpOnly:false, sameSite: 'strict'});`(http://koajs.com/, https://github.com/pillarjs/cookies)
+- 只有chrome和Opera支持
+
+**防御方法2：不访问A网站的前端**
+
+- 在前端页面加入验证信息
+  -图形验证码: 如[ccap](https://github.com/DoubleSpout/ccap)
+  - token：   必须经过前端网页取得token才能通过，token是一个随机的字符串，利用cookie检查token
+
+```javascript
+/* 1） 图形验证码 -controllers/site.js*/
+exports.addComment = async function(ctx, next){
+	try{
+  //...
+  //11)图形二维码
+  if(!data.captcha){    //防止验证码为空的错误
+    throw new Error('验证码错误');
+  }
+  var captcha = require('../tools/captcha');
+  var captchaResult = captcha.validCache(ctx.cookies.get('userId')， data.captcha);
+  console.log(captchaResult);
+  if(!captchaResult){
+    throw new Error('验证码错误')；
+  }
+  //...
+//12） post.html
+<input name="captcha" placeholder="验证码" />
+<img src="/captcha" />
+//13）tools/captcha.js
+//14）routes/site.js
+router.get('/captcha', captcha.captcha);
+/* 2） 图形验证码 -controllers/site.js*/
+// 21) 生成token
+exports.post = async function(ctx, next){
+  //...
+  var csrfToken = parseInt(Math.random()*9999999, 10);
+  ctx.cookies.set('csrfToken', csrfToken);
+  //..
+  if(post){
+    ctx.render('post', {post, comments, csrfToken});  //加入csrfToken
+  }else{
+    ctx.status = 404;
+  }
+  // ..
+}
+// 22) 页面中加入一个hidden input
+<input type="hidden" name="csrfToken" value="csrfToken"> 
+// 或在meta中加入，如果是ajax调用的情况
+<meta name="csrf_Token" content="csrfToken">
+// 23) 在后台处理
+exports.addComment = async function(ctx, next){
+  //...
+  if(data.csrfToken){
+    throw new Error('CSRF Toke为空');
+  }
+  if(data.csrfToken !== ctx.cookies.get('csrfToken')){
+    throw new Error('CSRF Toke错误');
+  }
+  //...
+};
+```
+
+[back to top](#top)
+
+**防御方法3：验证referer，禁止来着第三方网站的请求**
+
+```javascript
+exports.addComment = async function(ctx, next){
+  //...
+  var referer = ctx.request.headers.referer;
+  if(referer.indexOf('localhost') === -1){    //如果referer不包含localhost字符
+    throw new Error('非法请求！')
+  }
+  //...
+};
+```
+
+[back to top](#top)
 
