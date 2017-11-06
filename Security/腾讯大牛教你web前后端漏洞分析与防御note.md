@@ -5,7 +5,7 @@
   - 防御方法1： 转义、黑名单、白名单、第三方库
   - 防御方法2： CSP
   - 防御方法3： PHP中防御XSS
-- [CSRF](#CSRF)
+- [CSRF攻击](#CSRF攻击)
 
 ## 一般概念
 
@@ -151,7 +151,7 @@ header("Content-Security-Policy:script-src 'self'");
 
 [back to top](#top)
 
-## CSRF
+## CSRF攻击
 
 - Cross Site Request Forgy跨站请求伪造
 
