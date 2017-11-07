@@ -1,7 +1,8 @@
 [Javascript中的setTimeout和setInterval的一些注意事项](#top)
 
 - [delay of zero](#topic1)
-- [Passing Arguments to setTimeout and setInterval](#topic2)
+- [Passing Arguments to setTimeout and setInterval-传参给setTimeout和setInterval](#topic2)
+- [setTimeout和setInterval的this问题](#topic3)
 
 <h2 id="topic1">delay of zero</h2>
 
@@ -33,7 +34,9 @@ var hello = "Hello World";
 setTimeout(alert, 1000, hello);
 ```
 
-> 注意：
+[back to top](#top)
+
+<h2 id="topic3">setTimeout和setInterval的this问题</h2>
 
 - The default **this** value of a setTimeout callback will still be the **window** object, and not undefined, even in strict mode.
 - Example using bind(), JavaScript 1.8.5 introduced the Function.prototype.bind() method to set the value of this for all calls to a given function
