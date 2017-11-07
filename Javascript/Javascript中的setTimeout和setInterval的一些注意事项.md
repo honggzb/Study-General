@@ -53,6 +53,46 @@ setTimeout(myArray.myMethod, 1000); // still prints "zero,one,two" after 1 secon
 setTimeout(myArray.myMethod, 1500, "1"); // prints "one" after 1.5 seconds
 ```
 
+[bind案例说明](https://stackoverflow.com/questions/1190642/how-can-i-pass-a-parameter-to-a-settimeout-callback)
+
+```javascript
+var testObject = { prop1: 'test1', prop2: 'test2', prop3: 'test3'};
+// method 1: use forEach and Object.keys
+Object.keys(testObject).forEach(function(propertyName, i) {
+    setTimeout(function() {
+        console.log(testObject[propertyName]);
+    }, i * 1000);
+});
+// method 2: use bind
+var i = 0;
+for (var propertyName in testObject) {
+    setTimeout(function(propertyName) {
+        console.log(testObject[propertyName]);
+    }.bind(this, propertyName), i++ * 1000);
+}
+//method 3: use IIFE
+var i = 0;
+for (var propertyName in testObject) {
+    setTimeout((function(propertyName) {
+        return function() {
+            console.log(testObject[propertyName]);
+        };
+    })(propertyName), i++ * 1000);
+}
+//method 4: passing third parameter if IE>10
+var i = 0;
+for (var propertyName in testObject) {
+    setTimeout(function(propertyName) {
+        console.log(testObject[propertyName]);
+    }, i++ * 1000, propertyName);
+}
+//method 5: use arrow function of ES6 in modern browser
+let i = 0;
+for (let propertyName in testObject) {
+    setTimeout(() => console.log(testObject[propertyName]), i++ * 1000);
+}
+```
+
 [back to top](#top)
 
 <h2 id="topic4">Browser compatibility</h2>
