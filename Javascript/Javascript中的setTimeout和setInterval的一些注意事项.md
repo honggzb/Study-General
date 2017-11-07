@@ -24,14 +24,21 @@ foo has been called
 <h2 id="topic1">Passing Arguments to setTimeout and setInterval</h2>
 
 - In modern browsers, the "setTimeout" receives a third parameter that is sent as parameter to the internal function at the end of the timer(Acording to https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout the callback arguments for Internet Explorer is only supported in versions >=10)
-- The default **this** value of a setTimeout callback will still be the **window** object, and not undefined, even in strict mode.
 
-**setTimeout(yourFunctionReference, 4000, param1, param2, paramN);**
+> setTimeout(yourFunctionReference, 4000, param1, param2, paramN);
 
 ```javascript
+// setTimeout with a third parmameter
 var hello = "Hello World";
 setTimeout(alert, 1000, hello);
-//Example using bind(), JavaScript 1.8.5 introduced the Function.prototype.bind() method to set the value of this for all calls to a given function
+```
+
+> 注意：
+
+- The default **this** value of a setTimeout callback will still be the **window** object, and not undefined, even in strict mode.
+- Example using bind(), JavaScript 1.8.5 introduced the Function.prototype.bind() method to set the value of this for all calls to a given function
+
+```javascript
 myArray = ['zero', 'one', 'two'];
 myArray.myMethod = (function (sProperty) {
     console.log(arguments.length > 0 ? this[sProperty] : this);
