@@ -21,7 +21,7 @@ foo has been called
 
 [back to top](#top)
 
-<h2 id="topic1">Passing Arguments to setTimeout and setInterval</h2>
+<h2 id="topic2">Passing Arguments to setTimeout and setInterval</h2>
 
 - In modern browsers, the "setTimeout" receives a third parameter that is sent as parameter to the internal function at the end of the timer(Acording to https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout the callback arguments for Internet Explorer is only supported in versions >=10)
 
