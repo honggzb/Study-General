@@ -3,6 +3,7 @@
 - [delay of zero](#topic1)
 - [Passing Arguments to setTimeout and setInterval-传参给setTimeout和setInterval](#topic2)
 - [setTimeout和setInterval的this问题](#topic3)
+- [Browser compatibility](#topic4)
 
 <h2 id="topic1">delay of zero</h2>
 
@@ -51,6 +52,26 @@ myArray.myMethod(1); // prints "one"
 setTimeout(myArray.myMethod, 1000); // still prints "zero,one,two" after 1 second because of the binding
 setTimeout(myArray.myMethod, 1500, "1"); // prints "one" after 1.5 seconds
 ```
+
+[back to top](#top)
+
+<h2 id="topic4">Browser compatibility</h2>
+
+Browser compatibility(Desktop)
+
+| Feature|Chrome|Edge|Firefox (Gecko)|Internet Explorer|Opera|Safari|
+| :---| :---| :---| :---| :---| :---| :---|
+|Basic support|1.0|(Yes)|1.0(1.7 or earlier)|4.0|4.0|1.0|
+|Supports parameters for callback|(Yes)|(Yes)|(Yes)|10.0|(Yes)|(Yes)|
+|Throttling of tracking timeout scripts|?|?|55(55)|?|?|?|
+
+Browser compatibility(Mobile)
+
+| Feature|Android|Chrome for Android|Edge|Firefox Mobile (Gecko)|IE Mobile|Opera Mobile|Safari Mobile|
+| :---| :---| :---| :---| :---| :---| :---| :---|
+|Basic support|1.0|1.0|(Yes)|1.0 (1) 52.0 (52)|6.0|6.0|1.0|
+|Supports parameters for callback|?|?|?|?|?|?|?|
+|Throttling of tracking timeout scripts|?|?|?|55(55)|?|?|?|
 
 [back to top](#top)
 
