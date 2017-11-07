@@ -56,7 +56,7 @@ setTimeout(myArray.myMethod, 1500, "1"); // prints "one" after 1.5 seconds
 [bind案例说明](https://stackoverflow.com/questions/1190642/how-can-i-pass-a-parameter-to-a-settimeout-callback)
 
 ```javascript
-var testObject = { prop1: 'test1', prop2: 'test2', prop3: 'test3'};
+var testObject = { prop1: 'test1', prop2: 'test2', prop3: 'test3'};   //按时间依次输出test1, test2, test2
 // method 1: use forEach and Object.keys
 Object.keys(testObject).forEach(function(propertyName, i) {
     setTimeout(function() {
