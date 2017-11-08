@@ -20,6 +20,9 @@
   - 前端加密
   - 生物特征密码
 - [接入层注入问题（sql注入问题）](#接入层注入问题)
+  - SQL注入和防御
+  - NoSQL注入和防御
+- [接入层上传问题](#接入层上传问题)
 
 ## 一般概念
 
@@ -547,7 +550,94 @@ exports.doLogin = async function(ctx, next){
 
 <h2 id="接入层注入问题">接入层注入问题（sql注入问题）</h2>
 
+```sql
+select * from table where id="10" or 1=0
+select * from table where id="10" or 1=1
+select * from table where id="10" and mid(version(),1,1)=5
+select 1,2,3 from table
+select id,1,2,3 from table
+select * from table union select 1,2,3 from table2
+select * from table where mid(username, 1,1)="t"
+```
 
+**sql注入防御**
+
+- 关闭错误输出, 如不输出e.message等信息
+- 检查数据类型
+- 对数据进行转义
+- 使用参数化查询: mysql2模块, wireshark抓包
+- 使用ORM（对象关系映射）： 如nodejs中的sequelize
+
+```javascript
+/*对数据进行转义 + 使用参数化查询*/
+//controllers/site.js
+exports.post = async function(ctx, next){
+	try{
+		console.log('enter post');
+		//const id = ctx.params.id;
+		let id = ctx.params.id;
+		id = parseInt(id, 10);     //检查数据类型
+		const connection = connectionModel.getConnection();
+		const query = bluebird.promisify(connection.query.bind(connection));
+		console.log(id, connection.escape(id));   //escape为mysql自带的转义函数
+		const posts = await query(
+			//`select * from post where id = "${connection.escape(id)}"`    //escape为mysql模块自带的转义函数
+      `select * from post where id = ?`, [id]    //参数化查询, mysql2模块
+		);
+    //...
+/*使用ORM（对象关系映射）- 使用sequelize模块*/
+//sequelize.js
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize({
+  host: 'localhost',
+  database: 'safety',
+  username: 'root',
+  define: {
+    freezeTableName: true   //使用自己的表名
+  }
+});
+module.exports = sequelize;
+//models/post.js
+var sequelize = require('./sequelize');
+var Sequelize = require('sequelize');
+var Post = sequelize.define('post', {
+  id: {
+    type: Sequelize.INTERGER,
+    primaryKey: true
+  },
+  title: Sequelize.STRING(256),
+  imgURL: Sequelize.STRING(256),
+  content: Sequelize.TEXT
+}, {
+  tablename: 'post'
+})
+module.exports  = Post;
+//controllers/site.js
+exports.post = async function(ctx, next){
+  //..不再使用connection
+  //const connection = connectionModel.getConnection();
+  //const query = bluebird.promisify(connection.query.bind(connection));
+  //console.log(id, connection.escape(id));   //escape为mysql自带的转义函数
+  // const posts = await query(
+  // 	`select * from post where id = "${connection.escape(id)}"`    //escape为mysql自带的转义函数
+  // );
+  //let post = posts[0];
+  let post = await POST.findById(id);   //POST返回值是PROMISE
+}
+```
+
+**NoSQL注入和防御**
+
+- 检查数据类型
+- 类型转换
+- 写完整条件
 
 [back to top](#top)
 
+<h2 id="接入层上传问题">接入层上传问题</h2>
+
+- 上传的问题件被当成程序解析
+
+
+
+[back to top](#top)
