@@ -637,7 +637,52 @@ exports.post = async function(ctx, next){
 <h2 id="接入层上传问题">接入层上传问题</h2>
 
 - 上传的问题件被当成程序解析
+- 上传Web脚本程序，Web容器解释执行上传的恶意脚本
+- 上传Flash跨域策略文件crossdomain.xml，修改访问权限(其他策略文件利用方式类似)
+- 上传病毒、木马文件，诱骗用户和管理员下载执行
+- 上传包含脚本的图片，某些浏览器的低级版本会执行该脚本，用于钓鱼和欺诈
 
+**处理方式**
 
+- 阻止非法文件上传
+  - 扩展名白名单
+  - 文件头判断
+- 阻止非法文件执行
+  - 存储目录与Web应用分离
+  - 存储目录无执行权限
+  - 文件重命名
+  - 图片压缩
+
+```javascript
+//nodejs 图像文件上传
+<input name="img" type="file">
+// koa-body模块支持文件上传，body-parser不支持文件上传
+// server.js
+const bodyParser = require('koa-body');
+app.use(bodyParser({
+  multipart: true
+}));
+//controllers/site.js
+exports.addComment = async function(ctx, next){
+  //...
+  var data;
+  if(ctx.request.method.toLowerCase() === 'post'){
+    data = ctx.request.body;
+  }else{
+    data = ctx.request.query;    //csrf attack, 对应于router.get('/ajax/addComment', site.addComment);
+  }
+  //...
+  if(data.files){   //如果有文件
+    let file = data.files.img;
+    let ext = path.extname(file.name);
+    let filename = Date.now() + ext;
+    fs.renameSync(file.path, './static/upload'+filename);  //将文件名标准化，去除不规范的文件名
+    data.fields.content += '<img src="/uploadfile/'+filename+'"/>';
+    data = data.fields;
+  }
+}
+```
+
+![](assets/markdown-img-paste-20171108152712263.png)
 
 [back to top](#top)
