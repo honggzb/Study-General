@@ -578,10 +578,44 @@ exports.addComment = async function(ctx, next){
     let ext = path.extname(file.name);
     let filename = Date.now() + ext;
     fs.renameSync(file.path, './static/upload'+filename);  //将文件名标准化，去除不规范的文件名
-    data.fields.content += '<img src="/uploadfile/'+filename+'"/>';   //将图像文件加入到comment中
-    data = data.fields;
+    data.fields.content += '<img src="/uploadfile/'+filename+'"/>';
+    data = data.fields;
   }
 }
+//...
+exports.uploadfile = async function(ctx, next){
+	let filepath = ctx.request.path.replace(/^\/uploadfile\//,'');
+	filepath = './static/upload'+filepath;
+	//文件是否存在
+	if(!fs.existsSync(filepath)){
+		ctx.status = 404;
+		return;
+	}
+	let ext = path.extname(filepath);   //文件后缀名
+	var run = function (filepath) {
+		return new Promise(function (resolve, reject) {
+			var child = require('child_process').fork(filepath, []);
+			var ret = '';
+			child.stdout.on('data', function(data){
+				console.log(data);
+				ret += data;
+			});
+			child.on('close', function(data){
+				resolve(data);
+			});
+			child.on('error', function(error){
+				reject(error);
+			});
+		})
+	};
+	if(ext === '.js'){
+		ctx.body = await run(filepath);
+		return;
+	}
+	ctx.body = fs.readFileSync(filepath);
+};
+//增加一个route
+router.get('/uploadfile/*', site.uploadFile);
 ```
 
 data的格式
