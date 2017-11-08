@@ -16,6 +16,10 @@
 - [传输安全](#传输安全)
   - 解决方法：SSL/TLS协议加密
 - [密码安全](#密码安全)
+  - 哈希加密
+  - 前端加密
+  - 生物特征密码
+- [接入层注入问题（sql注入问题）](#接入层注入问题)
 
 ## 一般概念
 
@@ -450,9 +454,10 @@ https.createServer({
 
 <h2 id="密码安全">密码安全</h2>
 
-措施： 加密（密文-哈希算法）
+措施： 敏感信息不用明文，加密（通过哈希算法）
 
 - 单向变换： 密文-明文无法反推，但可通过密码-单向变换彩虹表逆向查出
+- 雪崩效应
 - 密文固定长度
 - 常用哈希算法： md5 sha1 sha256
 - 预防彩虹表措施
@@ -461,6 +466,7 @@ https.createServer({
   - 加盐： md5(sha1(MD5(ID+ab83kd+原始密码+81kdso+盐+1!so;$2)))
 
 ```javascript
+/* 在后台对password加盐加密 */
 // tools/password.js
 var password = {};
 var md5 = function (str) {
@@ -494,11 +500,54 @@ exports.doLogin = async function(ctx, next){
 }
 ```
 
-密码传输的安全性
+**密码传输的安全性**
 
 - HTTPS协议
 - 频率限制
 - 前端加密意义有限
+
+`jspm install npm:js-md5`   - linux安装命令
+
+```javascript
+/* 前端加密 */
+// static/scripts/login.js  前端
+//先在前端将密码加盐后再发送，保证在传输的时候不用明文
+var md5 = require('js-md5');
+var SUGAR = '%&sdaasd%?!^&dskj3';
+data.password = md5(data.username+SUGAR+data.password);
+axios.post('/user/login', data).then((data) => {  // ...})
+//controllers/user.js
+exports.doLogin = async function(ctx, next){
+  //...
+  if(!user.salt){
+    var salt = password.getSalt();
+    var newPassword = password.getPasswordFromText(user.username, user.password);    //前端密码（已经加密一次）
+    var encryptPassword = password.encryptPassword(salt, newPassword);               //对前端密码加盐
+    await query(`update user set password= '${encryptPassword}', salt = '${salt}' where id= '${user.id}'`);
+    user.salt = salt;
+    user.password = encryptPassword;
+  }
+  var encryptPassword = password.encryptPassword(user.salt, data.password);
+  if(encryptPassword!==user.password){
+    throw new Error('用户密码不正确');
+  }
+  //...
+}
+```
+
+**生物特征密码**
+
+- 指纹、声蚊、虹膜、人脸
+- 缺陷：
+  - 私密性： 容易泄露
+  - 安全性： 碰撞
+  - 唯一性： 终身唯一，无法修改
+
+[back to top](#top)
+
+<h2 id="接入层注入问题">接入层注入问题（sql注入问题）</h2>
+
+
 
 [back to top](#top)
 
