@@ -586,7 +586,7 @@ exports.addComment = async function(ctx, next){
 
 data的格式
 
-![](assets/markdown-img-paste-20171108152712263.png)
+![bb](assets/markdown-img-paste-20171108152712263.png)
 
 - [用javascript 上传文件](http://blog.csdn.net/jianyi7659/article/details/8708857)
 - [前端文件上传专题](http://www.jb51.net/Special/567.htm)
