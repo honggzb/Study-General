@@ -69,6 +69,17 @@ target.addEventListener("drop", function(event) {
 }, false);
 ```
 
+style的改进，另写一个input显示选中的文件
+
+```html
+<p class="text_area2">
+  <input type="text" class="input_text input_text1" name="textfield" id="textfield"/> 
+  <a href="javascript:;" class="upload_btn2" title="上传">
+    <input type="file" id="file1" class="file1" size="0.1" onchange="document.getElementById('textfield').value=this.value" >
+  </a>
+</p>
+```
+
 [back to top](#top)
 
 <h4 id="使用Ajax上传">1.3 使用 Ajax 上传</h4>
@@ -125,6 +136,13 @@ xhr.send(form);
    oXHR.open('POST', actionUrl);
    oXHR.send(vFD);
   };
+```
+
+也可在html中指定文件类型
+
+```html
+<input type="file" accept="application/msword" />我只想要word<br>
+<input type="file" name="pic" id="pic" accept="image/gif, image/x-ms-bmp, image/bmp" />
 ```
 
 [back to top](#top)
