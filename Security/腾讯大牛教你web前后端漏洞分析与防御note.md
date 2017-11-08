@@ -638,7 +638,7 @@ exports.post = async function(ctx, next){
 
 - 上传的问题件被当成程序解析
 - 上传Web脚本程序，Web容器解释执行上传的恶意脚本
-- 上传Flash跨域策略文件crossdomain.xml，修改访问权限(其他策略文件利用方式类似)
+- 上传Flash跨域策略文件`crossdomain.xml`，修改访问权限(其他策略文件利用方式类似)
 - 上传病毒、木马文件，诱骗用户和管理员下载执行
 - 上传包含脚本的图片，某些浏览器的低级版本会执行该脚本，用于钓鱼和欺诈
 
@@ -646,15 +646,16 @@ exports.post = async function(ctx, next){
 
 - 阻止非法文件上传
   - 扩展名白名单
-  - 文件头判断
+  - 文件头判断（文件内容检查）, 限制文件后缀名
 - 阻止非法文件执行
   - 存储目录与Web应用分离
-  - 存储目录无执行权限
+  - 可写可执行互斥： 存储目录无执行权限，程序文件无写权限
   - 文件重命名
   - 图片压缩
 
+
 ```javascript
-//nodejs 图像文件上传
+//nodejs 图像文件上传攻击演示
 <input name="img" type="file">
 // koa-body模块支持文件上传，body-parser不支持文件上传
 // server.js
@@ -681,8 +682,42 @@ exports.addComment = async function(ctx, next){
     data = data.fields;
   }
 }
+//...
+exports.uploadfile = async function(ctx, next){
+	let filepath = ctx.request.path.replace(/^\/uploadfile\//,'');
+	filepath = './static/upload'+filepath;
+	//文件是否存在
+	if(!fs.existsSync(filepath)){
+		ctx.status = 404;
+		return;
+	}
+	let ext = path.extname(filepath);   //文件后缀名
+	var run = function (filepath) {
+		return new Promise(function (resolve, reject) {
+			var child = require('child_process').fork(filepath, []);
+			var ret = '';
+			child.stdout.on('data', function(data){
+				console.log(data);
+				ret += data;
+			});
+			child.on('close', function(data){
+				resolve(data);
+			});
+			child.on('error', function(error){
+				reject(error);
+			});
+		})
+	};
+	if(ext === '.js'){
+		ctx.body = await run(filepath);
+		return;
+	}
+	ctx.body = fs.readFileSync(filepath);
+};
+//增加一个route
+router.get('/uploadfile/*', site.uploadFile);
 ```
 
-![](assets/markdown-img-paste-20171108152712263.png)
+![data格式](assets/markdown-img-paste-20171108152712263.png)
 
 [back to top](#top)
