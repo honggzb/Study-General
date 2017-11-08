@@ -15,6 +15,7 @@
     - [File API定义了四种错误类型](#四种错误类型)
   - [3.2 Blob 对象](#Blob对象)
 - [4. URL对象之文件下载](#URL对象之文件下载)
+- [5. NodeJs中的文件上传](#NodeJs中的文件上传)
 
 使用 javascript 来操作文件，是严格被禁止的，因为你不想一打开网页，硬盘灯就狂闪，然后把你硬盘的文件/列表都慢慢的上传上去，那么你就危险了。所以一般情况下，javascript 操作文件，都是在网页中提供文件上传控件。此时，需要允许，才会使此网页获得相应的文件的信息。
 
@@ -550,6 +551,42 @@ if (typeof(window.opener) != 'undefined'){   //判断打开方式，若去掉后
 }
 </script>
 ```
+
+<h3 id="NodeJs中的文件上传">5. NodeJs中的文件上传</h3>
+
+`<input name="img" type="file">`
+
+```javascript
+// koa-body模块支持文件上传，body-parser不支持文件上传
+// server.js
+const bodyParser = require('koa-body');
+app.use(bodyParser({
+  multipart: true
+}));
+//controllers/site.js  处理上传的文件
+exports.addComment = async function(ctx, next){
+  //...
+  var data;
+  if(ctx.request.method.toLowerCase() === 'post'){
+    data = ctx.request.body;
+  }else{
+    data = ctx.request.query;    //csrf attack, 对应于router.get('/ajax/addComment', site.addComment);
+  }
+  //...
+  if(data.files){   //如果有文件
+    let file = data.files.img;
+    let ext = path.extname(file.name);
+    let filename = Date.now() + ext;
+    fs.renameSync(file.path, './static/upload'+filename);  //将文件名标准化，去除不规范的文件名
+    data.fields.content += '<img src="/uploadfile/'+filename+'"/>';   //将图像文件加入到comment中
+    data = data.fields;
+  }
+}
+```
+
+data的格式
+
+![](assets/markdown-img-paste-20171108152712263.png)
 
 - [用javascript 上传文件](http://blog.csdn.net/jianyi7659/article/details/8708857)
 - [前端文件上传专题](http://www.jb51.net/Special/567.htm)
