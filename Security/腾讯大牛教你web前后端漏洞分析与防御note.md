@@ -450,7 +450,55 @@ https.createServer({
 
 <h2 id="密码安全">密码安全</h2>
 
+措施： 加密（密文-哈希算法）
 
+- 单向变换： 密文-明文无法反推，但可通过密码-单向变换彩虹表逆向查出
+- 密文固定长度
+- 常用哈希算法： md5 sha1 sha256
+- 预防彩虹表措施
+  - 密文=md5(md5(明文)), 密文=md5(sha1(明文)), 密文=md5(sha256(sha1(明文)))
+  - 设置足够强度的密码
+  - 加盐： md5(sha1(MD5(ID+ab83kd+原始密码+81kdso+盐+1!so;$2)))
+
+```javascript
+// tools/password.js
+var password = {};
+var md5 = function (str) {
+  var crypt = require('crypto');
+  var md5Hash = crypto.createHash('md5');
+  md5Hash.update(str);
+  return md5Hash.digest('hex');
+}
+password.getSalt = function () {
+  return md5(Math.random()*999999+''+new Date().getTime());
+}
+password.encryptPassword = function(salt, password){
+  return md5(salt+'#da9%@!#(lfsa#$%)'+password);
+};
+module.exports = password;
+//controllers/user.js
+exports.doLogin = async function(ctx, next){
+  //...
+  if(!user.salt){
+    var salt = password.getSalt();
+    var newPassword = password.encryptPassword(salt, user.password);
+    await query(`update user set password= '${newPassword}', salt = '${salt}' where id= '${user.id}'`);
+    user.salt = salt;
+    user.password = newPassword;
+  }
+  var encryptPassword = password.encryptPassword(user.salt, data.password);
+  if(encryptPassword!==user.password){
+    throw new Error('用户密码不正确');
+  }
+  //...
+}
+```
+
+密码传输的安全性
+
+- HTTPS协议
+- 频率限制
+- 前端加密意义有限
 
 [back to top](#top)
 
