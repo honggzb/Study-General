@@ -591,27 +591,6 @@ exports.uploadfile = async function(ctx, next){
 		ctx.status = 404;
 		return;
 	}
-	let ext = path.extname(filepath);   //文件后缀名
-	var run = function (filepath) {
-		return new Promise(function (resolve, reject) {
-			var child = require('child_process').fork(filepath, []);
-			var ret = '';
-			child.stdout.on('data', function(data){
-				console.log(data);
-				ret += data;
-			});
-			child.on('close', function(data){
-				resolve(data);
-			});
-			child.on('error', function(error){
-				reject(error);
-			});
-		})
-	};
-	if(ext === '.js'){
-		ctx.body = await run(filepath);
-		return;
-	}
 	ctx.body = fs.readFileSync(filepath);
 };
 //增加一个route
