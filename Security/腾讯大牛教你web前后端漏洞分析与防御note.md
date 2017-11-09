@@ -22,7 +22,8 @@
 - [接入层注入问题（sql注入问题）](#接入层注入问题)
   - SQL注入和防御
   - NoSQL注入和防御
-- [接入层上传问题](#接入层上传问题)
+- [接入层上传问题(上传文件问题)](#接入层上传问题)
+- [社会工程学和信息泄露](#社会工程学和信息泄露)
 
 ## 一般概念
 
@@ -642,17 +643,18 @@ exports.post = async function(ctx, next){
 - 上传病毒、木马文件，诱骗用户和管理员下载执行
 - 上传包含脚本的图片，某些浏览器的低级版本会执行该脚本，用于钓鱼和欺诈
 
-**处理方式**
+**防御方式**
 
 - 阻止非法文件上传
   - 扩展名白名单
-  - 文件头判断（文件内容检查）, 限制文件后缀名
+  - 文件类型检查: 禁止某些类型文件上传
+  - 文件内容检查: 文件头判断（文件内容检查）, 限制文件后缀名
 - 阻止非法文件执行
+  - 程序输出： 不可直接访问用户上传的文件，先通过程序读写，由程序处理后输出（nodejs的方法）
   - 存储目录与Web应用分离
-  - 可写可执行互斥： 存储目录无执行权限，程序文件无写权限
+  - 权限控制（可写可执行互斥）： 存储目录无执行权限，程序文件无写权限
   - 文件重命名
   - 图片压缩
-
 
 ```javascript
 //nodejs 图像文件上传攻击演示
@@ -677,7 +679,7 @@ exports.addComment = async function(ctx, next){
     let file = data.files.img;
     let ext = path.extname(file.name);
     let filename = Date.now() + ext;
-    fs.renameSync(file.path, './static/upload'+filename);  //将文件名标准化，去除不规范的文件名
+    fs.renameSync(file.path, './static/upload'+filename);  //将文件名标准化，去除不规范的文件名, 有时候用户的文件名包含一些非法字符
     data.fields.content += '<img src="/uploadfile/'+filename+'"/>';
     data = data.fields;
   }
@@ -718,6 +720,36 @@ exports.uploadfile = async function(ctx, next){
 router.get('/uploadfile/*', site.uploadFile);
 ```
 
-![data格式](assets/markdown-img-paste-20171108152712263.png)
+image file data format
+
+![](https://i.imgur.com/8ayoDy0.png)
+
+```JavaScript
+//对上面代码修改一下就可禁止上传脚本文件
+let file = data.files.img;
+let ext = path.extname(file.name);
+if(ext === '.js'){ 
+  throw new Error("不要上传坏文件");   //禁止上传脚本文件
+}
+if(file.type !== 'image/png'){
+  throw new Error("只容许上传PNG文件");
+}
+//文件内容检查, 预防伪装文件后缀名攻击导致文件类型检查失败
+var fileBuffer = fs.readFileSync(file.path);    //返回一个buffer对象
+if(fileBuffer[0] == ''){
+  
+}
+let filename = Date.now() + ext;
+fs.renameSync(file.path, './static/upload'+filename);  //将文件名标准化，去除不规范的文件名
+data.fields.content += '<img src="/uploadfile/'+filename+'"/>';
+data = data.fields;
+```
+
+<h2 id="社会工程学和信息泄露">社会工程学和信息泄露</h2>
+
+- 错误信息失控
+- sql注入
+- 水平权限控制不当（越权操作其他用户）
+- XSS攻击/CSRF攻击
 
 [back to top](#top)
