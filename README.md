@@ -131,6 +131,7 @@
 │   ├── javascript之判断浏览器种类及版本+http协议
 │   ├── js标准对象之Date.md
 │   ├── Javascript中的setTimeout和setInterval的一些注意事项.md
+│   ├── XHR2-XMLHttpRequest Level 2.md
 │   └── javascript知识点积累.md
 │
 ├── JQuery
