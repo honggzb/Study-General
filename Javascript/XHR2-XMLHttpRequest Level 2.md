@@ -6,6 +6,7 @@
 - [实际示例](#实际示例)
   - [下载文件并保存到HTML5文件系统](#下载文件并保存到)
   - [分割文件并上传各个部分](#分割文件并上传各个部分)
+  - [ajax无刷新上传](#ajax无刷新上传)
 
 [2 级 XMLHttpRequest](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html) 引入了大量的新功能（例如跨源请求、上传进度事件以及对上传/下载二进制数据的支持等），一举封杀了我们网络应用中的疯狂黑客。这使得 AJAX 可以与很多尖端的 HTML5 API 结合使用，例如 File System API、Web Audio API 和 WebGL
 
@@ -117,7 +118,17 @@ function getOctetStreamImgUrl(renditionimg, renditionElm){
 
 <h3 id="上传处理">2. 发送数据 - 上传处理</h3>
 
-经过修改的 send() 方法，可接受以下任何类型：DOMString、Document、FormData、Blob、File、ArrayBuffer
+- XMLHttpRequest 2经过修改的send()方法，可接受以下任何类型：DOMString、Document、FormData、Blob、File、ArrayBuffer
+- XMLHttpRequest 2对象，传送数据的时候，有一个progress事件，用来返回进度信息 , 它分成上传和下载两种情况
+  - 1.下载的progress事件属于XMLHttpRequest对象 
+  - 2.上传的progress事件属于XMLHttpRequest.upload对象 
+    - XMLHttpRequest.upload对象有以下6个进度事件： 每个请求都是从触发loadstart事件开始，接下来是一或多个progress事件，然后触发error、abort或load事件中的一个，最后以触发loadend事件结束
+    - loadstart:在接收到响应数据的第一个字节时触发
+    - progress:在接收响应期间持续不断地触发
+    - error:在请求发生错误时触发
+    - abort:在因为调用abort()方法而终止连续时触发
+    - load:在接收到完整的响应数据时触发
+    - loadend:在通信完成或者触发error、abort或load事件后触发
 
 ```javascript
 //1) 发送字符串数据：xhr.send(DOMString)
@@ -176,7 +187,7 @@ function upload(blobOrFile) {
   xhr.onload = function(e) { ... };
   // Listen to the upload progress.
   var progressBar = document.querySelector('progress');
-  xhr.upload.onprogress = function(e) {
+  xhr.upload.onprogress = function(e) {     // XMLHttpRequest.upload对象
     if (e.lengthComputable) {
       progressBar.value = (e.loaded / e.total) * 100;
       progressBar.textContent = progressBar.value;   // Fallback for unsupported browsers.
@@ -263,6 +274,126 @@ document.querySelector('input[type="file"]').addEventListener('change', function
   }
 }, false);
 </script>
+```
+
+[back to top](#top)
+
+<h3 id="ajax无刷新上传">ajax无刷新上传</h3>
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ajax无刷新上传</title>
+    <style type="text/css">
+    #div1{
+        width: 300px;
+        height: 30px;
+        border:1px solid #000;
+        position: relative;
+    }
+    #div2{
+        width: 0;
+        height: 30px;
+        background: #CCC;
+    }
+    #div3{
+        width: 300px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    </style>
+</head>
+<body>
+<input type="file" id="myFile" name="" value="" placeholder="">
+<input type="button" id="btn" name="" value="上传">
+<div id="div1">
+    <div id="div2"></div>
+    <div id="div3">0%</div>
+</div>
+<script type="text/javascript">
+var oBtn = document.getElementById("btn");//获取上传按钮
+var myFile = document.getElementById("myFile");
+var oDiv2 = document.getElementById("div2");
+var oDiv3 = document.getElementById("div3");
+oBtn.onclick = function(){
+    //alert(myFile.value);//获取到的是file控件的value值，这个内容是显示给你看的文字，不是我们选择的文件
+    //myFile.files 是file控件中选择的文件列表对象
+    //alert(myFile.files);//[object FileList]
+    //我们是要通过ajax把myFile.files[0]数据发送给后端
+    //for (var attr in myFile.files[0]) {
+    //console.log( attr + ' : ' + myFile.files[0][attr] );
+    // }
+    var xhr = new XMLHttpRequest();
+    //监听上传完成事件
+    //load事件在接收到完整的响应数据时触发
+    xhr.onload = function(){
+        alert("上传完成");
+    }
+    // 监听上传进度
+    var oUpload = xhr.upload;
+    oUpload.onprogress = function(e){
+            //e.total：待发送的总量
+            //e.loaded：已经发送的总量
+            //oUpload.onprogress：上传
+            //onprogress：下载
+            console.log(e.total + ':' + e.loaded);
+        var iScale = e.loaded / e.total;//获取已经上传的比例
+            //上传进度条
+            //根据上传的比例改变进度条div的宽度(初始宽度为0)
+            oDiv2.style.width = 300 * iScale + 'px';
+            //上传进度的百分比显示
+            oDiv3.innerHTML = 100 * iScale + '%';
+    };
+    xhr.open('post','post_file.php',true);//post请求
+    var oFormData = new FormData();
+    //append方法接收两个参数：分别对象表单字段名称和表单字段值
+    oFormData.append('file',myFile.files[0]);
+    xhr.send(oFormData);
+};
+</script>
+</body>
+</html>
+```
+
+post_file.php
+
+```php
+<?php
+header('Content-type:text/html; charset="utf-8"');
+//uploads--用来存放上传成功的文件
+$upload_dir = 'uploads/';
+//strtolower把所有字符转换为小写
+//如果发送客户端发送的不是post请求，则给出相应的错误信息并退出
+if(strtolower($_SERVER['REQUEST_METHOD']) != 'post'){
+    exit_status(array('code'=>1,'msg'=>'错误提交方式'));
+}
+//检查键名是否存在于数组中
+//array_key_exists(key,array)，存在则返回true
+//$_FILES['myFile']['error'] 和该文件上传相关的错误代码
+if(array_key_exists('file',$_FILES) && $_FILES['file']['error'] == 0 ){
+    $pic = $_FILES['file'];
+    //move_uploaded_file() 函数将上传的文件移动到新位置
+    //第一个参数表示要移动的文件，第二个参数为文件的新位置
+    //若成功，则返回 true，否则返回 false
+    if(move_uploaded_file($pic['tmp_name'], $upload_dir.$pic['name'])){
+        exit_status(array('code'=>0,'msg'=>'上传成功','url'=>$upload_dir.$pic['name']));
+    }
+}
+echo $_FILES['file']['error'];
+exit_status(array('code'=>1,'msg'=>'出现了一些错误'));
+//将关联数组转为json字符串，并退出
+function exit_status($str){
+    echo json_encode($str);
+    exit;
+}
+?>
 ```
 
 [back to top](#top)
