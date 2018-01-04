@@ -3,10 +3,14 @@
 - [XMLHttpRequest 2新增属性](#XMLHttpRequest2新增属性)
   - [1. 接收数据 - 下载处理](#下载处理)
   - [2. 发送数据 - 上传处理](#上传处理)
+  - [3. 超时设定](#超时设定)
+  - [4. 跨域资源共享（CORS）](#跨域资源共享)
+  - [5. 进度事件](#进度事件)
 - [实际示例](#实际示例)
   - [下载文件并保存到HTML5文件系统](#下载文件并保存到)
   - [分割文件并上传各个部分](#分割文件并上传各个部分)
   - [ajax无刷新上传](#ajax无刷新上传)
+  - [模拟登陆实现](#模拟登陆实现)
 
 [2 级 XMLHttpRequest](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html) 引入了大量的新功能（例如跨源请求、上传进度事件以及对上传/下载二进制数据的支持等），一举封杀了我们网络应用中的疯狂黑客。这使得 AJAX 可以与很多尖端的 HTML5 API 结合使用，例如 File System API、Web Audio API 和 WebGL
 
@@ -29,6 +33,8 @@
 
 - `xhr.responseType`: 在发送请求前设置, text、arraybuffer、blob或document。请注意，设置（或忽略）xhr.responseType = '' 会默认将响应设为“text”。
 - `xhr.response`:  成功发送请求后xhr的响应属性, DOMString、ArrayBuffer、Blob或Document形式（具体取决于responseTyp的设置）的请求数据
+- `FormData对象`: XMLHttpRequest 2级定义了FormData类型，这为序列化表单以及创建与表单格式相同的数据提供了便利, 参见下面的“2) 提交表单”案例
+  - 使用FormData的方便之处在于：不必明确在xhr对象上设置请求头部，xhr对象能够识别传入的数据类型是FormData的实例，并配置适当的头部信息
 
 <h3 id="下载处理">1. 接收数据 - 下载处理</h3>
 
@@ -119,16 +125,6 @@ function getOctetStreamImgUrl(renditionimg, renditionElm){
 <h3 id="上传处理">2. 发送数据 - 上传处理</h3>
 
 - XMLHttpRequest 2经过修改的send()方法，可接受以下任何类型：DOMString、Document、FormData、Blob、File、ArrayBuffer
-- XMLHttpRequest 2对象，传送数据的时候，有一个progress事件，用来返回进度信息 , 它分成上传和下载两种情况
-  - 1.下载的progress事件属于XMLHttpRequest对象 
-  - 2.上传的progress事件属于XMLHttpRequest.upload对象 
-    - XMLHttpRequest.upload对象有以下6个进度事件： 每个请求都是从触发loadstart事件开始，接下来是一或多个progress事件，然后触发error、abort或load事件中的一个，最后以触发loadend事件结束
-    - loadstart:在接收到响应数据的第一个字节时触发
-    - progress:在接收响应期间持续不断地触发
-    - error:在请求发生错误时触发
-    - abort:在因为调用abort()方法而终止连续时触发
-    - load:在接收到完整的响应数据时触发
-    - loadend:在通信完成或者触发error、abort或load事件后触发
 
 ```javascript
 //1) 发送字符串数据：xhr.send(DOMString)
@@ -145,7 +141,7 @@ function sendTextNew(txt) {
   xhr.send(txt);
 }
 sendText2('test string');
-//2) 提交表单：xhr.send(FormData)
+//2) 提交表单：xhr.send(FormData), 使用FormData对象, FormData对象也可以用来获取网页表单的值
 /*
 <form id="myform" name="myform" action="/server">
   <input type="text" name="username" value="johndoe">
@@ -154,12 +150,12 @@ sendText2('test string');
 </form>
 */
 function sendForm(form) {
-  var formData = new FormData(form);             //利用HTML5的FormData API
-  formData.append('secret_token', '1234567890'); // Append extra data before send.
+  var formData = new FormData(form);             //1) 新建FormData对象, 利用HTML5的FormData API
+  formData.append('secret_token', '1234567890'); //2) 添加表单项, Append extra data before send
   var xhr = new XMLHttpRequest();
   xhr.open('POST', form.action, true);
   xhr.onload = function(e) { ... };
-  xhr.send(formData);
+  xhr.send(formData);                           //3) 直接传送这个FormData对象, 这与提交网页表单的效果，完全一样
   return false; // Prevent page from submitting.
 }
 // 3) 文件上传
@@ -201,6 +197,119 @@ var bb = new BlobBuilder();
 bb.append('hello world');
 upload(bb.getBlob('text/plain'));
 ```
+
+[back to top](#top)
+
+<h3 id="超时设定">3. 超时设定</h3>
+
+新版本的XMLHttpRequest 2对象，增加了timeout属性，可以设置HTTP请求的时限，表示请求在等待响应多少毫秒之后就停止。在给timeout属性属性设置一个数值后，如果在规定的时间内浏览器还没有接收到响应，那么就会触发timeout事件，进而会调用ontimeout事件处理程序
+
+```javascript
+function createXHR(){
+                    if(typeof XMLHttpRequest){
+                        return new XMLHttpRequest();
+                    }else if(typeof ActiveXObject){
+                        return new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+}
+var xhr = createXHR();
+xhr.onreadystatechange = function(event){
+            try {
+                if (xhr.readyState == 4){
+                    if (xhr.status == 200){
+                        alert(xhr.responseText);
+                    } else {
+                        alert("Request was unsuccessful: " + xhr.status);
+                    }
+                }
+            } catch (ex){
+                //assume handled by ontimeout
+            }
+};
+xhr.open("get", "timeout.php", true);
+xhr.timeout = 1000;    //给xhr对象设置了timeout属性，表示请求在等待响应1000毫秒之后停止
+xhr.ontimeout = function(){
+  alert("Request did not return in a second.");
+};
+xhr.send(null);
+```
+
+[back to top](#top)
+
+<h3 id="跨域资源共享">4. 跨域资源共享（CORS）</h3>
+
+XMLHttpRequest 2对象，可以向不同域名的服务器发出HTTP请求, 但使用”跨域资源共享”的前提，是浏览器必须支持这个功能，而且服务器端必须同意这种”跨域”。如果能够满足上面的条件，则代码的写法与不跨域的请求完全一样, `xhr.open('post', 'http://localhost/test.php',true);`
+
+- 坑1：[有些ajax类库中的代码会影响服务器跨域设置](http://www.cnblogs.com/daishuguang/p/3971989.html), 可以检查一下AJAX类库的代码，注释掉影响跨域设置的代码, 如tangram-ajax-1.5.2.js中 `headers['X-requested-With'] = 'XMLHttpRequest'`
+- 坑2：如果Content-Type为application/json类型，那么服务端需要设置`res.header("Access-Control-Allow-Headers", "Content-Type");`, 并且请求会发送两次，因为在跨域的时候，除了contentType为application/x-www-form-urlencoded, multipart/form-data或者text/plain外，都会触发浏览器先发送方法为OPTIONS的请求。比如说，你原来的请求是方法方法POST，如果第一个请求返回的结果Header中的Allow属性并没有POST方法，那么第二个请求是不会发送的，此时浏览器控制台会报错，告诉POST方法并不被服务器支持
+
+```javascript
+//前端代码
+var xhr=new XMLHttpRequest();
+xhr.open('POST','http://127.0.0.1:8081/ceshi',true);
+xhr.onreadystatechange=function(){
+    if(xhr.readyState==4){    //响应完毕后
+        if(xhr.status==200){    //http状态码为200时
+            var result=xhr.responseText;//获取ajax请求的文本内容
+            console.log(result);
+        }
+    }
+}
+xhr.setRequestHeader("Content-Type","application/json")
+var a={name:123,data:"sss"};
+var b=JSON.stringify(a);
+xhr.send(b)
+//如nodeJS
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+// var urlencodedParser = bodyParser.urlencoded({ extended: false })
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    res.header("Access-Control-Allow-Methods","POST,PUT,GET,DELETE,OPTIONS");
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("X-Powered-By",' 3.2.1')
+    res.header("Content-Type", "application/json;charset=utf-8");
+    next();
+});
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({extended: false}))
+app.get('/', function (req, res) {
+    console.log("你好啊")
+   res.send('Hello World');
+})
+app.post('/ceshi',function(req,res){
+    console.log(req.body)
+    res.send("nihao")
+})
+var server = app.listen(8081, function () {
+  var host = server.address().address
+  var port = server.address().port
+  console.log("服务器启动成功", host, port)
+})
+```
+
+[back to top](#top)
+
+<h3 id="进度事件">5. 进度事件</h3>
+
+XMLHttpRequest 2对象，传送数据的时候，有一个progress事件，用来返回进度信息 , 它分成上传和下载两种情况
+
+- 1.下载的progress事件属于<b>XMLHttpRequest对象</b>
+- 2.上传的progress事件属于<b>XMLHttpRequest.upload对象</b>
+  - XMLHttpRequest.upload对象有以下6个进度事件： 每个请求都是从触发loadstart事件开始，接下来是一或多个progress事件，然后触发error、abort或load事件中的一个，最后以触发loadend事件结束
+  - loadstart:在接收到响应数据的第一个字节时触发
+  - progress:在接收响应期间持续不断地触发
+  - error:在请求发生错误时触发
+  - abort:在因为调用abort()方法而终止连续时触发
+  - load:在接收到完整的响应数据时触发
+  - loadend:在通信完成或者触发error、abort或load事件后触发
+
+progress事件会在浏览器接收新数据期间周期性地触发。onprogress事件处理程序会接收到一个event对象，其target属性是XHR对象，包含三个额外的属性：利用这些信息，我们可以创建一个进度指示器
+  - lengthComputable:表示进度信息是否可用的布尔值
+  - position:表示已经接收的字节数
+  - totalSize:表示根据Content-Length响应头部确定的预期字节数 
+  
 
 [back to top](#top)
 
@@ -398,7 +507,80 @@ function exit_status($str){
 
 [back to top](#top)
 
+<h3 id="模拟登陆实现">模拟登陆实现</h3>
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ajax_form</title>
+</head>
+<body>
+<form id="myform">
+<label for="name">用户名：</label>
+<input type="text" name="user-name" id="user-name" placeholder="请输入你的用户名">
+<label for="age">密码：</label>
+<input type="password" name="user-password" id="user-password" placeholder="请输入你的年龄">
+<input type="submit" value="登录" id="subBtn">
+</form>
+<script type="text/javascript">
+var subBtn = document.getElementById("subBtn");
+var form = document.getElementById("myform");
+function ajax(method,url,data,bool){
+    var promise = new Promise(function(resolve,reject){
+        var xhr = new XMLHttpRequest();
+        xhr.open(method,url,bool);
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4){
+                if(xhr.status == 200){
+                    resolve(xhr.responseText);
+                }else{
+                    reject(new Error(xhr.statusText));
+                }
+            }
+        };
+        xhr.send(data);
+    });
+    return promise;
+}
+subBtn.onclick = function(){
+    ajax("post","http://localhost/mywork/promise/post.php",new FormData(form),false)
+    .then(function(data){
+        if(data == "ok"){
+            alert("登录成功");
+        }else{
+            alert("用户名或者密码不正确");
+        }
+    },function(){
+        console.error("出错了:"+error);
+    });
+};
+</script>
+</body>
+</html>
+```
+
+post.php
+
+```php
+<?php
+ header("Content-Type: text/plain");
+ $name = $_POST["user-name"];
+ $pwd = $_POST["user-password"];
+ if($name == "admin" && $pwd == "123"){
+    echo "ok";
+ }else{
+    echo "no";
+ }
+ ?>
+```
+
+[back to top](#top)
+
 > Reference
 - [XMLHttpRequest2 新技巧](https://www.html5rocks.com/zh/tutorials/file/xhr2/)
 - [XMLHttpRequest Level 2 使用指南](http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html)
 - [XMLHttpRequest 2级学习](http://blog.csdn.net/liujie19901217/article/details/51137263)
+- [前端跨域之html5 XMLHttpRequest Level2](https://www.cnblogs.com/hangaoke/p/6260702.html)
