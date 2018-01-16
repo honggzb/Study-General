@@ -15,8 +15,12 @@
   - [3.2 工厂和值声明提供器](#工厂和值声明提供器)
   - [3.3 注入器的层级](#注入器的层级)
 - [4. 数据绑定和管道](#数据绑定)
+  - [4.1 事件绑定](#事件绑定)
+  - [4.2 数据绑定之DOM属性绑定和HTML属性绑定](#数据绑定)
+
 
 ![](https://i.imgur.com/3jA6FYD.png)
+
 
 <h2 id="基本概念">1. 基本概念</h2>
 
@@ -248,21 +252,17 @@ providers: [{
 
 <h2 id="数据绑定">4. 数据绑定和管道</h2>
 
-<h3 id="数据绑定和管道">4.1 数据绑定</h3>
-
 | 绑定方法   |代码 | 说明 |
 | :------------- | :------------- |:------------- |
 |插值表达式 {{ }} |`<h1>{{ productTitle }}</h1>`|将一个表达式的值显示在模板上|
 |方括号 []- 属性绑定|`<img [src]="imgUrl">`|将HTML标签的一个属性绑定到一个 表达式上|
 |小括号()- 事件绑定 |`<button (click)="toProductDetail()">商品详情</button>`|将组件控制器的一个方法绑定为模板上一个事件的处理器|
 
-- **事件绑定**
+<h3 id="事件绑定">4.1 事件绑定</h3>
 
 ![事件绑定](https://i.imgur.com/QT5qYOY.png)
 
-- **插值表达式 == 属性绑定**
-
-`<img [src]="imgUrl">`  == `<img src="{{imgUrl}}">`
+<h3 id="数据绑定">4.2  数据绑定之DOM属性绑定和HTML属性绑定</h3>
 
 - **DOM属性和HTML属性**
   - DOM属性是变化的，表示当前值
@@ -278,6 +278,7 @@ providers: [{
   - 就算是名字相同，HTML属性和DOM属性也不是同一样东西
   - DOM属性的值可改变，HTML属性的值不能改变
   - **模板绑定是通过DOM属性和事件来工作的，而不是HTML属性**
+- **插值表达式 == DOM属性绑定**  `<img [src]="imgUrl">`  == `<img src="{{imgUrl}}">`
 
 ```javascript
 <input value="Tom" (input)="doOnInput($event)">
@@ -288,8 +289,22 @@ doOnInput(event:any){
 }
 ```
 
-[back to top](#top)
+**DOM属性绑定**
 
+![DOM属性绑定](https://i.imgur.com/WLEEBav.png)
+
+**HTML属性绑定**
+
+![](https://i.imgur.com/6duC1Ga.png)
+
+**和样式相关的数据绑定**
+
+|和样式相关的数据绑定| 代码|
+| :------------- | :------------- |
+|CSS类绑定 |`<div class="aaa bbb" [class]="expression">Sth</div>`<br>`<div [class.special]="isSpecial">Sth</div>`<br>`<div [ngClass]="{aaa:isA, bbb:isB}">Sth</div>`|
+|样式绑定| `<button [style.color]="isSpecial?'red':'green'">RED</button>`<br>`<div [ngStyle]="{'font-style':this.canSave?'italic':'normal'}">`|
+
+[back to top](#top)
 
 > Reference
 - https://angular.io/tutorial
