@@ -419,7 +419,7 @@ export class PriceQuoteComponent{
 <h3 id="中间人模式传递数据">5.2 中间人模式传递数据- 非父子组件间传递数据</h3>
 
 ```javascript
-//child.component.html- 报价组件
+/*child.component.html- 报价组件*/
 <div>
   <p>报价组件</p>
   <p>股票代码{{ stockCode }}，  股票价格{{ price | number: "2.2-2"}}</p>
@@ -449,7 +449,7 @@ export class PriceQuoteComponent implements OnInit {
 export class PriceQuote {
   constructor(public stockCode:string, public lastPrice: number){}
 }
-//parent.component.html - 中间人组件
+/*parent.component.html - 中间人组件*/
 <app-price-quote (buy)="buyHandler($event)"></app-price-quote>    //
 <app-order [priceQuote]="priceQuote"></app-order>                 //通过属性绑定，将priceQuote传给下单组件
 <div>
@@ -465,7 +465,7 @@ export class PriceQuoteComponent{
     this.priceQuote = event;
   }
 }
-//order.component.html- 下单组件
+/*order.component.html- 下单组件*/
 <div>下单组件</div>
 <div>买100手{{ priceQuote.stockCode }}股票，买入价格是{{ priceQuote.price | number: "2.2-2"}}</div>
 //order.component.ts- 下单组件
@@ -481,13 +481,100 @@ export class OrderComponent{
 
 [back to top](#top)
 
-<h3 id="组件生命周期以及angular的变化发现机制">5.3 组件生命周期以及angular的变化发现机制- 组件间互相通讯技术</h3>
+<h3 id="组件生命周期以及angular的变化发现机制">5.3 组件生命周期以及angular的变化发现机制(Change Detection)- 组件间互相通讯技术</h3>
 
- **组件生命周期和变化阶段**
+ **5.3.1 组件生命周期和变化阶段**
 
 ![组件生命周期和变化阶段](https://i.imgur.com/PHEbDKr.png)
 
+**5.3.2 OnChanges钩子**
 
+- Mutable(可变)和Immutable(不可变)
+  - 可变对象, 如变量和对象, 在JavaScript中默认所有的对象都是可变的，即我们可以任意修改对象内的属性
+  - 不可变对象，如字符串
+- OnChanges钩子
+
+**5.3.3 Angular的变更检测机制(Change Detection)和DoChecked钩子**
+
+变化检测(Change Detection)就是Angular用来检测视图与模型之间绑定的值是否发生了改变，当检测到模型中绑定的值发生改变时，则同步到视图上，反之，当检测到视图上绑定的值发生改变时，则回调对应的绑定函数。有如下几种情况可能也改变数据
+
+- 用户输入操作，比如点击，提交等
+- 请求服务端数据(XHR)
+- 定时事件，比如setTimeout，setInterval
+
+**AngularJS vs Angular 2/4**
+
+- 在AngularJS中是由代码$scope.$apply()或者$scope.$digest触发
+- Angular 2/4使用ZoneJS来监听了Angular所有的异步事件： 实际上Zone有一个叫猴子补丁的东西。在Zone.js运行时，就会为这些异步事件做一层代理包裹，也就是说Zone.js运行后，调用setTimeout、addEventListener等浏览器异步事件时，不再是调用原生的方法，而是被猴子补丁包装过后的代理方法。代理里setup了钩子函数, 通过这些钩子函数, 可以方便的进入异步任务执行的上下文
+
+**Angular变化检测的过程**
+
+- Angular应用程序是一颗组件树，Angular的变化检测可以分组件进行，每一个Component都对应有一个changeDetector， 应用程序也是一颗变化检测器(changeDetector)树
+- 变化检测总是从根组件开始: Angular的数据流是自顶而下，从父组件到子组件单向流动。单向数据流向保证了高效、可预测的变化检测。尽管检查了父组件之后，子组件可能会改变父组件的数据使得父组件需要再次被检查，这是不被推荐的数据处理方式。在开发模式下，Angular会进行二次检查，如果出现上述情况，二次检查就会报错：Expression Changed After It Has Been Checked Error。而在生产环境中，脏检查只会执行一次
+  - 相比之下，AngularJS采用的是双向数据流，错综复杂的数据流使得它不得不多次检查，使得数据最终趋向稳定。理论上，数据可能永远不稳定。AngularJS给出的策略是，脏检查超过10次，就认为程序有问题，不再进行检查
+- Angular编译器为每个组件自动创建变化检测器，而且最终生成的这些代码JavaScript VM友好代码
+
+**变化检测策略** - Angular有两种变化检测策略
+
+- defalut策略: Default是Angular默认的变化检测策略，也就是上述提到的脏检查,只要有值发生变化，就全部从父组件到所有子组件进行检查,
+- OnPush策略:  就是只有当输入数据(即@Input)的引用发生变化或者有事件触发时，组件才进行变化检测, 当使用OnPush策略的时候，若输入属性没有发生变化，组件的变化检测将会被跳过
+
+> 总结:  Angular应用是一个响应系统，变化检测总是从根组件到子组件这样一个从上到下的顺序开始执行，它是一棵线性的有向树，默认情况下，变化检测系统将会走遍整棵树，但可以使用OnPush变化检测策略，在结合Observables对象，进而利用ChangeDetectorRef实例提供的方法，来实现局部的变化检测，最终提高系统的整体性能
+
+```javascript
+@Component({
+    selector: 'profile-card',
+    template: `
+       <div>
+         <profile-name [name]='profile.name'></profile-name>
+         <profile-age [age]='profile.age'></profile-age>
+       </div>
+    `,
+    changeDetection: ChangeDetectionStrategy.OnPush      //OnPush策略, ProfileCardComponent中的profile输入属性没有发生变化，是没有必要再执行变化检测
+})
+export class ProfileCardComponent {
+    @Input() profile: { name: string; age: number };
+}
+```
+
+**5.3.4 Observables机制**
+
+使用Observables机制提升性能和不可变的对象类似，但当发生变化的时候，Observables不会创建新的模型，但我们可以通过订阅 Observables对象，在变化发生之后，进行视图更新。使用Observables机制的时候，同样需要设置组件的变化检测策略为OnPush
+
+```javascript
+//counter.component.ts
+import { Component, Input, OnInit, ChangeDetectionStrategy,ChangeDetectorRef } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+@Component({
+    selector: 'exe-counter',
+    template: `<p>当前值: {{ counter }}</p>`,
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class CounterComponent implements OnInit {
+    counter: number = 0;
+    @Input() addStream: Observable<any>;
+    constructor(private cdRef: ChangeDetectorRef) { }
+    ngOnInit() {
+        this.addStream.subscribe(() => {
+            this.counter++;
+            this.cdRef.markForCheck();
+        });
+    }
+}
+//app.component.ts
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+@Component({
+  selector: 'exe-app',
+  template: `<exe-counter [addStream]='counterStream'></exe-counter>`
+})
+export class AppComponent implements OnInit {
+  counterStream: Observable<any>;
+  ngOnInit() {
+     this.counterStream = Observable.timer(0, 1000); 
+  }
+}
+```
 
 [back to top](#top)
 
@@ -495,3 +582,5 @@ export class OrderComponent{
 - https://angular.io/tutorial
 - https://github.com/angular/angular-cli/wiki
 - https://blog.angular.io/
+- [详解ANGULAR2组件中的变化检测机制（对比ANGULAR1的脏检测）](https://www.cnblogs.com/shitoupi/p/6731575.html)
+- [Angular系列之变化检测(Change Detection)](https://segmentfault.com/a/1190000010928087)
