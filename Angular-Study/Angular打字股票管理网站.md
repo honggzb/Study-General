@@ -418,11 +418,76 @@ export class PriceQuoteComponent{
 
 <h3 id="中间人模式传递数据">5.2 中间人模式传递数据- 非父子组件间传递数据</h3>
 
+```javascript
+//child.component.html- 报价组件
+<div>
+  <p>报价组件</p>
+  <p>股票代码{{ stockCode }}，  股票价格{{ price | number: "2.2-2"}}</p>
+</div>
+<div>
+  <input type="button" value="立即购买" (click)="buyStock($event)">
+</div>
+//child.component.ts - 报价组件
+export class PriceQuoteComponent implements OnInit {
+  private stockCode: string = 'IBM';
+  private price:number;
+  @Output()
+  lastPrice:EventEmitter<PriceQuote> = new EventEmitter();   //定义中的泛型和发射的类型应该一致
+  @Output()
+  buy: EventEmitter<PriceQuote> = new EventEmitter();
+  constructor() {
+    setInterval(() => {
+      let priceQuote:PriceQuote = new PriceQuote(this.stockCode, 100*Math.random()); //随机生成价格
+      this.price = priceQuote.lastPrice;
+      this.lastPrice.emit(PriceQuote);     //发射事件
+    }, 1000);
+  }
+  buyStock(event){
+    this.buy.emit(new PriceQuote(this.stockCode, this.price));
+  }
+}
+export class PriceQuote {
+  constructor(public stockCode:string, public lastPrice: number){}
+}
+//parent.component.html - 中间人组件
+<app-price-quote (buy)="buyHandler($event)"></app-price-quote>    //
+<app-order [priceQuote]="priceQuote"></app-order>                 //通过属性绑定，将priceQuote传给下单组件
+<div>
+  <p>父组件</p>
+  <p>股票代码{{ priceQuote.stockCode }}</p>
+  <p>股票价格{{ priceQuote.lastPrice | number: "2.2-2"}}</p>
+</div>
+//parent.component.ts - 中间人组件
+export class PriceQuoteComponent{
+  private stock: string = '';
+  private priceQuote:PriceQuote = new PriceQuote("",0);
+  buyHandler(event: PriceQuote){
+    this.priceQuote = event;
+  }
+}
+//order.component.html- 下单组件
+<div>下单组件</div>
+<div>买100手{{ priceQuote.stockCode }}股票，买入价格是{{ priceQuote.price | number: "2.2-2"}}</div>
+//order.component.ts- 下单组件
+export class OrderComponent{
+  @Input()
+  priceQuote: PriceQuote;
+  constructor(){}
+}
+```
 
+- 本例中报价组件和下单组件使用父组件作为中间人, 报价组件只用发射priceQuote，下单组件只需要定义需要输入的priceQuote
+- 如果两个组件无公共的父组件或不在同一时间显示，可以使用一个服务作为中间人
 
 [back to top](#top)
 
 <h3 id="组件生命周期以及angular的变化发现机制">5.3 组件生命周期以及angular的变化发现机制- 组件间互相通讯技术</h3>
+
+ **组件生命周期和变化阶段**
+
+![组件生命周期和变化阶段](https://i.imgur.com/PHEbDKr.png)
+
+
 
 [back to top](#top)
 
