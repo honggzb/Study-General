@@ -16,11 +16,6 @@
   - [3.3 注入器的层级](#注入器的层级)
 - [4. 数据绑定和管道](#数据绑定)
 
-
-- https://angular.io/tutorial
-- https://github.com/angular/angular-cli/wiki
-- https://blog.angular.io/
-
 ![](https://i.imgur.com/3jA6FYD.png)
 
 <h2 id="基本概念">1. 基本概念</h2>
@@ -258,7 +253,45 @@ providers: [{
 | 绑定方法   |代码 | 说明 |
 | :------------- | :------------- |:------------- |
 |插值表达式 {{ }} |`<h1>{{ productTitle }}</h1>`|将一个表达式的值显示在模板上|
-|方括号 [] |`<img [src]="imgUrl">`|将HTML标签的一个属性绑定到一个 表达式上|
-|小括号 () |`<button (click)="toProductDetail()">商品详情</button>`|将组件控制器的一个方法绑定为模板上一个事件的处理器|
+|方括号 []- 属性绑定|`<img [src]="imgUrl">`|将HTML标签的一个属性绑定到一个 表达式上|
+|小括号()- 事件绑定 |`<button (click)="toProductDetail()">商品详情</button>`|将组件控制器的一个方法绑定为模板上一个事件的处理器|
+
+- **事件绑定**
+
+![事件绑定](https://i.imgur.com/QT5qYOY.png)
+
+- **插值表达式 == 属性绑定**
+
+`<img [src]="imgUrl">`  == `<img src="{{imgUrl}}">`
+
+- **DOM属性和HTML属性**
+  - DOM属性是变化的，表示当前值
+  - HTML属性没有变化，其值指定了初始值，HTML属性初始化DOM属性
+- **button的disable属性**
+  - `<button disable>click me</button>` - 添加disable后，button的DOM属性disable就赋值为true
+  - `<button disable="false">click me</button>` - button的HTML属性设置是无关紧要的（无效），button仍然无法点击
+  - 只能通过设置button的DOM属性来禁用或启用按钮
+- **DOM属性和HTML属性的关系**
+  - 少量HTML属性和DOM属性直接有1:1的映射，如id
+  - 有些HTML属性没有对应的DOM属性，如colspan
+  - 有些DOM属性没有对应的HTML属性，如textContent
+  - 就算是名字相同，HTML属性和DOM属性也不是同一样东西
+  - DOM属性的值可改变，HTML属性的值不能改变
+  - **模板绑定是通过DOM属性和事件来工作的，而不是HTML属性**
+
+```javascript
+<input value="Tom" (input)="doOnInput($event)">
+//
+doOnInput(event:any){
+  console.log(event.target.value);                  //DOM属性
+  console.log(event.target.getAttribute('value'));  //HTML属性
+}
+```
 
 [back to top](#top)
+
+
+> Reference
+- https://angular.io/tutorial
+- https://github.com/angular/angular-cli/wiki
+- https://blog.angular.io/
