@@ -17,6 +17,13 @@
 - [4. 数据绑定和管道](#数据绑定)
   - [4.1 事件绑定](#事件绑定)
   - [4.2 数据绑定之DOM属性绑定和HTML属性绑定](#数据绑定)
+  - [4.3 双向绑定](#双向绑定)
+  - [4.4 响应式编程- 即异步数据流编程](#响应式编程)
+  - [4.5 管道](#管道)
+- [5. 组件](#组件)
+  - [5.1 组件的输入输出属性- 父子组件间传递数据](#组件的输入输出属性)
+  - [5.2 中间人模式传递数据- 非父子组件间传递数据](#中间人模式传递数据)
+  - [5.3 组件生命周期以及angular的变化发现机制- 组件间互相通讯技术](#组件生命周期以及angular的变化发现机制)
 
 
 ![](https://i.imgur.com/3jA6FYD.png)
@@ -297,12 +304,125 @@ doOnInput(event:any){
 
 ![](https://i.imgur.com/6duC1Ga.png)
 
-**和样式相关的数据绑定**
+**和样式相关的数据绑定- 特殊的HTML属性绑定**
 
 |和样式相关的数据绑定| 代码|
 | :------------- | :------------- |
 |CSS类绑定 |`<div class="aaa bbb" [class]="expression">Sth</div>`<br>`<div [class.special]="isSpecial">Sth</div>`<br>`<div [ngClass]="{aaa:isA, bbb:isB}">Sth</div>`|
-|样式绑定| `<button [style.color]="isSpecial?'red':'green'">RED</button>`<br>`<div [ngStyle]="{'font-style':this.canSave?'italic':'normal'}">`|
+|样式绑定| `<button [style.font-size.em]="idDev?3:1">RED</button>`<br>`<div [ngStyle]="{'font-style':this.canSave?'italic':'normal'}">`|
+
+<h3 id="双向绑定">4.3 双向绑定</h3>
+
+`<input [(ngModel)]="name">`
+
+[back to top](#top)
+
+<h3 id="响应式编程">4.4 响应式编程- 即异步数据流编程</h3>
+
+```javascript
+Observable.from([1,2,3,4])
+  .filter(e => e%2==0)
+  .map(e => e*e)
+  .subscribe(                      //observer, 包含三个方法，后两个可以省略
+    e => console.log(e),           // 1) 处理流中发射出来的数据
+    err => console.log(err),       // 2) 处理流中错误
+    () => console.log("finished")  // 3) 在流结束的时候被调用
+  )
+```
+
+- 浏览器中每个事件在JavaScript中都被封装为一个event对象， event对象包含了所有事件相关的属性和方法
+- Angular提供了一种模板本地变量机制（`<input #myField (keyup)="onkey(myField.value)">`）来方便提供对HTML的引用
+- Angular将事件看成一个永无结束的流来处理
+- Angular的另一个响应式编程应用是和Server通讯
+
+```javascript
+//template
+<input [formControl]="searchInput">
+//component
+export class BindComponent {
+  searchInput: formControl = new FormsControl();   //定义一个流
+  contructor(){
+    this.searchInput.valueChanges
+                    .debounceTime(500)
+                    .subscribe(stockCode => this.getStockInfo(stockCode));
+  }
+  getStockInfo(value:string){ console.log(value); }
+}
+```
+
+[back to top](#top)
+
+<h3 id="管道">4.5 管道- 格式输出</h3>
+
+```html
+<p>日期{{birthday | date: 'yyyy-MM-dd HH:mm:ss'}}</p>
+<p>数{{pi | number: '2.1-4'}}</p>   <!-- 整数部分显示为2位，小数位：最少1位小数，最多4位小数-->
+```
+
+[back to top](#top)
+
+<h2 id="组件">5. 组件</h2>
+
+<h3 id="组件的输入输出属性">5.1 组件的输入输出属性- 父子组件间传递数据</h3>
+
+| 组件的输入输出属性| Header Two     |
+| :------------- | :------------- |
+|输出属性 - `@input()`| 从父组件给子组件传递参数|
+|输出属性 - `@Output()+EventEmitter`| 从子组件给父组件传递参数(通过事件绑定方式)  |
+
+```javascript
+//child.component.html
+<div>
+  <p>子组件</p>
+  <p>股票代码{{ stockCode }}</p>
+  <p>股票价格{{ price | number: "2.2-2"}}</p>
+</div>
+//child.component.ts
+export class PriceQuoteComponent implements OnInit {
+  private stockCode: string = 'IBM';
+  private price:number;
+  @Output()
+  //@Output(pricechange)
+  lastPrice:EventEmitter<PriceQuote> = new EventEmitter();   //定义中的泛型和发射的类型应该一致
+  constructor() {
+    setInterval(() => {
+      let priceQuote:PriceQuote = new PriceQuote(this.stockCode, 100*Math.random()); //随机生成价格
+      this.price = priceQuote.lastPrice;
+      this.lastPrice.emit(PriceQuote);     //发射事件
+    }, 1000);
+   }
+  ngOnInit() {}
+}
+export class PriceQuote {
+  constructor(public stockCode:string, public lastPrice: number){}
+}
+//parent.component.html
+<app-price-quote (lastPrice)="priceQuoteHandler($event)"></app-price-quote>
+<!-- <app-price-quote (pricechange)="priceQuoteHandler($event)"></app-price-quote> -->
+<div>
+  <p>父组件</p>
+  <p>股票代码{{ priceQuote.stockCode }}</p>
+  <p>股票价格{{ priceQuote.lastPrice | number: "2.2-2"}}</p>
+</div>
+//parent.component.ts
+export class PriceQuoteComponent{
+  private stock: string = '';
+  private priceQuote:PriceQuote = new PriceQuote("",0);
+  priceQuoteHandler(event: PriceQuote){
+    this.priceQuote = event;
+  }
+}
+```
+
+[back to top](#top)
+
+<h3 id="中间人模式传递数据">5.2 中间人模式传递数据- 非父子组件间传递数据</h3>
+
+
+
+[back to top](#top)
+
+<h3 id="组件生命周期以及angular的变化发现机制">5.3 组件生命周期以及angular的变化发现机制- 组件间互相通讯技术</h3>
 
 [back to top](#top)
 
