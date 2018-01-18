@@ -738,6 +738,23 @@ export function equalPasswordValidator(group: FormGroup):any{   //AbstractContro
   // return valid? null: {equal: {descxxx: '密码和确认密码不匹配'}};   //可以在效验器中定义错误信息，此时html中应改为
   //<div [hidden]="!formModel.getError('equal', 'passwordGroup')">{{ formModel.getError('equal', 'passwordGroup')?.descxxx }}</div>
 }
+//xxx.component.html
+<form [formGroup]="formModel" (submit)="onSubmit()">
+  <div>用户名： <input formControlName="username" type="text"></div>
+  //formModel.hasError的第一个参数是key，第二个参数是效验的字段名
+  <div [hidden]="!formModel.hasError('required', 'username')">用户名是必填项</div>
+  <div [hidden]="!formModel.hasError('minlength', 'username')">用户名最小长度是6</div>
+  <div>手机号： <input formControlName="mobile" type="number"></div>
+  <div [hidden]="!formModel.hasError('mobile', 'mobile')">请输入正确的手机号码</div>
+  <div formGroupName="passwordGroup">
+    <div>密码： <input formControlName="password" type="password"></div>
+    //如果有嵌套，formModel.hasError的第二个参数是一个数组
+    <div [hidden]="!formModel.hasError('minlength', ['passwordGroup', 'password'])">密码最小长度是6</div>
+    <div>确认密码： <input formControlName="pconfirm" type="password"></div>
+    <div [hidden]="!formModel.hasError('equal', 'passwordGroup')">密码和确认密码不匹配</div>
+  </div>
+  <button type="submit">注册</button>
+</form>
 //xxx.component.ts
 this.formModel = fb.group({
   username: ['', [Validators.required, Validators.minLength(6)]],
@@ -757,23 +774,6 @@ onSubmit() {
     console.log(this.formModel.value);
   }
 }
-//xxx.component.html
-<form [formGroup]="formModel" (submit)="onSubmit()">
-  <div>用户名： <input formControlName="username" type="text"></div>
-  //formModel.hasError的第一个参数是key，第二个参数是效验的字段名
-  <div [hidden]="!formModel.hasError('required', 'username')">用户名是必填项</div>
-  <div [hidden]="!formModel.hasError('minlength', 'username')">用户名最小长度是6</div>
-  <div>手机号： <input formControlName="mobile" type="number"></div>
-  <div [hidden]="!formModel.hasError('mobile', 'mobile')">请输入正确的手机号码</div>
-  <div formGroupName="passwordGroup">
-    <div>密码： <input formControlName="password" type="password"></div>
-    //如果有嵌套，formModel.hasError的第二个参数是一个数组
-    <div [hidden]="!formModel.hasError('minlength', ['passwordGroup', 'password'])">密码最小长度是6</div>
-    <div>确认密码： <input formControlName="pconfirm" type="password"></div>
-    <div [hidden]="!formModel.hasError('equal', 'passwordGroup')">密码和确认密码不匹配</div>
-  </div>
-  <button type="submit">注册</button>
-</form>
 ```
 
 [back to top](#top
@@ -823,31 +823,31 @@ this.formModel = fb.group({
   <div [hidden]="!formModel.get('mobile').pending">正校验手机号码的合法性</div>
   <!--  ... -->
 </form>
-//xxx.component.css
-//系统预定义class
+<!-- xxx.component.css -->
+<!--系统预定义class-->
+<style>
 .ng-invalid{border: 1px solid red;}
 .ng-valid{ }
 .ng-pristine{ }
 .ng-untouched{ }
-//自定义class
+// 自定义class
 .hasError{ border: 1px solid red; }
+</style>
 ```
 
 [back to top](#top)
 
 **6.3.3 效验模板式表单**
 
-- 将自定义的效验方法包装为指令才能应用到模板式表单中
-- 模板式表单中
+- 自定义的效验方法包装为指令才能应用到模板式表单中, 因为模板式表单无显式的数据模型，并且指令是作为属性应用到模板上的
 
 ```javascript
-//xxx.component.html
-<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value, myForm.valid)" novalidate>   //novalidate不启用浏览器默认的校验
-  <div>用户名： <input name="username" #username="ngModel" type="text" required minlength="6"></div>     //这里的required,minlength是angular的预设校验指令
-  <div [hidden]="myForm.form.get('username').valid || myForm.form.get('username').untouched)">
-    <div [hidden]="!myForm.form.hasError('required', 'username')">用户名是必填项</div>
-    <div [hidden]="!myForm.form.hasError('minlength', 'username')">用户名最小长度是6</div>
-  </div>
+/* xxx.component.html */
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value, myForm.valid)" novalidate>   //1）novalidate表明不启用浏览器默认的校验
+  <div>用户名： <input name="username" #username="ngModel" type="text" required minlength="6"></div>
+  //2）模板式表单的错误信息处理， 无显示数据模型，所以使用 myForm.form.
+  <div [hidden]="!myForm.form.hasError('required', 'username')">用户名是必填项</div>
+  <div [hidden]="!myForm.form.hasError('minlength', 'username')">用户名最小长度是6</div>
   <div>手机号： <input ngModel name="mobile" type="number" appMobileValidator></div>  //directive是作为属性来使用的
   <div [hidden]="myForm.form.get('mobile').valid || formModel.get('mobile').pristine)">
     <div [hidden]="!myForm.form.hasError('mobile', 'mobile')">请输入正确的手机号码</div>
@@ -860,15 +860,29 @@ this.formModel = fb.group({
   </div>
   <button type="submit">注册</button>
 </form>
-//mobileValidator.directive.ts - directive相当于没有模板的组件,
+/*xxx.component.ts*/
+//...
+onSubmit() {
+  let isValid:boolean = this.FormsModel.get('username').valid;
+  console.log("username的效验结果是："+isValid);
+  let error:any = this.formModel.get('username').errors;
+  console.log("username的错误信息是："+JSON.stringify(error));
+  if(this.formModel.valid){   //如果表单所有的验证都通过
+    console.log(this.formModel.value);
+  }
+}
+/*mobileValidator.directive.ts - directive相当于没有模板的组件*/
 @Directive({
-  selector: '[appMobileValidator]',
+  selector: '[appMobileValidator]',    //[]符号表明appMobileValidator这个指令要作为属性使用的
   providers: [{provide: NG_VALIDATORS, useValue: mobileValidator, multi: true}]
+  /* 
+   providers： 三个参数， 1）token： 这里固定为NG_VALIDATORS，2）useValue: 自定义效验器名称, 3) multi:true 表示一个token下可以挂多个值
+  */
 })
 export class mobileValidatorDirective {
   constructor(){ }
 }
-//equalValidator.directive.ts 
+/*equalValidator.directive.ts */
 @Directive({
   selector: '[appPasswordValidator]',
   providers: [{provide: NG_VALIDATORS, useValue: equalPasswordValidator, multi: true}]
@@ -878,7 +892,33 @@ export class EqualValidatorDirective {
 }
 ```
 
+- 模板式表单中模型的值和状态变更之间是异步的，比较难以控制， 所以在模板式表单中使用状态字段必须添加input事件, 并在事件函数中处理状态
+
+```javascript
+/* xxx.component.html */
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value, myForm.valid)" novalidate> 
+  <div>用户名： <input name="username" #username="ngModel" type="text" required minlength="6" (input)="onMobileInput(myform)"></div>
+  <div [hidden]="mobileValid || mobileUntouched">
+    <div [hidden]="!myForm.form.hasError('required', 'username')">用户名是必填项</div>
+    <div [hidden]="!myForm.form.hasError('minlength', 'username')">用户名最小长度是6</div>
+  </div>
+  //...
+</form>
+/*xxx.component.ts*/
+//...
+mobileValid:boolean = true;
+mobileUntouched:boolean = true;
+onMobileInput(form: ngForm){
+  if(form){
+    this.mobileValid = form.form.get('mobile').valid;
+    this.mobileUntouched = form.form.get('mobile').untouched;
+  }
+}
+```
+
 [back to top](#top)
+
+
 
 > Reference
 - https://angular.io/tutorial
