@@ -6,7 +6,7 @@
 - [2. 最简单的Node服务器](#最简单的服务器)
 - [3. Node+Express](#Node+Express)
 - [4. 配置angular使用express服务器](#配置angular使用express服务器)
-- [4. webSocket服务器](#express服务器)
+- [5. webSocket服务器](#webSocket服务器)
 
 <h2 id="初始化环境">1. 初始化环境</h2>
 
@@ -167,7 +167,7 @@ const server = app.listen(8000, "localhost", () => {
 
 [back to top](#top)
 
-<h2 id="websocket服务器">4. websocket服务器</h2>
+<h2 id="webSocket服务器">5. websocket服务器</h2>
 
 ```shell
 npm i ws --save
