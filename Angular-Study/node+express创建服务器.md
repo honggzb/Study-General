@@ -6,6 +6,7 @@
 - [2. 最简单的Node服务器](#最简单的服务器)
 - [3. Node+Express](#Node+Express)
 - [4. 配置angular使用express服务器](#配置angular使用express服务器)
+- [4. webSocket服务器](#express服务器)
 
 <h2 id="初始化环境">1. 初始化环境</h2>
 
@@ -13,7 +14,7 @@
 mkdir server
 cd server
 npm init -y                #初始化一个node项目
-npm i @types/node --save   #引入node的typescripe类型定义文件
+npm i @types/node --save-dev   #引入node的typescripe类型定义文件
 touch tsconfig.json        #创建配置文件，定义如何将typescript编译为javascript
 tsc --init                 #安装typescript后自动创建tsconfig.json文件的命令
 tsc -w                     #将typescript编译为javascript并watching for file changes
@@ -162,6 +163,35 @@ const server = app.listen(8000, "localhost", () => {
 "start": "ng serve --proxy-config proxy.conf.json",
 //...
 },
+```
+
+[back to top](#top)
+
+<h2 id="websocket服务器">4. websocket服务器</h2>
+
+```shell
+npm i ws --save
+npm i @types/ws --save-dev
+```
+
+```javascript
+import {Server} from 'ws';
+const wsServer = new Server({port: 8085});
+//只有websocket服务器连接上后才发送
+wsServer.on("connection", websocket => {
+  websocket.send("这个消息的服务器主动推送的。");
+  websocket.on("message", message => {
+    console.log("接受到的客户端的消息是："+message);
+  });
+});
+//定时推送
+setInterval(() => {
+  if(wsServer.clients){   //如果有客户连到websocket服务器
+    wsServer.clients.forEach(client => {
+      client.send("这是定时推送");
+    })
+  }
+}, 2000);
 ```
 
 [back to top](#top)
