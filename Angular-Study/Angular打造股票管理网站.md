@@ -24,10 +24,16 @@
   - [5.1 组件的输入输出属性- 父子组件间传递数据](#组件的输入输出属性)
   - [5.2 中间人模式传递数据- 非父子组件间传递数据](#中间人模式传递数据)
   - [5.3 组件生命周期以及angular的变化发现机制- 组件间互相通讯技术](#组件生命周期以及angular的变化发现机制)
-
+- [6. 表单处理](#表单处理)
+  - [6.1 模板式表单](#模板式表单)
+  - [6.2 响应式表单](#响应式表单)
+  - [6.3 表单验证](#表单验证)
+    - 6.3.1 Angular的效验器
+    - 6.3.2 效验响应式表单和错误信息处理- 预设效验器 + 自定义效验器 + 错误信息处理 + 异步效验器 + 状态字段
+    - 6.3.3 效验模板式表单
+  
 
 ![](https://i.imgur.com/3jA6FYD.png)
-
 
 <h2 id="基本概念">1. 基本概念</h2>
 
@@ -573,6 +579,302 @@ export class AppComponent implements OnInit {
   ngOnInit() {
      this.counterStream = Observable.timer(0, 1000); 
   }
+}
+```
+
+[back to top](#top)
+
+<h2 id="表单处理">6. 表单处理</h2>
+
+- 表单的**数据模型**用来存储表单的数据，它不是一个任意的对象，它是一个由angular/forms模块中的一些特定的类，如FormControl、FormGroup、FormArray等组成的
+- `import { FormsModule, ReactiveFormsModule } from "@angular/forms";`
+
+<h3 id="模板式表单">6.1 模板式表单</h3>
+
+- 表单的数据模型是通过组件模板中的相关指令来隐形创建的，该方法定义数据模型时候，会受限于HTML的语法，只使用于一些简单的场景
+- 模板式表单中无法直接访问angular/forms模块中的一些特定的类
+- 模板式表单的指令： 
+  - `NgForm`指令：        
+    - 代表整个表单，自动添加到每个form表单上
+    - 会隐式创建一个`FormGroup`的实例来代表该表单数据类型，会自动查找带有NgModel指令的子元素并将其值添加到FormGroup数据模型中
+    - 会拦截标准HTML表单的数据提交事件，阻止表单的自动提交（防止页面自动刷新），使用ngSubmit自定义事件来提交表单
+    - ngForm可以用在其他HTML tag上， 如`<div ngForm>`等同于`<form>`
+  - `NoNoForm`指令:     不使用angular处理表单， 如`<form action="/regist" method="POST" ngNoForm>`
+  - `NgModel`指令：     代表表单的一个字段，会隐式创建一个`FormControl`的实例来代表其数据类型，并用FormControl对象类型来储存字段的值  
+  - `NgModelGroup`指令：会隐式创建一个`FormGroup`的实例, 嵌套使用
+
+
+```html
+<!-- 定义一个模板本地变量来指向ngForm实例对象FormGroup -->
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+  <div>用户名： <input name="username" #username="ngModel" type="text"></div> <!-- 声明一个模板本地变量来指向NgModel实例对象FormControl -->
+  <div>手机号： <input ngModel name="phonenumber" type="number"></div>        <!-- ngModel不用写成[(ngModel)], 必须同时定义一个name属性 -->
+  <div ngModelGroup="passwordGroup">
+    <div>密码： <input ngModel name="password" type="password"></div>
+    <div>确认密码： <input ngModel name="pconfirm" type="password"></div>
+  </div>
+  <button type="submit">注册</button>
+</form>
+<div>{{ myForm.value | json}}</div>
+<div>{{ username.value }}</div>
+```
+
+[back to top](#top)
+
+<h3 id="响应式表单">6.2 响应式表单</h3>
+
+- 通过编写Typescript代码而不是HTML代码来明确的创建一个底层的数据模型，再通过一些特定的指定，将模板上的HTML元素和底层的数据模型连接在一起
+- 响应式表单不会替你生成HTML，模板仍然需要编写
+
+| 类名 | 响应式表单指令|
+| :------------- | :------------- |
+|FormGroup |formGroup(属性), formGroupName(字符串)|
+|FormControl|formControl(属性), formControlName(字符串)|
+|FormArray | formArrayName(字符串)|
+
+```javascript
+@Component({
+    selector: 'app-reactiveForm',
+    template: `
+      <form [formGroup]="formModel" (submit)="onSubmit()">  <!-- formGroup(属性) -->
+        <div formGroupName="dateRange">    <!-- formControlName(字符串) -->
+          起始日期：<input type="date" formControlName="from">
+          截止日期：<input type="date" formControlName="to">
+        </div>
+        <div>
+          <ul formArrayName="emails">  <!-- formArrayName(字符串) -->
+            <li *ngFor="let email of this.formModel.get('emails').controls; let i=index;">
+              <input type="text" [formControlName]="i">  <!-- 这里是属性绑定 -->
+            </li>
+          </ul>
+          <button type="button" (click)="addEmail()">增加email</button>
+        </div>
+        <div><button type="submit">保存</button></div>
+      </form>
+    `,
+})
+export class ReactiveFormComponent {
+  formModel: FormGroup = new FormGroup({
+    dateRange: new FormGroup({
+      from: new FormControl(),
+      to: new FormControl
+    }),
+    emails:new FormArray([
+      new FormControl('a@a.com'),
+      new FormControl('b@b.com')
+    ]);
+  });
+  onSubmit() {
+    console.log(this.formModel.value);
+  }
+  addEmail(){
+    let emails = this.formModel.get('emails') as FormArray;
+    emails.push(new FormControl());
+  }
+}
+```
+
+使用Formbuilder简化响应式表单数据模型的构建
+
+```javascript 
+export class ReactiveFormComponent {
+  formModel: FormGroup;
+  constructor(fb: FormBuilder){
+    this.formModel = fb.group({
+      dateRange: fb.group({
+        from: [''],    //['',校验方法,异步的校验方法]， formControl可用一个数组表示，其包含三个值，第一个是默认值，校验方法,异步的校验方法为可选项
+        to: ['']
+      }),
+      emails:fb.array([
+        'a@a.com',
+        'b@b.com'
+      ]);
+    }, {校验方法});    //校验方法为可选项
+  } 
+  onSubmit() {
+    console.log(this.formModel.value);
+  }
+}
+```
+
+[back to top](#top)
+
+<h3 id="表单验证">6.3 表单验证</h3>
+
+**6.3.1 Angular的效验器**
+
+- Angular的效验器是一个普通方法
+  - 该方法接收一个AbstractControl类型的参数
+  - 该方法必须有一个返回值，该返回值必须是对象类型，该返回值的key必须是string类型，其值可以是任意类型
+- Angular内部预效验器： Validators.required, Validators.minLength
+
+```javascript
+//Angular的效验器的定义
+xxx(control: AbstractControl): {[key:string]: any}{
+  return null;
+}
+```
+
+**6.3.2 效验响应式表单和错误信息处理**
+
+```javascript
+//案例： Angular效验器
+// Validators.ts
+//为FormControl自定义效验器
+export function mobileValidator(control: FormControl){    //AbstractControl为FormControl
+  let mvreg = /^((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8}$/;
+  let valid = myreg.test(control.value);
+  console.log("mobile的效验结果是："+valid);
+  //如果校验通过，返回值为null， 如果校验没通过，返回false
+  return valid? null: {mobile: true};   //mobileValidator未通过时候返回一个字符串mobile，其值为true
+}
+//为FormGroup自定义效验器
+export function equalPasswordValidator(group: FormGroup):any{   //AbstractControl为FormGroup
+  let password: FormControl = group.get('password') as FormControl;
+  let pconfirm: FormControl = group.get('pconfirm') as FormControl;
+  let valid:boolean = (password.value === pconfirm.value);
+  console.log("password的效验结果是："+valid);
+  return valid? null: {equal: true};
+  // return valid? null: {equal: {descxxx: '密码和确认密码不匹配'}};   //可以在效验器中定义错误信息，此时html中应改为
+  //<div [hidden]="!formModel.getError('equal', 'passwordGroup')">{{ formModel.getError('equal', 'passwordGroup')?.descxxx }}</div>
+}
+//xxx.component.ts
+this.formModel = fb.group({
+  username: ['', [Validators.required, Validators.minLength(6)]],
+  mobile: ['', mobileValidator],
+  passwordGroup: fb.group({
+    password: ['', Validators.minLength(6)],
+    pconfirm: ['']
+  }, {validator: equalPasswordValidator})
+}); 
+//...
+onSubmit() {
+  let isValid:boolean = this.FormsModel.get('username').valid;
+  console.log("username的效验结果是："+isValid);
+  let error:any = this.formModel.get('username').errors;
+  console.log("username的错误信息是："+JSON.stringify(error));
+  if(this.formModel.valid){   //如果表单所有的验证都通过
+    console.log(this.formModel.value);
+  }
+}
+//xxx.component.html
+<form [formGroup]="formModel" (submit)="onSubmit()">
+  <div>用户名： <input formControlName="username" type="text"></div>
+  //formModel.hasError的第一个参数是key，第二个参数是效验的字段名
+  <div [hidden]="!formModel.hasError('required', 'username')">用户名是必填项</div>
+  <div [hidden]="!formModel.hasError('minlength', 'username')">用户名最小长度是6</div>
+  <div>手机号： <input formControlName="mobile" type="number"></div>
+  <div [hidden]="!formModel.hasError('mobile', 'mobile')">请输入正确的手机号码</div>
+  <div formGroupName="passwordGroup">
+    <div>密码： <input formControlName="password" type="password"></div>
+    //如果有嵌套，formModel.hasError的第二个参数是一个数组
+    <div [hidden]="!formModel.hasError('minlength', ['passwordGroup', 'password'])">密码最小长度是6</div>
+    <div>确认密码： <input formControlName="pconfirm" type="password"></div>
+    <div [hidden]="!formModel.hasError('equal', 'passwordGroup')">密码和确认密码不匹配</div>
+  </div>
+  <button type="submit">注册</button>
+</form>
+```
+
+[back to top](#top
+
+**Angular的异步效验器**
+
+- Angular的异步效验器可以调用远程的服务来效验表单
+- 其返回值是一个可观测的流
+
+```javascript
+export function mobileAsyncValidator(control: FormControl){    //AbstractControl为FormControl
+  let mvreg = /^((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8}$/;
+  let valid = myreg.test(control.value);
+  console.log("mobile的效验结果是："+valid);
+  return Observable.of(valid? null: {mobile: true}).delay(5000);
+}
+//数据模型
+this.formModel = fb.group({
+  username: ['', [Validators.required, Validators.minLength(6)]],
+  mobile: ['', mobileValidator, mobileAsyncValidator],   //作为第三个参数
+  passwordGroup: fb.group({
+    password: ['', Validators.minLength(6)],
+    pconfirm: ['']
+  }, {validator: equalPasswordValidator})
+}); 
+//模板上显示异步调用的状态， 如PENDING, VALID
+<div>{{ formModel.status }}</div>
+```
+
+**状态字段和样式**
+
+- touched, untouched： 是否获取了焦点
+- pristine, dirty：    字段是否修改过
+- pending:             字段是否正处在异步校验
+
+```html
+<form [formGroup]="formModel" (submit)="onSubmit()">
+  <div>用户名： <input [class.hasError]="formModel.get('username').invalid && formModel.get('username').touched" formControlName="username" type="text"></div>
+  <div [hidden]="formModel.get('username').valid || formModel.get('username').untouched)">
+    <div [hidden]="!formModel.hasError('required', 'username')">用户名是必填项</div>
+    <div [hidden]="!formModel.hasError('minlength', 'username')">用户名最小长度是6</div>
+  </div>
+  <div>手机号： <input formControlName="mobile" type="number"></div>
+  <div [hidden]="formModel.get('mobile').valid || formModel.get('mobile').pristine)">
+    <div [hidden]="!formModel.hasError('mobile', 'mobile')">请输入正确的手机号码</div>
+  </div>
+  <div [hidden]="!formModel.get('mobile').pending">正校验手机号码的合法性</div>
+  <!--  ... -->
+</form>
+//xxx.component.css
+//系统预定义class
+.ng-invalid{border: 1px solid red;}
+.ng-valid{ }
+.ng-pristine{ }
+.ng-untouched{ }
+//自定义class
+.hasError{ border: 1px solid red; }
+```
+
+[back to top](#top)
+
+**6.3.3 效验模板式表单**
+
+- 将自定义的效验方法包装为指令才能应用到模板式表单中
+- 模板式表单中
+
+```javascript
+//xxx.component.html
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value, myForm.valid)" novalidate>   //novalidate不启用浏览器默认的校验
+  <div>用户名： <input name="username" #username="ngModel" type="text" required minlength="6"></div>     //这里的required,minlength是angular的预设校验指令
+  <div [hidden]="myForm.form.get('username').valid || myForm.form.get('username').untouched)">
+    <div [hidden]="!myForm.form.hasError('required', 'username')">用户名是必填项</div>
+    <div [hidden]="!myForm.form.hasError('minlength', 'username')">用户名最小长度是6</div>
+  </div>
+  <div>手机号： <input ngModel name="mobile" type="number" appMobileValidator></div>  //directive是作为属性来使用的
+  <div [hidden]="myForm.form.get('mobile').valid || formModel.get('mobile').pristine)">
+    <div [hidden]="!myForm.form.hasError('mobile', 'mobile')">请输入正确的手机号码</div>
+  </div>
+  <div ngModelGroup="passwordGroup" appPasswordValidator>                                 //directive是作为属性来使用的
+    <div>密码： <input ngModel name="password" type="password" minlength="6"></div>
+    <div [hidden]="!myForm.form.hasError('minlength', ['passwordGroup', 'password'])">密码最小长度是6</div>
+    <div>确认密码： <input ngModel name="pconfirm" type="password"></div>
+    <div [hidden]="!myForm.form.hasError('equal', 'passwordGroup')">密码和确认密码不匹配</div>
+  </div>
+  <button type="submit">注册</button>
+</form>
+//mobileValidator.directive.ts - directive相当于没有模板的组件,
+@Directive({
+  selector: '[appMobileValidator]',
+  providers: [{provide: NG_VALIDATORS, useValue: mobileValidator, multi: true}]
+})
+export class mobileValidatorDirective {
+  constructor(){ }
+}
+//equalValidator.directive.ts 
+@Directive({
+  selector: '[appPasswordValidator]',
+  providers: [{provide: NG_VALIDATORS, useValue: equalPasswordValidator, multi: true}]
+})
+export class EqualValidatorDirective {
+  constructor(){  }
 }
 ```
 
