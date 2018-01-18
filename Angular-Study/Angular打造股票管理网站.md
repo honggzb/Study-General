@@ -31,10 +31,19 @@
     - 6.3.1 Angular的效验器
     - 6.3.2 效验响应式表单和错误信息处理- 预设效验器 + 自定义效验器 + 错误信息处理 + 异步效验器 + 状态字段
     - 6.3.3 效验模板式表单
- 
----- 
+- [7. 与服务器通讯](#与服务器通讯)
+  - [7.1 模板式表单](#模板式表单)
+  - [7.2 Http通讯](#Http通讯)
+    - 配置angular使用express服务器
+    - asyn管道
+    - 处理http请求头（HttpHeader)
+  - [7.3 Angular的WebSocket通讯](#WebSocket通讯)
+
+<hr>
+
 ![](https://i.imgur.com/3jA6FYD.png)
----
+
+<hr>
 
 <h2 id="基本概念">1. 基本概念</h2>
 
@@ -919,7 +928,155 @@ onMobileInput(form: ngForm){
 
 [back to top](#top)
 
+<h2 id="与服务器通讯">7. 与服务器通讯</h2>
 
+<h3 id="Node+express创建服务器">7.1 Node+express创建Web服务器</h3>
+
+参见
+
+[back to top](#top)
+
+<h3 id="Http通讯">7.2 Http通讯</h3>
+
+- Angular使用响应式编程(Observable)处理http服务
+
+**配置angular使用express服务器**
+
+- 在根目录创建proxy.conf.json
+- 修改package.json, `"start": "ng serve --proxy-config proxy.conf.json",`
+
+```javascript
+//proxy.conf.json
+{
+  "/api": {
+    "target":"http://localhost:8000"
+  }
+}
+//package.json
+"scripts": {
+  "ng": "ng",
+  "start": "ng serve --proxy-config proxy.conf.json",
+  //...
+},
+```
+
+**asyn管道**
+
+- http请求的发送是subscribe来触发的（手工订阅流）
+- 可在模板使用asyn管道，它可以接受一个流作为输入并自动订阅流
+
+```javascript
+/* http请求的发送是subscribe来触发的- 无asyn管道 */
+//xxx.component.html
+<ul>
+  <li #ngFor="let product of products">{{ product }}</li>
+</ul>
+//xxx.component.ts
+dataSource: Observable<any>;
+products: Array<any> = [];
+constructor(private http: Http){
+  this.dataSource = this.http.get('/api/products').map((res)=> this.products=data );  //get方法只是定义了一个http请求
+}
+ngOnInit(){
+  this.dataSource.subscribe( (data) => this.products = data );   //http请求的发送是subscribe来触发的
+}
+/*asyn管道*/
+//xxx.component.html
+<ul>
+  <li #ngFor="let product of products | asyn">{{ product }}</li>
+</ul>
+//xxx.component.ts
+products: Observable<any>;    //product直接定义为流
+constructor(private http: Http){
+  this.products = this.http.get('/api/products').map((res)=> reg.json());
+}
+ngOnInit(){}    //不需要subscribe方法啦
+```
+
+**处理http请求头（HttpHeader)**
+
+```javascript
+//xxx.component.ts
+products: Observable<any>;    //product直接定义为流
+constructor(private http: Http){
+  let myHeaders: Headers = new Headers();
+  myHeaders.append("authorization","Basic 123456");
+  this.products = this.http.get('/api/products', {headers: myHeaders}).map((res)=> reg.json());
+}
+ngOnInit(){}
+```
+
+[back to top](#top)
+
+<h3 id="WebSocket通讯">7.3 Angular的WebSocket通讯</h3>
+
+- websocket是html5规范中的一个部分，它借鉴了socket这种思想，为web应用程序客户端和服务端之间（注意是客户端服务端）提供了一种全双工通信机制
+- websocket协议是为了提供web应用程序和服务端全双工通信而专门制定的一种应用层协议，通常它表示为：`ws://echo.websocket.org/?encoding=text HTTP/1.1`
+
+![](https://i.imgur.com/vdXmWgI.png)
+
+```shell
+npm i ws --save
+npm i @types/ws --save-dev
+```
+
+```javascript
+import {Server} from 'ws';
+const wsServer = new Server({port: 8085});
+//只有websocket服务器连接上后才发送
+wsServer.on("connection", websocket => {
+  websocket.send("这个消息的服务器主动推送的。");
+  websocket.on("message", message => {
+    console.log("接受到的客户端的消息是："+message);
+  });
+});
+//定时推送
+setInterval(() => {
+  if(wsServer.clients){   //如果有客户连到websocket服务器
+    wsServer.clients.forEach(client => {
+      client.send("这是定时推送");
+    })
+  }
+}, 2000);
+//web-socket.service.ts --定义一个Observable的流
+import { Injectable } from '@angular/core';
+import {WebSocket} from 'ws';
+@Injectable()
+export class WebSocketService {
+  ws: WebSocket;
+  constructor(){}
+  createObservableSocket(url: string):Observable<any>{
+    this.ws = new WebSocket(url);
+    return new Observable(
+      observer => {   //一个Observable stream的三要素
+        this.ws.onmessage = (event) => observer.next(event.data);  //1） 什么时候发射下一个元素
+        this.ws.onerror = (event) => observer.error(event);        //2） 出现问题流抛出一个异常
+        this.ws.onclose = (event) => observer.complete();          //3） 什么时候流发出结束信号
+      }
+    );
+  }
+  sendMessage(message: string){
+    this.ws.send(message);
+  }
+}
+//web-socket.component.ts  --订阅web-socket.service.ts中定义一个Observable的流
+export class WebSocketComponent implements OnInit {
+  constructor(private wsService:WebSocketService){}
+  ngOnInit(){
+    this.wsService.createObservableSocket("ws://localhost:8085").subscribe(
+      data => console.log(data),
+      err => console.log(err),
+      () => console.log("流已经结束")
+    );
+  }
+  //向服务器发送消息
+  sendMessageToServer(){
+    this.wsService.sendMessage("The message from client.");
+  }
+}
+```
+
+[back to top](#top)
 
 > Reference
 - https://angular.io/tutorial
