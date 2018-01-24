@@ -1,7 +1,6 @@
 ```
 ├── NodeJS 学习
     ├──  设置
-    │    ├──  babel设置
     │    ├──  nodeModule汇总.md
     │    └──  npm常用命令.md
     ├──  调试
