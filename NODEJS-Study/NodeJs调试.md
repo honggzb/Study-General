@@ -12,7 +12,7 @@ debugger;
 res.writeHead(200, {'Content-Type': 'text/plain'});
 ```
 
-![](2012011500104217.png)
+![](https://i.imgur.com/HVNwuhk.png)
 
 - 在程序中添加断点：在行中添加`debugger;`
 - 运行程序的方式是：在执行命令中添加debug:例如：`node debug debug.js;`, 就可以进入调试模式
