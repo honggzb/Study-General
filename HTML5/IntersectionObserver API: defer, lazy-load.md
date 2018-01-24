@@ -1,4 +1,4 @@
-[IntersectionObserver: defer, lazy-load](#top)
+## [IntersectionObserver: defer, lazy-load](#top)
 
 - [1. Observer vs. Event](#Observer-vs-Event)
 - [2. generic structure of an Observer](#generic)
@@ -7,6 +7,10 @@
 **new members of the Observers family**
 
 - [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API):  The Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport
+	- IntersectionObserver is an async non-blocking API
+	- IntersectionObserver replaces our expensive listeners on scroll or resize events
+	- IntersectionObserver does all the expensive calculations like getClientBoundingRect() for you so that you don’t need to
+	- IntersectionObserver follows the structural pattern of other Observers out there so, theoretically, should be easy to understand if you’re familiar with how other Observers work
 - [PerformanceObserver(as part of Performance Timeline Level 2 specification)](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver) 
 
 <h3 id="Observer-vs-Event">1. Observer vs. Event</h3>
@@ -113,119 +117,187 @@ IntersectionObserverEntry interface other properties
 <h3 id="carousel">3. carousel layout with image lazy-load</h3>
 
 ```html
-<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.9.0/tachyons.min.css">
-<style>
-.screen { min-height: 100vh; text-align:center; text-transform: uppercase; position: relative; }
-.screen h1 {
-  margin:0;
-  padding:0;
-  white-space: nowrap;
-  line-height: 100vh;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.9.0/tachyons.min.css">
+  <style>
+  .screen { min-height: 100vh; text-align:center; text-transform: uppercase; position: relative; }
+  .screen h1 {
+    margin:0;
+    padding:0;
+    white-space: nowrap;
+    line-height: 100vh;
+    color: #fff;
+    font-size: 3.5em;
+  }
+  #first-screen { background: rgb(0,106,221); }
+  #second-screen { background: rgb(255,25,129); }
+  #fourth-screen { background: #FFDF19; }
+  #monitor {
+    position:fixed;
+    top: 1em;
+    right: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: #000;
+    font-family: monospace;
+    text-align: center;
+    line-height: 2.8em;
+  }
+  #isIntersecting { color: #33ff00; opacity: 0; transition: opacity .2s linear; }
+  img {
+    display: block;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  #navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #222;
   color: #fff;
-  font-size: 3.5em;
 }
-#first-screen { background: rgb(0,106,221); }
-#second-screen { background: rgb(255,25,129); }
-#fourth-screen { background: #FFDF19; }
-#monitor {
-  position:fixed;
-  top: 1em;
-  right: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  background: #000;
-  font-family: monospace;
-  text-align: center;
-  line-height: 2.8em;
+#navbar ul {
+  padding: 0;
+  margin: 0;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
-#isIntersecting { color: #33ff00; opacity: 0; transition: opacity .2s linear; }
-img {
-  display: block;
-  max-width: none;
-  width: 100%;
-  height: 100%;
-  min-height: 100px;
-  -o-object-fit: cover;
-  object-fit: cover;
+#navbar li {
+  list-style: none;
+  padding: 1em;
+  text-transform: uppercase;
+  background: #222;
+  color: #fff;
+  transition: all .2s linear;
 }
-</style>
-<div class="screen" id="first-screen">
-  <h1>First screen</h1>
-</div>
-<div class="screen" id="second-screen">
-  <h1>Second Screen</h1>
-</div>
-<div class="screen pa3 pa4-ns w-100 w-80-ns center">
+#navbar #first.active { background: rgb(0,106,221); }
+#navbar #second.active { background: rgb(255,25,129); }
+#navbar #third.active { background: #fff; color: #222; }
+#navbar #fourth.active { background: #FFDF19; }
+  </style>
+</head>
+<body>
+<div class="screen" id="first-screen"> <h1>First screen</h1></div>
+<div class="screen" id="second-screen"> <h1>Second Screen</h1></div>
+<div class="screen pa3 pa4-ns w-100 w-80-ns center" id="third-screen">
   <main class="cf pa2">
     <div class="fl w-100 w-50-ns ph2">
-      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" data-src="https://farm5.staticflickr.com/4616/39798634951_aa270731f6_k_d.jpg"></a>
-     <a href="" class="pv2 grow db no-underline black"><img class="db w-100" data-src="https://farm8.staticflickr.com/7364/9797687423_89d0b3040b_z_d.jpg"></a>
+      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://farm5.staticflickr.com/4616/39798634951_aa270731f6_k_d.jpg"></a>
+     <a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://farm8.staticflickr.com/7364/9797687423_89d0b3040b_z_d.jpg"></a>
     </div>
     <div class="fl w-50 w-25-ns ph2">
-      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" data-src="https://farm9.staticflickr.com/8713/16979768317_44c27d64c9_z_d.jpg"></a>
-      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" data-src="https://farm2.staticflickr.com/1717/24895045945_d99447e642_b_d.jpg"></a>
-      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" data-src="https://farm5.staticflickr.com/4745/38898563945_d3974144c0_z_d.jpg"></a>
+      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://farm9.staticflickr.com/8713/16979768317_44c27d64c9_z_d.jpg"></a>
+      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://farm2.staticflickr.com/1717/24895045945_d99447e642_b_d.jpg"></a>
+      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://farm5.staticflickr.com/4745/38898563945_d3974144c0_z_d.jpg"></a>
     </div>
     <div class="fl w-50 w-25-ns ph2">
-            <a href="" class="pv2 grow db no-underline black"><img class="db w-100" data-src="https://farm2.staticflickr.com/1502/24195472655_bc7e4f3582_z_d.jpg"></a>
-      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" data-src="https://farm6.staticflickr.com/5691/23446613226_6ac1a5b1a2_z_d.jpg"></a>
-      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" data-src="https://farm2.staticflickr.com/1594/24342615229_4d407695ef_z_d.jpg"></a>
-      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" data-src="https://farm4.staticflickr.com/3707/9288847355_3aa5800e92_z_d.jpg"></a>
+            <a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://farm2.staticflickr.com/1502/24195472655_bc7e4f3582_z_d.jpg"></a>
+      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://farm6.staticflickr.com/5691/23446613226_6ac1a5b1a2_z_d.jpg"></a>
+      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://farm2.staticflickr.com/1594/24342615229_4d407695ef_z_d.jpg"></a>
+      <a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://farm4.staticflickr.com/3707/9288847355_3aa5800e92_z_d.jpg"></a>
     </div>
   </main>
 </div>
-<div class="screen" id="fourth-screen">
-  <h1>Fourth Screen</h1>
-</div>
-<div id="monitor">
-  <div id="isIntersecting">
-    <span class="placeholder">0</span>
-    images loaded
-    </div>
-</div>
-```
-
-```javascript
-// lazyLoad
-const images = document.querySelectorAll('[data-src]');
-const config = {
-  rootMargin: '0px 0px 50px 0px',
-  threshold: 0
-};
-let loaded = 0;
-let observer = new IntersectionObserver(function (entries, self) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // console.log(`Image ${entry.target.src} is in the viewport!`);
-      preloadImage(entry.target);
-      // Stop watching and load the image
-      self.unobserve(entry.target);
-    }
+<div class="screen" id="fourth-screen"> <h1>Fourth Screen</h1> </div>
+<nav id="navbar">
+  <ul>
+    <li id="first" data-ref="first-screen">First screen</li>
+    <li id="second" data-ref="second-screen">Second screen</li>
+    <li id="third" data-ref="third-screen">Third screen</li>
+    <li id="fourth" data-ref="fourth-screen">Fourth screen</li>
+  </ul>
+</nav>
+<!-- <div id="monitor">
+    <div id="isIntersecting">
+      <span class="placeholder">0</span>
+      images loaded
+      </div>
+</div> -->
+<script>
+// nav tab随页面变色
+  const sections = document.querySelectorAll('div.screen');
+  const configNav = {
+    rootMargin: '-50px 0px -55%'
+  };
+  let observerNav = new IntersectionObserver(function (entries, self) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        intersectionHandler(entry); 
+      }
+    });
+  }, configNav);
+  sections.forEach(section => {
+    observerNav.observe(section);
   });
-}, config);
+  function intersectionHandler(entry) {
+    const id = entry.target.id;
+    const currentlyActive = document.querySelector('nav li.active');
+    const shouldBeActive = document.querySelector('nav li[data-ref=' + id + ']');
+    if (currentlyActive) {
+      currentlyActive.classList.remove('active');
+    }
+    if (shouldBeActive) {
+      shouldBeActive.classList.add('active');
+    }
+  }
+  // image lazyLoad
+  const images = document.querySelectorAll('[data-src]');
+  const config = {
+    rootMargin: '0px 0px 50px 0px',
+    threshold: 0
+  };
+  let loaded = 0;
+  let observer = new IntersectionObserver(function (entries, self) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // console.log(`Image ${entry.target.src} is in the viewport!`);
+        preloadImage(entry.target);
+        // Stop watching and load the image
+        self.unobserve(entry.target);    //unobserve(): Remove the IntersectionObserverRegistration record
+      }
+    });
+  }, config);
+  
+  images.forEach(image => { observer.observe(image); });
 
-images.forEach(image => { observer.observe(image); });
-
-function preloadImage(img) {
-  const src = img.getAttribute('data-src');
-  if (!src) { return; }
-  img.src = src;
-  _updateMonitoring();
-}
-// Just for the monitoring purpose. Isn't needed in real projects
-function _updateMonitoring() {
-  const container = document.getElementById('isIntersecting');
-  const placeholder = container.querySelector('.placeholder')
-  loaded += 1;
-  placeholder.innerHTML = loaded;
-  container.style.opacity = 1;
-}
+  function preloadImage(img) {
+    const src = img.getAttribute('data-src');
+    if (!src) { return; }
+    img.src = src;
+    _updateMonitoring();
+  }
+  // Just for the monitoring purpose. Isn't needed in real projects
+  function _updateMonitoring() {
+    const container = document.getElementById('isIntersecting');
+    const placeholder = container.querySelector('.placeholder')
+    loaded += 1;
+    placeholder.innerHTML = loaded;
+    container.style.opacity = 1;
+  }
+</script>
+</body>
+</html>
 ```
-
-- IntersectionObserver is an async non-blocking API
-- IntersectionObserver replaces our expensive listeners on scroll or resize events
-- IntersectionObserver does all the expensive calculations like getClientBoundingRect() for you so that you don’t need to
-- IntersectionObserver follows the structural pattern of other Observers out there so, theoretically, should be easy to understand if you’re familiar with how other Observers work
 
 > [How To Defer, Lazy-Load and Act with IntersectionObserver](https://frontendfoc.us/link/35305/f1b4c54f25)
 
