@@ -948,6 +948,8 @@ onMobileInput(form: ngForm){
 <h3 id="Http通讯">7.2 Http通讯</h3>
 
 - Angular使用响应式编程(Observable)处理http服务
+- 注入HttpModule模块: `imports :[HttpModule, //...]`
+- 注入http服务: 在组件中
 
 **配置angular使用express服务器**
 
@@ -1006,6 +1008,7 @@ ngOnInit(){}    //不需要subscribe方法啦
 
 ```javascript
 //xxx.component.ts
+import {Http, Headers} from "@angular/http";
 products: Observable<any>;    //product直接定义为流
 constructor(private http: Http){
   let myHeaders: Headers = new Headers();
@@ -1017,7 +1020,7 @@ ngOnInit(){}
 
 [back to top](#top)
 
-<h3 id="WebSocket通讯">7.3 Angular的WebSocket通讯</h3>
+<h3 id="WebSocket通讯">7.3 Angular的WebSocket通讯: 双向推送</h3>
 
 - websocket是html5规范中的一个部分，它借鉴了socket这种思想，为web应用程序客户端和服务端之间（注意是客户端服务端）提供了一种全双工通信机制
 - websocket协议是为了提供web应用程序和服务端全双工通信而专门制定的一种应用层协议，通常它表示为：`ws://echo.websocket.org/?encoding=text HTTP/1.1`
@@ -1053,6 +1056,7 @@ setInterval(() => {
 }, 2000);
 //web-socket.service.ts --定义一个Observable的流的服务
 import { Injectable } from '@angular/core';
+import { Obversable } from "rxjs";
 @Injectable()
 export class WebSocketService {
   ws: WebSocket;
@@ -1061,10 +1065,10 @@ export class WebSocketService {
     this.ws = new WebSocket(url);
     return new Observable(
       observer => {   //一个Observable stream的三要素
-        this.ws.onmessage = (event) => observer.next(event.data);  //1） 什么时候发射下一个元素
-        this.ws.onerror = (event) => observer.error(event);        //2） 出现问题流抛出一个异常
-        this.ws.onclose = (event) => observer.complete();          //3） 什么时候流发出结束信号
-      }
+        this.ws.onmessage = (event) => observer.next(event.data);  //1） 什么时候发射下一个元素, 观察ws.onmessage是否成功，成功就执行观察者的next方法
+        this.ws.onerror = (event) => observer.error(event);        //2） 出现问题流抛出一个异常，观察ws是否失败，失败就执行观察者的error方法
+        this.ws.onclose = (event) => observer.complete();          //3） 什么时候流发出结束信号，观察ws断开，结束观察者模式
+      }
     );
   }
   sendMessage(message: string){
@@ -1075,7 +1079,7 @@ export class WebSocketService {
 export class WebSocketComponent implements OnInit {
   constructor(private wsService:WebSocketService){}
   ngOnInit(){
-    this.wsService.createObservableSocket("ws://localhost:8085").subscribe(
+    this.wsService.createObservableSocket("ws://localhost:8085").subscribe(   //订阅模式，开启观察
       data => console.log(data),
       err => console.log(err),
       () => console.log("流已经结束")
