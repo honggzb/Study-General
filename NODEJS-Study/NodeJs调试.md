@@ -2,6 +2,7 @@
 
 - [1. 基于Nodejs内建的调试器- debugger](#debugger)
 - [2. 基于Chrome浏览器的调试器Node inspector- server side debug](#基于Chrome浏览器的调试器)
+- [3. debugging with Chrome Devtool](#Devtool)
 
 <h2 id="debugger">1. 基于Nodejs内建的调试器- debugger</h2>
 
@@ -85,6 +86,31 @@ res.writeHead(200, {'Content-Type': 'text/plain'});
 ```
 
 在命令行直接执行： `npm run debug`
+
+[back to top](#top)
+
+<h2 id="Devtool">2. debugging with Chrome Devtool</h2>
+
+### Needs
+
+- Node.js 6.3+
+- Chrome 55+ [Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html)
+
+### Enable Nodejs debugging in Chrome
+
+- Open the `chrome://flags/#enable-devtools-experiments` URL
+- Enable the Developer Tools experiments flag
+- Relaunch Chrome
+- Open DevTools Setting -> Experiments tab (it started being visible after the reload)
+- Press "SHIFT" 6 times ( enjoy it  ~~~~(>_<)~~~~  to show the hidden experiments
+- Check the "Node debugging" checkbox
+- Open/close DevTools
+
+### debug
+
+`node --inspect node.js`
+
+https://blog.hospodarets.com/nodejs-debugging-in-chrome-devtools?utm_source=nodeweekly&utm_medium=email#enable-a-new-way-of-nodejs-debugging-in-chrome
 
 [back to top](#top)
 
