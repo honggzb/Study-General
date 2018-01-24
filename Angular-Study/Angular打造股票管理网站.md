@@ -38,6 +38,11 @@
     - asyn管道
     - 处理http请求头（HttpHeader)
   - [7.3 Angular的WebSocket通讯](#WebSocket通讯)
+    - [7.3.1 商品关注功能- 使用websocket协议通讯](#商品关注功能)
+- [8. 构建和部署](#构建和部署)
+  - [8.1 构建： 编译和合并](#编译和合并)
+  - [8.2 部署：与服务器整合](#与服务器整合)
+  - [8.3 多环境支持](#多环境支持)
 
 <hr>
 
@@ -930,9 +935,13 @@ onMobileInput(form: ngForm){
 
 <h2 id="与服务器通讯">7. 与服务器通讯</h2>
 
+- http服务，来自HttpModule， 只有在调subscribe时才发请求
+- Websocket协议，双向通讯
+
 <h3 id="Node+express创建服务器">7.1 Node+express创建Web服务器</h3>
 
-参见
+- 参见https://github.com/angular/angular-cli/blob/master/docs/documentation/stories/proxy.md
+- https://stackoverflow.com/questions/39809008/angular-cli-proxy-to-backend-doesnt-work
 
 [back to top](#top)
 
@@ -1015,12 +1024,16 @@ ngOnInit(){}
 
 ![](https://i.imgur.com/vdXmWgI.png)
 
+
 ```shell
 npm i ws --save
 npm i @types/ws --save-dev
 ```
 
+<h3 id="websocket服务器">7.3.1 websocket服务器</h3>
+
 ```javascript
+//定义websocket服务器
 import {Server} from 'ws';
 const wsServer = new Server({port: 8085});
 //只有websocket服务器连接上后才发送
@@ -1038,9 +1051,8 @@ setInterval(() => {
     })
   }
 }, 2000);
-//web-socket.service.ts --定义一个Observable的流
+//web-socket.service.ts --定义一个Observable的流的服务
 import { Injectable } from '@angular/core';
-import {WebSocket} from 'ws';
 @Injectable()
 export class WebSocketService {
   ws: WebSocket;
@@ -1075,6 +1087,112 @@ export class WebSocketComponent implements OnInit {
   }
 }
 ```
+
+[back to top](#top)
+
+<h3 id="商品关注功能">7.3.2 商品关注功能- 使用websocket协议通讯</h3>
+
+![](https://i.imgur.com/3pWeU4V.png)
+
+- 使用productService作为中间人: 
+  - 定义了search方法
+  - 定义一个事件流： searchEvent, 并在product组件中订阅该事件流，在搜索组件中发射该事件流
+
+```javascript
+/* product.service.ts */
+searchEvent: EventEmitter<ProductSearchParams> = new EventEmitter();  //搜索时间流
+//...
+search(params: ProductSearchParams): Observable<Product[]>{
+  return this.http.get("/api/products/",{search: this.encodeParams(params)}).map(res => res.json());
+}
+private encodeParams(params:ProductSearchParams){
+  let result: URLSearchParams;
+  result = Object.keys(params)
+                 .filter(key => params[key])
+                 .reduce((sum:URLSearchParams,key:string) => {
+                   sum.append(key, params[key]);
+                   return sum;
+                 }, new URLSearchParams());
+  console.log(result);
+  return result;
+}
+/* product.component.ts */
+ngOnInit() {
+  this.products = this.productService.getProducts();
+  //订阅搜索事件流
+  this.productService.searchEvent.subscribe(
+    params => this.products = this.productService.search(params)
+  )
+}
+/* search.component.ts */
+onSearch(){
+  if(this.formModel.valid){
+    console.log(this.formModel.valid);
+    //发射搜索事件流
+    this.productService.searchEvent.emit(this.formModel.value);
+  }
+}
+/* server */
+app.get('/api/products', (req, res)=> {
+  let result = products;
+  let params = req.query;
+  if(params.title){
+    result = result.filter((p) => p.title.indexOf(params.title) !== -1);
+  }
+  if(params.price && result.length>0){
+    result = result.filter((p) => p.price <= parseInt(params.price));
+  }
+  if(params.category!="-1" && result.length>0){
+    result = result.filter((p) => p.categories.indexOf(params.categories) != -1);
+  }
+  res.json(result)
+});
+```
+
+[back to top](#top)
+
+<h2 id="构建和部署">8. 构建和部署</h2>
+
+<h3 id="编译和合并">8.1 构建： 编译和合并</h3>
+
+`ng build   #编译`
+
+<h3 id="与服务器整合">8.2 部署：与服务器整合</h3>
+
+1. 将编译后的dist拷贝到node Server的client目录
+2. 编写auction_server.js
+3. 修改app.module.ts, 加入地址策略， 保证浏览器刷新后使用angular的路由，其url变为，如: `localhost:8000/#/product/1`
+
+```javascript
+//1) 访问根目录时候，访问的是当前目录的上一级父目录下面的client目录
+import * as path from 'path';
+app.use('/', express.static(path.join(__dirname, '..', 'client')));
+//2) 修改app.module.ts, 加入地址策略， 保证浏览器刷新后使用angular的路由，其url变为，如: localhost:8000/#/product/1
+providers: [
+  ProductService, WebsocketService,
+  {provide: LocationStrategy, useClass: HashLocationStrategy}
+],
+```
+
+<h3 id="多环境支持">8.3 多环境支持</h3>
+
+- `src\environments\environment.ts`文件中的`production: false`表示默认是dev环境， 如想改变默认环境：
+  - package.json:   `"start": "ng serve --env=prod --proxy-config proxy.conf.json",`
+  - 如在`src\environments\`各个配置中定义一个`weixinNumber`属性，则在`\src\app\app.component.ts`组件中就可以引入该环境对象的属性了 `environment.weixinNumber`
+- 在根目录下的.angular-cli.json中增加代码
+- 在`\src\main.ts`文件中设置使用场景
+- 新建 `src\environments\environment.test.ts`文件
+
+```javascript
+//1) .angular-cli.json
+"environments": {
+  "dev": "environments/environment.ts",
+  "prod": "environments/environment.prod.ts",
+  "test": "environments/environment.test.ts"
+}
+```
+
+- `ng build --env=prod`, 使用生产环境来构建部署文件
 
 [back to top](#top)
 
