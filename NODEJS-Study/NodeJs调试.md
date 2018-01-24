@@ -89,7 +89,7 @@ res.writeHead(200, {'Content-Type': 'text/plain'});
 
 [back to top](#top)
 
-<h2 id="Devtool">2. debugging with Chrome Devtool</h2>
+<h2 id="Devtool">3. debugging with Chrome Devtool</h2>
 
 ### Needs
 
@@ -98,13 +98,24 @@ res.writeHead(200, {'Content-Type': 'text/plain'});
 
 ### Enable Nodejs debugging in Chrome
 
-- Open the `chrome://flags/#enable-devtools-experiments` URL
-- Enable the Developer Tools experiments flag
-- Relaunch Chrome
-- Open DevTools Setting -> Experiments tab (it started being visible after the reload)
-- Press "SHIFT" 6 times ( enjoy it  ~~~~(>_<)~~~~  to show the hidden experiments
-- Check the "Node debugging" checkbox
-- Open/close DevTools
+1. Method 1:
+
+`chrome://inspect//#devices`, click on “Open dedicated DevTools for Node” to start debugging your application’s code
+
+![](https://i.imgur.com/5iopeXl.png)
+
+[Debugging Node.js with Google Chrome](https://medium.com/the-node-js-collection/debugging-node-js-with-google-chrome-4965b5f910f4)
+	
+2. Mehtod 2:
+	- Open the `chrome://flags/#enable-devtools-experiments` URL
+	- Enable the Developer Tools experiments flag
+	- Relaunch Chrome
+	- Open DevTools Setting -> Experiments tab (it started being visible after the reload)
+	- Press "SHIFT" 6 times ( enjoy it  ~~~~(>_<)~~~~  to show the hidden experiments
+	- Check the "Node debugging" checkbox
+	- Open/close DevTools
+
+![](https://i.imgur.com/HMpw21w.png)
 
 ### debug
 
