@@ -100,6 +100,7 @@
 │   │   └── web-workers-demo-master.zip
 │   ├── 让web app更快的HTML5最佳实践.md
 │   ├── 应用缓存App Cache指南.md
+│   ├── IntersectionObserver API: defer, lazy-load.md
 │   └── Service Workers- HTML5 Web push notifications桌面通知.md
 │
 ├── JAVA-Study
