@@ -599,9 +599,20 @@ function replaceAd(adBox) {
 </html>
 ```
 
+> 补充: [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)
+
+- Page Visibility API的`visibilitychange`监听事件
+- Page Visibility API中定义了2个只读的document属性：`hidden`和`visibilityState`
+	- document.hidden是一个布尔值，简单的表示标签页显示或者隐藏
+	- document.visibilityState属性更为详细，目前有四个可能的值
+		- visible : 页面内容至少部分可见。这意味着在实际情况中，该网页是一个非最小化窗口的可见标签页
+		-hidden : 页面内容是对用户不可见。实际上，这意味着该文档是后台标签页或最小化窗口的一部分，或者系统锁屏是时的状态
+		-prerender : 网页内容被预渲染并且用户不可见
+		-unloaded : 如果文档被卸载，那么这个值将被返回
+
 [back to top](#top)
 
-> 
+> Reference
 - [How To Defer, Lazy-Load and Act with IntersectionObserver](https://frontendfoc.us/link/35305/f1b4c54f25)
 - [Timing element visibility with the Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API/Timing_element_visibility)
 
