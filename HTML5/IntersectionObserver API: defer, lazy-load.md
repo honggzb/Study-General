@@ -300,6 +300,8 @@ IntersectionObserverEntry interface other properties
 </html>
 ```
 
+[back to top](#top)
+
 <h3 id="Sample">4. Sample 2 - Timing element visibility with the Intersection Observer API</h3>
 
 ```html
@@ -597,5 +599,9 @@ function replaceAd(adBox) {
 </html>
 ```
 
-> [How To Defer, Lazy-Load and Act with IntersectionObserver](https://frontendfoc.us/link/35305/f1b4c54f25)
+[back to top](#top)
+
+> 
+- [How To Defer, Lazy-Load and Act with IntersectionObserver](https://frontendfoc.us/link/35305/f1b4c54f25)
+- [Timing element visibility with the Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API/Timing_element_visibility)
 
