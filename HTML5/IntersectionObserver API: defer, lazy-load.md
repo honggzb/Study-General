@@ -4,6 +4,8 @@
 - [2. generic structure of an Observer](#generic)
 - [3. Sample 1 - carousel layout with image lazy-load](#carousel)
 - [4. Sample 2 - Timing element visibility with the Intersection Observer API](#Sample)
+	- 补充1： [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)
+	- 补充2： [HTML5自定义属性对象Dataset简介](http://www.zhangxinxu.com/wordpress/2011/06/html5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E5%AF%B9%E8%B1%A1dataset%E7%AE%80%E4%BB%8B/)
 
 **new members of the Observers family**
 
@@ -599,7 +601,7 @@ function replaceAd(adBox) {
 </html>
 ```
 
-> 补充: [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)
+> 补充 1: [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)
 
 - Page Visibility API的`visibilitychange`监听事件
 - Page Visibility API中定义了2个只读的document属性：`hidden`和`visibilityState`
@@ -609,6 +611,275 @@ function replaceAd(adBox) {
 		-hidden : 页面内容是对用户不可见。实际上，这意味着该文档是后台标签页或最小化窗口的一部分，或者系统锁屏是时的状态
 		-prerender : 网页内容被预渲染并且用户不可见
 		-unloaded : 如果文档被卸载，那么这个值将被返回
+
+> 补充 2: [HTML5自定义属性对象Dataset简介](http://www.zhangxinxu.com/wordpress/2011/06/html5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E5%AF%B9%E8%B1%A1dataset%E7%AE%80%E4%BB%8B/)
+
+**dataset定义**
+
+在HTML5中使用data-前缀设置需要的自定义属性，来进行一些数据的存放, 如 `<a href="javascript:" data-id="2312">测试</a>`, 这里的data-前缀就被称为data属性, 可以通过脚本进行定义，也可以应用CSS属性选择器进行样式设置
+
+- 通过javascript设置： `adBox.dataset.lastViewStarted = 0;`, 在HTML中会生成 `<div class="ad" data-last-view-started="0"></div>`
+- 通过HTML设置： `<div id="day2-meal-expense" data-drink="coffee" data-food="sushi" data-meal="lunch">¥20.12</div>`
+
+**dataset的操作**
+
+```javascript
+//名-值对
+chartInput = [];
+for (var item in expense) {
+  chartInput.push(expense[item]);
+}
+//删掉一个data属性
+delete expenseday2.dataset.meal;
+//给元素添加一个属性
+expenseday2.dataset.dessert = 'icecream';
+```
+
+- 使用dataset操作data 要比使用getAttribute稍微慢些
+- 如果应用程序会频繁更新data属性值的话，建议使用JavaScript对象进行数据管理，而不是每次都经由data属性进行更新
+
+**是否支持dataset**
+
+```javascript
+if(expenseday2.dataset) {
+  expenseday2.dataset.dessert = 'icecream';
+} else {
+  expenseday2.setAttribute('data-dessert', 'icecream');
+}
+```
+
+**HTML5 dataset下的数据图效果实例页面**
+
+- HTML5中input的新类型`type="range"`
+- 根据定义`<b data-country="UK" data-size="2" data-cost="0.0837"><i>UK</i></b>`, javascript根据数据改变b的data-size和data-cost
+	- data-size对应于css：font-size，改变整个圆的大小
+	- data-cost对应于圆中的文章
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+#top {
+	width:600px;
+	padding: 1em;
+	margin: 2em auto 10em;
+	background-color: #cad5eb;
+	text-align: center;
+}
+#title {
+	padding-bottom: 1em;
+	font:bold 14px/1.5 '幼圆', '微软雅黑';
+	color: #800;
+}
+#unsupport strong {
+	display: block;
+	padding: 20px;
+	background-color: #c80;
+	color: #fff;
+}
+#dataset {
+  width: 600px;
+  height: 400px;
+  margin: 2em auto;
+  position: relative;
+  text-shadow: none;
+  text-align: center;
+}
+#dataset b {
+  position: absolute;
+  text-transform: uppercase; 
+  width: 1em;
+  height: 1em;
+  font-weight: normal;
+  border-radius: 1em;
+  line-height: 1em; 
+  -o-transition: font-size 1s;
+  -webkit-transition: all 1s;                
+  -moz-transition: font-size 1s;      
+  -ms-transition: font-size 1s;      
+  transition: font-size 1s;      
+}
+#dataset b i, #dataset b:after {
+  font-size: 14px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-top: -7px;
+  font-style: normal;
+  font-weight: normal;
+}
+#dataset b:after {
+  content: "€" attr(data-cost) "/kWh";
+  top: 16px;
+  font-size: 12px;
+  white-space: nowrap;
+  text-transform: none;
+}
+b[data-country="UK"] {
+  background: hsla(174, 74%, 56%, 0.5); /*turquoise */
+  left: 1%;
+  top: -2%;      
+}
+b[data-country="Germany"] {
+  background: hsla(300, 76%, 72%, 0.5); /* Violet */
+  right: 0;
+  top: 0%;      
+}
+b[data-country="France"] {
+  background: hsla(197, 71%, 73%, 0.5); /* skyblue */
+  left: 58%;
+  top: 15%;      
+}
+b[data-country="Greece"] {
+  background: hsla(0, 59%, 41%, 0.5); /* brown */
+  left: 22%;
+  top: -15%;      
+}
+b[data-country="Ireland"] {
+  background: hsla(120, 100%, 25%, 0.5); /* green */
+  left: 10%;
+  top: 30%;      
+}
+b[data-country="Sweden"] {
+  background: hsla(271, 76%, 53%, 0.7); /* blue */
+  right: 20%;
+  top: -15%;      
+}
+b[data-country="Belgium"] {
+  background: hsla(0, 53%, 58%, 0.5); /* indianred */
+  left: 50%;
+  top: 40%;      
+}
+b[data-country="Norway"] {
+  background: hsla(300, 100%, 25%, 0.5); /* purple */
+  left: 32%;
+  top: 5%;
+}
+b[data-size="1"] { font-size: 4em; }
+b[data-size="2"] { font-size: 5em; }    
+b[data-size="3"] { font-size: 6em; }
+b[data-size="4"] { font-size: 7em; }
+b[data-size="5"] { font-size: 8em; }
+b[data-size="6"] { font-size: 9em; }
+b[data-size="7"] { font-size: 10em; }
+</style>
+</head>
+<body>
+  <div id="main">
+	<h1>HTML5 dataset下的数据图效果实例页面</h1>
+    <div id="body" class="light">
+    	<div id="content" class="show">
+         <div class="demo">
+            	<div id="top">
+                    <p id="range">2000 <input id="year" type="range" min="2000" max="2010" value="2000" step="2"> 2010</p>      
+                    <div id="title">2004</div>
+                    <div id="unsupport"></div>
+                </div>
+            	<div id="dataset" role="main"> 
+                    <b data-country="UK" data-size="2" data-cost="0.0837"><i>UK</i></b> 
+                    <b data-country="Germany" data-size="5" data-cost="0.1259"><i>Germany</i></b>      
+                    <b data-country="France" data-size="3" data-cost="0.0905"><i>France</i></b>      
+                    <b data-country="Greece" data-size="1" data-cost="0.0621"><i>Greece</i></b>      
+                    <b data-country="Ireland" data-size="3" data-cost="0.1055"><i>Ireland</i></b>            
+                    <b data-country="Sweden" data-size="2" data-cost="0.0898"><i>Sweden</i></b>            
+                    <b data-country="Belgium" data-size="4" data-cost="0.1145"><i>Belgium</i></b>            
+                    <b data-country="Norway" data-size="3" data-cost="0.0985"><i>Norway</i></b>          
+                </div> 
+                <p style="text-align:center;">数据提供：<a href="http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&amp;plugin=1&amp;language=en&amp;pcode=ten00115">Eurostat</a></p>
+          </div>
+      </div>       
+    </div>
+</div>
+<script> 
+(function() {
+ var electricitydata = {
+   '2000': {
+	 'UK': [3, 0.1056],          
+	 'Germany': [4, 0.1191],
+	 'France': [3, 0.0928],
+	 'Greece': [1, 0.0564],
+	 'Ireland': [2, 0.0795],
+	 'Sweden': [1, 0.0637],
+	 'Belgium': [4, 0.1171],
+	 'Norway': [1, 0.0720]
+   },
+   '2002': {
+	 'UK': [3, 0.1031],          
+	 'Germany': [5, 0.1261],
+	 'France': [3, 0.0923],
+	 'Greece': [1, 0.0580],
+	 'Ireland': [2, 0.0883],
+	 'Sweden': [1, 0.0701],
+	 'Belgium': [3, 0.1137],
+	 'Norway': [3, 0.0927]
+   },
+   '2004': {
+	 'UK': [2, 0.0837],
+	 'Germany': [5, 0.1259],
+	 'France': [3, 0.0905],
+	 'Greece': [1, 0.0621],
+	 'Ireland': [3, 0.1055],
+	 'Sweden': [2, 0.0898],
+	 'Belgium': [4, 0.1145],
+	 'Norway': [3, 0.0985]
+   },
+   '2006': {
+	 'UK': [3, 0.0971],          
+	 'Germany': [5, 0.1374],
+	 'France': [2, 0.0905],
+	 'Greece': [1, 0.0643],
+	 'Ireland': [5, 0.1285],
+	 'Sweden': [2, 0.0876],
+	 'Belgium': [4, 0.1123],
+	 'Norway': [4, 0.1101]
+   },
+   '2008': {
+	 'UK': [5, 0.1394],          
+	 'Germany': [5, 0.1299],
+	 'France': [3, 0.0914],
+	 'Greece': [3, 0.0957],
+	 'Ireland': [6, 0.1559],
+	 'Sweden': [4, 0.1085],
+	 'Belgium': [6, 0.1500],
+	 'Norway': [4, 0.1179]
+   },
+   '2010': {
+	 'UK': [5, 0.1321],          
+	 'Germany': [5, 0.1381],
+	 'France': [3, 0.0922],
+	 'Greece': [3, 0.0975],
+	 'Ireland': [7, 0.1589],
+	 'Sweden': [4, 0.1195],
+	 'Belgium': [4, 0.1449],
+	 'Norway': [6, 0.1484]
+   }                    
+ };
+ var slider = document.getElementById("year"),  title = document.querySelector("#title"), countries = document.querySelectorAll("#dataset b"),
+	 currentstats, elm, root = document.documentElement;
+ if(countries[0].dataset == undefined) {
+   document.querySelector("#unsupport").innerHTML += "<strong>您的浏览器不支持datasets. 需使用Opera 11.10+, Chrome 9+ 来查看该demo.</strong>"; 
+ } else {
+   function changeGraph() {
+		title.textContent = slider.value;
+		root.className = "yr" + slider.value;
+		currentstats = electricitydata[slider.value];
+		for(country in currentstats) {
+		  elm = document.querySelector("b[data-country='" + country + "']");
+		  elm.dataset.size = currentstats[country][0];
+		  elm.dataset.cost = currentstats[country][1];
+		}
+   }   
+	slider.addEventListener('change', changeGraph, false);     
+   changeGraph();           
+ } 
+})();
+</script>
+</body>
+</html>
+```
 
 [back to top](#top)
 
