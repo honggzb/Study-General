@@ -4,7 +4,7 @@
 - [2. JSON对象和JSON字符串的转换](#JSON对象和JSON字符串的转换)
 - [3. 遍历JSON对象和JSON数组](#遍历JSON对象和JSON数组)
 - [4. Javascript操作JSON对象，增加 删除 修改](#JSON对象)
-- [5. JSON.stringify()的详细用法-过滤结果、输出美化](#JSON的输出美化)
+- [5. JSON.stringify()的详细用法-  过滤结果、输出美化](#JSON的输出美化)
 - [6. JSON字符串的替换](#JSON字符串的替换)
 
 |类型|案例|
