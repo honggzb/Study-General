@@ -314,11 +314,7 @@ IntersectionObserverEntry interface other properties
   <title>Document</title>
   <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.9.0/tachyons.min.css">
   <style>
-  body {
-  font-family: "Open Sans", "Arial", "Helvetica", sans-serif;
-  background-color: aliceblue;
-}
-
+body { font-family: "Open Sans", "Arial", "Helvetica", sans-serif; background-color: aliceblue; }
 .wrapper {
   display: grid;
   grid-template-columns: auto minmax(min-content, 1fr);
@@ -326,60 +322,40 @@ IntersectionObserverEntry interface other properties
   max-width: 700px;
   margin: 0 auto;
   background-color: aliceblue;
-}header {
+}
+header {
   grid-column: 1 / -1;
   grid-row: 1;
   background-color: aliceblue;
-}aside {
+}
+aside {
   grid-column: 1;
   grid-row: 2;
   background-color: cornsilk;
   padding: 5px 10px;
 }
-
-aside ul {
-  padding-left: 0;
-}
-
-aside ul li {
-  list-style: none;
-}
-
-aside ul li a {
-  text-decoration: none;
-}main {
+aside ul { padding-left: 0; }
+aside ul li { list-style: none; }
+aside ul li a { text-decoration: none; }
+main {
   grid-column: 2;
   grid-row: 2;
   margin: 0;
   margin-left: 16px;
   font-size: 16px;
-}article {
-  background-color: white;
-  padding: 6px;
 }
-
-article:not(:last-child) {
-  margin-bottom: 8px;
-}
-
-article h2 {
-  margin-top: 0;
-}.ad {
+article { background-color: white; padding: 6px; }
+article:not(:last-child) { margin-bottom: 8px; }
+article h2 { margin-top: 0; }
+.ad {
   height: 96px;
   padding: 6px;
   border-color: #555;
   border-style: solid;
   border-width: 1px;
 }
-
-.ad:not(:last-child) {
-  margin-bottom: 8px;
-}
-
-.ad h2 {
-  margin-top: 0;
-}
-
+.ad:not(:last-child) {  margin-bottom: 8px; }
+.ad h2 { margin-top: 0; }
 .ad div {
   position: relative;
   float: right;
@@ -414,23 +390,25 @@ article h2 {
 <script>
 let contentBox;
 let nextArticleID = 1;
-let visibleAds = new Set();
+let visibleAds = new Set();  //A Set which we'll use to track the ads currently visible on the screen.
 let previouslyVisibleAds = null;
 let adObserver;
-let refreshIntervalID = 0;window.addEventListener("load", startup, false);
+let refreshIntervalID = 0;   //store the interval ID returned by setInterval()
+//setting up
+window.addEventListener("load", startup, false);
 function startup() {
   contentBox = document.querySelector("main");
-  document.addEventListener("visibilitychange", handleVisibilityChange, false);
+  document.addEventListener("visibilitychange", handleVisibilityChange, false);   // visibilitychange event - Page Visibility API
   let observerOptions = {
     root: null,
     rootMargin: "0px",
     threshold: [0.0, 0.75]
   };
-  adObserver = new IntersectionObserver(intersectionCallback, observerOptions);
+  adObserver = new IntersectionObserver(intersectionCallback, observerOptions);  //monitor target elements (ads) for intersection changes relative to the document
   buildContents();
   refreshIntervalID = window.setInterval(handleRefreshInterval, 1000);
 }
-
+//Handling document visibility changes, use Page Visibility API(https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API) to detect these tab switches and disable our timers for the duration
 function handleVisibilityChange() {
   if (document.hidden) {
     if (!previouslyVisibleAds) {
