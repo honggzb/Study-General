@@ -28,7 +28,7 @@
 - Angular CLI runs Webpack to build and bundle all JavaScript and CSS code
 - Angular CLI starts **webpack dev server** to preview the result on `localhost:4200`
 
-常用命令选项
+**常用命令选项**
 
 ```shell
 ng new PROJECT_NAME
