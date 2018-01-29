@@ -20,7 +20,7 @@ tsc --init                 #安装typescript后自动创建tsconfig.json文件�
 tsc -w                     #将typescript编译为javascript并watching for file changes
 ```
 
-**tsconfig.json案例**
+**tsconfig.json案例** - 会生成一个目录
 
 ```JSON
 {
@@ -125,8 +125,9 @@ server.listen(8000);
 ```shell
 npm i express --save
 npm i @types/express --save
+tsc -w        #命令行设置编译typescript
 npm i -g nodemon       #实时监控服务器
-nodemon build/aution_server.js
+nodemon build/auction_server.js
 ```
 
 ```javascript
@@ -167,7 +168,7 @@ const server = app.listen(8000, "localhost", () => {
 
 [back to top](#top)
 
-<h2 id="webSocket服务器">5. websocket服务器</h2>
+<h2 id="websocket服务器">5. websocket服务器</h2>
 
 ```shell
 npm i ws --save
