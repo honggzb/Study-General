@@ -100,7 +100,24 @@ res.writeHead(200, {'Content-Type': 'text/plain'});
 
 1. Method 1:
 
-`chrome://inspect//#devices`, click on “Open dedicated DevTools for Node” to start debugging your application’s code
+- `node --inspect --debug-brk build/auction_server.js`
+- it will print -->  copy URL in Chrome
+
+```
+Debugger listening on port 9229.
+Warning: This is an experimental feature and could change at any time.
+To start debugging, open the following URL in Chrome:
+    chrome-devtools://devtools/remote/serve_file/@60cd6e859b9f557d2312f5bf532f6aec5f284980/inspector
+.html?experiments=true&v8only=true&ws=127.0.0.1:9229/e7893dfd-d183-4de0-bb5c-df9f81ded041
+Debugger attached.
+```
+
+**or make it easiler** - https://hackernoon.com/debug-node-js-with-chrome-devtools-aca7cf83af6b
+
+```
+npm install -g inspect-process 
+inspect --debug-brk build/auction_server.js
+```
 
 ![](https://i.imgur.com/5iopeXl.png)
 
