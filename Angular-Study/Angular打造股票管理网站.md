@@ -526,7 +526,7 @@ export class OrderComponent{
 **AngularJS vs Angular 2/4**
 
 - 在AngularJS中是由代码$scope.$apply()或者$scope.$digest触发
-- Angular 2/4使用ZoneJS来监听了Angular所有的异步事件： 实际上Zone有一个叫猴子补丁的东西。在Zone.js运行时，就会为这些异步事件做一层代理包裹，也就是说Zone.js运行后，调用setTimeout、addEventListener等浏览器异步事件时，不再是调用原生的方法，而是被猴子补丁包装过后的代理方法。代理里setup了钩子函数, 通过这些钩子函数, 可以方便的进入异步任务执行的上下文
+- Angular 2/4使用ZoneJS来监听了Angular所有的**异步**事件： 实际上Zone有一个叫猴子补丁的东西。在Zone.js运行时，就会为这些异步事件做一层代理包裹，也就是说Zone.js运行后，调用setTimeout、addEventListener等浏览器异步事件时，不再是调用原生的方法，而是被猴子补丁包装过后的代理方法。代理里setup了钩子函数, 通过这些钩子函数, 可以方便的进入异步任务执行的上下文
 
 **Angular变化检测的过程**
 
@@ -539,6 +539,7 @@ export class OrderComponent{
 
 - defalut策略: Default是Angular默认的变化检测策略，也就是上述提到的脏检查,只要有值发生变化，就全部从父组件到所有子组件进行检查,
 - OnPush策略:  就是只有当输入数据(即@Input)的引用发生变化或者有事件触发时，组件才进行变化检测, 当使用OnPush策略的时候，若输入属性没有发生变化，组件的变化检测将会被跳过
+- 变化检测对象引用: 通过引用变化检测对象ChangeDetectorRef，可以手动去操作变化检测
 
 > 总结:  Angular应用是一个响应系统，变化检测总是从根组件到子组件这样一个从上到下的顺序开始执行，它是一棵线性的有向树，默认情况下，变化检测系统将会走遍整棵树，但可以使用OnPush变化检测策略，在结合Observables对象，进而利用ChangeDetectorRef实例提供的方法，来实现局部的变化检测，最终提高系统的整体性能
 
@@ -560,7 +561,7 @@ export class ProfileCardComponent {
 
 **5.3.4 Observables机制**
 
-使用Observables机制提升性能和不可变的对象类似，但当发生变化的时候，Observables不会创建新的模型，但我们可以通过订阅 Observables对象，在变化发生之后，进行视图更新。使用Observables机制的时候，同样需要设置组件的变化检测策略为OnPush
+使用Observables机制提升性能和不可变的对象类似，但当发生变化的时候，Observables不会创建新的模型，但我们可以通过订阅Observables对象，在变化发生之后，进行视图更新。使用Observables机制的时候，同样需要设置组件的变化检测策略为OnPush
 
 ```javascript
 //counter.component.ts
