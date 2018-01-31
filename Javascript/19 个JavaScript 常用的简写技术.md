@@ -1,5 +1,6 @@
 [19 个JavaScript 常用的简写技术](#top)
 
+- [1.创建一个新的对象](#创建一个新的对象)
 - [2.短路求值简写方式](#短路求值简写方式)
 - [4.if存在条件简写方法](#if存在条件简写方法)
 - [6.短路评价](#短路评价)
@@ -16,6 +17,16 @@
 - [补1：利用parseInt(str)字符串转换为数字- 简写`+(str)`](#字符串转换为数字)
 - [补3：利用Array.prototype.contcat对象转换为字符串](#对象转换为字符串)
 - [补2：利用Object.assign快速创建并复制对象](#快速创建并复制对象)
+
+<h3 id="创建一个新的对象">1.创建一个新的对象</h3>
+
+```javascript
+var person = {
+    name: 'semlinker',
+    age: 31
+};
+var newPerson = Object.assign({}, person, {name: 'fer'});
+```
 
 <h3 id="短路求值简写方式">2.短路求值简写方式</h3>
 
