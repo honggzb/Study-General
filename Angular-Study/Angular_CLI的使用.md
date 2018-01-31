@@ -21,6 +21,8 @@
 - [3. Adding an Express server to an Angular CLI project](#add-express)
 - [4. Adding an Angular CLI project to JAVA Project](#add-java)
 - [5.Create a Progressive Web App with Angular CLI](#Progressive-Web-App)
+- [6.Errors in real project](#Errors)
+	- Error: Cannot find module '@angular-devkit/core'
 
 **Before starts**
 
@@ -718,6 +720,21 @@ cd hello-mobile
 - [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) (Mozilla Developer Network)
 - [Installable Web Apps with the Web App Manifest in Chrome for Android](https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android?hl=en) (Google Developers)
 - [Installable Web Apps and Add to Home screen](https://dev.opera.com/articles/installable-web-apps/) (Dev.Opera)
+
+[back to top](#top)
+
+<h3 id="Errors">6. Errors in real project</h3>
+
+**Error: Cannot find module '@angular-devkit/core'**
+
+```shell
+npm update -g @angular/cli
+# editing my package.json changing the line
+"@angular/cli": "1.6.0",
+#to
+"@angular/cli": "^1.6.0",
+npm update
+```
 
 [back to top](#top)
 
