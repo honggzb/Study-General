@@ -270,6 +270,9 @@ npm install -g @angular/cli@latest
 rm -rf node_modules dist # use rmdir /S/Q node_modules dist in Windows Command Prompt; use rm -r -fo node_modules,dist in Windows PowerShell
 npm install --save-dev @angular/cli@latest
 npm install
+#or editing my package.json changing the line
+"@angular/cli": "^1.6.0",
+npm update
 ```
 
 [back to top](#top)
