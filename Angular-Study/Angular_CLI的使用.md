@@ -51,6 +51,7 @@ ng -version
 #创建新的Angular应用程序
 ng new PROJECT_NAME   #ng new PROJECT_NAME
 ng init PROJECT_NAME  #ng new 与ng init的功能是相似的，只是ng new会创建新的目录
+ng set --global packageManager=yarn
 ```
 
 `ng new`命令选项
