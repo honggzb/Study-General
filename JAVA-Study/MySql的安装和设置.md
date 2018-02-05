@@ -1,4 +1,10 @@
-**windows下mysql配置**
+[MySql的安装和设置](#top)
+
+- [1. windows下mysql配置](#windows下mysql配置)
+- [2. MySql重设密码](#MySql重设密码)
+- [3. MySql的基本语句](#MySql的基本语句)
+
+<h2 id="windows下mysql配置">1. windows下mysql配置</h2>
 
 - 安装包： https://dev.mysql.com/downloads/file/?id=474802
 - MySQL workbench(tool)
@@ -34,6 +40,10 @@ mysqld -remove           #卸载mysql
 mysqld --datadir=C:/software/DevSetup/mysql-5.7.21-winx64/data
 ```
 
+[back to top](#top)
+
+<h2 id="MySql重设密码">2. MySql重设密码</h2>
+
 > 补充： 忘记密码，按以下步骤重设密码(` mysql -uroot -p `登录时，不知道密码，按以下步骤设置密码)
 - 编辑my.ini文件，在[mysqld]这个条目下加`skip-grant-tables`, 保存退出后重启mysql
 - 点击“开始”->“运行”(快捷键Win+R)
@@ -51,8 +61,10 @@ mysqld --datadir=C:/software/DevSetup/mysql-5.7.21-winx64/data
   - 或 `mysql> set password for 'root'@'localhost'=password('123');`
   - 然后：`mysql>quit;`, 登录：`Mysql -uroot -p123` 就可以直接登录。
   - 以后也可以直接在命令行输入  `Mysql -uroot -p`， 输入密码后进入
+  
+[back to top](#top)
 
-**MySQL基本语句**
+<h2 id="MySql的基本语句">3. MySql的基本语句</h2>
 
 ```sql
 CREATE DATABASE mysql_shiyan;   #建数据库mysql_shiyan
