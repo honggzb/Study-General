@@ -11,12 +11,12 @@
   - [1.2 Proxy To Backend](#Proxy-To-Backend)
   - [1.3 Deploying the app via GitHub Pages](#Deploying-the-app-via-GitHub-Pages)
   - [1.4 Third Library Installation](#Library-Installation)
-    - 1.1 bootstrap 4
-    - 1.1 awesome font
-    - 1.1 underscore
-    - 1.1 d3
-    - [1.4 angular material](#angular-material)
-    - [1.5 less(ng new project_name --style less when create new project)](#less)
+    - 1.4.1 bootstrap 4
+    - 1.4.2 awesome font
+    - 1.4.3 underscore
+    - 1.4.4 d3
+    - [1.4.5 angular material](#angular-material)
+    - [1.4.6 less(ng new project_name --style less when create new project)](#less)
 - [2. project struture the Angular CLI setup](#project-struture)
 - [3. Adding an Express server to an Angular CLI project](#add-express)
 - [4. Adding an Angular CLI project to JAVA Project](#add-java)
@@ -35,6 +35,7 @@
 ```shell
 ng new PROJECT_NAME
 ng new PROJECT_NAME --style less   # --style to choose less as preprocessor
+ng new PROJECT_NAME --routing      # --routing to generate routing module
 ng g c componentName --flat --inline-template --inline-styles
 ng g c componentName --flat -it -is   #简写
 
@@ -328,7 +329,7 @@ typelessPackage.method();
 
 - Global Library Installation
 
-##Paths in angular-cli.json are relative to the src directory##
+**Paths in angular-cli.json are relative to the src directory**
 
 ```shell
 #1) install bootstrap 4
@@ -520,7 +521,42 @@ npm install @angular/common@latest @angular/compiler@latest @angular/compiler-cl
 npm i @angular/compiler-cli@next --D -E
 ```
 
-<h4 id="angular-material">1.5 [using Angular Material](https://material.angular.io/)</h4>
+<h4 id="angular-material">1.4.6 using Angular Material</h4>
+
+https://material.angular.io/
+
+```shell
+# 1) install package
+npm install --save @angular/material @angular/cdk
+# 2) if need animations
+npm install --save @angular/animations
+#note: 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+@NgModule({
+  ...
+  imports: [BrowserAnimationsModule],
+  ...
+})
+export class PizzaPartyAppModule { }
+# 3) Import the component modules
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+@NgModule({
+  ...
+  imports: [MatButtonModule, MatCheckboxModule],
+  ...
+})
+export class PizzaPartyAppModule { }
+# 4) Include a pre-built theme - in styles.css
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+#or in index.html
+<link href="node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+# 5) Gesture Support
+npm install --save hammerjs
+# adding in src/main.ts
+import 'hammerjs';
+# 6) Add Material Icons, adding in index.html
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
 
 [back to top](#top)
 
