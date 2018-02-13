@@ -67,7 +67,7 @@ Redis的配置文件位于Redis安装目录下，文件名为redis.conf,
 - 可以通过修改 redis.conf文件或使用`CONFIG set`命令来修改配置
 
 |编号|redis.conf配置项|说明|
-| :------------- | :------------- || :------------- |
+| :------------- | :------------- | :------------- |
 |1|`daemonize no`|Redis默认不是以守护进程的方式运行，可以通过该配置项修改，使用yes启用守护进程 |
 |2|`pidfile /var/run/redis.pid`|当Redis以守护进程方式运行时，Redis默认会把pid写入/var/run/redis.pid文件，可以通过pidfile指定|
 |3|`port 6379`|指定Redis监听端口，默认端口为6379，作者在自己的一篇博文中解释了为什么选用6379作为默认端口，因为6379在手机按键上MERZ对应的号码，而MERZ取自意大利歌女Alessia Merz的名字|
