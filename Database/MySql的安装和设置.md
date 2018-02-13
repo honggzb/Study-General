@@ -44,23 +44,23 @@ mysqld --datadir=C:/software/DevSetup/mysql-5.7.21-winx64/data
 
 <h2 id="MySql重设密码">2. MySql重设密码</h2>
 
-> 补充： 忘记密码，按以下步骤重设密码(` mysql -uroot -p `登录时，不知道密码，按以下步骤设置密码)
+> 补充： 忘记密码，按以下步骤重设密码(` mysql -u root -p `登录时，不知道密码，按以下步骤设置密码)
 - 编辑my.ini文件，在[mysqld]这个条目下加`skip-grant-tables`, 保存退出后重启mysql
 - 点击“开始”->“运行”(快捷键Win+R)
 - 停止：输入 `net stop mysql`
 - 启动：输入 `net start mysql`
 - cmd里面输入`mysql -u root -p`就可以不用密码登录了，出现password：的时候直接回车可以进入
 - 如不成功，进入mysql 数据库:  `usemysql> mysql;`
-  - 给root用户设置新密码，在命令行输入：`mysql>（版本5.7）update user set authentication_string=password('123qwe') where user='root' and Host = 'localhost';`
+  - 给root用户设置新密码，在命令行输入：`mysql>update mysql.userset authentication_string=password('123qwe') where user='root' and Host='localhost';  #版本5.7`   
   - 刷新数据库  `mysql> flush privileges;`
   - 退出mysql： `mysql> quit`
 - 再修改一下my.ini这个文件，把加入的"skip-grant-tables"这行删除，保存退出再重启mysql就可以了
 - 登录：`mysql -uroot -p123qwe`
 - ？？但此时操作似乎功能不完全，还要alter user… 
-  - `mysql> alter user 'root'@'localhost' identified by '123';`
-  - 或 `mysql> set password for 'root'@'localhost'=password('123');`
-  - 然后：`mysql>quit;`, 登录：`Mysql -uroot -p123` 就可以直接登录。
-  - 以后也可以直接在命令行输入  `Mysql -uroot -p`， 输入密码后进入
+  - `mysql> alter user 'root'@'localhost' identified by '123qwe';`
+  - 或 `mysql> set password for 'root'@'localhost'=password('123qwe');`
+  - 然后：`mysql>quit;`, 登录：`Mysql -u root -p123` 就可以直接登录。
+  - 以后也可以直接在命令行输入  `Mysql -u root -p`， 输入密码后进入
   
 [back to top](#top)
 
