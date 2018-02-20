@@ -2,7 +2,7 @@
 
 - [常用快捷键](#快捷键)
 - [1. 在控制台(Console)中获取DOM元素- $0 in console](#在控制台)
-- [2. Selector selecting](#快捷键)
+- [2. Selector selecting](#Selector)
 - [3. Edit any text on the page](#Edit)
 - [4. Filmstrip mode on the Network tab - capture screenshots during a page load](#Filmstrip)
 - [5. Snippet code](#Snippet)
@@ -30,14 +30,15 @@ Shift+鼠标点击|在颜色预览中，可在rgba,hsl和hexadecimal三种格式
 Ctrl+F, 在filter中输入GC|在Timeline的Summary中，查看Garbage collection
 ctrl+shift+p|command menu
 
-<h3 id="在控制台">1. 在控制台(Console)中获取DOM元素- $0 in console</h3>
+<h3 id="在控制台">1. 在控制台(Console)中获取DOM元素- $0 in console(command line API)</h3>
 
 gives you a reference to the currently selected DOM node in the Elements panel - DOM-style representation of the object
 
 - `$r` is a reference to the react component
-- $()—就是document.querySelector()原生方法的映射。功能嘛，就是获取并返回第一个与填写的CSS属性匹配的DOM元素，如$(‘div’)就会返回第一个出现在页面中的div元素。
-- $$()—就是document.querySelectorAll()原生方法的映射。功能嘛，就是获取并返回一个数组，数组中包含了所有与你填写的CSS属性匹配的DOM元素。
-- $0--$4—代表你在Chrome调试器中操作不同DOM元素的历史记录，且最多记录5次，故而只有$0-$4这五个变量。$0代表最近一次，依次类推。
+- `$(selector)` : returns the reference to the first DOM element with the specified CSS selector
+- `$$(selector)` : returns an array of elements that match the given CSS selector. This command is equivalent to calling `document.querySelectorAll()`，获取并返回一个数组。
+- `$0, $1, $2, $3, $4` — 代表你在Chrome调试器中操作不同DOM元素的历史记录，且最多记录5次，故而只有$0-$4这五个变量。$0代表最近一次，依次类推(先进先出); 即Elements 面板中最近选中的5个元素, 最后选择的是$0
+- https://developers.google.com/web/tools/chrome-devtools/console/command-line-reference
 
 [back to top](#top)
 
@@ -68,8 +69,8 @@ Chrome的工作空间，也是非常强大的，它可以直接编辑和保存�
 
 - F12打开Chrome调试器
 - 找到Sources栏，出现在左侧的控制面板，点击鼠标右键，选择Add Folder To Workspace。或者，直接将你整个工程文件夹，拖拽到调试器中。
-
-这样操作后，不管你打开哪个页面，都会出现刚才你操作的文件。为了更加有用，你可以将页面中用到的文件映射到相应的文件夹，允许在线编辑和简单的保存。
+  - 这样操作后，不管你打开哪个页面，都会出现刚才你操作的文件。为了更加有用，你可以将页面中用到的文件映射到相应的文件夹，允许在线编辑和简单的保存
+- 将console中执行的代码保存为文件，这样就可以设置点： 在console中输入代码的最后一行加上 `//@ sourceURL=filename.js`, 会在 Scripts 面板中有个叫 filename.js的文件, 然后就和外部js文件一样了，又可以断点调试了（可以再调试面板中CTRL+O，输入文件名即可）
 
 [back to top](#top)
 
