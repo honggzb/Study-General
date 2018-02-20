@@ -1,10 +1,10 @@
 ## [性能调试memory分析](#top)
 
-- 1. Find out how much memory your page is currently using with the Chrome Task Manager
-- 2. Visualize memory usage over time with Timeline recordings
+- [1. Find out how much memory your page is currently using with the Chrome Task Manager](#Find)
+- [2. Visualize memory usage over time with Timeline recordings](#Visualize)
 - 3. Identify detached DOM trees (a common cause of memory leaks) with Heap Snapshots
 - 4. Find out when new memory is being allocated in your JS heap with Allocation Timeline recordings
-- 5. example
+- [5. example](#example)
 
 Memory issue: 
 
@@ -43,7 +43,9 @@ function grow() {
 document.getElementById('grow').addEventListener('click', grow);
 ```
 
-<h2 id="Visualize">3. example</h2>
+[back to top](#top)
+
+<h2 id="example">3. example</h2>
 
 Things I’ve learned here:
 
@@ -59,6 +61,7 @@ Things I’ve learned here:
 - Site data is all empty, clearing does nothing
 - Frames has reference to every image I’ve loaded so far?
 
+[back to top](#top)
 
 > Reference
 > - [Fix Memory Problems](https://developers.google.com/web/tools/chrome-devtools/memory-problems/)
