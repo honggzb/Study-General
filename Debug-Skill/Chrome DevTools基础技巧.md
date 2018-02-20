@@ -1,6 +1,6 @@
 [Chrome DevTools new features](#top)
 
-- [快捷键](#快捷键)
+- [常用快捷键](#快捷键)
 - [1. 在控制台(Console)中获取DOM元素- $0 in console](#在控制台)
 - [2. Selector selecting](#快捷键)
 - [3. Edit any text on the page](#Edit)
@@ -10,12 +10,19 @@
 - [7. Search, Find and Edit with Chrome DevTools](#Search)
 - [8. 其他](#其他)
 
-<h3 id="快捷键">快捷键</h3>
+<h3 id="快捷键">常用快捷键</h3>
+
+快捷键|功能|面板
+---|---|---
+Ctrl+P|快速查找文件|Developer tools
+Ctrl+Shift+F|全局查找： 在源代码中搜索(该搜索也支持正则表达式)，在通过js钩子查找代码位置时很有用|Developer tools
+Ctrl+Shift+O(或Ctrl+P -> 键入@)|查找函数定义|Source panel
+ctrl+O|查找文件|Source panel
+
+![](https://i.imgur.com/CELwvy3.png)
 
 快捷键|功能
 ---|---
-Ctrl+P|快速查找文件
-Ctrl+Shift+F|在源代码中搜索(该搜索也支持正则表达式)
 Ctrl+G -> :num|跳到指定行
 鼠标点击+Ctrl|多光标
 Ctrl+D|选中下一个匹配项
