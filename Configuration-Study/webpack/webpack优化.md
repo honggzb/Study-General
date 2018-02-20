@@ -292,3 +292,4 @@ module.exports = {
 > - [webpack之前端性能优化（史上最全，不断更新中。。。）](https://www.cnblogs.com/ssh-007/p/7944491.html)
 > - [彻底解决Webpack打包性能问题](https://zhuanlan.zhihu.com/p/21748318)
 > - [webpack学习笔记—优化缓存、合并、懒加载等](https://www.cnblogs.com/yangmin01/p/6290595.html)
+> - [Make use of long-term caching](https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching)
