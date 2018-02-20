@@ -1,4 +1,4 @@
-[node+express创建服务器](#top)
+## [node+express创建服务器](#top)
 
 - [1. 初始化环境](#初始化环境)
   - 设置自动编译typescript
@@ -7,6 +7,7 @@
 - [3. Node+Express](#Node+Express)
 - [4. 配置angular使用express服务器](#配置angular使用express服务器)
 - [5. webSocket服务器](#webSocket服务器)
+- [6. MYSQL+NODE/EXPRESS](#MYSQL)
 
 <h2 id="初始化环境">1. 初始化环境</h2>
 
@@ -193,6 +194,54 @@ setInterval(() => {
     })
   }
 }, 2000);
+```
+
+[back to top](#top)
+
+<h2 id="MYSQL">6. MYSQL+NODE/EXPRESS</h2>
+
+```javascript
+var express = require('express');
+var routes = require('./routes');
+var http = require('http');
+var path = require('path');
+var mysql = require('mysql'), myConnection = require('express-myconnection');
+var app = express();
+// all environments
+app.set('port', process.env.PORT || 3000);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.use(express.logger('dev'));
+// It has to be registered somewhere before app.router
+app.use(myConnection(mysql, {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
+    database: process.env.DB_DATABASE
+}, 'single'));
+app.use(app.router);
+app.get('/', routes.index);
+http.createServer(app).listen(app.get('port'), function () {
+    console.log('Express server listening on port ' + app.get('port'));
+});
+```
+
+express-myconnection extends request object with the getConection(callback) function this way the connection instance can be accessed anywhere in routers during the request/response life cycle:
+
+```javascript
+exports.index = function (req, res, next) {
+    req.getConnection(function (err, connection) {
+        connection.query('SELECT ? AS RESULT', ['Hello World!'], function (err, results) {
+            if (err) return next(err);
+
+            res.render('index', {
+                title: 'express-myconnection',
+                result: results[0].RESULT
+            });
+        });
+    });
+};
 ```
 
 [back to top](#top)
