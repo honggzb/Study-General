@@ -47,6 +47,8 @@
 │   ├──  Theory
 │   │     ├── reflow-repaint.md
 │   │     └── 
+│   │     
+│   ├── BootstrapCarouselWithAnimation.html               #使用bootstrap和animation.css制作带动画的幻灯片
 │   ├── CSS属性选择器驱动的过滤搜索技术(autocomplete).md
 │   ├── js控制css伪元素内容（before，after）.md
 │   ├── responsiveTable.md
