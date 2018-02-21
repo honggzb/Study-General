@@ -9,7 +9,7 @@
 - [7. 所有 js 文件中搜索&查找 js 函数定义](#文件中搜索)
 - [8. command line api](#command-line-api)  --**非常有用  `$0等`**
 - [9. Edit Mode: Edit any text on the page](#Edit-Mode)  --**非常有用  `document.designMode = "on"`**
-- [10. console中执行的代码可断点](#console中执行的代码可断点)
+- [10. 使用”3步快照”技术来找出JavaScript内存泄露](#console中执行的代码可断点)
 - [11. Run snippets of code from any page](#snippets)
 - [12. paint profiler in Chrome DevTools](#paint-profiler)
 - [13. Layers Panel](#Layers-Panel)
@@ -79,9 +79,16 @@ Pretty print 左侧的按钮是开启 js 抛异常时中断的开关, 有两种�
 
 - type `document.designMode = "on"` in console to turn on design mode, then click and type any text on the page
 
-<h3 id="console中执行的代码可断点">10. console中执行的代码可断点</h3>
+<h3 id="console中执行的代码可断点">10. 使用”3步快照”技术来找出JavaScript内存泄露 </h3>
 
-在 console 中输入代码的最后一行加上 //@ sourceURL=filename.js, 会在 Scripts 面板中有个叫 filename.js 的文件, 然后他就和外部 js 文件一样了
+- 1) 打开开发者工具并且切换到Profiles面板里
+- 2) 在页面执行一个能引起内存泄露的操作
+- 3) 点击“Take Snapshot”来执行一个堆快照
+- 4) 重复执行步骤 2 和步骤 3 三次
+- 5) 选择最后一个堆快照
+- 6) 将过滤器从“所有对象”改为“快照 1 和 2 之间的对象”
+
+![](https://i.imgur.com/ntPwARD.jpg)
 
 <h3 id="snippets">11. Run snippets of code from any page</h3>
 
@@ -315,8 +322,6 @@ Chrome lets you pause when a DOM element changes. You can even monitor its attri
 will generate a url, copy it to browser url, you will see the backend node js file and debug it
 
 [back to top](#top)
-
-
 
 > Reference
 
