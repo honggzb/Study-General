@@ -16,10 +16,8 @@
 ---|---|---
 Ctrl+P|快速查找文件|Developer tools
 Ctrl+Shift+F|全局查找： 在源代码中搜索(该搜索也支持正则表达式)，在通过js钩子查找代码位置时很有用|Developer tools
-Ctrl+Shift+O(或Ctrl+P -> 键入@)|查找函数定义|Source panel
+Ctrl+Shift+O(或Ctrl+P -> 键入@)|查找函数定义<br>![](https://i.imgur.com/CELwvy3.png)|Source panel
 ctrl+O|查找文件|Source panel
-
-![](https://i.imgur.com/CELwvy3.png)
 
 快捷键|功能
 ---|---
