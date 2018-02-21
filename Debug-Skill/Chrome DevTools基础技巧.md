@@ -6,7 +6,7 @@
 - [3. Edit any text on the page](#Edit)
 - [4. Filmstrip mode on the Network tab - capture screenshots during a page load](#Filmstrip)
 - [5. Snippet code](#Snippet)
-- [6. 利用Chrome的工作空间，编辑本地文件](#利用Chrome的工作空间)
+- [6. 利用Chrome的工作空间，编辑本地文件-在console保存文件，设置断点](#利用Chrome的工作空间)
 - [7. Search, Find and Edit with Chrome DevTools](#Search)
 - [8. 其他](#其他)
 
@@ -59,7 +59,7 @@ gives you a reference to the currently selected DOM node in the Elements panel -
 
 [back to top](#top)
 
-<h3 id="利用Chrome的工作空间">6. 利用Chrome的工作空间，编辑本地文件</h3>
+<h3 id="利用Chrome的工作空间">6. 6. 利用Chrome的工作空间，编辑本地文件-在console保存文件，设置断点</h3>
 
 Chrome的工作空间，也是非常强大的，它可以直接编辑和保存你的本地文件，无需额外的操作，例如复制、粘贴。怎么配置它呢？
 
