@@ -29,6 +29,8 @@ Ctrl+D|选中下一个匹配项
 Shift+鼠标点击|在颜色预览中，可在rgba,hsl和hexadecimal三种格式中，来回切换
 Ctrl+F, 在filter中输入GC|在Timeline的Summary中，查看Garbage collection
 ctrl+shift+p|command menu
+在Sources编辑框中,CTRL+鼠标点击|多行插入符编辑内容
+在Sources编辑框中,按下Ctrl+U| 撤销编辑，快速输入，快速删除
 
 <h3 id="在控制台">1. 在控制台(Console)中获取DOM元素- $0 in console(command line API)</h3>
 
