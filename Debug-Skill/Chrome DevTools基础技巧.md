@@ -20,7 +20,8 @@ Ctrl+Shift+O(或Ctrl+P -> 键入@)|查找函数定义<br>![](https://i.imgur.com
 Ctrl+Shift+F|全局查找： 在源代码中搜索(该搜索也支持正则表达式)，在通过js钩子查找代码位置时很有用|Developer tools
 ---|---|---
 Ctrl+G -> :num|跳到指定行|Sources编辑框
-Ctrl+D|选中下一个匹配项|Sources编辑框
+Ctrl+D|**多列内容选择&匹配相同选项**<br>多列内容选择：按住Alt键，当鼠标箭头变为“+”号后，点击鼠标<br>
+匹配相同选项：选中需要匹配的元素，快捷键Ctrl+D（Cmd + D for mac）|Sources编辑框
 Shift+鼠标点击|在颜色预览中，可在rgba,hsl和hexadecimal三种格式中，来回切换|css
 Ctrl+F, 在filter中输入GC|在Timeline的Summary中，查看Garbage collection|
 在Sources编辑框中,CTRL+鼠标点击|多行插入符编辑内容|Sources编辑框
