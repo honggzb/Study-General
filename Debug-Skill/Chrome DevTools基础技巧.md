@@ -14,11 +14,11 @@
 
 快捷键|功能|面板
 ---|---|---
-Ctrl+P|快速查找文件|Developer tools
 ctrl+shift+p|command menu|Developer tools
-Ctrl+Shift+F|全局查找： 在源代码中搜索(该搜索也支持正则表达式)，在通过js钩子查找代码位置时很有用|Developer tools
+Ctrl+P/ctrl+O|快速查找文件|Developer tools
 Ctrl+Shift+O(或Ctrl+P -> 键入@)|查找函数定义<br>![](https://i.imgur.com/CELwvy3.png)|Source panel
-ctrl+O|查找文件|Source panel
+Ctrl+Shift+F|全局查找： 在源代码中搜索(该搜索也支持正则表达式)，在通过js钩子查找代码位置时很有用|Developer tools
+---|---|---
 Ctrl+G -> :num|跳到指定行|Sources编辑框
 Ctrl+D|选中下一个匹配项|Sources编辑框
 Shift+鼠标点击|在颜色预览中，可在rgba,hsl和hexadecimal三种格式中，来回切换|css
