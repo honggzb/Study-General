@@ -8,7 +8,8 @@
 - [5. Snippet code](#Snippet)
 - [6. 利用Chrome的工作空间，编辑本地文件-在console保存文件，设置断点](#利用Chrome的工作空间)
 - [7. Search, Find and Edit with Chrome DevTools](#Search)
-- [8. 其他](#其他)
+- [8. 截图: 节点截图/截全屏](#截图)
+- [9. 其他](#其他)
 
 <h3 id="快捷键">常用快捷键</h3>
 
@@ -88,7 +89,25 @@ http://developer.telerik.com/featured/16-ways-to-search-find-and-edit-with-chrom
 
 [back to top](#top)
 
-<h3 id="其他">8. 其他</h3>
+<h3 id="截图">8. 截图: 节点截图/截全屏</h3>
+
+**8.1 节点截屏**
+
+- 在element panel选中任意元素节点
+- 使用快捷键 Ctrl+Shift+p (Windows) 或 Cmd + Shift + p (Mac), 点击Capture node screenshot, 图片会自动下载
+
+![](https://i.imgur.com/NSz82qm.png)
+
+**8.2 截全屏**
+
+- 方法1： 使用快捷键 Ctrl+Shift+p (Windows) 或 Cmd + Shift + p (Mac), 点击Capture full size screenshot, 图片会自动下载
+- 方法2：
+
+![](https://i.imgur.com/nRd08An.png)
+
+[back to top](#top)
+
+<h3 id="其他">9. 其他</h3>
 
 new console
 - quick source
