@@ -1,5 +1,7 @@
 ## Angular 2,4 + google map
 
+### Basic setup
+
 - [Angular Google Maps (AGM)](https://angular-maps.com/):   angular 4.0x only, `npm install @agm/core --save`
 - [snazzy-info-window](https://github.com/atmist/snazzy-info-window): `npm install @agm/snazzy-info-window snazzy-info-window`, custom info window that are styleable via CSS or Angular inputs
 - [Get Latitude and Longitude](https://www.latlong.net/)
@@ -42,7 +44,7 @@ export class AppComponent {
 agm-map {  height: 300px; }   //CSS styling is required!
 ```
 
-**[Function and event](https://stackblitz.com/edit/angular-google-maps-demo)**
+### [Function and event](https://stackblitz.com/edit/angular-google-maps-demo)
 
 ```javascript
 //xxx.component.html
@@ -113,7 +115,7 @@ interface marker {
 }
 ```
 
-**Sample 1: Google map with autocomplete**
+### Sample 1: Google map with autocomplete
 
 http://brianflove.com/2016/10/18/angular-2-google-maps-places-autocomplete/
 
