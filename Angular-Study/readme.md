@@ -4,7 +4,8 @@
 │   │   ├── 案例之星级评价.md
 │   │   └── 
 │   │
-│   ├── Angular_CLI的使用.md           #useful
+│   ├── Angular 2,4 + google map      #Google map在angular>2中的应用
+│   ├── Angular_CLI的使用.md           #useful
 │   ├── Angular打造股票管理网站.md      #useful
 │   ├── Angular系列之变化检测.md
 │   ├── Angular之Pipe.md
