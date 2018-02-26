@@ -7,7 +7,12 @@
 - [Get Latitude and Longitude](https://www.latlong.net/)
 
 ```javascript
-//src/app/app.module.ts
+/* .angular-cli.json */
+"styles": [
+  "styles.css",
+  "../node_modules/snazzy-info-window/dist/snazzy-info-window.css"
+]
+/* src/app/app.module.ts */
 import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 @NgModule({
@@ -18,7 +23,7 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
     }),
     AgmSnazzyInfoWindowModule
   ],
-//xxx.Component.html
+/* xxx.Component.html */
 <agm-map [latitude]="lat" [longitude]="lng">
   <agm-marker [latitude]="lat" [longitude]="lng">
     // <agm-info-window>Information</agm-info-window>
@@ -30,24 +35,19 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
     </agm-snazzy-info-window>
   </agm-marker>
 </agm-map>
-//.angular-cli.json
-"styles": [
-  "styles.css",
-  "../node_modules/snazzy-info-window/dist/snazzy-info-window.css"
-]
-//xxx.Component.ts
+/* xxx.Component.ts */
 export class AppComponent {
   lat: number = 51.678418;
   lng: number = 7.809007;
 }
-//xxx.component.css
+/* xxx.Component.css */
 agm-map {  height: 300px; }   //CSS styling is required!
 ```
 
 ### [Function and event](https://stackblitz.com/edit/angular-google-maps-demo)
 
 ```javascript
-//xxx.component.html
+/* xxx.Component.html */
 <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom"
          [disableDefaultUI]="false"
          [zoomControl]="false"
@@ -69,14 +69,13 @@ agm-map {  height: 300px; }   //CSS styling is required!
       [editable]="true">
   </agm-circle>
 </agm-map>
-//xxx.component.ts
+/* xxx.Component.ts */
 export class AppComponent {
   title: string = 'My first AGM project';
   // initial center position for the map
   lat: number = 51.673858;
   lng: number = 7.815982;
   zoom: number = 8;
-  
   clickedMarker(label: string, index: number) {
       console.log(`clicked the marker: ${label || index}`)
     }
@@ -120,14 +119,14 @@ interface marker {
 http://brianflove.com/2016/10/18/angular-2-google-maps-places-autocomplete/
 
 ```javascript
-//xxx.component.html
+/* xxx.Component.html */
 <div class="form-group">
   <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
 </div>
 <agm-map [latitude]="lat" [longitude]="lng" [scrollwheel]="false" [zoom]="zoom">
     <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
 </agm-map>
-//xxx.component.ts
+/* xxx.Component.ts */
 import { Component, ElementRef, NgModule, NgZone, OnInit, ViewChild } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
 import { FormControl } from '@angular/forms';
