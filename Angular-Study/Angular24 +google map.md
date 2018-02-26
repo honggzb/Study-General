@@ -19,7 +19,8 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
   imports: [
     //...
     AgmCoreModule.forRoot({
-      apiKey: 'YOUR_KEY'
+      apiKey: 'YOUR_KEY',
+      libraries: ["places"]
     }),
     AgmSnazzyInfoWindowModule
   ],
