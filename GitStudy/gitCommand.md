@@ -51,12 +51,12 @@
 
 |命令组|意义|
 | :------------- | :------------- |
-git checkout -b [分支名称]	创建加切换到分支
-git branch [分支名称]	创建分支
-git checkout [分支名称]	切换到分支
-git branch	查看分支
-git merge [分支名称]	合并指定分支到当前分支
-git branch -d [分支名称]	删除指定分支(确保当前不在此分支上)
+git checkout -b [分支名称]	|创建加切换到分支|
+git branch [分支名称]	|创建分支|
+git checkout [分支名称]	|切换到分支|
+git branch	|查看分支|
+git merge [分支名称]	|合并指定分支到当前分支|
+git branch -d [分支名称]	|删除指定分支(确保当前不在此分支上)|
 
 **解决冲突**
 
