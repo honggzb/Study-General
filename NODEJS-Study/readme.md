@@ -2,7 +2,7 @@
 ├── NodeJS 学习
 │   ├──  设置
 │   │    ├──  nodeModule汇总.md
-│   │     └──  npm常用命令.md
+│   │    └──  npm常用命令.md
 │   │  
 │   ├──  调试
 │   │     ├── nodeJS调试.md
@@ -29,7 +29,7 @@
 ------------------------------------------------------------------------------------------
 
 一些tips和技巧 
-├── 命令行命令自定义               -- sample\1.basicModule\app.js(using yargs）
-├── 服务器端log，server side log  -- sample\4.webServer\server.js
+├── 自定义命令行命令                -- sample\1.basicModule\app.js(using yargs）
+├── 服务器端log，server side log    -- sample\4.webServer\server.js
 └──
 ```
