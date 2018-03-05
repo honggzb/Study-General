@@ -22,6 +22,6 @@
 ------------------------------------------------------------------------------------------
 
 一些tips和技巧 
-├── server side log  -- sample\4.webServer\server.js
+├── 服务器端log，server side log  -- sample\4.webServer\server.js
 └──
 ```
