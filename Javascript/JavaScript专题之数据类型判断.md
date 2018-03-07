@@ -1,4 +1,4 @@
-<h2 id="top">js数据类型判断</h2>
+<h2 id="top">JavaScript数据类型判断</h2>
 
 - [1. js六大数据类型](#data-types)
 - [2. 数据类型判断之typeof](#typeof)
@@ -7,7 +7,9 @@
   - [3.2 constructor](#constructor)
   - [3.3 特性判断数组](#isArray)
   - [3.4 Object.prototype.toString.call](#Object-prototype-toString-call)
-
+- [4. Object.prototype.toString()详解- 用于检测出常见的数据类型](#toString)
+- [5. 特殊对象类型判断](#特殊对象类型判断)
+- 
 <h3 id="data-types">1. js六大数据类型</h3>
 
 数据类型|说明
@@ -22,6 +24,16 @@ undefined|未定义，使用var声明变量但未对其初始化时，变量的�
 [back to top](#top)
 
 <h3 id="typeof">2. 数据类型判断之typeof</h3>
+
+typeof(数据类型)|返回值
+---|---
+typeof(number)|number
+typeof(string)|string
+typeof(Boolean)|boolean
+typeof(object)|object
+typeof(null)|object
+typeof(undefined)|undefined
+typeof(函数名)|function
 
 ```javascript
 var num = 3;
@@ -45,6 +57,10 @@ var a = null; console.log(typeof a); //object
 var a = document; console.log(typeof a); //object
 var a = []; console.log(a); //object
 var a = function(){}; console.log(typeof a) //function   除了可以判断数据类型还可以判断function类型
+var date = new Date();
+var error = new Error();
+console.log(typeof date); // object
+console.log(typeof error); // object
  ```
  
 [back to top](#top)
@@ -119,6 +135,85 @@ document.write(a.propertyIsEnumerable(1));
 Object.prototype.toString.call(value) == '[object Array]'
 Object.prototype.toString.call(value) == '[object Object]'   //判断是否为Object数组
 ```
+
+[back to top](#top)
+
+<h3 id="toString">4. Object.prototype.toString()详解</h3>
+
+- ES5 规范地址：https://es5.github.io/#x15.2.4.2
+- 可以识别至少14种类型
+
+```javascript
+// 以下是11种：
+var number = 1;          // [object Number]
+var string = '123';      // [object String]
+var boolean = true;      // [object Boolean]
+var und = undefined;     // [object Undefined], IE6中[object Object]
+var nul = null;          // [object Null], IE6中[object Object]
+var obj = {a: 1}         // [object Object]
+var array = [1, 2, 3];   // [object Array]
+var date = new Date();   // [object Date]
+var error = new Error(); // [object Error]
+var reg = /a/g;          // [object RegExp]
+var func = function a(){}; // [object Function]
+function checkType() {
+    for (var i = 0; i < arguments.length; i++) {
+        console.log(Object.prototype.toString.call(arguments[i]))
+    }
+}
+checkType(number, string, boolean, und, nul, obj, array, date, error, reg, func)
+console.log(Object.prototype.toString.call(Math)); // [object Math]
+console.log(Object.prototype.toString.call(JSON)); // [object JSON]
+/*通用类型判断函数 - 利用Object.prototype.toString()*/
+var class2type = {};
+// 生成class2type映射
+"Boolean Number String Function Array Date RegExp Object Error".split(" ").map(function(item, index) {
+    class2type["[object " + item + "]"] = item.toLowerCase();
+})
+function type(obj) {
+    if (obj == null) {
+        return obj + "";
+    }
+    //在IE6中，null和undefined会被 Object.prototype.toString 识别成 [object Object]
+    return typeof obj === "object" || typeof obj === "function" ? class2type[Object.prototype.toString.call(obj)] || "object" : typeof obj;
+}
+//应用，判断是否为函数和数组
+function isFunction(obj) {
+    return type(obj) === "function";
+}
+// jQuery v3.0 中已经完全采用了 Array.isArray
+var isArray = Array.isArray || function( obj ) {
+    return type(obj) === "array";
+}
+```
+
+[back to top](#top)
+
+<h3 id="特殊对象类型判断">5. 特殊对象类型判断</h3>
+
+- 在开发中更加复杂的判断，比如plainObject、空对象、Window对象、DOM元素等
+
+```javascript
+/* 2. jQuery提供了 isEmptyObject 方法来判断是否是空对象 */
+function isEmptyObject(obj) {   //就是判断是否有属性，for 循环一旦执行，就说明有属性，有属性就会返回 false
+        var name;
+        for (name in obj) {
+            return false;
+        }
+        return true;
+}
+/* 3. Window对象 */
+function isWindow( obj ) {
+    return !!(obj && obj === obj.window);
+}
+//或
+console.log(Object.prototype.toString.call(window));   //[object Window], 注意： 不同的浏览器返回值不一样，特别是低版本的browser
+/* 4. DOM元素 */
+isElement = function(obj) {
+    return !!(obj && obj.nodeType === 1);
+};
+```
+
 [back to top](#top)
 
 > References
@@ -129,3 +224,4 @@ Object.prototype.toString.call(value) == '[object Object]'   //判断是否为Ob
 - http://www.2fz1.com/?p=277
 - http://msdn.microsoft.com/zh-tw/library/adebfyya.aspx
 - http://blog.sina.com.cn/s/blog_532751d90100iv1r.html
+- [JavaScript专题系列](https://github.com/mqyqingfeng/Blog)
