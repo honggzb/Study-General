@@ -3,7 +3,7 @@
     <tr class="d-block">
       <td class="d-block comment-body markdown-body  js-comment-body">
           <blockquote>
-<p>VSCode 前端开发常用插件列表（字母升序），旨在方便日常使用。如有不全欢迎补充···</p>
+<p>VSCode 前端开发常用插件列表（字母升序），旨在方便日常使用。</p>
 </blockquote>
 <h2>通用插件</h2>
 <ul>
@@ -50,13 +50,10 @@
 <li><a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf" rel="nofollow">Markdown PDF</a>：Markdown 转 PDF</li>
 <li><a href="">...</a></li>
 </ul>
-<p>作者[煦涵]</p>
-<p>2017年11月30日</p>
-<div>
-    <div>下面是「FED实验室」的微信公众号二维码，欢迎扫描关注：</div>
-    <a href="https://cloud.githubusercontent.com/assets/5378965/26525703/ba3707ac-4392-11e7-8a99-db27837f9c3c.jpg" target="_blank"><img src="https://cloud.githubusercontent.com/assets/5378965/26525703/ba3707ac-4392-11e7-8a99-db27837f9c3c.jpg" alt="关注FED实验室" title="关注FED实验室" style="max-width:100%;"></a>
-</div>
       </td>
     </tr>
   </tbody>
 </table>
+
+
+https://github.com/zuojj/fedlab/issues/18
