@@ -30,6 +30,19 @@ Array.prototype.unique1 = function(){
   }
   return newArr;
 };
+//优化: 排序后去重- 先将要去重的数组使用sort方法排序后，相同的值就会被排在一起，然后就可以只判断当前元素与上一个元素是否相同，相同就说明重复，不相同就添加进newArr
+Array.prototype.unique1 = function(){
+  var newArr = [];
+  var sortedArray=[this[0]].concat().sort();
+  var seen;
+  for(var i=0,len=sortedArray.length;i<len;i++){
+			if(!i || seen !== sortedArray[i]){   // 如果是第一个元素或者相邻的元素不相同
+					 newArr.push(sortedArray[i]);
+			}
+      newArr = sortedArray[i];
+	  }
+  return newArr;
+};
 ```
 
 [back to top](#top)
@@ -55,7 +68,7 @@ Array.prototype.unique2 = function(){
 
 [back to top](#top)
 
-<h3 id="方式三">方式三: [推荐]利用json对象是否有属性值</h3>
+<h3 id="方式三">方式三: 利用json对象是否有属性值[推荐]</h3>
 
 1. 创建一个新的数组存放结果
 2. 创建一个空对象json
@@ -145,10 +158,17 @@ Array.prototype.unique5 = function(){
 <h3 id="方式六">方式六: 利用ES5的filter和map</h3>
 
 ```javascript
+//ES5提供了filter方法，我们可以用来简化外层循环
 //不兼容IE7
 Array.prototype.unique6 = function(){
 	return this.filter(function(el, index, arr) { 
-		return index == arr.indexOf(el); 
+		return index == arr.indexOf(el);
+	}); 	
+}
+//优化:  排序去重的方法：
+Array.prototype.unique6 = function(){
+	return this.concat().sort().filter(function(el, index, arr) { 
+		return !index || el !== arr[index - 1]
 	}); 	
 }
 //兼容IE7
@@ -174,3 +194,5 @@ Array.prototype.unique7 = function(){
 - [如何高效率去掉js数组中的重复项](http://www.jb51.net/article/82293.htm)
 - [JavaScript删除数组重复元素的5个高效算法](http://www.cnblogs.com/Allen-node/p/5511507.html)
 - [详解JavaScript数组和字符串中去除重复值的方法](http://www.jb51.net/article/80600.htm)
+
+
