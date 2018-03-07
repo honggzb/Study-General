@@ -8,7 +8,7 @@
   - [3.3 特性判断数组](#isArray)
   - [3.4 Object.prototype.toString.call](#Object-prototype-toString-call)
 - [4. Object.prototype.toString()详解- 用于检测出常见的数据类型](#toString)
-- [5. 特殊对象类型判断](#特殊对象类型判断)
+- [5. 特殊对象类型判断- 空对象、DOM元素等](#特殊对象类型判断)
 - 
 <h3 id="data-types">1. js六大数据类型</h3>
 
