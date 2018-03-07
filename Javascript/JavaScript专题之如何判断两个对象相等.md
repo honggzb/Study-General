@@ -191,4 +191,5 @@ if (!JSON.stringify) {
 [back to top](#top)
 
 - [JavaScript比较两个对象是否相等几个例子](https://yq.aliyun.com/ziliao/52338)
+- [JavaScript专题之如何判断两个对象相等](https://github.com/mqyqingfeng/Blog/issues/41)
 - https://segmentfault.com/q/1010000003719677
