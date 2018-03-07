@@ -2,7 +2,7 @@
 
 - [方式一: 常规模式](#方式一)
 - [方式二: 使用了默认Js数组sort默认排序，是按ASCII进行排序](#方式二)
-- [方式三: [推荐]利用json对象是否有属性值](#方式三)
+- [方式三: **推荐**利用json对象是否有属性值](#方式三)
 - [方式四: 利用indexOf](#方式四)
 - [方式五: 对象键值对法](#方式五)
 - [方式六: 利用ES5的filter和map](#方式六)
@@ -174,4 +174,3 @@ Array.prototype.unique7 = function(){
 - [如何高效率去掉js数组中的重复项](http://www.jb51.net/article/82293.htm)
 - [JavaScript删除数组重复元素的5个高效算法](http://www.cnblogs.com/Allen-node/p/5511507.html)
 - [详解JavaScript数组和字符串中去除重复值的方法](http://www.jb51.net/article/80600.htm)
-
