@@ -234,5 +234,5 @@ Set|`[1, "1", null, undefined, String, String, /a/, /a/, NaN]`|对象不去重 N
 - [如何高效率去掉js数组中的重复项](http://www.jb51.net/article/82293.htm)
 - [JavaScript删除数组重复元素的5个高效算法](http://www.cnblogs.com/Allen-node/p/5511507.html)
 - [详解JavaScript数组和字符串中去除重复值的方法](http://www.jb51.net/article/80600.htm)
-
+- [JavaScript专题之数组去重](https://github.com/mqyqingfeng/Blog/issues/27)
 
