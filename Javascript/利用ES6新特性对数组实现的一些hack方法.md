@@ -18,6 +18,8 @@
 let arr = [1, 2, 2, 3];
 let set = new Set(arr);
 let newArr = Array.from(set); // Array.from方法可以将 Set 结构转为数组。[1, 2, 3]
+//更便捷的方法
+[...new Set([1,2,2,3,1,'a',3,'a',3])]
 ```
 
 [back to top](#top)
