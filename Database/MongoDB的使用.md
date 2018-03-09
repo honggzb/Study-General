@@ -27,7 +27,7 @@ C:\mongodb\bin\mongo.exe
 
 配置文件mongo.conf(根目录)示例
 
-```
+```shell
 dbpath=D:\Mongo\data  #数据库路径  
 logpath=D:\Mongo\logs\mongo.log   #日志输出文件路径 
 logappend=true   #错误日志采用追加模式 
