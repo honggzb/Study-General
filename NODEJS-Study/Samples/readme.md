@@ -1,4 +1,4 @@
-[BookStore - Angular 2 Complete E-Commerce App Course - Java,Spring,MySQL](#top)
+[index](#top)
 
 - [1. some skill](#modules)
   - nodemon: monitor script during development of nodejs app, `npm i nodemon -g`
