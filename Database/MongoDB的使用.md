@@ -5,7 +5,7 @@
    - [update](#update)
    - [type操作符](#type操作符)
 - [mongoose to connect mongodb](#mongoose-to-connect-mongodb)
-- [MongoDB可视化工具RoboMongo](#MongoDB可视化工具RoboMongo)
+- [MongoDB可视化工具](#MongoDB可视化工具)
 
 ## configuration
 
@@ -201,7 +201,7 @@ var db = mongoose.connection;
 moongoose.connect('mongodb://<dbuser>:<dbpassword>@ds061731.mongolab.com:61731/mongocrud');
 ```
 
-## MongoDB可视化工具RoboMongo
+## MongoDB可视化工具
 
 - ROboMongo
 - mongoVUE
