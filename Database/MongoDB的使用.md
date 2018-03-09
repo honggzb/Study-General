@@ -3,7 +3,7 @@
 - [细说增删查改](#细说增删查改)
    - [Find](#Find)
    - [update](#update)
-   - [$type操作符](#$type操作符)
+   - [type操作符](#type操作符)
 - [mongoose to connect mongodb](#mongoose-to-connect-mongodb)
 - [MongoDB可视化工具RoboMongo](#MongoDB可视化工具RoboMongo)
 
@@ -164,7 +164,7 @@ MongoDB Enterprise > db.user.update({"name": "jacddak"}, {$inc:{"age", 10}}, tru
 MongoDB Enterprise > db.user.update({"name": "jacddak"}, {$inc:{"age", 10}}, true, true)
 ```
 
-### $type操作符
+### type操作符
 
 ```shell
 MongoDB Enterprise > db.user.find({"title" : {$type : 2}})
