@@ -1,3 +1,5 @@
+## configuration
+
 
 ```shell
 # 1. Start MongoDB - need to specify an alternate path for data files 
@@ -14,7 +16,7 @@ net stop MongoDB
 C:\mongodb\bin\mongo.exe
 ```
 
-## Component Set Binaries
+### Component Set Binaries
 
 命令|功能
 ---|---
@@ -25,7 +27,7 @@ MonitoringTools|	mongostat.exe, mongotop.exe
 ImportExportTools|	mongodump.exe, mongorestore.exe, mongoexport.exe, mongoimport.exe
 MiscellaneousTools|	bsondump.exe, mongofiles.exe, mongooplog.exe, mongoperf.exe
 
-## Configure a Windows Service for MongoDB
+### Configure a Windows Service for MongoDB
 
 ```shell
 "C:\mongodb\bin\mongod.exe" --config "C:\mongodb\mongod.cfg" --install
