@@ -1,4 +1,4 @@
-[index](#top)
+[BookStore - Angular 2 Complete E-Commerce App Course - Java,Spring,MySQL](#top)
 
 - [1. some skill](#modules)
   - nodemon: monitor script during development of nodejs app, `npm i nodemon -g`
@@ -138,10 +138,10 @@ Inside of callback
   <tr><td>**if else**</td>
     <td>
     `{{#if author}}`<br/>
-    `<h1>{{firstName}} {{lastName}}</h1>`<br/>
-  `{{else}}`<br/>
-    `<h1>Unknown Author</h1>`<br/>
-  `{{/if}}`
+    `<h1>`{{firstName}} {{lastName}}`</h1>`<br/>
+  {{else}}<br/>
+    `<h1>`Unknown Author`</h1>`<br/>
+  {{/if}}
   </td>
   </tr>
   <tr><td>**unless**</td>
