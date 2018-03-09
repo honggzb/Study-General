@@ -3,6 +3,7 @@
 - [细说增删查改](#细说增删查改)
    - [Find](#Find)
    - [update](#update)
+   - [$type操作符](#$type操作符)
 - [mongoose to connect mongodb](#mongoose-to-connect-mongodb)
 
 ## configuration
@@ -93,6 +94,18 @@ MongoDB Enterprise > db.user.find({"likes": {$gt:50}, $or: [{"by": "菜鸟"},{"t
 MongoDB Enterprise > db.user.find({"name": /^j/, "name", /e$/})
 # <4> $where
 MongoDB Enterprise > db.user.find({$where:function(){return this.name=='jack'}})
+# <4> limit()和skip()   
+# 只显示两条
+MongoDB Enterprise > db.user.find({"title":"MongoDB"}).limit(2) 
+# 只显示1条, 跳过的2条记录(既显示第二条文档数据)
+MongoDB Enterprise > db.user.find({"title":"MongoDB"}).limit(1).skip(1)
+# 显示从 10 条记录后 100 条记录
+MongoDB Enterprise > db.user.find({}).limit(100).skip(10)
+# 第一个 {} 放 where 条件，为空表示返回集合中所有文档。
+# 第二个 {} 指定那些列显示和不显示 （0表示不显示 1表示显示)。
+MongoDB Enterprise > db.user.find({},{"title":"MongoDB",_id:0}).limit(2)
+# - 同时使用sort,skip,limit，无论位置先后，最先执行顺序 sort再skip再limit
+# - skip和limit方法只适合小数据量分页，如果是百万级效率就会非常低，因为skip方法是一条条数据数过去的，建议使用where
 ```
 
 MongoDB 与 RDBMS Where 语句比较
@@ -138,6 +151,34 @@ MongoDB Enterprise > db.user.update({"name": "jacddak"}, {$inc:{"age", 10}}, tru
 # <3> 批量更新: 在update的第四个参数中设为true即可
 MongoDB Enterprise > db.user.update({"name": "jacddak"}, {$inc:{"age", 10}}, true, true)
 ```
+
+### $type操作符
+
+```shell
+MongoDB Enterprise > db.user.find({"title" : {$type : 2}})
+```
+
+类型|数字
+---|---
+Double|1	
+String|	2
+Object|	3
+Array|	4
+Binary data|	5 
+Undefined|	6, 已废弃。
+Object id|	7	 
+Boolean|	8	 
+Date|	9	 
+Null|	10	 
+Regular Expression|	11	 
+JavaScript|	13	 
+Symbol|	14	 
+JavaScript (with scope)|	15	 
+32-bit integer|	16	 
+Timestamp|	17	 |
+64-bit integer|	18	 
+Min key	|255,	Query with -1.
+Max key	|127	 
 
 ## mongoose to connect mongodb
 
