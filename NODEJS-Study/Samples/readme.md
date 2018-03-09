@@ -137,29 +137,29 @@ Inside of callback
   <tr><th>注入到模板中的函数</th><th>用法</th></tr>
   <tr><td>**if else**</td>
     <td>
-    `{{#if author}}`<br/>
-    `<h1>`{{firstName}} {{lastName}}`</h1>`<br/>
+    {{#if author}`<br/>
+    `<p>`{{firstName}} {{lastName}}`</p>`<br/>
   {{else}}<br/>
-    `<h1>`Unknown Author`</h1>`<br/>
+    `<p>`Unknown Author`</p>`<br/>
   {{/if}}
   </td>
   </tr>
   <tr><td>**unless**</td>
     <td>
-    `{{#unless license}}`<br/>
-    `<h3 class="warning">WARNING: This entry does not have a license!</h3>`<br/>
-  `{{/unless}}`
+    {{#unless license}}<br/>
+    `<p class="warning">`WARNING: This entry does not have a license!`</p>`<br/>
+  {{/unless}}
   </td>
   </tr>
   <tr><td>**each**<br>- 用相对路径的方式来获取上一层的上下文。（上下文概念跟js中的上下文差不多，比如在each passage代码块内，每一次循环上下文一次是`passage[0],passage[1]…`）<br>
 一些默认变量，`@first/@last` 当该对象为数组中第一个/最后一个时返回真值。如果数组成员为值而非对象，@index表示当前索引值，可以用@key或者this获取当前值<br>
 -用`as|xxx|`的形式给变量起别名，循环中通过别名可以引用父级变量值。当然也可以通过相对路径的方式引用父级变量。</td>
     <td>
-    `{{#each paragraphs}}`<br/>
-    `{{@../index}}:{{@index }:{{this}}</p>`<br/>
-  `{{else}}`<br/>
-    `<p class="empty">No content</p>`<br/>
-  `{{/each}}`<br/>
+    {{#each paragraphs}}<br/>
+    {{@../index}}:{{@index }:{{this}}</p><br/>
+  {{else}}<br/>
+    `<p class="empty">`No content`</p>`<br/>
+  {{/each}}`<br/>
   同时也可以用来遍历对象，这时@key表示属性名,this表示对应的值<br/>
   `{{#each object}}`<br/>
   `{{@key}}: {{this}}`<br/>
@@ -169,7 +169,7 @@ Inside of callback
 <tr><td>**with**<br>类似js中的with，<br>可以配合分页使用，限定作用域</td>
   <td>
   `{{#with author as |myAuthor}}`<br/>
-  `<h2>By {{myAuthor.firstName}} {{myAuthor.lastName}}</h2>`<br/>
+  `<p>`By {{myAuthor.firstName}} {{myAuthor.lastName}}`</p>`<br/>
 `{{else}}`<br/>
   `<p class="empty">No content</p>`<br/>
 `{{/with}}`
@@ -177,14 +177,14 @@ Inside of callback
 </tr>
 <tr><td>**lookup**<br>用于以下这种并列数组的情况，<br>可以按照索引来找兄弟变量对应的值</td>
   <td>
-  `<table>`<br>
+  `<1table>`<br>
     `{{#each users}}`<br>
-        `<tr data-id="{{id}}">`<br>
-            `<td>{{login}}</td>`<br>
-            `<td data-id="{{groupId}}">{{lookup ../infos @index}}</td>`<br>
-        `</tr>`<br>
+        `<1tr data-id="{{id}}">`<br>
+            `<1td>{{login}}</1td>`<br>
+            `<1td data-id="{{groupId}}">{{lookup ../infos @index}}</1td>`<br>
+        `</1tr>`<br>
     `{{/each}}`<br>
-`</table>`
+`</1table>`
 </td>
 </tr>
 </table>
