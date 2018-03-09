@@ -45,12 +45,12 @@ net stop MongoDB
 `show dbs`|显示数据库列表 
 `show collections`|显示当前数据库中的集合（类似关系数据库中的表） 
 `show users`|显示用户
- |
+---|---
  `db.foo.help()`|显示集合操作命令，同样有很多的命令，foo指的是当前数据库下，一个叫foo的集合，并非真正意义上的命令 
  `db.foo.find();`|查找所有, 对于当前数据库中的foo集合进行数据查找（由于没有条件，会列出所有数据） 
  `db.foo.find().pretty()`|同上，但格式化显示
  `db.foo.find({ a : 1 })`|对于当前数据库中的foo集合进行查找，条件是数据中有一个属性叫a，且a的值为1
-  |  
+---|---
 `db.createCollection('articles');`|
 `db.articles.insert({name:""});`|
 `db.articles.update({name:""},"$set:{description:""}});`|
