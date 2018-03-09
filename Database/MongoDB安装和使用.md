@@ -1,30 +1,29 @@
 
 ```shell
-# 1. Specify an alternate path for data files 
+# 1. Start MongoDB - need to specify an alternate path for data files 
 C:\mongodb\bin\mongod.exe --dbpath C:\MongoDB\data
-# for git bash
+# 1.1 for git bash
 C:\mongodb\bin\mongod.exe --dbpath C:/MongoDB/data   
-# If your path includes spaces, enclose the entire path in double quotes, for example:
+# 1.2  If your path includes spaces, enclose the entire path in double quotes, for example:
 C:\mongodb\bin\mongod.exe --dbpath "C:\MongoDB db data"
-##########################################################
-# 2.  Start MongoDB.
-C:\mongodb\bin\mongod.exe
-# or using window service  - for window
+# 1.3 or using window service  - for window
 net start MongoDB
 net stop MongoDB
 ##########################################################
-# 3. Connect to MongoDB
+# 2. Connect to MongoDB
 C:\mongodb\bin\mongo.exe
 ```
 
 ## Component Set Binaries
 
-- Server	mongod.exe
-- Router	mongos.exe
-- Client	mongo.exe
-- MonitoringTools	mongostat.exe, mongotop.exe
-- ImportExportTools	mongodump.exe, mongorestore.exe, mongoexport.exe, mongoimport.exe
-- MiscellaneousTools	bsondump.exe, mongofiles.exe, mongooplog.exe, mongoperf.exe
+命令|功能
+---|---
+Server|mongod.exe
+Router	|mongos.exe
+Client	|mongo.exe
+MonitoringTools|	mongostat.exe, mongotop.exe
+ImportExportTools|	mongodump.exe, mongorestore.exe, mongoexport.exe, mongoimport.exe
+MiscellaneousTools|	bsondump.exe, mongofiles.exe, mongooplog.exe, mongoperf.exe
 
 ## Configure a Windows Service for MongoDB
 
