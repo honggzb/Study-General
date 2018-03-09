@@ -84,18 +84,24 @@ https://stackoverflow.com/questions/39091735/port-4200-is-already-in-use-when-ru
 
 <h2 id="JavaScript">4. JavaScript heap out of memory</h2>
 
+**解决核心思路** - 运用v8引擎的旧属性: `--max_old_space_size` 来修改内存上线
+
 `node xxx.js --max_old_space_size=8192`
 
-Angular 4在`build --prod`的时候， 可能的原因有如下:
+**Webpack**
+
+使用局部/本地的webpack，而不是全局安装的webpack来打包。通过给nodejs添加“--max_old_space_size=8192”来扩大内存来解决内存溢出问题
+
+`set NODE_ENV=production && node --max_old_space_size=8192 node_modules/webpack/bin/webpack.js --config webpack.production.config.js`
+
+**Angular 4**在`build --prod`的时候， 可能的原因有如下:
 
 1. angular4 在编译的时候,对CPU和内存的需求比较大,当文件数量很多的时候,可能会出现内存不足的情况(有可能)
 2. 当代码出现大量大数据的循环或者死循环(sever阶段并没有出现溢出,这个概率应该不大)
 3. angular订阅的数据在 ngOnDestroy 阶段没有被销毁,造成大量数据占用内存(有可能)
 
-**解决核心思路** - 运用v8引擎的旧属性: `--max_old_space_size` 来修改内存上线
-
 ```shell
-# 修改目录:  my-project/node_modules/.bin  找到 ng.cmd 
+# 修改:  my-project/node_modules/.bin  找到 ng.cmd 
 @IF EXIST "%~dp0\node.exe" (
   "%~dp0\node.exe" --max_old_space_size=8192  "%~dp0\..\._@angular_cli@1.0.0@@angular\cli\bin\ng" %*
 ) ELSE (
@@ -103,7 +109,7 @@ Angular 4在`build --prod`的时候， 可能的原因有如下:
   @SET PATHEXT=%PATHEXT:;.JS;=;%
   node --max_old_space_size=8192  "%~dp0\..\._@angular_cli@1.0.0@@angular\cli\bin\ng" %*
 )
-# 修改目录: my-project/node_modules/.bin  找到 ngc.cmd 
+# 修改: my-project/node_modules/.bin  找到 ngc.cmd 
 @IF EXIST "%~dp0\node.exe" (
   "%~dp0\node.exe" --max_old_space_size=8192  "%~dp0\..\._@angular_compiler-cli@4.0.1@@angular\compiler-cli\src\main.js" %*
 ) ELSE (
