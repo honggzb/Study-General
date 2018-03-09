@@ -74,7 +74,12 @@ find()方法可以传入多个键(key)，每个键(key)以逗号隔开，即常�
 MongoDB Enterprise > db.user.find({"age": {$gt:22}})
 # <2>  And   ,    OR ,  In , NotIn
 #   "无关键字“, "$or", "$in", "$nin"
-MongoDB Enterprise > db.user.find({"address.province": {$in:["anhui","guangdong"]}})
+# And
+MongoDB Enterprise > db.user.find({"by":"菜鸟", "title":"MongoDB"}).pretty() 
+# Or
+MongoDB Enterprise > db.user.find($or: [{"by":"菜鸟", "title":"MongoDB"}]}).pretty()
+# AND 和 OR 联合使用
+MongoDB Enterprise > db.user.find({"likes": {$gt:50}, $or: [{"by": "菜鸟"},{"title": "MongoDB"}]}).pretty()
 # <3> 正则表达式
 MongoDB Enterprise > db.user.find({"name": /^j/, "name", /e$/})
 # <4> $where
