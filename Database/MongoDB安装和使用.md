@@ -62,6 +62,6 @@ net stop MongoDB
 var mongo = require("mongodb");
 var mongoose = require("mongoose");
 var db = mongoose.connection;
-moongoose.connect('mongodb://<dbuser>:<dbpassword>@ds061731.mongolab.com:61731/mongocrud
+moongoose.connect('mongodb://<dbuser>:<dbpassword>@ds061731.mongolab.com:61731/mongocrud');
 ```
 
