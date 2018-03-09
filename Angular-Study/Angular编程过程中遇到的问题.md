@@ -1,4 +1,4 @@
-**【编程过程中遇到的问题】**[**](#top)
+[**【编程过程中遇到的问题】**](#top)
 
 1. [No base href set](#no-base-href-set)
 2. [Can't bind to 'formGroup' since it isn't a known property of 'form'](#Cannot-bind-to-formGroup)
