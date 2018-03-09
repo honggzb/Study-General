@@ -5,6 +5,7 @@
    - [update](#update)
    - [$type操作符](#$type操作符)
 - [mongoose to connect mongodb](#mongoose-to-connect-mongodb)
+- [MongoDB可视化工具RoboMongo](#MongoDB可视化工具RoboMongo)
 
 ## configuration
 
@@ -22,6 +23,17 @@ net stop MongoDB
 ##########################################################
 # 2. Connect to MongoDB
 C:\mongodb\bin\mongo.exe
+```
+
+配置文件mongo.conf(根目录)示例
+
+```
+dbpath=D:\Mongo\data  #数据库路径  
+logpath=D:\Mongo\logs\mongo.log   #日志输出文件路径 
+logappend=true   #错误日志采用追加模式 
+journal=true  #启用日志文件，默认启用 
+quiet=true    #这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false  
+port=27017 
 ```
 
 ### Component Set Binaries
@@ -189,6 +201,11 @@ var db = mongoose.connection;
 moongoose.connect('mongodb://<dbuser>:<dbpassword>@ds061731.mongolab.com:61731/mongocrud');
 ```
 
+## MongoDB可视化工具RoboMongo
+
+
+
 > Reference
 - http://www.mongodb.org.cn/
 - http://www.runoob.com/mongodb/mongodb-tutorial.html
+- [8天学通MongoDB——第二天 细说增删查改](http://www.cnblogs.com/huangxincheng/archive/2012/02/19/2357846.html)
