@@ -137,29 +137,27 @@ Inside of callback
   <tr><th>注入到模板中的函数</th><th>用法</th></tr>
   <tr><td>**if else**</td>
     <td>
-    {{#if author}`<br/>
-    `<p>`{{firstName}} {{lastName}}`</p>`<br/>
-  {{else}}<br/>
-    `<p>`Unknown Author`</p>`<br/>
-  {{/if}}
+    `{{#if author}}`<br/>
+    `<1h1>{{firstName}} {{lastName}}<1/h1>`<br/>
+  `{{else}}`<br/>
+    `<1h1>Unknown Author</1h1>`<br/>
+  `{{/if}}`
   </td>
   </tr>
   <tr><td>**unless**</td>
     <td>
-    {{#unless license}}<br/>
-    `<p class="warning">`WARNING: This entry does not have a license!`</p>`<br/>
-  {{/unless}}
+    `{{#unless license}}`<br/>
+    `<1h3 class="warning">WARNING: This entry does not have a license!</1h3>`<br/>
+  `{{/unless}}`
   </td>
   </tr>
-  <tr><td>**each**<br>- 用相对路径的方式来获取上一层的上下文。（上下文概念跟js中的上下文差不多，比如在each passage代码块内，每一次循环上下文一次是`passage[0],passage[1]…`）<br>
-一些默认变量，`@first/@last` 当该对象为数组中第一个/最后一个时返回真值。如果数组成员为值而非对象，@index表示当前索引值，可以用@key或者this获取当前值<br>
--用`as|xxx|`的形式给变量起别名，循环中通过别名可以引用父级变量值。当然也可以通过相对路径的方式引用父级变量。</td>
+  <tr><td>**each**<br>- 用相对路径的方式来获取上一层的上下文。<br>（上下文概念跟js中的上下文差不多，比如在each passage代码块内，每一次循环上下文一次是`passage[0],passage[1]…`）<br>一些默认变量，`@first/@last` 当该对象为数组中第一个/最后一个时返回真值。<br>如果数组成员为值而非对象，@index表示当前索引值，可以用@key或者this获取当前值<br>- 用`as\xxx\`的形式给变量起别名，循环中通过别名可以引用父级变量值。<br>当然也可以通过相对路径的方式引用父级变量。</td>
     <td>
-    {{#each paragraphs}}<br/>
-    {{@../index}}:{{@index }:{{this}}</p><br/>
-  {{else}}<br/>
-    `<p class="empty">`No content`</p>`<br/>
-  {{/each}}`<br/>
+    `{{#each paragraphs}}`<br/>
+    `{{@../index}}:{{@index }:{{this}}</1p>`<br/>
+  `{{else}}`<br/>
+    `<1p class="empty">No content</1p>`<br/>
+  `{{/each}}`<br/>
   同时也可以用来遍历对象，这时@key表示属性名,this表示对应的值<br/>
   `{{#each object}}`<br/>
   `{{@key}}: {{this}}`<br/>
@@ -169,7 +167,7 @@ Inside of callback
 <tr><td>**with**<br>类似js中的with，<br>可以配合分页使用，限定作用域</td>
   <td>
   `{{#with author as |myAuthor}}`<br/>
-  `<p>`By {{myAuthor.firstName}} {{myAuthor.lastName}}`</p>`<br/>
+  `<1h2>By {{myAuthor.firstName}} {{myAuthor.lastName}}</1h2>`<br/>
 `{{else}}`<br/>
   `<p class="empty">No content</p>`<br/>
 `{{/with}}`
@@ -314,6 +312,7 @@ app.use((req,res,next) => {
   "test-watch": "nodemon --exec \"npm test\"",
   "start": "nodemon app"
 },
+
 //modify server.js - avoid twice listen by using supeertest in test case
 if(!module.parent) app.listen(3000);   //avoid twice listen in test case
 module.exports.app = app;   //for mocha test
