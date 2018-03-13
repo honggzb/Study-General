@@ -1,0 +1,2 @@
+- 判断 id 为 ele 的元素是否有内容：  `$("#ele").is(":empty");`
+- 判断 id 为 father 的节点下面是否有 span 标签： `$("#father").find("span").length==0`，则没有，否则，有
