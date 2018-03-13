@@ -1,4 +1,4 @@
-[Javascript前端复制功能实现](#top)
+[JavaScript专题之前端复制功能总结](#top)
 
   - [1. HTML5 Clipboard(Copy, cut, paste)Event事件](#Event)
   - [2. Clipboard API- clipboardData对象](#对象方法)
