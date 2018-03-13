@@ -13,7 +13,11 @@
       - 案例2： jquery的tooltip
   - [4. 其他library之Clipboard.js](#其他library)
 
-目前copy主流有四种方式：execCommand，HTML5 Clipboard API，Clipboard.js，ZeroClipboard
+-----
+
+**目前copy主流有四种方式：execCommand，HTML5 Clipboard API，Clipboard.js，ZeroClipboard**
+
+-----
 
 <h2 id="Event">1. HTML5 Clipboard(Copy, cut, paste)Event事件</h2>
 
