@@ -1,4 +1,4 @@
-[JavaScript专题之前端复制功能总结](#top)
+[Javascript前端复制功能实现](#top)
 
   - [1. HTML5 Clipboard(Copy, cut, paste)Event事件](#Event)
   - [2. Clipboard API- clipboardData对象](#对象方法)
@@ -13,11 +13,7 @@
       - 案例2： jquery的tooltip
   - [4. 其他library之Clipboard.js](#其他library)
 
------
-
-**目前copy主流有四种方式：execCommand，HTML5 Clipboard API，Clipboard.js，ZeroClipboard**
-
------
+目前copy主流有四种方式：execCommand，HTML5 Clipboard API，Clipboard.js，ZeroClipboard
 
 <h2 id="Event">1. HTML5 Clipboard(Copy, cut, paste)Event事件</h2>
 
@@ -608,7 +604,7 @@ function copy(copytargetid,copybtnid){
 
 [back to top](#top)
     
-<h2 id="应用案例"4. 其他library之Clipboard.js</h2>
+<h2 id="应用案例">4. 其他library之Clipboard.js</h2>
 
 - ZeroClipboard 就是常说的Flash法，通过加载一个Flash，让其访问系统剪贴板来绕过绝大多数系统的权限限制，然而体积稍微庞大些
 - Clipboard.js 近几年使用较多，体积相对小， Clipboard.js和execCommand兼容性相似，兼容chrome/ FF/ IE>9/ Safari新版，使用还比较方便
@@ -643,9 +639,6 @@ document.getElementById('markup-copy').addEventListener('click', function() {
 });
 </script>
 ```
-
-
-
 
 
 
@@ -708,6 +701,7 @@ cutTextareaBtn.addEventListener('click', function(event) {
 });
 </script>
 ```
+
 
 > Reference
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand
