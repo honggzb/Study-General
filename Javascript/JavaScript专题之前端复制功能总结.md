@@ -18,8 +18,12 @@
     - [5.2 Export HTML table to excel with text and images - JavaScript](#JavaScript)
     - [5.2 Export HTML table to excel with text and images - jquery](#jquery)
     - Reference: VBA- Convert The Image URLs To Actual Images
+    
+------
 
 目前copy主流有四种方式：execCommand，HTML5 Clipboard API，Clipboard.js，ZeroClipboard
+
+------
 
 <h2 id="Event">1. HTML5 Clipboard(Copy, cut, paste)Event事件</h2>
 
