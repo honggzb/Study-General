@@ -1,4 +1,4 @@
-## Export a div content To Excel
+### Export a div content To Excel
 
 ```javascript
 $("#btnExport").click(function(e) {
@@ -45,7 +45,7 @@ var ieClipboardEvent = function(clipboardEvent) {
 };
 ```
 
-Export HTML table to excel with text and images - jquery
+### Export HTML table to excel with text and images - jquery
 
 ```html
 <button id="myButtonControlID">Export Table data into Excel</button>
@@ -74,4 +74,40 @@ $("[id$=myButtonControlID]").click(function(e) {
 </script>
 ```
 
+> Reference: VBA- Convert The Image URLs To Actual Images
+
+1. Hold down the ALT + F11 keys to open the Microsoft Visual Basic for Applications window.
+2. Click Insert > Module, and paste the following code in the Module Window.
+3. press F5 to run
+
+```vb
+Sub URLPictureInsert()
+'Updateby Extendoffice 20161116
+    Dim Pshp As Shape
+    Dim xRg As Range
+    Dim xCol As Long
+    On Error Resume Next
+    Application.ScreenUpdating = False
+    Set Rng = ActiveSheet.Range("A2:A6")
+    For Each cell In Rng
+        filenam = cell
+        ActiveSheet.Pictures.Insert(filenam).Select
+        Set Pshp = Selection.ShapeRange.Item(1)
+        If Pshp Is Nothing Then GoTo lab
+        xCol = cell.Column + 1
+        Set xRg = Cells(cell.Row, xCol)
+        With Pshp
+            .LockAspectRatio = msoFalse
+            .Width = 100
+           .Height = 100
+            .Top = xRg.Top + (xRg.Height - .Height) / 2
+            .Left = xRg.Left + (xRg.Width - .Width) / 2
+        End With
+lab:
+    Set Pshp = Nothing
+    Range("A2").Select
+    Next
+    Application.ScreenUpdating = True
+End Sub
+```
 
