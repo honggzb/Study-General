@@ -1,6 +1,8 @@
 [Javascript前端复制功能实现](#top)
 
   - [1. HTML5 Clipboard(Copy, cut, paste)Event事件](#Event)
+    - [1.1 基础说明](#基础说明)
+    - [1.2 注意事项](#注意事项)
   - [2. Clipboard API- clipboardData对象](#对象方法)
     - [2.1 Clipboard API介绍](#API介绍)
     - [2.2 Clipboard API应用案例](#应用案例)
@@ -12,10 +14,16 @@
       - 案例1： Copy to clipboard without displaying input- 动态添加后删除
       - 案例2： jquery的tooltip
   - [4. 其他library之Clipboard.js](#其他library)
+  - [5. 复制输出到excel](#复制输出到excel)
+    - [5.2 Export HTML table to excel with text and images - JavaScript](#JavaScript)
+    - [5.2 Export HTML table to excel with text and images - jquery](#jquery)
+    - Reference: VBA- Convert The Image URLs To Actual Images
 
 目前copy主流有四种方式：execCommand，HTML5 Clipboard API，Clipboard.js，ZeroClipboard
 
 <h2 id="Event">1. HTML5 Clipboard(Copy, cut, paste)Event事件</h2>
+
+<h3 id="基础说明">1.1 基础说明</h3>
 
 - Clipboard Events
   - copy:在发生复制操作时触发
@@ -49,6 +57,14 @@ $(document).mouseup(focusHiddenArea);
     });
 });
 ```
+
+<h3 id="注意事项">1.2 注意事项</h3>
+
+1. 在copy、paste时候，先在页面添加一个可编辑div(hidden contenteditable div)，也可动态添加后删除, 并使其off screen或不可见
+  1. 该可编辑div不能使用`display: none;` ，会导致其内容无法被选中
+2. 将预拷贝的内容赋给该可编辑div，并选中该div
+3. 当执行copy事件时候，系统将该div的放到系统的剪切板（system clipboard）中
+4. 当执行paste事件时候，系统将剪切板（system clipboard）中内容粘贴到其他区域
 
 [back to top](#top)
 
@@ -136,6 +152,143 @@ var ieClipboardEvent = function(clipboardEvent) {
         }, 0);
     }
 };
+```
+
+**较为完整的示例**
+
+```html
+<style>
+/*使可编辑div不可见*/
+.hidden {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  display: block;
+  font-size: 1;
+  z-index: -1;
+  color: transparent;
+  background: transparent;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  resize: none;
+  outline: none;
+  -webkit-user-select: text;
+  user-select: text;
+  /* Because for user-select:none, Safari won't allow input */
+}
+/*使可编辑div off screen*/
+.hidden {
+  position: absolute;
+  left: -9999px;
+}
+</style>
+<!-- a hidden contenteditable div on the page just for copy and paste -->
+<div id="ie-clipboard-contenteditable" class="hidden" contenteditable="true" aria-hidden="true"></div>
+<input id="hidden-input" class="hidden" type="text" value="" aria-hidden="true" />
+<script>
+var isSafari = navigator.appVersion.search('Safari') != -1 && navigator.appVersion.search('Chrome') == -1 && navigator.appVersion.search('CrMo') == -1 && navigator.appVersion.search('CriOS') == -1;
+var isIe = (navigator.userAgent.toLowerCase().indexOf("msie") != -1 || navigator.userAgent.toLowerCase().indexOf("trident") != -1);
+//sample text for copying
+var textToCopy = 'Lucidchart: Diagrams Done Right';
+var htmlToCopy = '<div hiddenContent="This is a great place to put whatever you want">Lucidchart: Diagrams Done Right</div>';
+
+var ieClipboardDiv = $('#ie-clipboard-contenteditable');
+var hiddenInput = $("#hidden-input");
+
+var userInput = "";
+var hiddenInputListener = function(text) {};
+
+var focusHiddenArea = function() {
+ // In order to ensure that the browser will fire clipboard events, we always need to have something selected
+ hiddenInput.val(' ');
+ hiddenInput.focus().select();
+};
+// Focuses an element to be ready for copy/paste (used exclusively for IE)
+var focusIeClipboardDiv = function() {
+ ieClipboardDiv.focus();
+ var range = document.createRange();
+ range.selectNodeContents((ieClipboardDiv.get(0)));
+ var selection = window.getSelection();
+ selection.removeAllRanges();
+ selection.addRange(range);
+};
+// For IE, we can get/set Text or URL just as we normally would, but to get HTML, we need to let the browser perform the copy or paste in a contenteditable div.
+var ieClipboardEvent = function(clipboardEvent) {
+ var clipboardData = window.clipboardData;
+ if (clipboardEvent == 'cut' || clipboardEvent == 'copy') {
+     clipboardData.setData('Text', textToCopy);
+     ieClipboardDiv.html(htmlToCopy);
+     focusIeClipboardDiv();
+     setTimeout(function() {
+         focusHiddenArea();
+         ieClipboardDiv.empty();
+     }, 0);
+ }
+ if (clipboardEvent == 'paste') {
+     var clipboardText = clipboardData.getData('Text');
+     ieClipboardDiv.empty();
+     setTimeout(function() {
+         console.log('Clipboard Plain Text: ' + clipboardText);
+         console.log('Clipboard HTML: ' + ieClipboardDiv.html());
+         ieClipboardDiv.empty();
+         focusHiddenArea();
+     }, 0);
+ }
+};
+// For every broswer except IE, we can easily get and set data on the clipboard
+var standardClipboardEvent = function(clipboardEvent, event) {
+ var clipboardData = event.clipboardData;
+ if (clipboardEvent == 'cut' || clipboardEvent == 'copy') {
+     clipboardData.setData('text/plain', textToCopy);
+     clipboardData.setData('text/html', htmlToCopy);
+ }
+ if (clipboardEvent == 'paste') {
+     console.log('Clipboard Plain Text: ' + clipboardData.getData('text/plain'));
+     console.log('Clipboard HTML: ' + clipboardData.getData('text/html'));
+ }
+};
+// For IE, the broswer will only paste HTML if a contenteditable div is selected before paste. Luckily, the browser fires 
+// a before paste event which lets us switch the focuse to the appropraite element
+if (isIe) {
+ document.addEventListener('beforepaste', function() {
+     if (hiddenInput.is(':focus')) {
+         focusIeClipboardDiv();
+     }
+ }, true);
+}
+// We need the hidden input to constantly be selected in case there is a copy or paste event. It also recieves and dispatches input events
+hiddenInput.on('input', function(e) {
+ var value = hiddenInput.val();
+ userInput += value;
+ hiddenInputListener(userInput);
+ // There is a bug (sometimes) with Safari and the input area can't be updated during
+ // the input event, so we update the input area after the event is done being processed
+ if (isSafari) {
+     hiddenInput.focus();
+     setTimeout(focusHiddenArea, 0);
+ } else {
+     focusHiddenArea();
+ }
+});
+// Set clipboard event listeners on the document. 
+['cut', 'copy', 'paste'].forEach(function(event) {
+ document.addEventListener(event, function(e) {
+     console.log(event);
+     if (isIe) {
+         ieClipboardEvent(event);
+     } else {
+         standardClipboardEvent(event, e);
+         focusHiddenArea();
+         e.preventDefault();
+     }
+ });
+});
+// Keep the hidden text area selected
+$(document).mouseup(focusHiddenArea);
+</script>
 ```
 
 ![](https://i.imgur.com/f23c9GF.png)
@@ -434,7 +587,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand#Browser_co
 3. copy the value to the input/textarea field, select it and copy it, 
 
 ```html
-//sample of using input
+<!-- sample of using input -->
 <style>
     .copyfrom { position: absolute; left: -9999px; }
 </style>
@@ -461,7 +614,7 @@ function getSelectValues(select) {
 return result;
 }
 </script>
-//sample of using textarea
+<!-- sample of using textarea -->
 <p>
   <button class="js-textareacopybtn" style="vertical-align:top;">Copy Textarea</button>
   <textarea class="js-copytextarea">Hello I'm some text</textarea>
@@ -510,6 +663,19 @@ document.querySelector("#copy").onclick = function() {
   var range = document.createRange();
   copyToClipboard(copyDOM, range);
 }; 
+//cut
+var cutTextareaBtn = document.querySelector('.js-textareacutbtn');
+cutTextareaBtn.addEventListener('click', function(event) {
+  var cutTextarea = document.querySelector('.js-cuttextarea');
+  cutTextarea.select();
+  try {
+    var successful = document.execCommand('cut');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Cutting text command was ' + msg);
+  } catch(err) {
+    console.log('Oops, unable to cut');
+  }
+});
 </script>
 ```
 
@@ -640,68 +806,126 @@ document.getElementById('markup-copy').addEventListener('click', function() {
 </script>
 ```
 
+[back to top](#top)
 
+<h2 id="复制输出到excel">5. 复制输出到excel</h2>
 
-Get Data in Multiple Formats To and From the Clipboard
+<h3 id="JavaScript">5.1 Export HTML table to excel with text and images - JavaScript</h3>
 
+```javascript
+$("#btnExport").click(function(e) {
+  let file = new Blob([$('.divclass').html()], {type:"application/vnd.ms-excel"});
+  let url = URL.createObjectURL(file);
+  let a = $("<a />", {
+    href: url,
+    download: "filename.xls"
+  }).appendTo("body").get(0).click();
+  e.preventDefault();
+});
+```
 
 
 ```javascript
-if(window.clipboardData) {
-    // use just 'Text' or 'Url' as a first param otherwise strange exception is thrown
-    window.clipboardData.setData('Text', 'Text that will be copied to CB');        
-} else if(ev.originalEvent.clipboardData) {
-    ev.originalEvent.clipboardData.setData('text/plain', 'Text that will be copied to CB');      
-} else {
-    alert('Clipboard Data are not supported in this browser. Sorry.');
+if (isIe) {
+    document.addEventListener('beforepaste', function() {
+        if (hiddenInput.is(':focus')) {
+            focusIeClipboardDiv();
+        }
+    }, true);
 }
-//
-window.addEventListener('copy', function (ev) {
-    console.log('copy event');
-    // you can set clipboard data here, e.g.
-    ev.clipboardData.setData('text/plain', 'some text pushed to clipboard');
-    // you need to prevent default behaviour here, otherwise browser will overwrite your content with currently selected 
-    ev.preventDefault();
-});
-//
-<p><button class="js-textareacutbtn" disable>Cut Textarea</button></p>
-<script>
-//copy clipboard
-var copyEmailBtn = document.querySelector('.js-emailcopybtn');
-copyEmailBtn.addEventListener('click', function(event) {
-  // Выборка ссылки с электронной почтой
-  var emailLink = document.querySelector('.js-emaillink');
-  var range = document.createRange();
-  range.selectNode(emailLink);
-  window.getSelection().addRange(range);
-  try {
-    // Теперь, когда мы выбрали текст ссылки, выполним команду копирования
-    var successful = document.execCommand('copy');
-    var msg = successful ? 'successful' : 'unsuccessful';
-    console.log('Copy email command was ' + msg);
-  } catch(err) {
-    console.log('Oops, unable to copy');
-  }
-  // Снятие выделения - ВНИМАНИЕ: вы должны использовать
-  // removeRange(range) когда это возможно
-  window.getSelection().removeAllRanges();
-});
-//cut
-var cutTextareaBtn = document.querySelector('.js-textareacutbtn');
-cutTextareaBtn.addEventListener('click', function(event) {
-  var cutTextarea = document.querySelector('.js-cuttextarea');
-  cutTextarea.select();
-  try {
-    var successful = document.execCommand('cut');
-    var msg = successful ? 'successful' : 'unsuccessful';
-    console.log('Cutting text command was ' + msg);
-  } catch(err) {
-    console.log('Oops, unable to cut');
-  }
+var ieClipboardEvent = function(clipboardEvent) {
+    var clipboardData = window.clipboardData;
+    if (clipboardEvent == 'cut' || clipboardEvent == 'copy') {
+        clipboardData.setData('Text', textToCopy);
+        ieClipboardDiv.html(htmlToCopy);
+        focusIeClipboardDiv();
+        setTimeout(function() {
+            focusHiddenArea();
+            ieClipboardDiv.empty();
+        }, 0);
+    }
+    if (clipboardEvent == 'paste') {
+        var clipboardText = clipboardData.getData('Text');
+        ieClipboardDiv.empty();
+        setTimeout(function() {
+            console.log('Clipboard Plain Text: ' + clipboardText);
+            console.log('Clipboard HTML: ' + ieClipboardDiv.html());
+            ieClipboardDiv.empty();
+            focusHiddenArea();
+        }, 0);
+    }
+};
+```
+
+[back to top](#top)
+
+<h3 id="jquery">5.2 Export HTML table to excel with text and images - jquery</h3>
+
+```html
+<button id="myButtonControlID">Export Table data into Excel</button>
+  <div id="divTableDataHolder">
+      <title>Demo for huge data</title>
+      <table>
+          <thead>
+              <tr><th colspan="5">Demoe By <a href="http://codePattern.net/blog">CodePattern.net</a></th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Anil Kumar</td><td>2012</td><td>Delhi</td><td>India</td><td><img src='http://codepattern.net/Blog/pics/CodepatternLogoN.png' alt=''/></td>
+            </tr>
+            <tr><td>abc</td><td>12</td><td>Delhi</td><td>India</td><td>Earth</td></tr>
+            <tr><td>abc</td><td>12</td><td>Delhi</td><td>India</td><td>Earth</td></tr>
+            <tr><td>abc</td><td>12</td><td>Delhi</td><td>India</td><td>Earth</td></tr>
+            <tr><td>abc</td><td>12</td><td>Delhi</td><td>India</td><td>Earth</td></tr>
+          </tbody>
+      </table>
+  </div>
+<script type="text/javascript">
+$("[id$=myButtonControlID]").click(function(e) {
+    window.open('data:application/vnd.ms-excel,' + encodeURIComponent( $('div[id$=divTableDataHolder]').html()));
+    e.preventDefault();
 });
 </script>
 ```
 
+> Reference: VBA- Convert The Image URLs To Actual Images
+
+1. Hold down the ALT + F11 keys to open the Microsoft Visual Basic for Applications window.
+2. Click Insert > Module, and paste the following code in the Module Window.
+3. press Alt + F8 to run
+
+```vb
+Sub URLPictureInsert()
+'Updateby Extendoffice 20161116
+    Dim Pshp As Shape
+    Dim xRg As Range
+    Dim xCol As Long
+    On Error Resume Next
+    Application.ScreenUpdating = False
+    Set Rng = ActiveSheet.Range("A2:A6")
+    For Each cell In Rng
+        filenam = cell
+        ActiveSheet.Pictures.Insert(filenam).Select
+        Set Pshp = Selection.ShapeRange.Item(1)
+        If Pshp Is Nothing Then GoTo lab
+        xCol = cell.Column + 1
+        Set xRg = Cells(cell.Row, xCol)
+        With Pshp
+            .LockAspectRatio = msoFalse
+            .Width = 100
+           .Height = 100
+            .Top = xRg.Top + (xRg.Height - .Height) / 2
+            .Left = xRg.Left + (xRg.Width - .Width) / 2
+        End With
+lab:
+    Set Pshp = Nothing
+    Range("A2").Select
+    Next
+    Application.ScreenUpdating = True
+End Sub
+```
+
+https://www.extendoffice.com/documents/excel/4212-excel-insert-image-from-url.html
 
 > Reference
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand
