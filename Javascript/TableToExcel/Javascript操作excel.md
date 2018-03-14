@@ -110,4 +110,7 @@ lab:
     Application.ScreenUpdating = True
 End Sub
 ```
+https://www.extendoffice.com/documents/excel/4212-excel-insert-image-from-url.html
+
+
 
