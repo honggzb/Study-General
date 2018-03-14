@@ -5,6 +5,7 @@
     - [1.2 注意事项](#注意事项)
   - [2. Clipboard API- clipboardData对象](#对象方法)
     - [2.1 Clipboard API介绍](#API介绍)
+    - 较为完整的示例
     - [2.2 Clipboard API应用案例](#应用案例)
   - [3. document.execCommand()](#execCommand)
     - [3.1 execCommand指令集](#execCommand指令集)
@@ -18,7 +19,7 @@
     - [5.2 Export HTML table to excel with text and images - JavaScript](#JavaScript)
     - [5.2 Export HTML table to excel with text and images - jquery](#jquery)
     - Reference: VBA- Convert The Image URLs To Actual Images
-    
+
 ------
 
 目前copy主流有四种方式：execCommand，HTML5 Clipboard API，Clipboard.js，ZeroClipboard
@@ -158,6 +159,8 @@ var ieClipboardEvent = function(clipboardEvent) {
 };
 ```
 
+![](https://i.imgur.com/f23c9GF.png)
+
 **较为完整的示例**
 
 ```html
@@ -294,8 +297,6 @@ hiddenInput.on('input', function(e) {
 $(document).mouseup(focusHiddenArea);
 </script>
 ```
-
-![](https://i.imgur.com/f23c9GF.png)
 
 [back to top](#top)
 
