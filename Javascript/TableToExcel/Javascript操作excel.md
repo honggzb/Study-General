@@ -78,7 +78,7 @@ $("[id$=myButtonControlID]").click(function(e) {
 
 1. Hold down the ALT + F11 keys to open the Microsoft Visual Basic for Applications window.
 2. Click Insert > Module, and paste the following code in the Module Window.
-3. press F5 to run
+3. press Alt + F8 to run
 
 ```vb
 Sub URLPictureInsert()
