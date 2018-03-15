@@ -6,6 +6,7 @@
 ## 关于文件下载功能的说明
 
 - [download.js](https://stackoverflow.com/questions/16376161/javascript-set-filename-to-be-downloaded/), https://github.com/rndme/download/blob/master/download.js
+- [Better approach to download file in JavaScript](http://pixelscommander.com/javascript/javascript-file-download-ignore-content-type/)
 
 | 浏览器类型 | 适用方法/属性 |
 | ------------- | :------------- |
@@ -13,7 +14,40 @@
 |IE|IE不支持download，使用Blob, `window.navigator.msSaveBlob`|
 |Safari|Safari不支持download和Blob，使用window.open(url)|
 
-**Issues we have had with Safari**
+**Issues with window.open()**
+
+```javascript
+window.downloadFile = function(sUrl) {
+    window.open(sUrl);
+}
+```
+
+Problem
+
+- get useless empty window in Chrome or Safari;
+- Probably file's content-type will command browser to show file's content in new window and not to download it. It's not expected behavior for downloading function
+
+Solution
+
+- avoid annoying new window opening:  `window.open(sUrl, '_self');`
+- add a virtual link and virtual click: Click on link method also have not such problem as empty window in Chrome or Safari. Bad thing is that it's user-generated event. However we can create hidden link and programmatically click on it by dispatching new mouse event
+ - use HTML5 “download” attribute
+
+```javascript
+if (window.downloadFile.isChrome || window.downloadFile.isSafari) {
+    //Creating new link node.
+    var link = document.createElement('a');
+    link.href = sUrl;
+    //Dispatching click event.
+    if (document.createEvent) {
+        var e = document.createEvent('MouseEvents');
+        e.initEvent('click' ,true ,true);
+        link.dispatchEvent(e);
+        return true;
+    }
+```
+
+**Issues with Safari**
 
 - Blob is not supported: This has been solved with Blob.js using BlobBuilder as fallback and then base64 data uri if that are not supported either
 - URL.createObjectUrl: Has been covered by both FileSaver.js and blob.js
@@ -83,6 +117,41 @@ function download(strData, strFileName, strMimeType) {
     }, 333);
     return true;
 } /* end download() */
+```
+
+Complete listing for download.js:  http://pixelscommander.com/javascript/javascript-file-download-ignore-content-type/
+
+```javascript
+window.downloadFile = function(sUrl) {
+    //If in Chrome or Safari - download via virtual link click
+    if (window.downloadFile.isChrome || window.downloadFile.isSafari) {
+        //Creating new link node.
+        var link = document.createElement('a');
+        link.href = sUrl;
+ 
+        if (link.download !== undefined){
+            //Set HTML5 download attribute. This will prevent file from opening if supported.
+            var fileName = sUrl.substring(sUrl.lastIndexOf('/') + 1, sUrl.length);
+            link.download = fileName;
+        }
+ 
+        //Dispatching click event.
+        if (document.createEvent) {
+            var e = document.createEvent('MouseEvents');
+            e.initEvent('click' ,true ,true);
+            link.dispatchEvent(e);
+            return true;
+        }
+    }
+ 
+    // Force file download (whether supported by server).
+    var query = '?download';
+ 
+    window.open(sUrl + query);
+}
+window.downloadFile.isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') &gt; -1;
+window.downloadFile.isSafari = navigator.userAgent.toLowerCase().indexOf('safari') &gt; -1;
+
 ```
 
 ## Export HTML table to excel with text and images
