@@ -59,6 +59,18 @@ $("[id$=myButtonControlID]").click(function(e) {
 </script>
 ```
 
+**Exporting HTML To Excel in IE11** – warning: “Access is Denied”
+
+```
+if window.navigator and window.navigator.msSaveOrOpenBlob
+      blob = new Blob([ data ], type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+      window.navigator.msSaveOrOpenBlob blob
+else 
+      blob = new Blob([ data ], type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+      objectUrl = URL.createObjectURL(blob)
+      window.open objectUrl
+```
+
 > Reference: VBA- Convert The Image URLs To Actual Images
 
 1. Hold down the ALT + F11 keys to open the Microsoft Visual Basic for Applications window.
@@ -98,6 +110,7 @@ End Sub
 
 - https://www.extendoffice.com/documents/excel/4212-excel-insert-image-from-url.html
 - https://stackoverflow.com/questions/17126453/html-table-to-excel-javascript
+- https://stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
 
 
 
