@@ -6,9 +6,12 @@
 ## 关于文件下载功能的说明
 
 - [download.js](https://stackoverflow.com/questions/16376161/javascript-set-filename-to-be-downloaded/), https://github.com/rndme/download/blob/master/download.js
-- Chrome, FF使用 HTML5 download attribute
-- IE不支持download，使用Blob, `window.navigator.msSaveBlob`
-- Safari不支持download和Blob，使用window.open(url)
+
+| 浏览器类型 | 适用方法/属性 |
+| :------------- | :------------- |
+|Chrome, FF| HTML5 download attribute|
+|IE|IE不支持download，使用Blob, `window.navigator.msSaveBlob`|
+|Safari|Safari不支持download和Blob，使用window.open(url)|
 
 **Issues we have had with Safari**
 
@@ -246,6 +249,3 @@ End Sub
 - https://www.extendoffice.com/documents/excel/4212-excel-insert-image-from-url.html
 - https://stackoverflow.com/questions/17126453/html-table-to-excel-javascript
 - https://stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
-
-
-
