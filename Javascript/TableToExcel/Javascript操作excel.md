@@ -1,3 +1,8 @@
+- 关于文件下载功能的说明
+- Export HTML table to excel with text and images
+- Export HTML to csv
+- Reference: VBA- Convert The Image URLs To Actual Images
+
 ## 关于文件下载功能的说明
 
 - [download.js](https://stackoverflow.com/questions/16376161/javascript-set-filename-to-be-downloaded/), https://github.com/rndme/download/blob/master/download.js
@@ -78,7 +83,7 @@ function download(strData, strFileName, strMimeType) {
 } /* end download() */
 ```
 
-## Export HTML table to excel with text and images - jquery
+## Export HTML table to excel with text and images
 
 ```javascript
 <script type="text/javascript">
