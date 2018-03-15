@@ -37,15 +37,18 @@ template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn
 base64 = function(s) { return window.btoa(decodeURIComponent(encodeURIComponent(s))) },         
 format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
 
-var ctx = {worksheet: "name" || 'Worksheet', table: tableHTML}
-
-var file = new Blob([tableHTML], {type:"application/vnd.ms-excel"});
-var url = URL.createObjectURL(file);
-var a = $("<a />", {
-    href: url,
-    download: "filename.xls"
-  }).appendTo("body").get(0).click();
-$(a).remove();
+  if(window.navigator && window.navigator.msSaveBlob){     //I hate IE
+    var file = new Blob([tableHTML], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+    window.navigator.msSaveBlob(file, "newfile.xls");
+  }else {
+    // var file = new Blob([tableHTML], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'})
+    // objectUrl = URL.createObjectURL(file)
+    var ctx = {worksheet: "assets" || 'Worksheet', table: tableHTML};
+  	var aExportToExcel = $("<a />", {
+  		    href: uri + base64(format(template, ctx)),
+  		    download: "newfile.xls"
+  	  	}).appendTo("body").get(0).click();
+  	$(aExportToExcel).remove();
 </script>
 <!-- javascript -->
 <script type="text/javascript">
