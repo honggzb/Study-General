@@ -8,7 +8,7 @@
 - [download.js](https://stackoverflow.com/questions/16376161/javascript-set-filename-to-be-downloaded/), https://github.com/rndme/download/blob/master/download.js
 
 | 浏览器类型 | 适用方法/属性 |
-| :------------- | :------------- |
+| ------------- | :------------- |
 |Chrome, FF| HTML5 download attribute|
 |IE|IE不支持download，使用Blob, `window.navigator.msSaveBlob`|
 |Safari|Safari不支持download和Blob，使用window.open(url)|
