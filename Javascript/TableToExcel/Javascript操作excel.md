@@ -44,10 +44,9 @@ window.onclick = function(){
 2. It will try other means to save the blob by opening a new url
 3. If the mimetype can be rendered by safari it will be able to display it in a new tab
 4. If the mimetype is application/octet-stream:
-  - 4.1 Create a base64 link with FileReader api
-  - 4.2 try to open a new tab using window.open + base64 url
-  - 4.3 if it was more then 1 sec before the user interaction happened it will use the current page instead
-  but that is likely going to fail because (see first example using location.href) Failed to load resource: Frame load interrupted This may still work if the mimetype is not application/octet-stream and the saveAs was not called synchronous
+	- 1) Create a base64 link with FileReader api
+	- 2) try to open a new tab using window.open + base64 url
+	- 3) if it was more then 1 sec before the user interaction happened it will use the current page instead but that is likely going to fail because (see first example using location.href) Failed to load resource: Frame load interrupted This may still work if the mimetype is not application/octet-stream and the saveAs was not called synchronous
 5. Safari don't have anything like msSaveAs()
 6. safest way to force the file to be saved is to have a data:attachment/file" + base64 ready and open that link using window.open() when the user interacts with the website (or at least to it under 1 second)
 7. when saving it as a attachment filename will be "unknown"
