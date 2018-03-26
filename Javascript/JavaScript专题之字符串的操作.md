@@ -2,7 +2,7 @@
 
 <table>
     <tbody>
-     <tr><td colspan="3" align="center">**字符串的查找**</td></tr>
+        <tr><td colspan="3" align="center"><b>字符串的查找</b></td></tr>
       <tr>
         <td>索引`[ ]`</td>
         <td>通过下标获取字符串指定位置的字符，但是不能改变该索引对应的值</td>
