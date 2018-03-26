@@ -56,7 +56,7 @@
         `alert(str1);//返回hello`
         </td>
       </tr>
-      <tr><td colspan="3" align="center">**字符串的拆分，截取方式**</td></tr>
+      <tr><td colspan="3" align="center"><b>字符串的拆分，截取方式</b></td></tr>
       <tr>
         <td>`slice(start,end)`</td>
         <td>返回被操作字符的子字符串，原字符串不变，接受两个参数，字符串的起始位置和结束位置，<br>- 返回的字符串不包含结束位置的字符，第一个参数要小于第二个参数，否则返回"",<br>- 若只有一个参数，返回起始位置到字符串结尾的所有字符串，<br>- 若传递的参数为负数，将传入的负值与字符创的长度相加</td>
@@ -116,13 +116,13 @@
         `var str2 = str1.trim();  //返回"hello world"`
         </td>
       </tr>
-      <tr><td colspan="3" align="center">**字符串的大小写转换**</td></tr>
+      <tr><td colspan="3" align="center"><b>字符串的大小写转换</b></td></tr>
       <tr>
         <td>`toLowerCase()`<br>`toUpperCase()`<br>`toLocalLowerCase()`<br> `toLocalUpperCase()`</td>
         <td>String 对象的大小写转换</td>
         <td></td>
       </tr>
-      <tr><td colspan="3" align="center">**替换和匹配字符串**</td></tr>
+      <tr><td colspan="3" align="center"><b>替换和匹配字符串</b></td></tr>
       <tr>
         <td>`Replace(searchValue,replaceValue)`</td>
         <td>将字符串中第一个出现的searchValue子字符串替换为replaceValue，并返回新的字符串。原有的字符串不受影响</td>
