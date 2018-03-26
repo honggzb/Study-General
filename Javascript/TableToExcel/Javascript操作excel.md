@@ -1,9 +1,9 @@
-- 关于文件下载功能的说明
-- Export HTML table to excel with text and images
-- Export HTML to csv
-- Reference: VBA- Convert The Image URLs To Actual Images
+- [关于文件下载功能的说明](#关于文件下载功能的说明)
+- [Export HTML table to excel with text and images](#HTML)
+- [Export HTML to csv](#csv)
+- [Reference: VBA- Convert The Image URLs To Actual Images](#Reference)
 
-## 关于文件下载功能的说明
+<h2 id="关于文件下载功能的说明">关于文件下载功能的说明</h2>
 
 - [download.js](https://stackoverflow.com/questions/16376161/javascript-set-filename-to-be-downloaded/), https://github.com/rndme/download/blob/master/download.js
 - [Better approach to download file in JavaScript](http://pixelscommander.com/javascript/javascript-file-download-ignore-content-type/)
@@ -151,10 +151,11 @@ window.downloadFile = function(sUrl) {
 }
 window.downloadFile.isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') &gt; -1;
 window.downloadFile.isSafari = navigator.userAgent.toLowerCase().indexOf('safari') &gt; -1;
-
 ```
 
-## Export HTML table to excel with text and images
+[back to top](#top)
+
+<h2 id="HTML">Export HTML table to excel with text and images</h2>
 
 ```javascript
 <script type="text/javascript">
@@ -236,7 +237,10 @@ else
       window.open objectUrl
 ```
 
-## Export HTML to csv
+
+[back to top](#top)
+
+<h2 id="csv">Export HTML to csv</h2>
 
 ```javascript
 // Example data given in question text
@@ -277,7 +281,9 @@ var download = function(content, fileName, mimeType) {
 download(csvContent, 'dowload.csv', 'text/csv;encoding:utf-8');
 ```
 
-> Reference: VBA- Convert The Image URLs To Actual Images
+[back to top](#top)
+
+<h2 id="Reference">Reference: VBA- Convert The Image URLs To Actual Images</h2>
 
 1. Hold down the ALT + F11 keys to open the Microsoft Visual Basic for Applications window.
 2. Click Insert > Module, and paste the following code in the Module Window.
