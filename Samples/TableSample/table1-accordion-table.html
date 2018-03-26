@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Table 1 - Accordition table</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+  <style>
+  @import url('https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+  @import url(https://fonts.googleapis.com/css?family=Oswald:700);
+  @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+  // Fonts
+  $serif: 'Droid Serif', serif;
+  $sans: 'Oswald', sans-serif;
+  $icon: fontawesome;
+  // Table
+  $tblTxt: #555;
+  $tblBg: white;
+  $tblOddBg: #eee;
+  $tblHoverBg: #ddd;
+  $tblBorder: #ccc;
+  $tblActiveBg: tomato;
+  $tblActiveTxt: white;
+
+  .pcs, .cur, .per {white-space:nowrap;}
+  .pcs:after { content: " pcs"; }
+  .cur:before { content: "$"; }
+  .per:after { content: "%"; }
+  // --------------------------
+  * { box-sizing: border-box; }
+  body { 
+    position: relative;
+    padding: .2em 2em; 
+    color: $tblTxt; 
+  }
+  // Table
+  table {
+    position: relative;
+    width: 100%;
+    th { 
+      text-align: left; 
+      vertical-align: bottom;
+      border-bottom: 1px solid $tblBorder;
+      text-transform: uppercase;
+      font: .8em $sans;
+    }
+    th, td { padding: .4em; }
+  }
+
+  // fold table 
+  table.fold-table {
+    background: $tblBg;
+    color: $tblTxt;
+    > tbody {
+      // view segment
+      > tr.view {
+        font-family: $serif;
+        transition: all .3s ease;
+        td, th {cursor: pointer;}
+        td:first-child, 
+        th:first-child { 
+          position: relative;
+          padding-left:20px;
+          &:before {
+            position: absolute;
+            top:50%; left:5px;
+            width: 9px; height: 16px;
+            margin-top: -8px;
+            font: 16px $icon;
+            content: "\f0d7";
+            transition: all .3s ease;
+          }
+        }
+        &:nth-child(4n-1) { background: $tblOddBg; }
+        &:hover { background: $tblHoverBg; }
+        &.open {
+          background: $tblActiveBg;
+          color: $tblActiveTxt;
+          td:first-child, th:first-child {
+            &:before {
+              transform: rotate(-180deg);
+              color: $tblActiveTxt;
+            }
+          }
+        }
+      }
+    
+      // fold segment
+      > tr.fold {
+        display: none;
+        &.open { display:table-row; }
+      }
+    }
+  }
+
+  // fold content 
+  .fold-content {
+    padding: .5em;
+    h3 { margin-top:0; }
+    > table {
+      background: $tblBg;
+      color: $tblTxt;
+      //border: 2px solid $tblBorder;
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,.2);
+      > tbody {
+        > tr {
+          font-family: $serif;
+          cursor: pointer;
+          &:nth-child(even) { background: $tblOddBg; }
+          &:hover { background: $tblHoverBg; }
+        }
+      }
+    }
+  }
+  .visible-small { display: none; }
+  .visible-big { display: block; }
+  @media (max-width: 700px) {
+    body { font-size: .8em; padding: 0 10px;}
+    table {
+      th, td { padding: 1em .2em; }
+      th { vertical-align: bottom; padding-bottom: 0; }
+    }
+    table.small-friendly {
+      > thead { display: none; }
+      > tbody {
+        > tr {
+          > td, 
+          > th {
+            position: relative;
+            padding: 0;
+            padding-left: 50%;
+            display:block;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(0,0,0,.05);
+            &:before {
+              position: absolute;
+              top:0; left:.5em;
+              max-width: 50%;
+              content: attr(data-th)": ";
+              display:block;
+              font-weight: bold;
+            }
+            &:first-child { margin-top:1em; }
+            &:last-child { margin-bottom:1em; border:0; }
+          }
+        }
+      }
+    }
+    .visible-small { display: block; }
+    .visible-big { display: none; }
+  }
+  </style>
+</head>
+<body>
+  <table class="fold-table">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Amount</th>
+        <th>Value</th>
+        <th><span class="visible-small" title="Premiumns">Prem.</span><span class="visible-big">Premiums</span></th>
+        <th><span class="visible-small" title="Strategy A">Str. A</span><span class="visible-big">Strategy A</span></th>
+        <th><span class="visible-small" title="Strategy B">Str. B</span><span class="visible-big">Strategy B</span></th>
+        <th><span class="visible-small" title="Strategy C">Str. C</span><span class="visible-big">Strategy C</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="view">
+        <td>Company Name</td>
+        <td class="pcs">457</td>
+        <td class="cur">6 535 178</td>
+        <td>-</td>
+        <td class="per">50,71</td>
+        <td class="per">49,21</td>
+        <td class="per">0</td>
+      </tr>
+      <tr class="fold">
+        <td colspan="7">
+          <div class="fold-content">
+            <h3>Company Name</h3>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <table class="small-friendly">
+              <thead>
+                <tr>
+                  <th><span class="visible-small" title="Company name">Comp. name</span><span class="visible-big">Company name</span></th>
+                  <th><span class="visible-small" title="Customer number">Cust.#</span><span class="visible-big">Customer no</span></th>
+                  <th><span class="visible-small" title="Customer name">Cust. name</span><span class="visible-big">Customer name</span></th>
+                  <th><span class="visible-small" title="Insurance number">Ins.#</span><span class="visible-big">Insurance no</span></th>
+                  <th><span class="visible-small" title="Strategy">Str.</span><span class="visible-big">Strategy</span></th>
+                  <th>Start</th>
+                  <th><span class="visible-small" title="Current">Cur.</span><span class="visible-big">Current</span></th>
+                  <th>Diff</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-th="Company name">Sony</td>
+                  <td data-th="Customer no">13245</td>
+                  <td data-th="Customer name">John Doe</td>
+                  <td data-th="Insurance no">064578</td>
+                  <td data-th="Strategy">A, 100%</td>
+                  <td data-th="Start"><span class="cur">20 000</span></td>
+                  <td data-th="Current"><span class="cur">33 000</span></td>
+                  <td data-th="Diff"><span class="cur">13 000</span></td>
+                </tr>
+                <tr>
+                  <td data-th="Company name">Packard Bell</td>
+                  <td data-th="Customer no">12457</td>
+                  <td data-th="Customer name">Howard Steel</td>
+                  <td data-th="Insurance no">064353</td>
+                  <td data-th="Strategy">A, 100%</td>
+                  <td data-th="Start"><span class="cur">52 000</span></td>
+                  <td data-th="Current"><span class="cur">82 000</span></td>
+                  <td data-th="Diff"><span class="cur">40 000</span></td>
+                </tr>
+                <tr>
+                  <td data-th="Company name">Apple</td>
+                  <td data-th="Customer no">23885</td>
+                  <td data-th="Customer name">Jack Blue</td>
+                  <td data-th="Insurance no">068874</td>
+                  <td data-th="Strategy">B, 100%</td>
+                  <td data-th="Start"><span class="cur">30 500</span></td>
+                  <td data-th="Current"><span class="cur">42 000</span></td>
+                  <td data-th="Diff"><span class="cur">11 500</span></td>
+                </tr>
+                <tr>
+                  <td data-th="Company name">Samsung</td>
+                  <td data-th="Customer no">13981</td>
+                  <td data-th="Customer name">Chung Pi Kah</td>
+                  <td data-th="Insurance no">068112</td>
+                  <td data-th="Strategy">C, 100%</td>
+                  <td data-th="Start"><span class="cur">100 000</span></td>
+                  <td data-th="Current"><span class="cur">133 000</span></td>
+                  <td data-th="Diff"><span class="cur">33 000</span></td>
+                </tr>
+              </tbody>
+            </table>          
+          </div>
+        </td>
+      </tr>
+      <!-- Row -->
+      <tr class="view">
+        <td>Company Name</td>
+        <td class="pcs">457</td>
+        <td class="cur">6 535 178</td>
+        <td>-</td>
+        <td class="per">50,71</td>
+        <td class="per">49,21</td>
+        <td class="per">0</td>
+      </tr>
+      <tr class="fold">
+        <td colspan="7">
+          <div class="fold-content">
+            <h3>Company Name</h3>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <table class="small-friendly">
+              <thead>
+                <tr>
+                  <th><span class="visible-small" title="Company name">Comp. name</span><span class="visible-big">Company name</span></th>
+                  <th><span class="visible-small" title="Customer number">Cust.#</span><span class="visible-big">Customer no</span></th>
+                  <th><span class="visible-small" title="Customer name">Cust. name</span><span class="visible-big">Customer name</span></th>
+                  <th><span class="visible-small" title="Insurance number">Ins.#</span><span class="visible-big">Insurance no</span></th>
+                  <th><span class="visible-small" title="Strategy">Str.</span><span class="visible-big">Strategy</span></th>
+                  <th>Start</th>
+                  <th><span class="visible-small" title="Current">Cur.</span><span class="visible-big">Current</span></th>
+                  <th>Diff</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-th="Company name">Sony</td>
+                  <td data-th="Customer no">13245</td>
+                  <td data-th="Customer name">John Doe</td>
+                  <td data-th="Insurance no">064578</td>
+                  <td data-th="Strategy">A, 100%</td>
+                  <td data-th="Start"><span class="cur">20 000</span></td>
+                  <td data-th="Current"><span class="cur">33 000</span></td>
+                  <td data-th="Diff"><span class="cur">13 000</span></td>
+                </tr>
+                <tr>
+                  <td data-th="Company name">Packard Bell</td>
+                  <td data-th="Customer no">12457</td>
+                  <td data-th="Customer name">Howard Steel</td>
+                  <td data-th="Insurance no">064353</td>
+                  <td data-th="Strategy">A, 100%</td>
+                  <td data-th="Start"><span class="cur">52 000</span></td>
+                  <td data-th="Current"><span class="cur">82 000</span></td>
+                  <td data-th="Diff"><span class="cur">40 000</span></td>
+                </tr>
+                <tr>
+                  <td data-th="Company name">Apple</td>
+                  <td data-th="Customer no">23885</td>
+                  <td data-th="Customer name">Jack Blue</td>
+                  <td data-th="Insurance no">068874</td>
+                  <td data-th="Strategy">B, 100%</td>
+                  <td data-th="Start"><span class="cur">30 500</span></td>
+                  <td data-th="Current"><span class="cur">42 000</span></td>
+                  <td data-th="Diff"><span class="cur">11 500</span></td>
+                </tr>
+                <tr>
+                  <td data-th="Company name">Samsung</td>
+                  <td data-th="Customer no">13981</td>
+                  <td data-th="Customer name">Chung Pi Kah</td>
+                  <td data-th="Insurance no">068112</td>
+                  <td data-th="Strategy">C, 100%</td>
+                  <td data-th="Start"><span class="cur">100 000</span></td>
+                  <td data-th="Current"><span class="cur">133 000</span></td>
+                  <td data-th="Diff"><span class="cur">33 000</span></td>
+                </tr>
+              </tbody>
+            </table>          
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script>
+$(function(){
+  $(".fold-table tr.view").on("click", function(){
+    if($(this).hasClass("open")) {
+      $(this).removeClass("open").next(".fold").removeClass("open");
+    } else {
+      $(".fold-table tr.view").removeClass("open").next(".fold").removeClass("open");
+      $(this).addClass("open").next(".fold").addClass("open");
+    }
+  });
+});
+</script>
+</body>
+</html>
