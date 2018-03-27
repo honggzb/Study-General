@@ -70,10 +70,9 @@ res.writeHead(200, {'Content-Type': 'text/plain'});
 
 2. 在另外的一个cmd窗口运行 `node-inspector`, 默认情况下node-inspector的端口是8080，可以通过参数`--web-port=[port]`来设置端口
 3. 在浏览器输入`http://[ip address]:8080/debug?port=5858`，会得到调试窗口
+4. 使用Grunt可实现automation
 
 ![](2012011521141853.png)
-
-4. 使用Grunt可实现automation
 
 编辑package.json, 加入：
 
