@@ -80,16 +80,39 @@
 │   └──  Ant
 │        └── ant学习.md
 │
-├── Database
+├── Database学习
 │   ├──MySql的安装和设置.md
 │   ├──Redis安装、配置和使用.md
-│   ├──
+│   ├──MongoDB的使用.md
 │   └──
+│
+├── Debug-Skill调试技巧
+│   ├── chrome developer tool调试技巧.md
+│   ├── Chrome DevTools技巧.md
+│   ├── 性能调试之RAIL模式.md
+│   ├── 性能调试之memory分析.md
+│   ├── Chrome中设置可以CROS.md
+│   └── 
+│
+├── Design Pattern
+│   ├── 依赖注入模式.md
+│   ├── 
+│   └── 
 │
 ├── Git Study
 │   ├── gitCommand.md
 │   ├──
 │   └──
+│
+├── HTML5
+│   ├── getUserMedia-使用HTML5技术控制电脑或手机上的摄像头.md
+│   ├── Web Worker- JS多线程编程.md
+│   │   ├── Web Worker- JS多线程编程源码
+│   │   └── web-workers-demo-master.zip
+│   ├── 让web app更快的HTML5最佳实践.md
+│   ├── 应用缓存App Cache指南.md
+│   ├── IntersectionObserver API: defer, lazy-load.md
+│   └── Service Workers- HTML5 Web push notifications桌面通知.md
 │
 ├── Hybrid Web
 │   ├──HTML5 Input Types in Mobile.docx
@@ -110,29 +133,17 @@
 │   ├──虚拟键盘遮挡input输入框问题&fixed+input布局bug.md
 │   └── 远程调试工具.md
 │ 
-├── Debug-Skill调试技巧
-│   ├── chrome developer tool调试技巧.md
-│   ├── Chrome DevTools技巧.md
-│   ├── 性能调试之RAIL模式.md
-│   ├── 性能调试之memory分析.md
-│   ├── Chrome中设置可以CROS.md
-│   └── 
-│
-├── Design Pattern
-│   ├── 依赖注入模式.md
-│   ├── 
-│   └── 
-│
-├── HTML5
-│   ├── getUserMedia-使用HTML5技术控制电脑或手机上的摄像头.md
-│   ├── Web Worker- JS多线程编程.md
-│   │   ├── Web Worker- JS多线程编程源码
-│   │   └── web-workers-demo-master.zip
-│   ├── 让web app更快的HTML5最佳实践.md
-│   ├── 应用缓存App Cache指南.md
-│   ├── IntersectionObserver API: defer, lazy-load.md
-│   └── Service Workers- HTML5 Web push notifications桌面通知.md
-│
+├── IDE
+│   ├── Atom
+│   │   ├── 
+│   │   └──
+│   ├── Eclipse
+│   │   ├── 
+│   │   └──
+│   └── VSCode
+│       ├── 
+│       └──
+│ 
 ├── JAVA-Study
 │   ├── configuration-study
 │   │   ├── ant学习.md
@@ -140,19 +151,16 @@
 │   ├── spring root+angular.md
 │   └──
 │
-├── Javascript   --javascript学习过程中的小tip
+├── Javascript                         --javascript学习过程中的小tip
 │   ├── javascript+css
 │   │   ├── javascript关于页面坐标api.md
 │   │   └──
-│   │
 │   ├── javascriptDesignPattern
 │   │   ├── jsDesignPattern1.md
 │   │   └──
-│   │
 │   ├── TableToExcel                  #将table tag转换为excel输出
 │   │   ├── TableToCsv-jquery.html    #jquery
 │   │   └── tableToExcel.html         #javascript
-│   │
 │   ├── javascript数据类型判断.md
 │   ├── javascript判断数组中是否包含指定元素.md
 │   ├── avoid-loop-by-using-userdefined.md      -自定义的reduce, filter, find功能，可以避免写很多的loop
@@ -199,10 +207,31 @@
 │   │    └── /
 │   └──  resources.md
 │
-├── VirtualReality   #虚拟现实
-│   ├── resource.md
+├── Performance 性能分析
+│   ├── Front End performance案例分析.md
+│   ├── MobileSite-performance.png
+│   ├── browser-render-optimization.md
+│   ├── optimizing-Rendering-Performance.md
+│   ├── requestAnimationFrame优化动画.md
+│   ├── resources.md
+│   └──
+│
+├── Regular Expression - 正则表达式
+│   ├── 常用正则表达式.md
+│   ├── 
+│   └──
+│
+├── Samples   --常用&经典样例
+│   ├── InputSamples   --输入框样例集
+│   ├── TableSamples   --表格样例集
 │   ├── 
 │   └── 
+│
+├── Security   --安全
+│   ├── 腾讯大牛教你web前后端漏洞分析与防御note.md
+│   ├── 腾讯大牛教你web前后端漏洞分析与防御-project.zip       #原始的工程代码
+│   ├── 腾讯大牛教你web前后端漏洞分析与防御-project-me.zip    #修过的工程代码，无法运行
+│   └──
 │
 ├── Theory 理论和源码
 │   ├── Progressive Web App设计.md
@@ -213,25 +242,15 @@
 │   ├── 
 │   └── 
 │
-├── Performance 性能分析
-│   ├── Front End performance案例分析.md
-│   ├── MobileSite-performance.png
-│   ├── browser-render-optimization.md
-│   ├── optimizing-Rendering-Performance.md
-│   ├── requestAnimationFrame优化动画.md
-│   ├── resources.md
-│   └──
-│
-├── Security   --安全
-│   ├── 腾讯大牛教你web前后端漏洞分析与防御note.md
-│   ├── 腾讯大牛教你web前后端漏洞分析与防御-project.zip       #原始的工程代码
-│   ├── 腾讯大牛教你web前后端漏洞分析与防御-project-me.zip    #修过的工程代码，无法运行
-│   └──
-│
-├── Regular Expression - 正则表达式
-│   ├── 常用正则表达式.md
+├── VirtualReality   #虚拟现实
+│   ├── resource.md
 │   ├── 
-│   └──
+│   └── 
+│
+├── Vue
+│   ├── Vue学习.md
+│   ├── 
+│   └── 
 │
 ├── study-tips.md    --学习过程中的小tip
 ├── 常用node模块.md
