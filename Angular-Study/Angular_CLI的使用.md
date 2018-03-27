@@ -19,6 +19,10 @@
     - [1.4.6 less(ng new project_name --style less when create new project)](#less)
 - [2. project struture the Angular CLI setup](#project-struture)
 - [3. Adding an Express server to an Angular CLI project](#add-express)
+  - 3.1 build a new folder and new js file - /node_server/server.j
+  - 3.2 modifing package.json and adding code
+  - 3.3 Storing the Rest API URL
+  - 3.4 方法2：与服务器整合
 - [4. Adding an Angular CLI project to JAVA Project](#add-java)
 - [5.Create a Progressive Web App with Angular CLI](#Progressive-Web-App)
 - [6.Errors in real project](#Errors)
@@ -30,7 +34,7 @@
 - Angular CLI runs Webpack to build and bundle all JavaScript and CSS code
 - Angular CLI starts **webpack dev server** to preview the result on `localhost:4200`
 
-**常用命令选项**
+## 常用命令选项
 
 ```shell
 ng new PROJECT_NAME
@@ -38,7 +42,7 @@ ng new PROJECT_NAME --style less   # --style to choose less as preprocessor
 ng new PROJECT_NAME --routing      # --routing to generate routing module
 ng g c componentName --flat --inline-template --inline-styles
 ng g c componentName --flat -it -is   #简写
-
+ng generate --help
 ``` 
 
 <h2 id="setup-by-using-angular-cli">1. setup by using [angular-cli](https://cli.angular.io/)</h2>
@@ -81,22 +85,26 @@ ng set --global packageManager=yarn
 
 <h3 id="添加功能到现有的Angular应用程序">1.1.2 添加功能到现有的 Angular 应用程序</h3>
 
-Scaffold|Usage|short usage
----|---|---
-Component|ng g component my-new-component|ng g c my-new-component
-Directive|ng g directive my-new-directive|ng g d my-new-directive
-Pipe|ng g pipe my-new-pipe|ng g p my-new-pipe
-Service|ng g service my-new-service|ng g s my-new-service
-Class|ng g class my-new-class|ng g cl my-new-class
-Guard|ng g guard my-new-guard|
-Interface|ng g interface my-new-interface|ng g i my-new-interface
-Enum|ng g enum my-new-enum|ng g e my-new-enum
-Module|ng g module my-module|ng g m my-module
-destroy|`ng destroy my-new-component`|delete component, class...
+Scaffold|Usage|short usage|Available options
+---|---|---|---
+Component|`ng g component my-new-component`|`ng g c my-new-component`|`--flat: boolean`, default false, generate component files in src/app instead of src/app/site-header<br>`--inline-template: boolean`, default false, use an inline template instead of a separate HTML file<br>`--inline-style: boolean`, default false, use inline styles instead of a separate CSS file<br>`--prefix: boolean`, default true, use prefix specified in .angular-cli.json in component selector<br>`--spec: boolean`, default true, generate spec file with unit test<br>`--view-encapsulation`: string, specifies the view encapsulation strategy<br>`--change-detection`: string, specifies the change detection strategy
+Directive|`ng g directive my-new-directive`|`ng g d my-new-directive`|`--flat: boolean`, default true, generate directive files in src/app instead of src/app/admin-link<br>`--prefix: boolean`, default true, use prefix specified in .angular-cli.json in directive selector<br>`--spec: boolean`, default true, generate spec file with unit test
+Pipe|`ng g pipe my-new-pipe`|`ng g p my-new-pipe`|`--flat: boolean`, default true, generate component files in src/app instead of src/app/site-header<br>`--spec: boolean`, default true, generate spec file with unit test
+Service|`ng g service my-new-service`|`ng g s my-new-service`|`--flat: boolean`, default true, generate service file in src/app instead of src/app/backend-api<br>`--spec: boolean`, default true, generate spec file with unit test
+Class|`ng g class my-new-class`|`ng g cl my-new-class`|`--spec: boolean`, default false, generate spec file with unit test
+Class|`ng g class my-new-class --spec`||Generate class 'my-new-class' with unit test
+Guard|`ng g guard my-new-guard`||
+Interface|`ng g interface my-new-interface`|`ng g i my-new-interface`|
+Enum|`ng g enum my-new-enum`|`ng g e my-new-enum`|There are no command line options available for this command
+Module|`ng g module my-module`|`ng g m my-module`|`--routing: boolean`, default false, generate an additional module AdminRoutingModule with just the routing information and add it as an import to your new module<br>`--spec: boolean`, default false, add src/app/admin/admin.module.spec.ts with a unit test that checks whether the module exists.
+destroy|`ng destroy my-new-component`|delete component, class...|
+
+
 
 options|function
 ---|---
---flat|Don't create the code in it's own directory. Just add all files to the current directory.
+--prefix: boolean| default true, use prefix specified in .angular-cli.json in component selector
+--spec: boolean|default true, generate spec file with unit test
 --route=<route>|Specify the parent route. Only used for generating components and routes.
 --skip-router-generation|Don't create the route config. Only used for generating routes.
 --default|The generated route should be a default route.
@@ -266,7 +274,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 npm uninstall -g angular-cli
 npm uninstall --save-dev angular-cli
 #global package:
-npm uninstall -g @angular/cli
+npm uninstall -g @angular/cli angular-cli
 npm cache clean
 npm install -g @angular/cli@latest
 #Local project package:
@@ -525,7 +533,7 @@ npm i @angular/compiler-cli@next --D -E
 
 https://material.angular.io/
 
-```shell
+```
 # 1) install package
 npm install --save @angular/material @angular/cdk
 # 2) if need animations
@@ -560,7 +568,7 @@ import 'hammerjs';
 
 [back to top](#top)
 
-<h3 id="project-struture">2. project struture the Angular CLI setup</h3>
+<h2 id="project-struture">2. project struture the Angular CLI setup</h2>
 
 ![](http://i.imgur.com/0TEd7d8.png)
 
@@ -616,11 +624,11 @@ import 'hammerjs';
 
 [back to top](#top)
 
-<h3 id="add-express">3. Adding an Express server to an Angular CLI project</h3>
+<h2 id="add-express">3. Adding an Express server to an Angular CLI project</h2>
 
 https://github.com/Matt-Dionis/tweet-dashboard
 
-3.1  build a new folder and new js file - /node_server/server.js
+**3.1 build a new folder and new js file - /node_server/server.js**
 
 ```javascript
 var express = require('express');
@@ -675,7 +683,7 @@ app.get('/mapData', (req, res) => {
 });
 ```
 
-3.2 modifing package.json and adding code
+**3.2 modifing package.json and adding code**
 
 ```json
 "scripts": {
@@ -686,6 +694,67 @@ app.get('/mapData', (req, res) => {
     "serve-build": "npm run build:nodeserver && cd dist && node server.js",
     "serve-build-prod": "npm run build:nodeserver-prod && cd dist && node server.js"
   },
+```
+
+**3.3 Storing the Rest API URL**
+
+- 3.3.1 add our API URL to files: `src/environments/environment.ts` and `src/environments/environment.prod.ts`
+
+```JavaScript
+// src/environments/environment.ts
+// used when we run `ng serve` or `ng build`
+export const environment = {
+  production: false,
+  // URL of development API
+  apiUrl: 'http://localhost:3000'
+};
+// src/environments/environment.prod.ts
+// used when we run `ng serve --environment prod` or `ng build --environment prod`
+export const environment = {
+  production: true,
+  // URL of production API
+  apiUrl: 'http://localhost:3000'
+};
+```
+
+- 3.3.2 add following code to angualr Application
+
+```javascript
+//src/main.ts
+import { environment } from 'environments/environment';
+////src/app/api.service.ts, we can now access environment.apiUrl
+const API_URL = environment.apiUrl;
+this.http.get(API_URL + '/todos').map(response =>{ });   
+```
+
+- 3.3.3 modify .angular-cli.json
+
+```JSON
+"environments": {
+  "dev": "environments/environment.ts",
+  "staging": "environments/environment.staging.ts",   /* optional */
+  "prod": "environments/environment.prod.ts"
+}
+```
+
+https://www.sitepoint.com/angular-rxjs-create-api-service-rest-backend/
+
+**3.4 方法2：与服务器整合**
+
+1. 将编译后的dist拷贝到node Server的client目录
+2. 编写auction_server.js
+3. 修改app.module.ts, 加入地址策略， 保证浏览器刷新后使用angular的路由，其url变为，如: localhost:8000/#/product/1
+
+```JavaScript
+//２) 服务器端： 访问根目录时候，访问的是当前目录的上一级父目录下面的client目录
+import * as path from 'path';
+app.use('/', express.static(path.join(__dirname, '..', 'client')));
+//３) 客户端：　修改app.module.ts, 加入地址策略， 保证浏览器刷新后使用angular的路由，其url变为，如: localhost:8000/#/product/1
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+providers: [
+  ProductService, WebsocketService,
+  {provide: LocationStrategy, useClass: HashLocationStrategy}
+],
 ```
 
 [back to top](#top)
@@ -779,3 +848,4 @@ npm update
 - https://github.com/angular/angular-cli
 - https://www.sitepoint.com/ultimate-angular-cli-reference/
 - [Angular CLI 终极指南](https://segmentfault.com/a/1190000009771946)
+- [The Ultimate Angular CLI Reference Guide](https://www.sitepoint.com/ultimate-angular-cli-reference/)
