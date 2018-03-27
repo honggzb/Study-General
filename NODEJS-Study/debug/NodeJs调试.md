@@ -97,6 +97,9 @@ res.writeHead(200, {'Content-Type': 'text/plain'});
 
 ### Enable Nodejs debugging in Chrome
 
+- Option 1: Open chrome://inspect in a Chromium-based browser. Click the "Open dedicated DevTools for Node" link.
+- Option 2: Install the Chrome Extension NIM (Node Inspector Manager): https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
+
 1. Method 1:
 
 - `node --inspect --debug-brk build/auction_server.js`
@@ -127,7 +130,7 @@ inspect --debug-brk build/auction_server.js
 	- Enable the Developer Tools experiments flag
 	- Relaunch Chrome
 	- Open DevTools Setting -> Experiments tab (it started being visible after the reload)
-	- Press "SHIFT" 6 times ( enjoy it  ~~~~(>_<)~~~~  to show the hidden experiments
+	- Press "SHIFT" 6 times ( enjoy it  `~~~~(>_<)~~~~`  to show the hidden experiments
 	- Check the "Node debugging" checkbox
 	- Open/close DevTools
 
@@ -144,4 +147,3 @@ https://blog.hospodarets.com/nodejs-debugging-in-chrome-devtools?utm_source=node
 > reference: 
 - [欲善其功，必先利其器--Nodejs调试技术总结](http://www.cnblogs.com/moonz-wu/archive/2012/01/15/2322120.html)
 - [node程序的debug调试方式详细步骤](https://www.cnblogs.com/zhushunli/p/6278417.html)
-
