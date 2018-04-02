@@ -10,7 +10,7 @@
 - [12.模板字符串](#模板字符串)
 - [13.解构赋值简写方法](#解构赋值简写方法)
 - [15.扩展运算符简写](#扩展运算符简写)
-- [16.强制参数简写](#强制参数简写)
+- [16.强制要求参数](#强制参数简写)
 - [17.Array.find简写 -数组中查找某个值](#Array-find简写)
 - [18.Object[key]简写- 如编写通用验证函数](#Object[key]简写)
 - [19.双重非位运算简写](#双重非位运算简写)
@@ -175,7 +175,7 @@ console.log(z) // { c: 3, d: 4 }
 
 [back to top](#top)
 
-<h3 id="强制参数简写">16.强制参数简写</h3>
+<h3 id="强制参数简写">16.强制要求参数简写</h3>
 
 ```javascript
 //JavaScript中如果没有向函数参数传递值，则参数为undefined。为了增强参数赋值，可以使用if语句来抛出异常，或使用强制参数简写方法
@@ -189,9 +189,11 @@ function foo(bar) {
 mandatory = () => {
   throw new Error('Missing parameter!');
 }
-foo = (bar = mandatory()) => {
-  return bar;
+add = (a = mandatory(), b = mandatory()) => {
+  return a+b;
 }
+add(1,2); //3
+add(1);   //Error: Missing parameter!
 ```
 
 [back to top](#top)
