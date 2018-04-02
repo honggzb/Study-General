@@ -3,7 +3,8 @@
 - [1. 利用Set数据结构去重一个数组](#利用Set数据结构去重一个数组)
 - [2. Object.assign()用于对象的合并拷贝](#对象的合并拷贝)
 - [3. 利用map()对数组的每一项进行操作并生成一个新的数组](#数组的每一项进行操作并生成一个新的数组)
-- [4. 利用filter()保留或移除当前项并生成一个新的数组](#保留或移除当前项)
+- [4. 利用filter()去重](#保留或移除当前项)
+- [41. 利用Set()和filter()获取满足条件的元素](#获取满足条件的元素)
 - [5. 利用some()遍历数组进行 || 比较](#遍历数组进行)
 - [6. 利用every()遍历数组进行 && 比较](#every遍历数组进行)
 - [7. 利用`~~`运算符巧妙的去掉小数部分](#巧妙的去掉小数部分)
@@ -46,7 +47,7 @@ let newArr3 = arr3.map((e, i) => e * 10); // 给数组每一项乘以10, [10, 20
 
 [back to top](#top)
 
-<h3 id="保留或移除当前项">4. 利用filter()保留或移除当前项并生成一个新的数组</h3>
+<h3 id="保留或移除当前项">4. 利用filter()去重</h3>
 
 ```javascript
 var r,arr = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
@@ -54,6 +55,16 @@ r=arr.filter(function(element,index,self){
     return self.indexOf(element) == index;     //indexOf只返回元素在数组中第一次出现的位置，如果与元素位置不一致，说明该元素在前面已经出现过，是重复元素
 })
 console.log(r.toString());
+```
+
+[back to top](#top)
+
+<h3 id="获取满足条件的元素">41. 利用Set()和filter()获取满足条件的元素</h3>
+
+```javascript
+let mySet = new Set([1,2,3,5,6,7]);
+var filtered = [...mySet].filter(x => x>3);
+console.log(filtered);    //5,6,7
 ```
 
 [back to top](#top)
@@ -131,6 +142,14 @@ arr1.concat(arr2, arr3);
 ```javascript
 var dateFields = readDateFields(database);  
 var d = new Date(...dateFields);  
+// 从post中获取一个帖子，在comments中获取相关评论
+async function getFullPost(){
+  return await Promise.all([
+    fetch('/post'),
+    fetch('/comments')
+  ]);
+}
+const [post, comments] = getFullPost();
 ```
 
 [back to top](#top)
