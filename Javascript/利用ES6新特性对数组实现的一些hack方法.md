@@ -7,10 +7,13 @@
 - [5. 利用some()遍历数组进行 || 比较](#遍历数组进行)
 - [6. 利用every()遍历数组进行 && 比较](#every遍历数组进行)
 - [7. 利用`~~`运算符巧妙的去掉小数部分](#巧妙的去掉小数部分)
-- [8. 利用`...`运算符速获取数组的参数](#速获取数组的参数)
-- [9. 利用`...`合并数组](#合并数组)
-- [10. 利用`...`函数返回多个值](#函数返回多个值)
-- [11. 利用`...`实现了 Iterator 接口的对象](#实现了Iterator接口的对象)
+- [8. 解构运算符的妙用](#解构运算符的妙用)
+    - [8.1 利用`...`运算符速获取数组的参数](#速获取数组的参数)
+    - [8.2 利用`...`合并数组](#合并数组)
+    - [8.3 利用`...`函数返回多个值](#函数返回多个值)
+    - [8.4 利用`...`实现了 Iterator 接口的对象](#实现了Iterator接口的对象)
+    - [8.5 寻找数组中的最大值](#寻找数组中的最大值)
+    - [8.6 实现数组和对象的浅拷贝](实现数组和对象的浅拷贝)
 
 <h3 id="利用Set数据结构去重一个数组">1. 利用Set数据结构去重一个数组</h3>
 
@@ -88,7 +91,9 @@ console.log(~~b); // -1
 
 [back to top](#top)
 
-<h3 id="速获取数组的参数">8. 利用`...`运算符速获取数组的参数</h3>
+<h2 id="解构运算符的妙用">8. 解构运算符的妙用</h2>
+
+<h3 id="速获取数组的参数">8.1 利用`...`运算符速获取数组的参数</h3>
 
 `...`运算符是ES6中用于解构数组的方法，可以用于快速获取数组的参数
 
@@ -100,7 +105,7 @@ console.log(nums); // [2, 3]
 
 [back to top](#top)
 
-<h3 id="合并数组">9. 利用`...`合并数组</h3>
+<h3 id="合并数组">8.2 利用`...`合并数组</h3>
 
 ```javascript
 // ES5  
@@ -121,7 +126,7 @@ arr1.concat(arr2, arr3);
 
 [back to top](#top)
 
-<h3 id="函数返回多个值">10. 利用`...`函数返回多个值</h3>
+<h3 id="函数返回多个值">8.3 利用`...`函数返回多个值</h3>
 
 ```javascript
 var dateFields = readDateFields(database);  
@@ -130,7 +135,7 @@ var d = new Date(...dateFields);
 
 [back to top](#top)
 
-<h3 id="实现了Iterator接口的对象">11. 利用`...`实现了 Iterator 接口的对象</h3>
+<h3 id="实现了Iterator接口的对象">8.4 利用`...`实现了 Iterator 接口的对象</h3>
 
 ```javascript
 var nodeList = document.querySelectorAll('div');    //返回的是一个nodeList对象。它不是数组，而是一个类似数组的对象
@@ -155,6 +160,24 @@ var go = function*(){
 [...go()] // [1, 2, 3]     //将其转为真正的数组
 var obj = {a: 1, b: 2};  
 let arr = [...obj];   // TypeError: Cannot spread non-iterable object  -没有iterator接口的对象，使用扩展运算符，将会报错
+```
+
+[back to top](#top)
+
+<h3 id="寻找数组中的最大值">8.5 寻找数组中的最大值</h3>
+
+```javascript
+const max = (arr) => Math.max(...arr);
+max([123, 321, 32]) // outputs: 321  
+```
+
+[back to top](#top)
+
+<h3 id="实现数组和对象的浅拷贝">8.6 实现数组和对象的浅拷贝</h3>
+
+```javascript
+const obj = { ...oldObj }
+const arr = [ ...oldArr ]
 ```
 
 [back to top](#top)
