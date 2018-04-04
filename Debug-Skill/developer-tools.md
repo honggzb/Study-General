@@ -12,6 +12,8 @@ Redux Dev tools|
 JSON Formatter|Makes JSON easy to read
 Vim Repeat and speed|加速vimeo视频
 
+----------------------
+
 ### Visual Studio Code
 
 Extension| 功能
