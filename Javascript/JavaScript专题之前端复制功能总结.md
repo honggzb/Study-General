@@ -14,7 +14,9 @@
       - 结合`document.createRange()`使用- 可不动态添加input元素，直接copy的指定DOM元素
       - 案例1： Copy to clipboard without displaying input- 动态添加后删除
       - 案例2： jquery的tooltip
-  - [4. 其他library之Clipboard.js](#其他library)
+      - 案例3： 实现划词翻译
+      - 案例4： 清空选中文本
+  - [4. 其他library之Clipboard.js](#其他library)
   - [5. 复制输出到excel](#复制输出到excel)
   
 ------
@@ -771,7 +773,43 @@ function copy(copytargetid,copybtnid){
 ```
 
 [back to top](#top)
+
+**案例3： 实现划词翻译**
+
+```javascript
+function getSelected(){
+  let selection;
+  if(window.getSelection){
+    selction = window.getSelection();   //webkit and mozilar and IE9 +
+  }else if(document.getSelection){
+      selction = document.getSelection();
+  }else if(document.selection){
+    selction = document.selction.createRange().text;   //IE
+  }
+  return selection.toString().trim();
+}
+```
     
+[back to top](#top)
+
+**案例4： 清空选中文本**
+
+```javascript
+function removeSelection(){
+  if(window.getSelection){
+    window.getSelection().removeAllRanges();   //webkit and mozilar and IE9 +
+  }else if(document.getSelection && document.getSelection.empty){
+      document.getSelection().empty();
+  }else if(document.selection && document.selection.empty){
+    document.selection.empty();   //IE
+  }
+}
+```
+
+**第三方库： https://github.com/timdown/rangy**
+    
+[back to top](#top)
+
 <h2 id="应用案例">4. 其他library之Clipboard.js</h2>
 
 - ZeroClipboard 就是常说的Flash法，通过加载一个Flash，让其访问系统剪贴板来绕过绝大多数系统的权限限制，然而体积稍微庞大些
