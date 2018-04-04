@@ -208,13 +208,14 @@ if(window.navigator && window.navigator.msSaveBlob){
 		  	}).appendTo("body").get(0).click();
 			$(aExportToExcel).remove();
 			$(aTest).remove();
-}else{
-     // ios safari ????
-				//var file = new Blob([tableHTML], {type: 'data:application/octet-stream'});  
-	      //var url = URL.createObjectURL(file);
-	      window.open('data:application/octet-stream,'+encodeURIComponent(tableHTML));    // only this mime type is supported
-				document.body.removeChild(aTest);
-}
+// }else{
+    //  // ios safari ????
+		// 		//var file = new Blob([tableHTML], {type: 'data:application/octet-stream'});  
+	  //     //var url = URL.createObjectURL(file);
+		// 		//setTimeout(function(){
+	  //     window.open('data:application/octet-stream,'+encodeURIComponent(tableHTML));    // only this mime type or text is supported
+		// 		document.body.removeChild(aTest);
+		// 		//}, 950);   //must less than 1000
 </script>
 <!-- javascript -->
 <script type="text/javascript">
