@@ -15,3 +15,4 @@
 ```
 
 - [Angular 4.x 修仙之路](https://segmentfault.com/a/1190000008754631)
+- [仿简书nodejs+express+mongodb+vue2+angular4+爬虫](https://github.com/jiayisheji/jianshu)
