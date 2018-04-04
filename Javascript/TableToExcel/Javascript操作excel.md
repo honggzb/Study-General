@@ -10,7 +10,7 @@
 
 | 浏览器类型 | 适用方法/属性 |
 | ------------- | :------------- |
-|Chrome, FF| HTML5 download attribute|
+|Chrome, FF| HTML5 download attribute(look like worked for safari)|
 |IE|IE不支持download，使用Blob, `window.navigator.msSaveBlob`|
 |Safari|Safari不支持download和Blob，使用window.open(url)|
 
@@ -224,6 +224,8 @@ $("[id$=myButtonControlID]").click(function(e) {
 });
 </script>
 ```
+
+> note: HTML5 download attribute(look like worked for safari)
 
 **Exporting HTML To Excel in IE11** – warning: “Access is Denied”
 
