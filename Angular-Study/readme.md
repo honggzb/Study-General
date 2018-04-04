@@ -19,4 +19,4 @@
 - [仿简书nodejs+express+mongodb+vue2+angular4+爬虫](https://github.com/jiayisheji/jianshu)
 - [Angular中文社区](http://angular-china.org)
 - [Angular中文社区](http://www.iphone3d.cn/)
-- [sitepoint angular文章]（https://www.sitepoint.com/?s=angular）
+- [sitepoint angular文章](https://www.sitepoint.com/?s=angular)
