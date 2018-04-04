@@ -14,9 +14,9 @@
       - 结合`document.createRange()`使用- 可不动态添加input元素，直接copy的指定DOM元素
       - 案例1： Copy to clipboard without displaying input- 动态添加后删除
       - 案例2： jquery的tooltip
-      - 案例3： 实现划词翻译
+      - 案例3： 实现划词翻译
       - 案例4： 清空选中文本
-  - [4. 其他library之Clipboard.js](#其他library)
+  - [4. 其他library之Clipboard.js](#其他library)
   - [5. 复制输出到excel](#复制输出到excel)
   
 ------
