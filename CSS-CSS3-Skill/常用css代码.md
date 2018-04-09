@@ -24,7 +24,7 @@
 - [13. transform-style: preserve-3d 让元素支持3D](#让元素支持3D)
 - [14. perspective 这个属性定义子元素会获得透视效果，而不是元素本身](#这个属性定义子元素会获得透视效果，而不是元素本身)
 - [15. font-smoothing 设置字体平滑，会让字体看起来比较舒服](#设置字体平滑，会让字体看起来比较舒服)
-- [16. ::selection 修改选中文本颜色](#修改选中文本颜色)
+- [16. ::selection 修改选中文本颜色 -可美化被鼠标选中的文字的样式](#修改选中文本颜色)
 
 <h2 id="垂直居中">1. 垂直居中</h2>
 
@@ -328,12 +328,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, a, .td
 ```
 
 
-<h2 id="修改选中文本颜色">16. ::selection 修改选中文本颜色</h2>
+<h2 id="修改选中文本颜色">16. ::selection 修改选中文本颜色 -可美化被鼠标选中的文字的样式</h2>
 
 ```css
 ::selection {
     color: white;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);    /*或lightblue*/
 }
 ::-webkit-selection {
     color: white;
