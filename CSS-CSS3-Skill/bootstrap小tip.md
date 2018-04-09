@@ -1,4 +1,4 @@
-- [Bootstrap盒子模型的注意事项]#Bootstrap盒子模型的注意事项)
+- [Bootstrap盒子模型的注意事项](#Bootstrap盒子模型的注意事项)
 
 ### Bootstrap盒子模型的注意事项
 
