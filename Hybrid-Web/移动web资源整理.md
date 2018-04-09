@@ -47,9 +47,10 @@
   - [如何阻止windows Phone的默认触摸事件](#)
   - [播放视频不全屏](#)
   - [FastClick:消除在移动浏览器上触发click事件与一个物理Tap(敲击)之间的300延迟](#)
-  - [微信浏览器、UC浏览器成功禁用触摸时的弹出层失败](#)
+  - [微信浏览器、UC浏览器成功禁用触摸时的弹出层失败](#微信浏览器)
   - [模拟按钮hover效果的两种实现方式，第一种在微信没反应，第二种页面引用了zepto.js,写了方法但是和默认的滑动有冲突，不能流畅的滑动了](#)
-  - [ios虚拟键盘“go”按钮的实现](#)
+  - [ios虚拟键盘“go”按钮的实现](#ios虚拟键盘)
+  - [当页面字符编码为utf-8，而表单的js是gb2312时，地址是从外部引用的，无法更改的情况](#当页面字符编码为utf)
 - [常用的移动端框架](#常用的移动端框架)
   - zepto.js
   - iscroll.js
@@ -772,6 +773,15 @@ for(var i = 0 ,l = _btn.length; i < l; i++){
 必须加`action`，否则虚拟键盘出现的是“return”按钮
 
 如果模拟“search”按钮，除了在`form`加`action`外则在input中加入`name="search"`或`type="search"`
+
+<h4 id="当页面字符编码为utf">23. 当页面字符编码为utf-8，而表单的js是gb2312时，地址是从外部引用的，无法更改的情况</h4>
+
+通过定义form接收的字符编码来统一，从而使得接收到的数据不是乱码
+
+```html
+<form accept-charset="gb2312"></form>
+<script charset="gb2312" href="http://caibaojian.com/js/form.js" type="text/javascript"></script>
+```
 
 [back to top](#top)
 
