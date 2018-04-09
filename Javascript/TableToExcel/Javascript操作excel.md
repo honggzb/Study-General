@@ -10,7 +10,7 @@
 
 | 浏览器类型 | 适用方法/属性 |
 | ------------- | :------------- |
-|Chrome, FF| HTML5 download attribute(look like worked for safari)|
+|Chrome, FF| HTML5 download attribute, `<a href="/files/xxx.pdf" download="xxx.pdf">下载费用表</a>`(look like worked for safari)|
 |IE|IE不支持download，使用Blob, `window.navigator.msSaveBlob`|
 |Safari|Safari不支持download和Blob，使用window.open(url)|
 
