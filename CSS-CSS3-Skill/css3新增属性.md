@@ -1,5 +1,7 @@
 ### css3新增结构性伪类
 
+---
+
 css3新增结构性伪类|说明
 ---|---
 E：nth-child(n) |E父元素中的第n个字节点
@@ -46,9 +48,32 @@ p[index|=d]{background:red}|指定了属性名，并且属性值是value或者�
 
 CSS3用户界面|说明
 ---|---
-resize|属性规定是否可由用户调整元素尺寸
-box-sizing|属性允许您以确切的方式定义适应某个区域的具体内容
+`resize: none|both|horizontal|vertical|initial|inherit;`|属性规定是否可由用户调整元素尺寸
+`box-sizing: content-box|border-box|initial|inherit;`|属性允许您以确切的方式定义适应某个区域的具体内容
 outline-offset|属性对轮廓进行偏移，并在超出边框边缘的位置绘制轮廓
+
+ ```css
+ div {
+    resize: horizontal;
+    overflow: auto;
+}
+/*outline-offset animation*/
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    50% {outline-offset: 50px;}
+}
+/* Standard syntax */
+@keyframes mymove {
+    50% {outline-offset: 50px;}
+}
+```
+ 
+```javascript
+ function myFunction() {
+    document.getElementById("box1").style.MozBoxSizing = "border-box"; // Firefox
+    document.getElementById("box1").style.boxSizing = "border-box";
+}
+```
 
 ### CSS3多列
 
