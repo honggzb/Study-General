@@ -79,7 +79,7 @@ _color: red;  /* IE6 */
 
 <h2 id="针对其他浏览器的HACK">5. 针对其他浏览器的HACK</h2>
 
-|其他浏览器的HACK| Header Two     |
+|其他浏览器|代码|
 | :------------- | :------------- |
 |火狐|`@-moz-document url-prefix() {.test { color: red; } }`|
 |针对Webkit内核浏览器|`@media all and (min-width:0px) { color: purple; }`
