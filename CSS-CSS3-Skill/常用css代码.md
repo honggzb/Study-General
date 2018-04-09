@@ -25,6 +25,7 @@
 - [14. perspective 这个属性定义子元素会获得透视效果，而不是元素本身](#这个属性定义子元素会获得透视效果，而不是元素本身)
 - [15. font-smoothing 设置字体平滑，会让字体看起来比较舒服](#设置字体平滑，会让字体看起来比较舒服)
 - [16. ::selection 修改选中文本颜色 -可美化被鼠标选中的文字的样式](#修改选中文本颜色)
+- [17. CSS里的:target伪选择器](#CSS里的伪选择器)
 
 <h2 id="垂直居中">1. 垂直居中</h2>
 
@@ -343,6 +344,19 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, a, .td
     color: white;
     background-color: rgba(0, 0, 0, 0.8);
 }
+```
+
+[back to top](#top)
+
+<h2 id="CSS里的伪选择器">17. CSS里的:target伪选择器</h2>
+
+当浏览器地址里的hash(地址里#号后面的部分)和:target伪选择器指定的ID匹配上时，它的样式就会在这个ID元素上生效
+
+```css
+/* would apply to all targetted elements */
+:target { color: #000;}
+/* applies to H2's */
+h2:target { color: #f00; }
 ```
 
 [back to top](#top)
