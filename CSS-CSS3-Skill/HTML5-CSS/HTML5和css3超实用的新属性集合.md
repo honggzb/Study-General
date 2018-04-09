@@ -3,6 +3,8 @@
 - [1. HTML5里autofocus属性](#HTML5里autofocus属性)
 - [2. HTML5的hidden属性](#HTML5的hidden属性)
 - [3. 使用HTML5中的element.dataset操作自定义data-*数据](#dataset操作自定义data)
+- [4.元素内容是否可被编辑contenteditable](#元素内容是否可被编辑)
+- [5.video可在页面中播放，而不是全屏播放webkit-playsinline](#而不是全屏播放)
 
 <h2 id="HTML5里autofocus属性">1. HTML5里autofocus属性</h2>
 
@@ -43,5 +45,15 @@ var id = element.dataset.id;
 //jquery 写法
 $("#myDiv").data("id")
 ```
+
+[back to top](#top)
+
+<h2 id="元素内容是否可被编辑">4. 元素内容是否可被编辑contenteditable</h2>
+
+`<div id="example-one" contenteditable="true">`
+
+<h2 id="而不是全屏播放">5. video可在页面中播放，而不是全屏播放webkit-playsinline</h2>
+
+`<video id="myvideo" src="test.mp4" webkit-playsinline="true"></video>`
 
 [back to top](#top)
