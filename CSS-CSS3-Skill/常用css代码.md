@@ -1,4 +1,4 @@
-[目录](top)
+[常用css代码](top)
 
 - [1. 垂直居中](#垂直居中)
     - 方法1：table-cell
@@ -14,8 +14,19 @@
 - [3. :nth-child() 选择器写法  兼容ie8以上](#选择器写法)
 - [4. Will-Change](#Will-Change)
 - [5. Linking（链接）的技巧](#Linking链接的技巧)
+- [6. 当input选中的时候出现一个边框](#当input选中的时候出现一个边框)
+- [7. 元素内容是否可被编辑（html）](#元素内容是否可被编辑（html）)
+- [8. video可在页面中播放，而不是全屏播放](#video可在页面中播放，而不是全屏播放)
+- [9. user-select禁止选中文本](#select禁止选中文本)
+- [10. webkit-scroller自定义浏览器滚动条](#scroller自定义浏览器滚动条)
+- [11. webkit-appearance去除默认样式](#appearance去除默认样式)
+- [12. 使用CSS transforms 或者 animations时可能会有页面闪烁的bug](#animations时可能会有页面闪烁的bug)
+- [13. transform-style: preserve-3d 让元素支持3D](#让元素支持3D)
+- [14. perspective 这个属性定义子元素会获得透视效果，而不是元素本身](#这个属性定义子元素会获得透视效果，而不是元素本身)
+- [15. font-smoothing 设置字体平滑，会让字体看起来比较舒服](#设置字体平滑，会让字体看起来比较舒服)
+- [16. ::selection 修改选中文本颜色](#修改选中文本颜色)
 
-<h3 id="垂直居中">1. 垂直居中</h3>
+<h2 id="垂直居中">1. 垂直居中</h2>
 
 ```html
 <div class="box box1">
@@ -135,7 +146,7 @@
 
 [back to top](#top)
 
-<h3 id="文字截断">2. 文字截断</h3>
+<h2 id="文字截断">2. 文字截断</h2>
 
 ```css
 /*常用的一种可兼容但是只截断一行：*/
@@ -160,7 +171,7 @@
 
 [back to top](#top)
 
-<h3 id="选择器写法">3. :nth-child() 选择器写法  兼容ie8以上</h3>
+<h2 id="选择器写法">3. :nth-child() 选择器写法  兼容ie8以上</h2>
 
 选择器写法|功能
 ---|---
@@ -173,7 +184,7 @@ p:nth-of-type(2n+0)| 第2n个p
 
 [back to top](#top)
 
-<h3 id="Linking链接的技巧">5. Linking（链接）的技巧</h3>
+<h2 id="Linking链接的技巧">5. Linking（链接）的技巧</h2>
 
 ```css
 a[href^="http://"] {
@@ -201,7 +212,143 @@ a[lang|='zh'] {
 ```
 
 [back to top](#top)
+
+<h2 id="当input选中的时候出现一个边框">6. 当input选中的时候出现一个边框</h2>
+
+`textarea:focus, input:focus{ outline: none;}   /*一般设置成 none*/`
+
+<h2 id="元素内容是否可被编辑（html）">7. 元素内容是否可被编辑（html）</h2>
+
+`<div id="example-one" contenteditable="true">`
+
+```css
+#example-one { margin-bottom: 10px; }
+[contenteditable="true"] { padding: 10px; outline: 2px dashed #CCC; }
+[contenteditable="true"]:hover { outline: 2px dashed #0090D2; }
+```
+
+<h2 id="video可在页面中播放，而不是全屏播放">8. video可在页面中播放，而不是全屏播放</h2>
+
+`<video id="myvideo" src="test.mp4" webkit-playsinline="true"></video>`
+
+<h2 id="select禁止选中文本">9. user-select禁止选中文本</h2>
+
+```css
+p { -webkit-user-select: none; /* Chrome, Opera, Safari */ 
+-moz-user-select: none;        /* Firefox 2+ */ 
+-ms-user-select: none;         /* IE 10+ */ 
+user-select: none;             /* Standard syntax */}
+```
+
+<h2 id="scroller自定义浏览器滚动条">10. webkit-scroller自定义浏览器滚动条</h2>
+
+```css
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+div::-webkit-scrollbar { width: 5px; height: 5px; background-color: rgba(245, 245, 245, 0.47);}
+/*定义滚动条的轨道，内阴影及圆角*/
+div::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3); border-radius: 10px; background-color: #f5f5f5;}
+/*定义滑块，内阴影及圆角*/
+div::-webkit-scrollbar-thumb { /*width: 10px;*/ height: 20px; border-radius: 10px; -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3); background-color: rgba(85, 85, 85, 0.25);}
+```
+
+[back to top](#top)
+
+<h2 id="appearance去除默认样式">11. webkit-appearance去除默认样式</h2>
+
+`input, button, textarea, select { *font-size: 100%; -webkit-appearance:none;}`
+
+<h2 id="appearance去除默认样式">12. 使用CSS transforms 或者 animations时可能会有页面闪烁的bug</h2>
+
+`elements { -webkit-backface-visibility: hidden; }`
+
+<h2 id="让元素支持3D">13. transform-style: preserve-3d 让元素支持3D</h2>
+
+```css
+elements {
+    -webkit-transform: rotateY(60deg); /* Chrome, Safari, Opera */
+    -webkit-transform-style: preserve-3d; /* Chrome, Safari, Opera */
+    transform: rotateY(60deg);
+    transform-style: preserve-3d;
+}
+```
+
+[back to top](#top)
+
+<h2 id="这个属性定义子元素会获得透视效果，而不是元素本身">14. perspective 这个属性定义子元素会获得透视效果，而不是元素本身</h2>
+
+```html
+<div class="cube pers250">
+    <div class="face front">1</div>
+    <div class="face back">2</div>
+    <div class="face right">3</div>
+    <div class="face left">4</div>
+    <div class="face top">5</div>
+    <div class="face bottom">6</div>
+</div>
+<style>
+.cube {
+  width: 100%;
+  height: 100%;
+  backface-visibility: visible;
+  perspective-origin: 150% 150%;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: visible;
+  -webkit-perspective-origin: 150% 150%;
+  -webkit-transform-style: preserve-3d;
+}
+.pers250 {
+  perspective: 250px;
+  -webkit-perspective: 250px;
+}
+.face {
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+   border: none;
+  line-height: 100px;
+  font-family: sans-serif;
+  font-size: 60px;
+  color: white;
+  text-align: center;
+}
+</style>
+```
+
+[back to top](#top)
+
+<h2 id="设置字体平滑，会让字体看起来比较舒服">15. font-smoothing 设置字体平滑，会让字体看起来比较舒服</h2>
+
+```css
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, a, .td-name, td {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Microsoft YaHei", "微软雅黑", 'Muli', "Helvetica", Arial, sans-serif;
+}
+```
+
+
+<h2 id="修改选中文本颜色">16. ::selection 修改选中文本颜色</h2>
+
+```css
+::selection {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+::-webkit-selection {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+::-moz-selection {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+```
+
+[back to top](#top)
+
 > References
 
 - [aming的小屋](http://www.qdfuns.com/house/26716/note)
 - [八个制作Linking（链接）的技巧](http://www.w3cplus.com/blog/180.html)
+- [被遗忘的CSS](https://segmentfault.com/a/1190000014217217)
