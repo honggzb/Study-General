@@ -1,7 +1,8 @@
 [移动web资源整理](#top)
 
 - [1. meta基础知识](#meta基础知识)
-  - H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
+  - 常用移动端头部
+  - H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
   - 忽略将页面中的数字识别为电话号码
   - 忽略Android平台中对邮箱地址的识别
   - 当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari (new)
@@ -57,6 +58,25 @@
 - [flex布局](#flex布局)
 
 <h2 id="meta基础知识">1. meta基础知识</h2>
+
+**常用移动端头部**
+
+```html
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/><!-- 手机视图 -->
+<meta content="telephone=no" name="format-detection" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- UC默认竖屏 ，UC强制全屏 -->
+<meta name="full-screen" content="yes"/>
+<meta name="browsermode" content="application"/>
+<!-- QQ强制竖屏 QQ强制全屏 -->
+<meta name="x5-orientation" content="portrait"/>
+<meta name="x5-fullscreen" content="true"/>
+<meta name="x5-page-mode" content="app"/>
+```
+
+**其他**
 
 ```html
 <!-- 1. H5页面窗口自动调整到设备宽度，并禁止用户缩放页面 -->
