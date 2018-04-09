@@ -1,6 +1,4 @@
-## 现代CSS代码的建议
-
---[top](#top)
+[现代CSS代码的建议](#top)
 
 - [1. 一切应为Border-box](#一切应为Border-box)
 - [2. 以背景图方式使用Images](#以背景图方式使用Images)
