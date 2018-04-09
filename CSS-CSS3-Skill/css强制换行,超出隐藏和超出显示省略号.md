@@ -1,6 +1,12 @@
 - [一、强制换行](#强制换行)
 - [二、禁止换行并超出显示省略号](#禁止换行)
 
+| 功能 | 代码 |
+| :------------- | :------------- |
+|不换行 |`white-space: nowrap;`|
+|自动换行 |`word-wrap: break-word; word-break: normal;`|
+|强制换行 |`word-break: break-all;`|
+
 <h2 id="强制换行">一、强制换行</h2>
 
 1. `word-break: break-all;` 只对英文起作用，以字母作为换行依据
