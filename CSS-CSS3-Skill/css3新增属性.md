@@ -48,9 +48,10 @@ p[index|=d]{background:red}|指定了属性名，并且属性值是value或者�
 
 CSS3用户界面|说明
 ---|---
-`resize: none|both|horizontal|vertical|initial|inherit;`|属性规定是否可由用户调整元素尺寸
-`box-sizing: content-box|border-box|initial|inherit;`|属性允许您以确切的方式定义适应某个区域的具体内容
+`resize: none/both/horizontal/vertical/initial/inherit;`|属性规定是否可由用户调整元素尺寸
+`box-sizing: content-box/border-box/initial/inherit;`|属性允许您以确切的方式定义适应某个区域的具体内容
 outline-offset|属性对轮廓进行偏移，并在超出边框边缘的位置绘制轮廓
+`direction: ltr/rtl/initial/inherit;`|文字排列方式(全兼容),注意要配合`unicode-bidi:bidi-override;` 一块使用
 
  ```css
  div {
