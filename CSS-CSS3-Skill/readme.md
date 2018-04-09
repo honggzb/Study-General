@@ -35,6 +35,7 @@
 │     └── 
 │
 ├── BootstrapCarouselWithAnimation.html               #使用bootstrap和animation.css制作带动画的幻灯片
+├── bootstrap使用小tip
 ├── CSS属性选择器驱动的过滤搜索技术(autocomplete).md
 ├── css-Hacks合集.md
 ├── PostCSS学习.md
