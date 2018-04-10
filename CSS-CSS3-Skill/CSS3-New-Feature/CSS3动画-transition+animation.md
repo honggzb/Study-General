@@ -12,7 +12,10 @@ CSS3属性中有关于制作动画的三个属性：`Transform,Transition,Animat
 
 <h3 id="CSS-Transition">1. CSS Transition</h3>
 
-`transition ： [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'> [, [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'>]]*`
+```
+transition ： [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'> [, [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'>]]
+transition： CSS属性，花费时间，效果曲线(默认ease)，延迟时间(默认0)
+```
 
 属性|说明
 ---|---
