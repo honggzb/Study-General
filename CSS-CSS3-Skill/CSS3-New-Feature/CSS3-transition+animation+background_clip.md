@@ -1,4 +1,4 @@
-## [CSS3动画-transition+animation](#top)
+## [CSS3动画-transition+animation+background_clip](#top)
 
 - [1. CSS Transition](#CSS-Transition)
 - [2. CSS Animation](#CSS-Animation)
@@ -799,3 +799,4 @@ div{
 - [CSS3 Animation](http://www.w3cplus.com/content/css3-animation)
 - [CSS动画简介](http://www.ruanyifeng.com/blog/2014/02/css_transition_and_animation.html)
 - [CSS自定义属性制作动画](#http://www.w3cplus.com/css3/create-animation-with-css-variables.html)
+- [个人总结（css3新特性）](https://juejin.im/post/5a0c184c51882531926e4294)
