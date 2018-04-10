@@ -1,6 +1,4 @@
-##CSS3动画-transition+animation
-
---[top](top)
+## [CSS3动画-transition+animation](#top)
 
 - [1. CSS Transition](#CSS-Transition)
 - [2. CSS Animation](#CSS-Animation)
