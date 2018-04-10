@@ -786,10 +786,10 @@ div{
 
 | 案例 |code|效果|
 | :------------- | :------------- | :------------- |
-|下倒影|.reflect-bottom {-webkit-box-reflect: below;}|![](https://i.imgur.com/svGMFyP.png)|
-|下倒影（渐变）|`reflect-bottom-mask {-webkit-box-reflect: below 0 linear-gradient(transparent, white);}`|![](https://i.imgur.com/o1Vnfg0.png)|
-|下倒影（图片遮罩）|.reflect-bottom-img -webkit-box-reflect: below 0 url(shou.png);}|![](https://i.imgur.com/MawcVll.png)|
-|右倒影（有偏移|.reflect-right-translate {-webkit-box-reflect: right 10px;}|![](https://i.imgur.com/aURiqZZ.png)|
+|下倒影|.reflect-bottom {<br>-webkit-box-reflect: below;<br>}|![](https://i.imgur.com/svGMFyP.png)|
+|下倒影（渐变）|`reflect-bottom-mask {<br>-webkit-box-reflect: below 0 linear-gradient(transparent, white);<br>}`|![](https://i.imgur.com/o1Vnfg0.png)|
+|下倒影（图片遮罩）|.reflect-bottom-img{<br> -webkit-box-reflect: below 0 url(shou.png);<br>}|![](https://i.imgur.com/MawcVll.png)|
+|右倒影（有偏移|.reflect-right-translate {<br>-webkit-box-reflect: right 10px;<br>}|![](https://i.imgur.com/aURiqZZ.png)|
 
 [back to top](#top)
 
