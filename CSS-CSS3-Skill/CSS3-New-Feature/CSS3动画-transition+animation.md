@@ -13,8 +13,10 @@ CSS3属性中有关于制作动画的三个属性：`Transform,Transition,Animat
 <h3 id="CSS-Transition">1. CSS Transition</h3>
 
 ```
-transition ： [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'> [, [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'>]]
+transition： [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'> [, [<'transition-property'> || <'transition-duration'> || <'transition-timing-function'> || <'transition-delay'>]]
 transition： CSS属性，花费时间，效果曲线(默认ease)，延迟时间(默认0)
+transition: width, .5s, ease, .2s;
+transition: all, .5s;     /* 所有属性从原始值到制定值的一个过渡，运动曲线ease,运动时间0.5秒 */
 ```
 
 属性|说明
@@ -24,11 +26,6 @@ transition： CSS属性，花费时间，效果曲线(默认ease)，延迟时间
 `transition-timing-function ：ease/linear(匀速)/ease-in(加速)/ease-out(减速)/ease-in-out/cubic-bezier(<number>, <number>, <number>, <number>)[, ease/ linear/ease-in/ease-out/ ease-in-out/cubic-bezier(<number>, <number>, <number>, <number>)]* `|根据时间的推进去改变属性值的变换速率, cubic-bezier，可以使用[工具网站](http://cubic-bezier.com/#.17,.67,.83,.67)来定制
 `transition-delay ： <time> [, <time>]* `| 指定一个动画开始执行的时间，也就是说当改变元素属性值后多长时间开始执行transition效果，单位为s（秒）或者ms(毫秒)，其使用和transition-duration极其相似，也可以作用于所有元素，包括:before和:after伪元素。 默认大小是"0"，也就是变换立即执行，没有延迟
 
-```
-                    animation duration           animation delay
-transition:   all           .5s       ease-in-out      1s;
-       selected property             animation type
-```
 
 **transition-property: [ident-元素的某一个属性值]其对应的类型如下(https://www.w3.org/TR/css3-transitions/#properties-from-css-)**
 
