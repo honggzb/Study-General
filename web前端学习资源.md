@@ -102,6 +102,7 @@
 ### TypeScript
 
 [官网文档（ts的一个官方文档，写得较好）](https://link.juejin.im/?target=https%3A%2F%2Fwww.tslang.cn%2Fdocs%2Fhome.html)
+<a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000010130073" target="_blank" rel="nofollow noopener noreferrer">TypeScript 资源集</a>
 
 ### Jquery
 
@@ -137,6 +138,12 @@
 <a href="https://link.juejin.im?target=http%3A%2F%2Fwww.ydcss.com%2Farchives%2F18" target="_blank" rel="nofollow noopener noreferrer">gulp详细入门教程</a><br>
 <a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2F2050%2Fp%2F4198792.html" target="_blank" rel="nofollow noopener noreferrer">前端构建工具gulp的使用介绍及技巧</a><br>
 <a href="https://link.juejin.im?target=http%3A%2F%2Fwww.gulpjs.com.cn%2Fdocs%2Fgetting-started%2F" target="_blank" rel="nofollow noopener noreferrer">gulp入门指南</a>
+
+### parcel
+
+<a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000012332187" target="_blank" rel="nofollow noopener noreferrer">宣布 Parcel：一个快速，零配置的 Web 应用打包工具</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2FMcbai%2FBlog%2Fissues%2F2" target="_blank" rel="nofollow noopener noreferrer">前端构建工具吐槽与parcel极简入门</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2Fentry%2F5a391fdf6fb9a04515440339%3Futm_medium%3Dfe%26utm_source%3Dweixinqun" target="_blank" rel="nofollow noopener noreferrer">折腾记：Hello Parcel</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2Fpost%2F5a38e100f265da4324809297" target="_blank" rel="nofollow noopener noreferrer">从 webpack 到全面拥抱 Parcel #1 探索 Parcel</a>（这篇应该会用后续内容，大家可以跟着学）
 
 ### react
 
@@ -215,4 +222,4 @@
 <a href="https://link.juejin.im?target=http%3A%2F%2Fwww.hubwiz.com%2F" target="_blank" rel="nofollow noopener noreferrer">汇智网</a>
 
 
-> https://juejin.im/post/5a519d305188257327396da5
+> https://juejin.im/post/5a0c1956f265da430a501f51
