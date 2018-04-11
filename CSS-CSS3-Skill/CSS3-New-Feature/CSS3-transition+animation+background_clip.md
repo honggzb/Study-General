@@ -10,6 +10,8 @@
 - [6. 边框图片border-image](#边框图片border)
 - [7. 背景background-clip, background-origin, background-size](#背景background)
 - [8. 反射reflect](#反射reflect)
+- [9. 动画js事件](#动画js事件)
+- SVG animations
 
 CSS3属性中有关于制作动画的三个属性：`Transform,Transition,Animation`
 
@@ -94,10 +96,29 @@ img{ transition: 1s height cubic-bezier(.83,.97,.05,1.44); }   /*height在最后
 
 **transition的局限**
 
-- transition需要事件触发，所以没法在网页加载时自动发生
+- transition不可自动触发，需要事件触发，所以没法在网页加载时自动发生, 可以通过改变class，改变状态(:hover, :active, :checked等)触发
 - transition是一次性的，不能重复发生，除非一再触发
 - transition只能定义开始状态和结束状态，不能定义中间状态，也就是说只有两个状态
 - 一条transition规则，只能定义一个属性的变化，不能涉及多个属性
+- `display: none`与其他值的切换不行， 通过delay设置也不行，除非通过回调函数或setTimeout先切换display，再设置动画样式改变
+- 可设置delay为负值，表示动画已经运行到了该时间，前面的动画效果忽略，见[demo](http://jsbin.com/bureyo)
+- 可对自己或子元素进行动画动画
+- 或对同级下面的元素及其子元素进行动画控制
+- 可在状态内添加transition，覆盖默认的transition
+
+```css
+/*鼠标滑过会采用hover的transition即1s（覆盖了默认的transition），滑出会采用默认的transition即5s*/
+.demo{
+  width: 200px;
+  height: 200px;
+  background: #f00;
+  transition: all 5s;
+}
+.demo:hover{
+  transition: all 1s;
+  background: #000;
+}
+```
 
 CSS Animation就是为了解决这些问题而提出的
 
@@ -165,6 +186,12 @@ div:hover {  animation: 1s rainbow 3 normal; }  /*动画连续播放三次*/
 - 如省略某个状态，浏览器会自动推算中间状态, 使用from，Percentage， to是可以省略的, 还可以把多个状态写在一行
 - 浏览器从一个状态向另一个状态过渡，是平滑过渡。**steps函数** 可以实现分步过渡。`div:hover { animation: 1s rainbow infinite steps(10); }`
 - `animation-play-state`: 让动画保持突然终止时的状态
+- 可自动触发，也可以通过状态或增加class触发
+- 安卓低端机不支持伪元素（::before和::after）动画
+- animation-fill-mode 可设置动画结束及开始的状态。如为backwards，则元素默认应用第一关键帧的样式，忽略delay，可通过一开始就暂停观察（animation-play-state: paused;）；如为forwards，则在动画结束后，元素将应用动画结束后的属性值；如果animation-fill-mode的值为both，则动画会遵循backwards和forwards的规则。也就是说，它会设置开始和结束的状态。
+- animation-timing-function默认应用在每个关键帧之间的变化，而不是开始到结束整个流程。所以@keyframes 中的每个关键帧可以重新定义animation-timing-function
+- 可以用于none到block的动画切换
+- 对于关键帧的安排是门技术活，所以这里推荐使用[CSS3动画帧数计算器](http://tid.tenpay.com/labs/css3_keyframes_calculator.html)
 
 ```css
 div {
@@ -172,6 +199,15 @@ div {
     animation-play-state: paused;
 }
 div:hover { animation-play-state: running; }   /*没有鼠标没有悬停时，动画状态是暂停；一旦悬停，动画状态改为继续播放*/
+/*none到block的动画切换*/
+.demo .child{   display: none; }
+.demo:hover .child{
+    display: block;
+    animation: showChild .3s both;
+}
+[@keyframes](/user/keyframes) showChild {
+    from{   opacity: 0; }
+}
 ```
 
 **案例1**
@@ -250,11 +286,7 @@ h1 {
         overflow: hidden;
         background: #fff;
     }
-
-    .center {
-        margin: 80px auto;
-    }
-
+    .center {  margin: 80px auto;}
     .so {
         display: block;
         width: 500px;
@@ -290,9 +322,7 @@ h1 {
         height: 56px;
         left: 0px;
     }
-    .so .inner .box div {
-        background: #BCBBBB;
-    }
+    .so .inner .box div { background: #BCBBBB; }
     .so .inner .box .bottom {
         bottom: 0px;
         left: 0px;
@@ -317,10 +347,7 @@ h1 {
         width: 0;
         height: 12px;
     }
-    .so .inner .stack {
-        left: 22px;
-        top: 22px;
-    }
+    .so .inner .stack { left: 22px; top: 22px; }
     .so .inner .stack .inner-item {
         background: #F48024;
         width: 71px;
@@ -330,60 +357,24 @@ h1 {
         transition: transform 0.3s;
         width: 291px;
     }
-    .so .inner .stack div:nth-child(1) {
-        transform: rotate(0deg);
-    }
-    .so .inner .stack div:nth-child(2) {
-        transform: rotate(12deg);
-    }
-    .so .inner .stack div:nth-child(3) {
-        transform: rotate(24deg);
-    }
-    .so .inner .stack div:nth-child(4) {
-        transform: rotate(36deg);
-    }
-    .so .inner .stack div:nth-child(5) {
-        transform: rotate(48deg);
-    }
-    .so .inner .box {
-        animation-name: box;
-    }
-    .so .inner .box .top {
-        animation-name: box-top;
-    }
-    .so .inner .box .left {
-        animation-name: box-left;
-    }
-    .so .inner .box .right {
-        animation-name: box-right;
-    }
-    .so .inner .box .bottom {
-        animation-name: box-bottom;
-    }
-    .so .inner .stack-box {
-        animation-name: stack-box;
-    }
-    .so .inner .stack {
-        animation-name: stack;
-    }
-    .so .inner .stack .inner-item {
-        animation-name: stack-items;
-    }
-    .so .inner .stack .item:nth-child(1) {
-        animation-name: stack-item-1;
-    }
-    .so .inner .stack .item:nth-child(2) {
-        animation-name: stack-item-2;
-    }
-    .so .inner .stack .item:nth-child(3) {
-        animation-name: stack-item-3;
-    }
-    .so .inner .stack .item:nth-child(4) {
-        animation-name: stack-item-4;
-    }
-    .so .inner .stack .item:nth-child(5) {
-        animation-name: stack-item-5;
-    }
+    .so .inner .stack div:nth-child(1) { transform: rotate(0deg); }
+    .so .inner .stack div:nth-child(2) { transform: rotate(12deg); }
+    .so .inner .stack div:nth-child(3) { transform: rotate(24deg); }
+    .so .inner .stack div:nth-child(4) { transform: rotate(36deg); }
+    .so .inner .stack div:nth-child(5) { transform: rotate(48deg); }
+    .so .inner .box { animation-name: box; }
+    .so .inner .box .top { animation-name: box-top; }
+    .so .inner .box .left { animation-name: box-left; }
+    .so .inner .box .right { animation-name: box-right; }
+    .so .inner .box .bottom { animation-name: box-bottom; }
+    .so .inner .stack-box { animation-name: stack-box; }
+    .so .inner .stack { animation-name: stack; }
+    .so .inner .stack .inner-item { animation-name: stack-items; }
+    .so .inner .stack .item:nth-child(1) { animation-name: stack-item-1; }
+    .so .inner .stack .item:nth-child(2) { animation-name: stack-item-2;  }
+    .so .inner .stack .item:nth-child(3) { animation-name: stack-item-3; }
+    .so .inner .stack .item:nth-child(4) { animation-name: stack-item-4; }
+    .so .inner .stack .item:nth-child(5) { animation-name: stack-item-5; }
     @keyframes stack {
         0% {
             left: 22px;
@@ -632,7 +623,6 @@ h1 {
 - [slodive](http://slodive.com/web-development/best-css3-animation-demos-tutorials/)
 - [impressivewebs](http://www.impressivewebs.com/demo-files/css3-animated-scene/)这上面有许多特别有意的动画demo
 - [CSS3 Spinner & Loader animations](https://www.html5tricks.com/demo/css3-loading-cool-styles/index.html)
-- []
 
 [back to top](#top)
 
@@ -646,8 +636,42 @@ transform: rotate(30deg);
 transform: rotateX(180deg);
 transform: rotate3d(10, 10 ,10, 90deg);
 transform: translate(30px, 30px);
-transform: scale(.8);
+transform: scale(0.8);
 transform: skew(10deg, 10deg);
+```
+
+> 主要思想：
+> 1. 任何非none值的transform会导致创建一个堆栈上下文和包含块, 所以如果父级元素设置了transform属性，position:relative/absolute/fixed会基于此定位，详细请参考：[transformed element creates a containing block for all its positioned descendants](http://meyerweb.com/eric/thoughts/2011/09/12/un-fixing-fixed-elements-with-css-transforms/)
+> 2. transform属性值覆盖问题: transform可以有四个不同的变换，分别为scale、translate、skew、rotate。现在的问题是当有两个transform设置不同变换时，权重大的覆盖权重小的, 这个问题在平时使用中还好，但是在动画中那就相当麻烦了，因为你必须还得去拷贝之前设置的值。所以水平垂直居中的弹窗如果用了translate水平定位，然后再使用transform动画，那就毁了
+> 3. transform几个值的先后问题: 四个值的真的不是随便写的，它是有先后的。第一会改变中心点，第二会改变坐标系，请遵循先后顺序， 因为每转动一次，坐标随即改变，如向左转，转完之后就不再是左而是正前方了，参见[cube demo](http://desandro.github.io/3dtransforms/examples/cube-02-show-sides.html)
+> 4. perspective和preserve-3d的层级关系
+ - perspective为其直接的具有三维变换的子元素产生一个透视效果，而preserve-3d则为其直接的子元素提供一个3d渲染空间
+ - perspective
+     - preserve-3d
+       - child*n
+
+```css
+/*2. transform属性值覆盖问题*/
+.demo{ transform: scale(2);}
+.demo{ transform: translateX(50px); }    /* 第一条scale将会被覆盖，失效 */
+.demo{ transform: scale(2) translateX(50px);}   /* 如果要包含第一条scale*/
+/*3. transform几个值的先后问题, 以立方体为例*/
+<section class="container">
+  <div id="cube">
+    <figure class="front">1</figure>
+    <figure class="back">2</figure>
+    <figure class="right">3</figure>
+    <figure class="left">4</figure>
+    <figure class="top">5</figure>
+    <figure class="bottom">6</figure>
+  </div>
+</section>
+.front  { transform: rotateY(   0deg ) translateZ( 100px ); }
+.back   { transform: rotateX( 180deg ) translateZ( 100px ); }
+.right  { transform: rotateY(  90deg ) translateZ( 100px ); }
+.left   { transform: rotateY( -90deg ) translateZ( 100px ); }
+.top    { transform: rotateX(  90deg ) translateZ( 100px ); }
+.bottom { transform: rotateX( -90deg ) translateZ( 100px ); }
 ```
 
 [back to top](#top)
@@ -793,10 +817,80 @@ div{
 
 [back to top](#top)
 
+<h2 id="动画js事件">9. 动画js事件</h2>
+
+- animation动画有三个js事件，分别为animationstart、animationiteration、animationend
+- transition动画只有一个transitionend事件，而webkit现在既支持webkitTransitionEnd，也支持标准的transitionend事件，所以只能绑定一个，不然会触发两次事件，见[demo](http://jsbin.com/xosigi/1)
+  - 如有多个属性参与动画，就会出现多个transitionend事件（这个事件标准还是有不少bug的），所以请使用jquery的one事件，或者绑定事件调用函数中随即取消绑定事件
+  - [Detect the End of CSS Animations and Transitions with JavaScript](https://jonsuh.com/blog/detect-the-end-of-css-animations-and-transitions-with-javascript/)
+
+```JavaScript
+function whichTransitionEvent(){
+  var t,
+      el = document.createElement("div");
+
+  var transitions = {
+    "transition"      : "transitionend",
+    "MozTransition"   : "transitionend",
+    "WebkitTransition": "webkitTransitionEnd"
+  }
+
+  for (t in transitions){
+    if (el.style[t] !== undefined){
+      return transitions[t];
+    }
+  }
+}
+var transitionEvent = whichTransitionEvent();
+// jquery 调用
+$(".button").click(function(){
+  $(this).addClass("animate");
+  $(this).one(transitionEvent, function(event) {
+    // Do something when the transition ends
+  });
+});
+// 原生js调用
+var button = document.querySelector(".button"),
+    transitionEvent = whichTransitionEvent();
+button.addEventListener("click", function() {
+  if (button.classList) {
+    button.classList.add("animate");
+  } else {
+    button.className += " " + "animate";
+  }
+  button.addEventListener(transitionEvent, customFunction);
+});
+
+function customFunction(event) {
+  button.removeEventListener(transitionEvent, customFunction);
+  // Do something when the transition ends
+}
+```
+
+不支持的动画属性切换
+
+- background-image
+- float
+- height/width/top/right/bottom/left 等auto值向具体值的变换
+- display 在none和其他值之间切换
+- position 在static和absolute之间切换
+
+[back to top](#top)
+
 > reference
 
 - [CSS3 Transition](http://www.w3cplus.com/content/css3-transition)
 - [CSS3 Animation](http://www.w3cplus.com/content/css3-animation)
+- [Intro to CSS 3D transforms-带案例的书](http://desandro.github.io/3dtransforms/)
 - [CSS动画简介](http://www.ruanyifeng.com/blog/2014/02/css_transition_and_animation.html)
 - [CSS自定义属性制作动画](#http://www.w3cplus.com/css3/create-animation-with-css-variables.html)
 - [个人总结（css3新特性）](https://juejin.im/post/5a0c184c51882531926e4294)
+- [搞定这些疑难杂症，向css3动画说yes](https://cloud.tencent.com/developer/article/1020082)
+
+> SVG animations
+
+- [How SVG Line Animation Works](https://css-tricks.com/svg-line-animation-works/)
+- [A Guide to SVG Animations (SMIL)（英文版）](https://css-tricks.com/guide-svg-animations-smil/)
+- [超级强大的SVG SMIL animation动画详解 （中文版）](http://www.zhangxinxu.com/wordpress/2014/08/so-powerful-svg-smil-animation/)
+- [gsap](http://greensock.com/gsap)
+- [Velocity.js](http://julian.com/research/velocity/)
