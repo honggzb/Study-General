@@ -11,3 +11,13 @@
 用<a href="https://egghead.io/courses/react-native-fundamentals" target="_blank">React Native</a>开发一个移动app。<br>
 用<a href="https://medium.freecodecamp.org/how-to-build-your-first-app-with-electron-41ebdb796930" target="_blank">Electron</a>开发一个桌面app。<br>
 玩一下<a href="https://popmotion.io/learn/get-started/" target="_blank">Popmotion</a>创作一个流畅的动画。popmotion是在GitHub上迅速赢得星星的JavaScript动画库<br>
+
+## ongoing
+
+### Redux
+
+- [Redux 入门教程- 阮一峰](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)
+- [Redux: Describing State Changes with Actions- egghead.io](https://egghead.io/lessons/react-redux-describing-state-changes-with-actions)
+- [Build a Better Angular 2 Application with Redux and ngrx](http://onehungrymind.com/build-better-angular-2-application-redux-ngrx/)
+
+
