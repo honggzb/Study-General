@@ -1,4 +1,11 @@
-- React<br>
+### 进一步学习
+
+- React
+- nodeJS
+  - [Nodejs学习笔记](https://github.com/chyingp/nodejs-learning-guide)
+
+### New
+
 - <a href="https://vuejs.org/v2/guide/" target="_blank">Vue.js</a><br>
 - <a href="https://learnnextjs.com/" target="_blank">学习Next.js</a><br>
 - <a href="https://protoship.io/blog/2017/05/10/an-invitation-to-reasonml.html" target="_blank">Reason</a>（以及<a href="https://jaredforsyth.com/2017/07/05/a-reason-react-tutorial/" target="_blank">Reason React</a>）然后做个业余项目试试吧。<br>
