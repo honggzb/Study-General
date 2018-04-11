@@ -17,6 +17,7 @@
     - 1.4.4 d3
     - [1.4.5 angular material](#angular-material)
     - [1.4.6 less(ng new project_name --style less when create new project)](#less)
+    - [1.4.7 jquery](#jquery)
 - [2. project struture the Angular CLI setup](#project-struture)
 - [3. Adding an Express server to an Angular CLI project](#add-express)
   - 3.1 build a new folder and new js file - /node_server/server.j
@@ -296,7 +297,24 @@ npm update
   - Rename all component's CSS file from xxx/xxx.component.css -> xxx/xxx.component.less
   - Update styleUrls in xxx/xxxx.component.ts, e.g. styleUrls: ['./xxx.component.css'] -> styleUrls: ['./xxx.component.less']
 
-[back to top](#top))
+[back to top](#top)
+
+<h4 id="less">1.1.7 using jquery</h4>
+
+```
+# 1) install package
+npm install jquery –save
+# 2) angular-cli.json 
+"scripts": [
+        "../node_modules/zui/dist/lib/jquery/jquery.js"
+   ]
+# 3) Typings.d.ts
+/* SystemJS module definition */
+declare var module: NodeModule;
+declare var $:any;
+```
+
+[back to top](#top)
 
 <h4 id="Proxy-To-Backend">1.2 Proxy To Backend</h4>
 
