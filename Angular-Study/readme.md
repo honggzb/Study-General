@@ -6,10 +6,13 @@
 │   │
 │   ├── Angular 2,4 + google map      #Google map在angular>2中的应用
 │   ├── Angular_CLI的使用.md           #useful
+│   ├── Angular学习笔记之lazy loading-使用angular-cli.md     #useful
+│   ├── Angular学习笔记之集成三方UI框架.md
 │   ├── Angular打造股票管理网站.md      #useful
 │   ├── Angular系列之变化检测.md
 │   ├── Angular之Pipe.md
 │   ├── Angular编程过程中遇到的问题.md
+│   ├── mocking-backend -API.md
 │   ├── node+express创建服务器.md
 │   └── 
 ```
