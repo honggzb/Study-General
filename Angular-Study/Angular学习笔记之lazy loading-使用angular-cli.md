@@ -18,7 +18,7 @@ ng g component lazy/LazyPage
 ## 修改相应的文件
 
 ```JavaScript
-// app/app-routing.module.ts
+// 1) app/app-routing.module.ts
 import { HomeComponent } from './home/home.component';
 const appRoutes: Routes = [    //rename to appRoutes
   { path: '', component: HomeComponent },
@@ -30,7 +30,24 @@ const appRoutes: Routes = [    //rename to appRoutes
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-// app/lazy/lazy-routing.module.ts
+//  app/app.module.ts
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+// 2) app/lazy/lazy-routing.module.ts
 import { LazyComponent } from './lazy.component';
 import { LazyPageComponent } from './lazy-page/lazy-page.component';
 const routes: Routes = [
@@ -47,6 +64,18 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class LazyRoutingModule { } 
+// app/lazy/lazy.module.ts
+import { LazyRoutingModule } from './lazy-routing.module';
+import { LazyComponent } from './lazy.component';
+import { LazyPageComponent } from './lazy-page/lazy-page.component';
+@NgModule({
+  imports: [
+    CommonModule,
+    LazyRoutingModule
+  ],
+  declarations: [LazyComponent, LazyPageComponent]
+})
+export class LazyModule { }
 ```
 
 > [Lazy-loading content with angular-cli](https://keathmilligan.net/lazy-loading-content-with-angular-cli/)
