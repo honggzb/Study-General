@@ -1,3 +1,28 @@
+- [web前端技术](#web前端技术)
+  - [html5](#html5)
+  - [CSS3](#CSS3)
+  - [JavaScript](#JavaScript)
+  - [es6，es7，es8](#es6，es7，es8)
+  - [TypeScript](#TypeScript)
+  - [Jquery](#Jquery)
+- [web前端框架](#web前端框架)
+  - [Vue](#Vue)
+  - [react](#react)
+- [web前端架构](#web前端架构)
+  - [Webpack](#Webpack)
+  - [Gulp](#Gulp)
+  - [parcel](#parcel)
+- [全栈](#全栈)
+  - [Node.js](#Node.js)
+- [调试](#调试)
+- [细节，优化](#细节，优化)
+- [其它](#其它)
+- [博客](#博客)
+  - [大牛博客](#大牛博客)
+  - [团队博客](#团队博客)
+- [推荐社区](#推荐社区)
+
+## web前端技术
 
 ### html5
 
@@ -113,6 +138,8 @@
 <a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Fjesse131%2Fp%2F5494590.html" target="_blank" rel="nofollow noopener noreferrer">jQuery插件开发总结</a><br>
 <a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F29020657" target="_blank" rel="nofollow noopener noreferrer">jQuery === 面条式代码？</a>
 
+## web前端框架
+
 ### Vue
 
 <a href="https://link.juejin.im?target=https%3A%2F%2Fcn.vuejs.org%2Fv2%2Fguide%2F" target="_blank" rel="nofollow noopener noreferrer">vue官网</a><br>
@@ -121,6 +148,16 @@
 <a href="https://link.juejin.im?target=https%3A%2F%2Faotu.io%2Fnotes%2F2016%2F12%2F28%2Fvue-clock%2F" target="_blank" rel="nofollow noopener noreferrer">一个栗子实践vue2.0与1.0的区别</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.jianshu.com%2Fp%2Fb544091c3d67" target="_blank" rel="nofollow noopener noreferrer">我从未见过如此简洁易懂的Vue教程</a><br>
 <a href="https://link.juejin.im?target=https%3A%2F%2Fvuejs-tips.github.io%2Fcheatsheet%2F" target="_blank" rel="nofollow noopener noreferrer">vue-API</a>（2.3版本的API大全）<br>
 <a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F26057542%3Futm_medium%3Dsocial%26utm_source%3Dqq%3Futm_medium%3Dsocial%26utm_source%3Dqq" target="_blank" rel="nofollow noopener noreferrer">Vue.js 插件开发详解</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000010813937" target="_blank" rel="nofollow noopener noreferrer">vue插件编写与实战</a>（从开发到发布的一个流程，实例简单易懂）<br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.tuicool.com%2Farticles%2Fvmaiei2" target="_blank" rel="nofollow noopener noreferrer">使用 Vue.js 创建的 Calendar</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F26535530%3Futm_medium%3Dsocial%26utm_source%3Dqq%3Futm_medium%3Dsocial%26utm_source%3Dqq" target="_blank" rel="nofollow noopener noreferrer">加薪DAY10」Vue开源项目库汇总</a>（杂七杂八的库都有，质量当然也是有高有低，大家挑着看。）<br><a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F25589193" target="_blank" rel="nofollow noopener noreferrer">Vue.js 的实用技巧（一）(看了第一篇，别忘记剩下的)</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fzoro-web%2Fblog%2Fissues%2F2" target="_blank" rel="nofollow noopener noreferrer">深入vue2.0底层思想--模板渲染</a> <br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Fkeepfool%2Fp%2F5690366.html" target="_blank" rel="nofollow noopener noreferrer">Vue.js——vue-router 60分钟快速入门</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fhcysun.me%2F2017%2F03%2F03%2FVue%25E6%25BA%2590%25E7%25A0%2581%25E5%25AD%25A6%25E4%25B9%25A0%2F" target="_blank" rel="nofollow noopener noreferrer">Vue2.1.7源码学习</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2FDMQ%2Fmvvm" target="_blank" rel="nofollow noopener noreferrer">剖析Vue实现原理 - 如何实现双向绑定mvvm</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000009397476" target="_blank" rel="nofollow noopener noreferrer">Vue.js入门（一）--MVVM框架理解</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fmp.weixin.qq.com%2Fs%3F__biz%3DMzAxODE2MjM1MA%3D%3D%26mid%3D2651552436%26idx%3D2%26sn%3D837a93a7d364da7623de005d55b44c16%26chksm%3D8025ad75b7522463f5cd3b03856602b999cdf9dbb19afd501dd0e93acdd526da7f67b085d5a7%26mpshare%3D1%26scene%3D23%26srcid%3D0807Itvw3TvEVYwhGzIpxd34%23rd" target="_blank" rel="nofollow noopener noreferrer">Vue2 源码分析——逻辑梳理</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000010559711" target="_blank" rel="nofollow noopener noreferrer">手把手教你撸个vue2.0弹窗组件</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000011153487" target="_blank" rel="nofollow noopener noreferrer">深入浅出基于“依赖收集”的响应式原理</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Frefined-x.com%2F2017%2F06%2F13%2FVue%25E5%2585%25A8%25E5%25AE%25B6%25E6%25A1%25B6%25E5%25AE%259E%25E8%25B7%25B5%25E9%25A1%25B9%25E7%259B%25AE%25E6%2580%25BB%25E7%25BB%2593%2F" target="_blank" rel="nofollow noopener noreferrer">Vue全家桶实践项目总结</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000005018970" target="_blank" rel="nofollow noopener noreferrer">vuex入门实例(1/3)</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fmp.weixin.qq.com%2Fs%2FsLAUSzP8GrQHELVULLpD_g" target="_blank" rel="nofollow noopener noreferrer">原创《vue2.0进阶系列》教程目录大全</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000012083511" target="_blank" rel="nofollow noopener noreferrer">另辟蹊径：vue单页面，多路由，前进刷新，后退不刷新</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fvuejsexamples.com%2F" target="_blank" rel="nofollow noopener noreferrer">vuejsexamples</a>（vue的各种demo，可能会有需要的需求）<br><a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2Fpost%2F5a0c191f6fb9a04514639419" target="_blank" rel="nofollow noopener noreferrer">vue快速入门的三个小实例</a>（我自己的文章，比较基础的用法，用三个小实例讲解vue的入门，）<br><a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2Fpost%2F5a3b02026fb9a0451a7689fd" target="_blank" rel="nofollow noopener noreferrer">用vue开发一个所谓的数独</a>
+
+### react
+
+<a href="https://link.juejin.im?target=http%3A%2F%2Fwww.react-cn.com%2F" target="_blank" rel="nofollow noopener noreferrer">React中国</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.ruanyifeng.com%2Fblog%2F2016%2F09%2Freact-technology-stack.html" target="_blank" rel="nofollow noopener noreferrer">React 技术栈系列教程</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000010832044" target="_blank" rel="nofollow noopener noreferrer">React组件规范</a><a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fiuap-design%2Fblog%2Fissues%2F178" target="_blank" rel="nofollow noopener noreferrer">在</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fiuap-design%2Fblog%2Fissues%2F179" target="_blank" rel="nofollow noopener noreferrer">在 2017 年学习 React + Redux 的一些建议（中篇）</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fiuap-design%2Fblog%2Fissues%2F180" target="_blank" rel="nofollow noopener noreferrer">在 2017 年学习 React + Redux 的一些建议（下篇）</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2Fpost%2F599156cc6fb9a03c3a25db08" target="_blank" rel="nofollow noopener noreferrer">学习 React.js 比你想象的要简单</a>
+
+## web前端架构
 
 ### Webpack
 
@@ -145,13 +182,7 @@
 <a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2FMcbai%2FBlog%2Fissues%2F2" target="_blank" rel="nofollow noopener noreferrer">前端构建工具吐槽与parcel极简入门</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2Fentry%2F5a391fdf6fb9a04515440339%3Futm_medium%3Dfe%26utm_source%3Dweixinqun" target="_blank" rel="nofollow noopener noreferrer">折腾记：Hello Parcel</a><br>
 <a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2Fpost%2F5a38e100f265da4324809297" target="_blank" rel="nofollow noopener noreferrer">从 webpack 到全面拥抱 Parcel #1 探索 Parcel</a>（这篇应该会用后续内容，大家可以跟着学）
 
-### react
-
-<a href="https://link.juejin.im?target=http%3A%2F%2Fwww.react-cn.com%2F" target="_blank" rel="nofollow noopener noreferrer">React中国</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.ruanyifeng.com%2Fblog%2F2016%2F09%2Freact-technology-stack.html" target="_blank" rel="nofollow noopener noreferrer">React 技术栈系列教程</a><br>
-<a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000010832044" target="_blank" rel="nofollow noopener noreferrer">React组件规范</a><a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fiuap-design%2Fblog%2Fissues%2F178" target="_blank" rel="nofollow noopener noreferrer">在</a><br>
-<a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fiuap-design%2Fblog%2Fissues%2F179" target="_blank" rel="nofollow noopener noreferrer">在 2017 年学习 React + Redux 的一些建议（中篇）</a><br>
-<a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fiuap-design%2Fblog%2Fissues%2F180" target="_blank" rel="nofollow noopener noreferrer">在 2017 年学习 React + Redux 的一些建议（下篇）</a><br>
-<a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2Fpost%2F599156cc6fb9a03c3a25db08" target="_blank" rel="nofollow noopener noreferrer">学习 React.js 比你想象的要简单</a>
+## 全栈
 
 ### Node.js
 
@@ -182,7 +213,7 @@
 <a href="https://link.juejin.im?target=http%3A%2F%2Ftgideas.qq.com%2Fwebplat%2Finfo%2Fnews_version3%2F804%2F808%2F811%2Fm579%2F201412%2F293834.shtml" target="_blank" rel="nofollow noopener noreferrer">移动前端系列——移动页面性能优化</a><br>
 <a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000005882953" target="_blank" rel="nofollow noopener noreferrer">[聊一聊系列]聊一聊百度移动端首页前端速度那些事儿</a>
 
-### 其它
+## 其它
 
 <a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Flxxhome%2Fp%2F5980615.html" target="_blank" rel="nofollow noopener noreferrer">socket.io 中文手册 socket.io 中文文档</a><br>
 <a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F23467317" target="_blank" rel="nofollow noopener noreferrer">WebSocket 与 Socket.IO</a><br>
@@ -190,7 +221,7 @@
 <a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fmtdpdiancan" target="_blank" rel="nofollow noopener noreferrer">RxJS 入门</a><br>
 <a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fwrite%3FdraftId%3D1220000010354318" target="_blank" rel="nofollow noopener noreferrer">deeplearn.js：浏览器端机器智能框架</a>
 
-### 分享和技能清单
+## 分享和技能清单
 
 <a href="https://link.juejin.im?target=http%3A%2F%2Fwww.jianshu.com%2Fp%2Fb7f8c5564e78" target="_blank" rel="nofollow noopener noreferrer">鸡年大吉！继续前行的前端周刊（第十五期）</a>（虽然差不多狗年了，但是里面的内容并没有过时）<br>
 <a href="https://link.juejin.im?target=http%3A%2F%2Fcollect.w3ctrain.com%2F" target="_blank" rel="nofollow noopener noreferrer">前端收藏夹</a>（和上面那篇一样，都是别人的总结的，干货不少，但是‘前端收藏夹’，可能是资源太多了，给我的感觉也有点一股脑放资源的感觉，只要是资源，都放进去，少部分资源质量有点低，建议大家带参考思想看）<br><a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fhoosin%2Fmobile-web-favorites" target="_blank" rel="nofollow noopener noreferrer">移动web干货收藏夹</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fwww.awesomes.cn%2F" target="_blank" rel="nofollow noopener noreferrer">awesomes</a>（前端一个巨大的资源库，里面的资源应有尽有）<br>
@@ -208,17 +239,55 @@
 <a href="https://link.juejin.im?target=http%3A%2F%2Fwww.biyeseng.cn%2Ffront%2Farticleinfo%2F42.html" target="_blank" rel="nofollow noopener noreferrer">前端开发，从草根到英雄（第二部分）</a><br>
 <a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2Fpost%2F591afe90128fe1005ce339f7" target="_blank" rel="nofollow noopener noreferrer">我的前端进阶之路</a>（看着标题以为是杂谈，实际上感觉是一篇总结性文章，大家可以看下）<br><a href="https://link.juejin.im?target=http%3A%2F%2Ftgideas.qq.com%2Fwebplat%2Finfo%2Fnews_version3%2F804%2F7104%2F7106%2Fm5723%2F201404%2F258291.shtml" target="_blank" rel="nofollow noopener noreferrer">为你的移动页面寻找一丝新意——手机互动网页项目总结（上）</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Ftgideas.qq.com%2Fwebplat%2Finfo%2Fnews_version3%2F804%2F7104%2F7106%2Fm5723%2F201404%2F258325.shtml" target="_blank" rel="nofollow noopener noreferrer">为你的移动页面寻找一丝新意——手机互动网页项目总结（下）</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2Fpost%2F592faca42f301e006bc791e0" target="_blank" rel="nofollow noopener noreferrer">前端开发指南2017</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Fyexiaochai%2Farchive%2F2013%2F04%2F29%2F3050798.html" target="_blank" rel="nofollow noopener noreferrer">【实战HTML5与CSS3 第一篇】初探水深，美丽的导航，绚丽的图片爆炸！！</a>（看完别忘记下面的，是叶小钗大神仿智能社官网的实战）<br><a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000009705021" target="_blank" rel="nofollow noopener noreferrer">基于 Vue 2.0 实现的移动端弹窗 (Alert, Confirm, Toast)组件.</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fcdc.tencent.com%2F2017%2F03%2F09%2F%25E5%258F%2591%25E7%258E%25B0%25E6%259C%2580%25E5%25A5%25BD%25E7%259A%2584%25E4%25BD%25A0-%25E8%25AE%25BE%25E8%25AE%25A1%25E4%25B8%25AD%25E5%25A6%2582%25E4%25BD%2595%25E6%2589%2593%25E9%2580%25A0%25E6%259C%2580%25E5%2590%2588%25E9%2580%2582%25E7%259A%2584%25E7%25BB%2584%25E4%25BB%25B6%2F" target="_blank" rel="nofollow noopener noreferrer">发现最好的你-设计中如何打造最合适的组件</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000010025189" target="_blank" rel="nofollow noopener noreferrer">webpack+vue项目实战（一,搭建运行环境和相关配置）</a>（我自己的文章，关于使用vue+webpack开发一个单页应用，一个后台管理系统的开发搭建，这个系列一共有五篇文章
 
+## 博客
+
 ### 大牛博客
 
 <a href="https://link.juejin.im?target=https%3A%2F%2Fwww.h5jun.com%2Farchives%2F" target="_blank" rel="nofollow noopener noreferrer">十年踪迹</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.zhangxinxu.com%2F" target="_blank" rel="nofollow noopener noreferrer">张鑫旭</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.ruanyifeng.com%2Fhome.html" target="_blank" rel="nofollow noopener noreferrer">阮一峰</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Fyexiaochai%2F" target="_blank" rel="nofollow noopener noreferrer">叶小钗</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Frubylouvre%2F" target="_blank" rel="nofollow noopener noreferrer">司徒正美博客</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2FTomXu%2F" target="_blank" rel="nofollow noopener noreferrer">汤姆大叔</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fwww.liaoxuefeng.com%2F" target="_blank" rel="nofollow noopener noreferrer">廖雪峰</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fjiongks.name%2F" target="_blank" rel="nofollow noopener noreferrer">勾三股四</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Fcoco1s%2F" target="_blank" rel="nofollow noopener noreferrer">chokCoCo</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fchokcoco" target="_blank" rel="nofollow noopener noreferrer">chokCoCo-github</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fcherryblog.site%2F" target="_blank" rel="nofollow noopener noreferrer">Cherry's Blog</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Frefined-x.com%2F" target="_blank" rel="nofollow noopener noreferrer">雅X共赏的前端技术博客-前端路上</a>
 
 ### 团队博客
 
-<a href="https://link.juejin.im?target=http%3A%2F%2Ftaobaofed.org%2F" target="_blank" rel="nofollow noopener noreferrer">淘宝前端团队fed</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.aliued.cn%2F" target="_blank" rel="nofollow noopener noreferrer">阿里巴巴</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Ffex.baidu.com%2F" target="_blank" rel="nofollow noopener noreferrer">百度前端团队</a><br><a href="https://link.juejin.im?target=https%3A%2F%2F75team.com%2F" target="_blank" rel="nofollow noopener noreferrer">360奇舞团</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Ft.75team.com%2Fvideo" target="_blank" rel="nofollow noopener noreferrer">奇舞团视频教程</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Faotu.io%2F" target="_blank" rel="nofollow noopener noreferrer">京东设计体验部-凹凸实验室</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fqqfe.org%2F" target="_blank" rel="nofollow noopener noreferrer">腾讯网前端研发中心</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.alloyteam.com%2F" target="_blank" rel="nofollow noopener noreferrer">腾讯alloyteam</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fimweb.io%2F" target="_blank" rel="nofollow noopener noreferrer">腾讯前端IMWEB团队</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fimweb.github.io%2F" target="_blank" rel="nofollow noopener noreferrer">腾讯前端IMWEB团队-github</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Ftgideas.qq.com%2F" target="_blank" rel="nofollow noopener noreferrer">腾讯游戏</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fued.sina.com.cn%2F%3Fcat%3D4" target="_blank" rel="nofollow noopener noreferrer">新浪UED</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fblog.ymfe.org%2F" target="_blank" rel="nofollow noopener noreferrer">去哪儿网移动架构组</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.daqianduan.com%2F" target="_blank" rel="nofollow noopener noreferrer">大前端（饿了么）</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Ff2e.souche.com%2Fblog%2F" target="_blank" rel="nofollow noopener noreferrer">搜车大无线团队博客</a><br>（上面的团队博客，值得关注，博文内容质量很高，但是就是更新不频繁，下面的更新会比较多，质量也不错）<br><a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fdreawer" target="_blank" rel="nofollow noopener noreferrer">极乐科技</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fimweb" target="_blank" rel="nofollow noopener noreferrer">IMWeb前端社区</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Flinshuai" target="_blank" rel="nofollow noopener noreferrer">爱前端-知乎专栏</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fjscss" target="_blank" rel="nofollow noopener noreferrer">前端杂货铺</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2FFrontendMagazine" target="_blank" rel="nofollow noopener noreferrer">前端外刊评论</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2FthinkingInFE" target="_blank" rel="nofollow noopener noreferrer">前端解忧杂货铺</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fddfe-weekly" target="_blank" rel="nofollow noopener noreferrer">DDFE 技术周刊</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fqianduanzhidian" target="_blank" rel="nofollow noopener noreferrer">前端之巅</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Ffrontenddev.org%2Fdiscover%2F" target="_blank" rel="nofollow noopener noreferrer">Fed汇总</a>
+<a href="https://link.juejin.im?target=http%3A%2F%2Ftaobaofed.org%2F" target="_blank" rel="nofollow noopener noreferrer">淘宝前端团队fed</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fwww.aliued.cn%2F" target="_blank" rel="nofollow noopener noreferrer">阿里巴巴</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Ffex.baidu.com%2F" target="_blank" rel="nofollow noopener noreferrer">百度前端团队</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2F75team.com%2F" target="_blank" rel="nofollow noopener noreferrer">360奇舞团</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Ft.75team.com%2Fvideo" target="_blank" rel="nofollow noopener noreferrer">奇舞团视频教程</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Faotu.io%2F" target="_blank" rel="nofollow noopener noreferrer">京东设计体验部-凹凸实验室</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fqqfe.org%2F" target="_blank" rel="nofollow noopener noreferrer">腾讯网前端研发中心</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fwww.alloyteam.com%2F" target="_blank" rel="nofollow noopener noreferrer">腾讯alloyteam</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fimweb.io%2F" target="_blank" rel="nofollow noopener noreferrer">腾讯前端IMWEB团队</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fimweb.github.io%2F" target="_blank" rel="nofollow noopener noreferrer">腾讯前端IMWEB团队-github</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Ftgideas.qq.com%2F" target="_blank" rel="nofollow noopener noreferrer">腾讯游戏</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fued.sina.com.cn%2F%3Fcat%3D4" target="_blank" rel="nofollow noopener noreferrer">新浪UED</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fblog.ymfe.org%2F" target="_blank" rel="nofollow noopener noreferrer">去哪儿网移动架构组</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fwww.daqianduan.com%2F" target="_blank" rel="nofollow noopener noreferrer">大前端（饿了么）</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Ff2e.souche.com%2Fblog%2F" target="_blank" rel="nofollow noopener noreferrer">搜车大无线团队博客</a><br>（上面的团队博客，值得关注，博文内容质量很高，但是就是更新不频繁，下面的更新会比较多，质量也不错）<br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fdreawer" target="_blank" rel="nofollow noopener noreferrer">极乐科技</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fimweb" target="_blank" rel="nofollow noopener noreferrer">IMWeb前端社区</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Flinshuai" target="_blank" rel="nofollow noopener noreferrer">爱前端-知乎专栏</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fjscss" target="_blank" rel="nofollow noopener noreferrer">前端杂货铺</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2FFrontendMagazine" target="_blank" rel="nofollow noopener noreferrer">前端外刊评论</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2FthinkingInFE" target="_blank" rel="nofollow noopener noreferrer">前端解忧杂货铺</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fddfe-weekly" target="_blank" rel="nofollow noopener noreferrer">DDFE 技术周刊</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fqianduanzhidian" target="_blank" rel="nofollow noopener noreferrer">前端之巅</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Ffrontenddev.org%2Fdiscover%2F" target="_blank" rel="nofollow noopener noreferrer">Fed汇总</a>
 
 ### 推荐社区
 
-<a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2F" target="_blank" rel="nofollow noopener noreferrer">github</a>：这个起初我经常在上面找资源。但是没注册账号，但是后来被老大催着注册，就去了。在里面可以阅读别人的代码，向大家学习！<br><a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2F" target="_blank" rel="nofollow noopener noreferrer">稀土掘金</a>：我现在活跃的一个社区，是写文章的一个很好的地方！<br><a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2F" target="_blank" rel="nofollow noopener noreferrer">segmentfault</a>：我现在活跃的一个社区，主打问答，也有文章和讲堂，质量也很不错！<br><a href="https://link.juejin.im?target=https%3A%2F%2Fwww.zhihu.com%2F" target="_blank" rel="nofollow noopener noreferrer">知乎</a>：虽然不是单纯的IT社区，但是里面有很多大牛和高质量的专栏！<br><a href="https://link.juejin.im?target=https%3A%2F%2Fstackoverflow.com%2F" target="_blank" rel="nofollow noopener noreferrer">stackoverflow</a>：一个问答社区，基本上各种问题都能在上面获得解答<br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.w3cplus.com%2F" target="_blank" rel="nofollow noopener noreferrer">w3cplus</a>：一个前端学习的网站，里面的文章质量都挺不错的，特别是关于CSS(3)的<br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.qdfuns.com%2F" target="_blank" rel="nofollow noopener noreferrer">前端网</a><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.html-js.com%2F" target="_blank" rel="nofollow noopener noreferrer">前端乱炖</a>：一个前端文章分享的社区，有很多优秀文章<br><a href="https://link.juejin.im?target=https%3A%2F%2Ftoutiao.io%2F" target="_blank" rel="nofollow noopener noreferrer">开发者头条</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.feweekly.com%2Fissues" target="_blank" rel="nofollow noopener noreferrer">前端周刊</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.html5dw.com%2F" target="_blank" rel="nofollow noopener noreferrer">HTML5梦工场</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.biyeseng.cn%2F" target="_blank" rel="nofollow noopener noreferrer">毕业僧</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.imooc.com%2F" target="_blank" rel="nofollow noopener noreferrer">慕课网</a>（貌似现在很多视频收费了，以前我看的时候，基本都是免费的）<br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2F" target="_blank" rel="nofollow noopener noreferrer">github</a>：这个起初我经常在上面找资源。但是没注册账号，但是后来被老大催着注册，就去了。在里面可以阅读别人的代码，向大家学习！<br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2F" target="_blank" rel="nofollow noopener noreferrer">稀土掘金</a>：我现在活跃的一个社区，是写文章的一个很好的地方！<br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fsegmentfault.com%2F" target="_blank" rel="nofollow noopener noreferrer">segmentfault</a>：我现在活跃的一个社区，主打问答，也有文章和讲堂，质量也很不错！<br>
+<a href="https://cloud.tencent.com/developer" target="_blank" rel="nofollow noopener noreferrer">腾讯云 云社区</a><br>
+<a href="https://cloud.tencent.com/developer/user/1021320" target="_blank" rel="nofollow noopener noreferrer">IMWeb前端团队</a><br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fwww.zhihu.com%2F" target="_blank" rel="nofollow noopener noreferrer">知乎</a>：虽然不是单纯的IT社区，但是里面有很多大牛和高质量的专栏！<br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Fstackoverflow.com%2F" target="_blank" rel="nofollow noopener noreferrer">stackoverflow</a>：一个问答社区，基本上各种问题都能在上面获得解答<br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fwww.w3cplus.com%2F" target="_blank" rel="nofollow noopener noreferrer">w3cplus</a>：一个前端学习的网站，里面的文章质量都挺不错的，特别是关于CSS(3)的<br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fwww.qdfuns.com%2F" target="_blank" rel="nofollow noopener noreferrer">前端网</a>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fwww.html-js.com%2F" target="_blank" rel="nofollow noopener noreferrer">前端乱炖</a>：一个前端文章分享的社区，有很多优秀文章<br>
+<a href="https://link.juejin.im?target=https%3A%2F%2Ftoutiao.io%2F" target="_blank" rel="nofollow noopener noreferrer">开发者头条</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fwww.feweekly.com%2Fissues" target="_blank" rel="nofollow noopener noreferrer">前端周刊</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fwww.html5dw.com%2F" target="_blank" rel="nofollow noopener noreferrer">HTML5梦工场</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fwww.biyeseng.cn%2F" target="_blank" rel="nofollow noopener noreferrer">毕业僧</a><br>
+<a href="https://link.juejin.im?target=http%3A%2F%2Fwww.imooc.com%2F" target="_blank" rel="nofollow noopener noreferrer">慕课网</a>（貌似现在很多视频收费了，以前我看的时候，基本都是免费的）<br>
 <a href="https://link.juejin.im?target=http%3A%2F%2Fwww.hubwiz.com%2F" target="_blank" rel="nofollow noopener noreferrer">汇智网</a>
 
 
