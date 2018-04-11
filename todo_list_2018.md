@@ -2,7 +2,7 @@
 
 - React
 - nodeJS
-  - [Nodejs学习笔记](https://github.com/chyingp/nodejs-learning-guide)
+ - [Nodejs学习笔记](https://github.com/chyingp/nodejs-learning-guide)
 
 ### New
 
