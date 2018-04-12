@@ -1,4 +1,4 @@
-### 进一步学习
+### continuing study/deep study
 
 - React
 - nodeJS
