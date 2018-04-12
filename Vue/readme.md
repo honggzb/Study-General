@@ -1,4 +1,4 @@
-> Vue学习资源
+### Vue学习资源
 
 - [vuejs官网](https://vuejs.org/)
 - [vuejs中文官网](https://cn.vuejs.org/)
