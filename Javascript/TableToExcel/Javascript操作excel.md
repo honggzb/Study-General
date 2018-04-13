@@ -1,5 +1,6 @@
 - [关于文件下载功能的说明](#关于文件下载功能的说明)
 - [Export HTML table to excel with text and images](#HTML)
+	- warning message bug - "The file format and extension of 'file.xls' donnot match with"
 - [Export HTML to csv](#csv)
 - [Reference: VBA- Convert The Image URLs To Actual Images](#Reference)
 
@@ -240,6 +241,56 @@ else
       window.open objectUrl
 ```
 
+**warning message bug - "The file format and extension of 'file.xls' donnot match with"**
+
+**Reason**
+
+The issue is caused by a new security feature in Excel. Older version Excel did not have this security issue.
+
+http://blogs.msdn.com/b/vsofficedeveloper/archive/2008/03/11/excel-2007-extension-warning.aspx
+
+**solution1:**  set the responseType to blob on my HTTP request.
+
+```JavaScript
+$http({
+    url: 'your/webservice',
+    method: "POST",
+    data: json, //this is your json data string
+    headers: {
+       'Content-type': 'application/json'
+    },
+    responseType: 'blob'
+}).success(function (data, status, headers, config) {
+    var blob = new Blob([data], {type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
+    var objectUrl = URL.createObjectURL(blob);
+    window.open(objectUrl);
+}).error(function (data, status, headers, config) {
+    //upload failed
+});
+```
+
+refer to : https://stackoverflow.com/questions/22447952/angularjs-http-post-convert-binary-to-excel-file-and-download/22448640
+
+**solution2:** set html meta tag to 
+
+```html
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252"/>
+<meta name=ProgId content=Excel.Sheet/>
+<meta name=Generator content="Microsoft Excel 11"/>
+```
+
+**solution3:** 
+
+It can only be fixed by changing Windows registry settings
+
+```shell
+Key: HKEY_CURRENT_USER\Software\Microsoft\Office\12.0\Excel\Security
+Value: (DWORD)"ExtensionHardening" = [0 = Disable check; 1 = Enable check and prompt; 2 = Enable check, no prompt deny open]
+```
+
+Default setting if value not present is 1 (enable and prompt).
 
 [back to top](#top)
 
