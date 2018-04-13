@@ -1,6 +1,6 @@
 - [关于文件下载功能的说明](#关于文件下载功能的说明)
 - [Export HTML table to excel with text and images](#HTML)
-	- warning message bug - "The file format and extension of 'file.xls' donnot match with"
+- [warning message bug - "The file format and extension of 'file.xls' donnot match with"](#warning)
 - [Export HTML to csv](#csv)
 - [Reference: VBA- Convert The Image URLs To Actual Images](#Reference)
 
@@ -241,7 +241,7 @@ else
       window.open objectUrl
 ```
 
-**warning message bug - "The file format and extension of 'file.xls' donnot match with"**
+<h2 id="warning">warning message bug - "The file format and extension of 'file.xls' donnot match with"</h2>
 
 **Reason**
 
