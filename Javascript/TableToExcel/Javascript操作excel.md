@@ -1,6 +1,7 @@
 - [关于文件下载功能的说明](#关于文件下载功能的说明)
 - [Export HTML table to excel with text and images](#HTML)
-- [warning message bug - "The file format and extension of 'file.xls' donnot match with"](#warning)
+	- [Bug 1: warning message bug - "The file format and extension of 'file.xls' donnot match with"](#warning)
+	- [Bug 2: Failed to execute 'btoa' on 'Window': The string to be encoded contains characters outside of the Latin1 range](#bug2)
 - [Export HTML to csv](#csv)
 - [Reference: VBA- Convert The Image URLs To Actual Images](#Reference)
 
@@ -241,7 +242,9 @@ else
       window.open objectUrl
 ```
 
-<h2 id="warning">warning message bug - "The file format and extension of 'file.xls' donnot match with"</h2>
+[back to top](#top)
+
+<h2 id="warning">Bug 1: warning message bug - "The file format and extension of 'file.xls' donnot match with"</h2>
 
 **Reason**
 
@@ -291,6 +294,209 @@ Value: (DWORD)"ExtensionHardening" = [0 = Disable check; 1 = Enable check and pr
 ```
 
 Default setting if value not present is 1 (enable and prompt).
+
+[back to top](#top)
+
+<h2 id="bug2">Bug 2: Failed to execute 'btoa' on 'Window': The string to be encoded contains characters outside of the Latin1 range.
+</h2>
+
+**Reason**: The simple truth is, atob doesn't really handle UTF8-strings - it's ASCII only.
+
+**Solution 1"**:  https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/btoa#Unicode_strings 
+
+`btoa(unescape(encodeURIComponent(str)))`, it work with SVG source too. 
+
+```javascript
+// ucs-2 string to base64 encoded ascii - encode to base64
+function utoa(str) {
+    return window.btoa(unescape(encodeURIComponent(str)));
+}
+// base64 encoded ascii to ucs-2 string- decode base64
+function atou(str) {
+    return decodeURIComponent(escape(window.atob(str)));
+}
+// Usage:
+utoa('✓ à la mode'); // 4pyTIMOgIGxhIG1vZGU=
+atou('4pyTIMOgIGxhIG1vZGU='); // "✓ à la mode"
+utoa('I \u2661 Unicode!'); // SSDimaEgVW5pY29kZSE=
+atou('SSDimaEgVW5pY29kZSE='); // "I ♡ Unicode!"
+// if you need to get this to work in mobile-safari, you might need to strip all the white-space from the base64 data
+function b64_to_utf8( str ) {
+    str = str.replace(/\s/g, '');    
+    return decodeURIComponent(escape(window.atob( str )));
+}
+//my OTMM project: changing to 
+base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) },
+// it work with SVG too
+var imgsrc = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(markup)));
+var img = new Image(1, 1); // width, height values are optional params 
+img.src = imgsrc;
+```
+
+https://stackoverflow.com/questions/23223718/failed-to-execute-btoa-on-window-the-string-to-be-encoded-contains-characte?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+**Solution 2**: using third javascript library
+
+2017 Update: if string contain URL valid characters
+
+1.  [webtoolkit](http://www.webtoolkit.info/) does have a small, nice and very maintainable implementation:
+
+```javascript
+/**
+*
+*  Base64 encode / decode
+*  http://www.webtoolkit.info
+*
+**/
+var Base64 = {
+    // private property
+    _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
+    // public method for encoding
+    , encode: function (input)
+    {
+        var output = "";
+        var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+        var i = 0;
+        input = Base64._utf8_encode(input);
+        while (i < input.length)
+        {
+            chr1 = input.charCodeAt(i++);
+            chr2 = input.charCodeAt(i++);
+            chr3 = input.charCodeAt(i++);
+
+            enc1 = chr1 >> 2;
+            enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+            enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+            enc4 = chr3 & 63;
+
+            if (isNaN(chr2))
+            {
+                enc3 = enc4 = 64;
+            }
+            else if (isNaN(chr3))
+            {
+                enc4 = 64;
+            }
+
+            output = output +
+                this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
+                this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+        } // Whend 
+
+        return output;
+    } // End Function encode 
+    // public method for decoding
+    ,decode: function (input)
+    {
+        var output = "";
+        var chr1, chr2, chr3;
+        var enc1, enc2, enc3, enc4;
+        var i = 0;
+
+        input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+        while (i < input.length)
+        {
+            enc1 = this._keyStr.indexOf(input.charAt(i++));
+            enc2 = this._keyStr.indexOf(input.charAt(i++));
+            enc3 = this._keyStr.indexOf(input.charAt(i++));
+            enc4 = this._keyStr.indexOf(input.charAt(i++));
+
+            chr1 = (enc1 << 2) | (enc2 >> 4);
+            chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+            chr3 = ((enc3 & 3) << 6) | enc4;
+
+            output = output + String.fromCharCode(chr1);
+
+            if (enc3 != 64)
+            {
+                output = output + String.fromCharCode(chr2);
+            }
+
+            if (enc4 != 64)
+            {
+                output = output + String.fromCharCode(chr3);
+            }
+
+        } // Whend 
+
+        output = Base64._utf8_decode(output);
+
+        return output;
+    } // End Function decode 
+    // private method for UTF-8 encoding
+    ,_utf8_encode: function (string)
+    {
+        var utftext = "";
+        string = string.replace(/\r\n/g, "\n");
+
+        for (var n = 0; n < string.length; n++)
+        {
+            var c = string.charCodeAt(n);
+
+            if (c < 128)
+            {
+                utftext += String.fromCharCode(c);
+            }
+            else if ((c > 127) && (c < 2048))
+            {
+                utftext += String.fromCharCode((c >> 6) | 192);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+            else
+            {
+                utftext += String.fromCharCode((c >> 12) | 224);
+                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+
+        } // Next n 
+
+        return utftext;
+    } // End Function _utf8_encode 
+    // private method for UTF-8 decoding
+    ,_utf8_decode: function (utftext)
+    {
+        var string = "";
+        var i = 0;
+        var c, c1, c2, c3;
+        c = c1 = c2 = 0;
+        while (i < utftext.length)
+        {
+            c = utftext.charCodeAt(i);
+            if (c < 128)
+            {
+                string += String.fromCharCode(c);
+                i++;
+            }
+            else if ((c > 191) && (c < 224))
+            {
+                c2 = utftext.charCodeAt(i + 1);
+                string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                i += 2;
+            }
+            else
+            {
+                c2 = utftext.charCodeAt(i + 1);
+                c3 = utftext.charCodeAt(i + 2);
+                string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                i += 3;
+            }
+        } // Whend 
+        return string;
+    } // End Function _utf8_decode 
+
+}
+shareimprove this answer
+```
+
+2. [fileSaver.js](https://github.com/eligrey/FileSaver.js/)
+3. [js-base64](https://github.com/dankogai/js-base64)
+4. Use (experimental) URL.createObjectURL
+
+```javascript
+console.log(URL.createObjectURL(blob));
+//Prints: blob:http://stackoverflow.com/7c18953f-f5f8-41d2-abf5-e9cbced9bc42
+```
 
 [back to top](#top)
 
