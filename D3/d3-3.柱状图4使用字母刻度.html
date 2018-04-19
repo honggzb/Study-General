@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. 画柱状图之4</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <style>
+  
+  </style>
+</head>
+<body>
+  <div class="container"></div>
+  <script>
+  var dataset = [
+    [1953,5.94],
+    [1964,6.95],
+    [1982,10.08],
+    [1990,11.34],
+    [2000,12.66],
+    [2010,13.40]
+  ];
+  var bar_width=50, bar_padding = 10,
+      margin = {top: 20, right: 30, bottom: 20, left: 30},
+      svg_width = (bar_width+bar_padding)*dataset.length,  // 宽度
+      svg_height = 500;
+  
+  var scale = d3.scaleLinear()
+                .domain([0, d3.max(dataset, function(d){ return d[1]; })])
+                .range([svg_height, 0]);
+  var scale_x = d3.scaleOrdinal()  //use ordinal scale
+                  .domain(d3.map(dataset, function(d){ return d[1];}))
+                  .range(d3.map(dataset, function(d){ return d[0];}));
+  var xAxis=d3.axisBottom().scale(scale_x);
+  var yAxis=d3.axisLeft().scale(scale);
+                  
+  var svg = d3.select('div.container')
+          .append('svg')
+          .attr("width", svg_width)
+          .attr("height", svg_height);
+  var g = d3.select('svg').append("g")
+            .attr("transform","translate("+margin.left+","+margin.top+")");
+  
+  var bar = svg.selectAll("g")
+     .data(dataset)
+     .enter()
+     .append("g")
+     .attr('transform',function(d, i){
+       return "translate("+i*(bar_width+bar_padding)+", 0)"
+     });
+ bar.append("rect")
+    .attr("y", function(d){ return scale(d[1]); })
+    .attr("height",function(d){return svg_height-scale(d[1]);})
+    .attr("width",bar_width)
+    .style("fill","steelblue")
+ bar.append("text")
+    .text(function(d){ return d[1]; })
+    .attr("y", function(d){ return scale(d[1]-0.5); })
+    .attr("x", bar_width )
+    .attr("dx", -25)
+    .attr("text-anchor","middle");
+    
+  //g.append("g").call(xAxis).attr("transform","translate("+margin.left+","+svg_height+")");
+  g.append("g").call(yAxis);
+  </script>
+</body>
+</html>
