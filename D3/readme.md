@@ -11,13 +11,29 @@
 - [补充3. shape](#shape)
 - [3. 柱状图](#柱状图)
 - [4. 曲线和图表](#曲线和线性图标)
-- [5. stack and tree layout](#饼状图)
-
+- [5. path transition](#path)
 -------
 
 - 选择元素语法: 
   - `d3.select('body').append('p').text('some text');`
   - `d3.selectAll('p');`
+- set up mock server by using express-generator
+
+```shell
+express d3MockServer
+npm Install
+npm start
+# localhost:3000
+#change to use HTML in Express instead of Jade
+#// app.js
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+#// routes/index.js
+router.get('/', function(req, res, next) {
+  res.render('public/index', { title: 'Express mock server' });
+});
+#create your html view in /public directory
+```
 
 -------
 
@@ -184,7 +200,7 @@ svg.selectAll('text')
 <p>Back</p>
 <div class="back" style="width:100px; height:50px; background-color:red"></div>
 <script>
-      function applyTransition(selection, ease, delay) {
+  function applyTransition(selection, ease, delay) {
         selection.transition()                //1) transition()
         .ease(ease)                           //2) 
         .delay(delay)                         //3) 
@@ -301,6 +317,10 @@ function dragged() {
       .attr("transform", "translate(" + x + "," + y + ")");
 }
 ```
+
+> - [Table of Progressv](https://bl.ocks.org/mbostock/1468715)
+> - [D3 Show Reel](https://bl.ocks.org/mbostock/1256572)
+> - [Donut Transitions](https://bl.ocks.org/mbostock/4341417)
 
 [back to top](#top)
 
@@ -465,23 +485,10 @@ setInterval(render, 3000);
 |Continuous (Linear, Power类似scaleSqrt的乘方比例尺, Log对数比例尺, Identity恒等比例尺, Time) |`d3.scaleLinear()`,`d3.scalePow()`, `d3.scaleLog()`,`d3.scaleIdentity()`, `d3.scaleTime()`|
 |Sequential|`d3.scaleSequential()`|
 |Quantize|`d3.scaleQuantize()`|
-|Quantile|`d3.scaleQuantile()`|
 |Threshold|`d3.scaleThreshold()`|
 |Ordinal (Band, Point)|` d3.scaleOrdinal([range])`, `d3. d3.scaleBand()`,`d3.scalePoint()`|
 
-**1. d3.scaleLinear() 线性比例尺**, 有两个最重要的函数: 定义域和值域
-
-- `d3.scaleLinear().domain([100, 500])`:  定义域范围(输入域)
-- `d3.scaleLinear().range([10,350])`:     值域范围(输出域), 相当于将domain中的数据集映射到range的数据集中
-
-```JavaScript
-var linearScale = d3.scale.linear().domain([0,10000]).range([0,100]);
-linearScale(1);      //0.01
-linearScale(10);     // 0.1
-linearScale(100);    // 1
-linearScale(1000);   // 10
-linearScale(10000);  // 100
-```
+**常用比例尺映射关系**
 
 | 常用比例尺 | code|映射关系|
 | :------------- | :------------- |:------------- |
@@ -492,9 +499,7 @@ linearScale(10000);  // 100
 |时间比例尺|`d3.scaleTime().domain([new Date(2017, 0, 1, 0), new Date(2017, 0, 1, 2)]).range([0,100])`|   |
 |颜色比例尺|`d3.scaleOrdinal(d3.schemeCategory10)`|   |
 
-**2. `d3.scaleBand()` 序数比例尺**: 并不是一个连续性的比例尺，domain()中使用一个数组，不过range()需要是一个连续域
-
-`let scale = d3.scaleBand().domain([1,2,3,4]).range([0,100])`
+**General code**
 
 ```JavaScript
 scale(1) // 输出:0
@@ -517,6 +522,106 @@ scale(new Date(2017, 0, 1, 0)) // 输出:0
 scale(new Date(2017, 0, 1, 1)) // 输出:50 
 //颜色比例尺
 let color = d3.scaleOrdinal(d3.schemeCategory10);   //序数颜色比例尺schemeCategory10,schemeCategory20 :10就是10种颜色，20就是20种
+```
+
+**1. d3.scaleLinear() 线性比例尺**, 有两个最重要的函数: 定义域和值域
+
+- `d3.scaleLinear().domain([100, 500])`:  定义域范围(输入域)
+- `d3.scaleLinear().range([10,350])`:     值域范围(输出域), 相当于将domain中的数据集映射到range的数据集中
+
+```JavaScript
+var linearScale = d3.scale.linear().domain([0,10000]).range([0,100]);
+linearScale(1);      //0.01
+linearScale(10);     // 0.1
+linearScale(100);    // 1
+linearScale(1000);   // 10
+linearScale(10000);  // 100
+```
+
+**2.`d3.scaleOrdinal()` 序数比例尺**
+
+**1) version 3**
+
+![](https://i.imgur.com/kBC9otQ.jpg)
+
+`d3.scaleOrdinal().domain([0, 1, 2]).rangeRoundBands([0, 100], 0.4, 0.1);`
+
+- domain的参数数组有多少个元素，就会有多少个rangeBand
+- rangeBand之间的间隔为padding*step（padding取值范围为0到1），它与rangeBand的关系是均分一个step
+- 比如padding为0.4，则rangeBand的长度为0.6*step。根据上述代码可得最终坐标轴的长度等于(0.1+2+0.6+0.1)*step，由此算出step的长度，再推出外间距、rangeBand、内间距的长度。而定义域上的取值刻度定位在每个rangeBand的中间。于是得到了示意图中的坐标轴（红色标注）
+
+```javascript
+var dataset = {
+ x: ["赵","钱","孙","李","周","吴","郑","王"],
+ y: [40, 30, 50, 70, 90, 20, 10, 40]
+};
+var xScale =  d3.scale.ordinal()
+                .domain(dataset.x)
+                .rangeRoundBands([0, width - padding.left - padding.right],0,0);
+```
+
+**2) version 4**
+
+version 4+ 没有bandwidth, 可转向使用scaleBand
+
+```
+domain 
+range 
+unknown 
+copy 
+d3.scaleImplicit
+```
+
+```JavaScript
+var width = 500,height = 500,padding = {left:20,right:20};
+var data = ["tang","song","yuan","ming","qing"];
+var axis_length = width - padding.left - padding.right;
+//d3.scaleImplicit = 200;
+var svg = d3.select("body").append("svg")
+            .attr("width",width)
+            .attr("height",height)
+var scale = d3.scaleOrdinal()
+              .domain(data)
+              .range([0,100,200,300,400])
+// .unknown(500);	
+console.log(scale("ceshi"));
+var axis = d3.axisBottom()
+             .scale(scale)
+             .ticks(5)
+svg.append("g").call(axis).attr("transform","translate("+ (padding.left) +","+(height - 100)+")");
+```
+
+**3. `d3.scaleBand()` 序数比例尺** 
+
+- 并不是一个连续性的比例尺，domain()中使用一个数组，不过range()需要是一个连续域: `let scale = d3.scaleBand().domain([1,2,3,4]).range([0,100])`
+- 示意图同`d3.scaleOrdinal()`
+
+```
+domain 
+range ：设置输出范围 
+round ：是否取整 
+rangeRound ： 整合range and round 
+paddingInner ： 设置paddingInner 【0，1】 
+paddingOuter ： 设置paddingOuter 【0，1】 
+padding：整合paddingInner and paddingOuter 
+align ： 设置刻度位置 默认0.5 范围【0，1】 
+bandwidth ：获取bandwidth 
+step ： 获取step 
+```
+
+**4. `d3.schemeCategory10/20/20b/20c` 颜色序数比例** 
+
+- v3:  schemeCategory10/20/20b/20c 曾经是归类在颜色比例尺。但实际使用确实是序数比例尺的用法。只不过range是色值
+- v4: 归类到序数比例
+
+```JavaScript
+var color = d3.scaleOrdinal(d3.schemeCategory10);
+//d3.scaleOrdinal([range]);
+//添加【range】除了使用.range()外也可以在.scaleOrdinal()中作为参数；
+//而实际使用一般是用做序数比例。只需再添加.domain()就好了
+color.domain(["tang","song","yuan","ming","qing"]);
+color("tang")//即可返回色值；
+//当然不添加domain也可以；但是一般是在是在function(d){color(d)}中调用，倘若在此之前调用了color("唐")，则比例中的颜色则已经分配出去；这样怎么看都是不严谨的
 ```
 
 <h3 id="比例尺的操作">2.1.2 比例尺的操作</h3>
@@ -658,12 +763,14 @@ T(t)| x y| 能 |绘制二次方贝塞尔曲线的简写。绘制一条以当前�
 A(a)| rx ry x-axis-rotation large-arc-flag sweep-flag x y | 能|椭圆弧线命令在当前点与指定的终点 (x, y)之间创建一条椭圆弧线。
 Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与起点
 
-<h2 id="饼状图">5. stack and tree layout</h2>
+[back to top](#top)
 
-```javascript
+<h2 id="path">5. path transition</h2>
 
-```
-
+- [Tutorial](https://bost.ocks.org/mike/path/)
+- [sample 1](https://bl.ocks.org/mbostock/1643051)
+- [sample 2](https://bl.ocks.org/mbostock/1642874)
+- [sample 3](https://bl.ocks.org/mbostock/1642989)
 
 [back to top](#top)
 
@@ -679,6 +786,7 @@ Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与�
 > Reference
 > - [D3.js (v4) Essentials](http://rajapradhan.com/blogs/d3-js-v4-essentials/)
 > - [D3 的学习资料](http://www.ourd3js.com/wordpress/865/#more-865)
+> - [D3 Sample Gallery](https://bl.ocks.org/)-- useful
 > - [Tutorials- official recommend](https://github.com/d3/d3/wiki/Tutorials)
 > - [D3 in Depth](http://d3indepth.com/)
 > - [D3数据可视化系列教程](https://blog.csdn.net/column/details/zhangtianxu.html)
