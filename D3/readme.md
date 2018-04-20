@@ -664,8 +664,19 @@ Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与�
 
 ```
 
+
 [back to top](#top)
 
+------------------------------
+
+> resources
+> - [NVD3](http://nvd3.org) Re-usable charts for d3.js
+> - [好奇猫]https://haoqicat.com/
+> - [镜心的小树屋](https://github.com/JXtreehouse/D3_lessions/tree/master/03-barchart_horizontal)
+
+------------------------------
+
+> Reference
 > - [D3.js (v4) Essentials](http://rajapradhan.com/blogs/d3-js-v4-essentials/)
 > - [D3 的学习资料](http://www.ourd3js.com/wordpress/865/#more-865)
 > - [Tutorials- official recommend](https://github.com/d3/d3/wiki/Tutorials)
@@ -679,3 +690,10 @@ Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与�
 > - [如何用D3绘制各种样式的x坐标轴](https://segmentfault.com/a/1190000010910308)
 > - [D3 And Angular](https://www.dashingd3js.com/d3-resources/d3-and-angular)
 > - [The Full List In One Page](https://www.dashingd3js.com/d3-resources/the-big-list-of-d3-resources)
+
+-----------------------
+
+> vue+d3.js
+> - [vs文档](https://github.com/GopherJ/Vs)Vs 是一个基于 d3.js 和 vue.js 的数据可视化分析包，适用于图表，dashboard 制作
+> - [vs预览](https://gopherj.github.io/Vs/#/)
+> - [使用Vue与d3.js制作的一款弹框插件](https://segmentfault.com/a/1190000009888380)
