@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta name="description" content="Tree Layout Demo">
+    <title>力矩散点图+图例 Demo</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> 
+    <style>
+    .links line {  
+      stroke: #999;  
+      stroke-opacity: 0.6;   
+    }  
+    .nodes circle {  
+      stroke: #fff;  
+      stroke-width: 1.5px;  
+    }  
+    .linetext {  
+        font-size: 18px ;  
+        font-family: SimSun;  
+        fill:#0000FF;  
+        /* fill-opacity:0.0; */  
+    }  
+    .nodetext {  
+        font-size: 12px ;  
+        font-family: SimSun;  
+        fill:#000000;  
+    } 
+  </style>
+  </head>
+  <body>
+    <p><a href="https://blog.csdn.net/w1014074794/article/details/54018647">使用d3.js实现力矩散点图+图例</a></p>
+  <input id="imageViewUrl" type="hidden" value="${pageContext.request.contextPath}/creditloan/creditlaonInfo/imagView">  
+  <svg width="1340" height="700"></svg>  
+  <svg1 width="300" height="200">  </svg1>  
+  <script>
+  var graph={  
+        "nodes": [{  
+            "orderno": "LP13839785634",  
+            "id": "479980",  
+            "group": "3",  
+            "mobile": "13819785614"  
+        },{  
+            "id": "479964",  
+            "group": "1",  
+            "mobile": "13819785614"  
+        },{  
+            "id": "479963",  
+            "group": "1",  
+            "mobile": "13819785613"  
+        },{  
+            "orderno": "LP13839785633",  
+            "id": "479979",  
+            "group": "3",  
+            "mobile": "13819785613"  
+        },{  
+            "orderno": "LP13839785637",  
+            "id": "479983",  
+            "group": "3",  
+            "mobile": "13829785627"  
+        },{  
+            "id": "479972",  
+            "group": "2",  
+            "mobile": "13829785624"  
+        },{  
+            "id": "479971",  
+            "group": "2",  
+            "mobile": "13829785623"  
+        }],  
+        "links": [{  
+            "relationType": "loanapply",  
+            "source": "479980",  
+            "target": "479964"  
+        },  
+        {  
+            "relationType": "contact",  
+            "source": "479963",  
+            "target": "479964"  
+        },  
+        {  
+            "relationType": "loanapply",  
+            "source": "479979",  
+            "target": "479963"  
+        },  
+        {  
+            "relationType": "loanapply",  
+            "source": "479983",  
+            "target": "479963"  
+        },  
+        {  
+            "relationType": "loanapply",  
+            "source": "479980",  
+            "target": "479972"  
+        },  
+        {  
+            "relationType": "contact",  
+            "source": "479971",  
+            "target": "479972"  
+        },  
+        {  
+            "relationType": "loanapply",  
+            "source": "479979",  
+            "target": "479971"  
+        },  
+        {  
+            "relationType": "loanapply",  
+            "source": "479983",  
+            "target": "479971"  
+        }]  
+    };  
+  
+// var orderNo = "${orderNo}";  
+var orderNo = 'TNA20161212141255338039';  
+// graph = ${jsonData};   
+  
+  
+//选择svg，选择svg声明一个画布  
+var svg = d3.select("svg"),  
+    width = +svg.attr("width"),  
+    height = +svg.attr("height");  
+   
+  
+//设置颜色比例尺，使用非定量值（如类名）作为输出的序数比例尺，非常适合比较苹果和桔子，比如0对应蓝色  
+var color = d3.scaleOrdinal(d3.schemeCategory20);  
+//var color = d3.scaleOrdinal(d3.scale.category10());  
+  
+ var simulation = d3.forceSimulation()  //力学模仿图  
+    .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(function(d) { return 160; }))  //link.id指的是link与node关联的关键字，这里是通过node中的id属性关联，force.links - 取得或者设置节点间的链接数组  ，force('link', d3.forceLink(dataset.links))  
+    .force("charge", d3.forceManyBody())          //force.charge - 取得或者设置电荷强度。  
+    .force("collision", d3.forceCollide(-20))     //控制相邻2点的排斥力度  
+    .force("center", d3.forceCenter(width / 2, height / 2));//设置力的中心   force('center', d3.forceCenter(width / 2, height / 2));  
+       
+  
+//link   中source是原始点node，target连接属性的node   ,link的一共有三个属性source，target，index   
+  var link = svg.append("g")  
+      .attr("class", "links")  
+    .selectAll("line")  
+    .data(graph.links)  
+    .enter().append("line")  //追加线条     
+      .attr("stroke-width", //stroke-width: 1.5px，线条的粗细  Math.sqrt(d.value)  
+              function(d) { return 1.5; }  
+      ).attr("stroke",function(d){//  设置线的颜色  
+          return d.relationtype==0?'black': color(d.relationtype);  
+      });  
+        
+        
+  var edges_text = svg.append("g")  
+                      .attr("class", "linetext")  
+                      .selectAll(".linetext")  
+                      .data(graph.links)  
+                      .enter()  
+                      .append("text")  //追加的是文本  
+                      .text(function(d){  
+                        return d.relationType;  
+                      });  
+  
+  
+    
+  var node = svg.append("g")  
+      .attr("class", "nodes")  
+    .selectAll("circle")  
+    .data(graph.nodes)  
+    .enter().append("circle")//使用圆形追加填充到svg中，半径为r  
+      .attr("r", function(d){  if(d.orderno == orderNo){return 38;} return 28;})  
+      .attr("fill", function(d) { return d.group==0?'black': color(d.group);})  
+      .call(d3.drag()  
+          .on("start", dragstarted)  
+          .on("drag", dragged)  
+          .on("end", dragended))  
+        .on("click",function(d,i){  
+            if(d.group == 3){//跳转标志不为空，才可以跳转  
+                 OpenFrame(d.orderno);  
+            }  
+        })  
+        /* .on("mouseover",function(d,i){ 
+            //显示连接线上的文字 
+            edges_text.style("fill-opacity",function(edge){ 
+                if( edge.source === d || edge.target === d ){ 
+                    return 1.0; 
+                } 
+            }); 
+        }) 
+        .on("mouseout",function(d,i){ 
+            //隐去连接线上的文字 
+            edges_text.style("fill-opacity",function(edge){ 
+                if( edge.source === d || edge.target === d ){ 
+                    return 0.0; 
+                } 
+            }); 
+        }) */;  
+    
+  var text_dx = -35;  
+  var text_dy = 40;  
+  var nodes_text = svg.append("g")  
+  .attr("class","nodetext")  
+  .selectAll(".nodetext")  
+    .data(graph.nodes)  
+    .enter()  
+    .append("text")  
+    .attr("dx",text_dx)  
+    .attr("dy",text_dy)  
+    .text(function(d){  
+         //根据groupid来判断显示什么属性  
+          if(d.group == 1 || d.group == 2){  
+              return d.mobile;  
+          }else if(d.group == 0){  
+              if(d.mobile){  
+                  return d.mobile;  
+              }  
+              if(d.deviceid){  
+                  return d.deviceid;  
+              }  
+          }else if(d.group == 4){  
+              return d.deviceid;  
+          }else if(d.group == 3){  
+              return d.orderno;  
+          }  
+        return d.orderno;  
+    });  
+    
+  
+  node.append("title")//添加展示的title属性，鼠标停留展现  
+      .text(function(d) {   
+           if(d.group == 3){  
+               var title = "订单号:"+d.orderno;  
+               if(d.mobile){  
+                   title += "\n手机号:" + d.mobile;  
+               }  
+               if(d.deviceid){  
+                   title +="\n设备号:" + d.deviceid;  
+               }  
+               if(d.debitcart){  
+                   title +="\n借记卡:" + d.deviceid;  
+               }  
+               if(d.creditcard){  
+                   title +="\n信用卡:" + d.deviceid;  
+               }  
+               if(d.certno){  
+                   title +="\n身份证号:" + d.deviceid;  
+               }  
+               //debitcart借记卡，creditcard信用卡，certno身份证号码  
+               return title;  
+           }  
+       });  
+  
+  simulation  
+      .nodes(graph.nodes)  
+      .on("tick", ticked);  
+  
+  simulation.force("link")  
+      .links(graph.links);  
+  
+  function ticked() {  
+    link  
+        .attr("x1", function(d) { return d.source.x; })  
+        .attr("y1", function(d) { return d.source.y; })  
+        .attr("x2", function(d) { return d.target.x; })  
+        .attr("y2", function(d) { return d.target.y; });  
+  
+    node  
+        .attr("cx", function(d) { return d.x; })  
+        .attr("cy", function(d) { return d.y; });  
+      
+    //更新连接线上文字的位置  
+     edges_text.attr("x",function(d){ return (d.source.x + d.target.x) / 2 ; });  
+     edges_text.attr("y",function(d){ return (d.source.y + d.target.y) / 2 ; });  
+       
+     nodes_text.attr("x",function(d){ return d.x});  
+     nodes_text.attr("y",function(d){ return d.y; });  
+  }  
+  
+  
+function dragstarted(d) {  
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();  
+  d.fx = d.x;  
+  d.fy = d.y;  
+}  
+  
+function dragged(d) {  
+  d.fx = d3.event.x;  
+  d.fy = d3.event.y;  
+}  
+  
+function dragended(d) {  
+  if (!d3.event.active) simulation.alphaTarget(0);  
+  d.fx = null;  
+  d.fy = null;  
+}  
+  
+function OpenFrame(val) {  
+    var url  = $('#imageViewUrl').val()+"?orderNo="+val;  
+    window.open(url);     
+}  
+  
+  
+//添加图例，说明每个点的意义  
+   var  seriesData = {series:[  
+           {  
+            "seriesName": "黑名单",  
+            "group": "0"},  
+             {  
+                "seriesName": "通话记录",  
+                "group": "1"},  
+             {  
+                "seriesName": "通讯录",  
+                "group": "2"},  
+             {  
+                "seriesName": "进件",  
+                "group": "3"},  
+             {  
+                "seriesName": "设备id",  
+                "group": "4"}  
+             ]  
+   };  
+addLegend();  
+  
+function addLegend() {  
+    var seriesNames=getSeriesName(seriesData);  
+  
+    var legend = svg.selectAll(".legend")  
+    .data(seriesNames)//seriesNames.slice().reverse()  
+    .enter().append("g")  
+    .attr("class", "legend")  
+    .attr("transform", function (d, i) { return "translate(0," + i * 20 + ")"; });  
+            
+    legend.append("circle")  
+            .attr("cx", function (d,i) {  
+                  return width - 80;  
+            })  
+            .attr("cy", function (d,i) {  
+                  return i>0?50+25*i:50;  
+            })  
+            .attr("r", function(d){return 16;})  
+            .data(seriesData.series)  
+            .style("fill", function(d) {   
+          /*    if(d.group==2){ 
+                    alert(color(d.group)); 
+                }else if(d.group==4){ 
+                    alert(color(d.group)); 
+                } */  
+                return d.group==0?'black': color(d.group);  
+             });  
+      
+        
+        
+    legend.append("text")  
+            .attr("x", width - 100)  
+            .attr("y", function (d,i) {  
+                  return i>0?50+25*i:50;  
+            })  
+            .data(seriesData.series)  
+            .attr("dy", ".35em")  
+            .style("text-anchor", "end")  
+            .text(function (d) { return d.seriesName; });  
+};     
+    /**返回系列名 
+     * @参数 data 柱图数据 
+     */  
+    function getSeriesName(data)  
+    {  
+        var len=data.series.length;  
+        var seriesName  = [];  
+        for(var  i=0;i<len;i++)  
+           {  
+               seriesName.push(data.series[i].seriesName);  
+           }  
+        return seriesName;  
+    }
+  </script>
+  </body>
+</html>

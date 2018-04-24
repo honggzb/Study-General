@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta name="description" content="Tree Layout Demo">
+    <title>Tree Layout Demo</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+    .link {
+      fill: none;
+      stroke: blue;
+    }
+    .node {
+      fill: red;
+    }
+  </style>
+  </head>
+  <body>
+  <script>
+  /*We often get hierarchical data in a flat format e.g csv as shown below
+      name,parent
+      John,
+      Jack,John
+      Drake,John
+      Keith,Drake
+      Harry,Drake
+      Joshua,John
+      Smith,John
+      Peter,Smith
+      Larry,John
+   first step is to parse the csv
+   var data = d3.csvParse(csvData);
+  */
+  //output
+    var data = [
+        {"name": "John",   "parent": ""},
+        {"name": "Jack",  "parent": "John"},
+        {"name": "Drake",  "parent": "John"},
+        {"name": "Keith",  "parent": "Drake"},
+        {"name": "Harry",  "parent": "Drake"},
+        {"name": "Joshua",  "parent": "John"},
+        {"name": "Smith",  "parent": "John"},
+        {"name": "Peter", "parent": "Smith"},
+        {"name": "Larry", "parent": "John"}
+      ];
+    d3.select("body")
+      .append("svg")
+      .attr("width", 700)
+      .attr("height", 500)
+      .style("border", "1px solid")
+    var svgContainer = d3.select("svg"),
+          width = +svgContainer.attr("width"),
+          height = +svgContainer.attr("height");
+          
+    var tree = d3.tree()
+                 .size([height, width - 100]);
+    //convert the flat data into a hierarchy
+    var stratify =  d3.stratify()                      // create a hierarchical data for parent-child relationship
+                      .id(function(d) {return d.name;})
+                      .parentId(function(d) {return d.parent;});
+    var root = stratify(data);
+    console.log(tree(root).descendants());
+    var treeG = svgContainer.append("g")
+          .classed("treeG", true)
+          .attr("transform", "translate(40, 0)")
+    treeG.selectAll(".links")      // root node with information about its children, depth, height and (x,y) coordinates 
+          .data(tree(root).descendants().slice(1))
+          .enter()
+          .append("path")
+          .classed("link", true)
+          .attr("d", function(d) {
+            return "M" + d.y + "," + d.x
+              + "C" + (d.y + d.parent.y) / 2 + "," + d.x
+              + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
+              + " " + d.parent.y + "," + d.parent.x;
+        });
+  // a svg:g element to contain the nodes and the labels together    
+  var nodesG = treeG.selectAll(".nodes")
+                    .data(root.descendants())
+                    .enter()
+                    .append("g")
+                      .attr("transform", function(d) {
+                        return "translate(" + d.y + "," + d.x + ")"
+                      });
+  //add svg:circle elements to the svg:g element    
+    nodesG.append("circle")
+          .attr("r", 3)
+          .classed("node", true);
+  // add labels on avg:circle 
+  nodesG.append("text")
+        .attr("dy", 5)
+        .attr("x", function(d) { return d.children ? -7 : 7; })
+        .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+        .text(function(d) { return d.id; });
+      
+  </script>
+  </body>
+</html>

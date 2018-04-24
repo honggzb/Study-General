@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta name="description" content="Stack Layout Demo">
+    <title>Stack Layout Demo</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+    .grid-line {
+      fill: grey;
+      stroke: grey;
+      stroke-width: 0.3px;
+    }
+</style>
+  </head>
+  <body>
+    <script>
+      var width = 500, height = 500, margin = 40;
+      var axisLength = width - 2 * margin; 
+      var data = [
+        {month: "2013", apples: 100, bananas: 200, oranges: 130},
+        {month: "2014", apples: 300, bananas: 150, oranges: 120},
+        {month: "2015", apples:  200, bananas:  280, oranges: 200},
+        {month: "2016", apples:  400, bananas:  100, oranges: 300},
+        {month: "2017", apples:  230, bananas:  400, oranges: 100}
+      ];
+      var stack = d3.stack()
+                    .keys(["apples", "bananas", "oranges"]);
+      var series = stack(data);      //the series is an array containing three arrays one for each of the key(i.e apples, bananas and oranges)
+      console.log(series);
+      
+      var xScale =  d3.scaleBand()
+                      .domain(data.map(function(d) { return d.month; }))
+                      .rangeRound([0, axisLength]);
+      var yScale =  d3.scaleLinear()
+                      .domain([stackMax(), stackMin()])
+                      .range([0, axisLength]).clamp(true);
+      var colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+      
+      function extractValues(series) {
+        var values = [];
+        series.forEach(function(value) {
+          value.forEach(function(item) {
+            values = values.concat(item);
+          });
+        });
+        return values;
+      }
+      
+      function stackMin() {
+        var values = extractValues(series);
+        return d3.min(values);
+      }
+      
+      function stackMax() {
+        var values = extractValues(series);
+        return d3.max(values);
+      }
+      
+      var svgContainer =  d3.select("body")
+                            .append("svg")
+                            .attr("width", width)
+                            .attr("height", height)
+                            .style("border", "1px solid");
+      
+      function renderXAxis() {
+        var xAxis = d3.axisBottom(xScale);
+        
+        svgContainer.append("g")
+                    .classed("x-axis", true)
+                    .attr("transform", function() {
+                      return "translate(" + margin + "," + (height - margin) + ")";
+            })
+            .call(xAxis);
+      }
+      
+      function renderYAxis() {
+        var yAxis = d3.axisLeft(yScale);
+        svgContainer.append("g")
+            .classed("y-axis", true)
+            .attr("transform", function() {
+              return "translate(" + margin + "," + margin + ")";
+            })
+            .call(yAxis);
+        svgContainer.selectAll("g.y-axis g.tick")
+                    .append("line")
+                    .classed("grid-line", true)
+                    .attr("x1", 0)
+                    .attr("y1", 0)
+                    .attr("x2", axisLength)
+                    .attr("y2", 0);
+      }
+      
+      renderXAxis();
+      renderYAxis();
+      
+      svgContainer.append("g") // Create a group so that it can be transformed to match the axes
+                  .classed("stack-bar", true)
+                  .attr("transform", "translate(" + margin + "," + margin + ")") // transform the chart to match the axes
+                  .selectAll("g")
+                  .data(series)
+                  .enter()
+                  .append("g") // For each fruit category append a g element
+                  .attr("fill", function(d) {return colorScale(d.key)}) // Fill each fruit type with a particular color using the color scale
+                  .selectAll("rect")
+                  .data(function(d) {return d;})
+                  .enter()
+                  .append("rect") // For each year append a rectangle element
+                  .attr("x", function(d, i) { return i * 100;}) // Place the rectangles with a space of 50px between them
+                  .attr("y", function(d) {return yScale(d["1"])}) // Set the y attribute to the topline value in the series
+                  .attr("width", 50)
+                   // Set the height to the difference between the topline and the baseline value 
+                   // and subtract it from the height of the container leaving room for the top and bottom margins
+                  .attr("height", function(d) {return axisLength - (yScale(d["1"] - d["0"]))})
+    </script>
+  </body>
+</html>
