@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2.网格坐标轴1</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+  <p>Refer to: <a href="https://bl.ocks.org/mbostock/805115ebaa574e771db1875a6d828949">Localized Time Axis II</a></p>
+<script>
+var dataset = [
+  [5, 20], [480, 90], [250, 50], [100, 33], [330, 95],
+  [410, 12], [475, 44], [25, 67], [85, 21], [220, 88]
+];
+//简体中文本地化
+var zh = d3.timeFormatLocale({
+    decimal: ".",
+    thousands: ",",
+    grouping: [3],
+    currency: ["¥", ""],
+    dateTime: "%a %b %e %X %Y",
+    date: "%Y/%-m/%-d",
+    time: "%H:%M:%S",
+    periods: ["上午", "下午"],
+    days: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+    shortDays: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+    months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+    shortMonths: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]
+});
+var formatMillisecond = zh.format(".%L"),
+    formatSecond = zh.format(":%S"),
+    formatMinute = zh.format("%I:%M"),
+    formatHour = zh.format("%I %p"),
+    formatDay = zh.format("%a %d"),
+    formatWeek = zh.format("%b %d"),
+    formatMonth = zh.format("%Y年%B"),
+    formatYear = zh.format("%Y年");
+    
+var width = 960, height = 500,
+  margin = {top: 20, right: 15, bottom: 50, left: 15};
+var svg = d3.select('body')
+        .append('svg')
+        .attr("width", width + margin.left + margin.top)
+        .attr("height", height + margin.top + margin.bottom);
+var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var formatNumber = d3.format(".1f");
+
+var x = d3.scaleTime()
+    .domain([new Date(2010, 7, 1), new Date(2011, 7, 1)])
+    .range([0, width]);
+
+var y = d3.scaleLinear()
+    .domain([0, 2e6])
+    .range([height, 0]);
+
+var xAxis = d3.axisBottom(x).ticks(d3.timeMonth);
+
+var yAxis = d3.axisRight(y)
+    .tickSize(width)
+    .tickFormat(function(d) {
+      var s = formatNumber(d / 1e6);
+      return this.parentNode.nextSibling
+          ? "\xa0" + s
+          : "$" + s + " million";
+    });
+
+g.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(customXAxis);
+d3.selectAll('g.tick text').attr('transform','translate(20,15) rotate(30)')
+
+g.append("g")
+    .call(customYAxis);
+
+function customXAxis(g) {
+  g.call(xAxis.tickFormat(multiFormat));
+  g.select(".domain").remove();
+}
+
+function customYAxis(g) {
+  g.call(yAxis);
+  g.select(".domain").remove();
+  g.selectAll(".tick:not(:first-of-type) line").attr("stroke", "#777").attr("stroke-dasharray", "2,2");
+  g.selectAll(".tick text").attr("x", 4).attr("dy", -4);
+}
+
+function multiFormat(date) {
+  return (d3.timeSecond(date) < date ? formatMillisecond
+      : d3.timeMinute(date) < date ? formatSecond
+      : d3.timeHour(date) < date ? formatMinute
+      : d3.timeDay(date) < date ? formatHour
+      : d3.timeMonth(date) < date ? (d3.timeWeek(date) < date ? formatDay : formatWeek)
+      : d3.timeYear(date) < date ? formatMonth
+      : formatYear)(date);
+}
+</script>
+</body>
+</html>
