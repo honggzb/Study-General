@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>3. 画柱状图之水平柱状图</title>
+  <title>3. 画柱状图之垂直柱状图</title>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <style>
   
@@ -12,14 +12,14 @@
   <div class="container"></div>
   <script>
   var dataset = [10, 20, 30, 40, 33, 24, 12, 5, 9, 15];
-  var bar_heigth=50, bar_padding = 10,
+  var bar_width=50, bar_padding = 10,
       margin = {top: 20, right: 30, bottom: 20, left: 30},
-      svg_height = (bar_heigth+bar_padding)*dataset.length,  // 宽度
-      svg_width = 500;
+      svg_width = (bar_width+bar_padding)*dataset.length,  // 宽度
+      svg_height = 500;
   
   var scale = d3.scaleLinear()
                 .domain([0, d3.max(dataset)])
-                .range([0, svg_width]);
+                .range([svg_height, 0]);
   
   var svg = d3.select('div.container')
           .append('svg')
@@ -30,16 +30,19 @@
      .enter()
      .append("g")
      .attr('transform',function(d, i){
-       return "translate(0, "+i*(bar_heigth+bar_padding)+")"
+       return "translate("+i*(bar_width+bar_padding)+", 0)"
      });
  bar.append("rect")
-    .attr("width",function(d){return scale(d);})
-    .attr("height",bar_heigth)
+    .attr("y", function(d){ return scale(d); })
+    .attr("height",function(d){return svg_height-scale(d);})
+    .attr("width",bar_width)
     .style("fill","steelblue")
  bar.append("text")
     .text(function(d){ return d; })
-    .attr("x", function(d){ return scale(d+0.1); })
-    .attr("y", bar_heigth /2 );
+    .attr("y", function(d){ return scale(d+0.1); })
+    .attr("x", bar_width )
+    .attr("dx", -15)
+    .attr("text-anchor","middle");
   </script>
 </body>
 </html>

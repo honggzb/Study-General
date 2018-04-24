@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. 画柱状图之4</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+  .bar {
+    fill: steelblue;
+  }
+  .bar:hover {
+    fill: brown;
+  }
+  /*.axis--x path {
+    display: none;
+  }*/
+  .label{ color: red; }
+  </style>
+</head>
+<body>
+  <h3>方法1: </h3>
+  <ul>
+    <li></li>
+  </ul>
+  <svg width="600" height="500"></svg>
+  <script>
+  var  dataset = [
+    [1953,5.94],
+    [1964,6.95],
+    [1982,10.08],
+    [1990,11.34],
+    [2000,12.66],
+    [2010,13.40]
+  ];
+  var svg = d3.select("svg"),
+      bar_width=30, bar_padding = 10,
+      margin = {top: 20, right: 30, bottom: 20, left: 30},
+      svg_width = +svg.attr("width") - margin.left - margin.right, //(bar_width+bar_padding)*dataset.length,  // 宽度
+      svg_height = +svg.attr("height") - margin.top - margin.bottom;
+  
+  var scale_y = d3.scaleLinear()
+                .domain([0, d3.max(dataset, function(d){ return d[1]; })])
+                .range([svg_height, 0]);
+
+  var scale_x = d3.scaleBand()  //use band scale
+                  .rangeRound([0, svg_width])
+                  .padding(0.1);
+  scale_x.domain(dataset.map(function(d){ return d[0]; }));
+                  
+  // var svg = d3.select('.container')
+  //         .append('svg')
+  //         .attr("width", svg_width+50)
+  //         .attr("height", svg_height+50);
+  var g = svg.append("g")//d3.select('svg').append("g")
+             .attr("transform","translate("+margin.left+","+margin.top+")");
+  g.append("g")
+      //.attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + svg_height + ")")
+      .call(d3.axisBottom(scale_x));
+  g.append("g")
+      //.attr("class", "axis axis--y")
+      .call(d3.axisLeft(scale_y))
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "0.71em")
+      .attr("text-anchor", "end")
+      .text("Polulation");
+  
+  var bar = svg.selectAll("rect")
+     .data(dataset)
+     .enter()
+     .append("rect")
+     .attr('transform', 'translate(0, ' + margin.top + ')') 
+     .attr("x", function(d) { return scale_x(d[0]) + margin.left; })
+     .attr("y", function(d){ return scale_y(d[1]); })
+     .attr("height",function(d){return svg_height-scale_y(d[1]);})
+     .attr("width",scale_x.bandwidth())
+     .attr("class", "bar");
+ var texts = svg.selectAll('.MyText')
+    .data(dataset)
+    .enter()
+    .append("text")
+    .attr('transform', 'translate(' + margin.left + ',0)') 
+    .text(function(d){ return d[1]; console.log(d);})
+    .attr("x", function(d) { return scale_x(d[0])+margin.left; })
+    .attr("y", function(d){ return scale_y(d[1])-5; })
+    .attr("dx", 10)
+    .attr("dy", 20) 
+    .attr("text-anchor","middle")
+    .attr("fill","white");
+  </script>
+</body>
+</html>
