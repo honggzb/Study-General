@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4. 饼图圆环图</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <style>
+  </style>
+</head>
+<body>
+  <p>饼图圆环图, using d3.pie()</p>
+  <div class="container"></div>
+  <script>
+  var dataset = [
+    {"education":"大专及以上","population": "11964"},
+    {"education":"高中和中专","population": "18799"},
+    {"education":"初中","population": "51966"},
+    {"education":"小学","population": "35876"},
+    {"education":"文盲","population": "5466"}
+  ];
+  var colors = d3.schemeCategory10;     //颜色函数
+  var width = 500, height = 500, fullAngle = 2 * Math.PI;
+  
+  var svgContainer = d3.select(".container")
+           .append("svg")
+           .attr("width", width)
+           .attr("height", height)
+           .style("border", "1px solid");
+  //设置弧度的内外径，等待传入的数据生成弧度
+  var arc_generator = d3.arc()
+                .innerRadius(60)
+                .outerRadius(150);
+  //使用d3.pie()生成pei数据，根据dataset的population, 生成arc_generator的startAngle和endAngle
+   var angle_data = d3.pie()
+                      (dataset.map(function(d){ return d.population; }));
+   console.log(angle_data);
+   
+   var g = svgContainer.append("g")
+                       .attr("transform", "translate(" + 250 + "," + 250  + ")");    //移动到svgContainer中心;
+   //为组中每个元素绘制弧形路路径
+   g.selectAll("path")     //每个g元素都追加一个path元素用绑定到这个g的数据d生成路径信息
+    .data(angle_data)
+    .enter()
+    .append("path")
+    .attr("d", arc_generator)
+    .attr("fill", function(d, i){ return colors[i]; });
+   //use arc.centroid()获取arc的中心位置, 并放置label
+   g.selectAll("text")
+    .data(angle_data)
+    .enter()
+    .append("text")
+    .text(function(d, i){ return dataset[i].education; })
+    .attr("transform", function(d){ return "translate("+ arc_generator.centroid(d)+")"; })    //计算每个弧形的中心点（几何中心）
+    .attr("text-anchor","middle");
+    
+   </script>
+</body>
+</html>

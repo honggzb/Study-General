@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. 线性图表2 - version 4</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <ul>
+      <li><a href="https://github.com/d3/d3-time-format">d3-time-format</a> - date parsing and formatting</li>
+      <li><a href="https://github.com/d3/d3-array">d3-array</a> - data processing</li>
+      <li><a href="https://github.com/d3/d3-shape">d3-shape</a> - lines</li>
+      <li><a href="https://github.com/mbostock/d3/wiki/Arrays#wiki-d3_extent">d3.extent</a>,  d3.min and d3.max - compute domains</li>
+      <li><a href="https://bl.ocks.org/mbostock/3883245">Reference to: Mike Bostock’s blog: Line Chart</a></li>
+    </ul>
+    <hr>
+    <svg width="960" height="500"></svg>
+  </div>
+  <script>
+  var svg = d3.select("svg"),
+    margin = {top: 20, right: 20, bottom: 30, left: 50},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  var parseTime = d3.timeParse("%d-%b-%y");
+
+  var x = d3.scaleTime().rangeRound([0, width]);
+  var y = d3.scaleLinear().rangeRound([height, 0]);
+
+  var line = d3.line()
+      .x(function(d) { return x(d.date); })
+      .y(function(d) { return y(d.close); })
+      .curve(d3.curveCardinal);
+
+  d3.tsv("data2.tsv", function(d) {
+    d.date = parseTime(d.date);     // format date datetype
+    d.close = +d.close;             //change string to number
+    return d;
+  }, function(error, data) {
+    if (error) throw error;
+
+    x.domain(d3.extent(data, function(d) { return d.date; }));
+    y.domain(d3.extent(data, function(d) { return d.close; }));
+
+    g.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x))
+        // .select(".domain")
+        // .remove();
+
+    g.append("g")
+        .call(d3.axisLeft(y))
+        .append("text")
+        .attr("fill", "#000")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", "0.71em")
+        .attr("text-anchor", "end")
+        .text("Price ($)");
+
+    g.append("path")
+        .datum(data)
+        .attr("fill", "none")
+        .attr("stroke", "steelblue")
+        // .attr("stroke-linejoin", "round")
+        // .attr("stroke-linecap", "round")
+        .attr("stroke-width", 1.5)
+        .attr("d", line);
+  });
+  </script>
+</body>
+</html>

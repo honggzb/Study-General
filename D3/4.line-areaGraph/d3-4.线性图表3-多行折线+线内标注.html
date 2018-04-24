@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. 线性图表 3 - multi-series line chart</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+    text {
+      font: 10px sans-serif;
+    }
+    .axis path, .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+    .line {
+      fill: none;
+      stroke-width: 1.5px;
+    }
+    .label {
+      text-anchor: middle;
+    }
+    .label rect {
+      fill: white;
+    }
+    .label-key {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>多行折线 + 线内标注</h3>
+    <ul>
+      <li><a href="https://github.com/d3/d3-time-format">d3-time-format</a> - date parsing and formatting</li>
+      <li><a href="https://github.com/d3/d3-array">d3-array</a> - data processing</li>
+      <li><a href="https://github.com/d3/d3-shape">d3-shape</a> - lines</li>
+      <li>数据处理使用v4新特性<a href="https://github.com/d3/d3-dsv#dsv_parse">dsv.parse()</a></li>
+      <li><a href="https://github.com/mbostock/d3/wiki/Arrays#wiki-d3_extent">d3.extent</a>,  d3.min and d3.max - compute domains</li>
+      <li>size and position is computed automatically using svg's <a href="https://www.w3.org/TR/SVG/types.html#__svg__SVGLocatable__getBBox">element.getBBox</a></li>
+      <li><a href="https://bl.ocks.org/mbostock/3884955">Reference to: Mike Bostock’s blog: Multi-Series Line Chart</a></li>
+    </ul>
+    <hr>
+    <svg width="960" height="500"></svg>
+  </div>
+  <script>
+    var svg = d3.select("svg"),
+        margin = {top: 20, right: 20, bottom: 30, left: 30},
+        width = +svg.attr("width") - margin.left - margin.right,
+        height = +svg.attr("height") - margin.top - margin.bottom,
+        labelPadding = 5,
+        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var parseTime = d3.timeParse("%Y");
+
+    var g = svg.append('g').attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    d3.tsv("data3.tsv", function(d) {
+      d.date = parseTime(d.date);
+      for (var k in d) if (k !== "date") d[k] = +d[k];
+      return d;
+    }, function(error, data) {
+      if (error) throw error;
+      // 分别提取多列数据（除了第1列），赋给series
+      console.log(data);
+      var series = data.columns.slice(1).map(function(key) {
+        return data.map(function(d) {
+          return {
+            key: key,
+            date: d.date,
+            value: d[key]
+          };
+        });
+      });
+      //console.log(series);
+      //scalers
+      var x = d3.scaleTime()
+                .domain([data[0].date, data[data.length - 1].date])
+                .range([0, width]);
+      var y = d3.scaleLinear()
+                .domain([0, d3.max(series, function(s) { return d3.max(s, function(d) { return d.value;}); })])
+                .range([height, 0]);
+      var z = d3.schemeCategory10;
+
+      g.append("g")
+       .attr("class", "axis axis--x")
+       .attr("transform", "translate(0," + height + ")")
+       .call(d3.axisBottom(x));
+      
+      var serie = g.selectAll(".serie")
+                   .data(series)
+                   .enter().append("g")
+                   .attr("class", "serie");
+      serie.append("path")
+           .attr("class", "line")
+           .style("stroke", function(d, i) { return z[i]; })
+           .attr("d", d3.line()
+             .x(function(d) { return x(d.date); })
+             .y(function(d) { return y(d.value); })
+           );
+      var label = serie.selectAll(".label")
+                       .data(function(d) { return d; })
+                       .enter().append("g")
+                       .attr("class", "label")
+                       .attr("transform", function(d, i) { return "translate(" + x(d.date) + "," + y(d.value) + ")"; });
+      label.append("rect")
+           .datum(function() { console.log(this); return this.getBBox(); })
+           .attr("x", function(d) { return d.x - labelPadding; })
+           .attr("y", function(d) { return d.y - labelPadding; })
+           .attr("width", function(d) { return d.width + 2 * labelPadding; })
+           .attr("height", function(d) { return d.height + 2 * labelPadding; });
+      //注意，text最后加，避免被rect覆盖
+      label.append("text")
+            .attr("dy", ".35em")
+            .text(function(d) { return d.value; })
+            .filter(function(d, i) { return i === data.length - 1; })
+            .append("tspan")
+            .attr("class", "label-key")
+            .text(function(d) { return " " + d.key; });
+    });
+  </script>
+</body>
+</html>
