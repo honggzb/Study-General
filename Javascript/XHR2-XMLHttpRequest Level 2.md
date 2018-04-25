@@ -1,5 +1,6 @@
 [XHR2（XMLHttpRequest Level 2）](#top)
 
+- [XMLHttpRequest复习](#XMLHttpRequest复习)
 - [XMLHttpRequest 2新增属性](#XMLHttpRequest2新增属性)
   - [1. 接收数据 - 下载处理](#下载处理)
   - [2. 发送数据 - 上传处理](#上传处理)
@@ -11,6 +12,52 @@
   - [分割文件并上传各个部分](#分割文件并上传各个部分)
   - [ajax无刷新上传](#ajax无刷新上传)
   - [模拟登陆实现](#模拟登陆实现)
+
+-----------------------------------
+
+<h2 id="XMLHttpRequest复习">XMLHttpRequest复习</h2>
+
+```javascript
+ var xhr = new XMLHttpRequest();
+    // ...
+    // do stuff with xhr
+    // ...
+  xhr.upload.addEventListener('loadstart', function(e) {
+      // When the request starts.
+    });
+    xhr.upload.addEventListener('progress', function(e) {
+      // While sending and loading data.
+    });
+    xhr.upload.addEventListener('load', function(e) {
+      // When the request has *successfully* completed.
+      // Even if the server hasn't responded that it finished.
+    });
+    xhr.upload.addEventListener('loadend', function(e) {
+      // When the request has completed (either in success or failure).
+      // Just like 'load', even if the server hasn't 
+      // responded that it finished processing the request.
+    });
+    xhr.upload.addEventListener('error', function(e) {
+      // When the request has failed.
+    });
+    xhr.upload.addEventListener('abort', function(e) {
+      // When the request has been aborted. 
+      // For instance, by invoking the abort() method.
+    });
+    xhr.upload.addEventListener('timeout', function(e) {
+      // When the author specified timeout has passed 
+      // before the request could complete.
+    });
+    // notice that the event handler is on xhr and not xhr.upload
+    xhr.addEventListener('readystatechange', function(e) {
+      if( this.readyState === 4 ) {
+        // the transfer has completed and the server closed the connection.
+      }
+    });
+xhr.send(form);
+```
+
+----------------------------------
 
 [2 级 XMLHttpRequest](https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html) 引入了大量的新功能（例如跨源请求、上传进度事件以及对上传/下载二进制数据的支持等），一举封杀了我们网络应用中的疯狂黑客。这使得 AJAX 可以与很多尖端的 HTML5 API 结合使用，例如 File System API、Web Audio API 和 WebGL
 
@@ -28,6 +75,8 @@
 - 可以请求不同域名下的数据（跨域资源共享，Cross-origin resource sharing，简称 CORS）
 - 可以获取服务器端的二进制数据
 - 可以获得数据传输的进度信息
+
+-----------------------------------------------
 
 <h2 id="XMLHttpRequest2新增属性">XMLHttpRequest 2新增属性</h2>
 
@@ -309,7 +358,62 @@ progress事件会在浏览器接收新数据期间周期性地触发。onprogres
   - lengthComputable:表示进度信息是否可用的布尔值
   - position:表示已经接收的字节数
   - totalSize:表示根据Content-Length响应头部确定的预期字节数 
-  
+
+**结合HTML的attr和max属性显示load进度**
+
+```javascript
+xhr.upload.addEventListener("progress", function (e) {
+    if (e.lengthComputable && e) {
+        p = (e.loaded / e.total);
+        if (p==1) {
+            $("#uploadprogress").attr("value", false);
+            $("#uploadprogress").attr("max", false);
+            $("#progress").text("Checking file...");
+        } else {
+            var percent = Math.ceil(p * 1000) / 10;
+            $("#uploadprogress").val(e.loaded);
+            $("#uploadprogress").attr("max", e.total);
+            $("#progress").text("Uploading... " + percent + "%");
+        }
+   }
+}
+});
+// YOUR (SIMPLE) JAVASCRIPT FILE
+var form = new FormData(), xhr = new XMLHttpRequest();
+form.append('inputname', YOURFILE);
+
+xhr.open('POST', 'http://oneserver/onephpfile', true);
+xhr.setRequestHeader('X-CSRF-Token', 'somestring');
+xhr.onreadystatechange = function () {
+    if ((xhr.readyState === 4) && (xhr.status === 200))
+        // do other thing with xhr.responseText.trim()
+};
+
+xhr.upload.addEventListener('loadstart', showProgressBarFunction, false);
+xhr.upload.addEventListener('progress',  updateProgressBarFunction, false);
+xhr.upload.addEventListener('load',      updateProgressBarFunction, false);
+xhr.send(form);
+
+// YOUR FIRST (SIMPLE) PHP FILE
+header('Content-Type: text/plain; charset=utf-8');
+header('Cache-Control: no-cache, must-revalidate');
+
+sleep(20);
+echo 'file processing ended';
+// YOUR SECOND (SIMPLE) PHP FILE
+header('Content-Encoding: chunked', true);
+header('Content-Type: text/plain; charset=utf-8');
+header('Cache-Control: no-cache, must-revalidate');
+ini_set('output_buffering', false);
+ini_set('implicit_flush', true);
+ob_implicit_flush(true);
+for ($i = 0; $i < ob_get_level(); $i++)
+    ob_end_clean();
+echo ' ';
+
+sleep(20);
+echo 'file processing ended';
+```
 
 [back to top](#top)
 
