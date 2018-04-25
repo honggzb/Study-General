@@ -806,3 +806,11 @@ Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与�
 > - [vs文档](https://github.com/GopherJ/Vs)Vs 是一个基于 d3.js 和 vue.js 的数据可视化分析包，适用于图表，dashboard 制作
 > - [vs预览](https://gopherj.github.io/Vs/#/)
 > - [使用Vue与d3.js制作的一款弹框插件](https://segmentfault.com/a/1190000009888380)
+
+-----------------------------------
+
+> sample
+> - [Bubble chart](http://usabilityetc.github.io/demos/d3-country-bubble-chart/)
+> - [Pie && stack bar graph](http://otc2ysde8.bkt.clouddn.com/dimple/index.html)
+> - [Across U.S. Companies, Tax Rates Vary Greatly](https://archive.nytimes.com/www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html)
+> - [Dissecting a Trailer: The Parts of the Film That Make the Cut](https://archive.nytimes.com/www.nytimes.com/interactive/2013/02/19/movies/awardsseason/oscar-trailers.html)
