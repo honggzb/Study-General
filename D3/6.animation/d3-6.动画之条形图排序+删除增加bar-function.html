@@ -141,6 +141,7 @@
        console.log(paragraphID);
        //添加删除组合起来
        if(paragraphID=="add"){
+         if(sortOrders) sortBars();
           var maxValue=55;
           var newNumber =Math.floor(Math.random()*maxValue)+10;//0-24的整数
           //根据最后一个key添加一个值
@@ -189,6 +190,7 @@
        
        if(paragraphID=="remove"){    //删除的操作
          console.log(paragraphID);
+         if(sortOrders) sortBars();
         //选择所有条
         var bars=svg.selectAll("rect");
         var texts = svg.selectAll("text");
