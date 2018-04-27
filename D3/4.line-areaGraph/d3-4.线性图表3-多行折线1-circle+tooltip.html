@@ -24,6 +24,17 @@
     .label-key {
       font-weight: bold;
     }
+    div.tooltip {
+      position: absolute;
+      text-align: center;
+      width: 60px;
+      height: 28px;
+      padding: 2px;
+      font: 12px sans-serif;
+      background: lightsteelblue;
+      border: 0px;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
@@ -37,6 +48,7 @@
       <li><a href="https://github.com/mbostock/d3/wiki/Arrays#wiki-d3_extent">d3.extent</a>,  d3.min and d3.max - compute domains</li>
       <li>size and position is computed automatically using svg's <a href="https://www.w3.org/TR/SVG/types.html#__svg__SVGLocatable__getBBox">element.getBBox</a></li>
       <li><a href="https://bl.ocks.org/mbostock/3884955">Reference to: Mike Bostock’s blog: Multi-Series Line Chart</a></li>
+      <li><a href="http://bl.ocks.org/d3noob/036d13e5173de69f7758091ba9a2df2b">Tooltip with link in v4</a></li>
     </ul>
     <hr>
     <svg width="960" height="500"></svg>
@@ -50,7 +62,8 @@
         g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var parseTime = d3.timeParse("%Y%m%d");
-
+    var formatTime = d3.timeFormat("%Y-%m-%d");
+    
     var g = svg.append('g').attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var x = d3.scaleTime().range([0, width]),
@@ -62,7 +75,7 @@
         .x(function(d) { return x(d.date); })
         .y(function(d) { return y(d.temperature); });
         
-    d3.tsv("data6.tsv", function(d) {
+    d3.tsv("data.tsv", function(d) {
       d.date = parseTime(d.date);
       for (var k in d) if (k !== "date") d[k] = +d[k];
       return d;
@@ -125,20 +138,34 @@
            .attr("dy", "0.35em")
            .style("font", "10px sans-serif")
            .text(function(d) { return d.id; });
-      
+      //tooltip     
+      var div = d3.select("body").append("div")
+         .attr("class", "tooltip")
+         .style("opacity", 0);
       var label = cities.selectAll(".label")
                         .data(function(d) { return d.values; })
                         .enter()
                         .append("g")
                         .attr("class", "label")
-                        .attr("transform", function(d, i) { return "translate(" + x(d.date) + "," + y(d.temperature) + ")"; });
+                        .attr("transform", function(d, i) { return "translate(" + x(d.date) + "," + y(d.temperature) + ")"; })
+                        .on("mouseover", function(d){
+                          div.transition()
+                             .duration(200)
+                             .style("opacity", .9);
+                          div .html(
+                              '<a href= "http://google.com">' + // The first <a> tag
+                              formatTime(d.date) +
+                              "</a>" +                          // closing </a> tag
+                              "<br/>"  + d.temperature)     
+                              .style("left", (d3.event.pageX) + "px")             
+                              .style("top", (d3.event.pageY - 28) + "px");
+                        });
       label.append("circle")
            .style("stroke", "black")
            .datum(function() { return this.getBBox(); })
            .attr("x", function(d) { return d.x - labelPadding; })
            .attr("y", function(d) { return d.y - labelPadding; })
-           .attr("r", 2);
-           
+           .attr("r", 2)
     
       function customYAxis(g) {
          g.call(yAxis);
