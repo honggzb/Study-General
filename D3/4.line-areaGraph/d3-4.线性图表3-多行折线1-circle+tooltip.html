@@ -75,7 +75,7 @@
         .x(function(d) { return x(d.date); })
         .y(function(d) { return y(d.temperature); });
         
-    d3.tsv("data.tsv", function(d) {
+    d3.tsv("data6.tsv", function(d) {
       d.date = parseTime(d.date);
       for (var k in d) if (k !== "date") d[k] = +d[k];
       return d;
