@@ -12,6 +12,7 @@
 - [3. 柱状图](#柱状图)
 - [4. 曲线和图表](#曲线和线性图标)
 - [5. path transition](#path)
+- [资料](#资料)
 -------
 
 - 选择元素语法: 
@@ -776,6 +777,8 @@ Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与�
 
 ------------------------------
 
+<h2 id="资料">资料</h2>
+
 > resources
 > - [NVD3](http://nvd3.org) Re-usable charts for d3.js
 > - [好奇猫]https://haoqicat.com/
@@ -810,8 +813,13 @@ Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与�
 
 -----------------------------------
 
+[back to top](#top)
+
+
 > sample
 > - [Bubble chart](http://usabilityetc.github.io/demos/d3-country-bubble-chart/)
 > - [Pie && stack bar graph](http://otc2ysde8.bkt.clouddn.com/dimple/index.html)
 > - [Across U.S. Companies, Tax Rates Vary Greatly](https://archive.nytimes.com/www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html)
 > - [Dissecting a Trailer: The Parts of the Film That Make the Cut](https://archive.nytimes.com/www.nytimes.com/interactive/2013/02/19/movies/awardsseason/oscar-trailers.html)
+
+[back to top](#top)
