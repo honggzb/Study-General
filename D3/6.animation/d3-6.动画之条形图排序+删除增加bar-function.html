@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. 条形图排序切换</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+  .body{ margin: 20px; }
+  /*(1)鼠标悬停时变色*/
+    rect:hover{
+    fill :red;
+    }
+    /*(2)过渡效果*/
+    rect{
+    -moz-transiton:all 0.3s;
+    -o-transiton:all 0.3s;
+    -webkit-transition:all 0.3s;
+    transition:all 0.3s
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <ul>
+      <li><a href="https://blog.csdn.net/tianxuzhang/article/details/14101159">【D3.js数据可视化系列教程】（二十一）--交互图表之条形图排序切换</a></li>
+    </ul>
+    <hr>
+    <div id="vis"></div>  <hr>
+    <button id="sort">单击排序/回复</button> 
+    <button id="remove">单击删除</button> 
+    <button id="add">单击添加</button>
+  </div>
+  <script>
+  //var dataset = [11,15,22,24,59, 32, 80,7,34,50];
+  var w = 600, h = 200;
+  var data, svg, bandScale,heightScale;
+  var sortOrders=false;
+  var data = [ 
+        {"key":0,"value":5},
+        {"key":1,"value":10},
+        {"key":2,"value":13},
+        {"key":3,"value":19},
+        {"key":4,"value":21},
+        {"key":5,"value":25},
+        {"key":6,"value":22},
+        {"key":7,"value":18},
+        {"key":8,"value":15},
+        {"key":9,"value":13},
+        {"key":10,"value":11},
+        {"key":11,"value":12},
+        {"key":12,"value":15},
+        {"key":13,"value":20},
+        {"key":14,"value":18},
+        {"key":15,"value":17},
+        {"key":16,"value":16},
+        {"key":17,"value":18},
+        {"key":18,"value":23},
+        {"key":19,"value":25}
+    ];
+  
+
+  createChart(data, w, h);
+  
+  function createChart(data, w, h){
+    svg = d3.select("#vis").append("svg");
+    svg.attr("width",w)
+      .attr("height",h);
+    //var bandWidth = 2/data.length -1;
+    bandScale = d3.scaleBand()
+                   .domain(data.map(function(d){ return d.key;}))
+                   .range([0,w])
+                   .padding(0.1);   //padding: 0-1
+    heightScale = d3.scaleLinear()
+                        .domain([0,65])
+                        .range([0,h]);
+    
+    svg.selectAll("rect")
+       .data(data)
+       .enter()
+       .append("rect")
+       .attr("x", function(d, i){ return bandScale(d.key); })//i*bandWidth+i;})
+       .attr("y", function(d){ return h-heightScale(d.value); })
+       .attr("height", function(d){
+         return heightScale(d.value);
+       })
+       .attr("width", function(d){ return bandScale.bandwidth(); }) //bandWidth)
+       .attr("fill", function(d) {//设置RGB颜色与数值的关系
+          return "rgb(0, 0, " + (d.value * 10) + ")";
+        });
+        
+   //为条加上数值
+    svg.selectAll("text")
+       .data(data)
+       .enter()
+       .append("text")
+       .text(function(d){ return d.value})
+       .attr("text-anchor", "middle")
+       .attr("x", function(d, i){ return bandScale(d.key)+bandScale.bandwidth()/2; })      //i*bandWidth+i;})
+       .attr("y", function(d){ return h-heightScale(d.value-5); })
+       .attr("font-size","0.75rem")
+       .attr("font-family", "sans-serif")
+       .attr("fill", "white");
+  }
+  
+  function refreshChart(bars, texts){
+    //更新新矩形到可见范围内, 并在这个时候根据数据集为每个条设置对应的属性
+    bars.transition()
+        .delay(function(d,i){  return i/data.length*500 })
+        .duration(500)
+        .attr("x", function(d, i) {
+             return bandScale(d.key);
+         })//每个X对应到它相应的档位上
+        .attr("y", function(d) {
+             return h - heightScale(d.value) ;
+         }) 
+         .attr("height", function(d){
+           return heightScale(d.value);
+         })
+         .attr("width", function(d){ return bandScale.bandwidth(); })
+         .attr("fill", function(d) {//设置RGB颜色与数值的关系
+            return "rgb(0, 0, " + (d.value * 10) + ")";
+          }); //bandWidth)
+        
+    texts.transition()
+        .delay(function(d,i){  return i/data.length*500 })
+        .duration(500)
+        .text(function(d){ return d.value; })
+        .attr("x", function(d, i) {
+            return bandScale(d.key)+bandScale.bandwidth()/2;
+        })
+        .attr("y", function(d) {
+            return h-heightScale(d.value-5);
+        });
+  }
+    
+       
+  d3.selectAll("button")
+    .on("click",function(){
+       //根据ID确定点击的是哪个标签
+       var paragraphID=d3.select(this).attr("id") ; 
+       console.log(paragraphID);
+       //添加删除组合起来
+       if(paragraphID=="add"){
+          var maxValue=55;
+          var newNumber =Math.floor(Math.random()*maxValue)+10;//0-24的整数
+          //根据最后一个key添加一个值
+          var lastKeyValue=data[data.length-1].key; 
+              data.push({
+                  key:lastKeyValue+1,
+                  value:newNumber
+              });
+          //更新X轴比例尺
+          bandScale.domain(data.map(function(d){ return d.key;}))
+          //选择所有条
+          var bars=svg.selectAll("rect").data(data); //绑定数据到元素集，返回更新的元素集
+          var texts=svg.selectAll("text").data(data);
+          //添加条形元素到最右边
+          var lastBar = bars.enter()
+              .append("rect")
+              .attr("x",w)     //在SVG最右边，不可见
+              .attr("y", function(d) {
+                   return h - heightScale(data[data.length-1].value) ;
+               })
+               .attr("height", function(d){
+                 return heightScale(data[data.length-1].value);
+               })
+               .attr("width", function(d){ return bandScale.bandwidth(); }) //bandWidth)
+               .attr("fill", "rgb(0, 0, " + (data[data.length-1].value * 10) + ")");
+          var lastText = texts.enter().append("text")
+                              .text(data[data.length-1].value)
+                              .attr("text-anchor", "middle")
+                              .attr("x", w)
+                              .attr("y", function(d){ return h-heightScale(data[data.length-1].value-5); })
+                              .attr("font-size","0.75rem")
+                              .attr("font-family", "sans-serif")
+                              .attr("fill", "white");
+          
+          refreshChart(bars, texts);
+          lastBar.transition()
+                 //.delay(function(d,i){  return i/data.length*1000 })
+                 .duration(500)
+                 .attr("x", function(d){ return bandScale(d.key); })
+          lastText.transition()
+                  //.delay(function(d,i){  return i/data.length*1200 })
+                  .duration(500)
+                 .attr("x", function(d, i){ return bandScale(i)+bandScale.bandwidth()/2; })
+                 
+       }
+       
+       if(paragraphID=="remove"){    //删除的操作
+         console.log(paragraphID);
+        //选择所有条
+        var bars=svg.selectAll("rect");
+        var texts = svg.selectAll("text");
+        var lastBar = bars.filter(function(d, i) {
+            return i === bars.size() - 1;
+          });
+        var lastText = texts.filter(function(d, i) {
+            return i === bars.size() - 1;
+          });
+
+        data.pop();
+        //更新X轴比例尺
+        bandScale.domain(data.map(function(d){ return d.key;}));
+        
+        refreshChart(bars, texts);
+        lastBar.transition().duration(500)
+               .attr('transform',function(d, i){
+                 return "translate("+(-bandScale.bandwidth()*2)+",0)"
+               })
+               .remove();
+        lastText.transition()//.duration(500)
+                .attr('transform',function(d, i){
+                  return "translate("+(-bandScale.bandwidth()*2)+",0)"
+                })
+                .remove();
+       }
+      
+      if(paragraphID=="sort"){
+        sortBars();
+      } 
+  });
+
+  
+  //排序
+  function sortBars(){
+    console.log("sorting");
+    
+    sortOrders=!sortOrders;//(3)每点击一次排序方向改变
+    if(sortOrders){
+      sortComparer = function(a, b){ return b.value-a.value; } 
+    }else{
+      //sort by original order
+      sortComparer = function(a, b){ return a.key-b.key; }
+    }
+    data.sort(sortComparer);
+    bandScale.domain(data.map(function(d){ return d.key;}))
+    
+    var bars = svg.selectAll("rect").data(data);
+    var texts = svg.selectAll("text").data(data)
+    refreshChart(bars, texts);
+  }
+  
+  </script>
+</body>
+</html>
