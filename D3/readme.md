@@ -788,6 +788,7 @@ Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与�
 > - [D3 的学习资料](http://www.ourd3js.com/wordpress/865/#more-865)
 > - [D3 Sample Gallery](https://bl.ocks.org/)
 > - [Mike Bostock’s Blocks- D3 Sample Gallery](https://bl.ocks.org/mbostock)-- useful
+> - [d3noob’s Blocks- D3 Sample Gallery](https://bl.ocks.org/d3noob)-- useful
 > - [Tutorials- official recommend](https://github.com/d3/d3/wiki/Tutorials)
 > - [D3 in Depth](http://d3indepth.com/)
 > - [D3数据可视化系列教程](https://blog.csdn.net/column/details/zhangtianxu.html)
