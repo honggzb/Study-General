@@ -2,126 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>3. 画柱状图之sortable</title>
+  <title>3. 条形图排序切换</title>
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <style>
-  .bar {fill: steelblue;}
-  .bar:hover {
-    fill: brown;
-  }
-  .title {
-    font: bold 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  .axis {
-    font: 10px sans-serif;
-  }
-  .axis path,
-  .axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-  }
-  .x.axis path {
-    display: none;
-  }
+  .body{ margin: 20px; }
+  rect{
+    -moz-transiton:all 0.3s;
+    -o-transiton:all 0.3s;
+    -webkit-transition:all 0.3s;
+    transition:all 0.3s
+    }
+  /*rect:hover{
+    fill :red;
+  }*/
   </style>
 </head>
 <body>
-  <label><input type="checkbox"> Sort values</label>
-  <svg width="500" height="500"></svg>
+  <div class="container">
+    <ul>
+      <li><a href="https://github.com/d3/d3-time-format">d3-time-format</a> - date parsing and formatting</li>
+    </ul>
+    <hr>
+    <div id="vis"></div>
+    <label for=""><input type="checkbox">Sort by Wins</label>
+    <br>
+    <p id="remove">单击删除</p>
+    <p id="add">单击添加</p>
+  </div>
   <script>
-  var svg = d3.select("svg"),
-      bar_width=30, bar_padding = 10,
-      margin = {top: 70, right: 30, bottom: 100, left: 30},
-      svg_width = +svg.attr("width") - margin.left - margin.right, //(bar_width+bar_padding)*dataset.length,  // 宽度
-      svg_height = +svg.attr("height") - margin.top - margin.bottom,
-      g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  //var dataset = [11,15,22,24,59, 32, 80,7,34,50];
+  var w = 700, h = 200;
+  var dataset, svg, bandScale;
+  d3.csv("nf1.csv", function(data){
+    dataset = data;
+    dataset.forEach(function(d,i){
+      d.order = i;
+    })
+    createChart(dataset, w, h);
+  })
   
-  var scale_y = d3.scaleLinear().range([svg_height, 0]);
-
-  var scale_x = d3.scaleBand()  //use band scale
-                  .rangeRound([0, svg_width])
-                  .padding(0.1);
-      
-  d3.tsv("data5.tsv", type, function(error, data) {
+  function createChart(data, w, h){
+    svg = d3.select("#vis").append("svg");
+    svg.attr("width",w)
+      .attr("height",h);
     
-    scale_x.domain(data.map(function(d) { return d.name; }));
-    scale_y.domain([0, d3.max(data, function(d) { return d.value; })]);
-  
-    //标题
-    svg.append("text")
-      .attr("class", "title")
-      .attr("x", svg_width/3)
-      .attr("y", 30)
-      .text("Why Are We Leaving Facebook?");
-    //坐标轴
-    var g = svg.append("g")
-               .attr("transform","translate("+margin.left+","+margin.top+")");
-    g.append("g")
-        .attr("class", "axis x")     //use this class to select x-axix to sort
-        .attr("transform", "translate(0," + svg_height + ")")
-        .call(d3.axisBottom(scale_x));
-    g.append("g")
-        .attr("class", "axis y")
-        .call(
-          d3.axisLeft(scale_y)
-            .ticks(8, "%"))
-        .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", "0.71em")
-        .attr("text-anchor", "end");
-        
+    var teams = data.map(function(d){
+      return d.Team;
+    })
+    //var bandWidth = 2/data.length -1;
+     bandScale = d3.scaleBand()
+                   .domain(teams)
+                   .range([0,w])
+                   .padding(0.1);   //padding: 0-1
+    var heightScale = d3.scaleLinear()
+                        .domain([0,65])
+                        .range([0,h]);
+    
     var bar = svg.selectAll("rect")
        .data(data)
        .enter()
        .append("rect")
-       .attr('transform', 'translate(0, ' + margin.top + ')') 
-       .attr("x", function(d) { return scale_x(d.name) + margin.left; })
-       .attr("y", function(d){ return scale_y(d.value); })
-       .attr("height",function(d){return svg_height-scale_y(d.value);})
-       .attr("width",scale_x.bandwidth())
-       .attr("class", "bar");
-
-       /*Sortable function part*/
-       d3.select("input").on("change", change);
+       .attr("x", function(d, i){ return bandScale(d.Team); })//i*bandWidth+i;})
+       .attr("y", function(d){ return h-heightScale(d.W); })
+       .attr("height", function(d){
+         return heightScale(d.W);
+       })
+       .attr("width", function(d){ return bandScale.bandwidth(); }) //bandWidth)
+       .attr("fill", function(d){ return d.color; })
+       .append("title")
+       .text(function(d){ return d.Team;});
        
-       var sortTimeout = setTimeout(function() {
-         d3.select("input").property("checked", true).each(change);
-       }, 2000);
-
-       function change() {
-         clearTimeout(sortTimeout);
-         // Copy-on-write since tweens are evaluated after a delay.
-         var x0 = scale_x.domain(data.sort(this.checked
-             ? function(a, b) { return b.value - a.value; }
-             : function(a, b) { return d3.ascending(a.name, b.name); })
-             .map(function(d) { return d.name; }))
-             .copy();
-
-         svg.selectAll(".bar")
-             .sort(function(a, b) { return x0(a.name) - x0(b.name); });
-
-         var transition = svg.transition().duration(750),
-             delay = function(d, i) { return i * 50; };
-
-         transition.selectAll(".bar")
-             .delay(delay)
-             .attr("x", function(d) { return x0(d.name)+ margin.left; });
-
-         transition.select(".x.axis")
-             .call(d3.axisBottom(scale_x))
-             .selectAll("g")
-             .delay(delay);
-       }
+    svg.selectAll("text")
+       .data(data)
+       .enter()
+       .append("text")
+       .text(function(d){ return d.W})
+       .attr("text-anchor", "middle")
+       .attr("x", function(d, i){ return bandScale(d.Team)+10; })      //i*bandWidth+i;})
+       .attr("y", function(d){ return h-heightScale(d.W-3); })
+       .attr("font-size","0.75rem")
+       .attr("font-family", "sans-serif")
+       .attr("fill", "white");
        
-    });
+  }
+  
+  d3.select("input")
+    .on("change", toggleSort);
     
-    function type(d) {
-      d.value = +d.value;
-      return d;
+  
+    
+  function toggleSort(){
+    var sortComparer;
+    if(this.checked){
+      //sort by winds
+      sortComparer = function(a, b){ return b.W-a.W; } 
+    }else{
+      //sort by original order
+      sortComparer = function(a, b){ return a.order-b.order; }
     }
-
+  
+    dataset.sort(sortComparer);
+    var teamOrder = dataset.map(function(d){ 
+      return d.Team;
+    })
+  
+    bandScale.domain(teamOrder);
+    svg.transition()
+       .duration(1000)
+       .selectAll("rect")
+       .delay(function(d,i){ return i*100; })
+       .attr("x", function(d){ return bandScale(d.Team); });
+    svg.transition()
+          .duration(1000)
+          .selectAll("text")
+          .delay(function(d,i){ return i*100; })
+          .attr("x", function(d){ return bandScale(d.Team)+10; });
+  }
   </script>
 </body>
 </html>
