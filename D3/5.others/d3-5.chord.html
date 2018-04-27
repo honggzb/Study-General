@@ -15,10 +15,13 @@
       fill-opacity: 0.67;
     }
   </style>
+  <body>
+    <p><a href="https://blog.csdn.net/tianxuzhang/article/details/14149681">【D3.js数据可视化系列教程】（二十八）--弦图</a></p>
+    <hr>
   <svg width="960" height="960"></svg>
   <script>
     var matrix = [
-      [11975,  5871, 8916, 2868],
+      [11975,  5871, 8916, 2868],  //每组是一个部分圆环，数组的每个值是其中的弦的大小
       [ 1951, 10048, 2060, 6171],
       [ 8010, 16145, 8090, 8045],
       [ 1013,   990,  940, 6907]
@@ -32,10 +35,16 @@
     
     var formatValue = d3.formatPrefix(",.0", 1e3);
     
-    var chord = d3.chord()
+    /*
+    * chhord函数可以返回两个 :chord.groups跟chord.chords
+    *  padding是圆环之间的距离
+    *  sortSubgroups 传入一个function，这个function规定了每一行中的元素的排列顺序。
+       同样也有sortGroups 这个是规定行的排列顺序
+    */
+    var chord = d3.chord()   
         .padAngle(0.05)
         .sortSubgroups(d3.descending);
-    
+    //绘制圆环
     var arc = d3.arc()
         .innerRadius(innerRadius)
         .outerRadius(outerRadius);
@@ -71,6 +80,7 @@
     groupTick.append("line")
         .attr("x2", 6);
     
+    //刻度数据: 
     groupTick
       .filter(function(d) { return d.value % 5e3 === 0; })
       .append("text")
@@ -87,7 +97,8 @@
       .enter().append("path")
         .attr("d", ribbon)
         .style("fill", function(d) { return color(d.target.index); })
-        .style("stroke", function(d) { return d3.rgb(color(d.target.index)).darker(); });
+        .style("stroke", function(d) { return d3.rgb(color(d.target.index)).darker(); })
+        .on("mouserover", fade(-0.1));
     
     // Returns an array of tick angles and values for a given group and step.
     function groupTicks(d, step) {
@@ -97,6 +108,16 @@
       });
     }
     
+    function fade(opacity) {
+      return function(g, i) {
+          svg.selectAll(".ribbons path")
+              .filter(function(d) {// 过滤器，过滤掉没选中的
+                  return d.source.index != i && d.target.index != i; 
+              })
+              .transition()// 过渡
+              .style("opacity", opacity);// 不透明度
+      };
+  }
   </script>
   </body>
 </html>
