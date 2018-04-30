@@ -11,6 +11,8 @@
 # Install D3 and Moment
 npm install d3 moment --save
 npm install @types/d3 --save-dev
+ng new d3-angular
+# Application Structure
 ├── d3
 |   ├── models            # typing safety and robust instances of datum
 |   |    ├── link.ts
@@ -30,7 +32,7 @@ npm install @types/d3 --save-dev
 
 **Moment.js**
 
-[Moment.js](http://momentjs.com/): Parse, validate, manipulate, and display dates and times in JavaScript
+- [Moment.js](http://momentjs.com/): Parse, validate, manipulate, and display dates and times in JavaScript
 
 | Format Type | code |Result|
 | :------------- | :------------- |:------------- |
@@ -65,9 +67,11 @@ export class LineExampleComponent {
 
 <h2 id="Change">3. D3 and Change Detection</h2>
 
-Angular will refresh the graph elements on every tick, change detection and mark it for check on every simulation tick
+1. **ChangeDetectionStrategy**: Angular will refresh the graph elements on every tick, change detection and mark it for check on every simulation tick
+2. **ngOnChanges hook**: such like `.tsBarChartComponent`
 
 ```JavaScript
+//src\app\visuals\graph\graph.component.ts
 import { 
   Component,
   ChangeDetectorRef,
@@ -86,6 +90,15 @@ export class GraphComponent {
         this.ref.markForCheck();
       });
   }
+}
+//src\app\visuals\bar-chart\bar-chart.component.ts
+ngOnChanges() {
+    if (this.chart) {	      
+      this.updateChart();	    
+    }
+}
+updateChart(){
+  //...
 }
 ```
 
