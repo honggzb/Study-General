@@ -12,7 +12,6 @@
 - [3. 柱状图](#柱状图)
 - [4. 曲线和图表](#曲线和线性图标)
 - [5. path transition](#path)
-- [资料](#资料)
 -------
 
 - 选择元素语法: 
@@ -751,6 +750,40 @@ let xAxis = svg.append('g')
 - 线性图表: `d3.line()`
 - 面积图表: `d3.area()`
 
+```javascript
+/*
+curveLinear
+curveStep
+curveStepBefore
+curveStepAfter
+curveBasis
+curveCardinal
+curveMonotoneX
+curveCatmullRom
+*/
+var curveArray = [
+    {"d3Curve":d3.curveLinear,"curveTitle":"curveLinear"},
+    {"d3Curve":d3.curveStep,"curveTitle":"curveStep"},
+    {"d3Curve":d3.curveStepBefore,"curveTitle":"curveStepBefore"},
+    {"d3Curve":d3.curveStepAfter,"curveTitle":"curveStepAfter"},
+    {"d3Curve":d3.curveBasis,"curveTitle":"curveBasis"},
+    {"d3Curve":d3.curveCardinal,"curveTitle":"curveCardinal"},
+    {"d3Curve":d3.curveMonotoneX,"curveTitle":"curveMonotoneX"},
+    {"d3Curve":d3.curveCatmullRom,"curveTitle":"curveCatmullRom"}
+  ];
+svg.append("path")
+   .datum(data)
+    .attr("class", "line")
+        .style("stroke", function() { // Add the colours dynamically
+                return daCurve.color = color(daCurve.curveTitle); })
+        .attr("id", 'tag'+i) // assign ID
+        .attr("d", d3.line()
+                     .curve(daCurve.d3Curve)
+                     .x(function(d) { return x(d.date); })
+                     .y(function(d) { return y(d.close); })
+                 );
+```
+
 path命令 | 参数 | 是否能重复 | 解释
 ---|---|---|---
 M(m)| x, y| 不能 | 把笔尖移动到新位置，但因为没有落笔，不会“描绘图形”。所有的path都需要以m/M开头(绝对路径)
@@ -777,8 +810,6 @@ Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与�
 
 ------------------------------
 
-<h2 id="资料">资料</h2>
-
 > resources
 > - [NVD3](http://nvd3.org) Re-usable charts for d3.js
 > - [好奇猫]https://haoqicat.com/
@@ -791,7 +822,7 @@ Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与�
 > - [D3 的学习资料](http://www.ourd3js.com/wordpress/865/#more-865)
 > - [D3 Sample Gallery](https://bl.ocks.org/)
 > - [Mike Bostock’s Blocks- D3 Sample Gallery](https://bl.ocks.org/mbostock)-- useful
-> - [d3noob’s Blocks- D3 Sample Gallery](https://bl.ocks.org/d3noob)-- useful
+> - [d3noob’s Blocks- D3 Sample Gallery](https://bl.ocks.org/d3noob)-- useful（入门级）
 > - [Tutorials- official recommend](https://github.com/d3/d3/wiki/Tutorials)
 > - [D3 in Depth](http://d3indepth.com/)
 > - [D3数据可视化系列教程](https://blog.csdn.net/column/details/zhangtianxu.html)
@@ -813,13 +844,8 @@ Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与�
 
 -----------------------------------
 
-[back to top](#top)
-
-
 > sample
 > - [Bubble chart](http://usabilityetc.github.io/demos/d3-country-bubble-chart/)
 > - [Pie && stack bar graph](http://otc2ysde8.bkt.clouddn.com/dimple/index.html)
 > - [Across U.S. Companies, Tax Rates Vary Greatly](https://archive.nytimes.com/www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html)
 > - [Dissecting a Trailer: The Parts of the Film That Make the Cut](https://archive.nytimes.com/www.nytimes.com/interactive/2013/02/19/movies/awardsseason/oscar-trailers.html)
-
-[back to top](#top)
