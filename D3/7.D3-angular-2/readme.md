@@ -27,7 +27,7 @@ ng new d3-angular
 |   ├── shared
 |   |    ├── link-visual
 |   |    └── node-visual
-|   ├── bar-chart        # seperate component for bar-chart(simple )
+|   └──  bar-chart        # seperate component for bar-chart(simple )
 ```
 
 **Moment.js**
