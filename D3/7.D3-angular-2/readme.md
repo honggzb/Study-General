@@ -33,7 +33,7 @@ npm install @types/d3 --save-dev
 [Moment.js](http://momentjs.com/): Parse, validate, manipulate, and display dates and times in JavaScript
 
 | Format Type | code |Result|
-| :------------- | :---------ng ---- |:------------- |
+| :------------- | :------------- |:------------- |
 |Format Date|`moment().format('MMMM Do YYYY, h:mm:ss a');`| April 12th 2018, 9:31:30 am|
 |Relative Time|`moment("20111031", "YYYYMMDD").fromNow();`| 6 years ago|
 |Calendar Time|`moment().subtract(6, 'days').calendar();`| Last Friday at 9:33 AM|
