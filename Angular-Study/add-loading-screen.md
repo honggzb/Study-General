@@ -4,10 +4,12 @@ Angular is a single-page frame work. The page doesn’t refresh between differen
 
 [Types of router events](https://angular.io/api/router/Event):
 
-- NavigationStart: When the user starts the route change process
-- NavigationEnd: When the user reached the destination route
-- NavigationCancel : If the user cancels the navigation
-- NavigationError: If the navigation fails due to some reason
+| Types of router events|Explanation|
+| :------------- | :------------- |
+|NavigationStart| When the user starts the route change process|
+|NavigationEnd|When the user reached the destination route|
+|NavigationCancel|If the user cancels the navigation|
+|NavigationError|If the navigation fails due to some reason|
 
 ```javascript
 import { Component } from '@angular/core';
