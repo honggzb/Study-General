@@ -10,11 +10,15 @@
       stroke: blue;
     }
     .node {
-      fill: red;
+      fill: white;
+      stroke-width: 3px;
+      stroke: steelblue;
     }
   </style>
   </head>
   <body>
+    <a href="https://bl.ocks.org/d3noob/e7e37cfe0e8763cb0915dee33cc2a24b">Tree diagram using flat data with v4</a><br>
+    <a href="https://bl.ocks.org/d3noob/d316a488cae262ae24e6ca897b209f9e">Tree diagram loading external json with v4</a>
   <script>
   /*We often get hierarchical data in a flat format e.g csv as shown below
       name,parent
@@ -54,14 +58,15 @@
     var tree = d3.tree()
                  .size([height, width - 100]);
     //convert the flat data into a hierarchy
-    var stratify =  d3.stratify()                      // create a hierarchical data for parent-child relationship
+    var stratify =  d3.stratify()      // create a hierarchical data for parent-child relationship
                       .id(function(d) {return d.name;})
                       .parentId(function(d) {return d.parent;});
     var root = stratify(data);
-    console.log(tree(root).descendants());
+    //console.log(tree(root).descendants());
     var treeG = svgContainer.append("g")
           .classed("treeG", true)
           .attr("transform", "translate(40, 0)")
+    // adds the links between the nodes
     treeG.selectAll(".links")      // root node with information about its children, depth, height and (x,y) coordinates 
           .data(tree(root).descendants().slice(1))
           .enter()
@@ -73,7 +78,7 @@
               + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
               + " " + d.parent.y + "," + d.parent.x;
         });
-  // a svg:g element to contain the nodes and the labels together    
+  //adds each node as a group:  a svg:g element to contain the nodes and the labels together    
   var nodesG = treeG.selectAll(".nodes")
                     .data(root.descendants())
                     .enter()
@@ -83,14 +88,14 @@
                       });
   //add svg:circle elements to the svg:g element    
     nodesG.append("circle")
-          .attr("r", 3)
+          .attr("r", 10)
           .classed("node", true);
-  // add labels on avg:circle 
-  nodesG.append("text")
-        .attr("dy", 5)
-        .attr("x", function(d) { return d.children ? -7 : 7; })
-        .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
-        .text(function(d) { return d.id; });
+  // add text(labels) on avg:circle 
+    nodesG.append("text")
+          .attr("dy", 5)
+          .attr("x", function(d) { return d.children ? -15 : 15; })
+          .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+          .text(function(d) { return d.id; });
       
   </script>
   </body>
