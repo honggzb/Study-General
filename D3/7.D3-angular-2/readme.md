@@ -1,4 +1,4 @@
-[Angular + D3](#top)
+[Angular>2 + D3](#top)
 
 - [1. Application Structure](#Structure)
 - [2. SVG components with Angular](#SVG)
