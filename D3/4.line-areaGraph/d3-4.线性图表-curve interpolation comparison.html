@@ -59,7 +59,7 @@
         .x(function(d) { return x(d.date); })
         .y(function(d) { return y(d.temperature); });
         
-    d3.csv("data.csv", function(d) {
+    d3.csv("data1.csv", function(d) {
       d.date = parseTime(d.date);
       d.close = +d.close;
       return d;
