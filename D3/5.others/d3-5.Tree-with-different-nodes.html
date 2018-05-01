@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta name="description" content="Tree Layout Demo">
+    <title>Tree Layout Demo - Interactive IP Diagram</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+    .node { cursor: pointer; }
+  	.node circle {
+  	  fill: #fff;
+  	  stroke: steelblue;
+  	  stroke-width: 3px;
+  	}
+    .node--internal text {
+      text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+    }
+  	.link {
+  	  fill: none;
+  	  stroke: #ccc;
+  	  stroke-width: 2px;
+  	}
+  </style>
+  </head>
+  <body>
+    <p>
+      <ul>
+        <li>Refer to d3noob’s Block: <a href="https://bl.ocks.org/d3noob/d316a488cae262ae24e6ca897b209f9e">Tree diagram loading external json with v4</a></li>
+        <li>Refer to d3noob’s Block: <a href="https://bl.ocks.org/d3noob/76d6fa0dff4af77544da9dd69aef9249">Tree diagram using symbols for nodes in v4</a></li>
+        <li>Refer to d3noob’s Block: <a href="https://bl.ocks.org/d3noob/52945c64ab37f9f285c8797bcbf86d16">Tree diagram using images for nodes in v4</a></li>
+      </ul>
+    </p>
+  <script>
+  // ************** Generate the tree diagram	 *****************
+  var margin = {top: 20, right: 120, bottom: 20, left: 120},
+    	width = 960 - margin.right - margin.left,
+    	height = 500 - margin.top - margin.bottom;
+      // declares a tree layout and assigns the size
+  var treemap = d3.tree().size([height, width]);
+  
+  d3.json("treeData.json", function(error, data){
+    if(error) throw error;
+    //  assigns the data to a hierarchy using parent-child relationships
+    var nodes = d3.hierarchy(data, function(d){
+      return d.children;
+    });
+    // maps the node data to the tree layout
+    nodes = treemap(nodes);
+    var svg = d3.select("body").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom),
+    g = svg.append("g")
+           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  // adds the links between the nodes
+    var link = g.selectAll(".link")
+                .data( nodes.descendants().slice(1))
+                .enter().append("path")
+                .attr("class", "link")
+                .attr("d", function(d) {
+                   return "M" + d.y + "," + d.x
+                   + "C" + (d.y + d.parent.y) / 2 + "," + d.x
+                   + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
+                   + " " + d.parent.y + "," + d.parent.x;
+                   });
+
+  // adds each node as a group
+  var node = g.selectAll(".node")
+              .data(nodes.descendants())
+              .enter().append("g")
+              .attr("class", function(d) { 
+                return "node" + 
+                (d.children ? " node--internal" : " node--leaf"); })
+              .attr("transform", function(d) { 
+                return "translate(" + d.y + "," + d.x + ")"; });
+
+  // adds the circle to the node
+  //node.append("circle").attr("r", 10);    //simple circle
+  // node.append("circle")
+  //     .attr("r", function(d) { return d.data.value; })
+  //     .style("stroke", function(d) { return d.data.type; })
+  //     .style("fill", function(d) { return d.data.level; });
+  // adds symbols as nodes instead of circle
+  node.append("path")
+      .style("stroke", function(d) { return d.data.type; })
+      .style("fill", function(d) { return d.data.level; })
+      .attr("d", d3.symbol()
+      .size(function(d) { return d.data.value * 30; } )
+      .type(function(d) { if
+         (d.data.value >= 9) { return d3.symbolCross; } else if
+         (d.data.value <= 9) { return d3.symbolDiamond;}
+       }));
+  // adds images as nodes
+  // node.append("image")
+  //     .attr("xlink:href", function(d) { return d.data.icon; })
+  //     .attr("x", "-12px")
+  //     .attr("y", "-12px")
+  //     .attr("width", "24px")
+  //     .attr("height", "24px");
+  // adds the text to the node
+  node.append("text")
+      .attr("dy", ".35em")
+      .attr("x", function(d) { return d.children ? -13 : 13; })
+      .style("text-anchor", function(d) { 
+      return d.children ? "end" : "start"; })
+      .text(function(d) { return d.data.name; });
+});
+</script>
+</body>
+</html>
