@@ -1,6 +1,9 @@
 [D3 的学习- version 4/5](#top)
 
 - [1. 数据和数据绑定](#数据绑定)
+- [补充1. 使用数据文件-- d3-fetc](#使用数据文件)
+- [补充2. Elements, attributes and styles](#Elements)
+- [补充3: transition过度和动画, event listener, zoom/pan/drag behavior](#transition)
 - [2. 比例尺和坐标轴](#比例尺和坐标轴)
   - [2.1 比例尺](#比例尺)
     - [2.1.1 比例尺种类](#比例尺种类)
@@ -181,6 +184,8 @@ svg.selectAll('text')
    .attr("fill", "white");
 ```
 
+[back to top](#top)
+
 <h2 id="使用数据文件">补充1. 使用数据文件-- d3-fetch</h2>
 
 [d3-fetch](https://github.com/d3/d3-fetch)
@@ -196,7 +201,56 @@ svg.selectAll('text')
 
 [back to top](#top)
 
-<h2 id="transition">补充2: transition过度和动画, event listener, zoom/pan/drag behavior</h2>
+<h2 id="Elements">补充2. Elements, attributes and style</h2>
+
+```JavaScript
+/* circle */
+holder.append("circle") // attach a circle
+      .attr("cx", 200) // position the x-center
+      .attr("cy", 100) // position the y-center
+      .attr("r", 50); // set the radius
+/* ellipse */
+holder.append("ellipse") // attach an ellipse
+      .attr("cx", 200) // position the x-centre
+      .attr("cy", 100) // position the y-centre
+      .attr("rx", 100) // set the x radius
+      .attr("ry", 50); // set the y radius
+/* rectangle */
+holder.append("rect") // attach a rectangle
+      .attr("x", 100) // position the left of the rectangle
+      .attr("y", 50) // position the top of the rectangle
+      .attr("height", 100) // set the height
+      .attr("width", 200); // set the width
+      .attr("rx", 10)   // rx: The radius curve of the corner of the rectangle in the x dimension (optional).
+      .attr("ry", 10)   // ry: The radius curve of the corner of the rectangle in the y dimension (optional).
+/* line */
+holder.append("line") // attach a line
+      .style("stroke", "black") // colour the line
+      .attr("x1", 100) // x position of the first end of the line
+      .attr("y1", 50) // y position of the first end of the line
+      .attr("x2", 300) // x position of the second end of the line
+      .attr("y2", 150); // y position of the second end of the line 
+/* polyline */
+holder.append("polyline") // attach a polyline
+      .style("stroke", "black") // colour the line
+      .style("fill", "none") // remove any fill colour
+      .attr("points", "100,50, 200,150, 300,50"); // x,y points
+/* polygon - 闭合的polyline*/
+holder.append("polygon") // attach a polygon
+      .style("stroke", "black") // colour the line
+      .style("fill", "none") // remove any fill colour
+      .attr("points", "100,50, 200,150, 300,50"); // x,y points
+/* path */
+holder.append("path") // attach a path
+      .style("stroke", "black") // colour the line
+      .style("fill", "none") // remove any fill colour
+      .attr("d", "M 100,50, L 200,150, L 300,50 Z"); // path commands
+    // first moves (M) to 100,50 then draws a line (L) to 200,150 then draws another line (L) to 300,50 then closes the path (Z). 
+```
+
+[back to top](#top)
+
+<h2 id="transition">补充3: transition过度和动画, event listener, zoom/pan/drag behavior</h2>
 
 ```html
 <p>Elastic</p>
