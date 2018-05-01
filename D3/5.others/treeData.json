@@ -1,0 +1,39 @@
+{
+  "name": "Top Level",
+    "value": 10,
+    "type": "black",
+    "level": "red",
+    "icon": "earth.png",
+    "children": [
+      {
+        "name": "Level 2: A",
+        "value": 5,
+        "type": "grey",
+        "level": "red",
+       "icon": "cart.png",
+        "children": [
+          {
+            "name": "Son of A",
+            "value": 5,
+            "type": "steelblue",
+            "icon": "lettern.png",
+            "level": "orange"
+          },
+          {
+            "name": "Daughter of A",
+            "value": 18,
+            "type": "steelblue",
+            "icon": "vlc.png",
+            "level": "red"
+          }
+        ]
+      },
+      {
+        "name": "Level 2: B",
+        "value": 10,
+        "type": "grey",
+        "icon": "random.png",
+        "level": "green"
+      }
+    ]
+}
