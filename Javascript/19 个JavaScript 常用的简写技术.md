@@ -18,6 +18,7 @@
 - [补3：利用Array.prototype.contcat对象转换为字符串](#对象转换为字符串)
 - [补2：利用Object.assign快速创建并复制对象](#快速创建并复制对象)
 - 补4：一行代码实现数组去重: `[...new Set([1,2,2,3,1,'a',3,'a',3])]`
+- [补5：利用reduce快速计算总和](#利用reduce快速计算总和)
 
 <h3 id="创建一个新的对象">1.创建一个新的对象</h3>
 
@@ -307,6 +308,16 @@ var b = a.filter(val => val!==2);  // [1, 3]
 var a = {name: "will", things: [0,1,2]};
 var b = Object.assign({}, a, {name:"grace"});    
 b.things = a.things.concat(3);   // {name: "grace", things: [0,1,2, ]}
+```
+
+[back to top](#top)
+
+<h3 id="利用reduce快速计算总和">补5：利用reduce快速计算总和</h3>
+
+```javascript
+var sum = arr.reduce(function(a, b) {
+    return a + b;
+ }, 0);
 ```
 
 [back to top](#top)
