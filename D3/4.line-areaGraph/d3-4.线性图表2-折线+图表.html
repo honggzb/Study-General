@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. 线性图表2 - version 4</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <ul>
+      <li>Reference to: d3noob’s Block: <a href="https://bl.ocks.org/mbostock/3883245">Graph and table with tricks</a></li>
+      <li>表格使用HTML tag结合D3生成</li>
+    </ul>
+    <hr>
+    <svg width="960" height="500"></svg>
+  </div>
+  <script>
+  var svg = d3.select("svg"),
+    margin = {top: 20, right: 20, bottom: 30, left: 50},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  var parseTime = d3.timeParse("%d-%b-%y");
+  var formatTime = d3.timeFormat("%Y-%m-%d");
+  
+  var x = d3.scaleTime().rangeRound([0, width]);
+  var y = d3.scaleLinear().rangeRound([height, 0]);
+  
+  var line_generator = d3.line()
+      .x(function(d) { return x(d.date); })
+      .y(function(d) { return y(d.close); })
+      .curve(d3.curveCardinal);
+      
+  d3.csv("tableData.csv", function(d) {
+    d.date = parseTime(d.date);     // format date datetype
+    d.close = +d.close;             //change string to number
+    d.open = +d.open;
+    d.diff = Math.round((d.close - d.open)*100)/100;
+    return d;
+  }, function(error, data) {
+    if (error) throw error;
+    x.domain(d3.extent(data, function(d) { return d.date; }));
+    y.domain(d3.extent(data, function(d) { return d.close; }));
+
+    g.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x))
+        // .select(".domain")
+        // .remove();
+
+    g.append("g")
+        .call(d3.axisLeft(y))
+        .append("text")
+        .attr("fill", "#000")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", "0.71em")
+        .attr("text-anchor", "end")
+        .text("Price ($)");
+
+    g.append("path")
+        .datum(data)
+        .attr("fill", "none")
+        .attr("stroke", "steelblue")
+        .attr("stroke-width", 1.5)
+        .attr("d", line_generator);
+        
+    // The table generation function
+    function tabulate(data, columns) {
+        var table = d3.select("body").append("table")
+                      .attr("style", "margin-left:"+(width/3)+"px")
+                      .style("border-collapse", "collapse")// <= Add this line in
+                      .style("border", "1px black solid"), // <= Add this line in
+            thead = table.append("thead"),
+            tbody = table.append("tbody");
+        // append the header row
+        thead.append("tr")
+            .selectAll("th")
+            .data(columns).enter()
+            .append("th")
+            .style("border", "1px grey solid")
+            .text(function(column) { return column; });
+        // create a row for each object in the data
+        var rows = tbody.selectAll("tr")
+            .data(data).enter()
+            .append("tr");
+        // create a cell in each row for each column
+        var cells = rows.selectAll("td")
+            .data(function(row) {
+                return columns.map(function(column) {
+                    return {column: column, value: row[column]};
+                });
+            })
+            .enter()
+            .append("td")
+            .attr("style", "font-family: Courier") // sets the font style
+            .style("border", "1px grey solid")
+            .html(function(d) { 
+              return d.column === "date"? formatTime(d.value) : d.value;
+            });
+        
+        return table;
+    }
+    
+    // render the table
+    var peopleTable = tabulate(data, ["date", "close", "open", "diff"]);
+    
+    peopleTable.selectAll("tbody tr") 
+            .sort(function(a, b) {
+                    return d3.descending(a.close, b.close);
+            });
+    
+    peopleTable.selectAll("thead th")
+            .text(function(column) {
+                    return column.charAt(0).toUpperCase()+column.substr(1);
+            });
+  
+  });
+  </script>
+</body>
+</html>
