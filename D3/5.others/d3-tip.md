@@ -1,4 +1,5 @@
 - d3-tip.js - general tooltip plugin
+- [This is a simple barplot with d3-tip compatible with d3.v4](https://bl.ocks.org/oikonang/b403e709777988737b50ee6ed04b2465)
 
 ```
 /*在bar graph中的应用*/
