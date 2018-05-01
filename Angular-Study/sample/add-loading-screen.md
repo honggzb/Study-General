@@ -1,4 +1,4 @@
-## loading screens between route changes
+## LOAD COMPONENT for loading screens between route changes
 
 Angular is a single-page frame work. The page doesn’t refresh between different routes and we need to take into account the slow connections and late responses from API’s.
 
