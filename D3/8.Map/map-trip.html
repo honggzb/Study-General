@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Map</title>
+  <style>
+  .active {
+      fill: #98f5ff;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <ul>
+      <li>using <pre>https://unpkg.com/world-atlas@1/world/110m.json</pre></li>
+      <li><a href="https://www.knoyd.com/blog/2017/6/23/create-map-in-d3-part1">TRAVELING THE WORLD IN D3 - PART 1: MAKING A MAP: Part 1</a></li>
+      <li><a href="https://www.knoyd.com/blog/2017/6/24/create-map-in-d3-part2">TRAVELING THE WORLD IN D3 - PART 1: MAKING A MAP: Part 2</a></li>
+      <li><a href="https://github.com/fukac99/fukac99.github.io">github</a></li>
+    </ul>
+    <hr>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://unpkg.com/topojson-client@3"></script>
+  <script src="trip_data.js"></script>
+  <script>
+  var margin = {top: 0, right: 0, bottom: 0, left: 0},
+      width = 960 - margin.left - margin.right,
+      height = 500- margin.top - margin.bottom;
+  var centered, clicked_point;
+   
+  var path = d3.geoPath();
+  var svg = d3.select("body")
+              .append("svg")
+              .attr("width", width)
+              .attr("height", height)
+              .attr('class', 'map');
+  var g = svg.append("g");
+  
+  var projection = d3.geoMercator()
+                     .scale(130)
+                     .translate( [width / 2, height / 1.5]);
+  var projection = d3.geoMercator()
+                      .translate([width / 2.2, height / 1.5]);   
+  var plane_path = d3.geoPath()
+                     .projection(projection);
+  var path = d3.geoPath().projection(projection);
+
+   d3.json("https://unpkg.com/world-atlas@1/world/110m.json", function(error, topology) {
+     //console.log(topology);
+     g.selectAll("path")
+        .data(topojson.feature(topology, topology.objects.countries).features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .style("fill", function(d){ return colorCountry(d); })
+        .style('stroke', 'white')
+        .style('stroke-width', 1.5)
+        .style("opacity",0.7)
+        .on("click", clicked);
+        
+   });
+   
+   // color country
+  function colorCountry(country) {
+      if (visited_countries.includes(country.id)) {
+          // hack to discolor ehtiopia
+          if (country.id == '-99' & country.geometry.coordinates[0][0][0] != 20.590405904059054){
+              return '#e7d8ad'    
+          } else {
+              return '#c8b98d';
+          };
+      } else {
+          return '#e7d8ad';
+      }
+  };
+  
+  //clicked and zoom for visited_countries
+function clicked(d) {
+      var x, y, k;
+      //if not centered into that country and clicked country in visited countries
+      if ((d && centered !== d) & (visited_countries.includes(d.id))) {
+        var centroid = path.centroid(d); //get center of country
+        var bounds = path.bounds(d); //get bounds of country
+        var dx = bounds[1][0] - bounds[0][0], //get bounding box
+            dy = bounds[1][1] - bounds[0][1];
+        //get transformation values
+        x = (bounds[0][0] + bounds[1][0]) / 2;
+        y = (bounds[0][1] + bounds[1][1]) / 2;
+        k = Math.min(width / dx, height / dy);
+        centered = d;
+      } else {
+        //else reset to world view
+        x = width / 2;
+        y = height / 2;
+        k = 1;
+        centered = null;
+      }
+      //set class of country to .active
+      g.selectAll("path")
+       .classed("active", centered && function(d) { return d === centered; })
+      // make contours thinner before zoom for smoothness
+      if (centered !== null){
+        g.selectAll("path")
+         .style("stroke-width", (0.75 / k) + "px");
+      }
+      // map transition
+      g.transition()
+        .style("stroke-width", (0.75 / k) + "px")
+        .duration(750)
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+        .on('end', function() {
+            if (centered === null){
+              g.selectAll("path")
+               .style("stroke-width", (0.75 / k) + "px");
+            }
+        });
+}
+</script>
+</body>
+</html>
