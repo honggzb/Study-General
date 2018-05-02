@@ -1,11 +1,17 @@
   -- [HTML5-各种Tag](#top)
   
+  - [Touch Keyboard Types Cheat Sheet](#sheet)
+  - [Remove inner controls in input field: `<input type="number">`](#remove)
   - [1. html5调用手机摄像头](#html5调用手机摄像头)
   - [2. input只能输入数字或小数点后几位](#input只能输入数字或小数点后几位)
   - [3. 文本框不许输入数字以外的字符](#文本框不许输入数字以外的字符)
   - [4. html5背景音乐不自动播放解密(bug)](#html5背景音乐不自动播放解密)
   - [5. ios不支持fixed属性解决](#ios不支持fixed属性解决)
   - [6. input输入手机号之间间隔  例如：xxx--xxxx--xxxx](#input输入手机号之间间隔)
+
+------
+
+## HTML5-各种Tag
 
 | HTML input tag | feature  |
 | :------------- | :------------- |
@@ -15,7 +21,79 @@
 
 http://www.myflashlabs.com/how-to-control-the-the-virtual-keyboard-layout-in-ios-and-android-using-javascript-and-html/
 
-<h3 id="html5调用手机摄像头">1. html5调用手机摄像头</h3>
+------
+
+<h2 id="sheet">Touch Keyboard Types Cheat Sheet</h2>
+
+|category|code |function|
+| :------------- | :------------- |:------------- |
+| E-mail field |`<input type="email" autocapitalize="off" autocorrect="off" autocomplete="email">`|Disable auto-correct and disable auto-capitalization. Invoke special @ keyboard|
+|URL field|`<input type="url" />`|   |
+|Phone field |`<input type="tel" autocorrect="off" autocomplete="tel">`|Invoke special phone keyboard. (Note: iOS doesn't allow input of special characters such as parenthesis and dash with the phone keyboard. Thus, never require phone numbers to be formatted with such characters.)|
+|Name field|`<input type="text" autocorrect="off" autocomplete="name">`|Disable auto-correct. (Note: while it is recommended to use a single name field, if you split it across multiple fields, be sure to assign the appropriate autocomplete values.)|
+|Address line fields|`<input type="text" autocorrect="off" autocomplete="address-line1">` |Disable auto-correct. (Note: be sure to update the autocomplete attribute accordingly if using multiple address line fields.)|
+|City|`<input type="text" autocorrect="off" autocomplete="address-level2">`| Disable auto-correct |
+|State|`<input type="text" autocorrect="off" autocomplete="address-level2">`|Disable auto-correct|
+|Numeric field|`<input type="text" pattern="[0-9]*" />`| Refer to following explaination|
+|ZIP code field<br>(Numeric field 1) |`<input type="text" inputmode="numeric" pattern="[0-9]*" novalidate autocorrect="off" autocomplete="postal-code">`|Set input pattern to numeric input. (Note: Argentina, Canada, Netherlands, and UK, may use letters in their postal code. To support these, dynamically change the input pattern depending on selected country. Also, for the numeric keyboard to be invoked on all Android devices, the field type must be changed to type=number, however, this may cause issues with leading zeroes in some browser versions – therefore if changing to type=number, make absolutely sure to handle these exceptions.) |
+|Credit card number field<br>(Numeric field 2)|`<input type="text" inputmode="numeric" pattern="[0-9]*" novalidate autocorrect="off" autocomplete="cc-number">`| Numeric keyboard. (Note: for the numeric keyboard to be invoked on all Android devices, the field type must be changed to type=number, however, this may cause issues with leading zeroes in some browser versions – therefore if changing to type=number, make absolutely sure to handle these exceptions.)|
+|Credit card security code field<br>(Numeric field 3)|`<input type="text" inputmode="numeric" pattern="[0-9]*" novalidate autocorrect="off" autocomplete="cc-csc">`|Numeric keyboard. (Note: for the numeric keyboard to be invoked on all Android devices, the field type must be changed to type=number, however, this may cause issues with leading zeroes in some browser versions – therefore if changing to type=number, make absolutely sure to handle these exceptions.)|
+|Date field|`<input type="date">`|Date picker keyboard. (Note: you may want to implement an actual calendar date picker.)|
+
+**Problem: `type="number"` isn’t appropriate for all numbers**
+
+- With auto-correction disabled, allows the user to enter their address without ‘dictionary intervention’
+- e-mail by invoking the e-mail keyboard layout with ‘@’ and ‘.’ keys
+- ![](https://i.imgur.com/qZ1lywC.png)
+
+```javascript
+// A Better iOS Solution: using `inputmode` and type="number"
+<label for="creditcard">credit card number:</label> <input inputmode="numeric" pattern="[0-9]*" type="text" name="creditcard">
+var numberinput = document.querySelector('input')
+if (numberInput.validity.valueMissing && !numberInput.validity.badInput) {
+  errorMessage.textContent = "field must not be empty"
+}
+```
+
+<h2 id="remove">Remove inner controls in input field: `<input type="number">`</h2>
+
+![](https://i.imgur.com/ICXI2WR.png)
+
+```css
+/* Remove controls from Firefox*/
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* Remove controls from Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  margin: 0; /* Removes leftover margin */
+}
+/* Adds a box around the numeric value in Safari and Chrome */
+input[type=number]::-webkit-textfield-decoration-container {
+  border: 1px #ccc solid;
+  background: #efefef;
+}
+/* Re-applies the controls on :hover and :focus from Chrome*/
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+```
+
+**Note**: I also detailed data about [HTML5 input attributes/types/elements](http://www.wufoo.com/html5/). It's getting a smidge old, but still useful
+
+> Reference
+> - [Touch Keyboard Types](https://baymard.com/labs/touch-keyboard-types)
+> - [Numeric Inputs – A Comparison of Browser Defaults](https://css-tricks.com/numeric-inputs-a-comparison-of-browser-defaults/)
+> - [Finger-friendly numerical inputs with `inputmode`](https://css-tricks.com/finger-friendly-numerical-inputs-with-inputmode/?utm_source=mobiledevweekly&utm_medium=email)
+> - [E-Commerce Checkout Usability](https://baymard.com/checkout-usability)
+> - [M-Commerce Usability](https://baymard.com/mcommerce-usability)
+
+[back to top](#top)
+
+<h2 id="html5调用手机摄像头">1. html5调用手机摄像头</h2>
 
 ```html
 <input type="file" accept="image/*" capture="camera" multiple>
