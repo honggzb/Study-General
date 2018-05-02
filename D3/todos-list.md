@@ -14,3 +14,5 @@ d3+Leaflet Map
 - [Linked line graphs with barplot and Leaflet Map with D3v4](http://bl.ocks.org/oikonang/acada278346a3df9da1b870be181f55a/2c1ad91b33dd2dec95e5548ed6065c0ed8c97cba)
 - [Map using leaflet.js and d3,js combined](http://bl.ocks.org/d3noob/9211665)
 - [D3v4 工作坊 - React + D3 繪製 svg 動態路線地圖](https://blog.techbridge.cc/2017/07/21/d3-workshop-map/)
+- [Leaflet.heat plugin for leaflet.js](https://bl.ocks.org/d3noob/8973028)  --leaflet入门
+- [leaflet.js map with line and options](http://bl.ocks.org/d3noob/7688787)  --leaflet入门
