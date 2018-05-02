@@ -10,7 +10,10 @@
              .html(function(d) {
                  return "<strong>Frequency:</strong> <span style='color:red'>" + d.count + "</span>";
              })
-//call tip
+
+// Call the tip
+svg_b.call(tip);
+//  use the tip
 svg_b.selectAll(".bar")
      .data(dataset_b)
                        .enter()
