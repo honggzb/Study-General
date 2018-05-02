@@ -55,7 +55,9 @@ if (numberInput.validity.valueMissing && !numberInput.validity.badInput) {
 }
 ```
 
-<h2 id="remove">Remove inner controls in input field: `<input type="number">`</h2>
+<h2 id="remove">Remove inner controls in input field:</h2>
+
+`<input type="number">`
 
 ![](https://i.imgur.com/ICXI2WR.png)
 
@@ -285,4 +287,4 @@ $('input[type=number]').keypress(function(event){
 
 > Reference
 
-- [（亲测可用）input只能输入数字或小数点后几位](#http://www.qdfuns.com/notes/26716/6ada0d47a845cc2f581bd85d28d270c9.html)
+- [（亲测可用）input只能输入数字或小数点后几位](http://www.qdfuns.com/notes/26716/6ada0d47a845cc2f581bd85d28d270c9.html)
