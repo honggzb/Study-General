@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scatterplot with tooltip</title>
+  <style>
+  body {
+  	  font: 12px sans-serif;
+  }
+  .axis path, .axis line {
+  	fill: none;
+  	stroke: grey;
+  	shape-rendering: crispEdges;
+  }
+  .dot {
+  	stroke: none;
+  	fill: steelblue;
+  }
+  .grid .tick {
+  	stroke: lightgrey;
+  	opacity: 0.7;
+  }
+  .grid path {
+  	stroke-width: 0;
+  }
+  div.tooltip {
+  	position: absolute;
+  	text-align: center;
+  	width: 80px;
+  	height: 42px;
+  	padding: 2px;
+  	font: 12px sans-serif;
+  	background: #ddd;
+  	border: solid 0px #aaa;
+  	border-radius: 8px;
+  	pointer-events: none;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <ul>
+      <li>Reference to: d3noob’s Block : <a href="http://bl.ocks.org/d3noob/4425979">Scatterplot with a toggle button using D3.v4</a></li>
+    </ul>
+    <hr>
+    <h3>New Zealand Earthquakes</h3>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script>
+  var margin = {top: 40, right: 20, bottom: 30, left: 100},
+      width = 600 - margin.left - margin.right,
+      height = 900- margin.top - margin.bottom;
+      
+  var parseDay_Time = d3.timeParse("%d-%m-%Y %H:%M"), 
+    	parseWeek_Year = d3.timeParse("%d-%m-%Y");
+  var formatDay_Time = d3.timeFormat("%a %H:%M"),
+      formatWeek_Year = d3.timeFormat("%d-%m-%Y");	
+      
+  var x = d3.scaleTime().rangeRound([0, width]);
+  var y = d3.scaleTime().rangeRound([0, height]);
+  
+  var svg = d3.select("body")
+            	.append("svg")
+          		.attr("width", width + margin.left + margin.right)
+          		.attr("height", height + margin.top + margin.bottom + 10);
+  var g = svg.append("g")
+          		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  
+  d3.csv("earthquakes03.csv", function(d) {
+
+    	d.week_year = parseWeek_Year(d.week_year);
+    	d.day_time = parseDay_Time(d.day_time);
+      d.value = +d.value;
+
+    return d;
+  },  function(error, data) {
+    if (error) throw error;
+    
+    x.domain(d3.extent(data, function(d) { return d.day_time; }));
+    y.domain(d3.extent(data, function(d) { return d.week_year; }));
+    // x.domain([new Date(1899, 11, 31, 0, 0, 0), new Date(1900, 00, 06, 23, 59, 59)]);
+    // y.domain([new Date(2010, 05, 29, 0, 0, 0), new Date(2012, 07, 29, 23, 59, 59)]);
+    g.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .style("stroke-dasharray", ("3, 3, 3"))
+        .classed("grid x_grid", true)
+        .call(
+          d3.axisBottom(x)
+            .ticks(7)      //一星期七天
+            .tickSize(-height, 0, 0)
+            .tickFormat(d3.timeFormat("%A"))
+        )
+        .selectAll("text")
+    		.attr("dx", -35)
+    		.attr("dy", 15)
+    		.style("text-anchor", "middle")
+        .attr("stroke", "black")
+        .style("opacity", 1);
+    g.append("g")
+        .call(d3.axisLeft(y).ticks(24));    //两年24个月
+    
+    // Tooltip stuff
+    var tooltipDiv = d3.select("body").append("div")
+    		.attr("class", "tooltip")
+    		.style("opacity", 1e-6);
+    g.selectAll(".dot")
+     .data(data).enter()
+     .append("circle")
+     .attr("class","dot")
+     .attr("r", function(d){ return d.value; })
+     .style("opacity", 0.13)
+     .attr("cx", function(d){ return x(d.day_time); })
+     .attr("cy", function(d){ return y(d.week_year); })
+     // Tooltip stuff after this
+     .on("mouseover", function(d){
+         tooltipDiv.transition()
+            			 .duration(200)
+            			 .style("opacity", .8);
+         tooltipDiv.html( formatDay_Time(d.day_time) + "<br/>" + formatWeek_Year(d.week_year) + "<br/> M"  +d.value)	
+  				.style("left", (d3.event.pageX) + "px")
+  				.style("top", (d3.event.pageY - 42) + "px");
+      })
+      .on("mouseout", function(d){
+          tooltipDiv.transition()
+                    .duration(200)
+                    .style("opacity", 1e-6);
+      });
+  });
+  </script>
+</body>
+</html>
