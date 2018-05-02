@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Map</title>
+  <style>
+  .names {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+  }
+    /* Tooltip CSS */
+  .d3-tip {
+    line-height: 1.5;
+    font-weight: 400;
+    font-family:"avenir next", Arial, sans-serif;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #FFA500;
+    border-radius: 1px;
+    pointer-events: none;
+  }
+    /* Creates a small triangle extender for the tooltip */
+  .d3-tip:after {      
+      box-sizing: border-box;
+      display: inline;
+      font-size: 8px;
+      width: 100%;
+      line-height: 1.5;
+      color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      pointer-events: none;
+    }
+    /* Northward tooltips */
+  .d3-tip.n:after {
+      content: "\25BC";
+      margin: -1px 0 0 0;
+      top: 100%;
+      left: 0;
+      text-align: center;
+    }
+    /* Eastward tooltips */
+  .d3-tip.e:after {
+      content: "\25C0";
+      margin: -4px 0 0 0;
+      top: 50%;
+      left: -8px;
+    }
+    /* Southward tooltips */
+  .d3-tip.s:after {
+      content: "\25B2";
+      margin: 0 0 1px 0;
+      top: -8px;
+      left: 0;
+      text-align: center;
+    }
+    /* Westward tooltips */
+    .d3-tip.w:after {
+      content: "\25B6";
+      margin: -4px 0 0 -1px;
+      top: 50%;
+      left: 100%;
+    }
+    text{
+      pointer-events:none;
+    }
+    .details{
+      color:white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <ul>
+      <li>Reference to: Micah Stubbs’s Block: <a href="http://bl.ocks.org/micahstubbs/8e15870eb432a21f0bc4d3d527b2d14f">world map 02 update to d3 v4</a></li>
+    </ul>
+    <hr>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="http://d3js.org/queue.v1.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script>
+  var margin = {top: 0, right: 0, bottom: 0, left: 0},
+      width = 960 - margin.left - margin.right,
+      height = 500- margin.top - margin.bottom;
+      
+  var path = d3.geoPath();
+  var svg = d3.select("body")
+              .append("svg")
+              .attr("width", width)
+              .attr("height", height)
+              .append('g')
+              .attr('class', 'map');
+
+  var projection = d3.geoMercator()
+                     .scale(130)
+                     .translate( [width / 2, height / 1.5]);
+  var path = d3.geoPath().projection(projection);
+  // queue()
+  //   .defer(d3.json, "world_countries.json")
+  //   .defer(d3.tsv, "world_population.tsv")
+  //   .await(ready);
+   d3.json("world_countries.json", function(data) {
+     console.log(data);
+     svg.append("g")
+        .attr("class", "countries")
+        .selectAll("path")
+        .data(data.features).enter()
+        .append("path")
+        .attr("d", path)
+        .style("fill", "grey")
+        .style('stroke', 'white')
+        .style('stroke-width', 1.5)
+        .style("opacity",0.7)
+   });
+  </script>
+</body>
+</html>
