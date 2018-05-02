@@ -14,7 +14,8 @@
     <ul>
       <li>using <pre>https://unpkg.com/world-atlas@1/world/110m.json</pre></li>
       <li><a href="https://www.knoyd.com/blog/2017/6/23/create-map-in-d3-part1">TRAVELING THE WORLD IN D3 - PART 1: MAKING A MAP: Part 1</a></li>
-      <li><a href="https://www.knoyd.com/blog/2017/6/24/create-map-in-d3-part2">TRAVELING THE WORLD IN D3 - PART 1: MAKING A MAP: Part 2</a></li>
+      <li><a href="https://www.knoyd.com/blog/2017/6/24/create-map-in-d3-part2">TRAVELING THE WORLD IN D3 - PART 2: Points & Links</a></li>
+      <li><a href="https://www.knoyd.com/blog/2017/7/4/traveling-the-world-in-d3-part-3">TRAVELING THE WORLD IN D3 -PART 3: LEGEND AND FILTERING</a></li>
       <li><a href="https://github.com/fukac99/fukac99.github.io">github</a></li>
     </ul>
     <hr>
@@ -37,14 +38,15 @@
   
   var projection = d3.geoMercator()
                      .scale(130)
-                     .translate( [width / 2, height / 1.5]);
-  var projection = d3.geoMercator()
-                      .translate([width / 2.2, height / 1.5]);   
+                     .translate( [width / 2.2, height / 1.5]);  
   var plane_path = d3.geoPath()
                      .projection(projection);
   var path = d3.geoPath().projection(projection);
 
    d3.json("https://unpkg.com/world-atlas@1/world/110m.json", function(error, topology) {
+     /*
+     https://unpkg.com/world-atlas@1.1.4/world/50m.json
+     */
      //console.log(topology);
      g.selectAll("path")
         .data(topojson.feature(topology, topology.objects.countries).features)
@@ -114,6 +116,8 @@ function clicked(d) {
             }
         });
 }
-</script>
+
+
+  </script>
 </body>
 </html>
