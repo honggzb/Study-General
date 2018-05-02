@@ -15,6 +15,7 @@
 - [3. 柱状图](#柱状图)
 - [4. 曲线和图表](#曲线和线性图标)
 - [5. path transition](#path)
+- [6. Map的制作](https://github.com/honggzb/Study-General/tree/master/D3/8.Map)
 - [Reference && Resource](#bottom)
 
 -----------------------
