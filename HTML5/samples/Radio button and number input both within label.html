@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radio button and number input both within label</title>
+  <style>
+  #page-wrap, .explaination { width: 960px; margin: 80px auto; }
+  h1 { font: bold 24px Sans-Serif; margin: 0 0 8px 0; }
+  form { width: 320px; }
+  form div { padding: 8px; position: relative; }
+  /*Hide number input by default*/
+	input[type='radio'] + input[type='number'] {
+		    display: none;
+		    float: right;
+		    margin-right: 20px;
+		    width: 100px;
+		}
+    /*Show input when radio button selected*/
+	input[type='radio']:checked + input[type='number'] {
+		    display: inline;
+		}
+  /*Highlighting entire selected choice/value*/
+	input[type='radio']:checked:before {
+		    background: #ebdcad;
+		    content: "";
+		    position: absolute;
+		    top: 0; right: 0; bottom: 0; left: 0;
+		    border-radius: 8px;
+		    z-index: -1;
+		}
+  /*"Label" the number inputs*/
+	input[type='radio']:after {
+		    position: absolute;
+        right: 0px;
+        top: 11px;
+		}
+	input[data-label]:checked:after {
+			content: attr(data-label);
+		}
+	label, input[type='radio'] {
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+  <div class="explaination">
+    <h3>Radio button and number input both within label Sample</h3>
+    <p>using css to complete</p>
+    <p>Refer to: <a href="https://css-tricks.com/choice-value-pair/">Choice & Value Pair</a> and codes in html iteself</p>
+    <h3>Accessibility</h3>
+    <p>Accessibility wise, it might be OK. Display: none on the unused inputs is fine, since we literally want them hidden until a selection is made, but I'm not sure how obvious the un-hiding of them is</p>
+  </div>
+  <div id="page-wrap">
+		<h1>Choice &amp; Value Pair</h1>
+		<form name="form" method="post" action="#">
+		    <div>
+				<label for="oz">
+				  <input type="radio" name="choice" value="oz" id="oz" data-label="Ozs">Ounces
+				  <input type="number" name="oz-val">
+				</label>
+		    </div>
+		    <div>
+		      <label for="cups">
+		          <input type="radio" name="choice" value="cups" id="cups" data-label="Cps">Cups
+              <input type="number" name="cup-val">
+		       </label>
+		    </div>
+		    <div>
+		      <label for="pints">
+		          <input type="radio" name="choice" value="pints" id="pints" data-label="Pts">Pints
+		          <input type="number" name="pints-val">
+		       </label>
+		    </div>
+		</form>
+	</div>
+  <script>
+  var numberinput = document.querySelector('input[type="number"]');
+  console.log(numberinput.value); // will be ""
+  </script>
+</body>
+</html>
