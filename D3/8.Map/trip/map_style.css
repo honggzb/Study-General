@@ -1,0 +1,126 @@
+path {
+  stroke: #ffffff;
+  /*stroke-width: 0.25px;
+  fill: #ffffff;*/
+  opacity: 0.9;
+}
+div.tooltip {
+        color: #000000;
+        background-color: #fff;
+        border-width: 0.1px;
+        border-style: solid;
+        border-color: #000000;
+        padding: .5em;
+        border-radius: 5px;
+        opacity: 0.9;
+        position: absolute;
+        font-family: "Lato", sans-serif;
+    }
+    
+div.legendContainer {
+        color: #000000;
+        background-color: #fff;
+        border-width: 0.1px;
+        border-style: solid;
+        border-color: #000000;
+        padding: .5em;
+        border-radius: 5px;
+        opacity: 0.9;
+        position: absolute;
+        font-family: "Lato", sans-serif;
+        display: table;
+        margin:auto;
+ 		position:absolute;
+ 		top:0;
+ 		bottom:0;
+        
+    }
+    
+ul.legend {
+	list-style-type: none;
+	list-style: none;
+	padding: 3px;
+	vertical-align: middle;
+	display: block;
+    line-height: 50px;
+    font-family: "Lato", sans-serif;
+    cursor:pointer;
+}
+
+ul.legend img {
+	vertical-align: middle;
+	
+}
+
+.arc {
+	fill: none;
+	stroke: #f46b6b;
+    stroke-width: 2px;
+}
+
+.plane {
+	fill: #f46b6b;
+}
+  
+div.tooltip_point {
+        color: #000000;
+        background-color: #fff;
+        padding: .5em;
+        border-radius: 5px;
+        border-width: 0.1px;
+        border-style: solid;
+        border-color: #000000;
+        opacity: 0.9;
+        position: absolute;
+        font-family: "Lato", sans-serif;
+        
+    }
+
+.inner_tooltip {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+circle {
+  fill: #f46b6b;
+}
+
+.active {
+  fill: #98f5ff;
+}
+
+#close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:rgba(255, 255, 255, 0);
+    opacity:0.5;
+    color: #f46b6b;
+}
+
+.background {
+	background: white;
+	fill: white;
+}
+
+#close:hover {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:rgba(255, 255, 255, 0);
+    opacity:1;
+    color: #f46b6b;
+}
+
+.icon {
+	display: inline; 
+	margin: 0 5px;"
+}
+
+#icons { 
+	display: inline-block; 
+}
