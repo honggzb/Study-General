@@ -10,7 +10,7 @@
 # 1) installing
 npm install json-server -g
 npm install json-server --save
-# 2) configuring
+# 2) configuring 1
 # create db.json in root directory
 {
   "todos": [
@@ -32,6 +32,20 @@ npm install json-server --save
 #}
 # 3) running
 npm run json-server
+# 4) configuring 2
+#创建 proxy.conf.json 文件
+{
+ "/api": {
+ "target": "http://localhost:3000/api",
+ "secure": false
+ }
+}
+#更新 package.json 文件
+{
+ "scripts": {
+ "start": "ng serve --proxy-config proxy.conf.json",
+ }
+}
 ```
 
 [back to top](#top)
