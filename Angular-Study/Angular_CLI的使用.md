@@ -44,6 +44,17 @@ ng new PROJECT_NAME --routing      # --routing to generate routing module
 ng g c componentName --flat --inline-template --inline-styles
 ng g c componentName --flat -it -is   #简写
 ng generate --help
+ng generate module xxx
+ng generate module xxx --routing
+# it will
+#  xxx.module.ts
+#  xxx-routing.module.ts
+ng generate service Api --module app.module.ts
+# it will
+#  installing service
+#  create src/app/api.service.spec.ts
+#  create src/app/api.service.ts
+#  update src/app/app.module.ts
 ``` 
 
 <h2 id="setup-by-using-angular-cli">1. setup by using [angular-cli](https://cli.angular.io/)</h2>
