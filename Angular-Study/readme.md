@@ -9,6 +9,7 @@
 │   ├── Angular学习笔记之lazy loading-使用angular-cli.md     #useful
 │   ├── Angular学习笔记之集成三方UI框架.md
 │   ├── Angular打造股票管理网站.md      #useful
+│   ├── Angular学习笔记之依赖注入.md
 │   ├── Angular系列之变化检测.md
 │   ├── Angular之Pipe.md
 │   ├── Angular编程过程中遇到的问题.md
