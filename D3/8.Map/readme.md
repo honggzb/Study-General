@@ -17,7 +17,14 @@ https://github.com/jdamiani27/Data-Visualization-and-D3
   - Raster:   包含栅格地图
   - 转换数据 - [ofr2ofr](http://www.ogr2gui.ca/) tool: shp -> json
   - 简化数据 - http://mapshaper.org/
-
+- 地理信息下载地址： https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html
+  - 转换数据 - [Homebrew](brew.sh), 参考： www.gdal.org
+  
+```shell
+brew install gdal
+cd data
+ogr2ogr -f GeoJSON -where "STATEFP NOT IN('60','64', '66','68','69','70','72','78')" countries.json cb_2015_us_county_5m.shp
+```
 ## 用d3生成地图
 
 ```javascript
