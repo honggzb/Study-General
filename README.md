@@ -47,6 +47,8 @@
 │   │     ├── 实现CSS3 3D全景.md
 │   │     │   └── 全景.rar(CSS3 3D全景案例源码)
 │   │     ├── CSS3-flex布局.docx
+│   │     ├── grid-layout布局.md
+│   │     ├── grid-layout.html
 │   │     └── 你可能不知道的5个CSS属性.md
 │   ├──  Theory
 │   │     ├── reflow-repaint.md
@@ -59,7 +61,7 @@
 │   ├── 值得参考的 10 个 LESS CSS 实例.md
 │   ├── 常用css代码.md
 │   ├── css强制换行,超出隐藏和超出显示省略号.md
-│   ├── grid-layout.md
+│   ├── 
 │   ├── css3技巧收集.md
 │   ├── css-Hacks-For-IE.md
 │   └── 现代CSS代码的建议.md
