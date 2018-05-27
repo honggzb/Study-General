@@ -13,7 +13,7 @@
 				height: 100%;
 			}
 			#wrap{
-				min-height: 100%;
+				min-height: 90%;   /* 100%, 设为90%是为了布局说明 */
 				background: pink;
 				text-align: center;
 				overflow: hidden;
@@ -31,6 +31,13 @@
 		</style>
 	</head>
 	<body>
+    <div>
+      <h2>布局说明</h2>
+      <ul>
+        <li>当内容比较少： footer显示并始终在底部</li>
+        <li>当内容比较多： footer不显示，在滚动到底部时候显示</li>
+      </ul>
+    </div>
 		<div id="wrap" >
 			<div class="main">
 				main <br />
