@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wrap{
+				height: 400px;
+				width: 400px;
+				border: 1px solid ;
+				margin: 0 auto;
+				text-align: center;
+			}
+			#wrap:after{
+				content: "";
+				display: inline-block;
+				height: 100%;
+				width: 0px;
+				background: pink;
+				vertical-align: middle;
+			}
+			#wrap img{
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+	<body>
+    <div style="margin: 0 auto;width: 400px;">
+      <h3>方法： </h3>
+      <ul>
+        <li>只对img这个行内元素有效</li>
+        <li>方法为： 外框架添加after来作为对齐的参考，设置为</li>
+        <l1><pre>
+  #wrap:after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 0px;
+    background: pink;
+    vertical-align: middle;
+  }
+        </pre></l1>
+      </ul>
+    </div>
+    <hr><br>
+		<div id="wrap">
+			<img src="img/img2.jpg" width="150"/>
+		</div>
+	</body>
+</html>
