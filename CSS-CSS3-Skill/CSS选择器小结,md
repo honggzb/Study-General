@@ -4,7 +4,7 @@
 - CSS3选择最新选择器规范:  https://www.w3.org/TR/selectors  
 	
 类型|分类|说明
------|-----|-----
+!---|!---|!---
 基本选择器||
 通配符选择器|`* { margin: 0; padding: 0; border: none; }`
 |元素选择器|`body { background: #eee; }`
