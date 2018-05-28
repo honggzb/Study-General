@@ -41,6 +41,40 @@
 </script>  
 ```
 
+```html
+<html>
+<head>
+<title> jquery完美实现textarea输入框限制字数</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+ $(function(){
+  $("#weibo").keyup(function(){
+   var len = $(this).val().length;
+   if(len > 39){
+    $(this).val($(this).val().substring(0,40));
+   }
+   var num = 40 - len;
+   $("#word").text(num);
+  });
+ });
+</script>
+<style type="text/css">
+h6{color:blue;}
+textarea{resize:none;}
+#word{color:red;}
+</style>
+</head>
+<body>
+<h6>说点什么吧，你可以输入<span>40</span>个字，现在剩余<span id="word">40</span>个</h6>
+<textarea name="con" id="weibo" cols="45" rows="6"></textarea>
+</body>
+</html>
+```
+
 **验证textarea输入框字数限制,只作提示不作提交限制**
 
 ```HTML
