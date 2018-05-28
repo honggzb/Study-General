@@ -62,6 +62,9 @@
 ||`:last-of-type`|
 ||`:nth-last-type(index)`|
 ||`:only-of-type`	(相对于:first-of-type:last-of-type 或者 :nth-of-type(1):nth-last-of-type(1))|
+| :------------- | :------------- |
+|`:not`|	|
+|`:empty`|(内容必须是空的，有空格都不行，有attr没关系)|
 
 - index的值从1开始计数！！！！
 - index可以为变量n(只能是n)
@@ -70,12 +73,7 @@
   - `#wrap li:nth-child(index)`:  表示匹配#wrap中第index的子元素, 这个子元素必须是li
   - `#wrap ele:nth-of-type(index)`:  表示匹配#wrap中第index的ele子元素
 
-| 类型|说明|
-| :------------- | :------------- |
-|`:not`|	|
-|`:empty`|(内容必须是空的，有空格都不行，有attr没关系)|
-|------------- |------------- |
-|**伪元素**||
+|伪元素|说明|
 ||`::after`|
 ||`::before`|
 ||`::firstLetter`|
