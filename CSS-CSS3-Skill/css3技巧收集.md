@@ -1,8 +1,8 @@
 [css3技巧收集](#top)
 
-- [Apply CSS3 Transforms to #Background Images)](#Background-Images)
+- [Apply CSS3 Transforms to Background Images](#Background-Images)
 
-<h3 id="Background-Images">Apply CSS3 Transforms to Background Images</h3>
+<h2 id="Background-Images">Apply CSS3 Transforms to Background Images</h2>
 
 ```css
 /* must be set to position: relative* /
