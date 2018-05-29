@@ -3,8 +3,6 @@
 
 **一些强大有用的工具**
 
-![markdown-img-paste-20171108152712263](assets/markdown-img-paste-20171108152712263.png)
-
 - [1. Apowersoft](#Apowersoft)
 - [2. 百度脑图](#百度脑图)
 - [3. ProcessOn](#ProcessOn)
