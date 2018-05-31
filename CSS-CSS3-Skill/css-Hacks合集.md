@@ -132,3 +132,6 @@ _color: red;  /* IE6 */
     #veintidos { color: red}
 }
 ```
+
+> Reference
+> - [史上最全的CSS hack方式一览（解决IE6-IE11,Firefox/Safari/Opera/Chrome兼容问题）](https://blog.csdn.net/dayu9216/article/details/70225261)
