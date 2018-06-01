@@ -85,8 +85,9 @@ div > a:not(:last-of-type) {border-right: 1px solid red;}
 	<a href="#">fifth</a>
 </div>
 ```
-
+ 
 |伪元素|说明|
+| :------------- | :------------- |
 |`::after`||
 |`::before`||
 |`::firstLetter`|`div::first-letter`|
