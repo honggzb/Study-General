@@ -14,6 +14,22 @@
   - [4.1 Apple Watch](#Apple-Watch)
   - [4.2 Moto 360 Watch](#Moto-Tablets)
 
+----
+
+| 媒体类型 | 说明 |
+| :------------- | :------------- |
+|all|所有媒体（默认值）|
+|screen|彩色屏幕|
+|print| 打印预览|
+|projection|手持设备|
+|tv|电视|
+|braille|盲文触觉设备|
+|embossed| 盲文打印机|
+|speech|“听觉”类似的媒体设备|
+|tty|不适用像素的设备|
+
+----
+
 <h3 id="Phones-and-Handhelds">1 Phones and Handhelds</h3>
 
 <h4 id="iPhones">1.1 iPhones</h4>
