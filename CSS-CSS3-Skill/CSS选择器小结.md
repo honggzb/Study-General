@@ -73,6 +73,19 @@
   - `#wrap li:nth-child(index)`:  表示匹配#wrap中第index的子元素, 这个子元素必须是li
   - `#wrap ele:nth-of-type(index)`:  表示匹配#wrap中第index的ele子元素
 
+```html
+<style>
+div > a:not(:last-of-type) {border-right: 1px solid red;}
+</style>
+<div>
+	<a href="#">first</a>
+	<a href="#">second</a>
+	<a href="#">third</a>
+	<a href="#">fourth</a>
+	<a href="#">fifth</a>
+</div>
+```
+
 |伪元素|说明|
 ||`::after`|
 ||`::before`|
