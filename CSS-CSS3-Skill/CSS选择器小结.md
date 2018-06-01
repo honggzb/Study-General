@@ -87,8 +87,8 @@ div > a:not(:last-of-type) {border-right: 1px solid red;}
 ```
 
 |伪元素|说明|
-||`::after`|
-||`::before`|
-||`::firstLetter`|
-||`::firstLine`|
-||`::selection`|
+|`::after`||
+|`::before`||
+|`::firstLetter`|`div::first-letter`|
+|`::firstLine`||
+|`::selection`|`div::selection {background: red;color: pink;}`|
