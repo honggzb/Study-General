@@ -4,6 +4,8 @@
 - [2. CSS Grid Layout案例](#Layout案例)
 - [3. 显式和隐式网格线](#显式和隐式网格线)
 - [4. 网格区域 grid-area](#网格区域)
+- [5. 独立源与网格的层叠顺序](#独立源与网格的层叠顺序)
+- [6. 网格的流动](#网格的流动)
 
 <h2 id="Layout概念">1. CSS Grid Layout概念</h2>
 
@@ -359,6 +361,60 @@ body { padding: 40px;}
   <div class="sidebar box">Sidebar Area</div> 
   <div class="sidebar2 box">Sidebar 2 Area</div> 
   <div class="footer box">Footer Area</div>
+</div>
+```
+
+[back to top](#top)
+
+<h2 id="独立源与网格的层叠顺序">5. 独立源与网格的层叠顺序</h2>
+
+- **网格布局中的独立源**: 说得简单点，源指就是HTML结构, 这些HTML的标签元素称为源，而这些源的出现的顺序被称为内容流
+- 在CSS Grid Layout中，HTML文档流(<body>中的元素)出现的顺序并不重要，只要元素标签的父元素被声明了是网格容器, 即只要关注子元素和父元素的层级关系
+- **在CSS Grid Layout中具有独立的源（文档流），实现任何布局效果，完全不需要考虑文档流结构的先后顺序，只需要根据设计需求，调整网格单元格位置**
+
+![](https://i.imgur.com/Xfxp7ZL.jpg)
+
+<h2 id="网格的流动">6. 网格的流动</h2>
+
+- 网格单元格在没有被显式设置明确位置时，浏览器将会自动为这些网格单元格的位置进行计算，按照先后顺序从左向右，或从上到下排列。在这里把这种方式称之为网格的流动
+- `grid-auto-flow: column/row;`
+
+![](https://i.imgur.com/gEcc57p.png)
+
+```HTML
+<style>
+.box { 
+  background: orange; height: 100px; line-height: 100px; text-align: center; color: #fff; font-size: 3em;
+  margin: 5px 15px 5px 0;
+} 
+.box:nth-child(even){ background: green; } 
+.wrapper { 
+  width: 560px;    /*为保证box的宽度为100px，改为560px */
+  border: 1px solid orange; 
+  padding: 15px; 
+  margin: 20px auto; 
+  display: grid; 
+  grid-template-columns: repeat(5, 115px); /*为保证box的宽度为100px， 改为115px*/
+  /*grid-template-rows: auto ; */
+  grid-template-rows: 115px 115px 115px; 
+  grid-auto-flow: row;
+}
+</style>
+<div class="wrapper"> 
+  <div class="box a">A</div> 
+  <div class="box b">B</div> 
+  <div class="box c">C</div> 
+  <div class="box d">D</div> 
+  <div class="box e">E</div> 
+  <div class="box f">F</div> 
+  <div class="box h">H</div> 
+  <div class="box i">I</div> 
+  <div class="box j">J</div> 
+  <div class="box k">K</div> 
+  <div class="box l">L</div> 
+  <div class="box m">M</div> 
+  <div class="box n">N</div> 
+  <div class="box o">O</div> 
 </div>
 ```
 
