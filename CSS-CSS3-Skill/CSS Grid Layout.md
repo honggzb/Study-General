@@ -3,6 +3,7 @@
 - [1. CSS Grid Layout概念](#Layout概念)
 - [2. CSS Grid Layout案例](#Layout案例)
 - [3. 显式和隐式网格线](#显式和隐式网格线)
+- [4. 网格区域 grid-area](#网格区域)
 
 <h2 id="Layout概念">1. CSS Grid Layout概念</h2>
 
@@ -14,6 +15,10 @@
 |Grid Track|![](https://i.imgur.com/dlJjhc2.jpg)|`grid-template-columns`, `grid-template-rows`|
 |Grid Cell|![](https://i.imgur.com/ln1WPTb.jpg)|由行线line2、line3和列表line2、line3组成|
 |Grid Area|![](https://i.imgur.com/DP6q7Va.jpg)|是行线line1、line3和列线line2、line4之间的区域，其主要包括了四个网格单元格, <br>`grid-area: 1/1/2/2`, 组成网格区域的网格线顺序是row-start/column-start/row-end/column-end|
+
+**Grid Area**
+
+![Grid Area](https://i.imgur.com/OKgjGmh.jpg)
 
 **浏览器中开启CSS Grid Layout模块功能(older browser)**
 
@@ -111,7 +116,8 @@ body {  padding: 50px;}
 
 [back to top](#top)
 
-**合并单元格**  ![](https://i.imgur.com/GojkSqo.jpg)
+**合并单元格**  
+![](https://i.imgur.com/GojkSqo.jpg)
 
 ```css
 body {  padding: 50px;}
@@ -155,7 +161,8 @@ body {  padding: 50px;}
 
 [back to top](#top)
 
-**自定义网格线配合关键词span合并单元格**: ![](https://i.imgur.com/ZghaD8I.jpg)
+**自定义网格线配合关键词span合并单元格**: 
+![](https://i.imgur.com/ZghaD8I.jpg)
 
 ```css
 .wrapper {
@@ -197,7 +204,7 @@ body {  padding: 50px;}
 
 - grid-template-columns定义的列网格线是1~8，grid-template-rows定义的行网格线是1~6。
 - grid-area将.j的行网格线定义超出预设的显式网格线，多出7和8。 line7和line8是浏览器自动为网格创建的两条网格线，而这两条网格线，在CSS Grid Layout称为隐式网格线
-- 
+- i, j轨道空间合并为０
 
 ```css
 .wrapper { 
@@ -212,9 +219,147 @@ body {  padding: 50px;}
 .e { grid-area: 3 / 1 / 4 / 2; } 
 .f { grid-area: 3 / 3 / 4 / 4; } 
 .g { grid-area: 3 / 5 / 4 / 6; } 
-.h { grid-area: 3 / 7 / 4 / 8; } 
+/* 超过显式网格线的时候，其他网格轨道空间将会合并为０ */
+/*.h { grid-area: 3 / 7 / 4 / 8; } 
 .i { grid-area: 5 / 1 / 6 / 8; background-color: orange; } 
-.j { grid-area: 7 / 1 / 8 / 8; background-color:green }
+.j { grid-area: 7 / 1 / 8 / 8; background-color:green }*/
+.h { grid-area: 5/ 1 / 6 / 8; } 
+.i { grid-area: 10 / 1 / 11 / 8; background-color: orange; } 
+.j { grid-area: 12 / 1 / 16 / 8; background-color:green }
+```
+
+**列隐式网格线**: 同样的道理，浏览器创建的隐式列网格线，组成的网格轨道空间也会合并成０
+
+```css
+.a{ grid-area: 1 / 1 / 2 / 2; } 
+.b { grid-area: 1 / 3 / 2 / 4; } 
+.c { grid-area: 1 / 5 / 2 / 6; } 
+.d { grid-area: 1 / 7 / 2 / 8; } 
+.e { grid-area: 3 / 1 / 4 / 2; } 
+.f { grid-area: 3 / 3 / 4 / 4; } 
+.g { grid-area: 3 / 5 / 4 / 6; } 
+.h { grid-area: 3 / 7 / 4 / 8; } 
+.i { grid-area: 1 / 11 / 2 / 12; background-color: orange; } 
+.j { grid-area: 1 / 13 / 2 / 14; background-color:green }
+```
+
+[back to top](#top)
+
+<h2 id="网格区域">4. 网格区域 grid-area</h2>
+
+![Grid Area](https://i.imgur.com/OKgjGmh.jpg)
+
+- 网格线定义网格区域, 见上
+- grid-template-areas定义网格区域，如下
+
+```html
+<style>
+body {  padding: 50px;}
+.wrapper { 
+  display: grid; 
+  grid-template-columns: 220px 20px 220px 20px 220px; 
+  grid-template-rows: auto; 
+  grid-template-areas: 
+  "header header header header header" 
+  "sidebar . content content content" 
+  "footer footer footer footer footer" 
+} 
+.box { 
+  background-color: #444; 
+  color: #fff; 
+  font-size: 150%; 
+  padding: 20px; 
+  text-align: center; 
+  margin-bottom: 20px;   /*模拟行与行的间距 */
+}
+.header { grid-area: header; } 
+.content { grid-area: content; } 
+.sidebar { 
+  grid-area: sidebar;
+  background-color: orange;
+  box-sizing: border-box;    /*自适应高度 */
+  height: calc(100% -20px);  /*自适应高度 */
+} 
+.footer { grid-area: footer; }
+</style>
+<div class="wrapper">
+  <div class="header box">Header Area</div> 
+  <div class="content box">
+    <h2>Content Area</h2> 
+    <ul> 
+      <li>List item</li> 
+      <li>List item</li> 
+      <li>List item</li> 
+      <li>List item</li> 
+    </ul>
+  </div> 
+  <div class="sidebar box">Sidebar Area</div> 
+  <div class="footer box">Footer Area</div>
+</div>
+```
+
+**Responsive Layout**
+
+![](https://i.imgur.com/uqMJcNA.png)
+
+```html
+<style>
+body { padding: 40px;} 
+.wrapper {background-color: #fff; color: #444;}
+.box { 
+  font-size: 150%; 
+  padding: 10px; 
+  text-align: center;
+}
+.header { grid-area: header; } 
+.content { grid-area: content; background-color: #444; color: #fff; } 
+.sidebar { 
+  grid-area: sidebar;
+  background-color: #ccc; color: #444;
+  box-sizing: border-box;    /*自适应高度 */
+  height: calc(100% -20px);  /*自适应高度 */
+} 
+.sidebar2 { grid-area: sidebar2; background-color: #ccc; color: #444; }
+.footer { grid-area: footer; }
+@media only screen and (min-width: 400px) and (max-width: 540px) { 
+  .wrapper { 
+    display: grid; 
+    grid-template-columns: 20% 5% auto; 
+    grid-template-rows: auto; 
+    grid-template-areas: 
+    "header header header" 
+    "sidebar . content" 
+    "sidebar2 sidebar2 sidebar2" 
+    "footer footer footer"; } 
+} 
+@media only screen and (min-width: 540px) { 
+  .wrapper { 
+    display: grid; 
+    grid-template-columns: 100px 10px auto 10px 100px; 
+    grid-template-rows: auto; 
+    grid-template-areas: 
+      "header header header header header" 
+      "sidebar . content . sidebar2" 
+      "footer footer footer footer footer";
+      max-width: 600px; 
+   } 
+}
+</style>
+<div class="wrapper">
+  <div class="header box">Header Area</div> 
+  <div class="content box">
+    <h2>Content Area</h2> 
+    <ul> 
+      <li>List item</li> 
+      <li>List item</li> 
+      <li>List item</li> 
+      <li>List item</li> 
+    </ul>
+  </div> 
+  <div class="sidebar box">Sidebar Area</div> 
+  <div class="sidebar2 box">Sidebar 2 Area</div> 
+  <div class="footer box">Footer Area</div>
+</div>
 ```
 
 [back to top](#top)
