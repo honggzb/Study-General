@@ -12,7 +12,7 @@
 │   ├── Angular学习笔记之依赖注入.md
 │   ├── Angular系列之变化检测.md
 │   ├── Angular之Pipe.md
-│   ├── Angular编程过程中遇到的问题.md
+│   ├── Angular中Error汇总.md
 │   ├── mocking-backend -API.md
 │   ├── node+express创建服务器.md
 │   └── 
