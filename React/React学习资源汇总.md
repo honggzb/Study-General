@@ -101,5 +101,4 @@
   - [Sentry](https://github.com/getsentry/sentry/)
   - [react-hn](https://github.com/insin/react-hn)
   - [Perseus](https://github.com/khan/perseus)
-  
-  https://github.com/tsrot/study-notes
+
