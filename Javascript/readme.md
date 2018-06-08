@@ -15,6 +15,7 @@
 │   │   └── tableToExcel.html         #javascript
 │   ├── 19 个JavaScript 常用的简写技术.md
 │   ├── javascript数据类型判断.md
+│   ├── JavaScript专题之Call,apply,bind详解.md
 │   ├── JavaScript专题之Lazy Loading Images and Video
 │   ├── JavaScript专题之判断数组中是否包含指定元素.md
 │   ├── JavaScript专题之判断浏览器种类及版本+http协议.md
