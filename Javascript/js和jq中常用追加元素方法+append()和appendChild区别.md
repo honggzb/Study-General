@@ -1,7 +1,7 @@
 ## js和jq中常用追加元素方法
 
 - javascript中常用追加元素的几种方法：append，appendTo，after，before，insertAfter，insertBefore，appendChild
-  - javascript的parentNode.append()是还在试用期的方法，有兼容问题。在parendNode节点中最后一个子节点后插入新Node或者DOMString（字符串，插入后为Text节点）
+  - javascript的**parentNode.append()是还在试用期的方法，有兼容问题（在IE和FF中无作用）**。在parendNode节点中最后一个子节点后插入新Node或者DOMString（字符串，插入后为Text节点）
 - jquery中常用追加元素的几种方法：append, appendTo, prepend, prependTo, insertBefore, insertAfter, before, after
 
 ```javascript
