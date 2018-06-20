@@ -1,11 +1,15 @@
 ## js和jq中常用追加元素方法
 
-- javascript中常用追加元素的几种方法：append，appendTo，after，before，insertAfter，insertBefore，appendChild
+- javascript中常用追加元素的几种方法：
+  - append，appendTo，after，before，insertAfter，insertBefore，appendChild
   - javascript的**parentNode.append()是还在试用期的方法，有兼容问题（在IE和FF中无作用）**。在parendNode节点中最后一个子节点后插入新Node或者DOMString（字符串，插入后为Text节点）
-- jquery中常用追加元素的几种方法：append, appendTo, prepend, prependTo, insertBefore, insertAfter, before, after
+- jquery中常用追加元素的几种方法：
+  - append, appendTo, prepend, prependTo, insertBefore, insertAfter, before, after
+
+### javascript中常用追加元素的几种方法
 
 ```javascript
-/* javascript中常用追加元素的几种方法 */
+/*  */
 $('#div_one').append('<span>新添加1</span>');          
 //在元素中最后一个子节点后添加（无子节点就直接添加）    
 $('<span>新添加2-1</span>').appendTo($('#div_one'));   //意义同上  
@@ -16,8 +20,11 @@ $('<span>新添加4</span>').insertAfter('#span_one');
 //向节点后添加兄弟节点    
 $(".span-one").before("<p>Hello world，before span-one!</p>"); 
 //向每个class=span-one的节点前添加节点$(".span-one").after("<p>Hello world，after span-one!</p>"); //向每个class=span-one的节点后添加节点  
+```
 
-/* jquery中常用追加元素的几种方法： */
+### jquery中常用追加元素的几种方法
+
+```javascript
 var htmlnode = document.createElement('book');
 //命名节点为book(只能定义节点名称，不能在节点中添加内容)  
 document.getElementById('div_two').appendChild(htmlnode);
