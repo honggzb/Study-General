@@ -9,7 +9,6 @@
 ### javascript中常用追加元素的几种方法
 
 ```javascript
-/*  */
 $('#div_one').append('<span>新添加1</span>');          
 //在元素中最后一个子节点后添加（无子节点就直接添加）    
 $('<span>新添加2-1</span>').appendTo($('#div_one'));   //意义同上  
