@@ -1,9 +1,24 @@
 ### continuing study/deep study
 
+- TypeScript
+ - [TypeScript官方文档](https://www.tslang.cn/docs/home.html)
+ - [TypeScript资源集](https://segmentfault.com/a/1190000010130073)
+ - [从 JavaScript到 TypeScript 1 - 什么是 TypeScript（看了第一篇，别落下这个系列的几篇文章）](http://tasaid.com/Blog/20171011231943.html?sgs=sf)
+- rxjs
+ - [rxjs中文文档](http://cn.rx.js.org/)
+ - [rxjs简单入门](https://yq.aliyun.com/articles/65027)
+ - [通俗的方式理解RxJS](https://segmentfault.com/a/1190000008464065)
 - React
 - nodeJS
  - [Nodejs学习笔记](https://github.com/chyingp/nodejs-learning-guide)
-
+- parcel
+ - [宣布 Parcel：一个快速，零配置的 Web 应用打包工具](https://segmentfault.com/a/1190000012332187)
+ - [Parcel Vs Webpack](http://www.imweb.io/topic/5a4451c3a192c3b460fce366)
+- WebAssembly
+ - [来谈谈 WebAssembly 是个啥？为何说它会影响每一个 Web 开发者？](https://cloud.tencent.com/developer/article/1004696)
+ - [WebAssembly 实践：如何写代码](https://segmentfault.com/a/1190000008402872)
+- css in js - [CSS in JS 简介](http://www.ruanyifeng.com/blog/2017/04/css_in_js.html)
+ 
 ### New
 
 - <a href="https://vuejs.org/v2/guide/" target="_blank">Vue.js</a><br>
