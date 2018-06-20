@@ -238,7 +238,7 @@
 │   ├── spring root+angular.md
 │   └──
 │
-├── Javascript                         --javascript学习过程中的小tip
+├── [Javascript](https://github.com/honggzb/Study-General/blob/master/Javascript/readme.md)   --javascript学习过程中的小tip
 │   ├── GoogleMapAPI
 │   │   ├── 谷歌地图地理编码.md
 │   │   └──
@@ -277,6 +277,7 @@
 │   ├── 经典代码.md
 │   ├── 深入理解javascript原型和闭包.md
 │   ├── js标准对象之Date.md
+│   ├── js和jq中常用追加元素方法+append()和appendChild区别.md
 │   └── javascript知识点积累.md
 │
 ├── JQuery
