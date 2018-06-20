@@ -40,6 +40,7 @@
 │   ├── 经典代码.md
 │   ├── 深入理解javascript原型和闭包.md
 │   ├── js标准对象之Date.md
+│   ├── js和jq中常用追加元素方法+append()和appendChild区别
 │   └── javascript知识点积累.md
 ```
 
