@@ -26,6 +26,7 @@ ionic3仿京东商城项目实战下载地址：https://www.itying.com/goods-460
   - [大牛博客](#大牛博客)
   - [团队博客](#团队博客)
 - [推荐社区](#推荐社区)
+- [国外博客/教程](#国外博客/教程)
 
 ## web前端技术
 
@@ -276,7 +277,7 @@ ionic3仿京东商城项目实战下载地址：https://www.itying.com/goods-460
 <a href="https://link.juejin.im?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fqianduanzhidian" target="_blank" rel="nofollow noopener noreferrer">前端之巅</a><br>
 <a href="https://link.juejin.im?target=http%3A%2F%2Ffrontenddev.org%2Fdiscover%2F" target="_blank" rel="nofollow noopener noreferrer">Fed汇总</a>
 
-### 推荐社区
+## 推荐社区
 
 <a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2F" target="_blank" rel="nofollow noopener noreferrer">github</a>：这个起初我经常在上面找资源。但是没注册账号，但是后来被老大催着注册，就去了。在里面可以阅读别人的代码，向大家学习！<br>
 <a href="https://link.juejin.im?target=https%3A%2F%2Fjuejin.im%2F" target="_blank" rel="nofollow noopener noreferrer">稀土掘金</a>：我现在活跃的一个社区，是写文章的一个很好的地方！<br>
@@ -295,5 +296,9 @@ ionic3仿京东商城项目实战下载地址：https://www.itying.com/goods-460
 <a href="https://link.juejin.im?target=http%3A%2F%2Fwww.imooc.com%2F" target="_blank" rel="nofollow noopener noreferrer">慕课网</a>（貌似现在很多视频收费了，以前我看的时候，基本都是免费的）<br>
 <a href="https://link.juejin.im?target=http%3A%2F%2Fwww.hubwiz.com%2F" target="_blank" rel="nofollow noopener noreferrer">汇智网</a>
 <a href="http://imweb.io/" target="_blank" rel="nofollow noopener noreferrer">IMWeb前端博客</a>
+
+#### 国外博客/教程
+
+<a href="https://scotch.io/" target="_blank" rel="nofollow noopener noreferrer">code. eat. sleep. loop</a>
 
 > https://juejin.im/post/5a0c1956f265da430a501f51
