@@ -26,7 +26,7 @@ ionic3仿京东商城项目实战下载地址：https://www.itying.com/goods-460
   - [大牛博客](#大牛博客)
   - [团队博客](#团队博客)
 - [推荐社区](#推荐社区)
-- [国外博客/教程](#国外博客/教程)
+- [国外博客-教程](#国外博客-教程)
 
 ## web前端技术
 
@@ -297,7 +297,7 @@ ionic3仿京东商城项目实战下载地址：https://www.itying.com/goods-460
 <a href="https://link.juejin.im?target=http%3A%2F%2Fwww.hubwiz.com%2F" target="_blank" rel="nofollow noopener noreferrer">汇智网</a>
 <a href="http://imweb.io/" target="_blank" rel="nofollow noopener noreferrer">IMWeb前端博客</a>
 
-#### 国外博客/教程
+### 国外博客-教程
 
 <a href="https://scotch.io/" target="_blank" rel="nofollow noopener noreferrer">code. eat. sleep. loop</a>
 
