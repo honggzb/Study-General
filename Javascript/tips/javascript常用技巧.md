@@ -1,18 +1,67 @@
 [javascript常用技巧](#top)
 
-- [1. 手机类型判断](#手机类型判断)
-- [2. 字符串长度](#字符串长度)
-- [3. 获取url中的参数](#获取url中的参数)
-- [4. js 绑定事件](#js绑定事件)
-- [5. 当前浏览器JS的版本](#当前浏览器JS的版本)
-- [6. 获取当前点击事件的Object对象](#获取当前点击事件的Object对象)
-- [7. js 判断浏览器](#js判断浏览器)
-- [8. 回车提交](#回车提交)
-- [9. 按Ctrl+Enter 直接提交表单](#按Ctrl+Enter直接提交表单)
-- [10. JS 替换非法字符主要用在密码验证上出现的特殊字符](#替换非法字符主要用在密码验证上出现的特殊字符)
-- [11. Js 去掉空格方法](#去掉空格方法)
-- [12. 获取当前时间](#获取当前时间)
-- [13. 获取字符串最后和第一位方法](#获取字符串最后和第一位方法)
+- [HTML](#html)
+  - [1. 屏蔽右键](#屏蔽右键)
+  - [2. 防止选取，防止复制，防止粘贴](#防止选取)
+  - [3. 在收藏夹中显示你的图标](#在收藏夹中显示你的图标)
+  - [4. 关闭输入法](#关闭输入法)
+  - [5. 网页不能另存-可以使JS广告失效](#网页不能另存)
+  - [6. 自动跳转 -3秒刷新到URL](#自动跳转)
+- [pure JavaScript](#js) 
+  - [1. 手机类型判断](#手机类型判断)
+  - [2. 字符串长度](#字符串长度)
+  - [3. 获取url中的参数](#获取url中的参数)
+  - [4. js绑定事件](#js绑定事件)
+  - [5. 当前浏览器JS的版本](#当前浏览器JS的版本)
+  - [6. 获取当前点击事件的Object对象](#获取当前点击事件的Object对象)
+  - [7. js 判断浏览器](#js判断浏览器)
+  - [8. 回车提交](#回车提交)
+  - [9. 按Ctrl+Enter 直接提交表单](#按Ctrl+Enter直接提交表单)
+  - [10. JS 替换非法字符主要用在密码验证上出现的特殊字符](#替换非法字符主要用在密码验证上出现的特殊字符)
+  - [11. Js 去掉空格方法](#去掉空格方法)
+  - [12. 获取当前时间](#获取当前时间)
+  - [13. 获取字符串最后和第一位方法](#获取字符串最后和第一位方法)
+- [JavaScript+HTML](#jh)
+
+<h2 id="html">HTML</h2>
+
+<h3 id="屏蔽右键">1. 屏蔽右键</h3>
+
+```html
+<body oncontextmenu=window.event.returnvalue=false>
+<!-- 也可用在table -->
+<table border oncontextmenu=return(false)>
+```
+
+<h3 id="防止选取">2. 防止选取，防止复制，防止粘贴</h3>
+
+```html
+<body onselectstart=return false>
+<body onpaste=return false>
+<body oncopy=return false;oncut=return false;>
+```
+
+<h3 id="在收藏夹中显示你的图标">3. 在收藏夹中显示你的图标</h3>
+
+`<link rel=Bookmark href=favicon.ico>`
+
+<h3 id="关闭输入法">4. 关闭输入法</h3>
+
+`<input style=ime-mode:disabled>`
+
+在提交表格时用到，在输入数据时不可以使用其他输入法
+
+<h3 id="网页不能另存">5. 网页不能另存-可以使JS广告失效</h3>
+
+`<noscript><iframe src=*.html></iframe></noscript>`
+
+<h3 id="自动跳转">6. 自动跳转 -3秒刷新到URL</h3>
+
+`<meta http-equiv=refreshcontent=3;URL=http://www.google.ca;charset=utf-8>`
+
+[back to top](#top)
+
+<h2 id="js">pure JavaScript</h2>
 
 <h3 id="手机类型判断">1. 手机类型判断</h3>
 
@@ -139,8 +188,7 @@ function getEvent() {
     while (func != null) {
         var arg0 = func.arguments[0];
         if (arg0) {
-            if ((arg0.constructor == Event || arg0.constructor == MouseEvent)
-|| (typeof (arg0) == "object" && arg0.preventDefault && arg0.stopPropagation)) {
+            if ((arg0.constructor == Event || arg0.constructor == MouseEvent) || (typeof (arg0) == "object" && arg0.preventDefault && arg0.stopPropagation)) {
                 return arg0;
             }
         }
