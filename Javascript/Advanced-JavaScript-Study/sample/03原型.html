@@ -34,7 +34,38 @@
     * 原型的作用:共享数据,节省内存空间
     *
     * */
+  //什么样子的数据是需要写在原型中?
+    //需要共享的数据就可以写原型中
+    //原型的作用之一:数据共享
 
+    //属性需要共享,方法也需要共享
+    //不需要共享的数据写在构造函数中,需要共享的数据写在原型中
+    //构造函数
+    function Student(name,age,sex) {
+      this.name=name;
+      this.age=age;
+      this.sex=sex;
+    }
+    //所有学生的身高都是188,所有人的体重都是55
+    //所有学生都要每天写500行代码
+    //所有学生每天都要吃一个10斤的西瓜
+    //原型对象
+    Student.prototype.height="188";
+    Student.prototype.weight="55kg";
+    Student.prototype.study=function () {
+      console.log("学习,写500行代码,小菜一碟");
+    };
+    Student.prototype.eat=function () {
+      console.log("吃一个10斤的西瓜");
+    };
+    //实例化对象,并初始化
+    var stu=new Student("晨光",57,"女");
+    console.dir(Student);
+    console.dir(stu);
+
+
+//    stu.eat();
+//    stu.study();
   </script>
 </head>
 <body>
