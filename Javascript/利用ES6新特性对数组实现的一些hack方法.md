@@ -10,11 +10,14 @@
 - [7. 利用`~~`运算符巧妙的去掉小数部分](#巧妙的去掉小数部分)
 - [8. 解构运算符的妙用](#解构运算符的妙用)
     - [8.1 利用`...`运算符速获取数组的参数](#速获取数组的参数)
+    - [8.7 用对象解构的语法来获取数组的元素](#用对象解构的语法来获取数组的元素)
     - [8.2 利用`...`合并数组](#合并数组)
     - [8.3 利用`...`函数返回多个值](#函数返回多个值)
     - [8.4 利用`...`实现了 Iterator 接口的对象](#实现了Iterator接口的对象)
     - [8.5 寻找数组中的最大值](#寻找数组中的最大值)
     - [8.6 实现数组和对象的浅拷贝](实现数组和对象的浅拷贝)
+- [9. 使用对象解构（object destructuring）来模拟命名参数和默认值](#使用对象解构)
+- [10. 使用 Spread平铺多维数组](#平铺多维数组)
 
 <h3 id="利用Set数据结构去重一个数组">1. 利用Set数据结构去重一个数组</h3>
 
@@ -114,6 +117,13 @@ console.log(num1); // 1
 console.log(nums); // [2, 3]
 ```
 
+<h3 id="用对象解构的语法来获取数组的元素">8.7 用对象解构的语法来获取数组的元素</h3>
+
+```javascript
+const csvFileLine = '1997,John Doe,US,john@doe.com,New York';
+const { 2: country, 4: state } = csvFileLine.split(',');     //  {2: "US", 4: "New York"}
+```
+
 [back to top](#top)
 
 <h3 id="合并数组">8.2 利用`...`合并数组</h3>
@@ -201,7 +211,48 @@ const arr = [ ...oldArr ]
 
 [back to top](#top)
 
+<h2 id="使用对象解构">9. 使用对象解构（object destructuring）来模拟命名参数和默认值</h2>
+
+```javascript
+//比较老的方法了，它模拟了 JavaScript 中的命名参数
+doSomething({ foo: 'Hello', bar: 'Hey!', baz: 42 });
+function doSomething(config) {
+  const foo = config.foo !== undefined ? config.foo : 'Hi';
+  const bar = config.bar !== undefined ? config.bar : 'Yo!';
+  const baz = config.baz !== undefined ? config.baz : 13;
+  // ...
+}
+//在ES 2015中，可以直接使用对象解构
+function doSomething({ foo = 'Hi', bar = 'Yo!', baz = 13 }) {
+  // ...
+}
+//让参数可选也很简单：
+function doSomething({ foo = 'Hi', bar = 'Yo!', baz = 13 } = {}) {
+  // ...
+}
+```
+
+[back to top](#top)
+
+<h2 id="平铺多维数组">10. 使用 Spread平铺多维数组</h2>
+
+```javascript
+const arr = [11, [22, 33], [44, 55], 66];
+const flatArr = [].concat(...arr);        //=> [11, 22, 33, 44, 55, 66]
+//通过递归，就可以平铺任意维度的嵌套数组
+function flattenArray(arr) {
+  const flattened = [].concat(...arr);
+  return flattened.some(item => Array.isArray(item)) ?
+    flattenArray(flattened) : flattened;
+}
+const arr = [11, [22, 33], [44, [55, 66, [77, [88]], 99]]];
+const flatArr = flattenArray(arr);      //=> [11, 22, 33, 44, 55, 66, 77, 88, 99]
+```
+
+[back to top](#top)
+
 > Reference
 
 - [JavaScript 巧学巧用](http://www.open-open.com/lib/view/open1493174129086.html#articleHeader1)
 - [es6 扩展运算符 三个点（...）](http://blog.csdn.net/qq_30100043/article/details/53391308)
+- [5 分钟掌握 JavaScript 实用窍门](https://zhuanlan.zhihu.com/p/37493249)
