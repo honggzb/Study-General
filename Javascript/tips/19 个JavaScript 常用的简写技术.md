@@ -1,6 +1,7 @@
 [19 个JavaScript 常用的简写技术](#top)
 
 - [1.创建一个新的对象- Object.assign()](#创建一个新的对象)
+    - [1.1 创建一个pure Object](#创建)
 - [2.短路求值简写方式](#短路求值简写方式)
 - [4.if存在条件简写方法](#if存在条件简写方法)
 - [6.短路评价](#短路评价)
@@ -30,6 +31,20 @@ var person = {
 };
 var newPerson = Object.assign({}, person, {name: 'fer'});
 ```
+
+<h3 id="创建">1.1 创建一个pure Object</h3>
+
+一个 100% pure object，它不从Object中继承任何属性或则方法（比如constructor, toString()等）
+
+```javascript
+const pureObject = Object.create(null);
+console.log(pureObject); //=> {}
+console.log(pureObject.constructor); //=> undefined
+console.log(pureObject.toString); //=> undefined
+console.log(pureObject.hasOwnProperty); //=> undefined
+```
+
+[back to top](#top)
 
 <h3 id="短路求值简写方式">2.短路求值简写方式</h3>
 
