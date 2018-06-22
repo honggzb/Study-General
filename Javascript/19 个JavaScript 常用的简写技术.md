@@ -19,6 +19,7 @@
 - [补2：利用Object.assign快速创建并复制对象](#快速创建并复制对象)
 - 补4：一行代码实现数组去重: `[...new Set([1,2,2,3,1,'a',3,'a',3])]`
 - [补5：利用reduce快速计算总和](#利用reduce快速计算总和)
+- [20. 删除数组尾部元素- 最简单方法是改变数组的长度, 长度为0，可清空数组](#删除数组尾部元素)
 
 <h3 id="创建一个新的对象">1.创建一个新的对象</h3>
 
@@ -321,4 +322,17 @@ var sum = arr.reduce(function(a, b) {
 ```
 
 [back to top](#top)
+
+<h3 id=删除数组尾部元素">20. 删除数组尾部元素- 最简单方法是改变数组的长度, 长度为0，可清空数组</h3>
+
+```javascript
+const arr = [1,2,3,4,5];
+arr.lenght = 3;
+console.log(arr);   // [1,2,3]
+//clearing
+arr.lenght = 0;
+console.log(arr);   // []
+```
+
+[back to top](#top)               
 
