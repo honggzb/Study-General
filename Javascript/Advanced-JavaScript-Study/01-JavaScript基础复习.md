@@ -10,7 +10,7 @@
 
 ----------
 
-[JavaScript 高级](http://naotu.baidu.com/file/5bcd79bc4f1eaf83f96d1ad23baab345?token=d22135c63546f5ee)
+[JavaScript高级脑图](http://naotu.baidu.com/file/5bcd79bc4f1eaf83f96d1ad23baab345?token=d22135c63546f5ee)
 
 ----------
 
