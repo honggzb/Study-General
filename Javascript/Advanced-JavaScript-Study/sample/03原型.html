@@ -89,6 +89,53 @@
     console.dir(Student);
     console.dir(stu);
     
+    //    function Person(age) {
+//      this.age=age;
+//      this.sayHi=function () {
+//        console.log("考尼奇瓦");
+//        //打招呼的同时,直接调用吃的方法
+//
+//      };
+//      this.eat=function () {
+//        console.log("吃东西啦");
+//        this.sayHi();
+//      };
+//    }
+//    //实例对象的方法,是可以相互调用的
+//
+//    //实例化对象，并初始化
+//    var per=new Person(20);
+//    //调用方法
+//    //per.sayHi();
+//    per.eat();
+
+
+    //原型中的方法,是可以相互访问的
+
+    function Animal(name,age) {
+      this.name=name;
+      this.age=age;
+    }
+    //原型中添加方法
+    Animal.prototype.eat=function () {
+      console.log("动物吃东西");
+      this.play();
+    };
+    Animal.prototype.play=function () {
+      console.log("玩球");
+      this.sleep();
+    };
+    Animal.prototype.sleep=function () {
+      console.log("睡觉了");
+    };
+
+    var dog=new Animal("小苏",20);
+    dog.eat();
+    //动物吃东西
+    //玩球
+    //睡觉了
+    //原型对象中的方法,可以相互调用
+    
   </script>
 </head>
 <body>
