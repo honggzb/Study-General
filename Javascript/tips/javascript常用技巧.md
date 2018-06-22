@@ -22,7 +22,8 @@
   - [12. 获取当前时间](#获取当前时间)
   - [13. 获取字符串最后和第一位方法](#获取字符串最后和第一位方法)
 - [JavaScript+HTML](#jh)
-
+  - [1. select跳转](#select跳转)
+  
 <h2 id="html">HTML</h2>
 
 <h3 id="屏蔽右键">1. 屏蔽右键</h3>
@@ -322,7 +323,7 @@ function add_zero(temp) {
 ```
 
 [back to top](#top)
-
+  
 <h3 id="获取字符串最后和第一位方法">12.13. 获取字符串最后和第一位方法</h3>
 
 ```javascript
@@ -333,6 +334,46 @@ str.substr(str.length-1,1);
 "abcdef".charAt(0);     // 'a'
 //去除第一位的剩余字符串
 "abcdef".substr(1);    //"bcdef"
+```
+
+[back to top](#top)
+
+<h2 id="jh">JavaScript+HTML</h2>
+
+<h3 id="select跳转">1. select跳转</h3>
+
+```javascript
+//1) select加链接
+function mbar(sobj) {
+  var docurl =sobj.options[sobj.selectedIndex].value;
+  if (docurl != "") {
+     open(docurl,'_blank');
+     sobj.selectedIndex=0;
+     sobj.blur();
+  }
+}
+<Select onchange=mbar(this) name="select">
+  <OPTION selected>=== 合作伙伴 ===</OPTION>
+  <OPTION value="http://www.baidu.com">百度</OPTION>
+  <OPTION value="http://www.163.com">网易</OPTION>
+</Select>
+//2) location.href
+<select name="pageselect" onchange="self.location.href=options[selectedIndex].value" >
+  <OPTION value="http://www.baidu.com">百度</OPTION>
+  <OPTION value="http://www.163.com">网易</OPTION>
+</select>
+//3) select选择-按钮跳转
+function setsubmit(){
+  if(mylink.value == 0)
+   window.location='http://www.baidu.com';
+  if(mylink.value == 1)
+    window.location='http://www.163.com';
+}
+<select name="mylink" id="mylink">
+  <OPTION value="0">百度</OPTION>
+  <OPTION value="1">网易</OPTION>
+</select>
+<input type="button" id="btn" value="提交" onclick="setsubmit(this)" />
 ```
 
 [back to top](#top)
