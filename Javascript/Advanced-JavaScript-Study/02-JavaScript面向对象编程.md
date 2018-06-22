@@ -487,7 +487,7 @@ console.log(p1.sayName === p2.sayName) // => true
 
 ### 构造函数、实例、原型三者之间的关系
 
-![](https://i.imgur.com/oouCNB7.png)
+![](https://i.imgur.com/IKAyLMo.png)
 
 - 任何函数都具有一个`prototype` 属性，该属性是一个对象
 - 构造函数的 `prototype` 对象默认都有一个 `constructor` 属性，指向 `prototype` 对象所在函数
@@ -523,6 +523,11 @@ instance.sayHi() // => hi!
   - 实例对象的`__proto__`指向了构造函数的原型对象`prototype`
 - 原型: `__proto__`或者是`prototype`,都是原型对象
   - 原型的作用:  共享数据,节省内存空间
+- 构造函数可以实例化对象
+  - 构造函数中有一个属性叫`prototype`,是构造函数的原型对象
+  - 构造函数的原型对象(`prototype`)中有一个`constructor`构造器,这个构造器指向的就是自己所在的原型对象所在的构造函数
+  - 实例对象的原型对象(`__proto__`)指向的是该构造函数的原型对象
+  - 构造函数的原型对象(`prototype`)中的方法是可以被实例对象直接访问的
 
 ### 属性成员的搜索原则：原型链
 
