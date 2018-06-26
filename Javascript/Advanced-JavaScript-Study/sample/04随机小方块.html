@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>随机小方块</title>
+  <style>
+    .map{
+      width: 800px;
+      height: 600px;
+      background-color: #CCC;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+<div class="map"></div>
+<script src="common.js"></script>
+<script>
+// 1）随机数对象Random, 设置为全局
+(function (window) {
+  function Random() {}   //产生随机数对象的构造函数
+  Random.prototype.getRandom=function (min,max) {
+      return Math.floor(Math.random()*(max-min)+min);
+  };
+  window.Random=new Random();    //把局部对象暴露给window顶级对象,就成了全局的对象
+})(window);           //自调用构造函数的方式,分号一定要加上
+
+//2） 产生小方块对象 Food
+(function (window) {
+    //console.log(Random.getRandom(0,5));
+    //选择器的方式来获取元素对象
+    var map=document.querySelector(".map");
+    //食物的构造函数
+    function Food(width,height,color) {
+      this.width=width||20;//默认的小方块的宽
+      this.height=height||20;//默认的小方块的高
+      //横坐标,纵坐标
+      this.x=0;          //横坐标随机产生的
+      this.y=0;          //纵坐标随机产生的
+      this.color=color;  //小方块的背景颜色
+      this.element=document.createElement("div");//小方块的元素
+    }
+    //初始化小方块的显示的效果及位置---显示地图上
+    Food.prototype.init = function(map) {
+      //设置小方块的样式
+      var div=this.element;
+      div.style.position="absolute";//脱离文档流
+      div.style.width=this.width+"px";
+      div.style.height=this.height+"px";
+      div.style.backgroundColor=this.color;
+      //把小方块加到map地图中
+      map.appendChild(div);
+      this.render(map);
+    };
+    //产生随机位置
+    Food.prototype.render=function (map) {
+      //随机产生横纵坐标
+      var x=Random.getRandom(0,map.offsetWidth/this.width)*this.width;
+      var y=Random.getRandom(0,map.offsetHeight/this.height)*this.height;
+      this.x=x;
+      this.y=y;
+      var div=this.element;
+      div.style.left=this.x+"px";
+      div.style.top=this.y+"px";
+    };
+
+    //实例化对象
+    var fd=new Food(20,20,"green");
+    fd.init(map);
+    console.log(fd.x+"===="+fd.y);
+    
+})(window);
+</script>
+</body>
+</html>
