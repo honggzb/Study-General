@@ -1,15 +1,18 @@
-[目录](#top)
+[JavaScript专题之去掉数组中的重复项](#top)
 
-- [方式一: 常规模式](#方式一)
+- [方式一: 常规模式(双重循环)](#方式一)
+  - [常规模式补充1(双重循环)](#常规模式补充1)
 - [方式二: 使用了默认Js数组sort默认排序，是按ASCII进行排序](#方式二)
 - [方式三: 利用json对象是否有属性值- **推荐**](#方式三)
-- [方式四: 利用indexOf](#方式四)
+- [方式四: 利用indexOf以及forEach](#方式四)
 - [方式五: 对象键值对法](#方式五)
 - [方式六: 利用ES5的filter和map](#方式六)
 - 方式七: 一行代码实现数组去重: `[...new Set([1,2,2,3,1,'a',3,'a',3])]`
-- [补充： 特殊类型比较的不同](#特殊类型比较的不同)
+- [方式八: 利用对象的属性不能相同的特点进行去重](#利用对象的属性不能相同的特点进行去重)
+- [补充：合并数组并去重的方法](#合并数组并去重的方法)
+- [补充：特殊类型比较的不同](#特殊类型比较的不同)
 
-<h3 id="方式一">方式一: 常规模式(优化遍历数组法)</h3>
+<h2 id="方式一">方式一: 常规模式(优化遍历数组法)(双重循环)</h2>
 
 1. 构建一个新的临时数组存放结果
 2. for循环中每次从原数组中取出一个元素，用这个元素循环与临时数组对比
@@ -46,9 +49,31 @@ Array.prototype.unique1 = function(){
 };
 ```
 
+<h3 id="常规模式补充1">常规模式补充1 (优化遍历数组法)(双重循环)</h3>
+
+- 双层循环，外层循环元素，内层循环时比较值
+- 如果有相同的值则跳过，不相同则push进数组
+
+```javascript
+Array.prototype.distinct = function(){
+ var arr = this, result = [], len = arr.length;
+ for(var i = 0; i < len; i++){
+  for(var j = i + 1; j < len; j++){   //j从i+1开始
+   if(arr[i] === arr[j]){
+    j = ++i;         //改变j
+   }
+  }
+  result.push(arr[i]);
+ }
+ return result;
+}
+var arra = [1,2,3,4,4,1,1,2,1,1,1];
+arra.distinct();    //返回[3,4,2,1]
+```
+
 [back to top](#top)
 
-<h3 id="方式二">方式二: 使用了默认Js数组sort默认排序，是按ASCII进行排序</h3>
+<h2 id="方式二">方式二: 使用了默认Js数组sort默认排序，是按ASCII进行排序</h2>
 
 1. 先将当前数组进行排序
 2. 检查当前中的第i个元素 与 临时数组中的最后一个元素是否相同，因为已经排序，所以重复元素会在相邻位置
@@ -69,7 +94,7 @@ Array.prototype.unique2 = function(){
 
 [back to top](#top)
 
-<h3 id="方式三">方式三: 利用json对象是否有属性值[推荐]</h3>
+<h2 id="方式三">方式三: 利用json对象是否有属性值[推荐]</h2>
 
 1. 创建一个新的数组存放结果
 2. 创建一个空对象json
@@ -92,7 +117,7 @@ Array.prototype.unique3 = function(){
 
 [back to top](#top)
 
-<h3 id="方式四">方式四: 利用indexOf</h3>
+<h2 id="方式四">方式四: 利用indexOf以及forEach</h2>
 
 > indexOf 为ecmaScript5新方法 IE8以下（包括IE8， IE8只支持部分ecma5）不支持
 
@@ -125,11 +150,25 @@ if (!Array.prototype.indexOf){
     return result;
   }
 }
+// forEach
+Array.prototype.distinct = function (){
+ var arr = this,result = [], len = arr.length;
+ arr.forEach(function(v, i ,arr){  //这里利用map，filter方法也可以实现
+  var bool = arr.indexOf(v,i+1);  //从传入参数的下一个索引值开始寻找是否存在重复
+  if(bool === -1){
+   result.push(v);
+  }
+ })
+ return result;
+};
+var a = [1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,3,3,3,3,3,3,3,2,3,3,2,2,1,23,1,23,2,3,2,3,2,3];
+var b = a.distinct();
+console.log(b.toString()); //1,23,2,3
 ```
 
 [back to top](#top)
 
-<h3 id="方式五">方式五: 对象键值对法</h3>
+<h2 id="方式五">方式五: 对象键值对法</h2>
 
 该方法执行的速度比其他任何方法都快， 就是占用的内存大一些；
 
@@ -156,7 +195,7 @@ Array.prototype.unique5 = function(){
 
 [back to top](#top)
 
-<h3 id="方式六">方式六: 利用ES5的filter和map</h3>
+<h2 id="方式六">方式六: 利用ES5的filter和map</h2>
 
 ```javascript
 //ES5提供了filter方法，我们可以用来简化外层循环
@@ -192,7 +231,60 @@ Array.prototype.unique7 = function(){
 
 [back to top](#top)
 
-<h3 id="特殊类型比较的不同">补充： 特殊类型比较的不同</h3>
+<h2 id="特殊类型比较的不同">方式八: 利用对象的属性不能相同的特点进行去重</h2>
+
+```javascript
+Array.prototype.distinct = function (){
+ var arr = this,obj = {},result = [], len = arr.length;
+ for(var i = 0; i< arr.length; i++){
+  if(!obj[arr[i]]){                     //如果能查找到，证明数组元素重复了
+   obj[arr[i]] = 1;
+   result.push(arr[i]);
+  }
+ }
+ return result;
+};
+var a = [1,2,3,4,5,6,5,3,2,4,56,4,1,2,1,1,1,1,1,1,];
+var b = a.distinct();
+console.log(b.toString()); //1,2,3,4,5,6,56
+```
+
+[back to top](#top)
+
+<h2 id="合并数组并去重的方法">补充：合并数组并去重的方法</h2>
+
+### concat()方法 
+
+concat() 方法将传入的数组或非数组值与原数组合并,组成一个新的数组并返回。该方法会产生一个新的数组。
+
+```javascript
+function concatArr(arr1, arr2){
+  var arr = arr1.concat(arr2);
+  arr = unique1(arr);             //再引用上面的任意一个去重方法
+  return arr;
+}
+```
+
+### Array.prototype.push.apply()
+
+该方法优点是不会产生一个新的数组
+
+```javascript
+var a = [1, 2, 3];
+var b = [4, 5, 6];
+Array.prototype.push.apply(a, b);//a=[1,2,3,4,5,6]
+//等效于:a.push.apply(a, b);
+//也等效于[].push.apply(a, b); 
+function concatArray(arr1,arr2){
+  Array.prototype.push.apply(arr1, arr2);
+  arr1 = unique1(arr1);
+  return arr1;
+}
+```
+
+[back to top](#top)
+
+<h2 id="特殊类型比较的不同">补充： 特殊类型比较的不同</h2>
 
 - 要去重的元素类型可能是多种多样，除了例子中简单的 1 和 '1' 之外，其实还有 null、undefined、NaN、对象等，那么对于这些元素，之前的这些方法的去重结果又是怎样呢？
 
@@ -235,4 +327,5 @@ Set|`[1, "1", null, undefined, String, String, /a/, /a/, NaN]`|对象不去重 N
 - [JavaScript删除数组重复元素的5个高效算法](http://www.cnblogs.com/Allen-node/p/5511507.html)
 - [详解JavaScript数组和字符串中去除重复值的方法](http://www.jb51.net/article/80600.htm)
 - [JavaScript专题之数组去重](https://github.com/mqyqingfeng/Blog/issues/27)
+- [JS实现数组去重方法总结(六种方法)](https://www.jb51.net/article/118657.htm)
 
