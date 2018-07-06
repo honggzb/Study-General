@@ -267,6 +267,7 @@
 │   ├── javascript数据类型判断.md
 │   ├── JavaScript专题之Call,apply,bind详解.md
 │   ├── JavaScript专题之Lazy Loading Images and Video
+│   ├── JavaScript专题之数组中删除某一项或几项
 │   ├── JavaScript专题之判断数组中是否包含指定元素.md
 │   ├── JavaScript专题之判断浏览器种类及版本+http协议.md
 │   ├── JavaScript专题之前端复制功能总结-sample.html
