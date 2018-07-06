@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SVG displacement filter</title>
+  <style>
+  * { margin: 0;}
+  body {
+    font-family: Helvetica, serif;
+    color: #2d2d2d;
+  }
+  h4 { font-size: 1.4rem; line-height: 1.5;  letter-spacing: -.05rem; }
+  input[type="radio"] {
+    margin-left: 10px;
+  }
+  input[type="range"] {
+    display: block;
+    margin: 0.5rem 1.2rem;
+  }
+  .choices {
+    color: #676767;
+    padding: 12px;
+  }
+  #container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0.5rem;
+  }
+  .controls {
+    margin-top: 1rem;
+    padding: 0.7rem 2rem;
+    border: 1px solid #ccc;
+  }
+  .controls label {
+    display: block;
+    margin: .5rem;
+    font-weight: 600;
+  }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.5.6/Rx.js"></script>
+</head>
+<body>
+  <div id="container">
+    <h2>Playing with SVG displacement filter</h2><br>
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+    <defs>
+      <svg id="chooblarin" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#000" stroke-width="8">
+          <path d="M88 236a54 64 0 0 0 108 0zm228 0a54 64 0 0 0 108 0z"/>
+          <path d="M68 335h376m-367 0a196 208 0 0 0 358 0m-318 41h279m-250-26v52m54-52v80m56-80v86m56-86v80m54-80v52M16 256a240 240 0 1 0 480 0 240 240 0 1 0-480 0" fill="none"/>
+        </g>
+      </svg>
+      <svg id="captain" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#000" stroke-width="8" fill="none">
+          <path fill="#E2CACD" d="M16 256a240 240 0 1 0 480 0 240 240 0 1 0-480 0"/>
+          <path fill="#fff" d="M68 335h376m-367 0a196 208 0 0 0 358 0m-318 41h279m-250-26v52m54-52v80m56-80v86m56-86v80m54-80v52"/>
+          <path fill="#000" d="M110 251a30 32 0 0 0 64 0zm228 0a30 32 0 0 0 64 0z"/>
+          <g stroke="#644a36">
+            <path d="M25.2 280a232 232 0 0 0 461.6 0"/>
+            <path d="M186 478a320 120 0 0 1 140 0 240 240 0 0 1-140 0z" fill="#644A36"/>
+          </g>
+          <g stroke="#1d2b3b">
+            <path d="M17.2 280a240 240 0 1 1 477.6 0A200 174 0 0 1 256 290a200 174 0 0 1-238.8-10zM88 236a54 64 0 0 0 108 0zm228 0a54 64 0 0 0 108 0z" fill="#234e8c"/>
+            <path d="M118 236L88 86m306 150l30-150"/>
+            <path d="M256 50h10l44 106h-20l-14-28h-40l-14 28h-20l44-106h10" fill="#fff"/><path d="M256 84l10 24h-20z" fill="#436195"/>
+          </g>
+        </g>
+      </svg>
+      <svg id="ironman" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#000" stroke-width="8" fill="none"><path d="M16 256a240 240 0 1 0 480 0 240 240 0 1 0-480 0" fill="#8f1e13"/><path d="M256 140h55l20-88a220 220 0 0 1-4 418H179a220 220 0 0 1 4-418l20 88z" fill="#fde674"/><path d="M84 236h344" stroke="#aa8d65"/><path d="M88 236a54 64 0 0 0 108 0zm228 0a54 64 0 0 0 108 0zM68 335h376m-367 0a196 208 0 0 0 358 0m-318 41h279m-250-26v52m54-52v80m56-80v86m56-86v80m54-80v52" fill="#fff"/></g>
+      </svg>
+      <filter id="displace">
+        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="2" result="turbulence" />
+        <feDisplacementMap scale="10" xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" in2="turbulence" />
+      </filter>
+    </defs>
+    <g id="target" style="filter: url(#displace);">
+      <use xlink:href="#chooblarin"></use>
+    </g>
+  </svg>
+  <form class="choices">
+    <input type="radio" id="choice-chooblarin" name="choice" value="chooblarin" checked>
+    <label for="choice-chooblarin">chooblarin</label>
+    <input type="radio" id="choice-captain" name="choice" value="captain">
+    <label for="choice-captain">captain</label>
+    <input type="radio" id="choice-ironman" name="choice" value="ironman">
+    <label for="choice-ironman">ironman</label>
+  </form>
+
+  <div class="controls">
+    <h4>turbulence</h4>
+    <label>baseFrequency: </label>
+    <input class="control turb-freq" type="range" min="0" max="1.0" value="0.01" step="0.0001">
+    <label>numOctaves: </label>
+    <input class="control turb-oct" type="range" min="0" max="5" value="2" step="1">
+    <h4>displacement map</h4>
+    <label>scale: </label>
+    <input class="control scale" type="range" min="1" max="100" value="10" step="0.0001">
+  </div>
+</div>
+<script>
+console.clear();
+const target = document.querySelector('#target use')
+const choices = document.querySelectorAll('.choices input');
+const turbulence = document.querySelector('#displace feTurbulence');
+const displacement = document.querySelector('#displace feDisplacementMap');
+const turbFreqControl = document.querySelector('.control.turb-freq');
+const turbOctControl = document.querySelector('.control.turb-oct');
+const displacementScaleControl= document.querySelector('.control.scale');
+
+const { Observable } = Rx;
+Observable.fromEvent(choices, 'change')
+          .subscribe(({ target: { value } }) => {
+            target.setAttribute('xlink:href', `#${value}`);
+          });
+Observable.fromEvent(turbFreqControl, 'input')
+          .throttleTime(10)
+          .subscribe(({ target }) => {
+            turbulence.setAttribute('baseFrequency', target.value);
+          });
+Observable.fromEvent(turbOctControl, 'input')
+          .throttleTime(10)
+          .subscribe(({ target }) => {
+            turbulence.setAttribute('numOctaves', target.value);
+          });
+Observable.fromEvent(displacementScaleControl, 'input')
+          .throttleTime(10)
+          .subscribe(({ target }) => {
+            displacement.setAttribute('scale', target.value);
+          });
+</script>
+</body>
+</html>
