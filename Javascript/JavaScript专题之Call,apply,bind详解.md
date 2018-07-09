@@ -20,6 +20,8 @@
 |apply方法|`apply([thisObj[,argArray]])`|应用某一对象的一个方法，用另一个对象替换当前对象|apply的第一个参数thisObj和call方法的一样，第二个参数argArray为一个传参数组。<br>thisObj如果未传，那么 Global 对象被用作 thisObj|
 |bind方法<br>在ECMAScript5中扩展了叫bind的方法<br>(IE6,7,8不支持)|`bind([thisObj[,arg1[, arg2[, [,.argN]]]]])`|应用某一对象的一个方法，用另一个对象替换当前对象|bind的thisObj参数也和call方法一样，thisObj如果未传，那么 Global 对象被用作 thisObj。<br>arg1 ... argN可传可不传。如果不传，可以在调用的时候再传。如果传了，调用的时候则可以不传，调用的时候如果你还是传了，则不生效|
 
+- apply和call方法中如果没有传入参数, 或者是传入的是null, 那么调用该方法的函数对象中的this就是默认的window
+
 ```javascript
 var person = {
     name:"tsrot",
