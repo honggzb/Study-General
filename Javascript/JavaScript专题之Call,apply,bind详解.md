@@ -23,6 +23,28 @@
 - apply和call方法中如果没有传入参数, 或者是传入的是null, 那么调用该方法的函数对象中的this就是默认的window
 
 ```javascript
+//通过原型
+function Person(age,sex) {
+      this.age=age;
+      this.sex=sex;
+    }
+    //通过原型添加方法
+    Person.prototype.sayHi=function (x,y) {
+      console.log("您好啊:"+this.sex);
+      return 1000;
+    };
+    var per=new Person(10,"男");
+    per.sayHi();     //您好啊:男
+//通过apply,call改变this指向
+    console.log("==============");
+    function Student(name,sex) {
+      this.name=name;
+      this.sex=sex;
+    }
+    var stu=new Student("小明","人妖");
+    var r1=per.sayHi.apply(stu,[10,20]);   //您好啊:人妖
+    var r2=per.sayHi.call(stu,10,20);   //您好啊:人妖
+//bind
 var person = {
     name:"tsrot",
     age:24,
