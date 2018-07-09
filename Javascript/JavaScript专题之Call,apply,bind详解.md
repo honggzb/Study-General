@@ -44,7 +44,7 @@ function Person(age,sex) {
     var stu=new Student("小明","人妖");
     var r1=per.sayHi.apply(stu,[10,20]);   //您好啊:人妖
     var r2=per.sayHi.call(stu,10,20);   //您好啊:人妖
-//bind
+//bind方法
 var person = {
     name:"tsrot",
     age:24,
@@ -54,7 +54,7 @@ var person = {
     }
 };
 var son = { name:"xieliqun" };
-var boundFunc = person.sayHello.bind(son);
+var boundFunc = person.sayHello.bind(son);    //复制person并将this指向son
 boundFunc(25); // xieliqun  25
 var boundFunc = person.sayHello.bind(son,25);
 boundFunc(); // xieliqun  25
