@@ -144,6 +144,13 @@ Object.prototype.toString.call(value) == '[object Object]'   //判断是否为Ob
 - 可以识别至少14种类型
 
 ```javascript
+//通用类型判断函数 - 利用Object.prototype.toString()判断方法举例
+console.log(Object.prototype.toString.call([])); // [object Array]
+console.log(Object.prototype.toString.call(new Date())); // [object Date]
+console.log(Object.prototype.toString.call(Math)); // [object Math]
+console.log(Object.prototype.toString.call(JSON)); // [object JSON]
+
+//自定义判断函数
 // 以下是11种：
 var number = 1;          // [object Number]
 var string = '123';      // [object String]
@@ -156,14 +163,6 @@ var date = new Date();   // [object Date]
 var error = new Error(); // [object Error]
 var reg = /a/g;          // [object RegExp]
 var func = function a(){}; // [object Function]
-
-//通用类型判断函数 - 利用Object.prototype.toString()判断方法举例
-console.log(Object.prototype.toString.call([])); // [object Array]
-console.log(Object.prototype.toString.call(new Date())); // [object Date]
-console.log(Object.prototype.toString.call(Math)); // [object Math]
-console.log(Object.prototype.toString.call(JSON)); // [object JSON]
-
-//自定义判断函数
 function checkType() {
     for (var i = 0; i < arguments.length; i++) {
         console.log(Object.prototype.toString.call(arguments[i]))
