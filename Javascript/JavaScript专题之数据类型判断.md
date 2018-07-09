@@ -160,7 +160,6 @@ var func = function a(){}; // [object Function]
 //通用类型判断函数 - 利用Object.prototype.toString()判断方法举例
 console.log(Object.prototype.toString.call([])); // [object Array]
 console.log(Object.prototype.toString.call(new Date())); // [object Date]
-
 console.log(Object.prototype.toString.call(Math)); // [object Math]
 console.log(Object.prototype.toString.call(JSON)); // [object JSON]
 
@@ -193,6 +192,17 @@ function isFunction(obj) {
 var isArray = Array.isArray || function( obj ) {
     return type(obj) === "array";
 }
+//判断这个对象和传入的类型是不是同一个类型
+function getFunc(type) {
+   return function (obj) {
+      return Object.prototype.toString.call(obj) === type;
+    }
+}
+var ff = getFunc("[object Array]");
+var result = ff([10, 20, 30]);     //true
+var ff1 = getFunc("[object Object]");
+var dt = new Date();
+var result1 = ff1(dt);   //true
 ```
 
 [back to top](#top)
