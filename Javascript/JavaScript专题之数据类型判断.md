@@ -156,14 +156,22 @@ var date = new Date();   // [object Date]
 var error = new Error(); // [object Error]
 var reg = /a/g;          // [object RegExp]
 var func = function a(){}; // [object Function]
+
+//通用类型判断函数 - 利用Object.prototype.toString()判断方法举例
+console.log(Object.prototype.toString.call([])); // [object Array]
+console.log(Object.prototype.toString.call(new Date())); // [object Date]
+
+console.log(Object.prototype.toString.call(Math)); // [object Math]
+console.log(Object.prototype.toString.call(JSON)); // [object JSON]
+
+//自定义判断函数
 function checkType() {
     for (var i = 0; i < arguments.length; i++) {
         console.log(Object.prototype.toString.call(arguments[i]))
     }
 }
-checkType(number, string, boolean, und, nul, obj, array, date, error, reg, func)
-console.log(Object.prototype.toString.call(Math)); // [object Math]
-console.log(Object.prototype.toString.call(JSON)); // [object JSON]
+checkType(number, string, boolean, und, nul, obj, array, date, error, reg, func);
+
 /*通用类型判断函数 - 利用Object.prototype.toString()*/
 var class2type = {};
 // 生成class2type映射
