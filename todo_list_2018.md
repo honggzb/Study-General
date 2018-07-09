@@ -49,4 +49,6 @@
 - [Redux: Describing State Changes with Actions- egghead.io](https://egghead.io/lessons/react-redux-describing-state-changes-with-actions)
 - [Build a Better Angular 2 Application with Redux and ngrx](http://onehungrymind.com/build-better-angular-2-application-redux-ngrx/)
 
+### every day renew
 
+- [我的前端进阶之路](http://blog.damonare.cn/2017/07/30/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/)
