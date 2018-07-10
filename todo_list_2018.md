@@ -52,3 +52,9 @@
 ### every day renew
 
 - [我的前端进阶之路](http://blog.damonare.cn/2017/07/30/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF/)
+- [JavaScript数据结构与算法技巧总结](https://www.jb51.net/Special/297.htm)
+- [JavaScript数学运算用法总结](https://www.jb51.net/Special/119.htm)
+- [JavaScript切换特效与技巧总结](https://www.jb51.net/Special/502.htm)
+- [JavaScript查找算法技巧总结](https://www.jb51.net/Special/472.htm)
+- [JavaScript错误与调试技巧总结](https://www.jb51.net/Special/439.htm)
+- [JavaScript遍历算法与技巧总结](https://www.jb51.net/Special/281.htm)
