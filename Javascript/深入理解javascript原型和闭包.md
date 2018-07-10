@@ -2,7 +2,8 @@
 
 - [闭包](#闭包)
   - [1. 闭包的类型](#闭包的类型)
-  - [2. 闭包的经典用法](#闭包的经典用法)
+  - [2. 闭包的用途](#闭包的用途)
+  - [3. 闭包的应用案例](#闭包的应用案例)
 - [javascript原型](#javascript原型)
   - [1. 函数和对象的关系  - typeof](#函数和对象的关系)
   - [2. prototype原型](#prototype原型)
@@ -26,7 +27,7 @@ function f1(){
     return num;
   }
 }
-var ff = f1();
+var ff = f1();   //ff现在是一个闭包
 ff();   //11
 ff();   //12
 //对象模式的闭包： 函数中有一个对象
@@ -59,9 +60,112 @@ var fn = function(x){
 
 [back to top](#top)
 
-<h3 id="闭包的经典用法">2. 闭包的经典用法</h3>
+<h3 id="闭包的用途">2. 闭包的用途</h3>
 
-**2.1 这样每次alert出的值都是不同是值**
+**2.1 匿名自执行函数**
+
+创建了一个匿名的函数，并立即执行它，由于外部无法引用它内部的变量，因此在函数执行完后会立刻释放资源，关键是不污染全局对象
+
+```javascript
+var data= {    
+    table : [],    
+    tree : {}    
+};     
+(function(dm){    
+    for(var i = 0; i < dm.table.rows; i++){    
+       var row = dm.table.rows[i];    
+       for(var j = 0; j < row.cells; i++){    
+           drawCell(i, j);    
+       }    
+    }     
+})(data);  
+```
+
+**2.2 结果缓存**
+
+```javascript
+var CachedSearchBox = (function(){    
+    var cache = {}, count = [];    
+    return {    
+       attachSearchBox : function(dsid){    
+           if(dsid in cache){//如果结果在缓存中    
+              return cache[dsid];//直接返回缓存中的对象    
+           }    
+           var fsb = new uikit.webctrl.SearchBox(dsid);//新建    
+           cache[dsid] = fsb;//更新缓存    
+           if(count.length > 100){//保正缓存的大小<=100    
+              delete cache[count.shift()];    
+           }    
+           return fsb;          
+       },    
+     
+       clearSearchBox : function(dsid){    
+           if(dsid in cache){    
+              cache[dsid].clearSelection();      
+           }    
+       }    
+    };    
+})();    
+CachedSearchBox.attachSearchBox("input");
+```
+
+**2.3 封装**
+
+```javascript
+var person = function(){    
+    //变量作用域为函数内部，外部无法访问    
+    var name = "default";       
+    return {    
+       getName : function(){    
+           return name;    
+       },    
+       setName : function(newName){    
+           name = newName;    
+       }    
+    }    
+}();    
+print(person.name);       //直接访问，结果为undefined    
+print(person.getName());      //default
+person.setName("abruzzi");    //
+print(person.getName());      //abruzzi
+```
+
+**2.4 实现类和继承**
+
+```javascript
+function Person(){    
+    var name = "default";
+    return {    
+       getName : function(){
+           return name;    
+       },    
+       setName : function(newName){ 
+           name = newName;    
+       }    
+    }    
+};   
+var p = new Person();
+p.setName("Tom");
+alert(p.getName());
+//Jack，继承Person，并添加自己的方法
+var Jack = function(){};
+//继承自Person
+Jack.prototype = new Person();
+//添加私有方法
+Jack.prototype.Say = function(){
+  alert("Hello,my name is Jack");
+};
+var j = new Jack();
+j.setName("Jack");
+j.Say();
+alert(j.getName());
+```
+
+[back to top](#top)
+
+<h3 id="闭包的应用案例">3. 闭包的应用案例</h3>
+
+**3.1 这样每次alert出的值都是不同是值**
 
 ```javascript
 	var spans2 = $("#divTest2 span");
@@ -88,6 +192,52 @@ function f1(){
 var ff = f1();
 ff();
 ff();
+```
+
+**2.3 点赞应用** : 每个图片均有单独的赞的增加
+
+```html
+<ul>
+  <li><img src="images/ly.jpg" alt=""><br><input type="button" value="赞(1)" /></li>
+  <li><img src="images/lyml.jpg" alt=""><br><input type="button" value="赞(1)" /></li>
+  <li><img src="images/fj.jpg" alt=""><br><input type="button" value="赞(1)" /></li>
+  <li><img src="images/bd.jpg" alt=""><br><input type="button" value="赞(1)" /></li>
+</ul>
+<script type="text/javascript">
+  function my$(tabName){
+    return document.getElementsByTagName(tagName);
+  }
+  //缺点： 
+  // var btnObjs = my$("input");
+  // var value = 1;
+  // for(var i=0;i<btnObjs.length;i++){
+  //   console.log("haha");
+  //   return function(){
+  //     this.value = "赞("+(value++)+")";
+  //   }
+  // }
+  //闭包缓存数据
+function getValue(){
+    var value = 1;
+    return function(){
+      this.value = "赞(" + (value++) + ")";
+    }
+  }
+  var btnObjs = my$("input");
+  for(var i=0;i<btnObjs.length;i++){
+    btnObjs[i].onClick = getValue();
+  }
+  var name = "The window";
+var object = {
+  name:"My object",
+  getNameFun:function(){
+    return function(){
+      return this.name;
+    };
+  }
+};
+alert(object.getNameFun(){});
+</script>
 ```
 
 [back to top](#top)
@@ -201,3 +351,8 @@ hasOwnProperty方法是从Object.prototype中来的，请看图：
 - 如果要查找一个作用域下某个变量的值，就需要找到这个作用域对应的执行上下文环境，再在其中寻找变量的值。
 
 ![](http://i.imgur.com/oLRL4bm.png)
+
+
+> reference
+> - [深入理解javascript原型和闭包系列](http://www.cnblogs.com/wangfupeng1988/p/3977924.html)
+> - [全面理解Javascript闭包和闭包的几种写法及用途](https://www.cnblogs.com/yunfeifei/p/4019504.html)
