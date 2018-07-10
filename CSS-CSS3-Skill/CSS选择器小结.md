@@ -2,7 +2,15 @@
 
 - CSS3选择器规范地址：	   https://www.w3.org/TR/2011/REC-css3-selectors-20110929/
 - CSS3选择最新选择器规范:  https://www.w3.org/TR/selectors  
-	
+
+**单冒号 vs 双冒号**
+
+- 单冒号(:)用于CSS3伪类，双冒号(::)用于CSS3伪元素。
+  - 对于CSS2中已经有的伪元素，例如 :before，单冒号和双冒号的写法 ::before 作用是一样的
+  - 如果网站只需要兼容 webkit、firefox、opera 等浏览器，建议对于伪元素采用双冒号的写法，如果不得不兼容 IE 浏览器，还是用 CSS2 的单冒号写法比较安全
+
+![](https://i.imgur.com/1M8x52R.png)
+
 | 类型|说明|
 | :------------- | :------------- |
 |**基本选择器**|  |
