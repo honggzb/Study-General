@@ -5,9 +5,8 @@
   <meta content="CSS3Secret,CSS3解密,CSS3奇淫巧计,CSS3妙用,CSS3图形" name="Keywords">
   <title>CSS3奇思妙想</title>
   <style>
-  /*reset start*/
-  @charset "utf-8";
-
+/*reset start*/
+@charset "utf-8";
 /*CSS reset*/
 html {
 	overflow-x: hidden;
@@ -202,7 +201,10 @@ summary:hover{
 	content: "\A";
 	white-space: pre;
 }
-
+p{
+  margin-left: 20px;
+  margin-top: 80px;
+}
   </style>
 </head>
 <body>
@@ -372,6 +374,7 @@ summary:hover{
       <div class="css-live-wrap">
         <summary>单个颜色实现 hover 和 active 时的明暗变化效果</summary>
         <summary>利用伪类及透明度实现</summary>
+        <p>用 before 伪元素生成一个与按钮大小一致的黑色半透明层 rgba(0,0,0,.2)，在 .btn:hover:before 时显示，用 after 伪元素生成一个与按钮大小一致的白色半透明层 rgba(255,255,255,.2)，在 .btn:active:before 时显示，就可以做到只配置一个背景底色，实现 hover 、active 的时的明暗变化</p>
         <hgroup class="pesudo">
           <h1>.pesudo</h1>
         </hgroup>
@@ -419,6 +422,7 @@ summary:hover{
       <div class="css-live-wrap">
         <summary>梯形</summary>
         <summary>利用伪类加旋转透视实现</summary>
+        <p>用CSS3 transfrom属性时候，其div内容文字也会跟着CSS3变换一起发生了扭曲，可before 伪元素，将 CSS3 变换作用于伪元素上，这样变形不会作用于位于div上的的文字，而且没有使用多余的标签</p>
         <hgroup class="trapezoid">
           <h1>.trapezoid</h1>
         </hgroup>
