@@ -1,6 +1,5 @@
 <table>
   <caption>常用插件推荐</caption>
-
     <tr><th>插件</th><th>说明</th><th>快捷键</th></tr>
     <tr style="text-align:center;font-weight: bolder;"><th colspan="3">snippets</th></tr>
     <tr>
