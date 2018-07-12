@@ -99,7 +99,6 @@
 ### 常用插件推荐
 
 <table>
-  <blockquote>常用插件推荐</blockquote>
   <tr><th colspan="3">snippets</th></tr>
     <tr>
         <td>JavaScript (ES6) code snippets</td><td></td><td>imd --> import { } from 'somewhere'</td>
@@ -125,6 +124,9 @@
     </tr>
     <tr>
         <td>SVG Viewer</td><td>SVG 预览</td><td></td>
+    </tr>
+    <tr>
+        <td>select highlight in minimap</td><td></td><td></td>
     </tr>
     <tr>
         <td>npm</td><td></td><td></td>
