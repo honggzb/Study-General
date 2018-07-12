@@ -58,7 +58,7 @@
 <hr>
 
 <table>
-    <blockquote>常用插件推荐</blockquote>
+   <caption>常用插件推荐</caption>
   <thead>
       <tr><th style="text-align:center;">插件</th><th style="text-align:center;">说明</th><th style="text-align:center;">快捷键</th></tr>
   </thead>
