@@ -19,3 +19,9 @@
 - [x] 任务列表1
 - [ ] 任务列表2
 - [ ] 任务列表3
+
+
+**使用表情** - [表情大全](http://www.webpagefx.com/tools/emoji-cheat-sheet/)
+
+- 表情一：:+1:
+- 表情二：:o:
