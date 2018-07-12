@@ -59,7 +59,7 @@
 
 | 插件 | 说明|快捷键|
 | :------------- | :------------- | :------------- |
-|snippets|---|---|
+|**snippets**|---|---|
 |JavaScript (ES6) code snippets| |imd --> import { } from 'somewhere'|
 |AutoFileName|文件路径自动补全插件||
 |Path Intellisense| 文件路径提示 |   |
@@ -67,26 +67,25 @@
 |Bootstrap 4 & Font awesome snippets|   |   |
 |Vue 2 Snippets|   |   |
 |change-case|命名格式插件|camelCase（骆驼拼命名），PascalCase（首字母大写），kebab-case（中划线命名），underscore_delimited（下划线命名），CONSTANT（大写命名）等|
-|   |   |   |
+|**其他**|---|---|
 |open in browser||将添加一个 [Open With Default Browser] 选项到右键菜单|
 |SVG Viewer|SVG 预览|  |
 |npm|   |   |
-|CSS|---|---|
+|**CSS**|---|---|
 |Color Picker|代码的颜色选择器|   |
 |CSS Peek|跳转到 CSS 定义行||
 |Color Info|颜色信息及转换||
 |Color-Highlight|在编辑器中高亮显示颜色|   |
-|Beauty|---|---|
+|**Beauty**|---|---|
 |Prettier|格式化代码|代码美化, 快速格式化整个 JS 和 CSS 文档  :CMD + Shift + P -> Format Document|
 |Align|代码对齐插件|Ctrl+Alt+A|
 |文档编辑Markdown|---|---|
 |Markdown All in One|   |   |
-|其他|---|---|
+|**其他**|---|---|
 |Sync Settings |设置同步插件|你很有可能在多台电脑上进行编码工作。在电脑上移植你的插件和设置是轻而易举的事|
 |vscode-icons|侧边栏图标插件|   |
 |Regex Previewer|正则表达式预览|   |
 |Document This|JSDoc注释插件|Ctrl+Alt+D|
-
 
 **Theme**
 
