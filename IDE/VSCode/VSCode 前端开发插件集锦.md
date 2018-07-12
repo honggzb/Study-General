@@ -55,11 +55,10 @@
   </tbody>
 </table>
 
-
 **常用插件推荐**
 
 | 插件 | 说明|快捷键|
-| :------------- | :------------- |
+| :------------- | :------------- | :------------- |
 |snippets|---|---|
 |JavaScript (ES6) code snippets| |imd --> import { } from 'somewhere'|
 |AutoFileName|文件路径自动补全插件||
