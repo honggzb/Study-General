@@ -1,13 +1,13 @@
 
 <table>
-  <thead>
-      <tr><th style="text-align:center;">插件</th><th style="text-align:center;">说明</th><th style="text-align:center;">快捷键</th></tr>
-  </thead>
-  <tbody>
-    <tr><td colspan="3" style="text-align:center;font-weight: bolder;">snippets</td></tr>
-    <tr>
+  <blockquote>常用插件推荐</blockquote>
+  <tr><th>插件</th><th>说明</th><th>快捷键</th></tr>
+  <tr>
         <td>1</td><td>2</td><td>3</td>
-    </tr>
-  </tbody>
+  </tr>
+  <tr><th colspan="3">跨行</th></tr>
+  <tr>
+        <td>1</td><td>2</td><td>3</td>
+  </tr>
 </table>
 
