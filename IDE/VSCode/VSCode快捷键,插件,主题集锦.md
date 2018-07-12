@@ -1,3 +1,33 @@
+**常用快捷键**
+
+<table>
+  <blockquote>常用快捷键推荐</blockquote>
+  <tr><th>说明</th><th>快捷键</th></tr>
+  <tr><th colspan="2">格式调整</th></tr>
+  <tr><td>代码行缩进</td><td>Ctrl+[， Ctrl+]</td></tr>
+  <tr><td>代码格式化</td><td>Shift+Alt+F，或Ctrl+Shift+P后输入format code(format selection)</td></tr>
+  <tr><td>修剪空格</td><td>Ctrl+Shift+X</td></tr>
+  <tr><th colspan="2">重构代码</th></tr>
+  <tr><td>跳转到定义处</td><td>F12</td></tr>
+  <tr><td>列出所有的引用</td><td>shift+F12</td></tr>
+  <tr><td>同时修改本文件中所有匹配的</td><td>ctrl+F12</td></tr>
+  <tr><td>重命名所有方法名</td><td>选中后按F2，输入新的名字，回车，会发现所有的文件都修改</td></tr>
+  <tr><td>跳转到下一个Error或Warning</td><td>F8</td></tr>
+  <tr><td>比较文件</td><td>选择文件右键compare selected</td></tr>
+  <tr><th colspan="2">显示相关</th></tr>
+  <tr><td>侧边栏显/隐</td><td>ctrl+B</td></tr>
+  <tr><td>预览markdown</td><td>Ctrl+Shift+V</td></tr>
+  <tr><td>zoomIn/zoomOut</td><td>Ctrl + =/Ctrl + -</td></tr>
+  <tr><td>全屏</td><td>F11</td></tr>
+  <tr><th colspan="2">打开相关</th></tr>
+  <tr><td>历史打开文件之间切换</td><td>Ctrl+Tab，Alt+Left，Alt+Right</td></tr>
+  <tr><td>左中右3个编辑器的快捷键</td><td>Ctrl+1 Ctrl+2 Ctrl+3</td></tr>
+  <tr><td>3个编辑器之间循环切换</td><td>Ctrl+`</td></tr>
+  <tr><td>全屏</td><td>F11</td></tr>
+</table>
+
+<hr>
+
 <table class="d-block">
   <tbody class="d-block">
     <tr class="d-block">
