@@ -1,3 +1,74 @@
+<table>
+  <caption>常用插件推荐</caption>
+  <thead>
+      <tr><th style="text-align:center;">插件</th><th style="text-align:center;">说明</th><th style="text-align:center;">快捷键</th></tr>
+  </thead>
+  <tbody>
+    <tr style="text-align:center;font-weight: bolder;"><th colspan="3">snippets</th></tr>
+    <tr>
+        <td>JavaScript (ES6) code snippets</td><td></td><td>imd --> import { } from 'somewhere'</td>
+    </tr>
+    <tr>
+        <td>AutoFileName</td><td>文件路径自动补全插件</td><td></td>
+    </tr>
+    <tr>
+        <td>Path Intellisense</td><td>文件路径提示</td><td></td>
+    </tr>
+    <tr>
+        <td>HTML Boilerplate</td><td>HTML 模板</td><td></td>
+    </tr>
+    <tr>
+        <td>Bootstrap 4 & Font awesome snippets</td><td>Vue 2 Snippets</td><td>等......</td>
+    </tr>
+    <tr>
+        <td>change-case</td><td>命名格式插件</td><td>camelCase骆驼拼命名，<br>PascalCase首字母大写，<br>kebab-case中划线命名，<br>underscore_delimited下划线命名，<br>CONSTANT大写命名，等</td>
+    </tr>
+    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">其他</td></tr>
+    <tr>
+        <td>open in browser</td><td>将添加一个 [Open With Default Browser] 选项到右键菜单</td><td></td>
+    </tr>
+    <tr>
+        <td>SVG Viewer</td><td>SVG 预览</td><td></td>
+    </tr>
+    <tr>
+        <td>npm</td><td></td><td></td>
+    </tr>
+    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">CSS相关</td></tr>
+    <tr>
+        <td>Color Picker</td><td>代码的颜色选择器</td><td></td>
+    </tr>
+    <tr>
+        <td>Color Info</td><td>颜色信息及转换</td><td></td>
+    </tr>
+    <tr>
+        <td>CSS Peek</td><td>跳转到 CSS 定义行</td><td></td>
+    </tr>
+    <tr>
+        <td>Color-Highlight</td><td>在编辑器中高亮显示颜色</td><td></td>
+    </tr> 
+    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">Beauty美化相关</td></tr>
+    <tr>
+        <td>Prettier</td><td>格式化代码，快速格式化整个JS和CSS文档</td><td>CMD+Shift+P -> Format Document</td>
+    </tr>
+    <tr>
+        <td>Align</td><td>代码对齐插件</td><td>Ctrl+Alt+A</td>
+    </tr>
+    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">其他 - optional</td></tr>
+    <tr>
+        <td>Sync Settings</td><td>设置同步插件</td><td>你很有可能在多台电脑上进行编码工作。在电脑上移植你的插件和设置是轻而易举的事</td>
+    </tr>
+    <tr>
+        <td>vscode-icons</td><td>侧边栏图标插件</td><td></td>
+    </tr>
+    <tr>
+        <td>Regex Previewer</td><td>正则表达式预览</td><td></td>
+    </tr>
+    <tr>
+        <td>Document This</td><td>JSDoc注释插件</td><td>Ctrl+Alt+D</td>
+    </tr> 
+  <tbody>
+</table>
+
 <table class="d-block">
   <tbody class="d-block">
     <tr class="d-block">
@@ -56,77 +127,6 @@
 </table>
 
 <hr>
-
-<table style="background: grey;border: 1px solid #dfe2e5;">
-  <caption>常用插件推荐</caption>
-  <thead>
-      <tr><th style="text-align:center;">插件</th><th style="text-align:center;">说明</th><th style="text-align:center;">快捷键</th></tr>
-  </thead>
-  <tbody>
-    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">snippets</td></tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">JavaScript (ES6) code snippets</td><td style="background: grey;border: 1px solid #dfe2e5;"></td><td style="background: grey;border: 1px solid #dfe2e5;">imd --> import { } from 'somewhere'</td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">AutoFileName</td><td style="background: grey;border: 1px solid #dfe2e5;">文件路径自动补全插件</td><td style="background: grey;border: 1px solid #dfe2e5;"></td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">Path Intellisense</td><td style="background: grey;border: 1px solid #dfe2e5;">文件路径提示</td><td style="background: grey;border: 1px solid #dfe2e5;"></td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">HTML Boilerplate</td><td style="background: grey;border: 1px solid #dfe2e5;">HTML 模板</td><td style="background: grey;border: 1px solid #dfe2e5;"></td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">Bootstrap 4 & Font awesome snippets</td><td style="background: grey;border: 1px solid #dfe2e5;">Vue 2 Snippets</td><td style="background: grey;border: 1px solid #dfe2e5;">等......</td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">change-case</td><td style="background: grey;border: 1px solid #dfe2e5;">命名格式插件</td><td style="background: grey;border: 1px solid #dfe2e5;">camelCase骆驼拼命名，<br>PascalCase首字母大写，<br>kebab-case中划线命名，<br>underscore_delimited下划线命名，<br>CONSTANT大写命名，等</td>
-    </tr>
-    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">其他</td></tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">open in browser</td><td style="background: grey;border: 1px solid #dfe2e5;">将添加一个 [Open With Default Browser] 选项到右键菜单</td><td style="background: grey;border: 1px solid #dfe2e5;"></td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">SVG Viewer</td><td style="background: grey;border: 1px solid #dfe2e5;">SVG 预览</td><td style="background: grey;border: 1px solid #dfe2e5;"></td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">npm</td><td style="background: grey;border: 1px solid #dfe2e5;"></td><td style="background: grey;border: 1px solid #dfe2e5;"></td>
-    </tr>
-    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">CSS相关</td></tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">Color Picker</td><td style="background: grey;border: 1px solid #dfe2e5;">代码的颜色选择器</td><td style="background: grey;border: 1px solid #dfe2e5;"></td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">Color Info</td><td style="background: grey;border: 1px solid #dfe2e5;">颜色信息及转换</td><td style="background: grey;border: 1px solid #dfe2e5;"></td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">CSS Peek</td><td style="background: grey;border: 1px solid #dfe2e5;">跳转到 CSS 定义行</td><td style="background: grey;border: 1px solid #dfe2e5;"></td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">Color-Highlight</td><td style="background: grey;border: 1px solid #dfe2e5;">在编辑器中高亮显示颜色</td><td style="background: grey;border: 1px solid #dfe2e5;"></td>
-    </tr> 
-    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">Beauty美化相关</td></tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">Prettier</td><td style="background: grey;border: 1px solid #dfe2e5;">格式化代码，快速格式化整个JS和CSS文档</td><td style="background: grey;border: 1px solid #dfe2e5;">CMD+Shift+P -> Format Document</td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">Align</td><td style="background: grey;border: 1px solid #dfe2e5;">代码对齐插件</td><td style="background: grey;border: 1px solid #dfe2e5;">Ctrl+Alt+A</td>
-    </tr>
-    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">其他 - optional</td></tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">Sync Settings</td><td style="background: grey;border: 1px solid #dfe2e5;">设置同步插件</td><td style="background: grey;border: 1px solid #dfe2e5;">你很有可能在多台电脑上进行编码工作。在电脑上移植你的插件和设置是轻而易举的事</td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">vscode-icons</td><td style="background: grey;border: 1px solid #dfe2e5;">侧边栏图标插件</td><td style="background: grey;border: 1px solid #dfe2e5;"></td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">Regex Previewer</td><td style="background: grey;border: 1px solid #dfe2e5;">正则表达式预览</td><td style="background: grey;border: 1px solid #dfe2e5;"></td>
-    </tr>
-    <tr>
-        <td style="background: grey;border: 1px solid #dfe2e5;">Document This</td><td style="background: grey;border: 1px solid #dfe2e5;">JSDoc注释插件</td><td style="background: grey;border: 1px solid #dfe2e5;">Ctrl+Alt+D</td>
-    </tr> 
-  <tbody>
-</table>
 
 **Theme**
 
