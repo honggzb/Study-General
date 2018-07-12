@@ -1,12 +1,13 @@
-```html
+
 <table>
   <thead>
-      <tr><th>插件</th><th>说明</th><th>快捷键</th></tr>
+      <tr><th style="text-align:center;">插件</th><th style="text-align:center;">说明</th><th style="text-align:center;">快捷键</th></tr>
   </thead>
-  <tr><td colspan="3"></td></tr>
+  <tbody>
+  <tr style="text-align:center;font-weight: bolder;"><td colspan="3">其他</td></tr>
   <tr>
       <td></td><td></td><td></td>
   </tr>
-  <tr><td colspan="3"></td></tr>
+  </tbody>
 </table>
-```
+
