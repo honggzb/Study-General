@@ -1,3 +1,5 @@
+**跨行: HTML table**
+
 <table>
   <blockquote>常用插件推荐</blockquote>
   <tr><th>插件</th><th>说明</th><th>快捷键</th></tr>
@@ -25,3 +27,4 @@
 
 - 表情一：:+1:
 - 表情二：:o:
+- Symbols： :one:
