@@ -3,6 +3,7 @@
 <table>
   <blockquote>常用快捷键推荐</blockquote>
   <tr><th colspan="2">格式调整</th></tr>
+  <tr><td>Code Formatting</td><td>Shift+Alf+F</td></tr>
   <tr><td>代码行缩进</td><td>Ctrl+[， Ctrl+]</td></tr>
   <tr><td>代码格式化</td><td>Shift+Alt+F，或Ctrl+Shift+P后输入format code(format selection)</td></tr>
   <tr><td>修剪空格</td><td>Ctrl+Shift+X</td></tr>
@@ -77,6 +78,7 @@
 <li><a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one" rel="nofollow">Markdown All In One</a>：Markdown 格式化</li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint" rel="nofollow">Markdownlint</a>: Markdown 语法检测</li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf" rel="nofollow">Markdown PDF</a>：Markdown 转 PDF</li>
+<li><a href="#" rel="nofollow">Markdown Shortcuts</a>: Markdown Shortcuts</li>
 <li><a href="">...</a></li>
 </ul>
       </td>
@@ -160,5 +162,13 @@
 - One Monokai
 - One Dark
 - Material Icon:   icon
+
+**自定义设置参考**
+
+```javascript
+ "files.autoGuessEncoding": true,        // 中文注释乱码
+ "editor.renderWhitespace": "all",  // 控制编辑器是否应呈现空白字符
+ "files.trimTrailingWhitespace": true,   // 启用后，将在保存文件时剪裁尾随空格。
+```
 
 https://github.com/zuojj/fedlab/issues/18
