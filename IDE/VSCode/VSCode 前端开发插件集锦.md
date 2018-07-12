@@ -55,37 +55,78 @@
   </tbody>
 </table>
 
-**常用插件推荐**
+<hr>
 
-| 插件 | 说明|快捷键|
-| :------------- | :------------- | :------------- |
-|**snippets**|---|---|
-|JavaScript (ES6) code snippets| |imd --> import { } from 'somewhere'|
-|AutoFileName|文件路径自动补全插件||
-|Path Intellisense| 文件路径提示 |   |
-|HTML Boilerplate|HTML 模板||
-|Bootstrap 4 & Font awesome snippets|   |   |
-|Vue 2 Snippets|   |   |
-|change-case|命名格式插件|camelCase（骆驼拼命名），PascalCase（首字母大写），kebab-case（中划线命名），underscore_delimited（下划线命名），CONSTANT（大写命名）等|
-|**其他**|---|---|
-|open in browser||将添加一个 [Open With Default Browser] 选项到右键菜单|
-|SVG Viewer|SVG 预览|  |
-|npm|   |   |
-|**CSS**|---|---|
-|Color Picker|代码的颜色选择器|   |
-|CSS Peek|跳转到 CSS 定义行||
-|Color Info|颜色信息及转换||
-|Color-Highlight|在编辑器中高亮显示颜色|   |
-|**Beauty**|---|---|
-|Prettier|格式化代码|代码美化, 快速格式化整个 JS 和 CSS 文档  :CMD + Shift + P -> Format Document|
-|Align|代码对齐插件|Ctrl+Alt+A|
-|文档编辑Markdown|---|---|
-|Markdown All in One|   |   |
-|**其他**|---|---|
-|Sync Settings |设置同步插件|你很有可能在多台电脑上进行编码工作。在电脑上移植你的插件和设置是轻而易举的事|
-|vscode-icons|侧边栏图标插件|   |
-|Regex Previewer|正则表达式预览|   |
-|Document This|JSDoc注释插件|Ctrl+Alt+D|
+<table>
+    <blockquote>常用插件推荐</blockquote>
+  <thead>
+      <tr><th style="text-align:center;">插件</th><th style="text-align:center;">说明</th><th style="text-align:center;">快捷键</th></tr>
+  </thead>
+  <tbody>
+    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">snippets</td></tr>
+    <tr>
+        <td>JavaScript (ES6) code snippets</td><td></td><td>imd --> import { } from 'somewhere'</td>
+    </tr>
+    <tr>
+        <td>AutoFileName</td><td>文件路径自动补全插件</td><td></td>
+    </tr>
+    <tr>
+        <td>Path Intellisense</td><td>文件路径提示</td><td></td>
+    </tr>
+    <tr>
+        <td>HTML Boilerplate</td><td>HTML 模板</td><td></td>
+    </tr>
+    <tr>
+        <td>Bootstrap 4 & Font awesome snippets</td><td>Vue 2 Snippets</td><td>等......</td>
+    </tr>
+    <tr>
+        <td>change-case</td><td>命名格式插件</td><td>camelCase骆驼拼命名，<br>PascalCase首字母大写，<br>kebab-case中划线命名，<br>underscore_delimited下划线命名，<br>CONSTANT大写命名，等</td>
+    </tr>
+    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">其他</td></tr>
+    <tr>
+        <td>open in browser</td><td>将添加一个 [Open With Default Browser] 选项到右键菜单</td><td></td>
+    </tr>
+    <tr>
+        <td>SVG Viewer</td><td>SVG 预览</td><td></td>
+    </tr>
+    <tr>
+        <td>npm</td><td></td><td></td>
+    </tr>
+    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">CSS相关</td></tr>
+    <tr>
+        <td>Color Picker</td><td>代码的颜色选择器</td><td></td>
+    </tr>
+    <tr>
+        <td>Color Info</td><td>颜色信息及转换</td><td></td>
+    </tr>
+    <tr>
+        <td>CSS Peek</td><td>跳转到 CSS 定义行</td><td></td>
+    </tr>
+    <tr>
+        <td>Color-Highlight</td><td>在编辑器中高亮显示颜色</td><td></td>
+    </tr> 
+    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">Beauty美化相关</td></tr>
+    <tr>
+        <td>Prettier</td><td>格式化代码，快速格式化整个JS和CSS文档</td><td>CMD+Shift+P -> Format Document</td>
+    </tr>
+    <tr>
+        <td>Align</td><td>代码对齐插件</td><td>Ctrl+Alt+A</td>
+    </tr>
+    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">其他 - optional</td></tr>
+    <tr>
+        <td>Sync Settings</td><td>设置同步插件</td><td>你很有可能在多台电脑上进行编码工作。在电脑上移植你的插件和设置是轻而易举的事</td>
+    </tr>
+    <tr>
+        <td>vscode-icons</td><td>侧边栏图标插件</td><td></td>
+    </tr>
+    <tr>
+        <td>Regex Previewer</td><td>正则表达式预览</td><td></td>
+    </tr>
+    <tr>
+        <td>Document This</td><td>JSDoc注释插件</td><td>Ctrl+Alt+D</td>
+    </tr> 
+  <tbody>
+</table>
 
 **Theme**
 
