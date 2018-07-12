@@ -1,9 +1,7 @@
 <table>
   <caption>常用插件推荐</caption>
-  <thead>
-      <tr><th style="text-align:center;">插件</th><th style="text-align:center;">说明</th><th style="text-align:center;">快捷键</th></tr>
-  </thead>
-  <tbody>
+
+    <tr><th>插件</th><th>说明</th><th>快捷键</th></tr>
     <tr style="text-align:center;font-weight: bolder;"><th colspan="3">snippets</th></tr>
     <tr>
         <td>JavaScript (ES6) code snippets</td><td></td><td>imd --> import { } from 'somewhere'</td>
@@ -22,51 +20,7 @@
     </tr>
     <tr>
         <td>change-case</td><td>命名格式插件</td><td>camelCase骆驼拼命名，<br>PascalCase首字母大写，<br>kebab-case中划线命名，<br>underscore_delimited下划线命名，<br>CONSTANT大写命名，等</td>
-    </tr>
-    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">其他</td></tr>
-    <tr>
-        <td>open in browser</td><td>将添加一个 [Open With Default Browser] 选项到右键菜单</td><td></td>
-    </tr>
-    <tr>
-        <td>SVG Viewer</td><td>SVG 预览</td><td></td>
-    </tr>
-    <tr>
-        <td>npm</td><td></td><td></td>
-    </tr>
-    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">CSS相关</td></tr>
-    <tr>
-        <td>Color Picker</td><td>代码的颜色选择器</td><td></td>
-    </tr>
-    <tr>
-        <td>Color Info</td><td>颜色信息及转换</td><td></td>
-    </tr>
-    <tr>
-        <td>CSS Peek</td><td>跳转到 CSS 定义行</td><td></td>
-    </tr>
-    <tr>
-        <td>Color-Highlight</td><td>在编辑器中高亮显示颜色</td><td></td>
     </tr> 
-    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">Beauty美化相关</td></tr>
-    <tr>
-        <td>Prettier</td><td>格式化代码，快速格式化整个JS和CSS文档</td><td>CMD+Shift+P -> Format Document</td>
-    </tr>
-    <tr>
-        <td>Align</td><td>代码对齐插件</td><td>Ctrl+Alt+A</td>
-    </tr>
-    <tr style="text-align:center;font-weight: bolder;"><td colspan="3">其他 - optional</td></tr>
-    <tr>
-        <td>Sync Settings</td><td>设置同步插件</td><td>你很有可能在多台电脑上进行编码工作。在电脑上移植你的插件和设置是轻而易举的事</td>
-    </tr>
-    <tr>
-        <td>vscode-icons</td><td>侧边栏图标插件</td><td></td>
-    </tr>
-    <tr>
-        <td>Regex Previewer</td><td>正则表达式预览</td><td></td>
-    </tr>
-    <tr>
-        <td>Document This</td><td>JSDoc注释插件</td><td>Ctrl+Alt+D</td>
-    </tr> 
-  <tbody>
 </table>
 
 <table class="d-block">
