@@ -13,6 +13,7 @@
   <tr><td>代码行缩进</td><td>Ctrl+[， Ctrl+]</td></tr>
   <tr><td>代码格式化</td><td>Shift+Alt+F，或Ctrl+Shift+P后输入format code(format selection)</td></tr>
   <tr><td>修剪空格</td><td>Ctrl+Shift+X</td></tr>
+  <tr><td>自动换行</td><td>Alt+Z</td></tr>
   <tr><th colspan="2">重构代码</th></tr>
   <tr><td>跳转到定义处</td><td>F12</td></tr>
   <tr><td>列出所有的引用</td><td>shift+F12</td></tr>
@@ -178,7 +179,8 @@
 ```javascript
  "files.autoGuessEncoding": true,        // 中文注释乱码
  "editor.renderWhitespace": "all",  // 控制编辑器是否应呈现空白字符
- "files.trimTrailingWhitespace": true,   // 启用后，将在保存文件时剪裁尾随空格。
+ "files.trimTrailingWhitespace": true,   // 启用后，将在保存文件时剪裁尾随空格
+ "editor.wordWrap": "on"          //word wrap自动换行
 ```
 
 **设置tab转空格并设置数量**
