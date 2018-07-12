@@ -28,3 +28,5 @@ http-server
 -r or --robots Provide a /robots.txt (whose content defaults to 'User-agent: *\nDisallow: /')
 -h or --help 打印以上列表并退出
 ```
+
+> https://www.npmjs.com/package/http-server
