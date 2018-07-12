@@ -1,4 +1,10 @@
-**常用快捷键**
+- [常用快捷键](#常用快捷键)
+- [前端开发常用插件列表](#前端开发常用插件列表)
+- [常用插件推荐](#常用插件推荐)
+- [Theme](#Theme)
+- [自定义设置参考](#自定义设置参考)
+
+### 常用快捷键
 
 <table>
   <blockquote>常用快捷键推荐</blockquote>
@@ -27,6 +33,8 @@
 </table>
 
 <hr>
+
+### 前端开发常用插件列表
 
 <table class="d-block">
   <tbody class="d-block">
@@ -88,7 +96,7 @@
 
 <hr>
 
-**常用插件推荐**
+### 常用插件推荐
 
 <table>
   <blockquote>常用插件推荐</blockquote>
@@ -157,18 +165,25 @@
 </table>
 <hr>
 
-**Theme**
+### Theme
 
 - One Monokai
 - One Dark
 - Material Icon:   icon
 
-**自定义设置参考**
+### 自定义设置参考
 
 ```javascript
  "files.autoGuessEncoding": true,        // 中文注释乱码
  "editor.renderWhitespace": "all",  // 控制编辑器是否应呈现空白字符
  "files.trimTrailingWhitespace": true,   // 启用后，将在保存文件时剪裁尾随空格。
 ```
+
+**设置tab转空格并设置数量**
+
+1. 在状态栏右下角点击  ---》空格：
+2. 选择“使用空格缩进”
+3. 选择 2 
+4. 然后就可以看到缩进变为2个空格了
 
 https://github.com/zuojj/fedlab/issues/18
