@@ -2,7 +2,6 @@
 
 <table>
   <blockquote>常用快捷键推荐</blockquote>
-  <tr><th>说明</th><th>快捷键</th></tr>
   <tr><th colspan="2">格式调整</th></tr>
   <tr><td>代码行缩进</td><td>Ctrl+[， Ctrl+]</td></tr>
   <tr><td>代码格式化</td><td>Shift+Alt+F，或Ctrl+Shift+P后输入format code(format selection)</td></tr>
@@ -87,13 +86,11 @@
 
 <hr>
 
+**常用插件推荐**
+
 <table>
   <blockquote>常用插件推荐</blockquote>
-  <thead>
-      <tr><th>:插件:</th><th>说明</th><th>快捷键</th></tr>
-  </thead>
-  <tbody>
-    <tr><th colspan="3">snippets</th></tr>
+  <tr><th colspan="3">snippets</th></tr>
     <tr>
         <td>JavaScript (ES6) code snippets</td><td></td><td>imd --> import { } from 'somewhere'</td>
     </tr>
@@ -155,9 +152,7 @@
     <tr>
         <td>Document This</td><td>JSDoc注释插件</td><td>Ctrl+Alt+D</td>
     </tr> 
-  <tbody>
 </table>
-
 <hr>
 
 **Theme**
