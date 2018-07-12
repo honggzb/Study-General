@@ -1,4 +1,4 @@
-
+```html
 <table>
   <blockquote>常用插件推荐</blockquote>
   <tr><th>插件</th><th>说明</th><th>快捷键</th></tr>
@@ -10,4 +10,4 @@
         <td>1</td><td>2</td><td>3</td>
   </tr>
 </table>
-
+```
