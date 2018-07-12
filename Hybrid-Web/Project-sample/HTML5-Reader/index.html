@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <style type="text/css">
+
+        </style>
+    </head>
+    <body>
+        <div id="root" class="container">
+            <div class="m-article-action"> <!-- 点击中间唤起上下边栏 -->
+                <div class="article-action-mid" id="action_mid"></div>
+            </div>
+            <div id="top_nav" class="top-nav" style="display: none;">
+                <div class="icon-back"></div>
+                <div class="nav-title">返回书架</div>
+            </div>
+            <div id="fiction_chapter_title" class=""></div>
+            <div id="fiction_container" class="m-read-content">
+
+            </div>
+            <div class="m-button-bar">
+                <ul class="u-tab">
+                    <li id="prev_button">上一章</li>
+                    <li id="next_button">下一章</li>
+                </ul>
+            </div>
+            <div class="nav-panel font_container" id="font_container" style="display: none;">
+                <div class="child-mod">
+                    <span>字号</span>
+                    <button id="large_font" class="font-size-button">大</button>
+                    <button id="small_font" class="font-size-button">小</button>
+                </div>
+                <div class="child-mod">
+                    <span>背景</span>
+                    <div class="bk-container"><div class="bk-container-current"></div></div>
+                    <div class="bk-container"><div class="bk-container-current"></div></div>
+                    <div class="bk-container"><div class="bk-container-current"></div></div>
+                    <div class="bk-container"><div class="bk-container-current"></div></div>
+                    <div class="bk-container"><div class="bk-container-current"></div></div>
+                </div>
+            </div>
+            <div id="bottom_nav" class="bottom-nav" style="display: none;">
+                <div class="bottom-nav-item"><div class="bottom-icon icon-index"></div><p class="bottom-nav-title">目录</p></div>
+                <div class="bottom-nav-item"><div class="bottom-icon icon-font"></div><p class="bottom-nav-title">字体</p></div>
+                <div class="bottom-nav-item">
+                    <div class="bottom-icon icon-day" style="display: none;"></div><p class="bottom-nav-title" style="display: none;">白天</p>
+                    <div class="bottom-icon icon-night"></div><p class="bottom-nav-title">夜间</p>
+                </div>
+            </div>
+        </div>
+        <script src="lib/zepto.js"></script>
+        <script>
+            window.jQuery = $;
+        </script>
+        <script src="js/jquery.base64.js"></script>
+        <script src="js/jquery.jsonp.js"></script>
+        <script src="js/my.js"></script>
+        <script>
+
+        </script>
+    </body>
+</html>
