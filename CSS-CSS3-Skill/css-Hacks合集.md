@@ -6,6 +6,11 @@
 - [4. 条件注释](#条件注释)
 - [5. 针对其他浏览器的HACK](#针对其他浏览器的HACK)
 
+```css
+-moz-padding-start:    /*firefox*/
+-webkit-      /*chrome*/
+```
+
 <h2 id="HACK的3种表现形式">1. CSS HACK的3种表现形式</h2>
 
 | 表现形式| 说明|
