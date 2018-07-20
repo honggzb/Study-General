@@ -2,9 +2,22 @@
     - [jquery判断(获取)checked的三种方法](#jquery判断)
     - [jquery赋值checked的几种写法](#jquery赋值checked的几种写法)
     - [问题： attr和prop方法区别- 建议使用prop方法](#问题)
-- [原因（理论基础）](#原因（理论基础）)
-- [补充-jQuery中attr和prop的区别](#补充-jQuery中attr和prop的区别)
-- [jQuery设置和获取select、checkbox、radio的选中值](#jQuery设置和获取select、checkbox、radio的选中值)
+- [原因和理论基础](#原因和理论基础)
+- [补充：jQuery中attr和prop的区别](#补充：jQuery中attr和prop的区别)
+    - [读取HTML元素固有属性（已赋值）](#读取HTML元素固有属性（已赋值）)
+    - [读取HTML元素固有属性（未赋值）](#读取HTML元素固有属性（未赋值）)
+    - [读取HTML元素自定义属性（已赋值）](#读取HTML元素自定义属性（已赋值）)
+    - [读取HTML元素自定义属性（未赋值）](#读取HTML元素自定义属性（未赋值）)
+    - [设置HTML元素固有属性](#设置HTML元素固有属性)
+    - [设置HTML元素自定义属性](#设置HTML元素自定义属性)
+- [jQuery设置和获取select、checkbox、radio的选中值](#jQuery设置和获取)
+    - [设置单选下拉框的选中值](#设置单选下拉框的选中值)
+    - [获取单选下拉框的选中值](#获取单选下拉框的选中值)
+    - [设置多选下拉框的选中值](#设置多选下拉框的选中值)
+    - [获取多选下拉框的选中值](#获取多选下拉框的选中值)
+    - [设置多选框的选中值](#设置多选框的选中值)
+    - [设置单选框的选中值](#设置单选框的选中值)
+    - [获取单选框的选中值](#获取单选框的选中值)
 
 ## 小结和问题
 
@@ -51,7 +64,7 @@ $("#protocol").blur(function () {
 });
 ```
 
-## 原因（理论基础）
+## 原因和理论基础
 
 ### HTML的属性分为attribute和property。故checked属性也分为：
 
@@ -74,7 +87,7 @@ $("#protocol").blur(function () {
 
 ![](https://i.imgur.com/sWMPNeT.gif)
 
-## 补充-jQuery中attr和prop的区别
+<h2 id="补充：jQuery中attr和prop的区别">补充：jQuery中attr和prop的区别</h2>
 
 - 对于HTML元素本身就带有的**固有属性**，在处理时建议使用**prop**方法
 - 对于HTML元素我们自定义的**DOM属性**，在处理时建议使用**attr**方法
@@ -92,7 +105,7 @@ prop设置属性值|prop只能设置固有属性值
 attr读取属性值|无论是固有属性还是自定义属性，attr只能读取元素中已有的属性值，读取元素中没有的属性值会返回undefine
 attr设置属性值|attr可以对任意属性设置属性值
 
-### 读取HTML元素固有属性（已赋值）
+<h3 id="读取HTML元素固有属性（已赋值）">读取HTML元素固有属性（已赋值）</h3>
 
 ```javascript
 <a href="#" target="_self">超链接</a>
@@ -103,7 +116,7 @@ alert($("a").attr("href"));
 alert($("a").prop("href"));
 ```
 
-### 读取HTML元素固有属性（未赋值）
+<h3 id="读取HTML元素固有属性（未赋值）">读取HTML元素固有属性（未赋值）</h3>
 
 不同HTML标签的固有属性不完全相同，例如：checked属性是checkbox标签的固有属性，但不是a标签的固有属性。class属性虽然是a标签的固有属性，但是如果元素中没有对该属性赋值，用attr()也是读取不到的。
 
@@ -120,7 +133,7 @@ alert($("a").attr("class"));//输出：undefine
 alert($("a").prop("class"));//输出：默认值""
 ```
 
-### 读取HTML元素自定义属性（已赋值）
+<h3 id="读取HTML元素自定义属性（已赋值）">读取HTML元素自定义属性（已赋值）</h3>
 
 ```javascript
 <a href="#" target="_self" uuu="guoguo">超链接</a>
@@ -128,7 +141,7 @@ alert($("a").attr("uuu"));//输出：guoguo
 alert($("a").prop("uuu"));//输出：undefine
 ```
 
-### 读取HTML元素自定义属性（未赋值）
+<h3 id="读取HTML元素自定义属性（未赋值）">读取HTML元素自定义属性（未赋值）</h3>
 
 ```javascript
 <a href="#" target="_self" uuu="guoguo">超链接</a>
@@ -136,7 +149,7 @@ alert($("a").attr("abc"));//输出：undefine
 alert($("a").prop("abc"));//输出：undefine
 ```
 
-### 设置HTML元素固有属性
+<h3 id="设置HTML元素固有属性">设置HTML元素固有属性</h3>
 
 ```javascript
 <a href="#" target="_self" uuu="guoguo">超链接</a>
@@ -144,7 +157,7 @@ $("a").attr("id","link");//id属性添加成功
 $("a").prop("id","link");//id属性添加成功
 ```
 
-### 设置HTML元素自定义属性
+<h3 id="设置HTML元素自定义属性">设置HTML元素自定义属性</h3>
 
 ```javascript
 <a href="#" target="_self" uuu="guoguo">超链接</a>
@@ -154,7 +167,7 @@ $("a").attr("action", "addAttribute");//成功添加属性action="addAttribute"
 $("a").prop("action", "addAttribute");//添加action属性失败
 ```
 
-## jQuery设置和获取select、checkbox、radio的选中值
+<h2 id="jQuery设置和获取">jQuery设置和获取select、checkbox、radio的选中值</h2>
 
 ### 设置单选下拉框的选中值
 
