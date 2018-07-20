@@ -1,11 +1,14 @@
 - [小结和问题](#小结和问题)
+    - [jquery判断(获取)checked的三种方法](#jquery判断)
+    - [jquery赋值checked的几种写法](#jquery赋值checked的几种写法)
+    - [问题： attr和prop方法区别- 建议使用prop方法](#问题)
 - [原因（理论基础）](#原因（理论基础）)
 - [补充：jQuery中attr和prop的区别](#补充：jQuery中attr和prop的区别)
 - [jQuery设置和获取select、checkbox、radio的选中值](#jQuery设置和获取select、checkbox、radio的选中值)
 
 ## 小结和问题
 
-### jquery判断(获取)checked的三种方法:
+<h3 id="jquery判断">jquery判断(获取)checked的三种方法</h3>
 
 ```javascript
 .attr('checked')   //看版本1.6+返回:"checked"或"undefined" ;1.5-返回:true或false
@@ -27,7 +30,7 @@ $("#cb1").prop("checked",function(){
 });
 ```
 
-### 问题： attr和prop方法区别- 建议使用prop方法
+<h3 id="问题">问题： attr和prop方法区别- 建议使用prop方法</h3>
 
 ```javascript
 // checked="checked"，但就是勾没有打上
@@ -50,7 +53,7 @@ $("#protocol").blur(function () {
 
 ## 原因（理论基础）
 
-### HTML的属性分为attribute和property。checked属性即分为：
+### HTML的属性分为attribute和property。故checked属性也分为：
 
 - attribute ->checked
 - property  ->true,false
