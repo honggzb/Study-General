@@ -1,3 +1,5 @@
+[jquery利用attr、prop方法判断input是否checked的区别+jQuery设置和获取select、checkbox、radio的选中值](#top)
+
 - [小结和问题](#小结和问题)
     - [jquery判断(获取)checked的三种方法](#jquery判断)
     - [jquery赋值checked的几种写法](#jquery赋值checked的几种写法)
@@ -64,6 +66,8 @@ $("#protocol").blur(function () {
 });
 ```
 
+[back to top](#top)
+
 ## 原因和理论基础
 
 ### HTML的属性分为attribute和property。故checked属性也分为：
@@ -86,6 +90,8 @@ $("#protocol").blur(function () {
 - 关于其他类似属性的图表
 
 ![](https://i.imgur.com/sWMPNeT.gif)
+
+[back to top](#top)
 
 <h2 id="补充：jQuery中attr和prop的区别">补充：jQuery中attr和prop的区别</h2>
 
@@ -166,6 +172,8 @@ $("a").prop("abc", "myself");//添加abc属性失败
 $("a").attr("action", "addAttribute");//成功添加属性action="addAttribute"
 $("a").prop("action", "addAttribute");//添加action属性失败
 ```
+
+[back to top](#top)
 
 <h2 id="jQuery设置和获取">jQuery设置和获取select、checkbox、radio的选中值</h2>
 
@@ -291,6 +299,8 @@ $("#btn4").click(function () {
 ### 获取单选框的选中值
 
 `alert($("input[type=radio][name=sport]:checked").val());`
+
+[back to top](#top)
 
 - [jQuery中attr()和prop()在修改checked属性时的区别](http://lib.csdn.net/article/jquery/35666)
 - [jquery判断checked的三种方法](https://blog.csdn.net/snn1410/article/details/10146309)
