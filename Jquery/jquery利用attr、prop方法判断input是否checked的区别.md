@@ -3,7 +3,7 @@
     - [jquery赋值checked的几种写法](#jquery赋值checked的几种写法)
     - [问题： attr和prop方法区别- 建议使用prop方法](#问题)
 - [原因（理论基础）](#原因（理论基础）)
-- [补充：jQuery中attr和prop的区别](#补充：jQuery中attr和prop的区别)
+- [补充-jQuery中attr和prop的区别](#补充-jQuery中attr和prop的区别)
 - [jQuery设置和获取select、checkbox、radio的选中值](#jQuery设置和获取select、checkbox、radio的选中值)
 
 ## 小结和问题
@@ -74,7 +74,7 @@ $("#protocol").blur(function () {
 
 ![](https://i.imgur.com/sWMPNeT.gif)
 
-## 补充：jQuery中attr和prop的区别
+## 补充-jQuery中attr和prop的区别
 
 - 对于HTML元素本身就带有的**固有属性**，在处理时建议使用**prop**方法
 - 对于HTML元素我们自定义的**DOM属性**，在处理时建议使用**attr**方法
