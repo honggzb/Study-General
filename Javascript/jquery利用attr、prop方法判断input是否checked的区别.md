@@ -58,7 +58,8 @@ $("#protocol").blur(function () {
 ### 注意事项：
 
 - 使用prop($.attr("checked"))的话输出则分别为false和true。property则随其变化而变化
-- checkbox若未定义`checked="checked"`，`$.attr("checked")` 的结果是undefined。若已定义则结果是checked
+- checkbox若未定义`checked="checked"`，`$.attr("checked")` 的结果是`undefined`。若已定义则结果是`checked`
+  - 如果当前input中初始化定义了checked属性，无论`checked=""`或 `checked="checked"`，当前checkbox都处于选中状态, `$("#selectAll").attr("checked")`都会返回`"checked"`；
 - 修改checked属性时要使用prop()。prop()在jQuery1.6版本后新增。
 - 关于其他类似属性的图表
 
@@ -66,3 +67,4 @@ $("#protocol").blur(function () {
 
 - [jQuery中attr()和prop()在修改checked属性时的区别](http://lib.csdn.net/article/jquery/35666)
 - [jquery判断checked的三种方法](https://blog.csdn.net/snn1410/article/details/10146309)别](#top)
+
