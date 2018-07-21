@@ -11,6 +11,7 @@
 - [方式八: 利用对象的属性不能相同的特点进行去重](#利用对象的属性不能相同的特点进行去重)
 - [补充：合并数组并去重的方法](#合并数组并去重的方法)
 - [补充：特殊类型比较的不同](#特殊类型比较的不同)
+- [补充：补充：JS对以对象组成的数组去重(reduce)- **推荐**](#JS对以对象组成的数组去重)
 
 <h2 id="方式一">方式一: 常规模式(优化遍历数组法)(双重循环)</h2>
 
@@ -281,6 +282,40 @@ function concatArray(arr1,arr2){
   return arr1;
 }
 ```
+
+[back to top](#top)
+
+<h2 id="JS对以对象组成的数组去重">补充：JS对以对象组成的数组去重(reduce)</h2>
+
+采用数组中的reduce方法，遍历数组，也是通过对象访问属性的方法, reduce第一个参数是遍历需要执行的函数，第二个参数是item的初始值
+
+```javascript
+var arr = [{
+    "name": "ZYTX",
+    "age": "Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix",
+    "gender": "AAAAAA.doc"
+}, {
+    "name": "ZYTA",
+    "age": "Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix",
+    "gender": "BBBBBB.doc"
+}, {
+    "name": "ZDTX",
+    "age": "Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix",
+    "gender": "CCCCCC.doc"
+}, {
+    "name": "ZYTX",
+    "age": "Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix",
+    "gender": "AAAAAA.doc"
+}];
+var hash = {};             //arr是要去重的对象数组
+arr = arr.reduce(function(item, next) {
+    hash[next.name] ? '' : hash[next.name] = true && item.push(next);
+    return item;
+}, [])
+console.log(arr);
+```
+
+https://segmentfault.com/q/1010000006954351
 
 [back to top](#top)
 
