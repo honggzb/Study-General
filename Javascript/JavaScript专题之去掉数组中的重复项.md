@@ -317,6 +317,37 @@ console.log(arr);
 
 https://segmentfault.com/q/1010000006954351
 
+```javascript
+var str1 = [
+    { key: '01', value: '哈哈' },
+    { key: '04', value: '皮皮' },
+    { key: '02', value: '旺旺' },
+    { key: '03', value: '娃娃' },
+    { key: '04', value: '皮皮'},
+    { key: '05', value: '波波'}
+];
+var str2 = [], tmp = {};
+str1.forEach(function(data){
+    if(!tmp[data.key]){
+        str1.push(data.key);
+        tmp[data.key] = true;
+    }
+})
+console.log(str2);
+angular.forEach(array , function(data, index, array){
+    console.log(data == array[index]); //true
+})
+array.forEach(function(data, index, array){
+    console.log(data == array[index]);      //true
+})
+```
+
+参数
+
+- data:  第一个是value, 遍历时当前的数据(数组中的每一项)
+- index:  第二个是下标（index）遍历时当前索引
+- array：第三个是需要遍历的集合
+
 [back to top](#top)
 
 <h2 id="特殊类型比较的不同">补充： 特殊类型比较的不同</h2>
