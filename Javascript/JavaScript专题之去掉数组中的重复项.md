@@ -12,6 +12,7 @@
 - [补充：合并数组并去重的方法](#合并数组并去重的方法)
 - [补充：特殊类型比较的不同](#特殊类型比较的不同)
 - [补充：补充：JS对以对象组成的数组去重(reduce)- **推荐**](#JS对以对象组成的数组去重)
+- [forEach在js array和angular中的定义](#forEach在js-array和angular中的定义)
 
 <h2 id="方式一">方式一: 常规模式(优化遍历数组法)(双重循环)</h2>
 
@@ -316,6 +317,8 @@ console.log(arr);
 ```
 
 https://segmentfault.com/q/1010000006954351
+
+### forEach在js array和angular中的定义
 
 ```javascript
 var str1 = [
