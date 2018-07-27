@@ -124,6 +124,9 @@
         <td>open in browser</td><td>将添加一个 [Open With Default Browser] 选项到右键菜单</td><td></td>
     </tr>
     <tr>
+        <td>Quokka</td><td>调试工具插件</td><td>能够根据你正在编写的代码提供实时反馈。它易于配置，并能够预览变量的函数和计算值结果</td>
+    </tr>
+    <tr>
         <td>SVG Viewer</td><td>SVG 预览</td><td></td>
     </tr>
     <tr>
@@ -133,6 +136,9 @@
         <td>npm</td><td></td><td></td>
     </tr>
     <tr><th colspan="3">CSS相关</th></tr>
+    <tr>
+        <td>CSS Peek</td><td>追踪至样式表中 CSS 类和 ids 定义的地方</td><td>在 HTML 文件中右键单击选择器时，选择“ Go to Definition 和 Peek definition ”选项，它便会给你发送样式设置的 CSS 代码</td>
+    </tr>
     <tr>
         <td>Color Picker</td><td>代码的颜色选择器</td><td></td>
     </tr>
