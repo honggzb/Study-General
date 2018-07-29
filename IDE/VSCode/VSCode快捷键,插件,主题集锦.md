@@ -137,16 +137,15 @@
     </tr>
     <tr><th colspan="3">CSS相关</th></tr>
     <tr>
-        <td>CSS Peek</td><td>追踪至样式表中 CSS 类和 ids 定义的地方</td><td>在 HTML 文件中右键单击选择器时，选择“ Go to Definition 和 Peek definition ”选项，它便会给你发送样式设置的 CSS 代码</td>
+        <td>CSS Peek</td><td>追踪至样式表中 CSS 类和 ids 定义的地方</td><td>在 HTML 文件中右键单击选择器时，选择“ Go to Definition 和 Peek definition ”选项，它便会给你发送样式设置的 CSS 代码<br>Peek: load the css file inline and make quick edits right there.<br> (Ctrl+Shift+F12)
+Go To: jump directly to the css file or open it in a new editor (F12)<br>
+Hover: show the definition in a hover over the symbol (Ctrl+hover)</td>
     </tr>
     <tr>
         <td>Color Picker</td><td>代码的颜色选择器</td><td></td>
     </tr>
     <tr>
         <td>Color Info</td><td>颜色信息及转换</td><td></td>
-    </tr>
-    <tr>
-        <td>CSS Peek</td><td>跳转到 CSS 定义行</td><td></td>
     </tr>
     <tr>
         <td>Color-Highlight</td><td>在编辑器中高亮显示颜色</td><td></td>
