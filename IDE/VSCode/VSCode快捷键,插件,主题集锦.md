@@ -7,8 +7,7 @@
 ### 常用快捷键
 
 <table>
-  <blockquote>常用快捷键推荐</blockquote>
-  <tr><th colspan="2">格式调整</th></tr>
+  <tr><th colspan="2" color="red">格式调整</th></tr>
   <tr><td>Code Formatting</td><td>Shift+Alf+F</td></tr>
   <tr><td>代码行缩进</td><td>Ctrl+[， Ctrl+]</td></tr>
   <tr><td>代码格式化</td><td>Shift+Alt+F，或Ctrl+Shift+P后输入format code(format selection)</td></tr>
