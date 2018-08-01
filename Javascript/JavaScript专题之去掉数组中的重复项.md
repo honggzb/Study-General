@@ -11,7 +11,7 @@
 - [方式八: 利用对象的属性不能相同的特点进行去重](#利用对象的属性不能相同的特点进行去重)
 - [补充：合并数组并去重的方法](#合并数组并去重的方法)
 - [补充：特殊类型比较的不同](#特殊类型比较的不同)
-- [补充：补充：JS对以对象组成的数组去重(reduce)- **推荐**](#JS对以对象组成的数组去重)
+- [补充：JS对以对象组成的数组去重(reduce)- **推荐**](#JS对以对象组成的数组去重)
 - [forEach在js array和angular中的定义](#forEach在js-array和angular中的定义)
 
 <h2 id="方式一">方式一: 常规模式(优化遍历数组法)(双重循环)</h2>
@@ -291,6 +291,16 @@ function concatArray(arr1,arr2){
 采用数组中的reduce方法，遍历数组，也是通过对象访问属性的方法, reduce第一个参数是遍历需要执行的函数，第二个参数是item的初始值
 
 ```javascript
+//一般简单数组去重
+
+arr = arr.sort().reduce(function(accumulator, currentValue)
+{
+	if(accumulator.length===0 ||accumulator[accumulator.length-1]!=currentValue){
+		accumulator.push(currentValue)
+	}; 
+	return accumulator;
+}, []);
+//对象组成的数组去重
 var arr = [{
     "name": "ZYTX",
     "age": "Y13xG_4wQnOWK1QwJLgg11d0pS4hewePU95UHtpMl3eE81uS74NC-6zu-Rtnw4Ix",
