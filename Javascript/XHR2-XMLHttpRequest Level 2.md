@@ -128,7 +128,10 @@ xhr.onload = function(e) {
 xhr.send();
 ```
 
-opentext Media management项目
+**opentext Media management项目** - IE ignores octet-stream - how to force download?
+
+- Content-Type: application/octet-stream
+- Content-Type: Application/pdf
 
 ```javascript
 //<img src="" />
