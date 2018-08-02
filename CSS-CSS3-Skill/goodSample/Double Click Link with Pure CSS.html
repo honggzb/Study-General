@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Implementing a 'Double Click' Link with Pure CSS</title>
+<style>
+.doubleclick {
+  position: relative;
+  overflow: hidden;
+}
+.doubleclick__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  animation-delay: 0.5s;
+}
+.doubleclick__layer-1 {
+  background-color: red;
+  transition-delay: 0.5s;
+  transition-property: transform;
+}
+.doubleclick__layer-1:focus {
+  transform: translateX(-100%);
+  transition-delay: 0s;
+}
+.doubleclick__layer-1:focus + .doubleclick__layer-2 {
+  animation-name: show;
+  animation-fill-mode: forwards;
+}
+.doubleclick__layer-2 {
+  background-color: green;
+  transform: translateX(-100%);
+}
+@keyframes show {
+  from {
+    transform: none;
+  }
+  to {
+    transform: none;
+  }
+}
+.focus-within:focus-within .element {
+  color: #28a745;
+}
+
+.container{ width: 85%; margin: 3% auto;display: block;}
+.card {max-width: 286px; float: left;}
+code {
+    font-size: 1rem;
+    color: #e83e8c;
+    word-break: break-word;
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+.card {max-width: 286px;}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #005cbf;
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+</style>
+</head>
+<body>
+    
+    <div class="container">   
+        <h2>Implementing a 'Double Click' Link with Pure CSS </h2> 
+        <section class="my-5">
+          <h3>
+            1. Double-click link
+          </h3>
+          <p>
+            Used <code>&lt;a&gt;</code> tags with a <code>tabindex</code> because these where the only elements that are stylable in all browsers. The <code>href</code> is removed to prevent navigation or page jumps (with #-links).
+          </p>
+          <p>
+            This
+            <span class="doubleclick">
+              <a href="https://www.google.com" target="_blank">link to google</a>
+              <a tabindex="0" aria-hidden="true" class="doubleclick__layer doubleclick__layer-1"></a>
+              <a tabindex="0" aria-hidden="true" class="doubleclick__layer doubleclick__layer-2"></a>
+            </span> can only be opened by double clicking it.
+          </p>
+      
+        </section>
+      
+        <section class="my-5">
+          <h3>
+            2. Double-click video
+          </h3>
+          <p>
+            Double-click to play or pause the video.
+          </p>
+          <div class="doubleclick embed-responsive embed-responsive-16by9">
+            <video controls="controls" width="640" height="360">
+              <source src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4" />
+              <source src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.webm" type="video/webm" />
+              <source src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv" type="video/ogg" />
+            </video>
+            <a tabindex="0" aria-hidden="true" class="doubleclick__layer doubleclick__layer-1"></a>
+            <a tabindex="0" aria-hidden="true" class="doubleclick__layer doubleclick__layer-2"></a>
+          </div>
+          <p class="mb-0 mt-2 small">
+            Thanks <a href="https://gist.github.com/amineatallah/2469536" target="_blank">Amine Atallah</a> for providing this hosted video.
+          </p>
+        </section>
+      
+        <section class="my-5">
+          <h3>
+            3. Double-click youtube video
+          </h3>
+          <p>
+            Double-click to play or pause the video. I've disabled the fullscreen mode, but if you enable this, the video will open fullscreen when you doubleclick it. Add the <code>allowfullscreen</code> attribute in this codepen to see this in action.
+          </p>
+      
+          <div class="doubleclick embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+            <a tabindex="0" aria-hidden="true" class="doubleclick__layer doubleclick__layer-1"></a>
+            <a tabindex="0" aria-hidden="true" class="doubleclick__layer doubleclick__layer-2"></a>
+          </div>
+      
+        </section>
+      
+        <section class="my-5">
+          <h3>
+            4. Double-click to change text color of another element
+          </h3>
+          <p>
+            This example doesn't use the <code>pointer-events</code>  property but the <code>:focus-within</code> pseudo class. Not supported in IE & Edge at this moment (<a href="https://caniuse.com/#feat=css-focus-within" target="_blank">view supported browsers</a>).
+          </p>
+      
+          <div class="doubleclick">
+            <div class="d-flex flex-wrap focus-within">
+      
+              <div class="card mb-3 mr-3">
+                <div class="card-body">
+                  <a tabindex="0" class="btn btn-primary js-btn">
+                    Double-click me
+                  </a>
+                </div>
+              </div>
+      
+              <div class="card mb-3 mr-3">
+                <div class="card-body">
+                  <p class="card-text element">This text changes color if the button in card 1 is double-clicked.</p>
+                </div>
+              </div>
+      
+            </div>
+            <a tabindex="0" aria-hidden="true" class="doubleclick__layer doubleclick__layer-1"></a>
+            <a tabindex="0" aria-hidden="true" class="doubleclick__layer doubleclick__layer-2"></a>
+          </div>
+        </section>
+      
+      </div>
+</body>
+</html>
