@@ -7,6 +7,7 @@
   - [4. “Port 4200 is already in use” when running the ng serve command](#port4200)
   - [5. JavaScript heap out of memory](#JavaScript)
   - [6. Can't bind to 'ngModel' since it isn't a known property of 'input'](#input)
+  - [7. ‘ANGULAR.JSON’ COULD NOT BE FOUND](#COULD-NOT-BE-FOUND)
 - [Angular MATERIAL](#angularM)
   - [1. Type 'ElementRef' is not generic](#ElementRef)
 
@@ -134,6 +135,27 @@ ng build --prod
 <h3 id="input">6. Can't bind to 'ngModel' since it isn't a known property of 'input'</h3>
 
 `import { FormsModule } from '@angular/forms';`
+
+
+<h3 id="COULD-NOT-BE-FOUND">7. ‘ANGULAR.JSON’ COULD NOT BE FOUND</h3>
+
+**ERROR**: LOCAL WORKSPACE FILE (‘ANGULAR.JSON’) COULD NOT BE FOUND
+
+**Reason**: your global @angular/cli , project @angular/cli version or @angular/compiler-cli doesn’t match
+
+**Solution**:
+
+```shell
+ng -v    #check cli global version
+#check cli project version in package.json
+"@angular/cli": "6.0.0-rc.3",
+"@angular/compiler-cli": "^5.2.0",
+#solution
+npm uninstall -D @angular/cli      #-D or -save-dev: uninstall project package
+npm install -D @angular/cli@5.2.0  #-D or -save-dev: install project package
+# upgrade global run @angular/cli
+npm install -g @angular/cli@latest
+```
 
 [back to top](#top)
 
