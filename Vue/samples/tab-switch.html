@@ -36,9 +36,7 @@
              v-bind:class="['tab-button', { active: currentTab === tab }]"
              v-on:click="currentTab = tab"
      >{{ tab }}</button>
-     <component v-bind:is="currentTabComponent"
-                class="tab"
-     ></component>
+     <component v-bind:is="currentTabComponent" class="tab"></component>
 </div>
 <script>
 Vue.component('tab-home', { 
