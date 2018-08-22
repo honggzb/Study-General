@@ -1,6 +1,13 @@
 ```
-sample
-tab-switch.html  tab切换例子（动态组件）
+├── sample
+│   ├── tab-switch.html        -tab切换例子（动态组件）
+│   ├── 
+│   ├── 
+│   └── 
+│
+├── Vue官网学习小结.md
+├── Vue官网学习小结之组件.md
+└──  
 ```
 
 ### Vue学习资源
