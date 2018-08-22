@@ -1,3 +1,8 @@
+```
+sample
+tab-switch.html  tab切换例子（动态组件）
+```
+
 ### Vue学习资源
 
 - [vuejs官网](https://vuejs.org/)
