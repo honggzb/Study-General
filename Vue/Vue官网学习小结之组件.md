@@ -5,11 +5,14 @@
     - [局部注册](#局部注册)
     - [在模块系统中局部注册](#在模块系统中局部注册)
     - [基础组件的自动化全局注册](#基础组件的自动化全局注册)
-- [传递数据](#[传递数据])
+- [传递数据](#传递数据)
     - 父组件通过Prop向子组件传递数据
     - 子组件通过事件向父级组件发送消息
     - 通过插槽分发内容
     - 动态组件
+- [Prop](#Prop)
+    - [Prop基础概念](#Prop基础概念)
+    - [Prop的类型验证](#Prop的类型验证)
 
 ## 组件
 
@@ -38,7 +41,7 @@ Vue.component('button-counter', {
 var ComponentA = { /* ... */ }
 var ComponentB = { /* ... */ }
 var ComponentC = { /* ... */ }
-//Vue根实例 
+//Vue根实例
 new Vue({
   el: '#app'
   components: {
@@ -145,7 +148,7 @@ Vue.component('blog-post', {
   props: ['post'],
   template: `
     <div class="blog-post">
-      <h3>{{ post.title }}</h3> 
+      <h3>{{ post.title }}</h3>
       <!-- 第二个参数是子组件抛出的值 -->
       <button v-on:click="$emit('enlarge-text', 0.1)"> Enlarge text </button>
       <div v-html="post.content"></div>
@@ -185,7 +188,7 @@ Vue.component('blog-post', {
   props: ['post'],
   template: `
     <div class="blog-post">
-      <h3>{{ post.title }}</h3> 
+      <h3>{{ post.title }}</h3>
       <button v-on:click="$emit('enlarge-text', 0.1)"> Enlarge text </button>
       <div v-html="post.content"></div>
     </div>
@@ -206,7 +209,7 @@ new Vue({
   methods: {
         onEnlargeText: function (enlargeAmount) {
             this.postFontSize += enlargeAmount
-          } 
+          }
     }
 })
 </script>
@@ -256,7 +259,7 @@ Vue.component('alert-box', {
 })
 </script>
 <!--父组件, 将父组件的内容传递到子组件的slot中 -->
-<alert-box>Something bad happened.</alert-box> 
+<alert-box>Something bad happened.</alert-box>
 ````
 
 **动态组件**
@@ -265,14 +268,14 @@ Vue.component('alert-box', {
 
 ```html
 <script>
-Vue.component('tab-home', { 
-	template: '<div>Home component</div>' 
+Vue.component('tab-home', {
+	template: '<div>Home component</div>'
 })
-Vue.component('tab-posts', { 
-	template: '<div>Posts component</div>' 
+Vue.component('tab-posts', {
+	template: '<div>Posts component</div>'
 })
-Vue.component('tab-archive', { 
-	template: '<div>Archive component</div>' 
+Vue.component('tab-archive', {
+	template: '<div>Archive component</div>'
 })
 new Vue({
   el: '#dynamic-component-demo',
@@ -301,3 +304,73 @@ new Vue({
 ```
 
 [back to top](#top)
+
+## Prop
+
+### Prop基础概念
+
+**Prop类型**
+
+- 字符串数组
+- 对象
+
+**传递类型**
+
+- 传递静态Prop:   `<blog-post title="My journey with Vue"></blog-post>`
+- 传递动态Prop:   使用v-bind, `<blog-post v-bind:title="post.title + ' by ' + post.author.name"></blog-post>`
+- 除了常量外，变量必须使用动态传递方式，即必须使用v-bind
+
+**单向数据流 -- 所有的prop都使得其父子prop之间形成了一个单向下行绑定**
+
+> 注意在JavaScript中对象和数组是通过引用传入的，所以对于一个数组或对象类型的 prop 来说，在子组件中改变这个对象或数组本身将会影响到父组件的状态
+
+
+### Prop的类型验证
+
+```javascript
+Vue.component('my-component', {
+  props: {
+    // 基础的类型检查 (`null` 匹配任何类型)
+    propA: Number,
+    propB: [String, Number],   // 多个可能的类型
+    propC: {
+      type: String,
+      required: true           // 必填的字符串
+    },
+    propD: {
+      type: Number,
+      default: 100             // 带有默认值的数字
+    },
+    propE: {
+      type: Object,
+      // 对象或数组且一定会从一个工厂函数返回默认值
+      default: function () {
+        return { message: 'hello' }       // 带有默认值的对象
+      }
+    },
+    propF: {
+      validator: function (value) {       // 自定义验证函数
+        // 这个值必须匹配下列字符串中的一个
+        return ['success', 'warning', 'danger'].indexOf(value) !== -1
+      }
+    }
+  }
+})
+```
+
+**自定义的type**： 可以自定义的key构造函数
+
+```javascript
+//自定义的构造函数- Person Object
+function Person (firstName, lastName) {
+  this.firstName = firstName
+  this.lastName = lastName
+}
+Vue.component('blog-post', {
+  props: {
+    author: Person     //验证author的prop的值是否是通过new Person创建的
+  }
+})
+```
+
+
