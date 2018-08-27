@@ -1,7 +1,11 @@
 
-- [HeadJS](http://headjs.com/) 
+- [HeadJS](#HeadJS) 
+- [graphqlJS](#graphqlJS)
 
-**headjs实现网站并行加载但顺序执行JS**
+## HeadJS
+
+- http://headjs.com/
+- **headjs实现网站并行加载但顺序执行JS**
 
 ```javascript
 <script src="js/head.min.js"></script>
@@ -27,3 +31,8 @@ head.js("http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js");
 - Know if the user is in landscape or portrait mode
 - Or whether the client is using a mobile or desktop device
 - Get old browsers to support HTML5 elements like nav, sidebar, header, footer, ...
+
+
+## graphql
+
+https://www.howtographql.com/
