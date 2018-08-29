@@ -2,8 +2,9 @@
 
 ## React官方
 
-- 官网地址：http://facebook.github.io/react/
+- 官网地址：https://reactjs.org/
 - Github地址：https://github.com/facebook/react
+- [中文官网](https://react.docschina.org/)
 - [react route](https://github.com/ReactTraining/react-router)
 - [Redux](https://redux.js.org/)
 
