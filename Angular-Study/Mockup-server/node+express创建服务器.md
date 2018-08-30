@@ -247,7 +247,7 @@ exports.index = function (req, res, next) {
 
 [back to top](#top)
 
-<h2 id="KOE">7. KOE</h2>
+<h2 id="koe">7. KOE+webpack web server</h2>
 
 ### 模拟接口
 
@@ -371,8 +371,6 @@ module.exports = {
     }
 }
 ```
-
-
 
 > Reference
 > [tsconfig.json配置](https://www.cnblogs.com/hnshi/p/7654842.html)
