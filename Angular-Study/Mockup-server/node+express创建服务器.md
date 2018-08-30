@@ -8,6 +8,7 @@
 - [4. 配置angular使用express服务器](#配置angular使用express服务器)
 - [5. webSocket服务器](#webSocket服务器)
 - [6. MYSQL+NODE/EXPRESS](#MYSQL)
+- [7. koa+webpack web server](#koa)
 
 <h2 id="初始化环境">1. 初始化环境</h2>
 
@@ -245,6 +246,133 @@ exports.index = function (req, res, next) {
 ```
 
 [back to top](#top)
+
+<h2 id="KOE">7. KOE</h2>
+
+### 模拟接口
+
+模拟接口的代码都写在`./mock`目录下，接口文件是`./mock/server.js`（目前只有这一个文件，真正开发项目时，应该会分不同模块）
+
+```javascript
+//server.js
+var app = require('koa')();
+var router = require('koa-router')();
+var koaBody = require('koa-body')();
+router.get('/', function *(next) {
+    this.body = 'hello koa !'
+});
+router.get('/api', function *(next) {
+    this.body = 'test data'
+});
+router.get('/api/1', function *(next) {
+    this.body = 'test data 1'
+});
+router.get('/api/2', function *(next) {
+    this.body = {
+        a: 1,
+        b: '123'
+    }
+});
+router.post('/api/post', koaBody, function *(next) {
+    console.log(this.request.body)
+    this.body = JSON.stringify(this.request.body)
+});
+app.use(router.routes())
+   .use(router.allowedMethods());
+app.listen(3000);
+```
+
+然后在`./package.json`中增加如下代码，然后执行`npm run mock`即可启动模拟的接口服务。
+
+```
+  "scripts": {
+    "mock": "node --harmony ./mock/server.js",
+  },
+```
+
+启动之后，随便找一个 get 的接口，访问以下，例如`http://localhost:3000/api/1`
+
+### 使用 webpack-dev-server 的代理
+
+koa 接口的端口是`3000`，而我们项目的接口是`8080`，这样不就跨域了吗？————如果默认情况下，肯定是跨域了。此时就需要 webpack-dev-server 做一个代理的转发。配置代码在`./webpack.config.js`中
+
+```javascript
+var path = require('path')
+var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+// var nodeModulesPath = path.resolve(__dirname, 'node_modules')
+// console.log(process.env.NODE_ENV)
+module.exports = {
+    entry: path.resolve(__dirname, 'app/index.jsx'),
+    output: {
+        path: __dirname + "/build",
+        filename: "bundle.js"
+    },
+
+    resolve:{
+        extensions:['', '.js','.jsx']
+    },
+    module: {
+        // preLoaders: [
+        //     // 报错 ？？？？？
+        //     {test: /\.(js|jsx)$/, loader: "eslint-loader", exclude: /node_modules/}
+        // ],
+        loaders: [
+            { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: 'babel' },
+            { test: /\.less$/, exclude: /node_modules/, loader: 'style!css!postcss!less' },
+            { test: /\.css$/, exclude: /node_modules/, loader: 'style!css!postcss' },
+            { test:/\.(png|gif|jpg|jpeg|bmp)$/i, loader:'url-loader?limit=5000' },  // 限制大小5kb
+            { test:/\.(png|woff|woff2|svg|ttf|eot)($|\?)/i, loader:'url-loader?limit=5000'} // 限制大小小于5k
+        ]
+    },
+
+    eslint: {
+        configFile: '.eslintrc' // Rules for eslint
+    },
+
+    postcss: [
+        require('autoprefixer') //调用autoprefixer插件，例如 display: flex
+    ],
+
+    plugins: [
+        // html 模板插件
+        new HtmlWebpackPlugin({
+            template: __dirname + '/app/index.tmpl.html'
+        }),
+        // 热加载插件
+        new webpack.HotModuleReplacementPlugin(),
+
+        // 打开浏览器
+        new OpenBrowserPlugin({
+          url: 'http://localhost:8080'
+        }),
+
+        // 可在业务 js 代码中使用 __DEV__ 判断是否是dev模式（dev模式下可以提示错误、测试报告等, production模式不提示）
+        new webpack.DefinePlugin({
+          __DEV__: JSON.stringify(JSON.parse((process.env.NODE_ENV == 'dev') || 'false'))
+        })
+    ],
+    devServer: {
+        proxy: {
+          // 凡是 `/api` 开头的 http 请求，都会被代理到 localhost:3000 上，由 koa 提供 mock 数据。
+          // koa 代码在 ./mock 目录中，启动命令为 npm run mock
+          '/api': {
+            target: 'http://localhost:3000',
+            secure: false
+          }
+        },
+        contentBase: "./public", //本地服务器所加载的页面所在的目录
+        colors: true, //终端中输出结果为彩色
+        historyApiFallback: true, //不跳转
+        inline: true, //实时刷新
+        hot: true  // 使用热加载插件 HotModuleReplacementPlugin
+    }
+}
+```
+
+
 
 > Reference
 > [tsconfig.json配置](https://www.cnblogs.com/hnshi/p/7654842.html)
