@@ -15,7 +15,8 @@
 - [17.Array.find简写 -数组中查找某个值](#Array-find简写)
 - [18.Object[key]简写- 如编写通用验证函数](#Object[key]简写)
 - [19.双重非位运算简写](#双重非位运算简写)
-- [补1：利用parseInt(str)字符串转换为数字- 简写`+(str)`](#字符串转换为数字)
+- **[补1：利用parseInt(str)字符串转换为数字- 简写`+(str)`](#字符串转换为数字)**
+- **[==和===使用技巧](#使用技巧)**
 - [补3：利用Array.prototype.contcat对象转换为字符串](#对象转换为字符串)
 - [补2：利用Object.assign快速创建并复制对象](#快速创建并复制对象)
 - 补4：一行代码实现数组去重: `[...new Set([1,2,2,3,1,'a',3,'a',3])]`
@@ -296,6 +297,17 @@ console.log(parseInt(str));
 //简写：
 console.log(+(str))
 ```
+
+[back to top](#top)
+
+<h3 id="使用技巧">==和===使用技巧</h3>
+
+`obj.c == null`判断了两种情况，等价于
+
+ - obj.c === undefined
+ - obj.c === null
+ 
+ 除此之外，其他最后都用===
 
 [back to top](#top)
 
