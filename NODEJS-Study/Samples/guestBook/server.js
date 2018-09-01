@@ -51,7 +51,7 @@ var server = http.createServer((req, res) => {
             }
             res.end(data);
         });
-    }else if(pathname.indexOf('/public/') === 0) {
+    }else if(pathname.indexOf('/public/') === 0) {    //处理静态文件
         fs.readFile('.'+pathname, (err, data)=>{
             if (err) {
               return res.end('404 Not Found.');
