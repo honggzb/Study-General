@@ -1,6 +1,7 @@
 - 在线文档
   - [印记中文-各种在线文档](https://docschina.org/)
   - [javascipt代码规范](https://standardjs.com/)
+  - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [web前端技术](#web前端技术)
   - [html5](#html5)
   - [CSS3](#CSS3)
