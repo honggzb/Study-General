@@ -8,7 +8,7 @@
 - $GET 直接或查询字符串数据
 - Node 中需要动手来解析url
 
-`url.parse()`
+**`url.parse()`**
 
 + /pinglun?name=jack&message=hello
   + split('?')
@@ -22,7 +22,8 @@
 
 ### 在Node中实现服务器重定向
 
-+ `header('location')`
+**`header('location')`**
+
     * 301 永久重定向 浏览器会记住
       - a.com b.com
       - a 浏览器不会请求 a 了
