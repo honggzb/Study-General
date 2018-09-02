@@ -8,6 +8,7 @@
   - [4. html5背景音乐不自动播放解密(bug)](#html5背景音乐不自动播放解密)
   - [5. ios不支持fixed属性解决](#ios不支持fixed属性解决)
   - [6. input输入手机号之间间隔  例如：xxx--xxxx--xxxx](#input输入手机号之间间隔)
+  - [7. 邮件含文本、图片、链接](#邮件含文本)
 
 ------
 
@@ -282,6 +283,80 @@ $('input[type=number]').keypress(function(event){
 <h3 id="input输入手机号之间间隔">6. input输入手机号之间间隔  例如：xxx--xxxx--xxxx</h3>
 
 `<input id="ph-no" oninput="this.value = this.value.replace(/((^\d{3})(?=\d)|(\d{4})(?=\d))/g, '$1 ')" autocomplete="off" placeholder="支持移动、联通、电信" maxlength="13" type="tel">`
+
+[back to top](#top)
+
+<h2 id="邮件含文本">7. 邮件含文本、图片、链接]</h2>
+
+https://www.cnblogs.com/PeunZhang/p/4952783.html
+
+```html
+<!-- 抄送地址,密件抄送地址(android存在兼容问题) -->
+<a href="mailto:peun@foxmail.com?cc=lina@qq.com&bcc=luna@qq.com">单击这里给peun发电子邮件</a>
+<!-- 多个收件人、抄送、密件抄送人，用分号隔(;)开多个收件人的地址即可 -->
+<a href="mailto:peun@foxmail.com;dana@foxmail.com">单击这里给peun发电子邮件</a>
+<!-- 包含主题 ,内容(内容包含链接，含http(s)://等的文本自动转化为链接) -->
+<a href="mailto:peun@foxmail.com?subject=【邀请函】">单击这里给peun发电子邮件</a>
+<a href="mailto:peun@foxmail.com?body=邀请您参加腾讯onepiece分享%0A%0A期待您的到来%0A%0Apeunzhang">单击这里给peun发电子邮件</a>
+<!-- 内容包含图片，PC端不支持 -->
+<a href="mailto:peun@foxmail.com?body=<img src='http://images.cnblogs.com/cnblogs_com/PeunZhang/286351/o_peunzhang_cnblogs_code.png' width='200' height='200'>">单击这里给peun发电子邮件</a>
+<!-- 内容包含图片，PC端不支持 -->
+<a href="mailto:peun@foxmail.com?body=<img src='http://images.cnblogs.com/cnblogs_com/PeunZhang/286351/o_peunzhang_cnblogs_code.png' width='200' height='200'>">单击这里给peun发电子邮件</a>
+<!-- 多个参数的话，第一个参数必须以“?”开头，后面的每一个都以“&”开头 -->
+<a href="mailto:aaa@xxx.com;bbb@xxx.com;ccc@xxx.com?cc=ddd@yyy.com;eee@yyy.com&bcc=fff@zzz.com&subject=【邀请函】&body=邀请您参加腾讯onepiece分享">单击这里给peun发电子邮件</a>
+```
+
+微信商户通的需求
+
+```javascript
+<a href="javascript:;" class="btn btn-green form-btn" id="sendBtn">打开邮箱</a>
+var txt = "?subject=［微信支付停车场行业资源包v1.0］&body=停车场行业 - 微信支付行业设计方案资源包v1.0%0A%0A"
+            + "http://action.weixin.qq.com/payact/readtemplate?t=/mobile/merchant/project/parking/download_tmpl%0A%0A"
+            + "里面含有：%0A%0A1.停车场行业方案设计模版.ai%0A2.停车场前端页面开发文件.html%0A%0A"
+            + "您可以用源文件直接编辑后印刷或开发。%0A%0A"
+            + "资源包如果有最新版本会第一时间更新。欢迎继续关注微信支付行业设计方案，或者分享给您的商业伙伴。%0A%0A"
+            + "微信支付行业设计方案：%0A%0A"
+            + "<img src='http://ol.weixin.qq.com/public/demo/parking/parking_discount/img/code.png' width='200' height='200'>";
+var sendBtn = document.getElementById("sendBtn"),
+    sendName = document.getElementById("sendName");
+sendBtn.addEventListener("click",function(e){
+        sendNameVal = document.getElementById("sendName").value;
+        if (filter.test(sendNameVal) == false) {
+            e.preventDefault();
+            removeClass(info,"hide")
+        }
+        else 
+        if(filter.test(sendNameVal) == true){
+            sendBtn.setAttribute("href","mailto:" + sendNameVal + txt);
+        }
+    })
+```
+
+长按a标签弹出系统默认菜单，点复制(拷贝)，保证用户有办法可以拿到下载链接
+
+```javascript
+<a href="http://action.weixin.qq.com/payact/readtemplate?t=mobile/merchant/project/parking/download_tmpl" target="_blank" class="copy">http://action.weixin.qq.com/payact/readtemplate?t=mobile/merchant/project/parking/download_tmpl</a>
+//检测平台，PC端可点击a，移动端禁止a 
+    function mobilePreventA(e){
+        var system = { 
+            win: false, 
+            mac: false, 
+            xll: false, 
+            ipad:false 
+        }; 
+        var p = navigator.platform; 
+        system.win = p.indexOf("Win") == 0; 
+        system.mac = p.indexOf("Mac") == 0; 
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0); 
+        if (!(system.win || system.mac || system.xll)) { 
+             e.preventDefault();
+        }
+    }   
+    var copyBtn = document.querySelector(".copy");
+    copyBtn.addEventListener("click",function(e){
+        mobilePreventA(e);
+    })
+```
 
 [back to top](#top)
 
