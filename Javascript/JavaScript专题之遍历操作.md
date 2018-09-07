@@ -11,11 +11,11 @@ Array的几个遍历的方法各有千秋
 ---------|----------|---------
  **for**| `continue`, `break`|
  **forEach** |该方法无法一次结束所有循环，需要一次性结束所有循环|还是老老实实使用for方法
- forEach的跳出本次循环 |`return fasle;`或`return;` | continue
- forEach的跳出整个循环|no无跳出循环方法 |break的另外操作（参见下面，forEach的break异常跳出）
+   跳出本次循环 |`return fasle;`或`return;` | continue
+   跳出整个循环|no无跳出循环方法 |break的另外操作（参见下面，forEach的break异常跳出）
  **jQuery中each**|JQuery是对象链，所以$(..).each()返回的还是对象集合|each(function(){})：是回调函数，<br>在回调函数里不能返回结果到回调函数each外面
- jQuery中each的跳出本次循环|`return true`|continue
- jQuery中each的跳出整个循环|`return false`|break
+   跳出本次循环|`return true`|continue
+   跳出整个循环|`return false`|break
  **angular.forEach**| |
 
 ```javascript
