@@ -16,9 +16,13 @@
       - 案例2： jquery的tooltip
       - 案例3： 实现划词翻译
       - 案例4： 清空选中文本
+    - [3.3 document.execCommand('copy')的asynchronous(不能在Ajax中使用)问题](#的asynchronous)
+        - 解决方案1：使用synchronous的Ajax- 加入false参数
+        - 解决方案2：创建asychronous代码
+        - react的解决方案
   - [4. 其他library之Clipboard.js](#其他library)
   - [5. 复制输出到excel](#复制输出到excel)
-  
+
 ------
 
 目前copy主流有四种方式：execCommand，HTML5 Clipboard API，Clipboard.js，ZeroClipboard
@@ -33,12 +37,12 @@
   - copy:在发生复制操作时触发
   - cut:在发生剪切操作时触发
   - paste:在发生粘贴操作时触发
-- Clipboard event limit(for security issues): 
+- Clipboard event limit(for security issues):
   - 只要是在上下文菜单(右键菜单)中选择了相应选项，或者使用了相应的键盘组合键如(ctrl+v)，所有浏览器都会触发copy、cut和paste事件
   - IE浏览器只有在文本中选定字符时，copy和cut事件才会发生。且在非文本框中(如div元素)只能发生copy事件
   - firfox浏览器只有焦点在文本框中才会发生paste事件
 - 其他相关事件
-  - beforecopy:在发生复制操作前触发: 
+  - beforecopy:在发生复制操作前触发:
   - beforecut:在发生剪切操作前触发
   - beforepaste:在发生粘贴操作前触发
   - 在Firefox、Chrome和Safari中，beforecopy、beforecut和beforepaste事件只会在显示针对文本框的上下文菜单(预期将发生剪贴板事件)的情况下触发。但是IE则会在触发copy、cut和paste事件之前先触发这些事件
@@ -47,7 +51,7 @@
 ```javascript
 //Solution for clipboard event limit- consistently Getting Clipboard Events: add an hidden text area
 //hidden text area that is always set to have some text selected, then cut, copy, and paste events are always fired in any browser
-var hiddenInput = $('#hidden-input');  
+var hiddenInput = $('#hidden-input');
 var focusHiddenArea = function() {
     hiddenInput.val(' ');
 	hiddenInput.focus().select();
@@ -108,9 +112,9 @@ clipboard.setData('text/html', ...);
 - Chrome and Safari: They support any content type on the clipboardData, including custom types. So, we can call `clipboardData.setData('application/lucidObjects', serializedObjects)` for pasting, and then call `var serialized = clipboardData.getData('application/lucidObjects')`
 - Firefox: It currently only allows access to the data types described above. You can set custom types on copy, but when pasting, only the white-listed types are passed through.
 - Internet Explorer: In true IE fashion, it supports just two data types: Text and URL. Oh, and if you set one, you can’t set the other (it gets nulled out). There is a hack, however, that also allows us to indirectly get and set HTML.
-    
-Internet Explorer doesn’t expose text/html via JavaScript. It does, however, support copying and pasting HTML into contenteditable elements. We can leverage this if we let the browser perform its default copy and paste, but ‘hijack’ the events to get/put the HTML data we want. 
-    
+
+Internet Explorer doesn’t expose text/html via JavaScript. It does, however, support copying and pasting HTML into contenteditable elements. We can leverage this if we let the browser perform its default copy and paste, but ‘hijack’ the events to get/put the HTML data we want.
+
 ```javascript
 //clipboardData对象的兼容性
 e = e || event;
@@ -120,7 +124,7 @@ var isIe = (navigator.userAgent.toLowerCase().indexOf("msie") != -1 || navigator
 document.addEventListener('copy', function(e) {
     var textToPutOnClipboard = "This is some text";
     if (isIe) {
-        window.clipboardData.setData('Text', textToPutOnClipboard);    
+        window.clipboardData.setData('Text', textToPutOnClipboard);
     } else {
         e.clipboardData.setData('text/plain', textToPutOnClipboard);
     }
@@ -256,7 +260,7 @@ var standardClipboardEvent = function(clipboardEvent, event) {
      console.log('Clipboard HTML: ' + clipboardData.getData('text/html'));
  }
 };
-// For IE, the broswer will only paste HTML if a contenteditable div is selected before paste. Luckily, the browser fires 
+// For IE, the broswer will only paste HTML if a contenteditable div is selected before paste. Luckily, the browser fires
 // a before paste event which lets us switch the focuse to the appropraite element
 if (isIe) {
  document.addEventListener('beforepaste', function() {
@@ -279,7 +283,7 @@ hiddenInput.on('input', function(e) {
      focusHiddenArea();
  }
 });
-// Set clipboard event listeners on the document. 
+// Set clipboard event listeners on the document.
 ['cut', 'copy', 'paste'].forEach(function(event) {
  document.addEventListener(event, function(e) {
      console.log(event);
@@ -311,7 +315,7 @@ test.onclick = function(){
         e = e || event;
         alert('该文档不允许复制剪贴操作，谢谢配合')
         return false;
-    }    
+    }
 }
 </script>
 //过滤字符: 如果确保粘贴到文本框中的文本中包含某些字符，或者符合某种形式时，可以使用剪贴板事件。比如只允许粘贴数字
@@ -322,15 +326,15 @@ test.onpaste = function(e){
     var clipboardData = e.clipboardData || window.clipboardData;
     if(!/^\d+$/.test(clipboardData.getData('text')))
         return false;
-    }    
+    }
 }
-</script> 
+</script>
 ```
 
 <h2 id="execCommand">3. document.execCommand()</h2>
 
 - execCommand方法是执行一个对当前文档，当前选择或者给出范围的命令, https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand
-- execCommand compatibility:  
+- execCommand compatibility:
   - https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand#Browser_compatibility
   - https://www.quirksmode.org/dom/execCommand.html
 - test demo
@@ -345,15 +349,15 @@ test.onpaste = function(e){
 
 ```JavaScript
 //创建一个超链接
-function fn_creatlink(){   
-    document.execCommand('CreateLink',true,'true');//弹出一个对话框输入URL   
-    //document.execCommand('CreateLink',false,'http://www.51js.com');   
-}   
+function fn_creatlink(){
+    document.execCommand('CreateLink',true,'true');//弹出一个对话框输入URL
+    //document.execCommand('CreateLink',false,'http://www.51js.com');
+}
 //指定字颜
-document.execCommand('ForeColor',false,'#BBDDCC'); //true或false都可以  
+document.execCommand('ForeColor',false,'#BBDDCC'); //true或false都可以
 //使用一个不展示的input标签,来实现复制想要复制的内容
 var domNode = '<input id='copyText'>';
-domNode.value='copyContent' 
+domNode.value='copyContent'
 /*创造一个domNode,并且将text内容放到节点上, domNode放到body里面,class{ display:absolute;left:-200px;bottom:-100px},让该节点不在可视区域内.
 为什么不用display:none? 因为display none 会让这个节点不出现在body中.后面也没办法被选择....所以用定位的方式,让这个节点看不到,但是还在body里.*/
 domNode.select();          //让node被选中
@@ -380,14 +384,14 @@ function fn_doufucopy(){
   document.execCommand('Copy');
 }
 //该function执行paste指令
-function fn_doufupaste() { 
+function fn_doufupaste() {
   tt.focus();
   document.execCommand('paste');
-} 
+}
 // 该function用来将选中的区块设为指定的前景色,改变选中区块的字体大小,改变字体,字体变粗变斜
 
 function fn_change_forecolor(){
-  document.execCommand('ForeColor',false,'#BBDDCC');////指定前景色, true或false都可以  
+  document.execCommand('ForeColor',false,'#BBDDCC');////指定前景色, true或false都可以
   document.execCommand('FontSize',false,7);  //指定背景色, true或false都可以
   document.execCommand('FontName',false,'标楷体');   ////字体必须是系统支持的字体, true或false都可以
   document.execCommand('Bold');  //字体变粗
@@ -465,14 +469,14 @@ document.all.aa.innerText="bbbbb";*/
 //document.execCommand('Unselect');
 //选中页面上的所有元素
 //document.execCommand('SelectAll');
-} 
+}
 // 该function用来将页面保存为一个文件
 function fn_save(){
   document.execCommand('SaveAs','mycodes.txt');  //第二个参数为欲保存的文件名
   //打印整个页面
   //document.execCommand('print');
 }
---> 
+-->
 </SCRIPT>
 </HEAD>
 <body>
@@ -499,7 +503,7 @@ Please select above letters, then click following buttons:<br>
 ```
 
 指令参数|意义
-------------- | ------------- 
+------------- | -------------
 2D-Position |允许通过拖曳移动绝对定位的对象
 AbsolutePosition| 设定元素的 position 属性为“absolute”(绝对)
 BackColor |设置或获取当前选中区的背景颜色
@@ -588,7 +592,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand#Browser_co
 
 1. add an element to the page: such as `<input class='copyfrom' tabindex='-1' aria-hidden='true'>`，也可动态添加后删除
 2. make the element invisible by putting it off screen (do not use `display: none;` because it will not be selected)
-3. copy the value to the input/textarea field, select it and copy it, 
+3. copy the value to the input/textarea field, select it and copy it,
 
 ```html
 <!-- sample of using input -->
@@ -604,7 +608,7 @@ function showpropval(val) {
   input.select(); // select offscreen inputs text
   document.execCommand("copy"); // copy it
   this.focus(); // focus back on original, so we don't see any glitches
-} 
+}
 function getSelectValues(select) {
   var result = [];
   var options = select && select.options;
@@ -639,7 +643,7 @@ copyTextareaBtn.addEventListener('click', function(event) {
 </script>
 ```
 
-**结合`document.createRange()`使用- 可不动态添加input元素，直接copy的指定DOM元素** 
+**结合`document.createRange()`使用- 可不动态添加input元素，直接copy的指定DOM元素**
 
 - `document.createRange()`: 用来创建选中容器。返回一个range Object。 该API的兼容性，也是挺好的， 手机端和PC端都支持
 - `selectNode(DOM)`: 返回range Object上挂载的方法。用来添加选中元素。只能添加一个
@@ -650,23 +654,23 @@ copyTextareaBtn.addEventListener('click', function(event) {
 <button id="copy">Copy</button>
 <script type="text/javascript">
 function copyToClipboard(copyDOM, range) {
-  range.selectNode(copyDOM);                        // 选中需要复制的节点  
-  window.getSelection().addRange(range);            // 执行选中元素  
-  var successful = document.execCommand('copy');    // 执行 copy 操作  
-    try {    
-      var msg = successful ? 'successful' : 'unsuccessful';    
-      console.log('copy is' + msg);    
-    } catch(err) {    
-      console.log('Oops, unable to copy');    
-    }  
-  // 移除选中的元素  
-  window.getSelection().removeAllRanges(); 
+  range.selectNode(copyDOM);                        // 选中需要复制的节点
+  window.getSelection().addRange(range);            // 执行选中元素
+  var successful = document.execCommand('copy');    // 执行 copy 操作
+    try {
+      var msg = successful ? 'successful' : 'unsuccessful';
+      console.log('copy is' + msg);
+    } catch(err) {
+      console.log('Oops, unable to copy');
+    }
+  // 移除选中的元素
+  window.getSelection().removeAllRanges();
 }
 document.querySelector("#copy").onclick = function() {
-  var copyDOM = document.querySelector('#selector');    
+  var copyDOM = document.querySelector('#selector');
   var range = document.createRange();
   copyToClipboard(copyDOM, range);
-}; 
+};
 //cut
 var cutTextareaBtn = document.querySelector('.js-textareacutbtn');
 cutTextareaBtn.addEventListener('click', function(event) {
@@ -729,7 +733,7 @@ function copyTextToClipboard(text) {
 
   textArea.value = text;
   document.body.appendChild(textArea);
-  textArea.select();      
+  textArea.select();
   try {
     var successful = document.execCommand('copy');
     var msg = successful ? 'successful' : 'unsuccessful';
@@ -789,7 +793,7 @@ function getSelected(){
   return selection.toString().trim();
 }
 ```
-    
+
 [back to top](#top)
 
 **案例4： 清空选中文本**
@@ -807,7 +811,106 @@ function removeSelection(){
 ```
 
 **第三方库： https://github.com/timdown/rangy**
-    
+
+<h3 id="的asynchronous">3.3 document.execCommand('copy')的asynchronous(不能在Ajax中使用)问题</h3>
+
+[document.execCommand('copy') support across browsers, from most permissive to most restrictive (updated 2017-02-13)](http://hansifer.com/clipboardCopyTest.html)
+
+**解决方案1**： 使用synchronous的Ajax- 加入false参数
+
+- make the XMLHttpRequest synchronous. Add false as the third parameter
+- synchronous are deprecated by most modern browsers
+- https://stackoverflow.com/questions/31925944/execcommandcopy-does-not-work-in-ajax-xhr-callback
+
+```javascript
+var selectAndCopy = function() {
+  // Select text
+  var cutTextarea = document.querySelector('#textarea');
+  cutTextarea.select();
+  // Execute copy
+  var successful = document.execCommand('copy');
+  var msg = successful ? 'successful' : 'unsuccessful';
+  console.log('Cutting text command was ' + msg);
+};
+var fetchCopyButton = document.querySelector('#fetch_copy');
+fetchCopyButton.addEventListener('click', function(event) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('get', 'http://httpbin.org/ip', false);     //false as third parameter
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        // Set text
+        var textarea = document.querySelector('#textarea');
+        textarea.value = xhr.responseText;
+        selectAndCopy();
+      }
+    }
+  };
+  xhr.send();
+});
+var copyButton = document.querySelector('#copy');
+copyButton.addEventListener('click', function(event) {
+  selectAndCopy();
+});
+```
+
+**解决方案2**： make copy asynchronous dependent content to the clipboard after clicking
+
+```html
+<div id="container">
+Enter Text To Copy</br>
+<textarea id="clipboard"></textarea>
+</div>
+<input type="button" value="Copy" id="copy"/>
+<script>
+var timeout = 600; // timeout based on ajax response time
+var loaded = false;
+function loadContent() {
+  loaded = false;
+  $.getJSON('http://codepen.io/gkohen/pen/QbvoQW.js',function(result){
+    document.getElementById("clipboard").value = result.lorem;
+    loaded = true;
+  });
+}
+// Copy text as text
+function copy() {
+  clipboard = document.getElementById("clipboard");
+  if (!loaded || clipboard.value.length == 0) {
+    alert("Ajax timeout! TIP: Try to increase timeout value.");
+    return;
+  }
+  clipboard.focus();
+  clipboard.select();
+  if (document.execCommand('Copy'))
+    alert("Successfuly coppied to clipboard!");
+  // set defaults
+  clipboard.value = "";
+  loaded = false;
+}
+document.addEventListener("DOMContentLoaded", function(){
+  document.getElementById("copy").onmousedown = loadContent;
+  document.getElementById("copy").onclick = function() {
+    setTimeout(copy, timeout); // wait for ajax
+  }
+});
+</script>
+```
+
+**React解决方案**
+
+use lib [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard) to copy text.
+
+```javascript
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+function(props) {
+    return (
+       <CopyToClipboard text={'Text will be copied'}>
+           <button>Copy button</button>
+       </CopyToClipboard>
+    );
+}
+```
+
 [back to top](#top)
 
 <h2 id="应用案例">4. 其他library之Clipboard.js</h2>
