@@ -5,7 +5,7 @@ Array的几个遍历的方法各有千秋
 - filter是过滤值的
 - jQuery中each
 
-## 跳出循环
+### 跳出循环
 
 - for:  `continue`, `break`
 - forEach:  该方法无法一次结束所有循环，需要一次性结束所有循环，还是老老实实使用for方法
