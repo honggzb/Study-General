@@ -78,7 +78,8 @@ $(document).mouseup(focusHiddenArea);
 
 <h2 id="对象方法">2. Clipboard API- clipboardData对象</h2>
 
-剪贴板中的数据存储在clipboardData对象中
+- 剪贴板中的数据存储在clipboardData对象中
+- [Clipboard API and events官方文档](https://www.w3.org/TR/clipboard-apis/)
 
 <h3 id="API介绍">2.1 Clipboard API介绍</h3>
 
