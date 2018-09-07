@@ -7,9 +7,9 @@ Array的几个遍历的方法各有千秋
 
 ### 跳出循环
 
-方法|跳出操作|
----|---|---
-for| `continue`, `break`|
+方法|跳出操作|说明
+------|------|------
+for|`continue`, `break`|
 forEach|该方法无法一次结束所有循环，需要一次性结束所有循环，还是老老实实使用for方法|
 | `return fasle;`或`return;`|continue
 |no无跳出循环方法|break（参见下面，forEach的break异常跳出）
