@@ -5,12 +5,10 @@
 
 ----------------------
 
-**types of file splitting**
+**Types of file splitting**
 
 - **bundle splitting**: creating more, smaller files (but loading them all on each network request anyway) for better caching
 - **code splitting**: dynamically loading code, so that users only download the code they need for the part of the site that they’re viewing
-- 
-----------------------
 
 <h2 id="bundle">1. bundle splitting</h2>
 
