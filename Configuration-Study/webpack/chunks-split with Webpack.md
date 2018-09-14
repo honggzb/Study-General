@@ -1,6 +1,7 @@
 ## [split your chunks with Webpack](#top)
 
 - [1. bundle splitting](#bundle)
+    - [defect: feedback](#defect)
 - [2. code splitting](#code)
 
 ----------------------
@@ -60,7 +61,7 @@ module.exports = {
 };
 ```
 
-**defect:  feedback**
+<h2 id="defect">defect:  feedback</h2>
 
 - Sean T. Larkin(Webpack Core team & AngularCLI team)
 
