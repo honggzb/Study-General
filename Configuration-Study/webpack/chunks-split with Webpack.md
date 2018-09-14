@@ -60,6 +60,17 @@ module.exports = {
 };
 ```
 
+**defect:  feedback**
+
+- Sean T. Larkin(Webpack Core team & AngularCLI team)
+
+  - Technically this is inaccurate. The benefits of code splitting is that you are waiting until some async operation/event to trigger to then use `import()` to lazy load the module you need.
+  - It may change a static import to a call expression that returns a promise, however, you will only be code splitting (if done correctly) during an async event/callback/situation.
+
+1. Code-splitting is a must/always technique every app should be employing. In-fact it should take precedence over caching techniques. 
+    + the main cost of any pages' load time is the `_size_` of the JavaScript you ship. Caching only optimizes the networking layer consistently. For example, no matter how fast the file comes from the network, the browser still pays the 4mb parse, eval, and execute cost everytime. (Some browsers have bytecode caching but it should absolutely not be relied on because it varies so different across browsers, sessions, etc.)
+2. We removed the CommonsChunkPlugin and hid the evolution of it in config for a reason: because only in 90% of cases do you ever need to modify the defaults webpack 4 sets out of the box
+
 [back to top](#top)
 
 <h2 id="code">2. code splitting</h2>
