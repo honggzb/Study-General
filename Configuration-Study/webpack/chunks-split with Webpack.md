@@ -94,7 +94,7 @@ export default AdminPageLoader;
 
 [back to top](#top)
 
-> 
+> Reference
 - [The 100% correct way to split your chunks with Webpack](https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758)
 - [Webpack 4- caching](https://webpack.js.org/guides/caching/)
-- [React Code-Splittin](https://reactjs.org/docs/code-splitting.html)
+- [React Code-Splitting](https://reactjs.org/docs/code-splitting.html)
