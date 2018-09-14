@@ -14,7 +14,7 @@
 
 <h2 id="Variable">1. Variable- exactly same</h2>
 
-```
+```css
           Sass                         |           Less
 ---------------------------------------+--------------------- ---------------------
 $mainColor: #0982c1;                   | $mainColor: #0982c1;
