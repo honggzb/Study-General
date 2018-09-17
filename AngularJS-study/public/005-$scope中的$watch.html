@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>005-$scope中的$watch</title>
+</head>
+<body>
+<!-- ng-app告诉angularJS管理页面的那个部分 -->
+<div ng-app="">                            <!-- $ngScope -->
+    <p>实现及时更新</p>
+    <div ng-controller="firstController">  <!-- $scope -->
+        <input type="text" value="" ng-model="name" />
+        {{ name }} <br><br>
+        改变此时{{ count }}
+        <br><br>
+        <input type="text" value="" ng-model="data.name" />
+        {{ data.name }} <br><br>
+        改变此时{{ data.count }}
+    </div>
+</div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+ $watch
+  1） $watch在digest执行时，如果watch观察的value和上次执行时不一样时候，就会被触发
+  2)  $watch可实现angularjs页面随model的及时更新
+    $watch(watchFn, watcheAction, deepWatch
+    - watchFn     : angularJS表达式或函数的字符串
+    - watchAction(newValue, oldValue,scope) ：发送变化时候会被调用
+    - deepWatch   ：可选，布尔值，检查被监视对象的每个对象是否发生变化
+  3)  $watch会返回一个函数，想要注销这个watch，使用函数
+*/
+var firstController = function($scope){   //参数只能是$scope
+    //$scope
+    //声明一个model
+    $scope.name = "hello";
+    $scope.data = {
+        name: "hello",
+        count: 2
+    }
+    $scope.count = 0;
+    $scope.$watch('name', function(newValue, oldValue){
+        ++$scope.count;
+        if($scope.count > 30)
+            $scope.name = "已经大于30了";
+    });
+
+    $scope.$watch('data', function(newValue, oldValue){
+        ++$scope.data.count;
+        if($scope.data.count > 30)
+            $scope.data.name = "已经大于30了";
+    }, true);
+}
+</script>
+</body>
+</html>
