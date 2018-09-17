@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>001-controller</title>
+</head>
+<body>
+<!-- ng-app告诉angularJS管理页面的那个部分 -->
+<div ng-app="">                            <!-- $ngScope -->
+    <div ng-controller="firstController">  <!-- $scope -->
+       <input type="text" value="" ng-model="name" />{{ name }}
+    </div>
+
+</div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+var firstController = function($scope){   //参数只能是$scope
+    //$scope
+    //声明一个model
+    $scope.name = "hello";
+}
+</script>
+</body>
+</html>
