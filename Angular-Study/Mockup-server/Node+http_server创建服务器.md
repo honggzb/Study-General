@@ -8,6 +8,8 @@ http-server
  }
 ```
 
+- [path] defaults to ./public if the folder exists, and ./ otherwise.
+
 **参数**
 
 ```
