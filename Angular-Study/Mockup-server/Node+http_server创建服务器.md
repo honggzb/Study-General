@@ -9,6 +9,12 @@ http-server
 ```
 
 - [path] defaults to ./public if the folder exists, and ./ otherwise.
+- 配置代理
+
+```javascript
+http-server -p 3000 -P https://condejs.org
+//-p 本地运行端口  -P 代理地址（就是要访问的接口下的域名）
+```
 
 **参数**
 
