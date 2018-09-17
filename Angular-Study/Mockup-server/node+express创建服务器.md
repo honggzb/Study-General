@@ -5,7 +5,10 @@
   - 在VSCode使用d.ts文件进行js智能提示
 - [2. 最简单的Node服务器](#最简单的服务器)
 - [3. Node+Express](#Node+Express)
-- [4. 配置angular使用express服务器](#配置angular使用express服务器)
+- [4. 配置angular使用express服务器-反向代理的配置](#配置angular使用express服务器)
+  - 4.1 方法1
+  - 4.2 方法2- 使用http-proxy-middleware
+  - 4.3 方法3- 使用http-proxy-middleware+webpack
 - [5. webSocket服务器](#webSocket服务器)
 - [6. MYSQL+NODE/EXPRESS](#MYSQL)
 - [7. koa+webpack web server](#koa)
@@ -148,7 +151,9 @@ const server = app.listen(8000, "localhost", () => {
 
 [back to top](#top)
 
-<h2 id="配置angular使用express服务器">4. 配置angular使用express服务器</h2>
+<h2 id="配置angular使用express服务器">4. 配置angular使用express服务器-反向代理的配置</h2>
+
+**方法1**
 
 - 在根目录创建proxy.conf.json
 - 修改package.json, `"start": "ng serve --proxy-config proxy.conf.json",`
@@ -166,6 +171,56 @@ const server = app.listen(8000, "localhost", () => {
 "start": "ng serve --proxy-config proxy.conf.json",
 //...
 },
+```
+
+**方法2- 使用http-proxy-middleware**
+
+```javascript
+//代理 文件名为app.js
+// include dependencies
+var express = require("express");
+var proxy = require("http-proxy-middleware");
+var app = express();
+
+app.use("/api", proxy({ target: "https://cnodejs.org", changeOrigin: true }));
+// http://localhost:3000/api/foo/bar -> http://cnodejs.org/api/foo/bar
+app.listen(3000);
+```
+
+**方法3- 使用http-proxy-middleware+webpack**
+
+```shell
+npm install http-proxy-middleware --save-dev
+npm install webpack --save-dev --save-dev
+npm install webpack-dev-server --save-dev
+```
+
+webpack.config.js文件
+
+```javascript
+var proxy = require('http-proxy-middleware');
+module.exports = {
+    entry:{ index:'./index.js', },
+    output:{
+        path:__dirname,
+        filename:'[name].build.js',
+    },
+    module:{
+        loaders:[]
+    },
+    resolve:{
+        extensions:['.js',".css",".jsx"]
+    },
+    devServer: {
+        proxy: {
+          '/api': { // api表示当前项目请求的key
+            target: 'http://xxxxxxxx:8000', // 代理服务器路径
+            pathRewrite: {'^/api' : '/'}, // 重写路径
+            changeOrigin: true
+          }
+        }
+     }
+}
 ```
 
 [back to top](#top)
