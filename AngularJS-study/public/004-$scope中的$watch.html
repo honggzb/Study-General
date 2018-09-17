@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>003-ng-bind</title>
+</head>
+<body>
+<!-- ng-app告诉angularJS管理页面的那个部分 -->
+<div ng-app="">                            <!-- $ngScope -->
+    <div ng-controller="firstController">  <!-- $scope -->
+       {{ date }}
+    </div>
+</div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+ 动态改变变量的方法
+  1） 变量中自定义set方法
+  2)  angularjs的dirty check -> $apply, $watch, $digest
+    2.1） 不会脏检查所有对象，只有当对象绑定到html中，才将该对象添加为脏检查对象watcher
+    2.2)  不会脏检查所有属性，只有当属性绑定后，才将该对象添加为脏检查属性
+      在angularjs程序初始化时候，会将绑定的对象的属性添加为监听对象watcher，一个对象绑定了n个属性，就会添加n个watcher
+    2.3)  什么时候脏检查： angularjs所有系统方法都会触发比较事件，如controller初始化时，所有以ng-开头的事件执行后，都会触发脏检查
+*/
+var firstController = function($scope){   //参数只能是$scope
+    //$scope
+    //声明一个model
+    $scope.date = new Date();
+
+    // setInterval(() => {
+    //     $scope.date = new Date();
+    // }, 1000);
+
+    //手工触发脏检查
+    setInterval(() => {
+        $scope.$apply(function(){
+            $scope.date = new Date();
+        });
+    }, 1000);
+}
+</script>
+</body>
+</html>

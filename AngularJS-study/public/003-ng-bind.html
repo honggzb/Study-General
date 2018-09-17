@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>003-ng-bind</title>
+</head>
+<body>
+<!-- ng-app告诉angularJS管理页面的那个部分 -->
+<div ng-app="">                            <!-- $ngScope -->
+    <div ng-controller="firstController">  <!-- $scope -->
+       <input type="text" value="" ng-model="name" />{{ name }}
+       <br><br>
+       <input type="text" value="" ng-model="age" />{{ age }}
+       <div ng-bind="name"></div>
+       <div ng-bind="age"></div>
+    </div>
+</div>
+<script>
+/*
+ 代码执行顺序为：
+  alert("d")
+     |
+  loading angularjs.js
+     |
+  firstController
+
+结果（不使用ng-bind情况）
+  页面显示{{ name }}和{{ age }}直到angularjs.js装载完毕
+
+推荐
+  使用ng-bind, 避免出现上述情况
+*/
+</script>
+<script>
+   alert("d");
+</script>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+var firstController = function($scope){   //参数只能是$scope
+    //$scope
+    //声明一个model
+    $scope.name = "hello";
+    $scope.age = 33;
+}
+</script>
+</body>
+</html>
