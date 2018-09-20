@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>009 - $Provider.factory </title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="firstController">  <!-- $scope -->
+
+        </div>
+        <div ng-controller="secondController">  <!-- $scope -->
+
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* 控制器的合理使用、显示和隐示的依赖注入
+
+ - 推荐显式的依赖注入写法
+ - controller不应该尝试做太多的事情，它应该仅仅包含单个视图所需要的业务逻辑，如
+    - $scope中的数据和方法
+ - 保存controller的简单性，常见方法是抽出那些不属于controller的工作到service中，在controller通过依赖注入来使用这些Service
+ - 不要在controller中做如下事情
+    - 任何DOM操作， controller应该仅仅包含业务逻辑，任何表现逻辑，如希望执行自定义的DOM操作，可把表现逻辑抽取到directive中
+    - Input formatting： 使用angular form controls代替
+    - Output filtering： 使用angular filter代替
+    - 执行无状态或有状态的、controller共享的代码： 使用angular services代替
+    - 实例化或管理其他组件的生命周期， 如创建一个服务实例
+
+*/
+var myApp = angular.module('myApp', [], function(){
+
+})
+.factory('CustomService', function($window){
+   //return $window;
+   //console.log(window);
+   console.log($window);   //推荐$window
+})
+// 隐式的依赖注入
+.controller('firstController',function($scope, CustomService){
+    console.log(CustomService);
+})
+// 显示的依赖注入 - 推荐， 即使a,b的名称变了也不影响使用
+.controller('secondController',['$scope','$filter',function(a, b){
+    console.log(a);                        //这里的a就是$scope对象
+    console.log(b('json')([1,2,3,4,5]));   //这里的b就是$filter对象
+}]);
+
+/* 对于如下写法 */
+// 整个angular的controller, 通过$inject属性告诉controller依赖注入那些服务
+function otherController(a){
+    console.log($scope);
+}
+otherController.$inject = ['$scope'];
+ </script>
+</body>
+</html>

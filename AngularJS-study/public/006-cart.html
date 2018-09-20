@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./lib/bootstrap3/css/bootstrap.min.css" />
+    <style>
+        .orderColor{ color: red; }
+    </style>
+    <title>005-购物车</title>
+</head>
+<body ng-app>
+<div class="container" ng-controller="cartController">
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <form class="navbar-form navbar-right">
+                      <div class="form-group">
+                        <!-- <input type="text" class="form-control" placeholder="Search" ng-model="searchText"> -->
+                        <input type="text" class="form-control" placeholder="按产品编号搜索" ng-model="searchText.id">
+                      </div>
+                    </form>
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+              </nav>
+    <table class="table table-striped">
+       <thead>
+           <tr>
+               <th ng-click="changeOrder('id')" ng-class="{dropup:order===''}">产品编号
+                   <span class="caret" ng-class="{orderColor: orderType==='id'}"></span>
+                </th>
+               <th ng-click="changeOrder('name')" ng-class="{dropup:order===''}">产品名称
+                   <span class="caret" ng-class="{orderColor: orderType==='name'}"></span>
+                </th>
+               <th ng-click="changeOrder('quantity')"  ng-class="{dropup:order===''}">购买数量
+                   <span class="caret" ng-class="{orderColor: orderType==='quantity'}"></span>
+                </th>
+               <th ng-click="changeOrder('price')" ng-class="{dropup:order===''}">产品单价
+                   <span class="caret" ng-class="{orderColor: orderType==='price'}"></span>
+               </th>
+               <th>产品总价</th>
+               <th>操作</th>
+            </tr>
+       </thead>
+       <tbody ng-show="cart.length">
+           <tr ng-repeat="item in cart | filter: searchText | orderBy: order+orderType">
+           <!-- <tr ng-repeat="item in cart | filter: {id: searchText}"> -->
+               <td>{{item.id}}</td>
+               <td>{{item.name}}</td>
+               <td>
+                   <button type="button" class="btn btn-primary" ng-click="reduce(item.id)"
+                    >-</button>
+                    <input type="number" value="{{item.quantity}}" ng-model="item.quantity">
+                    <button type="button" class="btn btn-primary" ng-click="add(item.id)"
+                    >+</button>
+               </td>
+               <td>{{ item.price | currency:'￥'}}</td>
+               <td>{{ item.price * item.quantity }}</td>
+               <td>
+                   <button type="button" class="btn btn-danger" style="width:100px;"
+                    ng-click="remove(item.id)">
+                        移除</button>
+                </td>
+           </tr>
+           <tr>
+               <td>总购买价</td>
+               <td>{{ totalPrice() }}</td>
+               <td>总购买数量</td>
+               <td>{{totalQuantity()}}</td><td></td>
+               <td>
+                   <button type="button" class="btn btn-danger" style="width:100px;"
+                        ng-click="cart= []"
+                   >清空购物车</button></td>
+            </tr>
+       </tbody>
+       <tr ng-show="!cart.length"><td>您的购物车为空</td></tr>
+     </table>
+</div>
+
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<!-- <script type="text/javascript" src="./lib/bootstrap3/js/bootstrap.min.js"></script> -->
+<script type="text/javascript">
+/*
+  1)  关键字搜索
+  2） 表格排序
+  3)  当前排序箭头变为红色  ng-class
+*/
+var cartController = function($scope){   //参数只能是$scope
+    $scope.cart = [
+      {
+        id: 1000,
+        name: 'iphone 5',
+        quantity: 3,
+        price: 4300
+      },
+      {
+        id: 2200,
+        name: 'imac',
+        quantity: 4,
+        price: 14300
+      },
+      {
+        id: 3300,
+        name: 'ipad',
+        quantity: 7,
+        price: 2000
+      },
+      {
+        id: 3000,
+        name: 'ipad mini',
+        quantity: 4,
+        price: 1400
+      }
+    ];
+    $scope.totalPrice = function(){
+        var total = 0;
+        angular.forEach($scope.cart, function(item) {
+            total += item.quantity * item.price;
+        });
+        return total;
+    };
+    $scope.totalQuantity = function(){
+        var total = 0;
+        angular.forEach($scope.cart, function(item) {
+            total += parseInt(item.quantity);
+        });
+        return total;
+    };
+
+    $scope.orderType = 'id';
+    $scope.order = "-";
+
+    var findIndex = function (itemId) {
+        var index = -1;
+        angular.forEach($scope.cart, function(item, key) {
+            if(item.id == itemId)
+                index = key;
+                return;
+        });
+        return index;
+    }
+
+    $scope.remove = function (itemId) {
+        var index = findIndex(itemId);
+        if(index != -1){
+            $scope.cart.splice(index, 1);
+        }
+    }
+
+    $scope.add = function (itemId) {
+        var index = findIndex(itemId);
+        if(index != -1){
+            $scope.cart[index].quantity++;
+        }
+    }
+
+    $scope.reduce = function (itemId) {
+        var index = findIndex(itemId);
+        if(index != -1){
+            if($scope.cart[index].quantity >1 ){
+                $scope.cart[index].quantity--;
+            }else{
+                var returnkey = confirm('从购物车内删除该产品！');
+                if(returnkey){
+                    $scope.remove(itemId);
+                }
+            }
+        }
+    }
+
+    $scope.$watch('cart', function(newValue, oldValue){
+        angular.forEach(newValue, function(item,key){
+            if(item.quantity < 1){
+                var returnkey = confirm('从购物车内删除该产品！');
+                if(returnkey){
+                    $scope.remove(key);
+                }else{
+                    item.quantity = oldValue[key].quantity;
+                }
+                return;
+            }
+        });
+    });
+
+    $scope.changeOrder = function(type){
+        $scope.orderType = type;
+        if($scope.order === ''){
+            $scope.order = "-";
+        }else{
+            $scope.order = '';
+        }
+    }
+}
+</script>
+</body>
+</html>

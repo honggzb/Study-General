@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <title>008 - Provider </title>
+</head>
+<body>
+    <div ng-app="myApp">                            <!-- $ngScope -->
+        <div ng-controller="firstController">  <!-- $scope -->
+            {{ name }}
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* 定义服务$provider
+
+- 服务本身是一个任意的对象
+- ng提供服务的过程涉及它的依赖注入机制
+- angularJS是用$provider对象来实现自动依赖注入机制，注入机制通过调用一个Provider的$get()方法，把得到的对象作为参数进行相关调用
+- $provider.provider是一种定义服务的方法，$provider还提供了很多简便的方法可直接被module所引用
+
+*/
+var myApp = angular.module('myApp', [], function($provide){
+    //console.log("1");
+    //这里可自定义服务
+    $provide.provider('CustomService', function(){
+        //公共接口
+        this.$get = function(){
+            return {
+                message: 'CustomService message'
+            }
+        }
+    });
+    $provide.provider('CustomService2', function(){
+        //公共接口
+        this.$get = function(){
+            return {
+                message: 'CustomService 2 message'
+            }
+        }
+    });
+});
+
+var firstController = function($scope, CustomService, CustomService2){
+    $scope.name = "hello";
+    //console.log("2");
+    console.log(CustomService);
+    console.log(CustomService2);
+}
+ </script>
+</body>
+</html>

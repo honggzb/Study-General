@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <title>009 - $Provider.factory </title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="firstController">  <!-- $scope -->
+            <input type="text" ng-model="data.name"><br>
+            first: {{ data.name }}
+        </div>
+        <div ng-controller="secondController">  <!-- $scope -->
+            second: {{ data.name }}
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* 多控制器内数据共享
+*/
+// 共享方法1： 定义为对象，在其他控制器中使用$$prevSibling,$$nextSibling, $parent（供应链）
+//            注意- 不能使用简单类型，必须使用引用类型
+var myApp = angular.module('myApp', [])
+                .controller('firstController',function($scope){
+                    //$scope.name = "hello";
+                    $scope.data = {
+                        name: "hello"
+                    }
+                    console.log($scope);
+                })
+                .controller('secondController',function($scope){
+                    $scope.data = $scope.$$prevSibling.data;
+                    console.log($scope);
+                });
+// 共享方法2： 使用factory或service
+var myApp = angular.module('myApp', [])
+                .factory('Data', function(){
+                    //this.$get = function(){}
+                    return {
+                        name: 'shared data'
+                    };
+                })
+                .controller('firstController',function($scope, Data){
+                    //$scope.name = "hello";
+                    $scope.data = Data;
+                    console.log($scope);
+                })
+                .controller('secondController',function($scope, Data){
+                    $scope.data = Data;
+                    console.log($scope);
+                });
+ </script>
+</body>
+</html>

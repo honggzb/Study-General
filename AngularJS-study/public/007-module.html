@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <title>007-Module</title>
+</head>
+<body>
+    <div ng-app="myApp">                            <!-- $ngScope -->
+        <div ng-controller="firstController">  <!-- $scope -->
+            <input type="text" value="" ng-model="name" />{{ name }}
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* AngularJS的模块
+
+- AngularJS本身的一个默认模块是ng，她提供了$http, $scope等服务
+- AngularJS的服务是需要显式申明依赖（引入）关系的，让ng自动地做注入
+- 第三方代码可以作为可复用的module打包到angularJS中
+- 模块可以任何先后或并行的顺序加载（模块的本身本身是延迟的）
+- 通过ng-app指定对应的模块应用启动, AngularJS中只能有一个ng-app
+
+angular.module(name[, requires], configFn);
+
+- ConfigFn 会在模块初始化时执行，可以在里面配置模块的服务
+- configFn 参见 angular.config()
+*/
+var myApp = angular.module('myApp', []);
+
+myApp.controller('firstController', function($scope){
+    $scope.name = "hello";
+});
+
+ </script>
+</body>
+</html>

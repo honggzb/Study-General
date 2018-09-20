@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>009 - $Provider.factory </title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="firstController">  <!-- $scope -->
+          <p>filter by age > 30</p>
+           <ul>
+               <li ng-repeat="user in data | filterAge">
+                   {{ user.name}}<br>
+                   {{ user.age }}<br>
+                   {{ user.city }}
+               </li>
+           </ul>
+           <p>filter by city == "Shang Hai"</p>
+           <ul>
+                <li ng-repeat="user in data | filterCity">
+                    {{ user.name}}<br>
+                    {{ user.age }}<br>
+                    {{ user.city }}
+                </li>
+            </ul>
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* 自定义过滤器
+
+ - module.filter(name, filterFactory)
+ - @filterProvider.register()
+
+*/
+var myApp = angular.module('myApp', [], function($filterProvider, $provide, $controllerProvider){
+    $provide.service('Data', function(){
+        return [
+            {
+                name: "zhang san",
+                age: '20',
+                city: 'Shang Hai'
+            },
+            {
+                name: "Li Shi",
+                age: '35',
+                city: 'Beijing'
+            }
+        ];
+    })
+    // 方法1：
+    $filterProvider.register('filterAge', function(){
+        // 必须返回一个函数
+        return function(obj){
+            var newObj = [];
+            angular.forEach(obj, function(item){
+                if(item.age>30){
+                    newObj.push(item);
+                }
+            });
+            return newObj;
+        }
+    });
+    $controllerProvider.register('firstController',function($scope, Data){
+         $scope.data = Data;
+      })
+})
+// 方法2：
+.filter('filterCity', function(){
+    return function(obj){
+            var newObj = [];
+            angular.forEach(obj, function(item){
+                if(item.city == "Shang Hai"){
+                    newObj.push(item);
+                }
+            });
+            return newObj;
+        }
+});
+ </script>
+</body>
+</html>

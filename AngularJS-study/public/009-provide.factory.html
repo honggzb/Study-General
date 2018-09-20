@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <title>009 - $Provider.factory </title>
+</head>
+<body>
+    <div ng-app="myApp">                            <!-- $ngScope -->
+        <div ng-controller="firstController">  <!-- $scope -->
+            {{ name }}
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* $provider.provider
+* $provider.factory
+* $provider.service
+
+- factory方法直接把一个函数当成是一个对象的$get()方法
+- 返回的内容可以是任何类型
+- module.factory
+
+*/
+var myApp = angular.module('myApp', [], function($provide){
+    //console.log("1");
+    //自定义服务
+    $provide.provider('CustomService', function(){
+        //公共接口
+        this.$get = function(){
+            return {
+                message: 'CustomService message'
+            }
+        }
+    });
+    //自定义工厂
+    $provide.factory('Customfactory', function(){
+        return [1,2,3,4,5];
+    });
+
+    $provide.service('CustomService2',function(){
+        return 'aaa';   //不能是基本类型，必须是引用类型
+    })
+});
+
+var firstController = function($scope, CustomService, Customfactory, CustomService2){
+    $scope.name = "hello";
+    //console.log("2");
+    console.log(CustomService);      // {message: "CustomService message"}
+    console.log(Customfactory);      // [1, 2, 3, 4, 5]
+    console.log(CustomService2);    //Constructor {}， 不能是基本类型，必须是引用类型
+}
+// myApp.factory()
+// myApp.provider()
+ </script>
+</body>
+</html>

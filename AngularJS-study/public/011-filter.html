@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>009 - $Provider.factory </title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="firstController">  <!-- $scope -->
+            <p>
+             Number:<br>
+               {{12345345 | number:3}}<br>
+            limitTo: <br>
+               {{[1,2,3,4,5,6,7] | limitTo:5}}<br>
+               {{[1,2,3,4,5,6,7] | limitTo: -5}}
+            </p>
+            <p>
+                String： <br>
+                {{ "Hello world!" | lowercase }}<br>
+                {{ "Hello world!" | uppercase }}<br>
+            </p>
+            <p>
+                filter: <br>
+                filter by param: {{ data.city | filter:'shanghai' }}<br>
+                filter by object: {{ data.city | filter:{name: 'g'} }}<br>
+                self-defined filter: {{ data.city | filter:checkName }}
+            </p>
+            <p>
+                OrderBy: <br>
+                {{ data.city | orderBy: 'name'}}<br>
+                Asc: {{ data.city | orderBy: 'py'}}<br>
+                Desc: {{ data.city | orderBy: '-py'}}
+            </p>
+            <p>
+                json: <br>
+                {{ num  }}
+            </p>
+            <p>
+              Currency: <br>
+              {{ 99999999 | currency: 'rmb '}}
+            </p>
+            <p>
+                Date: <br>
+                {{ today | date }}<br>  <!-- Sep 19, 2018 -->
+                {{ today | date: 'medium'}} <!-- short, longDate, shortDate, mediumDate, fullDate, shortTime, mediumTime -->
+            </p>
+
+            <p>
+                Year: <br>
+                {{ today | date:'y' }}<br>  <!-- 2018 -->
+                {{ today | date:'yy' }} <!-- 18 -->
+            </p>
+            <p>
+                Month: <br>
+                {{ today | date:'M' }}<br>
+                {{ today | date:'MM' }}
+            </p>
+            <p>
+                Day: <br>
+                Day in month: {{ today | date:'dd' }}<br>
+                Day in week: {{ today | date:'EEEE' }}<br> <!-- Wednesday -->
+                Day in week(short): {{ today | date:'EEE' }} <!-- Wednesday -->
+            </p>
+            <p>
+                Hour<br>
+                Hour(24): {{ today | date:'HH' }}<br>
+                Hour(12): {{ today | date:'hh' }}
+            </p>
+            <p>
+                Minute<br>
+                Minute: {{ today | date:'mm' }}<br>
+                Minute: {{ today | date:'m' }}
+            </p>
+            <p>
+                Second<br>
+                Second: {{ today | date:'ss' }}<br>
+                Second: {{ today | date:'s' }}<br>
+                Second: {{ today | date:'.sss' }}
+            </p>
+            <p>
+                self-define<br>
+                {{ today | date: 'y-MM-d H:m:s'}}
+            </p>
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* filter
+ - 数据格式化
+ - 筛选函数
+  {{ expression | fitler }}
+  {{ expression | fitler1 | fitler2 }}
+  {{ expression | fitler:param,... }}
+*/
+var myApp = angular.module('myApp', [])
+                .factory("Data", function(){
+                    return {
+                        city: [
+                            {
+                                name: "shanghai",
+                                py: "1"
+                            },
+                            {
+                                name: "beijing",
+                                py: "2"
+                            },
+                            {
+                                name: "shengzhen",
+                                py: "3"
+                            },
+                            {
+                                name: "shanghai23",
+                                py: "5"
+                            },
+                        ]
+                    }
+                })
+                .controller('firstController',function($scope, Data, $filter){
+                    //$scope.name = "hello";
+                    $scope.today = new Date();
+                    $scope.data = Data;
+                    //filter
+                    var num = $filter('number')(3000);
+                    console.log(num);
+                    var jsonString = $filter('json')($scope.data);
+                    console.log(jsonString);
+
+                    //self-define filter
+                    $scope.checkName = function(obj){
+                        //console.log(obj);
+                        if(obj.name.indexOf('h') === -1)
+                            return false;
+                        return true;
+                    }
+                })
+ </script>
+</body>
+</html>
