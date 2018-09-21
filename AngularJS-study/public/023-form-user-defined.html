@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <link rel="stylesheet" href="./lib/bootstrap3/css/bootstrap.min.css" />
+</head>
+<body>
+    <div ng-app="myApp" class="container">
+        <h3>Angular的表单 - 自定义表单</h3>
+        <hr>
+        <form name="myForm" ng-controller="firstController">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">只能输入偶数</label>
+                <div class="col-sm-9">
+                    <input type="number" name="even" class="form-group" placeholder="偶数" ng-model="data.even" even>
+                    <div ng-show="myForm.even.$error.even" class="alert alert-danger help-block">
+                            数字必须是偶数
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">个人介绍</label>
+                <div class="col-sm-9">
+                    <custom-text-area ng-model="data.introduct">aaa</custom-text-area>
+                    <custom-text-area ng-model="data.introduct"></custom-text-area>
+                 </div>
+            </div>
+        </form>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* Angular的表单
+
+  - 自定义表单
+      ngModel的属性  | 说明
+       $parsers      | 保存了从viewValue向modelValue绑定过程中的处理函数，它们将来会依次执行
+       $formatters   | 保存的是从modelValue向viewValue绑定过程中的处理函数
+       $setViewValue | 当view发生了某件事情时，从view向model绑定调用，$setViewValue把viewValue保存下来
+       $render       | 当模型发生改变时，应该怎么去更新视图，从model向view绑定，调用ctrl.$render()方法，将viewValue渲染到页面上
+       $setValidity  | 设置验证结果
+       $viewValue    | 视图的值
+       $modelValue   | 模型里的值
+
+*/
+var myApp = angular.module('myApp', [], function(){
+
+    })
+    .directive('even', function(){
+        return {
+            require: 'ngModel',    //处理双向绑定
+            link: function(scope, element, attrs, ngModelController){
+                ngModelController.$parsers.push(function(viewValue){
+                    //console.log(viewValue);
+                    if(viewValue % 2 === 0){
+                        ngModelController.$setValidity('even', true);
+                    }else{
+                        ngModelController.$setValidity('even', false);
+                    }
+                    return viewValue;
+                });
+                // ngModelController.$formatters.push(function(modelValue){
+                //     console.log(modelValue);
+                //     return modelValue +'kittencup';
+                // });
+            }
+        };
+    })
+    .directive('customTextArea', function(){
+        return {
+            restrict:'E',
+            template:'<div contenteditable="true"></div>',
+            require: 'ngModel',    //处理双向绑定
+            link: function(scope, element, attrs, ngModelController){
+                //view -> model
+               element.on('keyup', function(){
+                   scope.$apply(function(){
+                       ngModelController.$setViewValue(element.html());
+                   });
+               });
+
+               ngModelController.$render = function(){
+                   element.html(ngModelController.$viewValue);
+               }
+            }
+        };
+    })
+    .controller('firstController',['$scope', function($scope){
+
+    }]);
+ </script>
+</body>
+</html>

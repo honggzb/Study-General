@@ -104,23 +104,6 @@
                     <div ng-show="myForm.blog.$dirty && myForm.blog.$error.url" class="alert alert-danger help-block">博客网站格式不正确</div>
                 </div>
             </div>
-            <!-- <p style="clear: both;"></p>
-            <div class="form-group">
-                <label class="col-sm-3 control-label">只能输入偶数</label>
-                <div class="col-sm-9">
-                    <input type="number" name="even" class="form-group" placeholder="偶数" ng-model="data.even" even>
-                    <div ng-show="myForm.even.$error.even" class="alert alert-danger help-block">
-                            数字必须是偶数
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label">个人介绍</label>
-                <div class="col-sm-9">
-                    <custom-text-area ng-model="data.introduct">aaa</custom-text-area>
-                    <custom-text-area ng-model="data.introduct"></custom-text-area>
-                 </div>
-            </div> -->
             <p style="clear: both;"></p>
             <p>------------------------------------------------------------------------------------------------</p>
             <h4>表单的radio, checkbox, number</h4>
@@ -220,7 +203,6 @@
  - 重置方法： 将表单复位为原始状态
    - $scope.myForm.$setPristine()方法
    - class, $dirty, $pristine均恢复为默认状态
-
 */
 var myApp = angular.module('myApp', [], function(){
 
