@@ -70,3 +70,19 @@ AngularJS的模块
 - [A Simple React Router v4 Tutorial](https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf)
 - [angularjs执行流程](https://www.cnblogs.com/Leo_wl/p/3771304.html)
 - [AngularJS + Webpack Production Setup](https://www.cnblogs.com/Answer1215/p/4796048.html)
+
+
+上学堂2018Web开发视频教程
+
+1、链接: 点此下载 密码: e8s9     html css       https://pan.baidu.com/s/1P8FApoXxkTP5BcO4D5YTwQ
+2、链接: 点此下载 密码: ey8e    javascript      https://pan.baidu.com/s/1t_XbllCOlpfuZ1_yY2gg9g
+3、链接: 点此下载 密码: sayf    angular         https://pan.baidu.com/s/1FAWg6DR64o22pO1hItJS4g
+4、链接: 点此下载 密码: avuw    react vue less  https://pan.baidu.com/s/1OO7n3r3jCVYpo-XaQwro2Q    null
+5、链接: 点此下载 密码: vgdm    微信小程序      https://pan.baidu.com/s/1BsRxPLex4xTft3o9uc2FTg
+
+
+2018年达内web开发视频教程
+
+1、链接: 点此下载 密码: p4n6    https://pan.baidu.com/s/1JRX3MrAWsvj5KUh8CBj0Lw    jquery angular h5
+2、链接: 点此下载 密码: uaae    https://pan.baidu.com/s/1Myxib4By_zTf2pSZEBO_DQ    vue angular 
+3、链接: 点此下载 密码: vw7e    https://pan.baidu.com/s/1V-3IKLRJVF7SgDGolXzJzg
