@@ -14,7 +14,7 @@
         <form name="myForm" ng-controller="firstController">
             <h4>input 类型 - text, password, email, url</h4>
             <div class="form-group" ng-class="{'has-error': myForm.username.$invalid && myForm.username.$dirty}">
-                <label class="col-sm-3 controll-label" for="user name">Name</label>
+                <label class="col-sm-3 controll-label" for="user name">用户名</label>
                 <div class="col-sm-9">
                         <input type="text"
                                name="username"
@@ -26,9 +26,9 @@
                                autocomplete="false"
                                class="form-control" placeholder="your user name">
                             <!-- {{ myForm.username.$error }} -->
-                        <div ng-show="myForm.username.$error.maxlength" class="alert alert-danger help-block">用户名长度不能超过20位</div>
-                        <div ng-show="myForm.username.$error.minlength" class="alert alert-danger help-block">用户名长度不能小于5位</div>
-                        <div ng-show="myForm.username.$error.pattern" class="alert alert-danger help-block">用户名必须英文字母开头</div>
+                        <div ng-show="myForm.username.$dirty && myForm.username.$error.maxlength" class="alert alert-danger help-block">用户名长度不能超过20位</div>
+                        <div ng-show="myForm.username.$dirty && myForm.username.$error.minlength" class="alert alert-danger help-block">用户名长度不能小于5位</div>
+                        <div ng-show="myForm.username.$dirty && myForm.username.$error.pattern" class="alert alert-danger help-block">用户名必须英文字母开头</div>
                  </div>
             </div>
             <div class="form-group" ng-class="{'has-error': myForm.password.$invalid && myForm.password.$dirty}">
@@ -42,8 +42,8 @@
                             ng-maxlength="10"
                             autocomplete="false"
                             class="form-control" placeholder="your password">
-                    <div ng-show="myForm.password.$error.maxlength" class="alert alert-danger help-block">用户密码长度不能超过10位</div>
-                    <div ng-show="myForm.password.$error.minlength" class="alert alert-danger help-block">用户密码长度不能小于5位</div>
+                    <div ng-show="myForm.password.$dirty && myForm.password.$error.maxlength" class="alert alert-danger help-block">用户密码长度不能超过10位</div>
+                    <div ng-show="myForm.password.$dirty && myForm.password.$error.minlength" class="alert alert-danger help-block">用户密码长度不能小于5位</div>
                 </div>
             </div>
             <div class="form-group" ng-class="{'has-error': data.password !== data.repassword && myForm.repassword.$invalid && myForm.repassword.$dirty}">
@@ -70,8 +70,8 @@
                                     max="150"
                                     autocomplete="false"
                                     class="form-control" placeholder="your age">
-                        <div ng-show="myForm.age.$error.max" class="alert alert-danger help-block">年龄不能超过150</div>
-                        <div ng-show="myForm.age.$error.min" class="alert alert-danger help-block">年龄不能小于0</div>
+                        <div ng-show="myForm.age.$dirty && myForm.age.$error.max" class="alert alert-danger help-block">年龄不能超过150</div>
+                        <div ng-show="myForm.age.$dirty && myForm.age.$error.min" class="alert alert-danger help-block">年龄不能小于0</div>
                     </div>
                 </div>
             <div class="form-group" ng-class="{'has-error': myForm.email.$invalid && myForm.email.$dirty}">
@@ -84,9 +84,9 @@
                                 ng-maxlength="30"
                                 autocomplete="false"
                                 class="form-control" placeholder="your email">
-                    <div ng-show="myForm.email.$error.maxlength" class="alert alert-danger help-block">用户邮箱长度不能超过30位</div>
-                    <div ng-show="myForm.email.$error.minlength" class="alert alert-danger help-block">用户邮箱长度不能小于5位</div>
-                    <div ng-show="myForm.email.$error.email" class="alert alert-danger help-block">用户邮箱格式不正确</div>
+                    <div ng-show="myForm.email.$dirty && myForm.email.$error.maxlength" class="alert alert-danger help-block">用户邮箱长度不能超过30位</div>
+                    <div ng-show="myForm.email.$dirty && myForm.email.$error.minlength" class="alert alert-danger help-block">用户邮箱长度不能小于5位</div>
+                    <div ng-show="myForm.email.$dirty && myForm.email.$error.email" class="alert alert-danger help-block">用户邮箱格式不正确</div>
                 </div>
             </div>
             <div class="form-group" ng-class="{'has-error': myForm.blog.$invalid && myForm.blog.$dirty}">
@@ -99,9 +99,9 @@
                             ng-maxlength="30"
                             autocomplete="false"
                             class="form-control" placeholder="your blog">
-                    <div ng-show="myForm.blog.$error.maxlength" class="alert alert-danger help-block">用户邮箱长度不能超过30位</div>
-                    <div ng-show="myForm.blog.$error.minlength" class="alert alert-danger help-block">用户邮箱长度不能小于5位</div>
-                    <div ng-show="myForm.blog.$error.url" class="alert alert-danger help-block">博客网站格式不正确</div>
+                    <div ng-show="myForm.blog.$dirty && myForm.blog.$error.maxlength" class="alert alert-danger help-block">用户邮箱长度不能超过30位</div>
+                    <div ng-show="myForm.blog.$dirty && myForm.blog.$error.minlength" class="alert alert-danger help-block">用户邮箱长度不能小于5位</div>
+                    <div ng-show="myForm.blog.$dirty && myForm.blog.$error.url" class="alert alert-danger help-block">博客网站格式不正确</div>
                 </div>
             </div>
             <!-- <p style="clear: both;"></p>
