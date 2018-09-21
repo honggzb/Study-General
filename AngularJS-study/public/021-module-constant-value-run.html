@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>009 - $Provider.factory </title>
+    <link rel="stylesheet" href="./lib/bootstrap3/css/bootstrap.min.css" />
+</head>
+<body>
+    <div ng-app="myApp" class="container">
+        <div ng-controller="firstController">  <!-- $scope -->
+            <h3>Angular的模块 - constant, value, run方法</h3>
+            <hr>
+
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* Angular的模块 - constant, value, run方法
+
+ - constant
+    - constant(name, object)
+    - 该方法首先运行，可以用它来申明整个应用范围内的常量，并且让它们在所有配置（config方法中）的实例（controller，service等）方法中都可用
+ - value
+    - value(name, object)
+    - 该方法首先运行，可以用它来申明整个应用范围内的常量，不能在所有配置（config方法中）的实例（controller，service等）方法中用
+
+ - run
+    - run(initializationFn)
+    - 想要在注入启动之后执行某些操作，而这些操作需要在页面对用户可用之前执行，可使用此方法
+    - 如：
+        - 加载远程的模板，需要在使用之前放入缓存，
+        - 在使用操作之前判断用户是否登录，未登录可以先去登录页
+
+*/
+var myApp = angular.module('myApp', [], ['$provide', function($provide){
+    console.log("config module");
+    //$provide.factory
+    //$provide.service
+    //$provide.constant
+    }])
+    //provide都有快捷方法
+    .constant('APIKEY','xxxx')
+    .value('version', '1.0.0')
+    .config(function(APIKEY){
+        console.log("config");
+        console.log("config", APIKEY);
+        //console.log("config", version);    //error，不能在config中用value
+    })
+    .run(function(){
+        console.log('run');
+    })
+    .controller('firstController',['APIKEY','version', function(APIKEY, version){
+        console.log("controller");
+        console.log("controller", APIKEY);
+        console.log("controller", version);
+    }]);
+
+/*
+    config module
+    config
+    config xxxx
+    run
+    controller
+    controller xxxx
+    controller 1.0.0
+*/
+ </script>
+</body>
+</html>
