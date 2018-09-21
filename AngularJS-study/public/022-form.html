@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS</title>
+    <link rel="stylesheet" href="./lib/bootstrap3/css/bootstrap.min.css" />
+</head>
+<body>
+    <div ng-app="myApp" class="container">
+        <h3>Angular的表单 - password, url, email</h3>
+        <hr>
+        <form name="myForm" ng-controller="firstController">
+            <h4>input 类型 - text, password, email, url</h4>
+            <div class="form-group" ng-class="{'has-error': myForm.username.$invalid && myForm.username.$dirty}">
+                <label class="col-sm-3 controll-label" for="user name">Name</label>
+                <div class="col-sm-9">
+                        <input type="text"
+                               name="username"
+                               ng-model="data.username"
+                               ng-pattern="/^[a-zA-Z]{1}/"
+                               ng-required="true"
+                               ng-minlength="5"
+                               ng-maxlength="20"
+                               autocomplete="false"
+                               class="form-control" placeholder="your user name">
+                            <!-- {{ myForm.username.$error }} -->
+                        <div ng-show="myForm.username.$error.maxlength" class="alert alert-danger help-block">用户名长度不能超过20位</div>
+                        <div ng-show="myForm.username.$error.minlength" class="alert alert-danger help-block">用户名长度不能小于5位</div>
+                        <div ng-show="myForm.username.$error.pattern" class="alert alert-danger help-block">用户名必须英文字母开头</div>
+                 </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': myForm.password.$invalid && myForm.password.$dirty}">
+                <label class="col-sm-3 controll-label" for="password">Password</label>
+                <div class="col-sm-9">
+                    <input type="password"
+                            name="password"
+                            ng-model="data.password"
+                            ng-required="true"
+                            ng-minlength="3"
+                            ng-maxlength="10"
+                            autocomplete="false"
+                            class="form-control" placeholder="your password">
+                    <div ng-show="myForm.password.$error.maxlength" class="alert alert-danger help-block">用户密码长度不能超过10位</div>
+                    <div ng-show="myForm.password.$error.minlength" class="alert alert-danger help-block">用户密码长度不能小于5位</div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': data.password !== data.repassword && myForm.repassword.$invalid && myForm.repassword.$dirty}">
+                <label class="col-sm-3 controll-label" for="repassword">Reenter Password</label>
+                <div class="col-sm-9">
+                    <input type="password"
+                            name="repassword"
+                            ng-model="data.repassword"
+                            ng-required="true"
+                            ng-minlength="3"
+                            ng-maxlength="10"
+                            autocomplete="false"
+                            class="form-control" placeholder="reenter your password">
+                    <div ng-show="data.repassword !== data.password && myForm.password.$dirty && myForm.repassword.$dirty" class="alert alert-danger help-block">确认密码和密码不一致</div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': myForm.age.$invalid && myForm.age.$dirty}">
+                    <label class="col-sm-3 controll-label" for="email">age</label>
+                    <div class="col-sm-9">
+                        <input type="number"
+                                    name="age"
+                                    ng-model="data.age"
+                                    min="0"
+                                    max="150"
+                                    autocomplete="false"
+                                    class="form-control" placeholder="your age">
+                        <div ng-show="myForm.age.$error.max" class="alert alert-danger help-block">年龄不能超过150</div>
+                        <div ng-show="myForm.age.$error.min" class="alert alert-danger help-block">年龄不能小于0</div>
+                    </div>
+                </div>
+            <div class="form-group" ng-class="{'has-error': myForm.email.$invalid && myForm.email.$dirty}">
+                <label class="col-sm-3 controll-label" for="email">Email</label>
+                <div class="col-sm-9">
+                    <input type="email"
+                                name="email"
+                                ng-model="data.email"
+                                ng-minlength="5"
+                                ng-maxlength="30"
+                                autocomplete="false"
+                                class="form-control" placeholder="your email">
+                    <div ng-show="myForm.email.$error.maxlength" class="alert alert-danger help-block">用户邮箱长度不能超过30位</div>
+                    <div ng-show="myForm.email.$error.minlength" class="alert alert-danger help-block">用户邮箱长度不能小于5位</div>
+                    <div ng-show="myForm.email.$error.email" class="alert alert-danger help-block">用户邮箱格式不正确</div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': myForm.blog.$invalid && myForm.blog.$dirty}">
+                <label class="col-sm-3 controll-label" for="Blog">Blog</label>
+                <div class="col-sm-9">
+                    <input type="url"
+                            name="blog"
+                            ng-model="data.blog"
+                            ng-minlength="5"
+                            ng-maxlength="30"
+                            autocomplete="false"
+                            class="form-control" placeholder="your blog">
+                    <div ng-show="myForm.blog.$error.maxlength" class="alert alert-danger help-block">用户邮箱长度不能超过30位</div>
+                    <div ng-show="myForm.blog.$error.minlength" class="alert alert-danger help-block">用户邮箱长度不能小于5位</div>
+                    <div ng-show="myForm.blog.$error.url" class="alert alert-danger help-block">博客网站格式不正确</div>
+                </div>
+            </div>
+            <!-- <p style="clear: both;"></p>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">只能输入偶数</label>
+                <div class="col-sm-9">
+                    <input type="number" name="even" class="form-group" placeholder="偶数" ng-model="data.even" even>
+                    <div ng-show="myForm.even.$error.even" class="alert alert-danger help-block">
+                            数字必须是偶数
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">个人介绍</label>
+                <div class="col-sm-9">
+                    <custom-text-area ng-model="data.introduct">aaa</custom-text-area>
+                    <custom-text-area ng-model="data.introduct"></custom-text-area>
+                 </div>
+            </div> -->
+            <p style="clear: both;"></p>
+            <p>------------------------------------------------------------------------------------------------</p>
+            <h4>表单的radio, checkbox, number</h4>
+            <div class="form-group">
+                <label class="col-sm-3 controll-label" for="gender">性别</label>
+                <div class="col-sm-9">
+                    <label for="" class="radio-inline">
+                        <input type="radio" ng-required="true" name="gender" ng-model="data.gender" value="1" />Male
+                    </label>
+                    <label for="" class="radio-inline">
+                        <input type="radio" ng-required="true" name="gender" ng-model="data.gender" value="2" />Female
+                    </label>
+                </div>
+            </div>
+            <p style="clear: both;"></p>
+            <div class="form-group">
+                <label class="col-sm-3 controll-label" for="hobby">爱好</label>
+                <div class="col-sm-9">
+                    <label class="checkbox-inline" ng-repeat="hobby in hobbies">
+                        <input type="checkbox"
+                            name="hobby"
+                            ng-click="toggleHobbySelection(hobby.id)"
+                            ng-checked="data.hobbies === undefined ? false: data.hobbies.indexOf(hobby.id) !== -1" />{{ hobby.name }}
+                    </label>
+                </div>
+            </div>
+            <p style="clear: both;"></p>
+            <p>------------------------------------------------------------------------------------------------</p>
+            <h4>表单的select, option</h4>
+            <div class="form-group">
+                <label class="col-sm-3 controll-label" for="hobby">出生地</label>
+                <div class="col-sm-3">
+                    <select class="form-control"
+                            ng-model="data.province"
+                            ng-change="data.area = false"
+                            ng-options="x.id as x.name for x in cities | cityFilter:0"></select>
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-control"
+                            ng-show="data.province"
+                            ng-model="data.area"
+                            ng-options="x.id as x.name for x in cities | cityFilter:data.province"></select>
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-control"
+                            ng-required="true"
+                            ng-show="data.province && data.area"
+                            ng-model="data.city"
+                            ng-options="x.id as x.name for x in cities | cityFilter:data.area"></select>
+                </div>
+            </div>
+            <p style="clear: both;"></p>
+            <p>------------------------------------------------------------------------------------------------</p>
+            <h4>表单的注册和重置</h4>
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-default"
+                        ng-disabled="myForm.$invalid || data.hobbies === undefined || data.hobbies.length === 0">
+                    注册</button>
+                    <button type="button" class="btn btn-default" ng-click="reset()">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* Angular的表单- 可能遇到的问题
+
+ - 如何数据绑定
+ - 验证表单， 单项验证和整个form的验证
+ - 显示出错信息
+ - 避免提交没有验证通过的表单
+ - 防止多次提交
+
+  ng-model
+  ng-required
+  ng-minlength
+  ng-maxlength
+  ng-pattern
+  ng-change
+
+ - Form控制变量
+
+    控制变量                           |   含义
+    formName.inputFieldName.$pristine | 字段是否未更改
+    formName.inputFieldName.$dirty    | 字段是否更改
+    formName.inputFieldName.$valid    | 字段有效
+    formName.inputFieldName.$invalid  | 字段无效
+    formName.inputFieldName.$error    | 字段错误信息
+
+ - 错误
+  - myForm.username.$error
+  - 邮箱： myForm.username.$error.email
+  - 网站： myForm.username.$error.url
+
+ - 重置方法： 将表单复位为原始状态
+   - $scope.myForm.$setPristine()方法
+   - class, $dirty, $pristine均恢复为默认状态
+
+*/
+var myApp = angular.module('myApp', [], function(){
+
+    })
+    .filter("cityFilter", function(){
+        return function(data, parent){
+            var filterData = [];
+            angular.forEach(data, function(obj){
+                if(obj.parent === parent)
+                    filterData.push(obj);
+            });
+            return filterData;
+        }
+    })
+    .controller('firstController',['$scope', function($scope){
+        var that = this;
+        $scope.hobbies = [
+            {id:1, name: "玩游戏"},
+            {id:2, name: "写代码"},
+            {id:3, name: "睡觉"},
+            {id:4, name: "hobby4"}
+        ];
+        // 默认值
+        $scope.data = {
+            hobbies: [1,2],
+            city: 3
+        };
+        $scope.cities = [
+            { name: '上海',  parent: 0, id: 1 },
+            { name: '上海市', parent: 1, id: 2 },
+            { name: '徐汇区', parent: 2, id: 8 },
+            { name: '长宁区', parent: 2, id: 3 },
+            { name: '北京',   parent: 0, id: 4 },
+            { name: '北京市', parent: 4, id: 5 },
+            { name: '东城区', parent: 5, id: 6 },
+            { name: '丰台区', parent: 5, id: 7 },
+            { name: '浙江',   parent: 0, id: 9 },
+            { name: '杭州',   parent: 9, id: 100 },
+            { name: '宁波',   parent: 9, id: 11 },
+            { name: '西湖区', parent: 100, id: 12 },
+            { name: '北仑区‎', parent: 11, id: 13 }
+        ];
+        // 先保留一份默认值
+        $scope.origData = angular.copy($scope.data);
+
+        $scope.reset = function(){
+            $scope.data = angular.copy($scope.origData);
+            that.initCity();
+            $scope.myForm.$setPristine();
+        }
+
+        // 多选框的选择
+        $scope.toggleHobbySelection = function(id){
+            var index = $scope.data.hobbies.indexOf(id);
+            if(index == -1){
+                $scope.data.hobbies.push(id);
+            }else{
+                $scope.data.hobbies.splice(index, 1);
+            }
+        };
+
+        // select级联
+        this.findCityId = function (parent) {
+            var parentId;
+            angular.forEach($scope.cities, function (city) {
+                if (city.id === parent) {
+                    parentId = city.parent;
+                    return;
+                }
+            })
+            return parentId;
+        }
+
+        this.initCity = function(){
+            if ($scope.data.city !== undefined) {
+                $scope.data.area = this.findCityId($scope.data.city);
+                $scope.data.province = this.findCityId($scope.data.area);
+            }
+        }
+
+        // 第一次打开页面 需要初始化一下
+        this.initCity.call(this);
+
+    }]);
+ </script>
+</body>
+</html>
