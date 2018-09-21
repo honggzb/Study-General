@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>009 - $Provider.factory </title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <h3>Angular的自定义指令- scope属性(作用域)</h3>
+        <div ng-controller="firstController">  <!-- $scope -->
+            <!-- 1） 使用 & -->
+            <!-- <div book-list books="books"> -->
+            <!-- 2） 使用 = -->
+            <!-- <div book-list parent-books="books"> -->
+            <!-- 2） 使用 @, 必须是值，不能为引用类型 -->
+            <div book-list scope-title="title">
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* 自定义指令: scope属性，用于不同directive的controller属性之间的参数传递
+
+- scope属性: 为当前指令创建一个新的作用域
+    - false ： 继承父元素的作用域
+    - true  ： 创建一个新的作用域
+    - object： 独立的scope
+           参数 |   说明
+            &   | 把父作用域的属性包装为一个函数，以函数的方式读写父作用域的属性
+            =   | 作用域的属性和父作用域的属性进行双向绑定
+            @   | 只能读取父作用域里的值，单向绑定
+
+*/
+var myApp = angular.module('myApp', [])
+    .directive('bookList', function(){
+        return {
+            restrict: 'ECAM',
+            controller: function($scope){
+                //console.log($scope);
+                // 1） 使用 &
+                // console.log($scope.a());
+                // $scope.books = $scope.a();
+                // 2) 使用 =
+                // $scope.books = $scope.b;
+                // $scope.b.push({id: 13, name: 'Angular', count: 0});
+                // 2) 使用 =
+                $scope.title = $scope.c;
+                console.log($scope.c);
+            },
+            //scope: false,
+            scope: {
+                //a: '&books'       //将父元素的books封装为a函数
+                //b: '=parentBooks'   //双向绑定
+                c: '@scopeTitle'
+            },
+            template: '<div><ul><li ng-repeat="book in books">{{book.name}}</li></ul></div>',
+            replace: true
+        }
+    })
+    .controller('firstController', ['$scope', function($scope){
+        $scope.books = [
+                    {id: 10, name: 'php', count: 0},
+                    {id: 30, name: 'Java', count: 0},
+                    {id: 33, name: 'Javascript', count: 2}
+                ];
+        $scope.title = "zhang san";
+    }]);
+ </script>
+</body>
+</html>

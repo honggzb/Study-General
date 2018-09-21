@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>009 - $Provider.factory </title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <h3>Angular的自定义指令- compile, link属性</h3>
+        <div ng-controller="firstController">  <!-- $scope -->
+            <div ng-repeat="user in users" custom-tags="" custom-tags1>
+
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* 自定义指令:
+
+ * AngularJS指令编译的三阶段
+    - 1）标准浏览器API转化： 将html转化为DOM
+    - 2）Angular compile： 搜索匹配的directive，按priority排序，并执行directive上的compile方法
+    - 3）Angular link： 执行directive上的link方法，进行scope绑定及事件绑定
+
+- compile函数:
+    - compile: function(tElement, tAttrs, transclude)
+    - 用来对模板自身进行转化，仅在编译阶段运行一次
+    - compile中直接返回的函数是postLink，表示link参数需要执行的函数，也可返回一个对象里面包含preLink和postLink
+    - 当定义compile参数时，将无视link参数，因为compile里返回的就是该指令需要执行的link函数
+
+- link函数：
+    - link: function(scope, iElement, iAttrs, controller)
+    - link参数代表的是compile返回的postLink
+    - preLink表示在编译阶段之后，指令连接到子元素之前运行
+    - postLink表示会在所有子元素指令都连接之后才运行
+    - link函数负责在模型和视图直接进行动态关联，对于每个指令的每个实例，link函数都会执行一次
+
+- compile函数和link函数使用时机:
+    - compile函数:
+        - 可以改变DOM结构
+        - 预在DOM渲染前对其进行变形，并不需要scope参数，即在所有相同的directive里共享方法，定义在compile内，性能比较好
+        - 返回值就是link的function
+    - link函数：
+        - 可以绑定事件
+        - 对特定的元素注册事件
+        - 需要用到scope参数来实现DOM元素的一些行为
+
+*/
+var i = 0;
+var myApp = angular.module('myApp', [])
+    .directive('customTags', function(){
+        return {
+            restrict: 'ECAM',
+            template: '<div>{{user.name}}</div>',
+            replace: true,
+            compile: function(tElement, tAttrs, transclude){
+                // console.log('custom tag');
+                // console.log("tElement",tElement);
+                // console.log("tAttrs", tAttrs);
+                // console.log("transclude", transclude);
+
+                tElement.append(angular.element('<div>{{user.name}} - {{user.count}}</div>'));    // tElement是angularJS内部的jQuery对象
+
+                console.log('custom tags 1 编译阶段 ... ');
+                return {
+                    pre: function preLink(scope, iElement, iAttrs, controller){    // 编译阶段之后，指令连接到子元素之前运行
+                        iElement.on('click', function(){
+                            scope.$apply(function(){
+                                scope.user.name = 'Click after';
+                                scope.user.count = ++i;
+                            });
+                        });
+                        console.log('customtags 1 preLink ... ');
+                    },
+                    post: function postLink(scope, iElement, iAttrs, controller){  // 所有子元素指令都连接之后才运行
+                        console.log('customtags 1 all directive link ... ');
+                    }
+                }
+                //相当于compile的postLink
+                // return function(){    // compile返回的就是link对象
+                //     console.log('custom tag- return');
+                // }
+            }
+        }
+    })
+    // 两个directive， 只能有一个template，否则出错
+    .directive('customTags1', function(){
+        return {
+            restrict: 'ECAM',
+            replace: true,
+            compile: function(){
+                console.log('custom tags 2 编译阶段 ... ');
+            }
+        }
+    })
+    .directive('customTags2', function(){
+        // 如直接返回一个function， 相当于postLink
+        return function(){
+
+        }
+    })
+    .controller('firstController', ['$scope', function($scope){
+        $scope.users = [
+            {id: 10, name: 'zhang san', count: 0},
+            {id: 30, name: 'Li si', count: 0}
+        ];
+    }]);
+ </script>
+</body>
+</html>

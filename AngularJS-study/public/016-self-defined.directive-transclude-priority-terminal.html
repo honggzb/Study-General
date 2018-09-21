@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>009 - $Provider.factory </title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <h3>Angular的自定义指令- priority, terminal, compile，link属性</h3>
+        <div ng-controller="firstController">  <!-- $scope -->
+            <custom-tags>原始数据</custom-tags>
+            <!-- <ul>
+                <li ng-repeat="xx in xxx" ng-click="xxxx"></li>
+            </ul> -->
+            <!-- 一个元素不能有多个directive -->
+            <div custom-tags1 custom-tags2></div>
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* 自定义指令:
+
+- module.directive(name, directiveFactory)
+- $compileProvider.directive()
+
+- priority属性: 设置指令在模板中的执行顺序，默认为0， 从大到小的顺序依次执行
+    - 当一个元素上有多个指令时， 如 <li ng-repeat="xx in xxx" ng-click="xxxx"></li>
+    - 设置优先级的情况比较少，如ng-repeat在遍历元素的过程中，需要AngularJS先拷贝生成的模板元素，在应用其他指令，所以ng-repeat的默认priority是1000
+- terminal属性：
+ - 是否以当前指令的权重为结束界限， 如设为true，则节点中权重小于当前指令的其他指令不会被执行。权重相同的会被执行
+- transclude属性：
+ - 保留原有数据
+
+*/
+var myApp = angular.module('myApp', [])
+    .directive('customTags', function(){
+        return {
+            restrict: 'ECAM',
+            template: '<div>新数据, <span ng-transclude></span></div>',
+            replace: true,
+            transclude: true
+        }
+    })
+    .directive('customTags1', function(){
+        return {
+            restrict: 'ECAM',
+            template: '<div>2</div>',
+            replace: true,
+            priority: -1
+        }
+    })
+    .directive('customTags2', function(){
+        return {
+            restrict: 'ECAM',
+            template: '<div>3</div>',
+            replace: true,
+            priority: 0,
+            terminal: true    //只要 <0 的directive都不会被执行，就不会报错
+        }
+    })
+    .controller('firstController', ['$scope', function($scope){
+        $scope.name = "hello";
+    }]);
+ </script>
+</body>
+</html>

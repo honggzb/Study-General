@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>009 - $Provider.factory </title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <h3>Angular的自定义指令- controller， require属性(多个指令)</h3>
+        <div ng-controller="firstController">  <!-- $scope -->
+            <div book-list>
+
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* 自定义指令:
+
+- controller函数:
+    - controller($scope, $element, $attrs, $translude)
+    - controller会暴露一个API， 利用这个API就可以在多个指令直接通过DI进行通信
+    - controllerAs是给controller起的别名，方便使用
+
+- require属性
+
+       选项        |   用法
+   directiveName   | 指定了controller应该带有哪个指令，默认是同一个元素上的指令
+   ^directiveName  | 在父级查找指令
+   ?directiveName  | 表示指令是可选的，如果找不到，不需要抛出移除
+
+*/
+// var myApp = angular.module('myApp', [])
+//     .directive('bookList', function(){
+//         return {
+//             restrict: 'ECAM',
+//             controller: function($scope){
+//                 console.log($scope);
+//                 this.addBook = function(){
+//                     alert("d");
+//                 }
+//             },
+//             controllerAs: 'bookListController',
+//             template: '<ul><li ng-repeat="book in books">{{book.name}}</li></ul>',
+//             replace: true,
+//             link: function(scope, iElement, iAttrs, bookListController){
+//                 console.log(scope);
+//                 iElement.on('click', bookListController.addBook)
+//             }
+//         }
+//     })
+//     .controller('firstController', ['$scope', function($scope){
+//         $scope.books = [
+//             {id: 10, name: 'php', count: 0},
+//             {id: 30, name: 'Java', count: 0},
+//             {id: 33, name: 'Javascript', count: 2}
+//         ];
+//     }]);
+
+// require
+var myApp = angular.module('myApp', [])
+    .directive('bookList', function(){
+        return {
+            restrict: 'ECAM',
+            controller: function($scope){
+                $scope.books = [
+                    {id: 10, name: 'php', count: 0},
+                    {id: 30, name: 'Java', count: 0},
+                    {id: 33, name: 'Javascript', count: 2}
+                ];
+                this.addBook = function(){
+                    $scope.$apply(function(){
+                        $scope.books.push({id: 12, name: 'angularJS', count: 0});
+                    });
+                }
+            },
+            controllerAs: 'bookListController',
+            template: '<div><ul><li ng-repeat="book in books">{{book.name}}</li></ul><book-add></book-add></div>',
+            replace: true,
+        }
+    })
+    .directive('bookAdd', function(){
+        return {
+            restrict: 'ECAM',
+            require: '^bookList',
+            template: '<button type="button">Add</button>',
+            replace: true,
+            link: function(scope, iElement, iAttrs, bookListController){
+                iElement.on('click', bookListController.addBook);
+            }
+        }
+    })
+    .controller('firstController', ['$scope', function($scope){
+
+    }]);
+ </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>009 - $Provider.factory </title>
+    <link rel="stylesheet" href="./lib/bootstrap3/css/bootstrap.min.css" />
+</head>
+<body>
+    <div ng-app="myApp" class="container">
+        <div ng-controller="firstController">  <!-- $scope -->
+            <h3>Angular的自定义指令 - accordion</h3>
+            <hr>
+            <kittercup-group>
+                <kittencup-collapse ng-repeat="collapse in data" heading="{{collapse.title}}">
+                    {{ collapse.content }}
+                </kittencup-collapse>
+            </kittercup-group>
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* 自定义指令: accordion指令
+*/
+var myApp = angular.module('myApp', [])
+    // 数据
+    .factory('Data', function(){
+        return  [
+            {
+                title: "title 1",
+                content: "1111111111 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+            },
+            {
+                title: "title 2",
+                content: "22222222222222 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+            },
+            {
+                title: "title 3",
+                content: "33333333333333333333333333 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+            },
+            {
+                title: "title 4",
+                content: "44444444444444444444444444 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS."
+            }
+        ]
+    })
+    .directive('kittercupGroup', function(){
+        return {
+            restrict: 'E',
+            replace: true,
+            template: '<div class="panel-group" ng-transclude></div>',
+            transclude: true,
+            controller: function(){
+                this.groups = [];     //存放每个accordion的状态
+                this.closeOtherCollapse = function(nowScope){
+                    angular.forEach(this.groups, function(scope){
+                        if(scope !== nowScope){
+                            scope.isOpen = false;
+                        }
+                    })
+                }
+            },
+            controllerAs: 'kittercupGroupController'
+        }
+    })
+    .directive('kittencupCollapse', function(){
+        return {
+            restrict: 'E',
+            replace: true,
+            require: '^kittercupGroup',
+            templateUrl: 'kittercupCollapse.html',
+            scope: {
+                heading: '@'      //@heading
+            },
+            transclude: true,     //将kittencupCollapse指令的数据-'{{ collapse.content }}'-放到模板templateUrl: 'kittercupCollapse.html'的ng-transclude中
+            link: function(scope, element, attrs, kittercupGroupController){
+                scope.isOpen = false;
+                scope.toggleOpen = function(){
+                    scope.isOpen = !scope.isOpen;
+                    kittercupGroupController.closeOtherCollapse(scope);
+                }
+                kittercupGroupController.groups.push(scope);
+            }
+        }
+    })
+    .controller('firstController', ['$scope', 'Data', function($scope, Data){
+        $scope.data = Data;
+    }]);;
+ </script>
+</body>
+</html>

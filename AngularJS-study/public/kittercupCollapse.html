@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+    <div class="panel-heading" ng-click="toggleOpen()">
+          <h4 class="panel-title">
+            <a role="button" href="#">
+                {{ heading }}
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse" ng-class="{collapse: !isOpen}">
+          <div class="panel-body" ng-transclude>
+
+          </div>
+    </div>
+</div>

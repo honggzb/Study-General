@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>009 - $Provider.factory </title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <h3>Angular的自定义指令- restrict, template, templateUrl属性</h3>
+            <h4>restrict： </h4>
+            <table border="1">
+                    <thead>
+                        <tr>
+                            <th>字母</th>
+                            <th>风格</th>
+                            <th>示例</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>E</td>
+                            <td>元素</td>
+                            <td><code>&lt;my-dir&gt;&lt;/my-dir&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td>样式类</td>
+                            <td></pre><code>&lt;span class="my-dir:exp;"&gt;&lt;/span&gt;</code></td>
+                        </tr>
+                         <tr>
+                            <td>A（默认）</td>
+                            <td>属性</td>
+                            <td><code>&lt;span my-dir="exp"&gt;&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td>M</td>
+                            <td>注释</td>
+                            <td><code>&lt;!--directive: my-dir exp --&gt;</code></td>
+                         </tr>
+                    </tbody>
+            </table>
+            <hr>
+        <!-- 必须有id -->
+        <script type="text/ng-template" id="customTags2">
+            <div>Custom Tag 2 - {{ name }} </div>
+        </script>
+        <div ng-controller="firstController">  <!-- $scope -->
+            <custom-tags></custom-tags>
+            <custom-tags1></custom-tags1>
+            <custom-tags2></custom-tags2>
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* 自定义指令:
+
+- module.directive(name, directiveFactory)
+- $compileProvider.directive()
+
+- restrict, template, replace属性
+- templateUrl属性：
+ - 加载当前模板内对应的text/ng-template, script id
+ - 必须在最外面用div包裹
+ - 在chrome中，会阻止从file://中加载模板，可以在服务器中加载，或给chrome设置一个标志, chrome --allow-file-access-from-files
+
+*/
+// 方法1： $compileProvider.directive()
+// var myApp = angular.module('myApp', ['$compileProvider', function($compileProvider){
+//     console.log($compileProvider);
+//     $compileProvider.directive('customTags', function(){
+//         return {
+//             restrict: 'ECAM',
+//             template: '<div>custom tag</div>',
+//             replace: true
+//         }
+//     });
+// }])
+// .controller('firstController', ['$scope', function($scope){
+//     $scope.name = 'Hello';
+// }]);
+
+// 方法2： module.directive(name, directiveFactory)
+var myApp = angular.module('myApp', [])
+   // 1)
+    .directive('customTags', function(){
+        return {
+            restrict: 'ECAM',
+            template: '<div>custom tag, {{ name }}</div>',
+            replace: true
+        }
+    })
+    //2)
+    .directive('customTags1', function(){
+        return {
+            restrict: 'ECAM',
+            templateUrl: 'other.html',
+            replace: true
+        }
+    })
+    //3) 使用text/ng-template
+    .directive('customTags2', function(){
+        return {
+            restrict: 'ECAM',
+            templateUrl: 'customTags2',
+            replace: true
+        }
+    })
+    .controller('firstController', ['$scope', function($scope){
+        $scope.name = "hello";
+    }]);
+ </script>
+</body>
+</html>

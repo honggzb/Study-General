@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>009 - $Provider.factory </title>
+    <style>
+    .blue { color: blue; }
+    </style>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="firstController">  <!-- $scope -->
+            <h3>Angular的内置指令调用格式</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <td>校验器</td>
+                        <td>格式</td>
+                        <td>示例</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>none</td>
+                        <td>namespace-name</td>
+                        <td>ng-bind</td>
+                    </tr>
+                    <tr>
+                        <td>XML</td>
+                        <td>namespace:name</td>
+                        <td>ng:bind</td>
+                    </tr>
+                     <tr>
+                        <td>HTML5</td>
+                        <td>data-namespace-name</td>
+                        <td>data-ng-bind</td>
+                    </tr>
+                    <tr>
+                        <td>XHTML</td>
+                        <td>x-namespace-name</td>
+                        <td>x-ng-bind</td>
+                     </tr>
+                </tbody>
+            </table>
+            <hr>
+            <button ng-click="changeStatus($event)">切换状态</button>
+            <p>{{ status}}</p>
+            <div ng-style="defaultStyle"> ng-style </div><hr>
+            <div ng-class="{blue:status}">ng-class</div><hr>
+            <div ng-show="status">ng-show</div>
+            <hr>
+            <div>
+                <p>ng-switch</p>
+                <ul ng-switch on="status">
+                    <li ng-switch-when="true">true</li>
+                    <li ng-switch-when="false">false</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="./lib/angular/angularjs.js"> </script>
+<script type="text/javascript">
+/*
+* 内置指令
+ - ng-init
+ - ng-bind
+
+ * 内置事件指令： 自动脏检查, 即自动调用$apply
+ - ng-change
+ - ng-click, ng-dbclick
+ - ng-mousedown, ng-mouseenter, ng-mouseleave, ng-mouseover
+ - ng-submit
+
+* 内置节点指令:
+ - ng-style
+ - ng-class, ng-class-even, ng-class-odd
+ - ng-show, ng-hide
+ - ng-switch
+ - ng-src, ng-href
+ - ng-if
+
+*/
+var myApp = angular.module('myApp', [])
+    .controller('firstController', function($scope){
+        $scope.status = false;
+        $scope.changeStatus = function(event){
+            //angular.element的作用的转换为jquery对象
+            angular.element(event.target).html('切换状态'+$scope.status);
+            $scope.status = !$scope.status;
+        };
+
+        $scope.defaultStyle = {'color':'red', 'margin-top':' 50px'};
+    });
+ </script>
+</body>
+</html>
