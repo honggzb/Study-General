@@ -69,3 +69,4 @@ AngularJS的模块
 - https://rxjs-cn.github.io/rxjs5-ultimate-cn/content/recipes-infinte-scroll.html
 - [A Simple React Router v4 Tutorial](https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf)
 - [angularjs执行流程](https://www.cnblogs.com/Leo_wl/p/3771304.html)
+- [AngularJS + Webpack Production Setup](https://www.cnblogs.com/Answer1215/p/4796048.html)
