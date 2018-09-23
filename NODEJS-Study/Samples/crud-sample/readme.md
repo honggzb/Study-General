@@ -12,9 +12,33 @@
 	- [封装异步API](#封装异步API)
 
 -----------------
-```
-01-basic   - 用本地文件db.json作为数据来源+express 
-02-MongoDB
+```shell
+   
+├── 01-basic    # 用本地文件db.json作为数据来源 + express 
+│   ├──  style/
+│   ├──  views/
+│   │    ├──  edit.html
+│   │    ├──  index.html
+│   │    └──  new.html
+│   ├── app.js              # server
+│   ├── db.json             # data file
+│   ├── router.js
+│   └── student.js          # crud method
+│  
+├── 02-MongoDB      # 用mongoDb作为数据库 + express  
+│   ├──  style/
+│   ├──  views/
+│   │    ├──  edit.html
+│   │    ├──  index.html
+│   │    └──  new.html
+│   ├── app.js              # server
+│   ├── db.json             # data file
+│   ├── router.js
+│   └── student.js          # crud method
+│ 
+├── 01-封装ajax方法.html
+├── 02-find和findindex.js
+└── 03-promise-api.js
 ```
 ----------------
 
