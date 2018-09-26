@@ -40,6 +40,7 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 
 <h2>通用插件</h2>
 <ul>
+    <li><a href="" rel="nofollow">Beautify</a>: Beautify javascript, JSON, CSS, Sass, and HTML in Visual Studio Code</li>
     <li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag" rel="nofollow">Auto Close Tag</a>: 自动标签闭合</li>
     <li><a href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer" rel="nofollow">Bracket Pair Colorizer</a>：括号颜色匹配</li>
     <li>JavaScript (ES6) code snippets: `imd --> import { } from 'somewhere'`</li>
