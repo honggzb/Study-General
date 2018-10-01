@@ -1,4 +1,5 @@
-[Content](#top)
+[Contents](#top)
+
 - [Layout](#layout)
   - [centering](#centering)
   - [Constant width to height ratio](#constant-width-to-height-ratio)
@@ -496,14 +497,27 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
 ### list Counter
 
 - `counter-reset` : Initializes a counter, the value is the name of the counter. By default, the counter starts in 0. This property can also be used to change its value to any specific number
+  - `counter-reset: [ <identifier> <integer>? ]+ | none | inherit`
+  - identifier: 计数器名称，可自定义, 名称时可以随意取名，但此名不能是CSS的关键词
+  - integer:  计数器的初始值，默认为0
 - `counter-increment` Used in element that will be countable. Once counter-reset initialized, a counter's value can be increased or decreased
+  - `counter-increment: [ <identifier> <integer>? ]+ | none | inherit`
+  - identifier: 计数器名称，调用counter-reset声明的计数器的标识符
+  - integer:  计数器的初始值，默认为0, 指定计数起始值。其值允许是0或者负整数值，如果未指定任何值，则该值为1（前提是counter-reset未显式设置计数的起始值）。其值递增是按倍数值递增，如果设置了值为2,后面元素递增值为4、6、8，依此类推
+- `content`: 和伪类:before、:after或者伪元素::before、::after配合在一起使用，主要功能用来生成内容
+  - `&:before{ content:"Chapter" counter(Chapter) "." counter(section); }`
 - `counter(name, style)` 
-  - the first as the name of the counter
-  - the second one can be decimal or upper-roman (decimal by default)
+  - 函数，其主要配合content一起使用
+  - name:  定义的属性值,用来告诉该文档插入的计数器标识符名称是什么
+  - style: 与列表中的list-style-type值相等, 可是'disc, circle, square, decimal, decimal-leading-zero, lower-roman, upper-roman, lower-greek, lower-latin, upper-latin, armenian, georgian, lower-alpha, upper-alpha, none, inherit'
 - `counters(counter, string, style)` 
+  - 函数，其主要配合content一起使用
   -  the first as the name of the counter
   -  the second one you can include a string which comes after the counter
   -  the third one can be decimal or upper-roman (decimal by default)
+- **counter只会对可见元素做统计**。只要DOM元素设置了display:none和visibility: hidden;都将不会被计算在内
+
+**1. general- number, such as 2-1, 2-2**
 
 ```html
 <ul>
@@ -518,12 +532,72 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
   </li>
 </ul>
 <style>
-  ul { counter-reset: counter; }   /* Initializes a counter, the value is the name of the counter. By default, the counter starts in 0.  */
-li::before {
-  counter-increment: counter;
-  content: counters(counter, '-') ' '; /* included sub-title of list, such as 2-1, 2-2 */
-}
+  /* 1) 父元素有一个counter-reset应用于实例化（初始化）*/
+  ul { counter-reset: unicornCounter; }   /* Initializes a counter, the value is the name of the counter. By default, the counter starts in 0.  */
+  /* 2) 被指定的子元素上开始计算 */
+  li::before {
+    counter-increment: unicornCounter;
+    /* 3) 显示计数器 - 可以使用伪元素(::before或::after)和它的content来显示计数器 */
+    content: counters(unicornCounter, '-') ' '; /* included sub-title of list, such as 2-1, 2-2 */
+  }
+  /*2. upper-roman, such as I-II */
+   ul { counter-reset: term; } 
+  li::before {
+    counter-increment: term;
+    content: counters(unicornCounter, '-') ' '; 
+  }
 </style>
+```
+
+**2. upper-roman, such as I-II**
+
+```html
+<dl>
+  <dt>term</dt>
+  <dd>definition</dd>
+  <dd>definition</dd>
+  <dd>definition</dd>
+  <dt>term</dt>
+  <dd>definition</dd>
+  <dd>definition</dd>
+<dl>
+<style>
+  dl { counter-reset: term; }
+  dt { 
+    counter-increment: term;
+    counter-reset: definition;
+  }
+  dt::before {
+    content: counter(term, upper-roman) ":"; 
+  }
+  dd{ counter-increment: definition; }
+  dd::before {
+    content:counter(term,upper-roman) "-" counter(definition,upper-roman) ":";
+    margin-right:5px;
+  }
+</style>
+```
+
+- [counter-increment
+](https://tympanus.net/codrops/css_reference/counter-increment/)
+- [Automatic Figure Numbering with CSS Counters]()
+
+**3. Automatic Figure Numbering counter**
+
+```html
+<article>
+  <figure>
+    <img src="1.jpg" alt="" />
+    <figcaption>Here is the legend for your image<figcaption>
+  </figure>
+  <p>...</p>
+</article>
+<style>
+.article { counter-reset: figures;}
+.figure figcaption { counter-increment: figures; }
+.figure figcaption:before {content: 'Fig. ' counter(figures) ' - ';}
+/* format of number is :  FIG. 1 - Here is the legend for your image*/
+</style>  
 ```
 
 > [30 seconds of code](https://github.com/30-seconds/30-seconds-of-code#readme)
