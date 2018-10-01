@@ -142,7 +142,7 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
  "files.autoGuessEncoding": true,        // 中文注释乱码
  "editor.renderWhitespace": "all",  // 控制编辑器是否应呈现空白字符
  "files.trimTrailingWhitespace": true,   // 启用后，将在保存文件时剪裁尾随空格
- "editor.wordWrap": "on"          //word wrap自动换行
+ "editor.wordWrap": "on"          //word wrap自动换行, 打开setting -> 搜索editor.wordWrap
 ```
 
 **设置tab转空格并设置数量**
