@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--[if IE lte 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <style>
+      *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+      body, html { font-size: 100%; padding: 0; margin: 0;}
+
+      /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+      .clearfix:before, .clearfix:after { content: " "; display: table; }
+      .clearfix:after { clear: both; }
+
+      body {
+        font-family: 'Lato', Calibri, Arial, sans-serif;
+        color: #958c88;
+        background: #fcf2ee;
+      }
+
+    .main, .container > header {
+      width: 100%;
+      margin: 0 auto;
+      padding: 2em;
+    }
+    .main {
+      max-width: 69em;
+    }
+    .container > header {
+      text-align: center;
+      background: rgba(0,0,0,0.01);
+    }
+    .article {
+      width: 100%;
+      max-width: 50em;
+      margin: 0 auto; 
+      padding: 1em;
+      counter-reset: figures;
+    }
+    .article h2 {
+      margin: 1em 0;
+      font-size: 2em;
+      border-bottom: 3px solid #f5bca8;
+      padding-bottom: .3em;
+      color: #f5bca8;
+    }
+    .article p {
+      margin-bottom: 1em;
+      font-size: 1.1em;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    .article h2 + p, .article h2 + figure + p {
+      text-indent: 1em;
+    }
+    .article p:first-of-type:first-line {
+      font-weight: 700;
+    }
+    .figure {
+      padding: 0.9em;
+      border: 3px solid #f5bca8;
+      background: #fff;
+      margin: 0 auto 1em;
+    }
+    .figure img {
+      margin: 0 auto;
+      display: block;
+      max-width: 100%;
+    }
+
+    .figure figcaption {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8em;
+      padding: .5em;
+      text-align: center;
+      color: #fff;
+      background: #f5bca8;
+      counter-increment: figures;
+    }
+    .figure figcaption:before {
+      content: 'Fig. ' counter(figures) ' - ';
+    }
+    .figure-left {
+      float: left;
+      margin: 0 1.5em .5em 0;
+      width: -webkit-min-content;
+      width: -moz-min-content;
+      width: min-content;
+    }
+
+    .figure-right {
+      float: right;
+      margin: 0 0 .5em 1.5em;
+      width: -webkit-min-content;
+      width: -moz-min-content;
+      width: min-content;
+    }
+    .figure-right img, .figure-left img {
+      max-width: 300px;
+    }
+   /* Small screens */
+    @media (max-width: 767px) {
+      .figure-left,
+      .figure-right {
+        float: none;
+        margin: 0 0 1em 0;
+        width: 100%;
+      }
+
+      .figure img {
+        max-width: 100%;
+      }
+    }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <header>Automatic Figure Numbering</header>
+    <div class="main clearfix">
+        <article class="article">
+            <h2>Cupcakes are yummy!</h2>
+            <figure class="figure figure-right">
+              <img src="1.jpg">
+                <figcaption>A lovely strawberry-chocolate cupcake</figcaption>
+            </figure>
+            <p>Danish sweet croissant. Marzipan sugar plum brownie faworki marzipan candy canes. Icing carrot cake cheesecake croissant macaroon chocolate cake. Muffin wafer sugar plum oat cake wypas. Lollipop brownie wypas toffee sweet chupa chups. Biscuit soufflé jelly liquorice chocolate bar dragée danish dessert.</p>
+            <p>Bonbon powder donut sesame snaps liquorice. Brownie tootsie roll wypas sugar plum tootsie roll dragée caramels fruitcake jujubes. Jelly sweet roll cheesecake jelly beans gingerbread dragée caramels chupa chups croissant. Sesame snaps croissant liquorice bonbon chocolate cake chocolate bar jelly. Toffee wypas muffin cake topping dessert sweet. Cake caramels powder cake.</p>
+            <p>Biscuit marzipan bear claw candy ice cream fruitcake powder cake. Sugar plum bonbon jelly beans cupcake tart apple pie jelly beans. Gummies faworki candy oat cake biscuit bonbon cheesecake. Ice cream jelly ice cream cheesecake cupcake halvah gummi bears. Gummi bears brownie chocolate bar carrot cake. Chupa chups ice cream brownie tart ice cream. Jelly beans chocolate cake cotton candy brownie halvah toffee caramels sweet. Sesame snaps cotton candy donut faworki candy sweet. Bonbon icing danish toffee marzipan. Fruitcake carrot cake candy jelly beans. </p>
+            <figure class="figure">
+              <img src="1.jpg">
+                <figcaption>Hum... yummy! We want cupcakes!</figcaption>
+            </figure>
+            <p>Topping bear claw chocolate. Gummi bears cotton candy chupa chups faworki. Biscuit lollipop sugar plum danish cheesecake bear claw lollipop lemon drops dragée. Tootsie roll marzipan marshmallow cotton candy carrot cake jelly liquorice sweet muffin. Chocolate cake gingerbread biscuit chocolate bar brownie lemon drops. Powder chocolate donut donut.</p>
+            <h2>I bet you're hungry, right?</h2>
+            <p>Brownie lemon drops pudding bonbon applicake muffin gingerbread. Danish chocolate cake chocolate cake cotton candy. Muffin wafer danish bonbon sweet gummies toffee. Lollipop tart bear claw sweet roll pudding. Gummi bears cookie pie chupa chups gummi bears topping jujubes apple pie. Cheesecake brownie toffee.</p>
+            <p>Cotton candy sugar plum dessert liquorice chocolate cake jujubes tootsie roll tart ice cream. Pastry carrot cake jujubes fruitcake. Donut dessert candy canes lollipop pastry gummies toffee. Chocolate carrot cake carrot cake wypas pie marzipan apple pie chupa chups chupa chups. Liquorice chocolate bar biscuit wypas tart wafer liquorice soufflé. Bonbon candy canes candy pie. Liquorice gingerbread croissant.</p>
+            <p>Marzipan jelly-o chocolate cake gummi bears. Apple pie jelly-o sweet carrot cake wypas oat cake. Macaroon chocolate cake chocolate toffee gummies marzipan. Jelly beans liquorice croissant tootsie roll caramels apple pie. Carrot cake sesame snaps marshmallow.</p>
+            <figure class="figure figure-left">
+              <img src="1.jpg">
+                <figcaption>A yummy cupcake! Don't you want to have a bite?</figcaption>
+            </figure>
+            <p>Bear claw tiramisu halvah. Tootsie roll liquorice marzipan ice cream tart marshmallow liquorice tootsie roll caramels. Liquorice macaroon dessert ice cream. Topping dragée dragée cheesecake dessert gummi bears tart. Lemon drops jelly-o lollipop. Jelly-o jelly-o ice cream chupa chups croissant soufflé tootsie roll. </p>
+            <p>Lemon drops dragée marshmallow. Jelly-o cotton candy applicake chocolate bar sweet roll jelly faworki.</p>
+            <p>Caramels brownie dessert. Biscuit pie cheesecake applicake wypas marzipan. Lollipop sweet roll applicake macaroon fruitcake candy muffin. Powder chocolate bar chocolate applicake icing bonbon applicake macaroon jelly beans. Oat cake ice cream icing pudding caramels. Powder wypas pie ice cream brownie soufflé. Pudding halvah gummies candy canes lollipop dragée sweet gingerbread. Lollipop sesame snaps lemon drops.</p>
+            <h2>Jelly-o cotton candy applicake</h2>
+            <p> Jujubes dessert powder wypas sweet roll chupa chups gummi bears fruitcake. Liquorice soufflé gummi bears donut gingerbread brownie tiramisu lemon drops dragée. Jelly-o gummies cake brownie jujubes biscuit brownie. Dragée faworki gummies icing chupa chups donut cheesecake sweet roll. Cake sweet roll powder toffee pudding. Icing cookie halvah.</p>
+            <figure class="figure figure-right">
+              <img src="1.jpg">
+                <figcaption>Let's all eat cupcakes all the time</figcaption>
+            </figure>
+            <p>Brownie lemon drops pudding bonbon applicake muffin gingerbread. Danish chocolate cake chocolate cake cotton candy. Muffin wafer danish bonbon sweet gummies toffee. Lollipop tart bear claw sweet roll pudding. Gummi bears cookie pie chupa chups gummi bears topping jujubes apple pie. Cheesecake brownie toffee.</p>
+            <p>Cotton candy sugar plum dessert liquorice chocolate cake jujubes tootsie roll tart ice cream. Pastry carrot cake jujubes fruitcake. Donut dessert candy canes lollipop pastry gummies toffee. Chocolate carrot cake carrot cake wypas pie marzipan apple pie chupa chups chupa chups. Liquorice chocolate bar biscuit wypas tart wafer liquorice soufflé. Bonbon candy canes candy pie. Liquorice gingerbread croissant.</p>
+            <figure class="figure figure-left">
+              <img src="1.jpg">
+                <figcaption>Cupcakes, cupcakes, my darling</figcaption>
+            </figure>
+            <p>Danish sweet croissant. Marzipan sugar plum brownie faworki marzipan candy canes. Icing carrot cake cheesecake croissant macaroon chocolate cake. Muffin wafer sugar plum oat cake wypas. Lollipop brownie wypas toffee sweet chupa chups. Biscuit soufflé jelly liquorice chocolate bar dragée danish dessert.</p>
+            <p>Bonbon powder donut sesame snaps liquorice. Brownie tootsie roll wypas sugar plum tootsie roll dragée caramels fruitcake jujubes. Jelly sweet roll cheesecake jelly beans gingerbread dragée caramels chupa chups croissant. Sesame snaps croissant liquorice bonbon chocolate cake chocolate bar jelly. Toffee wypas muffin cake topping dessert sweet. Cake caramels powder cake.</p>
+            <p>Biscuit marzipan bear claw candy ice cream fruitcake powder cake. Sugar plum bonbon jelly beans cupcake tart apple pie jelly beans. Lemon drops dragée marshmallow. Jelly-o cotton candy applicake chocolate bar sweet roll jelly faworki. Caramels brownie dessert. Biscuit pie cheesecake applicake wypas marzipan. Lollipop sweet roll applicake macaroon fruitcake candy muffin. Powder chocolate bar chocolate applicake icing bonbon applicake macaroon jelly beans. Oat cake ice cream icing pudding caramels. Powder wypas pie ice cream brownie soufflé. Pudding halvah gummies candy canes lollipop dragée sweet gingerbread. Lollipop sesame snaps lemon drops.</p>
+          </article>
+    </div>
+  </div>
+</body>
+</html>
