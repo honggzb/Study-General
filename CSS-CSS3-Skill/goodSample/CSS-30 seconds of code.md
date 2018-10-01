@@ -581,6 +581,7 @@ var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
 - [counter-increment
 ](https://tympanus.net/codrops/css_reference/counter-increment/)
 - [CSS的计数器：counter-increment与counter-reset](http://www.wozhuye.com/compatible/297.html)
+- [扩展阅读-使用CSS的counter-increment做的游戏](https://www.w3cplus.com/css3/pure-css-games-with-counter-increment.html)
 
 **3. Automatic Figure Numbering counter**
 
