@@ -5,6 +5,7 @@
 - [3. CSS选择器前缀法](#CSS选择器前缀法)
 - [4. 条件注释](#条件注释)
 - [5. 针对其他浏览器的HACK](#针对其他浏览器的HACK)
+- [6. IE11的hack](#IE11的hack)
 
 ```css
 -moz-padding-start:    /*firefox*/
@@ -137,6 +138,27 @@ _color: red;  /* IE6 */
     #veintidos { color: red}
 }
 ```
+
+[back to top](#top)
+
+<h2 id="IE11的hack">6. IE11的hack</h2>
+
+win8的Metro版IE10将不再支持插件，并且不再支持条件注释
+
+```css
+/* IE10的专属css hack */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+/* IE10-specific styles go here */ 
+} 
+/* IE11的专属css hack */
+@media all and (-ms-high-contrast:none) {
+//这里是要单独为IE11设置的样式
+}
+```
+
+[back to top](#top)
+
+-------------------------------------
 
 > Reference
 > - [史上最全的CSS hack方式一览（解决IE6-IE11,Firefox/Safari/Opera/Chrome兼容问题）](https://blog.csdn.net/dayu9216/article/details/70225261)
