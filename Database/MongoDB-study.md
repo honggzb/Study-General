@@ -33,6 +33,8 @@ logpath=D:\mongodb\data\log\mongodb.log
     - 该端口绑定在127.0.0.1，无法远程连接，设置bing_ip为0.0.0.1可以远程连接`bind_ip=0.0.0.0`       
     - 需要认证才能连接，先设置用户再开启认证,  `auth =true`
 
+[back to top](#top)
+
 ## 启动
 
 ### 命令行下运行MongoDB服务器
@@ -75,21 +77,26 @@ D:\MongoDB\Server\4.0\bin> db.serverCmdLineOpts()                 #查看mongod�
 
 - 将mongodb服务添加到windows服务列表(将MongoDB安装为windows服务): 
 
-- 管理员运行cmd 打开bin目录执行下面命令
+- **管理员**运行cmd 打开D:\MongoDB\Server\4.0\bin目录执行下面命令
   `mongod -f "D:\MongoDB\mongod.cfg"  --install -serviceName "mongodb"`
 - 启动mongodb服务
-   `d:\mongodb\bin>NET START mongodb` 
+   `D:\MongoDB\Server\4.0\bin> NET START mongodb` 
 - 打开任务管理器，可以看到进程已经启动
 - 关闭服务和删除进程
-   ```shell
-   d:\mongodb\bin>NET stop mongodb   #关闭服务
-   d:\mongodb\bin>mongod --dbpath "d:\mongodb\data\db" --logpath "d:\mongodb\data\log\MongoDB.log" --remove --serviceName "mongodb"  #删除，注意不是--install了
-   ```
+  
+```shell
+   D:\MongoDB\Server\4.0\bin>NET stop mongodb   #关闭服务
+   D:\MongoDB\Server\4.0\bin>mongod --dbpath "d:\mongodb\data\db" --logpath "d:\mongodb\data\log\MongoDB.log" --remove --serviceName "mongodb"  #删除，注意不是--install了
+```
+
+[back to top](#top)
 
 ### MongoDB的可视化工具
 
 - Robomongo(推荐): Robomongo 是开源，免费的MongoDB管理工具，下载地址：[Robomongo下载](https://robomongo.org/)
 - MongoBooster:  支持MongoDB 3.2 版本，个人使用免费，用于商业收费，下载地址：[MongoBooster下载](http://mongobooster.com/downloads%20)
+
+[back to top](#top)
 
 ##  使用mongoDB
 
@@ -126,6 +133,8 @@ db.users.findOne()|查找users集合中的第一条数据
 **5.修改**|
 `db.users.update({"name":"lecaf"}, {"age":10})`|修改name=lecaf的数据为age=10，第一个参数是查找条件，第二个参数是修改内容，除了主键，其他内容会被第二个参数的内容替换，主键不能修改
 
+[back to top](#top)
+
 ### 高级应用
 
 1. **条件查找**
@@ -149,6 +158,8 @@ db.collection.find({"key":value, $or : [{a : 1} , {b : 2}]})    #符合条件key
 db.collection.find({"key.subkey":value})    #内嵌对象中的值匹配，注意："key.subkey"必须加引号
 db.collection.find({"key":{$not: /^val.*val$/i}})    #这是一个与其他查询条件组合使用的操作符，不会单独使用。上述查询条件得到的结果集加上$not之后就能获得相反的集合。
 ```
+
+[back to top](#top)
 
 2. **排序**
 
