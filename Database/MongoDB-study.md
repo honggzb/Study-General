@@ -1,14 +1,13 @@
 [Mongo DB](#top)
 
-- [配置](#配置)
-- [启动](#启动)
-  - [命令行下运行MongoDB服务器](#命令行下运行MongoDB服务器)
-  - [以windows服务方式启动](#以windows服务方式启动)
-  - [MongoDB的可视化工具](#MongoDB的可视化工具)
-- [使用mongoDB](#使用mongoDB)
-  - [一般应用](#一般应用)
-  - [高级应用](#高级应用)
-- [](#)
+- [配置](#%E9%85%8D%E7%BD%AE)
+- [启动](#%E5%90%AF%E5%8A%A8)
+    - [命令行下运行MongoDB服务器](#%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E8%BF%90%E8%A1%8Cmongodb%E6%9C%8D%E5%8A%A1%E5%99%A8)
+    - [以windows服务方式启动](#%E4%BB%A5windows%E6%9C%8D%E5%8A%A1%E6%96%B9%E5%BC%8F%E5%90%AF%E5%8A%A8)
+    - [MongoDB的可视化工具](#mongodb%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7)
+- [使用mongoDB](#%E4%BD%BF%E7%94%A8mongodb)
+    - [一般应用](#%E4%B8%80%E8%88%AC%E5%BA%94%E7%94%A8)
+    - [高级应用](#%E9%AB%98%E7%BA%A7%E5%BA%94%E7%94%A8)
 
 ## 配置
 
