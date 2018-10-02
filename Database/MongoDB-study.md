@@ -100,6 +100,15 @@ D:\MongoDB\Server\4.0\bin> db.serverCmdLineOpts()                 #查看mongod�
 
 ##  使用mongoDB
 
+Oracle|MongoDB|Mongoose
+---|---|---
+数据库实例(database instance|	MongoDB实例|Mongoose
+模式(schema)|数据库(database)|mongoose
+表(table)|集合(collection)|	模板(Schema)+模型(Model)
+行(row)|	文档(document)|	实例(instance)
+rowid|_id|_id
+Join|DBRef|DBRef
+
 ### 一般应用
 
 命令|功能
