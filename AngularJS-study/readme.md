@@ -12,7 +12,7 @@
     - Angular Language Service
     - TS Lint {for typescript}
 
-## Creating Debug Configuration - Debugger for Chrome
+## Creating Debug Configuration for VS Code - Debugger for Chrome
 
 - install plugin: Debugger for Chrome
 - open the debug panel: 'Ctrl+Shift+D'
