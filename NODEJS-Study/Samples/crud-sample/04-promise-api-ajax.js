@@ -19,9 +19,8 @@ function pGet(url, callback) {
         oReq.send()
   })
 }
-    // 这个 get 是 callback 方式的 API
-    // 可以使用 Promise 来解决这个问题
-function get(url, callback) {
+//callback方式的API
+/*function get(url, callback) {
   var oReq = new XMLHttpRequest()
       // 当请求加载成功之后要调用指定的函数
   oReq.onload = function () {
@@ -30,4 +29,4 @@ function get(url, callback) {
   }
   oReq.open("get", url, true)
   oReq.send()
-}
+}*/
