@@ -38,6 +38,7 @@
   - [入门 demo-阮一峰：结合入门文章](https://github.com/ruanyf/react-demos)
   - [模仿知乎界面的一个简单React demo](https://github.com/tsrot/react-zhihu)：结合 [ReactJS中文基础视频教程-爱酷](http://www.icoolxue.com/album/show/262)
   - [React 基础实例教程](https://www.cnblogs.com/imwtr/p/6278968.html)
+  - [React 入门教程](https://hulufei.gitbooks.io/react-tutorial/content/) v
 - 入门视频教程
   - [React入门-慕课网](http://www.imooc.com/learn/504)
   - [ReactJS中文基础视频教程-爱酷](http://www.icoolxue.com/album/show/262)
