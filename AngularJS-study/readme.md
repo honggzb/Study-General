@@ -14,6 +14,8 @@
 
 ## Creating Debug Configuration for VS Code - Debugger for Chrome
 
+**Debugger for Chrome in VS Code**
+
 - install plugin: Debugger for Chrome
 - open the debug panel: 'Ctrl+Shift+D'
 - Click a gear icon -> choose chrome -> launch.json will show
@@ -26,6 +28,15 @@
 > - [Using Angular in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/angular-tutorial)
 > - [AngularJS Tutorials-VS+Asp.net](http://www.tutorialsteacher.com/angularjs/angularjs-development-environment)
 
+**Chrome Debugger extension**
+
+1. ng-inspect for AngularJS
+    - $s -> scope
+    - $is -> isolateScope
+    - $rs -> rootScope
+    - $el -> jQuery element
+    - $events -> the events associated with the jQuery element
+    - $get function -> Services/Factories/Constants
 
 ## Angular in Visual Studio Code
 
