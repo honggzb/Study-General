@@ -21,6 +21,7 @@
     - [Overview](#overview)
     - [Return values](#return-values)
     - [Criteria object](#criteria-object)
+    - [State-level hooks](#state-level-hooks)
 
 ## UI-Router Features
 
@@ -491,6 +492,75 @@ $transitions.onBefore({}, function(transition) {
 
 ### Criteria object
 
+- To/From
+- Entering/Exiting/Retained
+- Glob : globs to match state names using wildcards
+- Functional criteria
+
+```javascript
+$transitions.onSuccess({ to: 'login' }, function(transition) {
+  console.log("Now at 'login' state");
+});
+$transitions.onSuccess({ from: 'login' }, function(transition) {
+  console.log("Left 'login' state");
+});
+$transitions.onError({ from: 'home' }, function(transition) {
+  console.log("Error while leaving 'home' state: " + transition.error());
+});
+//this hook is not run again when transitioning between states inside the admin state tree
+$transitions.onSuccess({ entering: 'admin' }, function(transition) {
+  console.log("Now inside the admin section!");
+});
+//using wildcards
+//this hook will be run when transitioning between states inside the admin state tree, such as from admin.users to admin.users.create
+$transitions.onSuccess({ to: 'admin.**' }, function(transition) {
+  console.log("Switched to an admin state: " + transition.to().name);
+});
+//Functional criteria
+const criteriaObj = {
+  to: (state) => state.name === 'admin'
+};
+$transitions.onSuccess(criteriaObj, function(transition) {
+  console.log("Switched to the admin state.");
+});
+// Functional criteria can be used to check for metadata on state declarations
+const states = [
+  { name: 'home', data: { title: 'Home' } },
+  { name: 'about', data: { title: 'About the app' } },
+  { name: 'other' },
+]
+const criteriaObj = {
+  to: (state) => !!state.data.title
+}
+$transitions.onSuccess(criteriaObj, function(transition) {
+  document.title = transition.to().data.title;
+});
+```
+
+[back to top](#top)
+
+### State-level hooks
+
+There are three state-level hooks: 
+
+- onEnter
+- onExit 
+- onRetain
+
+```javascript
+$transitions.onEnter({}, function(transition, state) {
+  console.log('Transition #' + transition.$id + ' Entered ' + state.name);
+}
+/*
+Transition #1 Entered people
+Transition #1 Entered people.person
+*/
+$transitions.onEnter({ entering: 'people' }, function(transition, state) {
+  console.log('Transition #' + transition.$id + ' Entered ' + state.name);
+}
+//Transition #1 Entered people
+```
+
 [back to top](#top)
 
 > References
@@ -500,4 +570,3 @@ $transitions.onBefore({}, function(transition) {
 - [angularjs中的路由介绍详解 ui-route](https://www.cnblogs.com/littlemonk/p/5500801.html)
 - [深究AngularJS——ui-router详解](https://blog.csdn.net/zcl_love_wx/article/details/52034193)
 - [深入理解ANGULARUI路由_UI-ROUTER](https://blog.csdn.net/huwei2003/article/details/52278013)
-
