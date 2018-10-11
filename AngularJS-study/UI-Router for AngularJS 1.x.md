@@ -27,16 +27,16 @@
 
 **UI-Router have three features**
 
-- States:  UI-Router applications behave like a state machine. UI-Router applications are modeled as a tree of states
+- **States**:  UI-Router applications behave like a state machine. UI-Router applications are modeled as a tree of states
     - UI-Router provides state based routing. Each feature of an application is defined as a state. One state is active at any time, and UI-Router manages the transitions between the states
     - Each state describes the URL, the UI (a view or views), data prerequisites, and other logical prerequisites (such as authentication) for a feature. Before activating a state, UI-Router first fetches any prerequisites (asynchronously), and then activates the view(s) and updates the URL
     - UI-Router states are hierarchical; states can be nested inside other states, forming a tree
 Child states may inherit data and behavior (such as authentication) from their parent states
-- views: 
+- **views**: 
     - A state defines a feature’s UI (and UI behavior) using a view (or multiple views). **A view is a UI component**, which is placed into a viewport (`<ui-view>`) when the state is activated
     - Views can be **nested** inside other views. A parent state’s view can create a viewport (`<ui-view>`), and an nested state can fill that viewport with their own view when activated
     - Each state can have multiple named views, allowing complex layouts. A named view can target an arbitrary viewport, anywhere in the DOM (even outside the component hierarchy of the parent state). This can be used to fill (or override) named viewports such as footers, or nagivation, when some nested state is active
-- urls: 
+- **urls**: 
     - A state can define a URL, but **it isn’t required**. If a state has defined a URL, the browser’s location is updated to that URL when the state is active
     - **A state’s URL is actually a URL fragment**. Each state defines only the fragment (portion) of the URL that it “owns”. That fragment is appended to the parent state’s url in the browser URL when the nested state is active
   
