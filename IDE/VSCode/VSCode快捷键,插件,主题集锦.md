@@ -145,6 +145,17 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
  "editor.wordWrap": "on"          //word wrap自动换行, 打开setting -> 搜索editor.wordWrap
 ```
 
+改变theme的高亮highlight颜色
+
+```json
+ "workbench.colorCustomizations": {
+   "[Monokai]":{
+        "editorSelection": "#ff0000", // for selection
+        "editorSelectionHighlight": "#ffed00"  //for occurences
+    }
+ }
+```
+
 **设置tab转空格并设置数量**
 
 1. 在状态栏右下角点击  ---》空格：
