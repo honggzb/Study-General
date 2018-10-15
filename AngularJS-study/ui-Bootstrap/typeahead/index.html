@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <!-- bootstrap -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+     <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <!-- angular UI-->
+    <link rel="stylesheet" href="lib/angular-ui/ui-bootstrap-0.14.1-csp.css">
+    <script src="lib/angular-ui/ui-bootstrap-tpls-0.14.3.js"></script>
+
+    <link rel="stylesheet" href="app.css">
+    <script src="app.js"></script>
+  </head>
+  <body ng-app="myApp">
+      <!-- -->
+      <script type="text/ng-template" id="customTemplate.html">
+        <a>
+            <img ng-src="http://upload.wikimedia.org/wikipedia/commons/thumb/{{match.model.flag}}" width="16">
+            <span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
+        </a>
+      </script>
+      <!-- -->
+      <script type="text/ng-template" id="customPopupTemplate.html">
+        <div class="custom-popup-wrapper"
+           ng-style="{top: position().top+'px', left: position().left+'px'}"
+           style="display: block;"
+           ng-show="isOpen() && !moveInProgress"
+           aria-hidden="{{!isOpen()}}">
+          <p class="message">select location from drop down.</p>
+      
+          <ul class="dropdown-menu" role="listbox">
+              <li ng-repeat="match in matches track by $index" ng-class="{active: isActive($index) }"
+                  ng-mouseenter="selectActive($index)" ng-click="selectMatch($index)" role="option" id="{{::match.id}}">
+                  <div uib-typeahead-match index="$index" match="match" query="query" template-url="templateUrl"></div>
+              </li>
+          </ul>
+        </div>
+      </script>
+      <!-- -->
+      <div class='container-fluid typeahead-demo' ng-controller="TypeaheadCtrl">
+          <h4>Static arrays</h4>
+          <pre>Model: {{selected | json}}</pre>
+          <input type="text" class="form-control"
+                 ng-model="selected" 
+                 uib-typeahead="n.name as n.name+'('+n.ename+')' for n in names | filter:$viewValue | limitTo:8">
+
+          <h4>Asynchronous results</h4>
+          <pre>Model: {{asyncSelected | json}}</pre>
+          <input type="text" 
+                 ng-model="asyncSelected" 
+                 uib-typeahead="address for address in getLocation($viewValue)" 
+                 typeahead-loading="loadingLocations" 
+                 typeahead-no-results="noResults" 
+                 class="form-control">
+          <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+          <div ng-show="noResults">
+            <i class="glyphicon glyphicon-remove"></i> No Results Found
+          </div>
+
+          <h4>Custom templates for results</h4>
+          <pre>Model: {{customSelected | json}}</pre>
+          <input type="text" placeholder="Custom template" class="form-control"
+                 ng-model="customSelected"
+                 uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" >
+
+          <h4>Custom popup templates for typeahead's dropdown</h4>
+          <pre>Model: {{customPopupSelected | json}}</pre>
+          <input type="text" placeholder="Custom popup template" class="form-control"
+                 ng-model="customPopupSelected"
+                 uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-popup-template-url="customPopupTemplate.html">
+      </div>
+
+  </body> 
+</html>
