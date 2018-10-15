@@ -6,6 +6,9 @@
     - [State Properties](#state-properties)
     - [Nested States](#nested-states)
     - [States Lifecycle](#states-lifecycle)
+    - [URL路由传参（通过$stateParams服务获取参数）](#url%E8%B7%AF%E7%94%B1%E4%BC%A0%E5%8F%82%E9%80%9A%E8%BF%87stateparams%E6%9C%8D%E5%8A%A1%E8%8E%B7%E5%8F%96%E5%8F%82%E6%95%B0)
+    - [Route to component](#route-to-component)
+    - [Resolve data（预载入）](#resolve-data%E9%A2%84%E8%BD%BD%E5%85%A5)
 - [UI-Router Views](#ui-router-views)
     - [Nested views](#nested-views)
     - [Multiple named uiviews](#multiple-named-uiviews)
@@ -99,15 +102,16 @@ bower install angular-ui-router
 </html>
 ```
 
-**helloworld.js**
+**helloworld.js -配置路由状态**
 
 ```javascript
 var myApp = angular.module('helloworld', ['ui.router']);
+//1) 配置路由状态
 myApp.config(function($stateProvider) {
   //Create state(view declaration)
   var helloState = {   //When the hello state is activated, the HelloComponent is rendered
-    name: 'hello',
-    url: '/hello',
+    name: 'hello',   //导航用的名字，如<a ui-sref="hello" ui-sref-active="active">Hello</a> 里的hello
+    url: '/hello',   //访问路径
     template: HelloComponent
   }
   var aboutState = {   //When the about state is activated, the AboutComponent is rendered
@@ -200,6 +204,156 @@ $state.go('^.detail.comment')到孙子级state，比如从photo.detail到photo.d
     - **state name**: the hook’s match criteria can be state names, such as `banking.account`
     - **glob**: the criteria can be a state glob pattern, such ash `banking.**`
     - **callback**: the criteria can be a callback function, such as `tostate => tostate.data.requiresAuth == true`
+
+[back to top](#top)
+
+### URL路由传参（通过$stateParams服务获取参数）
+
+有`url: '/index/:id'`,和`url: '/index/{id}'`,两种形式传参
+
+```html
+  <body >    
+    <div ng-app="myApp" >
+        <a ui-sref="index({id:30})">show index</a>    
+        <a ui-sref="test({username:'peter'})">show test</a>
+        <div ui-view></div>
+    </div>  
+  </body>
+  <script type="text/javascript">
+    var app = angular.module('myApp', ['ui.router']);   
+    app.config(["$stateProvider",  function ($stateProvider) {      
+        $stateProvider     
+        .state("home", {
+            url: '/',  
+            template:"<div>homePage</div>"
+        })
+        .state("index", {
+            url: '/index/:id',  
+            template:"<div>indexcontent</div>",
+            controller:function($stateParams){
+                alert($stateParams.id)
+            }
+        })  
+        .state("test", {
+            url: '/test/:username',  
+            template:"<div>testContent</div>",
+            controller:function($stateParams){
+                alert($stateParams.username)
+            }
+        })          
+
+    }]);
+  </script>
+```
+
+**`$stateParams`不仅可以接收路由参数，还可以接收查询字符串参数**
+
+```html
+<!-- 传递查询字符串 -->
+<button style="margin-top: 10px; width:100%;"
+class="btn btn-default" ui-sref=".comment({skip:0, limit:2})">Comments</button>
+<script>
+.state('content.photos.detail.comment',{
+  url:'/comment?skip&limit',
+  templateUrl: 'partials/photos-detail-comment.html',
+  controller: 'PhotoCommentController',
+  controllerAs: 'ctrPhotoComment'
+})
+</script>
+```
+
+**state间如何传递对象**
+
+```javascript
+// 1) 通过data属性，把一个对象赋值给它  
+// 2) 给header.html加上一个对应的控制器，并提供注销方法
+.state('content',{
+  url: '/',
+  abstract: true,
+  data:{
+    user: "user",
+    password: "1234"
+    },
+  views:{
+    "": { templateUrl: 'partials/content.html' },
+    "header@content":{
+      templateUrl: 'partials/header.html',
+      controller: function($scope, $rootScope, $state){
+      $scope.logoff = function(){
+        $rootScope.user = null;
+      },
+  }
+})
+```
+
+[back to top](#top)
+
+### Route to component
+
+```javascript
+var helloGalaxy = {
+  name: 'hello',
+  url: '/hello',
+  component: 'hello'
+}
+```
+
+[back to top](#top)
+
+### Resolve data（预载入）
+
+- when a user switches back and forth between states, fetch application data from a server API
+- 如果传入的时字符串，angular-route会试图匹配已经注册的服务。如果传入的是函数，该函数将会被注入，并且该函数返回的值便是控制器的依赖之一。如果该函数返回一个数据保证（promise），这个数据保证将在控制器被实例化前被预先载入并且数据会被注入到控制器中
+
+```javascript
+var app = angular.module('myApp', ['ui.router']);   
+    app.config(["$stateProvider",  function ($stateProvider) {      
+        $stateProvider     
+        .state("home", {
+            url: '/',  
+            template:"<div>homePage</div>"
+        })
+        .state("index", {
+            url: '/index/{id}',  
+            template:"<div>indexcontent</div>",
+            resolve: {   
+                //这个函数的值会被直接返回，因为它不是数据保证             
+                user: function() {  
+                  return {
+                    name: "peter",
+                    email: "audiogroup@qq.com"
+                  }
+                },
+                //这个函数为数据保证, 因此它将在控制器被实例化之前载入
+                detail: function($http) {
+                  return $http({
+                    method: 'JSONP',
+                    url: '/current_details'
+                  });
+                },
+                //前一个数据保证也可作为依赖注入到其他数据保证中！（这个非常实用）
+                myId: function($http, detail) {
+                  $http({
+                    method: 'GET',
+                    url: 'http://facebook.com/api/current_user',
+                    params: {
+                      email: currentDetails.data.emails[0]
+                    }
+                  })
+                },
+                people: function(PeopleService) {
+                    return PeopleService.getAllPeople();
+                }
+            },
+            controller:function(user,detail,myId$scope){
+                alert(user.name)
+                alert(user.email)
+                console.log(detail)
+            }
+        })                  
+    }]);
+```
+
 
 [back to top](#top)
 
@@ -570,3 +724,4 @@ $transitions.onEnter({ entering: 'people' }, function(transition, state) {
 - [angularjs中的路由介绍详解 ui-route](https://www.cnblogs.com/littlemonk/p/5500801.html)
 - [深究AngularJS——ui-router详解](https://blog.csdn.net/zcl_love_wx/article/details/52034193)
 - [深入理解ANGULARUI路由_UI-ROUTER](https://blog.csdn.net/huwei2003/article/details/52278013)
+- [Angularjs学习笔记－－ui-Router](https://blog.csdn.net/shenlei19911210/article/details/51325707)
