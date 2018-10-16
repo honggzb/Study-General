@@ -14,7 +14,7 @@
   - [Manipulates the DOM](#manipulates-the-dom)
     - [编译函数 Compile function](#编译函数-compile-function)
     - [链接函数 Linking function](#链接函数-linking-function)
-- [skills+tips](#skills+tips)
+- [skills+tips](#skillstips)
 - [案例-实现移动端自定义软键盘](#案例-实现移动端自定义软键盘)
 
 ## 指令directive运行原理
