@@ -33,6 +33,7 @@
 │        ├── typeahead /
 │        └── ui-Bootstrap之Typeahead.md
 ├── $timeout和$interval的用法.md 
+├── AngularJS directive详解.md
 ├── UI-Router for AngularJS 1.x.md 
 ├── angularJS-debug-skill.md 
 ├── angularjs的directive和component的参数传递问题.md
