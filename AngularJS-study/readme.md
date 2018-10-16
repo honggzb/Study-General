@@ -1,3 +1,45 @@
+```
+├── AngularJS-study
+│   ├──  lib /
+│   │    ├── angular /
+│   │    └── bootstraps3 /
+│   ├──  public    #学习案例
+│   │    ├── 001-controller.html 
+│   │    ├── 002-controller-multi.html 
+│   │    ├── 003-ng-bind.html 
+│   │    ├── 004-$scope中的$apply.html 
+│   │    ├── 005-$scope中的$watch.html 
+│   │    ├── 006-cart.html 
+│   │    ├── 007-module.html 
+│   │    ├── 008-provide.provide.html 
+│   │    ├── 009-provide.factory.html 
+│   │    ├── 010-provide.shareDate.in.multi.controller.html 
+│   │    ├── 011-filter.html 
+│   │    ├── 012-filter-usr-defined.html 
+│   │    ├── 013-controller.DI.html 
+│   │    ├── 014-build-in.directive.html 
+│   │    ├── 015-self-defined.directive-restrict.html 
+│   │    ├── 016-self-defined.directive-transclude-priority-terminal.html 
+│   │    ├── 017-self-defined.directive-compile-link.html 
+│   │    ├── 018-self-defined.directive-controller.html 
+│   │    ├── 019-self-defined.directive-scope.html 
+│   │    ├── 020-self-defined.directive-accordion.html 
+│   │    ├── 021-module-constant-value-run.html 
+│   │    ├── 022-form.html 
+│   │    ├── 023-form-user-defined.html 
+│   │    ├── kittercupCollapse.html 
+│   │    └── other.html
+│   └──  ui-bootstrap-study
+│        ├── typeahead /
+│        └── ui-Bootstrap之Typeahead.md
+├── $timeout和$interval的用法.md 
+├── UI-Router for AngularJS 1.x.md 
+├── angularJS-debug-skill.md 
+├── angularjs的directive和component的参数传递问题.md
+├── http拦截器介绍与使用.md	Rename http拦截器介绍与使用.md 
+└── tip.md
+```
+
 ## Setup AngularJS Project in Visual Studio
 
 - AngularJS Library:
