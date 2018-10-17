@@ -31,6 +31,13 @@
   <tr><td>全屏</td><td>F11</td></tr>
 </table>
 
+**new for 1.28**
+
+- Editor Tab completion: use tab -> intellisense
+- Rename via import path
+- jump to last edit -> Ctrl+K,Ctrl+Q
+- Savee without formatting -> Ctrl+KS
+
 <hr>
 
 ### 前端开发常用插件列表
