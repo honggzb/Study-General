@@ -14,6 +14,8 @@
   - [Manipulates the DOM](#manipulates-the-dom)
     - [编译函数 Compile function](#编译函数-compile-function)
     - [链接函数 Linking function](#链接函数-linking-function)
+- [directive与controller之间的通信小结](#directive与controller之间的通信小结)
+- [directive与directive之间的通信](#directive与directive之间的通信)
 - [skills+tips](#skillstips)
 - [案例-实现移动端自定义软键盘](#案例-实现移动端自定义软键盘)
 
@@ -371,6 +373,71 @@ myApp.directive('loader', function(){
 
 [back to top](#top)
 
+## directive与controller之间的通信小结
+
+- scope - 指令作用域
+  - 通过指令作用域实现指令与html页面元素进行关联
+  - 在控制器中又实现了与页面的关联
+  - 通过html实现了控制器和指令之间的联系
+
+[back to top](#top)
+
+## directive与directive之间的通信
+
+1. transclude
+2. require
+
+```html
+<deep-drt forid="id1">
+     <inner-drt forinnerid="id2"></inner-drt>
+</deep-drt>
+<script>
+var demoDrt = angular.module('demoDrt', []);
+demoDrt.directive('deepDrt', function() {
+        return {
+            restrict:'AE',
+            replace:true,
+            scope : { forid : '@' },
+            //加上transclude属性true之后在template中结合ng-transclude指令就不会替换子directive，
+            // 如果嵌套有自定义指令而没加transclude属性的话子directive会被父directive的template替换掉
+            transclude:true,
+            //如果有子directive要使用父directive中controller的值的话变量和函数的定义则要使用this来绑定，$scope绑定的话只会在当前作用域生效
+            controller:['$scope', function($scope) {
+                this.name = 'angular';   //这个this输出的其实就是controller对象
+                this.version = '1.4.6';
+            }],
+            //template 上结合ng-transclude使用，如果ng-transclude放在template的父级的话，
+            // 那么template里面的值会被子directive覆盖，所以我们要用一个dom并加上ng-transclude来在外层包裹子directive。
+            template:'<div id="{{forid}}">deepDrt<div ng-transclude></div></div>'
+        };
+});
+demoDrt.directive('innerDrt', function() {
+       return {
+           restrict:"AE",
+           replace:true,
+           //require主要作用是寻找父directive,'^'表示向上寻找，后面加上父directive的名字，'?'表示如果找不到的话则不会报错,
+           // 一般'^?'两个结合使用当找不到父directive的时候angular不会报错
+           //结合了require 则在子directive的link属性中加上reController，则可以获取父directive中controller的变量和方法
+           require: '^?deepDrt',
+           scope : {
+               forinnerid : '@'
+           },
+           link : function(scope, element, attr, reController) {  //reController得到了父controller中绑定的变量和函数
+               console.log(scope);
+               console.log(attr);
+               element.bind('click', function(e) {
+                  console.log(e.target);
+                   e.target.innerText = reController.name + '-' + reController.version;
+               });
+           },
+           template : '<div id="{{forinnerid}}">innerDrt</div>'
+       }
+});
+</script>
+```
+
+[back to top](#top)
+
 ## skills+tips
 
 **1. set a default value in an Angular Directive Scope**
@@ -515,6 +582,9 @@ angular.module('ng-calculator', []).directive('calculator', ['$compile',function
 }]);
 ```
 
+[back to top](#top)
+
 > References
 - [学习AngularJs:Directive指令用法（完整版）](https://www.jb51.net/article/83051.htm)
 - [Angular之指令Directive用法详解](https://www.jb51.net/article/107045.htm)
+- [angularJS中directive与directive 之间的通信](https://www.cnblogs.com/leungUwah/p/6195906.html)
