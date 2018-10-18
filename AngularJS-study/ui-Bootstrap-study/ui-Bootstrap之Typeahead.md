@@ -1,6 +1,12 @@
 [ui-Bootstrap之Typeahead](#top)
 
-**uib-typeahead可以使用的属性**
+- [uib-typeahead可以使用的属性](#uib-typeahead可以使用的属性)
+- [Sample](#sample)
+- [Sample 1-Asynchronous results](#sample-1-asynchronous-results)
+- [Sample 2-Custom templates for results](#sample-2-custom-templates-for-results)
+- [Sample 3-Custom popup templates for typeahead's dropdown - with default value](#sample-3-custom-popup-templates-for-typeaheads-dropdown---with-default-value)
+
+## uib-typeahead可以使用的属性
 
 属性名|默认值|备注
 ---|---|---
@@ -25,7 +31,7 @@
 `typeahead-template-url`|uib/template/typeahead/typeahead-match.html|	 
 `typeahead-wait-ms`|0|输入字符后，等待多少毫秒触发智能提示
 
-**Sample**
+## Sample
 
 ```html
 <input type="text" class="form-control"
@@ -47,7 +53,7 @@ angular.module('myApp', ['ui.bootstrap'])
 
 [back to top](#top)
 
-**Sample 1-Asynchronous results**
+## Sample 1-Asynchronous results
 
 ```html
 <input type="text" class="form-control"
@@ -80,7 +86,7 @@ angular.module('myApp', ['ui.bootstrap'])
 
 [back to top](#top)
 
-**Sample 2-Custom templates for results**
+## Sample 2-Custom templates for results
 
 ```html
 <script type="text/ng-template" id="customTemplate.html">
@@ -98,8 +104,7 @@ angular.module('myApp', ['ui.bootstrap'])
 
 [back to top](#top)
 
-**Sample 3-Custom popup templates for typeahead's dropdown**
-
+## Sample 3-Custom popup templates for typeahead's dropdown - with default value
 
 ```html
 <script type="text/ng-template" id="customPopupTemplate.html">
@@ -121,6 +126,12 @@ angular.module('myApp', ['ui.bootstrap'])
 <input type="text" placeholder="Custom popup template" class="form-control"
                  ng-model="customPopupSelected"
                  uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-popup-template-url="customPopupTemplate.html">
+<script>
+angular.module('myApp', ['ui.bootstrap'])
+ .controller('TypeaheadCtrl', function($scope, $http) {
+    $scope.customPopupSelected = $scope.statesWithFlags[0];
+});
+</script>
 ```
 
 [back to top](#top)
