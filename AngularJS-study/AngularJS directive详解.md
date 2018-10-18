@@ -257,6 +257,7 @@ angular.module("app", [])
   scope: {}, 
   restrict: 'AE', 
   require: '^outerDirective', 
+  // controllerInstance用来访问父directive的方法和属性
   link: function(scope, elem, attrs, controllerInstance) { 
           scope.message = "Hi,shushu"; 
           controllerInstance.say(scope); 
