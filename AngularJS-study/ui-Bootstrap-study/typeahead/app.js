@@ -72,4 +72,6 @@ angular.module('myApp', ['ui.bootstrap'])
         {'name':'West Virginia','flag':'2/22/Flag_of_West_Virginia.svg/46px-Flag_of_West_Virginia.svg.png'},
         {'name':'Wisconsin','flag':'2/22/Flag_of_Wisconsin.svg/45px-Flag_of_Wisconsin.svg.png'},
         {'name':'Wyoming','flag':'b/bc/Flag_of_Wyoming.svg/43px-Flag_of_Wyoming.svg.png'}]; 
+ 
+     $scope.customPopupSelected = $scope.statesWithFlags[0];
  });
