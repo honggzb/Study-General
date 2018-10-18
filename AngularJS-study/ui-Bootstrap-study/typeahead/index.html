@@ -91,7 +91,7 @@
                  ng-model="customSelected"
                  uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" >
 
-          <h4>Custom popup templates for typeahead's dropdown</h4>
+          <h4>Custom popup templates for typeahead's dropdown - with default value</h4>
           <pre>Model: {{customPopupSelected | json}}</pre>
           <input type="text" placeholder="Custom popup template" class="form-control"
                  ng-model="customPopupSelected"
