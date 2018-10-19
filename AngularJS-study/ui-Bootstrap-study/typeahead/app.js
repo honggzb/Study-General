@@ -1,7 +1,7 @@
 angular.module('myApp', ['ui.bootstrap'])
  .controller('TypeaheadCtrl', function($scope, $http) {
 
-    $scope.selected = undefined;
+    $scope.selected = undefined, $scope.doubleClickSelected = undefined;
     $scope.names = [
       { 'name': '张三', 'ename': 'zhangsan' },
       { 'name': '李四', 'ename': 'lisi' },
@@ -77,6 +77,13 @@ angular.module('myApp', ['ui.bootstrap'])
     
     // set default value 
      $scope.customPopupSelected = $scope.statesWithFlags[0];
+// Must be `undefined` for `typeahead-min-length="0"` to work
+     $scope.focusSelected = null;
+     $scope.onBlur = function(){
+      if($scope.focusSelected.name == undefined){
+        $scope.focusSelected = undefined;
+      }
+    }
 
  }).directive('typeaheadClickOpen', function($parse, $timeout) {
       return {
@@ -98,4 +105,15 @@ angular.module('myApp', ['ui.bootstrap'])
               elem.bind('dblclick', triggerFunc);
           }
       }
-  });
+  }).directive('typeaheadShowOnFocus', function () {
+    return {
+        require: 'ngModel',
+        link: function ($scope, element, attrs, ngModel) {
+            element.bind('focus', function () {
+                ngModel.$setViewValue();
+                $(element).trigger('input');
+                $(element).trigger('change');
+            });
+        }
+    };
+});
