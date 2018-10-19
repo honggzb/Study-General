@@ -96,6 +96,11 @@
           <input type="text" placeholder="Custom popup template" class="form-control"
                  ng-model="customPopupSelected"
                  uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-popup-template-url="customPopupTemplate.html">
+
+          <h4>Custom directive for double click to to open dropdown</h4>
+          <pre>Model: {{selected | json}}</pre>
+          <input typeahead-click-open type="text" typeahead-min-length="0" ng-Focus="json = 1" ng-model="selected" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control" typeahead>
+    
       </div>
 
   </body> 
