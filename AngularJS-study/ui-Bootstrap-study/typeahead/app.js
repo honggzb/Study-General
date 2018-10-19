@@ -85,6 +85,17 @@ angular.module('myApp', ['ui.bootstrap'])
       }
     }
 
+    //opening on focus 
+    $scope.selectedfocus = null;
+    $scope.triggerLookUp = function ($event) {
+        var $target = $($event.target);
+        if ($scope.testForm && !$scope.testForm.whiskyNames.$viewValue) {
+          $scope.testForm.whiskyNames.$setViewValue('');
+          $scope.testForm.whiskyNames.$render();
+          $target.trigger('change');
+        }
+    };
+
  }).directive('typeaheadClickOpen', function($parse, $timeout) {
       return {
           restrict: 'A',
@@ -116,4 +127,4 @@ angular.module('myApp', ['ui.bootstrap'])
             });
         }
     };
-});
+});;
