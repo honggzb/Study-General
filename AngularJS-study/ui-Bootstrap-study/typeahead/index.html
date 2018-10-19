@@ -4,6 +4,7 @@
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
      <!-- angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <!-- angular UI-->
@@ -97,9 +98,22 @@
                  ng-model="customPopupSelected"
                  uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-popup-template-url="customPopupTemplate.html">
 
+          <h4>Custom directive for opening dropdown on focus</h4>
+          <pre>Model: {{focusSelected | json}}</pre>
+          <input type="text" 
+                  ng-model="focusSelected" 
+                  placeholder="Custom template" 
+                  typeahead-show-on-focus
+                  uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" 
+                  typeahead-template-url="customTemplate.html" 
+                  class="form-control" 
+                  typeahead-show-hint="true" 
+                  typeahead-min-length="0"
+                  typeahead-focus-on-select="false">
+
           <h4>Custom directive for double click to to open dropdown</h4>
-          <pre>Model: {{selected | json}}</pre>
-          <input typeahead-click-open type="text" typeahead-min-length="0" ng-Focus="json = 1" ng-model="selected" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control" typeahead>
+          <pre>Model: {{doubleClickSelected | json}}</pre>
+          <input typeahead-click-open type="text" typeahead-min-length="0" ng-Focus="json = 1" ng-model="selected" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
     
       </div>
 
