@@ -21,6 +21,8 @@ angular.module('myApp', ['ui.bootstrap'])
         });
       }; 
 
+      $scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+  
       $scope.statesWithFlags = [
         {'name':'Alabama','flag':'5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'},
         {'name':'Alaska','flag':'e/e6/Flag_of_Alaska.svg/43px-Flag_of_Alaska.svg.png'},
@@ -72,6 +74,28 @@ angular.module('myApp', ['ui.bootstrap'])
         {'name':'West Virginia','flag':'2/22/Flag_of_West_Virginia.svg/46px-Flag_of_West_Virginia.svg.png'},
         {'name':'Wisconsin','flag':'2/22/Flag_of_Wisconsin.svg/45px-Flag_of_Wisconsin.svg.png'},
         {'name':'Wyoming','flag':'b/bc/Flag_of_Wyoming.svg/43px-Flag_of_Wyoming.svg.png'}]; 
- 
+    
+    // set default value 
      $scope.customPopupSelected = $scope.statesWithFlags[0];
- });
+
+ }).directive('typeaheadClickOpen', function($parse, $timeout) {
+      return {
+          restrict: 'A',
+          require: 'ngModel',
+          link: function($scope, elem, attrs) {
+              triggerFunc = function(evt) {
+                  var ctrl = elem.controller('ngModel'),
+                      prev = ctrl.$modelValue || '';
+                  if (prev) {
+                      ctrl.$setViewValue('');
+                      $timeout(function() {
+                          ctrl.$setViewValue(prev);
+                      });
+                  } else {
+                      ctrl.$setViewValue(' ');
+                  }
+              }
+              elem.bind('dblclick', triggerFunc);
+          }
+      }
+  });
