@@ -98,22 +98,45 @@
                  ng-model="customPopupSelected"
                  uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-popup-template-url="customPopupTemplate.html">
 
-          <h4>Custom directive for opening dropdown on focus</h4>
-          <pre>Model: {{focusSelected | json}}</pre>
-          <input type="text" 
-                  ng-model="focusSelected" 
-                  placeholder="Custom template" 
-                  typeahead-show-on-focus
-                  uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" 
-                  typeahead-template-url="customTemplate.html" 
-                  class="form-control" 
-                  typeahead-show-hint="true" 
-                  typeahead-min-length="0"
-                  typeahead-focus-on-select="false">
+          <h4>opening dropdown on focus</h4>
+          <ul>
+              <li>must using form </li>
+              <li>use ng-focus to triggle triggerLookUp() method</li>
+          </ul>
+          
+          <pre>Model: {{selectedfocus | json}}</pre>
+          <form name="testForm">
+            <input type="text" 
+                  name="whiskyNames" 
+                  ng-model="selectedfocus" 
+                  typeahead-min-length="0" 
+                  ng-focus="triggerLookUp($event)" 
+                  uib-typeahead="state for state in states | filter:$viewValue"
+                  class="form-control">
+            <!— Notice The value here: typeahead-min-length="0" , typeahead-min-length must be equal to or greater than 1 —>
+          </form>
+          
+              <h4>Custom directive for opening dropdown on focus</h4>
+              <pre>Model: {{focusSelected | json}}</pre>
+              <input type="text" 
+                      ng-model="focusSelected" 
+                      placeholder="Custom template" 
+                      typeahead-show-on-focus
+                      uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" 
+                      typeahead-template-url="customTemplate.html" 
+                      class="form-control" 
+                      typeahead-show-hint="true" 
+                      typeahead-min-length="0"
+                      typeahead-focus-on-select="false">
 
           <h4>Custom directive for double click to to open dropdown</h4>
           <pre>Model: {{doubleClickSelected | json}}</pre>
-          <input typeahead-click-open type="text" typeahead-min-length="0" ng-Focus="json = 1" ng-model="selected" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+          <input 
+            typeahead-click-open 
+            type="text" 
+            typeahead-min-length="0" ng-Focus="json = 1" 
+            ng-model="doubleClickSelected"
+            uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
     
       </div>
 
