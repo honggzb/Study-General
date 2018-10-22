@@ -1,4 +1,4 @@
-[Angularjs Controller 间通信机制](#top)
+[Angularjs Controller间通信机制](#top)
 
 - `$broadcast`会把事件广播给所有子controller
 - `$emit`则会将事件冒泡传递给父controller
@@ -50,12 +50,11 @@ $scope.$on('transfer.type', function(event, data) {
 </div>
 <script>
 angular.module("app", []).controller("parentCtr",
-function ($scope) {
-    $scope.$on("CtrlNameChange",
-      function (event, msg) {
+   function ($scope) {
+     $scope.$on("CtrlNameChange", function (event, msg) {
           console.log("parent", msg);
           $scope.$broadcast("CtrlNameChangeFromParent", msg);
-    });
+     });
 }).controller("childCtrl", function ($scope) {
     $scope.change = function (name) {
         console.log("childCtrl", name);
