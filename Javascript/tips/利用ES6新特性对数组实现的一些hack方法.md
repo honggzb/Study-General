@@ -17,7 +17,8 @@
     - [8.5 寻找数组中的最大值](#寻找数组中的最大值)
     - [8.6 实现数组和对象的浅拷贝](实现数组和对象的浅拷贝)
 - [9. 使用对象解构（object destructuring）来模拟命名参数和默认值](#使用对象解构)
-- [10. 使用 Spread平铺多维数组](#平铺多维数组)
+- [10. 使用Spread平铺多维数组](#平铺多维数组)
+- [11. 使用reduce, filter, map求和等](#map求和等)
 
 <h3 id="利用Set数据结构去重一个数组">1. 利用Set数据结构去重一个数组</h3>
 
@@ -247,6 +248,42 @@ function flattenArray(arr) {
 }
 const arr = [11, [22, 33], [44, [55, 66, [77, [88]], 99]]];
 const flatArr = flattenArray(arr);      //=> [11, 22, 33, 44, 55, 66, 77, 88, 99]
+```
+
+[back to top](#top)
+
+<h2 id="map求和等">11. 使用reduce, filter, map求和等</h2>
+
+```javascript
+//Compute the sum of a list of numbers
+const sum = arrayOfNumbers.reduce((acc, number) =>
+  acc + number;
+);
+const sum = ([number, ...rest]) => {
+  if (rest.length === 0) { 
+    return number;
+  }
+  return number + sum(rest);
+};
+//Make a sentence from mixed content
+const dataArray = [0, 'H', {}, 'e', Math.PI, 'l', 'l', 2/9, 'o!'];   //输出hello
+const string = dataArray.filter(e => typeof e === 'string').join('');
+//Convert values to records
+const booksArray = [
+  'Clean Code',
+  'Code Complete',
+  'Introduction to Algorithms',
+];
+// Desired output
+newArray = [
+  { id: 1, title: 'Clean Code' },
+  { id: 2, title: 'Code Complete' },
+  { id: 3, title: 'Introduction to Algorithms' },
+];
+const newArray = booksArray.map((title, index) => ({ 
+  id: index + 1, 
+  title 
+}));
 ```
 
 [back to top](#top)
