@@ -190,7 +190,7 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 
 #### 小结
 
-```
+```json
 { // VScode主题配置
     "editor.tabSize": 2,
     "editor.lineHeight": 24,
