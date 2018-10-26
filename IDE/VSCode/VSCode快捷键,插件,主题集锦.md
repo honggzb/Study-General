@@ -10,23 +10,25 @@
 
 <table>
   <tr><th colspan="2">格式调整</th></tr>
-  <tr><td>Code Formatting</td><td>Shift+Alf+F</td></tr>
   <tr><td>代码行缩进</td><td>Ctrl+[， Ctrl+]</td></tr>
-  <tr><td>代码格式化</td><td>Shift+Alt+F，或Ctrl+Shift+P后输入format code(format selection)</td></tr>
+  <tr><td>**代码格式化**</td><td>Shift+Alt+F，或Ctrl+Shift+P后输入format code(format selection)</td></tr>
   <tr><td>修剪空格</td><td>Ctrl+Shift+X</td></tr>
   <tr><td>自动换行</td><td>Alt+Z</td></tr>
+  <tr><td>**括号匹配**</td><td>ctrl+shift+\</td></tr>
+  <tr><td>**符号查找**</td><td>ctrl+shift+o</td></tr>
+  <tr><td>修整行尾空格</td><td>ctrl+shift+x</td></tr>
+  <tr><td>**代码折叠**</td><td>ctrl+shift+[ and ctrl+shift+]</td></tr>
   <tr><th colspan="2">重构代码</th></tr>
-  <tr><td>跳转到定义处</td><td>F12</td></tr>
-  <tr><td>跳转行号</td><td>ctrl+G</td></tr>
+  <tr><td>**跳转到定义处**</td><td>F12</td></tr>
+  <tr><td>**跳转行号**</td><td>ctrl+G</td></tr>
   <tr><td>转到实现 </td><td>ctrl+F12 </td></tr>
   <tr><td>列出所有的引用</td><td>shift+F12</td></tr>
-  <tr><td>同时修改本文件中所有匹配的</td><td>ctrl+F12</td></tr>
+  <tr><td>**同时修改本文件中所有匹配的**</td><td>ctrl+F12</td></tr>
   <tr><td>重命名所有方法名</td><td>选中后按F2，输入新的名字，回车，会发现所有的文件都修改</td></tr>
   <tr><td>跳转到下一个Error或Warning</td><td>F8</td></tr>
   <tr><td>比较文件</td><td>选择文件右键compare selected</td></tr>
-  <tr><td>拆分编辑器</td><td>ctrl+\</td></tr>
-  <tr><td>添加函数注释</td><td>在函数上方输入“/**”，然后点击enter</td></tr>
-  <tr><td>格式化</td><td>alt+shift+f </td></tr>
+  <tr><td>**拆分编辑器**</td><td>ctrl+\</td></tr>
+  <tr><td>**添加函数注释**</td><td>在函数上方输入“/**”，然后点击enter</td></tr>
   <tr><th colspan="2">文件相关</th></tr>
   <tr><td>全部保存</td><td>ctrl+k, 然后只按s一个键</td></tr>
   <tr><td>关闭文件夹</td><td>ctrl+k, 然后单按一个f</td></tr>
