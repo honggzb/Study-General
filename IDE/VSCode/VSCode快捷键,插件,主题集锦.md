@@ -1,7 +1,10 @@
 - [常用快捷键推荐](#常用快捷键推荐)
 - [前端开发常用插件列表](#前端开发常用插件列表)
-- [Theme](#Theme)
+- [Theme](#theme)
 - [自定义设置参考](#自定义设置参考)
+    - [改变theme的高亮highlight颜色](#改变theme的高亮highlight颜色)
+    - [设置tab转空格并设置数量](#设置tab转空格并设置数量)
+    - [自动保存](#自动保存)
 
 ### 常用快捷键推荐
 
@@ -14,11 +17,19 @@
   <tr><td>自动换行</td><td>Alt+Z</td></tr>
   <tr><th colspan="2">重构代码</th></tr>
   <tr><td>跳转到定义处</td><td>F12</td></tr>
+  <tr><td>跳转行号</td><td>ctrl+G</td></tr>
+  <tr><td>转到实现 </td><td>ctrl+F12 </td></tr>
   <tr><td>列出所有的引用</td><td>shift+F12</td></tr>
   <tr><td>同时修改本文件中所有匹配的</td><td>ctrl+F12</td></tr>
   <tr><td>重命名所有方法名</td><td>选中后按F2，输入新的名字，回车，会发现所有的文件都修改</td></tr>
   <tr><td>跳转到下一个Error或Warning</td><td>F8</td></tr>
   <tr><td>比较文件</td><td>选择文件右键compare selected</td></tr>
+  <tr><td>拆分编辑器</td><td>ctrl+\</td></tr>
+  <tr><td>添加函数注释</td><td>在函数上方输入“/**”，然后点击enter</td></tr>
+  <tr><td>格式化</td><td>alt+shift+f </td></tr>
+  <tr><th colspan="2">文件相关</th></tr>
+  <tr><td>全部保存</td><td>ctrl+k, 然后只按s一个键</td></tr>
+  <tr><td>关闭文件夹</td><td>ctrl+k, 然后单按一个f</td></tr>
   <tr><th colspan="2">显示相关</th></tr>
   <tr><td>侧边栏显/隐</td><td>ctrl+B</td></tr>
   <tr><td>预览markdown</td><td>Ctrl+Shift+V</td></tr>
@@ -152,7 +163,7 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
  "editor.wordWrap": "on"          //word wrap自动换行, 打开setting -> 搜索editor.wordWrap
 ```
 
-改变theme的高亮highlight颜色
+#### 改变theme的高亮highlight颜色
 
 ```json
  "workbench.colorCustomizations": {
@@ -163,11 +174,15 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
  }
 ```
 
-**设置tab转空格并设置数量**
+#### 设置tab转空格并设置数量
 
 1. 在状态栏右下角点击  ---》空格：
 2. 选择“使用空格缩进”
 3. 选择 2
 4. 然后就可以看到缩进变为2个空格了
+
+#### 自动保存
+
+打开settings.json： `"files.autoSave": "afterDelay"`
 
 https://github.com/zuojj/fedlab/issues/18
