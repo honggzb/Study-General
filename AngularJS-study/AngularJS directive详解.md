@@ -136,10 +136,12 @@ app.run(["$templateCache", function($templateCache) {
     - 这种绑定是**单向的**，即父scope的绑定变化，directive中的scope的属性会同步变化，而隔离scope中的绑定变化，父scope是不知道的
     - 把当前属性作为字符串传递，还可以绑定来至外层scope的值，在属性中插入{{}}即可
   - `=` 通过directive的attr属性的值在局部scope的属性和父scope属性名之间建立**双向绑定** - 与父scope中的属性进行**双向绑定**
+    - **`=`双向绑定中绑定对象是无效的**， 如`<div another-param="{ thisWill: 'result in digest errors' }"></div>`将无任何传递, 这个时候使用`&`
   - `&` 提供一种方式执行一个表达式在父scope的上下文中。如果没有指定attr名称，则属性名称为相同的本地名称
+    - **绑定对象和函数**
     - 传递一个来着父scope的函数，稍后调用
     - 此表达式可以是一个function
-    - 比如当写了一个directive，当用户点击按钮时，directive想要通知controller，controller无法知道directive中发生了什么，也许你可以通过使用angular中的 event 广播来做到，但是必须要在 controller 中增加一个事件监听方法。最好的方法就是让 directive可以通过一个父 scope 中的 function，当 directive 中有什么动作需要更新到父 scope 中的时候，可以在父scope上下文中执行一段代码或者一个函数
+    - 比如当写了一个directive，当用户点击按钮时，directive想要通知controller，controller无法知道directive中发生了什么，也许你可以通过使用angular中的event广播来做到，但是必须要在controller中增加一个事件监听方法。最好的方法就是让directive可以通过一个父scope中的function，当directive中有什么动作需要更新到父scope中的时候，可以在父scope上下文中执行一段代码或者一个函数
   - `?` optional, 与上面三个组合，如 `=?`
 
 ```html
