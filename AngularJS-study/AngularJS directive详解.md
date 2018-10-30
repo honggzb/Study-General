@@ -1,23 +1,16 @@
 [AngularJS directive详解](#top)
 
-- [指令directive运行原理](#指令directive运行原理)
-- [定义directive](#定义directive)
-- [directive参数](#directive参数)
-  - [restrict: 指明指令在DOM里面以什么形式被声明](#restrict-指明指令在dom里面以什么形式被声明)
+- [指令directive运行原理](#%E6%8C%87%E4%BB%A4directive%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86)
+- [定义directive](#%E5%AE%9A%E4%B9%89directive)
+- [directive参数](#directive%E5%8F%82%E6%95%B0)
+  - [restrict: 指明指令在DOM里面以什么形式被声明](#restrict-%E6%8C%87%E6%98%8E%E6%8C%87%E4%BB%A4%E5%9C%A8dom%E9%87%8C%E9%9D%A2%E4%BB%A5%E4%BB%80%E4%B9%88%E5%BD%A2%E5%BC%8F%E8%A2%AB%E5%A3%B0%E6%98%8E)
   - [template and templateUrl](#template-and-templateurl)
   - [scope](#scope)
-  - [controller, controllerAs, bindToController - 指令相关的](#controller-controlleras-bindtocontroller---指令相关的)
+    - [scope继承隔离方法](#scope%E7%BB%A7%E6%89%BF%E9%9A%94%E7%A6%BB%E6%96%B9%E6%B3%95)
+    - [scope作用域绑定策略](#scope%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%BB%91%E5%AE%9A%E7%AD%96%E7%95%A5)
+  - [controller, controllerAs, bindToController - 指令相关的](#controller-controlleras-bindtocontroller---%E6%8C%87%E4%BB%A4%E7%9B%B8%E5%85%B3%E7%9A%84)
     - [controller](#controller)
-    - [controllerAs - 控制器的别名](#controlleras---控制器的别名)
-    - [bindToController](#bindtocontroller)
-    - [require - 不同指令间通信用的](#require---不同指令间通信用的)
-  - [Manipulates the DOM](#manipulates-the-dom)
-    - [编译函数 Compile function](#编译函数-compile-function)
-    - [链接函数 Linking function](#链接函数-linking-function)
-- [directive与controller之间的通信小结](#directive与controller之间的通信小结)
-- [directive与directive之间的通信](#directive与directive之间的通信)
-- [skills+tips](#skillstips)
-- [案例-实现移动端自定义软键盘](#案例-实现移动端自定义软键盘)
+    - [controllerAs - 控制器的别名](#controlleras---%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E5%88%AB%E5%90%8D)
 
 ## 指令directive运行原理
 
@@ -127,22 +120,28 @@ app.run(["$templateCache", function($templateCache) {
 
 ### scope
 
+#### scope继承隔离方法
+
 - 默认值false。表示继承父作用域                        -> 继承不隔离
 - true。表示继承父作用域，并创建自己的作用域（子作用域） -> 继承隔离
 - {}。表示创建一个全新的隔离作用域                     -> 不继承隔离: 改变任何一方的值均不能影响另一方的值
   - **tip**：当想创建一个可重用的组件时隔离作用域是一个很好的选择，通过隔离作用域我们确保指令是‘独立'的,并可以轻松地插入到任何HTML app中，并且这种做法防止了父作用域被污染
-- scope作用域绑定策略: **隔离作用域可以通过绑定策略来访问父作用域的属性**, directive在使用隔离scope的时候，提供了三种方法同隔离之外的地方交互。这三种分别是: 
-  - `@` 绑定一个局部scope属性到当前dom节点的属性值。结果总是一个字符串，因为dom属性是字符串
-    - 这种绑定是**单向的**，即父scope的绑定变化，directive中的scope的属性会同步变化，而隔离scope中的绑定变化，父scope是不知道的
-    - 把当前属性作为字符串传递，还可以绑定来至外层scope的值，在属性中插入{{}}即可
-  - `=` 通过directive的attr属性的值在局部scope的属性和父scope属性名之间建立**双向绑定** - 与父scope中的属性进行**双向绑定**
-    - **`=`双向绑定中绑定对象是无效的**， 如`<div another-param="{ thisWill: 'result in digest errors' }"></div>`将无任何传递, 这个时候使用`&`
-  - `&` 提供一种方式执行一个表达式在父scope的上下文中。如果没有指定attr名称，则属性名称为相同的本地名称
-    - **绑定对象和函数**
-    - 传递一个来着父scope的函数，稍后调用
-    - 此表达式可以是一个function
-    - 比如当写了一个directive，当用户点击按钮时，directive想要通知controller，controller无法知道directive中发生了什么，也许你可以通过使用angular中的event广播来做到，但是必须要在controller中增加一个事件监听方法。最好的方法就是让directive可以通过一个父scope中的function，当directive中有什么动作需要更新到父scope中的时候，可以在父scope上下文中执行一段代码或者一个函数
-  - `?` optional, 与上面三个组合，如 `=?`
+  
+#### scope作用域绑定策略
+
+ **隔离作用域可以通过绑定策略来访问父作用域的属性**, directive在使用隔离scope的时候，提供了三种方法同隔离之外的地方交互。这三种分别是: 
+ 
+- `@` 绑定一个局部scope属性到当前dom节点的属性值。结果总是一个字符串，因为dom属性是字符串
+  - 这种绑定是**单向的**，即父scope的绑定变化，directive中的scope的属性会同步变化，而隔离scope中的绑定变化，父scope是不知道的
+  - 把当前属性作为字符串传递，还可以绑定来至外层scope的值，在属性中插入{{}}即可
+- `=` 通过directive的attr属性的值在局部scope的属性和父scope属性名之间建立**双向绑定** - 与父scope中的属性进行**双向绑定**
+  - **`=`双向绑定中绑定对象是无效的**， 如`<div another-param="{ thisWill: 'result in digest errors' }"></div>`将无任何传递, 这个时候使用`&`
+- `&` 提供一种方式执行一个表达式在父scope的上下文中。如果没有指定attr名称，则属性名称为相同的本地名称
+  - **绑定对象和函数**
+  - 传递一个来着父scope的函数，稍后调用
+  - 此表达式可以是一个function
+  - 比如当写了一个directive，当用户点击按钮时，directive想要通知controller，controller无法知道directive中发生了什么，也许你可以通过使用angular中的event广播来做到，但是必须要在controller中增加一个事件监听方法。最好的方法就是让directive可以通过一个父scope中的function，当directive中有什么动作需要更新到父scope中的时候，可以在父scope上下文中执行一段代码或者一个函数
+- `?` optional, 与上面三个组合，如 `=?`
 
 ```html
 <div ng-controller="myController"> 
