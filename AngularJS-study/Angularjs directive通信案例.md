@@ -54,6 +54,7 @@
 ```javascript
 /**
   inner layer - come from cgi-custom-typeahead.directive.js
+  1. 定义childCallback和parentCallback
 */
  bindToController: {
         attributes: '=',   // selectedItem, searchString, placeholderLabel, searchEntity
@@ -110,6 +111,7 @@ function customTypeaheadController($scope, $translate, $timeout) {
 });
 /**
   middle layer - from typeahead-and-filter.directive.js 
+  使用callback
 */
  bindToController: {
         filter: '=',          // filter class, houses and controls the selected filters
