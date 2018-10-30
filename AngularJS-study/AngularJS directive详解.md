@@ -8,9 +8,20 @@
   - [scope](#scope)
     - [scope继承隔离方法](#scope%E7%BB%A7%E6%89%BF%E9%9A%94%E7%A6%BB%E6%96%B9%E6%B3%95)
     - [scope作用域绑定策略](#scope%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%BB%91%E5%AE%9A%E7%AD%96%E7%95%A5)
+    - [在directive中执行父scope定义的方法](#%E5%9C%A8directive%E4%B8%AD%E6%89%A7%E8%A1%8C%E7%88%B6scope%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%B9%E6%B3%95)
   - [controller, controllerAs, bindToController - 指令相关的](#controller-controlleras-bindtocontroller---%E6%8C%87%E4%BB%A4%E7%9B%B8%E5%85%B3%E7%9A%84)
     - [controller](#controller)
-    - [controllerAs - 控制器的别名](#controlleras---%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E5%88%AB%E5%90%8D)
+    - [controllerAs-控制器的别名](#controlleras-%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E5%88%AB%E5%90%8D)
+    - [bindToController](#bindtocontroller)
+    - [require-不同指令间通信用的](#require-%E4%B8%8D%E5%90%8C%E6%8C%87%E4%BB%A4%E9%97%B4%E9%80%9A%E4%BF%A1%E7%94%A8%E7%9A%84)
+  - [Manipulates the DOM](#manipulates-the-dom)
+    - [编译函数 Compile function](#%E7%BC%96%E8%AF%91%E5%87%BD%E6%95%B0-compile-function)
+    - [链接函数 Linking function](#%E9%93%BE%E6%8E%A5%E5%87%BD%E6%95%B0-linking-function)
+- [directive与controller之间的通信小结](#directive%E4%B8%8Econtroller%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1%E5%B0%8F%E7%BB%93)
+- [directive与directive之间的通信](#directive%E4%B8%8Edirective%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1)
+- [skills+tips](#skillstips)
+- [案例-自定义directive之带参方法传递](#%E6%A1%88%E4%BE%8B-%E8%87%AA%E5%AE%9A%E4%B9%89directive%E4%B9%8B%E5%B8%A6%E5%8F%82%E6%96%B9%E6%B3%95%E4%BC%A0%E9%80%92)
+- [案例-实现移动端自定义软键盘](#%E6%A1%88%E4%BE%8B-%E5%AE%9E%E7%8E%B0%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BD%AF%E9%94%AE%E7%9B%98)
 
 ## 指令directive运行原理
 
@@ -143,13 +154,15 @@ app.run(["$templateCache", function($templateCache) {
   - 比如当写了一个directive，当用户点击按钮时，directive想要通知controller，controller无法知道directive中发生了什么，也许你可以通过使用angular中的event广播来做到，但是必须要在controller中增加一个事件监听方法。最好的方法就是让directive可以通过一个父scope中的function，当directive中有什么动作需要更新到父scope中的时候，可以在父scope上下文中执行一段代码或者一个函数
 - `?` optional, 与上面三个组合，如 `=?`
 
+#### 在directive中执行父scope定义的方法
+
 ```html
 <div ng-controller="myController"> 
  <div>父scope： 
-  <div>Say：{{name}}</div> 
+    <div>Say：{{name}}</div> 
  </div> 
  <div>隔离scope： 
-  <div isolated-directive action="click()"></div> 
+    <div isolated-directive action="click()"></div>
  </div> 
  </div>
 <script>
@@ -157,7 +170,7 @@ var app = angular.module('myApp', []);
 app.controller("myController", function ($scope) { 
  $scope.value = "hello world"; 
  $scope.click = function () { 
-  $scope.value = Math.random(); 
+    $scope.value = Math.random(); 
  };
 })
 .directive("isolatedDirective", function () { 
@@ -166,6 +179,32 @@ app.controller("myController", function ($scope) {
   template: '<input type="button" value="在directive中执行父scope定义的方法" ng-click="action()"/>' 
   }; 
 }); 
+</script>
+```
+
+**Isolate Scope Function Expression Binding**
+
+```html
+<div my-directive="parentScopeFunction(funcParam, secondParam)"></div>
+<script>
+var directiveFunction = function(){
+	return {
+		template: '<button ng-click="myDirective({funcParam: 'blah blah', secondParam: 'blah blah'})">It can be executed from inside the DOM too!</button>',
+		scope: {
+			myDirective: '&'
+		},
+		link: function(scope, element, attributes){
+			//IMPORTANT: if scope.parentScopeFunction was not defined on the parent scope, then '&' interpolates it into a NOOP function, it is still a FUNCTION type
+			//if the DOM attribute was not defined, scope.property would also still return a noop function
+			//if it's defined as something other than a function, an error occurs!
+			scope.myDirective({   //parameters passed into the bound function expression must be in the form of an object map
+					funcParam: 'This is the value that is going to be passed in as the funcParam',
+					secondParam: 'This is another param!'
+			});
+
+		}
+	};
+}
 </script>
 ```
 
@@ -183,20 +222,20 @@ app.controller("myController", function ($scope) {
   - `$transclude`，嵌入链接函数，实际被执行用来克隆元素和操作DOM的函数
 - 指令的控制器和link函数可以进行互换。区别在于，控制器主要是用来提供可在指令间复用的行为但link链接函数只能在当前内部指令中定义行为，且无法再指令间复用
 
-#### controllerAs - 控制器的别名
+#### controllerAs-控制器的别名
 
 ```html
 <div ng-app="app" ng-controller="demoController as demo"> </div>
 <script>
- angular.module('myApp',[]).directive('mySite', function () { 
+angular.module('myApp',[]).directive('mySite', function () { 
   return { 
     controller:'demoController', 
     controllerAs:'demo'
     //..其他配置 
   }; 
- }); 
- </script>
-``
+}); 
+</script>
+```
 
 #### bindToController
 
@@ -224,7 +263,7 @@ angular.module("app", [])
     });
 ```
 
-#### require - 不同指令间通信用的
+#### require-不同指令间通信用的
 
 - 字符串代表另一个指令的名字，它将会作为link函数的第四个参数
 - 假设现在要编写两个指令，两个指令中的link链接函数中存在有很多重合的方法，这时候就可以将这些重复的方法写在第三个指令的controller中然后在这两个指令中，require这个拥有controller字段的的指令（第三个指令），最后通过link链接函数的第四个参数就可以引用这些重合的方法了
@@ -276,7 +315,7 @@ require的参数值加上下面的某个前缀，这会改变查找控制器的�
 
 [back to top](#top)
 
-###  Manipulates the DOM
+### Manipulates the DOM
 
 ```javascript
 phonecatDirectives.directive('exampleDirective', function() { 
@@ -467,6 +506,46 @@ angular.module('myApp', [])
 </script> 
 ```
 
+[back to top](#top)
+
+## 案例-自定义directive之带参方法传递
+
+- **功能**：点击【提交】后，将自定义指令myEmail中textarea元素的内容传递给控制器中的send()方法。
+- **关键点**：模板email.html中的ng-click="sendEmail({msg:content})" 参数{msg:content}必须是一个键值对，键为：方法参数名，值为：传递的内容
+
+```html
+<!-- html调用 -->
+<!-- directive中获取html页面传来的toDir, fromName参数和sendEmail函数 -->
+<my-email to-dir="广东中山" from-name="海南海口" send-email="send(msg)"/> 
+<!-- email.html -->
+<div style="width: 100%;height: 100%;color: white;font-size: 0.8rem;">
+    <label  style="width: 100%;height: 15%;" ng-bind="toDir"></label>
+    <label  style="width: 100%;height: 15%;" ng-bind="fromName"></label>
+    <textarea style="width: 100%;height: 25%;color: black;" ng-model="content"></textarea>
+    <button style="width: 10%;height: 15%;color: black;" ng-click="sendEmail({msg:content})">提交</button>
+</div>
+<script>
+//自定义指令 "myEmail"
+grgApp.directive("myEmail",function(){
+  return{
+    restrict:'AE',
+    scope:{
+       toDir:     '@',
+       fromName:  '@',
+       sendEmail: '&'    //用于调用父directive或controller中send方法
+    },
+    templateUrl:'/htmls/main/html/custom/email.html',
+  }
+});
+//父控制器中的方法
+$scope.send=function(msg){
+  alert("send email! msg: "+msg);
+}
+</script>
+```
+
+[back to top](#top)
+
 ## 案例-实现移动端自定义软键盘
 
 - `<input type="text" placeholder="按价格搜索" ng-model="spaAndHairSeaInPrice" title="按价格搜索" calculator>
@@ -590,3 +669,4 @@ angular.module('ng-calculator', []).directive('calculator', ['$compile',function
 - [学习AngularJs:Directive指令用法（完整版）](https://www.jb51.net/article/83051.htm)
 - [Angular之指令Directive用法详解](https://www.jb51.net/article/107045.htm)
 - [angularJS中directive与directive 之间的通信](https://www.cnblogs.com/leungUwah/p/6195906.html)
+- [AngularJS Directive Attribute Binding Explanation](https://gist.github.com/CMCDragonkai/6282750)
