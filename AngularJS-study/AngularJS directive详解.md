@@ -160,8 +160,6 @@ app.run(["$templateCache", function($templateCache) {
   - 比如当写了一个directive，当用户点击按钮时，directive想要通知controller，controller无法知道directive中发生了什么，也许你可以通过使用angular中的event广播来做到，但是必须要在controller中增加一个事件监听方法。最好的方法就是让directive可以通过一个父scope中的function，当directive中有什么动作需要更新到父scope中的时候，可以在父scope上下文中执行一段代码或者一个函数
 - `?` optional, 与上面三个组合，如 `=?`
 
-![](https://i.imgur.com/g8i4PF2.png)
-
 #### 在directive中执行父scope定义的方法
 
 ```html
