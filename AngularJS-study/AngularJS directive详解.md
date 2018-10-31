@@ -342,19 +342,19 @@ require的参数值加上下面的某个前缀，这会改变查找控制器的�
     <tbody>
     <tr>
         <td valign="top" width="104"><p>没有前缀</p></td>
-        <td valign="top" width="457"><p>指令会在自身提供的控制器中进行查找，如果找不到任何控制器，则会抛出一个error</p></td>
+        <td valign="top"><p>指令会在自身提供的控制器中进行查找，如果找不到任何控制器，则会抛出一个error</p></td>
     </tr>
     <tr>
         <td valign="top" width="104"><p>?</p></td>
-        <td valign="top" width="457"><p>如果在当前的指令没有找到所需的控制器，则会将null传给link连接函数的第四个参数</p></td>
+        <td valign="top"><p>如果在当前的指令没有找到所需的控制器，则会将null传给link连接函数的第四个参数</p></td>
     </tr>
     <tr>
         <td valign="top" width="104"><p>^</p></td>
-        <td valign="top" width="457"><p>如果在当前的指令没有找到所需的控制器，则会查找父元素的控制器</p></td>
+        <td valign="top"><p>如果在当前的指令没有找到所需的控制器，则会查找父元素的控制器</p></td>
     </tr>
     <tr>
         <td valign="top" width="104"><p>?^</p></td>
-        <td valign="top" width="457"><p>综合前面?和^</p></td>
+        <td valign="top"><p>综合前面?和^</p></td>
     </tr>
     </tbody>
 </table>
