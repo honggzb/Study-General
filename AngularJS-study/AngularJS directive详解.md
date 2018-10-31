@@ -221,11 +221,35 @@ var directiveFunction = function(){
 #### controller
 
 - 可以是一个字符串或者函数, 若是为字符串，则将字符串当做是控制器的名字，来查找注册在应用中的控制器的构造函数
-- 还有一些特殊的服务（参数）可以注入
-  - `$scope`，与指令元素相关联的作用域
-  - `$element`，当前指令对应的 元素
-  - `$attrs`，由当前元素的属性组成的对象
-  - `$transclude`，嵌入链接函数，实际被执行用来克隆元素和操作DOM的函数
+- 还有一些特殊的服务（参数）可以注入controller
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+        <td valign="top" width="104"><p>$scope</p></td>
+        <td valign="top" width="457"><p>与指令元素相关联的当前作用域</p></td>
+    </tr>
+    <tr>
+        <td valign="top" width="104"><p>$element</p></td>
+        <td valign="top" width="457"><p>当前指令对应的元素</p></td>
+    </tr>
+    <tr>
+        <td valign="top" width="104"><p>$attrs</p></td>
+        <td valign="top" width="457">
+            <p>当前元素的属性组成的对象，如：</p>
+            <p>&lt;div id=”nav” name=”Monkey”&gt;&lt;/div&gt;</p>
+            <p>属性对象为：</p>
+            <p>{</p>
+            <p>id:&nbsp; ‘nav’,</p>
+            <p>name:&nbsp; ‘Monkey’</p>
+            <p>}</p>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top" width="104"><p>$transclude</p></td>
+        <td valign="top" width="457"><p>嵌入链接函数，实际被执行用来克隆元素和操作DOM的函数</p></td>
+    </tr>
+    </tbody>
+</table>
 - 指令的控制器和link函数可以进行互换。区别在于，控制器主要是用来提供可在指令间复用的行为但link链接函数只能在当前内部指令中定义行为，且无法再指令间复用
 
 #### controllerAs-控制器的别名
@@ -314,10 +338,26 @@ angular.module("app", [])
 
 require的参数值加上下面的某个前缀，这会改变查找控制器的行为：
 
-- 没有前缀，指令会在自身提供的控制器中进行查找，如果找不到任何控制器，则会抛出一个error
-- `？` 如果在当前的指令没有找到所需的控制器，则会将null传给link连接函数的第四个参数
-- `^`  如果在当前的指令没有找到所需的控制器，则会查找父元素的控制器
-- `?^` 组合
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+        <td valign="top" width="104"><p>没有前缀</p></td>
+        <td valign="top" width="457"><p>指令会在自身提供的控制器中进行查找，如果找不到任何控制器，则会抛出一个error</p></td>
+    </tr>
+    <tr>
+        <td valign="top" width="104"><p>?</p></td>
+        <td valign="top" width="457"><p>如果在当前的指令没有找到所需的控制器，则会将null传给link连接函数的第四个参数</p></td>
+    </tr>
+    <tr>
+        <td valign="top" width="104"><p>^</p></td>
+        <td valign="top" width="457"><p>如果在当前的指令没有找到所需的控制器，则会查找父元素的控制器</p></td>
+    </tr>
+    <tr>
+        <td valign="top" width="104"><p>?^</p></td>
+        <td valign="top" width="457"><p>综合前面?和^</p></td>
+    </tr>
+    </tbody>
+</table>
 
 [back to top](#top)
 
