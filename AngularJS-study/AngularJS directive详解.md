@@ -235,13 +235,13 @@ var directiveFunction = function(){
     <tr>
         <td valign="top" width="104"><p>$attrs</p></td>
         <td valign="top" width="457">
-            <p>当前元素的属性组成的对象，如：</p>
-            <p>&lt;div id=”nav” name=”Monkey”&gt;&lt;/div&gt;</p>
-            <p>属性对象为：</p>
-            <p>{</p>
-            <p>id:&nbsp; ‘nav’,</p>
-            <p>name:&nbsp; ‘Monkey’</p>
-            <p>}</p>
+            当前元素的属性组成的对象，如：<br>
+            &lt;div id=”nav” name=”Monkey”&gt;&lt;/div&gt;<br>
+            属性对象为：<br>
+            {<br>
+            id:&nbsp; ‘nav’,<br>
+            name:&nbsp; ‘Monkey’<br>
+            }
         </td>
     </tr>
     <tr>
