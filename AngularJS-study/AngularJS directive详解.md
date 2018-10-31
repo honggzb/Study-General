@@ -7,7 +7,7 @@
   - [template and templateUrl](#template-and-templateurl)
   - [scope](#scope)
     - [scope继承隔离方法](#scope%E7%BB%A7%E6%89%BF%E9%9A%94%E7%A6%BB%E6%96%B9%E6%B3%95)
-    - [scope作用域绑定策略](#scope%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%BB%91%E5%AE%9A%E7%AD%96%E7%95%A5)
+    - [scope作用域绑定策略-与外界交互](#scope%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%BB%91%E5%AE%9A%E7%AD%96%E7%95%A5-与外界交互)
     - [在directive中执行父scope定义的方法](#%E5%9C%A8directive%E4%B8%AD%E6%89%A7%E8%A1%8C%E7%88%B6scope%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%B9%E6%B3%95)
   - [controller, controllerAs, bindToController - 指令相关的](#controller-controlleras-bindtocontroller---%E6%8C%87%E4%BB%A4%E7%9B%B8%E5%85%B3%E7%9A%84)
     - [controller](#controller)
@@ -138,7 +138,13 @@ app.run(["$templateCache", function($templateCache) {
 - {}。表示创建一个全新的隔离作用域                     -> 不继承隔离: 改变任何一方的值均不能影响另一方的值
   - **tip**：当想创建一个可重用的组件时隔离作用域是一个很好的选择，通过隔离作用域我们确保指令是‘独立'的,并可以轻松地插入到任何HTML app中，并且这种做法防止了父作用域被污染
   
-#### scope作用域绑定策略
+#### scope作用域绑定策略-与外界交互
+
+|策略|说明|
+|---|---|
+|`@`|把当前属性作为字符串传递。你还可以绑定来自外层scope的值，在属性值中插入{{ }}即可|
+|`=`|与父scope中的属性进行双向绑定|
+|`&`|传递一个来自父scope的函数|
 
  **隔离作用域可以通过绑定策略来访问父作用域的属性**, directive在使用隔离scope的时候，提供了三种方法同隔离之外的地方交互。这三种分别是: 
  
@@ -153,6 +159,8 @@ app.run(["$templateCache", function($templateCache) {
   - 此表达式可以是一个function
   - 比如当写了一个directive，当用户点击按钮时，directive想要通知controller，controller无法知道directive中发生了什么，也许你可以通过使用angular中的event广播来做到，但是必须要在controller中增加一个事件监听方法。最好的方法就是让directive可以通过一个父scope中的function，当directive中有什么动作需要更新到父scope中的时候，可以在父scope上下文中执行一段代码或者一个函数
 - `?` optional, 与上面三个组合，如 `=?`
+
+![](https://i.imgur.com/g8i4PF2.png)
 
 #### 在directive中执行父scope定义的方法
 
