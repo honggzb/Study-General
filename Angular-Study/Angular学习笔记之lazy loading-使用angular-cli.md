@@ -79,3 +79,4 @@ export class LazyModule { }
 ```
 
 > [Lazy-loading content with angular-cli](https://keathmilligan.net/lazy-loading-content-with-angular-cli/)
+> [How to implement Lazy Loading in Angular](https://medium.com/@thiago.reis/how-to-implement-lazy-loading-in-angular-c8dcbf165561)
