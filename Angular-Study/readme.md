@@ -1,24 +1,32 @@
 ```
 ├── Angular-Study
-│   ├── Sample
+│   ├── Angular-material/
+│   │   ├── dialog/
+│   │   │    ├── AngularMaterial-dialog.md 
+│   │   │    └── dialog.rar   
+│   │   └── readme.md
+│   │  
+│   ├── Sample/
 │   │   ├── 案例之星级评价.md
 │   │   └── 
-│   ├── Mockup-server
+│   ├── Mockup-server/
 │   │   ├── node+express创建服务器.md
 │   │   └── Node+http_server创建服务器.md
 │   │
+│   ├── Angular2+Accessibility.md
 │   ├── Angular 2,4 + google map      #Google map在angular>2中的应用
 │   ├── Angular_CLI的使用.md           #useful
+│   ├── Angular中Error汇总.md
+│   ├── Angular之Pipe.md
+│   ├── Angular学习笔记之DI依赖注入.md
 │   ├── Angular学习笔记之lazy loading-使用angular-cli.md     #useful
 │   ├── Angular学习笔记之集成三方UI框架.md
 │   ├── Angular打造股票管理网站.md      #useful
-│   ├── Angular学习笔记之依赖注入.md
 │   ├── Angular系列之变化检测.md
-│   ├── Angular之Pipe.md
-│   ├── Angular中Error汇总.md
+│   ├── Reactive Extensions for JavaScript (RxJS).md
 │   ├── mocking-backend -API.md
-│   ├── 
-│   └── 
+│   ├── redux.png
+│   └── redux.doc
 ```
 
 ## resource
