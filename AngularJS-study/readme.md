@@ -1,9 +1,19 @@
 ```
 ├── AngularJS-study
+│
+│   ├──  angular-translate-study/
+│   │    ├── simple-sample /
+│   │    └── readme.md
+│   │
+│   ├──  angular-material-study /
+│   │    ├── mdToast-study.md
+│   │    └── 
+│   │
 │   ├──  lib /
 │   │    ├── angular /
 │   │    └── bootstraps3 /
-│   ├──  public    #学习案例
+│   │
+│   ├──  public /    #学习案例
 │   │    ├── 001-controller.html 
 │   │    ├── 002-controller-multi.html 
 │   │    ├── 003-ng-bind.html 
@@ -29,11 +39,21 @@
 │   │    ├── 023-form-user-defined.html 
 │   │    ├── kittercupCollapse.html 
 │   │    └── other.html
+│   │ 
+│   ├──  Sample /
+│   │    ├── directive /
+│   │    │    ├── 自定义一个表格.js
+│   │    │    └── 
+│   │    └── 
+│   │ 
 │   └──  ui-bootstrap-study
 │        ├── typeahead /
 │        └── ui-Bootstrap之Typeahead.md
+│ 
 ├── $timeout和$interval的用法.md 
 ├── AngularJS directive详解.md
+├── Angularjs Controller间通信机制.md
+├── Angularjs directive通信案例.md
 ├── UI-Router for AngularJS 1.x.md 
 ├── angularJS-debug-skill.md 
 ├── angularjs的directive和component的参数传递问题.md
