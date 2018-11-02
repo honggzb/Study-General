@@ -1,5 +1,9 @@
 [AngularJS 之 Factory vs Service vs Provider](#top)
 
+- [Factory](#factory)
+- [Service](#service)
+- [Provider](#provider)
+
 AngularJS提供了3种方法来创建并注册我们自己的 service。
 
 | 方法     | 说明                                                                                                                                                                    |
