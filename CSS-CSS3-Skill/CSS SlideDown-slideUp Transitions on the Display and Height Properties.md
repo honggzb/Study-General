@@ -4,7 +4,7 @@
 - [CSS Transitions on the Height Property](#css-transitions-on-the-height-property)
 - [CSS Transitions using the Max-Height Property](#css-transitions-using-the-max-height-property)
 - [CSS Transition on the Margin-Top/Margin-Bottom Property](#css-transition-on-the-margin-topmargin-bottom-property)
-- [Margin-Top/Margin-Bottom Transition Combined with Height Transition](#margin-topmargin-bottom-transition-combined-with-height-transition
+- [Margin-Top/Margin-Bottom Transition Combined with Height Transition](#margin-topmargin-bottom-transition-combined-with-height-transition)
 - [CSS Transitions on the Height Property](#css-transitions-on-the-height-property-1)
 - [Adding WebGL Animations](#adding-webgl-animations)
 
