@@ -5,7 +5,6 @@
 - [CSS Transitions using the Max-Height Property](#css-transitions-using-the-max-height-property)
 - [CSS Transition on the Margin-Top/Margin-Bottom Property](#css-transition-on-the-margin-topmargin-bottom-property)
 - [Margin-Top/Margin-Bottom Transition Combined with Height Transition](#margin-topmargin-bottom-transition-combined-with-height-transition)
-- [CSS Transitions on the Height Property](#css-transitions-on-the-height-property-1)
 - [Adding WebGL Animations](#adding-webgl-animations)
 
 ## Opacity animation workaround
@@ -127,18 +126,6 @@ text. </div>
 [back to top](#top)
 
 ## Margin-Top/Margin-Bottom Transition Combined with Height Transition
-
-
-```html
-
-<style>
-
-</style>
-```
-
-[back to top](#top)
-
-## CSS Transitions on the Height Property
 
 - needs to supply an upper bound for maximal height of the content element
 - the idea is to combine these solutions and to use a transition on max-height to make the element vanish after the transition. Then even if margin-top/margin-bottom does not completely remove the element max-height will
