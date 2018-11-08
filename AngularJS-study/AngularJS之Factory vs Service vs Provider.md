@@ -4,24 +4,58 @@
 - [Service](#service)
 - [Provider](#provider)
 
-AngularJS提供了3种方法来创建并注册我们自己的 service。
+Provider创建的新服务都可以用来注入。包括：
 
-| 方法     | 说明                                                                                                                                                                    |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Factory  | 用Factory就是创建一个对象，为它添加属性，然后把这个对象返回出来。把service传进controller之后，在controller里这个对象里的属性就可以通过 factory 使用了                   |
-| Service  | Service是用"new"关键字实例化的。因此，你应该给"this"添加属性，然后service 返回"this"。把 ervice传进controller之后，在controller里 "this"上的属性就可以通过service来使用 |
-| Provider | Providers是唯一一种你可以传进.config()函数的service。当想要在service对象启用之前，先进行模块范围的配置，那就应该用provider                                              |
+- provider
+- factory
+- service
+- constant
+- value
+
+AngularJS提供了3种方法来创建并注册service
+
+| 方法     | 说明                                                                                                                                                    
+| -----|----- |
+| Factory | 用Factory就是创建一个对象，为它添加属性，然后把这个对象返回出来。<br>把service传进controller之后，在controller里这个对象里的属性就可以通过 factory 使用了|
+| Service | Service是用"new"关键字实例化的。因此，你应该给"this"添加属性，然后service 返回"this"。<br>把 ervice传进controller之后，在controller里 "this"上的属性就可以通过service来使用|
+| Provider| Providers是唯一一种可以传进.config()函数的service。<br>当想要在service对象启用之前，先进行模块范围的配置，那就应该用provider|
+|constant|constant 用于定义常量，一旦定义就不能被改变。可以被注入到任何地方，但是不能被装饰器(decorator)装饰|
+|value|与 constant 一样，可以用来定义值。但与 constant 的区别是：可以被修改，可以被 decorator 装饰，不能被注入到 config中<br>value 通常用来为应用设置初始值|
+|decorator|是用来装饰其他provider的，不过constant除外, 因为从源码可以看出，constant不是通过provider()方法创建的|
+
+```javascript
+//constant
+app.constant('APP_KEY', 'a1s2d3f4')
+//value
+app.value('version', '1.0')
+//decorator
+// decorator 装饰 value
+app.decorator('version', function ($delegate) {
+    return $delegate + '.1';
+})
+// decorator 装饰 myService 
+/* 
+     如要使用前面的 myService servic，但是其中缺少一个想要的greet函数。不必要修改 service， 但是可以装饰它
+    $delegate 代表实际上的 service 实例。 
+    装饰一个 service 的能力是非常实用的，尤其是当想要使用第三方的 service 时，此时不需要将代码复制到项目中，而只需要进行一些修改即可
+*/ 
+app.decorator('myService', function($delegate){
+    $delegate.greet = function(){
+        return "Hello, I am a new function of 'myService'";
+    }
+})
+```
 
 ## Factory
 
-- 创建一个对象，然后返回这个对象
+- 创建一个对象，然后返回这个对象 (作用就是返回一个有属性有方法的对象。相当于：`var f = myFactory();`)
 
 ```javascript
 app.factory('myFactory', function($http, $q){
     var service = {};     //创建一个对象
     var baseUrl = '...';
-    // private, 在controller中无法访问, 可定义setter和getter来修改private
-    var _artist = '';  
+    // 定义私有化的变量private, 在controller中无法访问, 可定义setter和getter来修改private
+    var _artist = '';    
     var _finalUrl = '';
 
     var makeUrl = function(){
@@ -54,7 +88,7 @@ app.factory('myFactory', function($http, $q){
     return service;   //返回这个对象
 });
 
-app.controller('myFactoryCtrl', function($scope, myFactory){
+app.controller('myFactoryCtrl', function($scope, myFactory){  // 注入服务
     $scope.data = {};
     $scope.updateArtist = function(){
         myFactory.setArtist($scope.data.artist);
@@ -73,6 +107,7 @@ app.controller('myFactoryCtrl', function($scope, myFactory){
 ## Service
 
 - 创建一个Service时，通过new关键字实例化对象, 解释器会自动创建一个对象，并关联它的prototype对象，然后将该对象this返回
+- 相当于new的一个对象：var s = new `myService();`，只要把属性和方法添加到this上才可以在controller里调用。
 
 ```javascript
 app.service('myService', function($http, $q){
@@ -129,11 +164,12 @@ app.controller('myFactoryCtrl', function($scope, myService){
 - 可以把Provider想象成由两部分组成
     - 第一部分的变量和函数是可以在app.config函数中访问的，可在它们被其他地方访问到之前来修改它们
     - 第二部分的变量和函数是可以在任何传入了’myProvider‘的控制器中进行访问的
-
+- provider 是 factory 的加强版。当需要一个可配置的 factory 的时候，使用 provider
+  
 ```javascript
 app.provider('myProvider', function(){
     var baseUrl = '...';
-    var _artist = '';  
+    var _artist = ''; 
     var _finalUrl = '';
 
     var thingFromConfig = '';
@@ -223,4 +259,3 @@ app.controller('TestCtrl',function($scope){
 angular.bootstrap(document,['Demo']);
 </script>
 ```
-
