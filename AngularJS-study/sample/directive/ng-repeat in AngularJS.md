@@ -270,8 +270,6 @@ $scope.descr = "basic template";
 
 ### 效果3： 高亮显示选择行2
 
-![](https://i.imgur.com/ZSuGjxR.png)
-
 ```html
 <ul>
     <li ng-repeat="row in rows" ng-class="row.classes" ng-click="activate(row)">
