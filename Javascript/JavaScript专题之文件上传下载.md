@@ -324,7 +324,7 @@ function readFile(){
 
 [back to top](#top)
 
-<h4 id="以ArrayBuffers方式读取">以 ArrayBuffers 方式读取<h4>
+<h4 id="以ArrayBuffers方式读取">以 ArrayBuffers 方式读取</h4>
 
 ArrayBuffer 最初是作为 WebGL 的一部分的，ArrayBuffer 代表一个可以存储任意任意大小的数字的一个有限的区域，此种方式读取的数据，必须使用特殊的方式访问，例如 Int8Array ，将此底层的数据视为 8 位的符号整数。或者 Float32Array 将其视为 32 位的浮点数，这些都被叫做类型化数组/格式化数组，都被强制的使用某种数据格式来使用，而不像普通格式的数据那样。
 
