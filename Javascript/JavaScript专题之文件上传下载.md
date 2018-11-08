@@ -104,6 +104,21 @@ xhr.open("post", "/entrypoint", true);
 xhr.send(form);
 ```
 
+Angular 1.x
+
+- Angular’s default Content-Type header for POST and PUT requests is application/json,. By setting ‘Content-Type’: undefined, the browser sets the Content-Type to multipart/form-data for us and fills in the correct boundary.
+- Manually setting ‘Content-Type’: //multipart/form-data will fail to fill in the boundary parameter of the request.
+
+```javascript
+var fd = new FormData();
+fd.append('modelId', id);
+fd.append('file', file);
+return $http.post(url, fd, {
+   transformRequest: angular.identity,
+   headers: { 'Content-Type': undefined }
+});  
+```
+
 图片文件上传
 
 ```html
