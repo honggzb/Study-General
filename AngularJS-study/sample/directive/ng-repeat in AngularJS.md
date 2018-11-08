@@ -1,8 +1,5 @@
  [ng-repeat in AngularJS](#top)
  
-- [Factory](#factory)
-- [Service](#service)
-- [Provider](#provider)
 - [Basic concept](#basic-concept)
     - [Tracking and Duplicates - track by](#tracking-and-duplicates---track-by)
     - [Special properties on the local scope of each template instance](#special-properties-on-the-local-scope-of-each-template-instance)
