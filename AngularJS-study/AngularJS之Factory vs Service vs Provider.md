@@ -46,6 +46,10 @@ app.decorator('myService', function($delegate){
 })
 ```
 
+[back to top](#top)
+
+-------
+
 ## Factory
 
 - 创建一个对象，然后返回这个对象 (作用就是返回一个有属性有方法的对象。相当于：`var f = myFactory();`)
@@ -104,6 +108,10 @@ app.controller('myFactoryCtrl', function($scope, myFactory){  // 注入服务
 });
 ```
 
+[back to top](#top)
+
+-------
+
 ## Service
 
 - 创建一个Service时，通过new关键字实例化对象, 解释器会自动创建一个对象，并关联它的prototype对象，然后将该对象this返回
@@ -156,6 +164,10 @@ app.controller('myFactoryCtrl', function($scope, myService){
     };
 });
 ```
+
+[back to top](#top)
+
+-------
 
 ## Provider
 
@@ -226,6 +238,8 @@ app.config(function(myProvider){
 })
 ```
 
+-------
+
 ```html
 <form name="test_form" ng-controller="TestCtrl">
   <input type="checkbox" name="a" ng-model="a" id="check" ng-checking="say()"/>
@@ -259,3 +273,5 @@ app.controller('TestCtrl',function($scope){
 angular.bootstrap(document,['Demo']);
 </script>
 ```
+
+[back to top](#top)
