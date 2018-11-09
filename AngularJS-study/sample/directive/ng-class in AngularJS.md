@@ -1,4 +1,4 @@
-[AngularJS ng-class directive] (#top)
+[AngularJS ng-class directive](#top)
 
 - [Add/Remove classes based on string](#addremove-classes-based-on-string)
 - [Add/Remove classes based on Array/Map Syntax](#addremove-classes-based-on-arraymap-syntax)
