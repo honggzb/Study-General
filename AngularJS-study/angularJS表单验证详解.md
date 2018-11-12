@@ -51,13 +51,6 @@ app.directive('ngFocus', [function() {
 2.  add a variable after the form has been submitted. just add `$scope.submitted = true;` Inside of submitForm() function
 3.  Adjust the error rules from `{ng-class="&#123; 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }`" to `{ng-class="&#123; 'has-error' : userForm.name.$invalid && !userForm.name.$pristine && submitted }"`
 
-> References
-- [Form validation with AngularJS](https://scotch.io/tutorials/angularjs-form-validation)
-- https://codepen.io/sevilayha/pen/xFcdI
-- [Handling Checkboxes and Radio Buttons in Angular Forms](https://scotch.io/tutorials/handling-checkboxes-and-radio-buttons-in-angular-forms)
-- http://embed.plnkr.co/g0NMG4rmF4uwzoG2uZhf/
-
-
 ## input输入框只能输入数字和小数点
 
 **AngularJS方法**
@@ -76,3 +69,9 @@ $scope.clearNoNum = function(obj,attr){
 **HTML方法**:  并限制小数位数
 
 `<span style="font-size:14px;"> <input type="number" step="0.01" ng-model="interest" name="interest" required /></span>`
+
+> References
+- [Form validation with AngularJS](https://scotch.io/tutorials/angularjs-form-validation)
+- https://codepen.io/sevilayha/pen/xFcdI
+- [Handling Checkboxes and Radio Buttons in Angular Forms](https://scotch.io/tutorials/handling-checkboxes-and-radio-buttons-in-angular-forms)
+- http://embed.plnkr.co/g0NMG4rmF4uwzoG2uZhf/
