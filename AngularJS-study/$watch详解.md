@@ -1,5 +1,5 @@
 - [$apply，$digest，$watch的区别](#applydigestwatch%E7%9A%84%E5%8C%BA%E5%88%AB)
-- [$watch, $watchGroup, $watchCollection](#$watch,-$watchGroup,-$watchCollection
+- [$watch, $watchGroup, $watchCollection](#$watch,-$watchGroup,-$watchCollection)
 - [$watch单一的变量](#watch%E5%8D%95%E4%B8%80%E7%9A%84%E5%8F%98%E9%87%8F)
 - [$watch多个变量](#watch%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F)
 - [$watch对象或数组](#watch%E5%AF%B9%E8%B1%A1%E6%88%96%E6%95%B0%E7%BB%84)
