@@ -1,0 +1,44 @@
+<div ng-app='myApp' ng-controller='DemoController'>
+ <p>滚屏加载,  当滚动屏幕到达页面底部的时候，就会尝试加载一个序列的数据集，追加在页面底部。在Angular社区有开源组件ngInfiniteScroll</p>
+  <div infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
+    <div ng-repeat='item in reddit.items'>
+      <span class='score'>{{item.score}}</span>
+      <span class='title'>
+        <a ng-href='{{item.url}}' target='_blank'>{{item.title}}</a>
+      </span>
+      <small>by {{item.author}} -
+        <a ng-href='http://reddit.com{{item.permalink}}' target='_blank'>{{item.num_comments}} comments</a>
+      </small>
+      <div style='clear: both;'></div>
+    </div>
+    <div ng-show='reddit.busy'>Loading data...</div>
+  </div>
+</div>
+<script>
+var myApp = angular.module('myApp', ['infinite-scroll']);
+myApp.controller('DemoController', ['$scope', 'Reddit', function($scope, Reddit) {
+  $scope.reddit = new Reddit();
+}]);
+// Reddit constructor function to encapsulate HTTP and pagination logic
+myApp.factory('Reddit', ['$http', function($http) {
+  var Reddit = function() {
+    this.items = [];
+    this.busy = false;
+    this.after = '';
+  };
+  Reddit.prototype.nextPage = function() {
+    if (this.busy) return;
+    this.busy = true;
+    var url = 'http://api.reddit.com/hot?after=' + this.after + '&jsonp=JSON_CALLBACK';
+    $http.jsonp(url).success(function(data) {
+      var items = data.data.children;
+      for (var i = 0; i < items.length; i++) {
+        this.items.push(items[i].data);
+      }
+      this.after = 't3_' + this.items[this.items.length - 1].id;
+      this.busy = false;
+    }.bind(this));
+  };
+  return Reddit;
+}]);
+</script>
