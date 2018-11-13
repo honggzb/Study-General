@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>实现table表头固定</title>
+    <style>
+      .header-background {
+        background-color: #d5ecff;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+      }
+      .fixed-table-container-inner {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+      }
+      .fixed-table-container {
+        width: 50%;
+        height: 200px;
+        border: 1px solid black;
+        margin: 10px auto;
+        background-color: white;
+        position: relative;
+        padding-top: 30px;
+      }
+      .fixed-table-container-inner {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+      }
+      table {
+        background-color: white;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+      .th-inner {
+        position: absolute;
+        top: 0;
+        line-height: 30px;
+        text-align: left;
+        border-left: 1px solid black;
+        padding-left: 5px;
+        margin-left: -5px;
+      }
+      th {
+        padding: 0 5px;
+        text-align: left;
+      }
+      td {
+        border: 1px solid #ccc;
+        padding: 5px;
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <pre>
+    &lt;div class="fixed-table-container"&gt;              &lt;!-- position: relative;height:200px; --&gt;
+      &lt;div class="header-background"&gt;&lt;/div&gt;    &lt;!-- height: 30px;position: absolute;top:0;right:0;left:0; --&gt;
+      &lt;div class="fixed-table-container-inner"&gt;      &lt;!-- overflow-x: hidden;overflow-y: auto;height: 100%; --&gt;
+        &lt;table cellspacing="0"&gt;                      &lt;!-- width: 100%; overflow-x: hidden;overflow-y: auto; --&gt;
+          &lt;thead&gt;                                    &lt;!-- display: table-header-group; --&gt;
+            &lt;!-- 
+            .th-inner{
+              position: absolute;
+              top: 0;
+              line-height: 30px;
+              text-align: left;
+              border-left: 1px solid black;
+              padding-left: 5px;
+              margin-left: -5px; 
+            } --&gt;
+            &lt;tr&gt;&lt;th class="first"&gt;&lt;div class="th-inner"&gt;First&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;&lt;td&gt;First&lt;/td&gt;&lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    </pre>
+    <div class="fixed-table-container">
+      <div class="header-background"></div>
+      <div class="fixed-table-container-inner">
+        <table cellspacing="0">
+          <thead>
+            <tr>
+              <th class="first"><div class="th-inner">First</div></th>
+              <th class="second"><div class="th-inner">Second</div></th>
+              <th class="third"><div class="th-inner">Third</div></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>First</td>
+              <td>First</td>
+              <td>First</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>First</td>
+              <td>Second</td>
+              <td>Third</td>
+            </tr>
+            <tr>
+              <td>Last</td>
+              <td>Last</td>
+              <td>Last</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
