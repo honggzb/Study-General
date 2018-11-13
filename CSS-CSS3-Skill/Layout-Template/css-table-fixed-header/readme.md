@@ -19,6 +19,7 @@
 
 - 添加一个head div
 - 上移table thead的th到head div，用th-inner class实现
+- http://salzerdesign.com/test/fixedTable.html
 
 <pre>
     &lt;div class="fixed-table-container"&gt;              &lt;!-- position: relative;height:200px; --&gt;
