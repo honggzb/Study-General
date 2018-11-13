@@ -20,7 +20,6 @@
 - 添加一个head div
 - 上移table thead的th到head div，用th-inner class实现
 
-```html
 <pre>
     &lt;div class="fixed-table-container"&gt;              &lt;!-- position: relative;height:200px; --&gt;
       &lt;div class="header-background"&gt;&lt;/div&gt;    &lt;!-- height: 30px;position: absolute;top:0;right:0;left:0; --&gt;
@@ -46,4 +45,4 @@
       &lt;/div&gt;
     &lt;/div&gt;
 </pre>
-```
+
