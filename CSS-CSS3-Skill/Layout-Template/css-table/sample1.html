@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现table表头固定</title>
+    <style>
+    .fixed_header{
+        width: 400px;
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+    .fixed_header tbody{
+        display:block;
+        width: 100%;
+        overflow: auto;
+        max-height: 150px;
+    }
+    .fixed_header thead tr {
+        display: block;
+    }
+    .fixed_header thead {
+        background: black;
+        color:#fff;
+    }
+    .fixed_header th, .fixed_header td {
+        padding: 5px;
+        text-align: left;
+        width: 200px;
+    }
+    </style>
+</head>
+
+<body>
+    <pre>
+            &lt;table class="fixed_header"&gt;    &lt;!-- display: table;(by default, no need to write) table-layout: fixed;  --&gt;
+                &lt;thead&gt;                       &lt;!--  --&gt;
+                  &lt;tr&gt;                        &lt;!-- display: block;  --&gt;
+                    &lt;th&gt;Col 1&lt;/th&gt;            &lt;!-- width: 200px; --&gt;    
+                  &lt;/tr&gt;                     
+                &lt;/thead&gt;                      &lt;!--  --&gt;
+                &lt;tbody&gt;                       &lt;!--  display:block;overflow: auto;max-height: 150px; --&gt;
+                  &lt;tr&gt;                        &lt;!--  --&gt;
+                    &lt;td&gt;row 1-0&lt;/td&gt;          &lt;!-- width: 200px; --&gt;
+                  &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+    </pre>
+    <table class="fixed_header">
+        <thead>
+            <tr>
+                    <th>Col 1</th>
+                    <th>Col 2</th>
+                    <th>Col 3</th>
+                    <th>Col 4</th>
+                    <th>Col 5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                    <td>row 1-0</td>
+                    <td>row 1-1</td>
+                    <td>row 1-2</td>
+                    <td>row 1-3</td>
+                    <td>row 1-4</td>
+                  </tr>
+                  <tr>
+                    <td>row 2-0</td>
+                    <td>row 2-1</td>
+                    <td>row 2-2</td>
+                    <td>row 2-3</td>
+                    <td>row 2-4</td>
+                  </tr>
+                  <tr>
+                    <td>row 3-0</td>
+                    <td>row 3-1</td>
+                    <td>row 3-2</td>
+                    <td>row 3-3</td>
+                    <td>row 3-4</td>
+                  </tr>
+                  <tr>
+                    <td>row 4-0</td>
+                    <td>row 4-1</td>
+                    <td>row 4-2</td>
+                    <td>row 4-3</td>
+                    <td>row 4-4</td>
+                  </tr>
+                  <tr>
+                    <td>row 5-0</td>
+                    <td>row 5-1</td>
+                    <td>row 5-2</td>
+                    <td>row 5-3</td>
+                    <td>row 5-4</td>
+                  </tr>
+                  <tr>
+                    <td>row 6-0</td>
+                    <td>row 6-1</td>
+                    <td>row 6-2</td>
+                    <td>row 6-3</td>
+                    <td>row 6-4</td>
+                  </tr>
+                  <tr>
+                    <td>row 7-0</td>
+                    <td>row 7-1</td>
+                    <td>row 7-2</td>
+                    <td>row 7-3</td>
+                    <td>row 7-4</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
