@@ -58,11 +58,10 @@
 
 VSCode 前端开发常用插件列表（字母升序），旨在方便日常使用
 
-
 <h2>通用插件</h2>
 <ul>
     <li><a href="" rel="nofollow">Beautify</a>: Beautify javascript, JSON, CSS, Sass, and HTML in Visual Studio Code</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag" rel="nofollow">Auto Close Tag</a>: 自动标签闭合</li>
+    <li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag" rel="nofollow">Auto Close Tag</a>: 自动标签闭合, Auto Rename Tag</li>
     <li><a href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer" rel="nofollow">Bracket Pair Colorizer</a>：括号颜色匹配</li>
     <li>JavaScript (ES6) code snippets: `imd --> import { } from 'somewhere'`</li>
     <li>AutoFileName: AutoFileName</li>
@@ -74,7 +73,7 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
     <li><a href="https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost" rel="nofollow">Import Cost</a>：自动计算 Import 包大小</li>
     <li><a href="https://github.com/ChristianKohler/NpmIntellisense">Npm Intellisense</a>：Npm Module Import 智能补全</li>
     <li><a href="https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser" rel="nofollow">Open in Browser</a>：在浏览器中打开- 将添加一个 [Open With Default Browser] 选项到右键菜单</li>
-    <li>change-case: 命名格式插件
+    <li><b>change-case: 命名格式插件</b>
         <ul>
             <li>camelCase骆驼拼命名</li>
             <li>PascalCase首字母大写</li>
@@ -87,7 +86,9 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
     <li><a href="https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer" rel="nofollow">SVG Viewer</a>：SVG 查看器</li>
     <li>select highlight in minimap: </li>
     <li><a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse" rel="nofollow">Can I Use</a>：浏览器兼容性查询</li>
-    <li>Quokka: 调试工具插件, 能够根据你正在编写的代码提供实时反馈。它易于配置，并能够预览变量的函数和计算值结果</li>
+    <li>Quokka.js可以实时运行代码，在你敲键盘的同时就可以把结果显示在编辑器里面, 并能够预览变量的函数和计算值结果<br>类似的插件还有：
+Code Runner，支持实时执行C, C++, Java, JavaScript, PHP, Python, Perl, Perl 6 等语言。<br>
+Runner</li>
 </ul>
 <h2>CSS相关</h2>
 <ul>
@@ -109,16 +110,21 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 <ul>
     <li>Prettier: 格式化代码，快速格式化整个JS和CSS文档, CMD+Shift+P -> Format Document</li>
     <li>Align: 代码对齐插件, Ctrl+Alt+A</li>
+    <li>Bracket Pair Colorizer 和 Indent Rainbow: 花括号着色和彩虹缩进</li>
 </ul>
 <h2>Git</h2>
 <ul>
     <li><a href="https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame" rel="nofollow">Git Blame</a>：查看当前选中行的 Git 提交信息</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory" rel="nofollow">Git History</a>：查看 Git 提交历史</li>
+    <li><a href="https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory" rel="nofollow">Git History</a>：图形化显示提交历史等。 墙裂推荐。</li>
     <li><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" rel="nofollow">Git Lens</a>：Git Blame 详细信息</li>
+    <li><a href="https://marketplace.visualstudio.com/items?itemName=ziyasal.vscode-open-in-github">Open in GitHub / Bitbucket / Gitlab / VisualStudio.com !</a> — It lets you open the repo in the browser with a single command.</li>
+    <li>Git Indicators — It lets you see the affected files and how many lines have been added or deleted in the status bar.</li>
 </ul>
 <h2>其他</h2>
 <ul>
     <li><a href="https://marketplace.visualstudio.com/items?itemName=joelday.docthis" rel="nofollow">Document This</a>: 自动生成 JSDoc 注释, Ctrl+Alt+D</li>
+    <li>Import Cost: 可以显示import的东西体积有多大</li>
+    <li><a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">REST Client，</a>就不用再单独安装一个Postman了，直接在VSCode里面就能搞定</li>
     <li>Sync Settings: 设置同步插件, 你很有可能在多台电脑上进行编码工作。在电脑上移植你的插件和设置是轻而易举的事</li>
     <li><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" rel="nofollow">ESLint</a>：Javascript 语法检测</li>
     <li><a href="https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode" rel="nofollow">Flow Language Support</a>：Flow 语法支持</li>
