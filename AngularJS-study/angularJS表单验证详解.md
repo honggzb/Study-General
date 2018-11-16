@@ -17,6 +17,22 @@ $touched|ng-touched|Boolean|True if the input has been blurred
 
 **Angular built-in validation directives**
 
+```html
+<input
+  ng-model="string"
+  [name="string"]
+  [required="string"]
+  [ng-required="boolean"]
+  [ng-minlength="number"]
+  [ng-maxlength="number"]
+  [max-variable="number"] 
+  [min="number"]
+  [ng-pattern="string"]
+  [ng-change="string"]
+  [ng-trim="boolean"]>
+</input>
+```
+
 Param|Type|Details
 ---|---|---
 ngModel|string	|Assignable AngularJS expression to data-bind to.
