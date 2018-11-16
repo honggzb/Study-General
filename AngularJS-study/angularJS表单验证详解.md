@@ -1,9 +1,8 @@
+- [常用知识](#常用知识)
 - [Sample](#sample)
 - [自定义ngFocus指令 - 在用户离开该输入框时显示错误信息](#%E8%87%AA%E5%AE%9A%E4%B9%89ngfocus%E6%8C%87%E4%BB%A4---%E5%9C%A8%E7%94%A8%E6%88%B7%E7%A6%BB%E5%BC%80%E8%AF%A5%E8%BE%93%E5%85%A5%E6%A1%86%E6%97%B6%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF)
 - [Only Showing Errors After Submitting the Form](#only-showing-errors-after-submitting-the-form)
 - [input输入框只能输入数字和小数点](#input%E8%BE%93%E5%85%A5%E6%A1%86%E5%8F%AA%E8%83%BD%E8%BE%93%E5%85%A5%E6%95%B0%E5%AD%97%E5%92%8C%E5%B0%8F%E6%95%B0%E7%82%B9)
-
-- [常用知识](#常用知识)
 
 ## 常用知识
 
