@@ -1,3 +1,9 @@
+- [1.创始人博客](#1%E5%88%9B%E5%A7%8B%E4%BA%BA%E5%8D%9A%E5%AE%A2)
+- [2.AngularJS教程，这些教程从入门到高级都有：](#2angularjs%E6%95%99%E7%A8%8B%E8%BF%99%E4%BA%9B%E6%95%99%E7%A8%8B%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E9%AB%98%E7%BA%A7%E9%83%BD%E6%9C%89)
+- [3.AngularJS书籍](#3angularjs%E4%B9%A6%E7%B1%8D)
+- [4.知名博客](#4%E7%9F%A5%E5%90%8D%E5%8D%9A%E5%AE%A2)
+- [中文资源](#%E4%B8%AD%E6%96%87%E8%B5%84%E6%BA%90)
+
 ## 1.创始人博客
 
 - [AngularJS的官方博客-old](https://blog.angularjs.org/)
