@@ -1,3 +1,6 @@
+- [Angular代码规范-en](http://bguiz.github.io/js-standards/angularjs/single-responsibility/)
+- [Angular代码规范-中文](https://www.reqianduan.com/1722.html)
+
 ```
 ├── AngularJS-study
 │
