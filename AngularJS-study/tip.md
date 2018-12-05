@@ -6,8 +6,9 @@
     - [双向绑定的数据使用对象](#%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8%E5%AF%B9%E8%B1%A1)
     - [可以获取元素调用controller()函数来获取到控制器](#%E5%8F%AF%E4%BB%A5%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E8%B0%83%E7%94%A8controller%E5%87%BD%E6%95%B0%E6%9D%A5%E8%8E%B7%E5%8F%96%E5%88%B0%E6%8E%A7%E5%88%B6%E5%99%A8)
     - [点击按钮之后禁用按钮，防止多重提交](#%E7%82%B9%E5%87%BB%E6%8C%89%E9%92%AE%E4%B9%8B%E5%90%8E%E7%A6%81%E7%94%A8%E6%8C%89%E9%92%AE%E9%98%B2%E6%AD%A2%E5%A4%9A%E9%87%8D%E6%8F%90%E4%BA%A4)
-    - [deselect HTML radio input by click](#deselect-HTML-radio-input-by-click)
-    - [监听angularJs列表数据是否渲染完毕](#监听angularJs列表数据是否渲染完毕)
+    - [deselect HTML radio input by click](#deselect-html-radio-input-by-click)
+    - [监听angularJs列表数据是否渲染完毕](#%E7%9B%91%E5%90%ACangularjs%E5%88%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E6%98%AF%E5%90%A6%E6%B8%B2%E6%9F%93%E5%AE%8C%E6%AF%95)
+    - [$ctrl的使用](#ctrl%E7%9A%84%E4%BD%BF%E7%94%A8)
 - [AngularJS material tips](#angularjs-material-tips)
     - [Angular Material的多行文本框字数校验](#angular-material%E7%9A%84%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%A1%86%E5%AD%97%E6%95%B0%E6%A0%A1%E9%AA%8C)
     - [Angular Material对话框时，对话框显示以后，点击浏览器的返回按钮对话框不会消失的问题](#angular-material%E5%AF%B9%E8%AF%9D%E6%A1%86%E6%97%B6%E5%AF%B9%E8%AF%9D%E6%A1%86%E6%98%BE%E7%A4%BA%E4%BB%A5%E5%90%8E%E7%82%B9%E5%87%BB%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%BF%94%E5%9B%9E%E6%8C%89%E9%92%AE%E5%AF%B9%E8%AF%9D%E6%A1%86%E4%B8%8D%E4%BC%9A%E6%B6%88%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98)
@@ -207,6 +208,33 @@ $scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
 
 [back to top](#top)
 
+### $ctrl的使用
+
+`$ctrl` is the view model object in your controller. "component" controllerAs is "$ctrl" by default in Angular 1.5
+
+```html
+<li ng-repeat="person in $ctrl.people"></li>
+<!--    -->
+<article ng-controller="Customers as vm">
+    <h2></h2>
+    <ul ng-repeat="c in vm.customers">
+      <li></li>
+    </ul>
+</article>
+<script>
+angular.module('app')
+       .controller('Customers', [function() {
+            var vm = this;
+            vm.title = 'Customers';
+            vm.customers = [
+                {name: 'Haley'}, {name: 'Ella'}, {name: 'Landon'}, {name: 'John'}
+                ];
+        }]);
+</script>
+```
+
+[back to top](#top)
+
 ## AngularJS material tips
 
 ### Angular Material的多行文本框字数校验
@@ -248,7 +276,7 @@ app.directive('textChange', ['$timeout',function ($timeout) {
                 if(angular.element($document[0].body).hasClass('md-dialog-is-showing')) {//如果有对话框存在
                     $mdDialog.cancel();
                     /*  1) 在dialog和panel对话框关闭时，如要跳转页面，应写成$state.go()
-                        2) 跳转页面，因为对话框关闭会有延迟，应该利用promise
+                        1) 跳转页面，因为对话框关闭会有延迟，应该利用promise
                         $mdDialog.cancel().then(function(){ $state.go(); });
                         mdPanelRef.close().then(function(){ $state.go(); });
                     */
@@ -265,13 +293,11 @@ app.directive('textChange', ['$timeout',function ($timeout) {
     ]);
 ```
 
-
 dialog和panel对话框关闭时，如果要跳转页面，不应该写成$mdDialog.cancel();$tate.go()//跳转页面和mdPanelRef.close();$tate.go()//跳转页面，因为对话框关闭会有延迟，应该利用promise
 
 正确写法为$mdDialog.cancel().then(function(){$state.go();});和mdPanelRef.close().then(function(){$state.go();});
 
 [back to top](#top)
-
 
 [Angular知识总结及学习资料（中文版）](https://blog.csdn.net/u013915143/article/details/51956582?utm_source=blogxgwz1)
 
