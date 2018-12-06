@@ -1,7 +1,5 @@
 [JavaScript专题之es6数组处理](#top)
 
-## find,filter,map,some,every
-
 方法|说明|返回值|例子
 ---|---|---|---
 **遍历查找**|||
