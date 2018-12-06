@@ -7,7 +7,7 @@
         <td rowspan="10"> 合并多行成一列：<br/>
             使用rowspan="n" <br/>
             跨 n 行合并<br/>
-            n为td的个数为：列数<br/>>
+            n为td的个数为：列数
             </td>
         <td>文件标识：</td>
         <td>内容</td>
