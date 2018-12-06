@@ -27,9 +27,6 @@
             <table id="content-table">
               <thead> 
                 <tr>
-                <!-- <th ng-repeat="headername in $ctrl.header track by $index" class="table--headers ng-scope" id="clx-table-header-7" ng-style="{width: headername.width}" style="width: 15%;background-color: chartreuse>
-                          <div class="clx-table-header-title-wrapper ng-binding" ng-style="{ width: $ctrl.calculateWidth('clx-table-header-' + $index) }" style="position: absolute;text-overflow: ellipsis; overflow: hidden;">table header</div>
-                        </th> -->
                   <th>
                     <div class="clx-table-header-title-wrapper ng-binding" style="position: absolute;text-overflow: ellipsis; overflow: hidden;width:100px;">table
                       header</div>
