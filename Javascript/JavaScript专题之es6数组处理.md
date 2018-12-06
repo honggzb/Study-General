@@ -8,10 +8,7 @@
       <td>例子</td>
    </tr>
    <tr>
-      <td>遍历查找</td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td colspan="4" bgcolor=#7B68EE>遍历查找</td>
    </tr>
    <tr>
       <td>forEach</td>
@@ -44,16 +41,10 @@
       <td>[1, 4, -5, 10].findIndex((value,index,arr) => value < 0) // 2</td>
    </tr>
    <tr>
-      <td>上面4个方法内部机制都有一个遍历过程</td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td colspan="4">上面4个方法内部机制都有一个遍历过程</td>
    </tr>
    <tr>
-      <td>查找</td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td colspan="4" bgcolor=#7B68EE>查找</td>
    </tr>
    <tr>
       <td>some</td>
@@ -80,10 +71,7 @@
       <td></td>
    </tr>
    <tr>
-      <td>静态方法</td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td colspan="4" bgcolor=#7B68EE>静态方法</td>
    </tr>
    <tr>
       <td>Array.from</td>
@@ -97,11 +85,7 @@
       <td></td>
       <td></td>
    </tr>
-   <tr>
-      <td></td>
-   </tr>
 </table>
-
 ```javascript
 /*注意拷贝的数组是浅拷贝 */
 let arrLike = {
