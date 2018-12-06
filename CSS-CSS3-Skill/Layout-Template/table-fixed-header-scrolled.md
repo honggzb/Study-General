@@ -51,6 +51,12 @@
 
 ## Whole sample
 
+**get the width of an element using AngularJS**
+
+- `angular.element(document.getElementById(id)).clientWidth;`
+- `angular.element(document.querySelectorAll(".class")[0]).clientWidth;`
+- `angular.element(document.getElementById(id)).getBoundingClientRect();`, if need to get non rounded numbers
+
 ```html
 <style>
 *, :after, :before {
