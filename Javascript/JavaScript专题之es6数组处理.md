@@ -1,12 +1,12 @@
 [JavaScript专题之es6数组处理](#top)
 
 <table>
-   <tr>
+   <th>
       <td>方法</td>
       <td>说明</td>
       <td>返回值</td>
       <td>例子</td>
-   </tr>
+   </th>
    <tr>
       <td colspan="4" bgcolor=#7B68EE>遍历查找</td>
    </tr>
@@ -59,10 +59,9 @@
       <td>一假即假</td>
    </tr>
    <tr>
-      <td>every和some目的：确定数组的所有成员是否满足指定的测试</td>
-      <td></td>
-      <td>返回true、false</td>
-      <td></td>
+      <td colspan="2">every和some目的：确定数组的所有成员是否满足指定的测试</td>
+      <td colspan="2">返回true、false</td>
+   </tr>
    </tr>
    <tr>
       <td>reduce</td>
