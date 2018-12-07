@@ -29,3 +29,5 @@ var $html = $compile(html)($scope);
 //3.将编译好的内容插入到页面中
 $("body").append($html);
 ```
+
+> [AngularJS动态增加dom，导致里面ng-click、modal绑定失效的问题解决方法](https://blog.csdn.net/qq_33142257/article/details/75592535)
