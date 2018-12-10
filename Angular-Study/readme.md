@@ -31,6 +31,7 @@
 
 ## resource
 
+- [angular style guide](https://angular.io/guide/styleguide)
 - [Angular中文文档](https://angular.cn/)
 - [Angular 4.x 修仙之路](https://segmentfault.com/a/1190000008754631)
 - [Angular4快速入门](https://blog.csdn.net/column/details/17833.html)
