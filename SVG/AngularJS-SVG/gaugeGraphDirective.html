@@ -1,5 +1,7 @@
+</html>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +9,57 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
-    
+
     <title>AngularJS + SVG</title>
 </head>
+
 <body ng-app="Dashboard">
     <div ng-controller="gaugeGraphController">
         <gauge-graph specs="specs1"></gauge-graph>
         <gauge-graph specs="specs2"></gauge-graph>
     </div>
-<script>
-var dashboard = angular.module('Dashboard', []);
-dashboard.controller("gaugeGraphController", function($scope){
-    $scope.specs1 = { currentValue: 45, centerX: 300, centerY: 300, radius: 200, maxValue: 180, gradientInterval: 10, gradients: [] };
-    $scope.specs2 = { currentValue: 85, centerX: 300, centerY: 300, radius: 200, maxValue: 180, gradientInterval: 10, gradients: [] };
-});
-
-dashboard.directive("gaugeGraph", function(){
-    return {
-        scope: { specs: '=' },
-        template: `
+    <script>
+        var dashboard = angular.module('Dashboard', []);
+        dashboard.controller("gaugeGraphController", function ($scope) {
+            $scope.specs1 = {
+                id: 'bg1',
+                currentValue: 45,
+                centerX: 300,
+                centerY: 300,
+                radius: 200,
+                maxValue: 180,
+                gradientInterval: 10,
+                gradients: []
+            };
+            $scope.specs2 = {
+                id: 'bg2',
+                currentValue: 85,
+                centerX: 300,
+                centerY: 300,
+                radius: 200,
+                maxValue: 180,
+                gradientInterval: 10,
+                gradients: []
+            };
+        });
+        dashboard.directive("gaugeGraph", function () {
+            return {
+                scope: {
+                    specs: '='
+                },
+                template: `
             <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
                 <!-- <path d="M [starting x] [starting y] A [radius] [radius] 0 0 1 [ending x] [ending y]" /> -->
-                <path id="background" ng-attr-d="{{background}}" stroke-width="15" stroke="black" fill="none"/>
-                <path ng-attr-d="{{value}}" style="{{dashArray}}" stroke-width="15" stroke="#9BC850" fill="none"/>
-                <path id="gradients" ng-attr-d="{{gradients}}" stroke-width="0" fill="none"/>
+                <path id="background" 
+                      ng-attr-d="{{background}}" 
+                      stroke-width="15" stroke="black" fill="none"/>
+                <!-- using stroke-dasharray for animation of gauge Graph -->
+                <path ng-attr-d="{{value}}" 
+                      style="{{dashAnimation}}"
+                      stroke-width="15" stroke="#9BC850" fill="none"/>
+                <path id="gradients" 
+                      ng-attr-d="{{gradients}}" 
+                      stroke-width="0" fill="none"/>
                 <text ng-repeat="gradient in specs.gradients" dx="0" dy="0" text-anchor="middle" style="font: bold large arial">
                     <textPath xlink:href="#gradients" startOffset="{{gradient.offset}}%">{{gradient.value}}</textPath>
                 </text>
@@ -41,35 +70,43 @@ dashboard.directive("gaugeGraph", function(){
                         {{specs.maxValue}}
                 </text>
             </svg>`,
-        link: function(scope, element, attr){
-                for(var value=0, offset=0; value<scope.specs.maxValue; value+=scope.specs.gradientInterval, offset+=100/18){
-                    scope.specs.gradients.push({
-                        value: value, 
-                        offset: offset
-                    });
-                }
-                var getCoordinatesForAngle = function(centerX, centerY, radius, angleInDegrees){
-                    var angleInRadians = (angleInDegrees-180)*Math.PI/180.0;
-                    return {
-                        x: parseInt(centerX+(radius*Math.cos(angleInRadians))),
-                        y: parseInt(centerY+(radius*Math.sin(angleInRadians))),
+                link: function (scope, element, attr) { 
+                    for (var value = 0, offset = 0; value < scope.specs.maxValue; value += scope.specs.gradientInterval,
+                        offset += 100 / 18) {
+                        scope.specs.gradients.push({
+                            value: value,
+                            offset: offset
+                        });
                     }
-                };
-                var getArcPathForAngle = function(startAngle, endingAngle, radius){
-                    var startingPt = getCoordinatesForAngle(300,300,radius,startAngle);
-                    var endingPt = getCoordinatesForAngle(300,300,radius,endingAngle); 
-                    return ["M", startingPt.x, startingPt.y, "A", radius, radius, 0, 0, 1, endingPt.x, endingPt.y].join(" ");
+                    var getCoordinatesForAngle = function (centerX, centerY, radius, angleInDegrees) {
+                        var angleInRadians = (angleInDegrees - 180) * Math.PI / 180.0;
+                        return {
+                            x: parseInt(centerX + (radius * Math.cos(angleInRadians))),
+                            y: parseInt(centerY + (radius * Math.sin(angleInRadians))),
+                        }
+                    };
+                    var getArcPathForAngle = function (startAngle, endingAngle, radius) {
+                        var startingPt = getCoordinatesForAngle(300, 300, radius, startAngle);
+                        var endingPt = getCoordinatesForAngle(300, 300, radius, endingAngle);
+                        return ["M", startingPt.x, startingPt.y, "A", radius, radius, 0, 0, 1, endingPt
+                            .x, endingPt.y
+                        ].join(" ");
+                    }
+                    var displayGauge = function () {
+                        scope.value = getArcPathForAngle(0, scope.specs.currentValue, 200);
+                        scope.background = getArcPathForAngle(0, 180, 200);
+                        scope.gradients = getArcPathForAngle(0, 180, 210);
+                        scope.maxValueCoordinates = getCoordinatesForAngle(300, 300, 210, 180);
+                        // add animation for each bar
+                        scope.dashAnimation = 'animation: '+scope.specs.id+' 1s linear; animation-fill-mode: forwards';
+                        var arcLength = Math.floor(scope.specs.currentValue*(Math.PI/180)*scope.specs.radius);
+                        var animationDefination = '@keyframes '+scope.specs.id+' {from {stroke-dasharray: 0 '+ arcLength +'} to {stroke-dasharray: '+arcLength+' 0}}';
+                        document.styleSheets[0].insertRule(animationDefination, 0);
+                    }
+                    displayGauge();
                 }
-                var displayGauge = function() {
-                    scope.value = getArcPathForAngle(0,scope.specs.currentValue, 200);
-                    scope.background = getArcPathForAngle(0, 180, 200);		
-                    scope.gradients = getArcPathForAngle(0, 180, 210);	 
-                    scope.maxValueCoordinates = getCoordinatesForAngle(300,300, 210, 180);
-                }
-                displayGauge(); 
             }
-    }
-});
-</script>
+        });
+    </script>
 </body>
 </html>
