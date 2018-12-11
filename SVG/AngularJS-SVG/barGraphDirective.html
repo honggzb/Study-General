@@ -41,25 +41,27 @@ dashboard.directive("barGraph", function(){
             <svg xmlns="http://www.w3.org/2000/svg" width="250" height="250">
                 <g ng-repeat="bar in specs.bars" >
                   <text x="0" 
-                        y="{{((+(specs.height)+specs.padding)*$index) + (specs.height/2)+(specs.fontHeight/2)}}"
+                        ng-attr-y="{{((+(specs.height)+specs.padding)*$index) + (specs.height/2)+(specs.fontHeight/2)}}"
                         text-anchor="start"
                         style="font-family: arial; font-size: 10pt">{{bar.text}}</text>
-                  <rect x="{{specs.labelWidth}}" 
-                        y="{{(+(specs.height)+specs.padding)*$index}}" 
+                  <rect ng-attr-x="{{specs.labelWidth}}" 
+                        ng-attr-y="{{(+(specs.height)+specs.padding)*$index}}" 
                         fill="{{bar.color}}" 
-                        width="{{bar.width}}" 
-                        height="{{specs.height}}"></rect>
+                        ng-attr-width="{{bar.width}}" 
+                        ng-attr-height="{{specs.height}}"></rect>
                 </g>
                 <!-- x,y axis -->
-                <line x1="{{specs.labelWidth}}" y1="0"
-                      x2="{{specs.labelWidth}}" y2="{{specs.overallHeight.toString()}}"
+                <line ng-attr-x1="{{specs.labelWidth}}" 
+                      y1="0"
+                      ng-attr-x2="{{specs.labelWidth}}" 
+                      ng-attr-y2="{{specs.overallHeight.toString()}}"
                       style="stroke:black;stroke-width: 1px"></line>
-                <line x1="{{specs.labelWidth}}" y1="{{specs.overallHeight}}"
-                      x2="{{specs.labelWidth+specs.overallWidth}}" y2="{{specs.overallHeight}}"
+                <line ng-attr-x1="{{specs.labelWidth}}" ng-attr-y1="{{specs.overallHeight}}"
+                      ng-attr-x2="{{specs.labelWidth+specs.overallWidth}}" y2="{{specs.overallHeight}}"
                       style="stroke:black;stroke-width: 1px"></line>
                 <text ng-repeat="gradient in specs.gradients"
-                      x="{{specs.labelWidth+gradient.offset}}"
-                      y="{{(+(specs.height)+specs.padding)*specs.bars.length+specs.fontHeight+3}}"
+                      ng-attr-x="{{specs.labelWidth+gradient.offset}}"
+                      ng-attr-y="{{(+(specs.height)+specs.padding)*specs.bars.length+specs.fontHeight+3}}"
                       text-anchor="middle"
                       style="font-family: arial;font-size:10pt">{{gradient.text}}</text>
             </svg>`,
