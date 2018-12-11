@@ -31,13 +31,6 @@ dashboard.controller("barGraphController", function($scope){
             {color: "#A62E5C", width: 90, text: 'November'}
         ]
     };
-    // add animation for each bar
-    angular.forEach($scope.specs.bars, function(bar, index){
-        var id = 'bg'+index; //defined unique id
-        bar.barStyle = 'animation:'+id+' 1s linear;animation-fill-mode: forwards;';
-        var animationDefination = '@keyframes '+id+'{from {width: 0px} to {width: '+bar.width+'px}}';
-        document.styleSheets[0].insertRule(animationDefination, 0);
-    });
 });
 dashboard.directive("barGraph", function(){
     return {
@@ -80,6 +73,11 @@ dashboard.directive("barGraph", function(){
             angular.forEach(scope.specs.bars,function(bar, index){
                 scope.specs.labelWidth = Math.max(scope.specs.labelWidth, ctx.measureText(bar.text).width);
                 scope.specs.overallWidth = Math.max(scope.specs.overallWidth, bar.width);
+                // add animation for each bar
+                var id = 'bg'+index; //defined unique id
+                bar.barStyle = 'animation:'+id+' 1s linear;animation-fill-mode: forwards;';
+                var animationDefination = '@keyframes '+id+'{from {width: 0px} to {width: '+bar.width+'px}}';
+                document.styleSheets[0].insertRule(animationDefination, 0);
             });
             for(var i=0;;i+=scope.specs.gradientInterval){
                 gradients.push({text:i, offset: i});
