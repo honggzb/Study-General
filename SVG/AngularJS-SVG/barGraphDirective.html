@@ -7,7 +7,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
-    
     <title>AngularJS + SVG</title>
 </head>
 <body ng-app="Dashboard">
@@ -32,8 +31,14 @@ dashboard.controller("barGraphController", function($scope){
             {color: "#A62E5C", width: 90, text: 'November'}
         ]
     };
+    // add animation for each bar
+    angular.forEach($scope.specs.bars, function(bar, index){
+        var id = 'bg'+index; //defined unique id
+        bar.barStyle = 'animation:'+id+' 1s linear;animation-fill-mode: forwards;';
+        var animationDefination = '@keyframes '+id+'{from {width: 0px} to {width: '+bar.width+'px}}';
+        document.styleSheets[0].insertRule(animationDefination, 0);
+    });
 });
-
 dashboard.directive("barGraph", function(){
     return {
         scope: { specs: '=' },
@@ -48,7 +53,8 @@ dashboard.directive("barGraph", function(){
                         ng-attr-y="{{(+(specs.height)+specs.padding)*$index}}" 
                         fill="{{bar.color}}" 
                         ng-attr-width="{{bar.width}}" 
-                        ng-attr-height="{{specs.height}}"></rect>
+                        ng-attr-height="{{specs.height}}"
+                        style="{{bar.barStyle}}"></rect>
                 </g>
                 <!-- x,y axis -->
                 <line ng-attr-x1="{{specs.labelWidth}}" 
