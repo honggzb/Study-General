@@ -130,6 +130,28 @@ $provide.decorator('ngClickDirective',['$delegate','$timeout', function ($delega
         }]);
 ```
 
+**其他方法: 定义readDrivingUnable的值控制显示哪段代码**
+
+```html
+<button class="btn btn-primary" ng-click="readDriving(urls[item].imgUrl)" ng-show="readDrivingUnable"> 识别 </button>
+    <!-- 由readDrivingUnable的值控制显示哪段代码，上面的代码可点击，下面的代码不可点击--> 
+<button class="btn btn-default" disabled="disabled" ng-show="!readDrivingUnable">识别 </button>
+```
+
+```javascript
+assessControllers.controller('PicModalCtrl', ['$scope', '$uibModalInstance', 'Assess', 'Report', 'data', function ($scope, $uibModalInstance, Assess, Report, data) {
+    $scope.readDrivingUnable = true; //是否可用（默认可点击）        
+    $scope.readDriving = function (imgUrl) {
+        $scope.readDrivingUnable = false; //点击之后 变成不可点击            var param = {url: imgUrl, type: '6'};
+        //type: 二代证2；行驶证6；驾照5；银行卡17；车牌19；名片 20            
+        Assess.ocr(param).then(function (result) {
+            $scope.readDrivingUnable = true; //后台接口调用完成之后再让按钮变成可点击状态                
+            //TODO 业务逻辑            
+        });
+    };
+}]);
+```
+
 [back to top](#top)
 
 ### deselect HTML radio input by click
