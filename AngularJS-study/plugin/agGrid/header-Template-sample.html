@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://unpkg.com/ag-grid-community@19.1.4/dist/ag-grid-community.min.js"></script>
+    <title>Document</title>
+    <style>
+        .customSortRemoveLabel {
+                float: left;
+                font-size: 11px;
+                margin-left: 3px;
+                margin-top: 6px;
+        }
+        .active {color: cornflowerblue;}
+    </style>
+</head>
+<body ng-app="example">
+    <h3>Header Template sample with dynamic data</h3>
+    <div ng-controller="exampleCtrl" style="height: 500px;width: 100%;margin: 0 auto;">
+        <div id="myGrid" class="ag-theme-balham" style="height: 100%;"></div>
+    </div>   
+<script>
+var gridOptions = {
+    columnDefs: [
+        {headerName: "Athlete", field: "athlete", suppressMenu: true},   // no menu
+        {headerName: "Age", field: "age", suppressSorting: true}, // no sorting
+        {headerName: "Country", field: "country", suppressMenu: true},  // no menu
+        {headerName: "Year", field: "year", suppressSorting: true},// no sorting
+        {headerName: "Date", field: "date", suppressMenu: true},        // no menu
+    ],
+    // default ColDef, gets applied to every column
+    defaultColDef : {
+        width: 100,
+        headerComponentParams : {
+            menuIcon: 'fa-bars',
+            template:
+            '<div class="ag-cell-label-container" role="presentation">' +
+            '  <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button"></span>' +
+            '  <div ref="eLabel" class="ag-header-cell-label" role="presentation">' +
+            '    <span ref="eSortOrder" class="ag-header-icon ag-sort-order" ></span>' +
+            '    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon" ></span>' +
+            '    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon" ></span>' +
+            '    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon" ></span>' +
+            '    ** <span ref="eText" class="ag-header-cell-text" role="columnheader"></span>' +
+            '    <span ref="eFilter" class="ag-header-icon ag-filter-icon"></span>' +
+            '  </div>' +
+            '</div>'
+        }
+    },
+    rowData: null,
+    enableFilter: true,
+    enableSorting: true,
+    enableColResize: true,
+    suppressMenuHide: true
+};
+// setup the grid after the page has finished loading
+document.addEventListener('DOMContentLoaded', function() {
+    var gridDiv = document.querySelector('#myGrid');
+    new agGrid.Grid(gridDiv, gridOptions);
+    agGrid.simpleHttpRequest({url: 'https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinnersSmall.json'}).then(function(data) {
+        gridOptions.api.setRowData(data);
+    });
+});
+</script>    
+</body>
+</html>
