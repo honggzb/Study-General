@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://unpkg.com/ag-grid-community@19.1.4/dist/ag-grid-community.min.js"></script>
+    <title>Document</title>
+<style>
+.ag-theme-balham .sick-days-warning {
+    background-color: sandybrown !important;   /* need !important*/
+}
+.ag-theme-balham .sick-days-breach {
+    background-color: lightcoral !important;
+}
+.rag-red {
+    background-color: red !important;
+}
+.rag-green {
+    background-color: green !important;
+}
+.rag-amber {
+    background-color: yellow !important;
+}
+</style>
+</head>
+<body ng-app="example">
+    <h3>Dynamic Cell Style sample with dynamic data</h3>
+    <div ng-controller="exampleCtrl" style="height: 500px;width: 100%;margin: 0 auto;">
+        <div id="myGrid" class="ag-theme-balham" style="height: 100%;"></div>
+    </div>   
+<script>
+var gridOptions = {
+    columnDefs: [
+        {headerName: "Athlete", field: "athlete", width: 150},
+        {headerName: "Age", field: "age", width: 90},
+        {headerName: "Country", field: "country", width: 120},
+        {headerName: "Year", field: "year", width: 90},
+        {headerName: "Date", field: "date"},
+        {headerName: "Sport", field: "sport", width: 110},
+        {headerName: "Gold", field: "gold"},
+        {headerName: "Silver", field: "silver"},
+        {headerName: "Bronze", field: "bronze"},
+        {headerName: "Total", field: "total"}
+    ],
+    rowClassRules: {
+        // 'sick-days-warning': function(params) {
+        //     return params.data.gold >= 5;
+        // },
+        // 'sick-days-breach': 'data.gold == 0',
+        'rag-green': 'data.age < 20',
+        'rag-amber': 'data.age >= 20 && data.age < 25',
+        'rag-red': 'data.age >= 25',
+    },
+    rowData: null
+};
+
+// setup the grid after the page has finished loading
+document.addEventListener('DOMContentLoaded', function() {
+    var gridDiv = document.querySelector('#myGrid');
+    new agGrid.Grid(gridDiv, gridOptions);
+    agGrid.simpleHttpRequest({url: 'https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinnersSmall.json'}).then(function(data) {
+        gridOptions.api.setRowData(data);
+    });
+});
+</script>    
+</body>
+</html>
