@@ -168,7 +168,7 @@ cacheQuickFilter| 	Set to true to turn on the quick filter cache, used for a per
 sortingOrder| 	Array defining the order in which sorting occurs (if sorting is enabled). Values can be asc, desc or null. For example: sortingOrder: ['asc', 'desc']. See Example Sorting Order and Animation.
 accentedSort| 	Set to true to specify that the sort should take into account accented characters, if this feature is turned on the sort will perform slower. See Accented Sort
 multiSortKey| 	Set to 'ctrl' to have multi sorting work using the Control or Command (for Apple) keys. See Multi Column Sorting
-enableOldSetFilterModel	Set to true to return the old set filter model format. This is intended as a temporary measure to facilitate migration. Row Filtering
+enableOldSetFilterModel|	Set to true to return the old set filter model format. This is intended as a temporary measure to facilitate migration. Row Filtering
 
 ### Bulit In Column Filters
 
