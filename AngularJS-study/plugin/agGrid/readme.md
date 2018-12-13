@@ -162,7 +162,7 @@ Properities| Defination
 enableSorting| Set to true when using Client-side Row Model to enable Row Sorting. Clicking a column header will cause the grid to sort the data.
 enableServerSideSorting	| Set to true when using Infinite, Server-side or Viewport Row Models to enable Row Sorting. Clicking a column header will result in your datasource getting asked for the data again with the new sort order.
 enableFilter| Set to true when using Client-side Row Model to enable Row Filtering.
-enableServerSideFilter	Set to true when using Infinite, Server-side or Viewport Row Models to enable Row Filtering. A change in filter will result in your datasource getting asked for the data again with the new filter.
+enableServerSideFilter|Set to true when using Infinite, Server-side or Viewport Row Models to enable Row Filtering. A change in filter will result in your datasource getting asked for the data again with the new filter.
 quickFilterText	Rows are filtered using this text as a quick filter.
 cacheQuickFilter| 	Set to true to turn on the quick filter cache, used for a performance gain when using the quick filter.
 sortingOrder| 	Array defining the order in which sorting occurs (if sorting is enabled). Values can be asc, desc or null. For example: sortingOrder: ['asc', 'desc']. See Example Sorting Order and Animation.
