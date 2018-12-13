@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://unpkg.com/ag-grid-community@19.1.4/dist/ag-grid-community.min.js"></script>
+    <title>Simple sample</title>
+</head>
+<body ng-app="example">
+    <div ng-controller="exampleCtrl" style="height: 300px;width: 70%;margin: 0 auto;">
+        <div ag-grid="gridOptions" class="ag-theme-blue" style="height: 100%;"></div>
+    </div>   
+<script>
+agGrid.initialiseAgGridWithAngular1(angular);
+var module = angular.module("example", ["agGrid"]);
+module.controller("exampleCtrl", function($scope) {
+    var columnDefs = [
+        {headerName: "Make", field: "make"},
+        {headerName: "Model", field: "model"},
+        {headerName: "Price", field: "price"}
+    ];
+
+    var rowData = [
+        {make: "Toyota", model: "Celica", price: 35000},
+        {make: "Ford", model: "Mondeo", price: 32000},
+        {make: "Porsche", model: "Boxter", price: 72000}
+    ];
+
+    $scope.gridOptions = {
+        columnDefs: columnDefs,
+        rowData: rowData
+    };
+});
+</script>    
+</body>
+</html>
