@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://unpkg.com/ag-grid-community@19.1.4/dist/ag-grid-community.min.js"></script>
+    <title>Document</title>
+    <style>
+    .ag-body [col-id='country'] {background-color: #a6e1ec;}
+    </style>
+</head>
+<body ng-app="example">
+    <h3>Column/Row Spanning/Pinning with dynamic data</h3>
+    <div ng-controller="exampleCtrl" style="height: 300px;width: 70%;margin: 0 auto;">
+        <div id="myGrid" class="ag-theme-balham" style="height: 100%;"></div>
+    </div>   
+<script>
+var gridOptions = {
+    columnDefs: [
+        {headerName: '', width: 30, checkboxSelection: true, suppressSorting: true, suppressMenu: true, pinned: true},
+        {headerName: 'Athlete', field: 'athlete', pinned: 'left'},
+        {headerName: 'Sport', field: 'sport'},
+        {headerName: 'Age', field: 'age'},
+        {headerName: "Country", field: "country", width: 120},
+        {headerName: "Year", field: "year", width: 90},
+        {headerName: "Date", field: "date", width: 110},
+        {headerName: "Sport", field: "sport", width: 110},
+        {headerName: 'gold', field: 'gold'},
+        {headerName: 'Silver', field: 'silver'},
+        {headerName: 'Bronze', field: 'bronze'}
+
+    ],
+    enableColResize: true,
+    defaultColDef: {
+        width: 100
+    },
+    rowData: null
+};
+// setup the grid after the page has finished loading
+document.addEventListener('DOMContentLoaded', function() {
+    var gridDiv = document.querySelector('#myGrid');
+    new agGrid.Grid(gridDiv, gridOptions);
+    agGrid.simpleHttpRequest({url: 'https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinnersSmall.json'}).then(function(data) {
+        gridOptions.api.setRowData(data);
+    });
+});
+</script>    
+</body>
+</html>
