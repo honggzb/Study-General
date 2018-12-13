@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://unpkg.com/ag-grid-community@19.1.4/dist/ag-grid-community.min.js"></script>
+    <title>Document</title>
+<style>
+.ag-cell-label-container{height: 100%;}  /*Necessary to allow for text to grow vertically*/
+.ag-header-cell-label { height: 100%; padding:0 !important; }/*Necessary to allow for text to grow vertically*/
+.ag-header-cell-label .ag-header-cell-text{
+    width: 55px;               /*Force the width corresponding at how much width we need once the text is layed out vertically*/
+    writing-mode: vertical-lr; /*veritcal align text*/
+    line-height: 2em;
+    margin-top: 60px;
+}
+.ag-pivot-off .ag-header-group-cell{ font-size: 50px;}
+.ag-pivot-on .ag-header-group-cell {
+    font-size: 10px;
+    color: green;
+}
+.ag-pivot-off .ag-header-cell-label{ color:#8a6d3b;}
+.ag-pivot-on .ag-header-cell-label{
+    font-size: 10px;
+    height: 90px;
+    padding-top: 36px;
+    margin-left: 0px;
+    color:#1b6d85;
+    font-weight: bold;
+}
+.ag-pivot-on .ag-header-cell-label .ag-header-cell-text{
+    /*There is empty space left at the top from the menu and sorticons not used*/
+    margin-top: 25px;
+}
+/*Floating filters*/
+.ag-floating-filter-body{height:50px}
+.ag-floating-filter-body input{height:49px}
+.ag-floating-filter-button{margin-top: -49px;}
+.ag-floating-filter-button button {height:49px}
+.ag-floating-filter-body input {
+    font-size: 15px;
+    font-weight: bold;
+}
+</style>
+</head>
+<body ng-app="example">
+    <h3>Header Template sample with dynamic data</h3>
+    <div ng-controller="exampleCtrl" style="height: 500px;width: 100%;margin: 0 auto;">
+        <div id="myGrid" class="ag-theme-balham" style="height: 100%;"></div>
+    </div>   
+<script>
+var gridOptions = {
+    columnDefs: [{
+        headerName: "Athlete Details",
+        children: [
+            // note: enableRowGroup just supported by ag-grid-enterprise
+            {headerName: "Athlete", field: "athlete", width: 150, suppressSizeToFit: true, enableRowGroup: true, rowGroupIndex: 0},
+            {headerName: "Age", field: "age", width: 90, minwidth: 75, maxWidth: 100, enableRowGroup: true},
+            {headerName: "Country", field: "country", width: 120, enableRowGroup: true},
+            {headerName: "Year", field: "year", width: 90, enableRowGroup: true, pivotIndex: 0},
+            {headerName: "Sport", field: "sport", width: 110, enableRowGroup: true},
+            {headerName: "Gold", field: "gold", width: 60, enableValue: true, suppressMenu:true, filter:'agNumberColumnFilter', aggFunc: 'sum'},
+            {headerName: "Silver", field: "silver", width: 60, enableValue: true, suppressMenu:true, filter:'agNumberColumnFilter', aggFunc: 'sum'},
+            {headerName: "Bronze", field: "bronze", width: 60, enableValue: true, suppressMenu:true, filter:'agNumberColumnFilter', aggFunc: 'sum'},
+            {headerName: "Total", field: "total", width: 60, enableValue: true, suppressMenu:true, filter:'agNumberColumnFilter', aggFunc: 'sum'}
+        ],
+    }],
+    rowData: null,
+    enableColResize: true,
+    //floatingFilter:true,
+    groupHeaderHeight:75,
+    headerHeight: 150,
+    floatingFiltersHeight:50,
+    pivotGroupHeaderHeight:50,
+    pivotHeaderHeight:100,
+    enableSorting:true,
+    showToolPanel:true
+};
+// setup the grid after the page has finished loading
+document.addEventListener('DOMContentLoaded', function() {
+    var gridDiv = document.querySelector('#myGrid');
+    new agGrid.Grid(gridDiv, gridOptions);
+    agGrid.simpleHttpRequest({url: 'https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinnersSmall.json'}).then(function(data) {
+        gridOptions.api.setRowData(data);
+    });
+});
+</script>    
+</body>
+</html>
