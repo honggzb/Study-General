@@ -5,10 +5,11 @@
 - [Columns Properties](#columns-properties)
 - [Group](#group)
 - [Style Cell/Row](#style-cellrow)
-- [Fitler/Sorting](#fitlersorting)
+- [Fitler](#fitler)
   - [Bulit In Column Filters](#bulit-in-column-filters)
   - [Filter Events](#filter-events)
   - [External Filter](#external-filter)
+- [Sorting](#sorting)
 - [Sample with Cell Templates](#sample-with-cell-templates)
 
 ## Basic concept
@@ -81,7 +82,7 @@ suppressMovableColumns|true: to suppress column moving. In other words, set to t
 suppressFieldDotNotation|If true, then dots (eg address.firstline) in field names are not treated as deep references. Allows you to use dots in your field name if you prefer.
 unSortIcon|Set to true to show the 'no sort' icon. See [Example Custom Sorting](https://www.ag-grid.com/javascript-grid-sorting/#example-custom-sorting)
 suppressMultiSort|Set to true to suppress multi-sort when the user shift-clicks a column header.
-suppressMenuHide|	Set to true to always show the column menu button, rather than only showing when the mouse is over the column header.
+suppressMenuHide|Set to true to always show the column menu button, rather than only showing when the mouse is over the column header.
 autoGroupColumnDef|	Allows specifying the group 'auto column' if you are not happy with the default. If grouping, this column def is included as the first column definition in the grid. If not grouping, this column is not included
 suppressSetColumnStateEvents|Set to true to suppress column events being raised when `columnApi.setColumnState(state)` and `columnApi.resetColumnState()` are invoked
 
@@ -152,7 +153,7 @@ var gridOptions = {
 
 [back to top](#top)
 
-## Fitler/Sorting
+## Fitler
 
 - turn on sorting by setting `enableSorting = true`
 - turn on filtering with `enableFilter = true`
@@ -160,15 +161,15 @@ var gridOptions = {
 Properities| Defination
 ---|---
 enableSorting| Set to true when using Client-side Row Model to enable Row Sorting. Clicking a column header will cause the grid to sort the data.
-enableServerSideSorting	| Set to true when using Infinite, Server-side or Viewport Row Models to enable Row Sorting. Clicking a column header will result in your datasource getting asked for the data again with the new sort order.
-enableFilter| Set to true when using Client-side Row Model to enable Row Filtering.
-enableServerSideFilter|Set to true when using Infinite, Server-side or Viewport Row Models to enable Row Filtering. A change in filter will result in your datasource getting asked for the data again with the new filter.
-quickFilterText	Rows are filtered using this text as a quick filter.
-cacheQuickFilter| 	Set to true to turn on the quick filter cache, used for a performance gain when using the quick filter.
-sortingOrder| 	Array defining the order in which sorting occurs (if sorting is enabled). Values can be asc, desc or null. For example: sortingOrder: ['asc', 'desc']. See Example Sorting Order and Animation.
-accentedSort| 	Set to true to specify that the sort should take into account accented characters, if this feature is turned on the sort will perform slower. See Accented Sort
-multiSortKey| 	Set to 'ctrl' to have multi sorting work using the Control or Command (for Apple) keys. See Multi Column Sorting
-enableOldSetFilterModel|	Set to true to return the old set filter model format. This is intended as a temporary measure to facilitate migration. Row Filtering
+enableServerSideSorting	| Set to true when using Infinite, Server-side or Viewport Row Models to enable Row Sorting. Clicking a column header will result in your datasource getting asked for the data again with the new sort order
+enableFilter| Set to true when using Client-side Row Model to enable Row Filtering
+enableServerSideFilter|Set to true when using Infinite, Server-side or Viewport Row Models to enable Row Filtering. A change in filter will result in your datasource getting asked for the data again with the new filter
+quickFilterText|Rows are filtered using this text as a quick filter
+cacheQuickFilter| Set to true to turn on the quick filter cache, used for a performance gain when using the quick filter
+sortingOrder| 	Array defining the order in which sorting occurs (if sorting is enabled). Values can be asc, desc or null. For example: sortingOrder: ['asc', 'desc']. See Example Sorting Order and Animation
+accentedSort|	Set to true to specify that the sort should take into account accented characters, if this feature is turned on the sort will perform slower
+multiSortKey| Set to 'ctrl' to have multi sorting work using the Control or Command (for Apple) keys. See Multi Column Sorting
+enableOldSetFilterModel|Set to true to return the old set filter model format. This is intended as a temporary measure to facilitate migration
 
 ### Bulit In Column Filters
 
@@ -197,7 +198,7 @@ columnDefinition = {
 - [agNumberColumnFilter Parameters](https://www.ag-grid.com/javascript-grid-filter-number/)
 - [agDateColumnFilter Parameters](https://www.ag-grid.com/javascript-grid-filter-date/)
 - [customer filter](https://www.ag-grid.com/javascript-grid-filter-custom/)
-  
+
 ### Filter Events
 
 - `filterChanged`
@@ -207,6 +208,41 @@ columnDefinition = {
 
 - `isExternalFilterPresent` is called exactly once every time the grid senses a filter change. It should return true if external filtering is active, otherwise false. If you return true, then `doesExternalFilterPass()` will be called while filtering, otherwise `doesExternalFilterPass()` will not be called.
 - `doesExternalFilterPass` is called once for each row node in the grid. If you return false, the node will be excluded from the final set.
+
+[back to top](#top)
+
+## Sorting
+
+- Enable Sorting: 
+  - adding: `enableSorting: true`
+  - adding `sort`, it will sort a column by clicking on the column header
+- Custom Sorting: adding `comparator` The sort methods gets the value as well as the row nodes
+
+```javascript
+colDef.comparator = function (valueA, valueB, nodeA, nodeB, isInverted) {
+    return valueA - valueB;
+}
+// ---------------------------------------
+var columnDefs = [
+    {headerName: "Athlete", field: "athlete", width: 150, sort: 'desc'},   //sort by desc
+    {headerName: "Year", field: "year", width: 90, unSortIcon: true},      //it shows a custom icon, (up/down arrow)
+    {headerName: "Date", field: "date", width: 110, comparator: dateComparator},
+]
+function dateComparator(date1, date2) {
+    var date1Number = monthToComparableNumber(date1);
+    var date2Number = monthToComparableNumber(date2);
+    if (date1Number===null && date2Number===null) {
+        return 0;
+    }
+    if (date1Number===null) {
+        return -1;
+    }
+    if (date2Number===null) {
+        return 1;
+    }
+    return date1Number - date2Number;
+}
+```
 
 [back to top](#top)
 
@@ -238,5 +274,3 @@ module.controller('exampleCtrl', function($scope, $http) {
         });
 });
 ```
-
-> refences: https://www.ag-grid.com/documentation-main/documentation.php
