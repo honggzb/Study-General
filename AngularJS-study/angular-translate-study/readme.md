@@ -3,7 +3,7 @@
 - [Conceptual Overview](#conceptual-overview)
 - [基本配置](#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE)
 - [多语言支持](#%E5%A4%9A%E8%AF%AD%E8%A8%80%E6%94%AF%E6%8C%81)
-  - [变量替换-variable replacement](#%E5%8F%98%E9%87%8F%E6%9B%BF%E6%8D%A2-variable-replacement)
+- [变量替换-variable replacement](#%E5%8F%98%E9%87%8F%E6%9B%BF%E6%8D%A2-variable-replacement)
 - [动态加载语言](#%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%AF%AD%E8%A8%80)
 - [sample configuration in Grunt project](#sample-configuration-in-grunt-project)
 - [完整案例](#%E5%AE%8C%E6%95%B4%E6%A1%88%E4%BE%8B)
@@ -76,7 +76,7 @@ app.controller('TranslateController', function($translate, $scope) {
 
 [back to top](#top)
 
-### 变量替换-variable replacement
+## 变量替换-variable replacement
 
 - json file:  `{ "TRANSLATION_ID": "{{username}} is logged in." }`
 - service:  `$translate('TRANSLATION_ID', { username: 'PascalPrecht' });`,
