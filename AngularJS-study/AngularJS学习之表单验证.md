@@ -1,5 +1,6 @@
 [AngularJS学习之表单验证](#top)
 
+- [basic concepts](#basic-concepts)
 - [ng-form表单校验实现原理](#ng-form%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86)
 - [自定义验证器](#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%AA%8C%E8%AF%81%E5%99%A8)
   - [验证当前名字是否被注册-用户名的唯一性](#%E9%AA%8C%E8%AF%81%E5%BD%93%E5%89%8D%E5%90%8D%E5%AD%97%E6%98%AF%E5%90%A6%E8%A2%AB%E6%B3%A8%E5%86%8C-%E7%94%A8%E6%88%B7%E5%90%8D%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7)
@@ -8,6 +9,8 @@
 - [自定义表单元素](#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0)
 
 -------------------
+
+## basic concepts
 
 ```html
 <form name="demoForm" novalidate="novalidate">
