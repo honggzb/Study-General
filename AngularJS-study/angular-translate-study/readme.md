@@ -1,13 +1,16 @@
 [angular-translate学习](#top)
 
 - [Conceptual Overview](#conceptual-overview)
-- [基本配置](#基本配置)
-- [使用1： using translate filter](#使用1-using-translate-filter)
-- [完整案例](#完整案例)
+- [基本配置](#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE)
+- [多语言支持](#%E5%A4%9A%E8%AF%AD%E8%A8%80%E6%94%AF%E6%8C%81)
+  - [变量替换-variable replacement](#%E5%8F%98%E9%87%8F%E6%9B%BF%E6%8D%A2-variable-replacement)
+- [动态加载语言](#%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E8%AF%AD%E8%A8%80)
+- [sample configuration in Grunt project](#sample-configuration-in-grunt-project)
+- [完整案例](#%E5%AE%8C%E6%95%B4%E6%A1%88%E4%BE%8B)
 - [Lazy-loading Translation Tables](#lazy-loading-translation-tables)
 - [Generating Translation Tables with Automatic Translation](#generating-translation-tables-with-automatic-translation)
-    - [my Project setup in grunt](#my-project-setup-in-grunt)
-    - [with gulp](#with-gulp)
+  - [my Project setup in grunt](#my-project-setup-in-grunt)
+  - [with gulp](#with-gulp)
 
 ## Conceptual Overview
 
@@ -26,45 +29,68 @@
 
 ## 基本配置
 
-```javascript
-var app = angular.module('myApp', ['pascalprecht.translate']);
-app.config(['$translateProvider', function ($translateProvider) {
-  // add translation table
-  $translateProvider
-    .translations('en', translations)
-    .preferredLanguage('en');
-}]);
-//add a language- json file, you have to make $translateProvider know of a translation table
-{
-  "NAMESPACE": {
-    "SUB_NAMESPACE": {
-       "TRANSLATION_ID1": "This is a namespaced translation."
-    }
-  }
-}
-```
-
-## 使用1： using translate filter
-
 ```html
-// /src/app/toolbar/i18n/en.json
-{
- "TOOLBAR": {
-   "HELLO": "Hello",
-   "SEARCH": "Search"
- }
-}
-// view html
-<!-- /src/app/toolbar/toolbar.html -->
-<!-- using translate directive -->
-<a class="navbar-brand" href="#" translate="TOOLBAR.HELLO"></a>
-<!-- or using translate filter -->
-<a class="navbar-brand" href="#">{{'TOOLBAR.HELLO' | translate}}</a>
-<!-- or To tokenize string literals that appear as attribute values -->
-<input type="text" class="form-control" ng-model="vm.query"
-      translate
-      translate-attr-placeholder="TOOLBAR.SEARCH">
+<!--  1) -->
+bower install angular-translate
+<!--  2) -->
+<script src="path/to/angular-translate.js"></script>
+<!--  3) -->
+<script>
+var app = angular.module('myApp', ['pascalprecht.translate']);
+angular.module('angularTranslateApp', ['pascalprecht.translate'])
+       .config(function($translateProvider) {
+           //让$translateProvider找到一个翻译表格translation table - 即一个JSON对象
+       });
+</script>
+<!--  4) -->
+<h1>{{ 'TITLE' | translate }}</h1>
 ```
+
+[back to top](#top)
+
+## 多语言支持
+
+```javascript
+// configuration multi-language
+app.config(function($translateProvider) {
+    $translateProvider
+      .translations('en', {
+        HEADLINE: 'Hello there, This is my awesome app!',
+        INTRO_TEXT: 'And it has i18n support!' })
+      .translations('de', {
+        HEADLINE: 'Hey, das ist meine großartige App!',
+        INTRO_TEXT: 'Und sie untersützt mehrere Sprachen!' });
+    $translateProvider.preferredLanguage('en');    // set default language
+});
+//运行时切换语言
+<div ng-controller="TranslateController">
+    <button ng-click="changeLanguage('de')" translate="BUTTON_TEXT_DE"></button>
+    <button ng-click="changeLanguage('en')" translate="BUTTON_TEXT_EN"></button>
+</div>
+app.controller('TranslateController', function($translate, $scope) {
+    $scope.changeLanguage = function(langKey) {
+        $translate.use(langKey);
+    }
+});
+```
+
+[back to top](#top)
+
+### 变量替换-variable replacement
+
+- json file:  `{ "TRANSLATION_ID": "{{username}} is logged in." }`
+- service:  `$translate('TRANSLATION_ID', { username: 'PascalPrecht' });`,
+  - if more than one variable: `$translate('TRANSLATION_ID', { username: 'PascalPrecht', lastLogin: '2013-07-21 6:50PM'});`
+- HTML 
+  - translate filter:    `{{ 'TRANSLATION_ID' | translate:'{ username: "PascalPrecht" }' }}`
+  - translate directive: `<p translate="TRANSLATION_ID" translate-values="{username: 'PascalPrecht'}"></p>`
+  - angular-translate > 2: can use `translate-value-name` properity
+    - `<p translate="TRANSLATION_ID" translate-value-name="PascalPrecht"></p>`
+
+## 动态加载语言
+
+- using angular-translate-loader-url
+- using node+grunt/gulp/webpack
 
 **Pluralization and Gender**
 
@@ -89,6 +115,54 @@ app.config(function ($translateProvider) {
 <div>
  {{ 'SHARED' | translate:"{ GENDER: 'male' }":'messageformat' }}
 </div>
+```
+
+[back to top](#top)
+
+## sample configuration in Grunt project
+
+```javascript
+// only can use one language
+  grunt.registerTask('injectTranslations', 'A task to inject the contents of locale files directly into translation to avoid filerev issues.', function injectTranslations() {
+    var fs = require('fs'); // required to do file system actions
+    var mkdirp = require('mkdirp'); // required to do file system actions
+    var localesFolderPath = grunt.template.process('<%= yeoman.app %>') + '/assets/json/locales/'; // specify where the locales folders are
+    var translationsStrings = []; // an array to contain all of the $translationProvider.translations(...) strings
+    // look at all of the items within the locales folder
+    //  NOTE: should only be directories (e.g. en_CA)
+    fs.readdirSync(localesFolderPath).forEach(function (localeFolderName) {
+      var translationObjectText = ''; // the text representation of the object for the translations
+      var localeFolderPath = localesFolderPath + localeFolderName;
+      // read through each locale file and add its content to translationObjectText
+      fs.readdirSync(localeFolderPath).forEach(function (localeFileName) {
+        // get the content from the file
+        var fileContent = fs.readFileSync(localeFolderPath + '/' + localeFileName, 'utf8');
+        // omit the opening and closing braces to keep everything in the same object
+        var trimmedContent = fileContent.slice(fileContent.indexOf('{') + 1, fileContent.lastIndexOf('}'));
+        // if nothing has been added to localeJSON yet, don't add in the comma separator
+        translationObjectText = !translationObjectText ? trimmedContent : translationObjectText + ', ' + trimmedContent;
+      });
+      // wrap the object in braces to close it up
+      translationObjectText = `{\n${translationObjectText}\n}\n`;
+      // build the $translate text
+      var translateText = '$translateProvider.translations(\'' + localeFolderName + '\', ' + translationObjectText + ')';
+      translationsStrings.push(translateText);
+    });
+    // create the config content with each of the translations
+    var configContent = `(function () {
+      'use strict';
+      angular.module('cgiW360App').config(function ($translateProvider) {
+        ${translationsStrings.join('\n')}
+        $translateProvider.preferredLanguage('en_CA');
+        $translateProvider.useSanitizeValueStrategy('escapeParameters');
+      });
+    })();`;
+    // create the config file
+    var outputPath = grunt.template.process('<%= yeoman.tmp %>') + '/core/scripts/config';
+    mkdirp(outputPath, function (err) {
+      fs.writeFileSync(outputPath + '/translation.config.js', configContent, 'utf8');
+    });
+  });
 ```
 
 [back to top](#top)
