@@ -58,102 +58,90 @@
 
 VSCode 前端开发常用插件列表（字母升序），旨在方便日常使用
 
-<h2>通用插件</h2>
-<ul>
-    <li><a href="" rel="nofollow">Beautify</a>: Beautify javascript, JSON, CSS, Sass, and HTML in Visual Studio Code</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag" rel="nofollow">Auto Close Tag</a>: 自动标签闭合, Auto Rename Tag</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer" rel="nofollow">Bracket Pair Colorizer</a>：括号颜色匹配</li>
-    <li>JavaScript (ES6) code snippets: `imd --> import { } from 'somewhere'`</li>
-    <li>AutoFileName: AutoFileName</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense" rel="nofollow">Path Intellisense</a>：路径智能提示</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=steoates.autoimport" rel="nofollow">Auto Import</a>：Typescript 、TSX 自动查找、导入</li>
-    <li>HTML Boilerplate: HTML 模板</li>
-    <li><a href="https://github.com/abusaidm/html-snippets">HTML Snippets</a>：HTML5 代码片段提示</li>
-    <li><a href="http://madole.xyz/my-favourite-vscode-plugins/" rel="nofollow">Javascript ES6 Snippets</a>：Javascript ES6 Snippets</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost" rel="nofollow">Import Cost</a>：自动计算 Import 包大小</li>
-    <li><a href="https://github.com/ChristianKohler/NpmIntellisense">Npm Intellisense</a>：Npm Module Import 智能补全</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser" rel="nofollow">Open in Browser</a>：在浏览器中打开- 将添加一个 [Open With Default Browser] 选项到右键菜单</li>
-    <li><b>change-case: 命名格式插件</b>
-        <ul>
-            <li>camelCase骆驼拼命名</li>
-            <li>PascalCase首字母大写</li>
-            <li>kebab-case中划线命名</li>
-            <li>underscore_delimited下划线命名</li>
-            <li>CONSTANT大写命名，等</li>
-        </ul>
-    </li>
-    <li>vscode-icons: 侧边栏图标插件</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer" rel="nofollow">SVG Viewer</a>：SVG 查看器</li>
-    <li>select highlight in minimap: </li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse" rel="nofollow">Can I Use</a>：浏览器兼容性查询</li>
-    <li>Quokka.js可以实时运行代码，在你敲键盘的同时就可以把结果显示在编辑器里面, 并能够预览变量的函数和计算值结果<br>类似的插件还有：
-Code Runner，支持实时执行C, C++, Java, JavaScript, PHP, Python, Perl, Perl 6 等语言。<br>
-Runner</li>
-</ul>
-<h2>CSS相关</h2>
-<ul>
-    <li>CSS Peek: 追踪至样式表中 CSS 类和 ids 定义的地方
-        <ul>
-            <li>在 HTML 文件中右键单击选择器时，选择“ Go to Definition 和 Peek definition ”选项，它便会给你发送样式设置的 CSS 代码</li>
-            <li>Peek: load the css file inline and make quick edits right there(Ctrl+Shift+F12)</li>
-            <li>Go To: jump directly to the css file or open it in a new editor (F12)</li>
-            <li>Hover: show the definition in a hover over the symbol (Ctrl+hover)</li>
-        </ul>
-    </li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion" rel="nofollow">IntelliSense for CSS class names</a>：CSS 类名智能提示</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=cipchk.cssrem" rel="nofollow">Cssrem</a>：px 自动转 rem</li>
-    <li>Color Picker: 代码的颜色选择器</li>
-    <li>Color Info: 颜色信息及转换</li>
-    <li>Color-Highlight: 在编辑器中高亮显示颜色</li>
-</ul>
-<h2>Beauty美化相关</h2>
-<ul>
-    <li>Prettier: 格式化代码，快速格式化整个JS和CSS文档, CMD+Shift+P -> Format Document</li>
-    <li>Align: 代码对齐插件, Ctrl+Alt+A</li>
-    <li>Bracket Pair Colorizer 和 Indent Rainbow: 花括号着色和彩虹缩进</li>
-</ul>
-<h2>Git</h2>
-<ul>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame" rel="nofollow">Git Blame</a>：查看当前选中行的 Git 提交信息</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory" rel="nofollow">Git History</a>：图形化显示提交历史等。 墙裂推荐。</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" rel="nofollow">Git Lens</a>：Git Blame 详细信息</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=ziyasal.vscode-open-in-github">Open in GitHub / Bitbucket / Gitlab / VisualStudio.com !</a> — It lets you open the repo in the browser with a single command.</li>
-    <li>Git Indicators — It lets you see the affected files and how many lines have been added or deleted in the status bar.</li>
-</ul>
-<h2>其他</h2>
-<ul>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=joelday.docthis" rel="nofollow">Document This</a>: 自动生成 JSDoc 注释, Ctrl+Alt+D</li>
-    <li>Import Cost: 可以显示import的东西体积有多大</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">REST Client，</a>就不用再单独安装一个Postman了，直接在VSCode里面就能搞定</li>
-    <li>Sync Settings: 设置同步插件, 你很有可能在多台电脑上进行编码工作。在电脑上移植你的插件和设置是轻而易举的事</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" rel="nofollow">ESLint</a>：Javascript 语法检测</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode" rel="nofollow">Flow Language Support</a>：Flow 语法支持</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=sysoev.language-stylus" rel="nofollow">Language-stylus</a>: Stylus 语法支持</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme" rel="nofollow">Material Icon Theme</a>：VS Code Material Design 主题 icon</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer" rel="nofollow">Output Colorizer</a>：VS Code 输出彩色日志</li>
-    <li><a href="https://github.com/alefragnani/vscode-project-manager">Project Manager</a>：项目管理</li>
-    <li>Regex Previewer: 正则表达式预览</li>
-    <li><a href="">...</a></li>
-</ul>
-<h2>Vue 开发</h2>
-<ul>
-    <li><a href="https://vuejs.github.io/vetur/" rel="nofollow">Vetur</a>：Vue 开发生态必备插件（官方推荐），支持 Syntax Highlighting， Emmet 2.0，Snippet，Foramtting，IntelliSense，Linting 等</li>
-    <li><a href="">...</a></li>
-</ul>
-<h2>React 开发</h2>
-<ul>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets" rel="nofollow">Reactjs Code Snippets</a>：React 代码提示</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=timothymclane.react-redux-es6-snippets" rel="nofollow">React Redux ES6 Snippets</a>：Redux 代码提示</li>
-    <li><a href="">...</a></li>
-</ul>
-<h2>文档编辑 Markdown</h2>
-<ul>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one" rel="nofollow">Markdown All In One</a>：Markdown 格式化</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint" rel="nofollow">Markdownlint</a>: Markdown 语法检测</li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf" rel="nofollow">Markdown PDF</a>：Markdown 转 PDF</li>
-    <li><a href="#" rel="nofollow">Markdown Shortcuts</a>: Markdown Shortcuts</li>
-    <li><a href="">...</a></li>
-</ul>
+- **通用插件**
+  - [Beautify](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag): Beautify javascript, JSON, CSS, Sass, and HTML in Visual Studio Code - Auto Close Tag: 自动标签闭合, Auto Rename Tag
+  - [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)：括号颜色匹配
+    JavaScript (ES6) code snippets: `imd --> import { } from 'somewhere'`
+  - AutoFileName: AutoFileName
+  - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)：路径智能提示
+  - [Auto Import](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)：Typescript 、TSX 自动查找、导入
+- **HTML Boilerplate: HTML 模板**
+  - [HTML Snippets](https://github.com/abusaidm/html-snippets)：HTML5 代码片段提示
+  - [Javascript ES6 Snippets](http://madole.xyz/my-favourite-vscode-plugins/)：Javascript ES6 Snippets
+  - [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)：自动计算 Import 包大小
+  - [Npm Intellisense](https://github.com/ChristianKohler/NpmIntellisense)：Npm Module Import 智能补全
+  - [Open in Browser](https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser)：在浏览器中打开- 将添加一个 [Open With Default Browser] 选项到右键菜单
+  - change-case: 命名格式插件
+    - camelCase骆驼拼命名
+    - PascalCase首字母大写
+    - kebab-case中划线命名
+    - underscore_delimited下划线命名
+    - CONSTANT大写命名，等
+- vscode-icons: 侧边栏图标插件
+  - [SVG Viewer](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer)：SVG 查看器
+    select highlight in minimap: 
+  - [Can I Use](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse)：浏览器兼容性查询
+    Quokka.js可以实时运行代码，在你敲键盘的同时就可以把结果显示在编辑器里面, 并能够预览变量的函数和计算值结果, 类似的插件还有：Code Runner，支持实时执行C, C++, Java, JavaScript, PHP, Python, Perl, Perl 6 等语言。
+
+**CSS相关**
+
+- CSS Peek: 追踪至样式表中 CSS 类和 ids 定义的地方, 在 HTML 文件中右键单击选择器时，选择“ Go to Definition 和 Peek definition ”选项，它便会给你发送样式设置的 CSS 代码
+  - Peek: load the css file inline and make quick edits right there(Ctrl+Shift+F12)
+  - Go To: jump directly to the css file or open it in a new editor (F12)
+  - Hover: show the definition in a hover over the symbol (Ctrl+hover)
+- [IntelliSense for CSS class names](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)：CSS 类名智能提示
+- [Cssrem](https://marketplace.visualstudio.com/items?itemName=cipchk.cssrem)：px 自动转 rem
+- Color Picker: 代码的颜色选择器
+- Color Info: 颜色信息及转换
+- Color-Highlight: 在编辑器中高亮显示颜色
+
+**Beauty美化相关**
+
+- Prettier: 格式化代码，快速格式化整个JS和CSS文档, CMD+Shift+P -> Format Document
+- Align: 代码对齐插件, Ctrl+Alt+A
+- Bracket Pair Colorizer 和 Indent Rainbow: 花括号着色和彩虹缩进
+- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)：VS Code Material Design 主题 icon
+  
+**Git**
+
+- [Git Blame](https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame)：查看当前选中行的 Git 提交信息
+- [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)：图形化显示提交历史等。 墙裂推荐。
+- [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)：Git Blame 详细信息
+-[ Open in GitHub / Bitbucket / Gitlab / VisualStudio.com](https://marketplace.visualstudio.com/items?itemName=ziyasal.vscode-open-in-github) ! — It lets you open the repo in the browser with a single command.
+- Git Indicators — It lets you see the affected files and how many lines have been added or deleted in the status bar.
+  
+**其他**
+
+- [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis): 自动生成 JSDoc 注释, Ctrl+Alt+D
+- Import Cost: 可以显示import的东西体积有多大
+- [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)，就不用再单独安装一个Postman了，直接在VSCode里面就能搞定
+- Sync Settings: 设置同步插件, 你很有可能在多台电脑上进行编码工作。在电脑上移植你的插件和设置是轻而易举的事
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)：Javascript语法检测
+- [Flow Language Support](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode)：Flow 语法支持
+- [Language-stylus](https://marketplace.visualstudio.com/items?itemName=sysoev.language-stylus): Stylus 语法支持
+- [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer)：VS Code 输出彩色日志
+- [Project Manager](https://github.com/alefragnani/vscode-project-manager)：项目管理
+- Regex Previewer: 正则表达式预览
+
+
+**Vue 开发**
+
+- [Vetur](https://vuejs.github.io/vetur/)：Vue 开发生态必备插件（官方推荐），支持 Syntax Highlighting， Emmet 2.0，Snippet，Foramtting，IntelliSense，Linting 等
+- ...
+
+**React 开发**
+
+- [Reactjs Code Snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)：React 代码提示
+- [React Redux ES6 Snippets](https://marketplace.visualstudio.com/items?itemName=timothymclane.react-redux-es6-snippets)：Redux 代码提示
+- ...
+
+**文档编辑 Markdown**
+
+- Markdown All In One：Markdown 格式化
+- Markdownlint: Markdown 语法检测
+- Markdown PDF：Markdown 转 PDF
+- Markdown Shortcuts: Markdown Shortcuts
+- ...
 
 <hr>
 
