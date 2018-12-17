@@ -12,7 +12,7 @@
 <table>
   <tr><th colspan="2">格式调整</th></tr>
   <tr><td>代码行缩进</td><td>Ctrl+[， Ctrl+]</td></tr>
-  <tr><td>**代码格式化**</td><td>Shift+Alt+F，或Ctrl+Shift+P后输入format code(format selection)</td></tr>
+    <tr><td><b>代码格式化</b></td><td>Shift+Alt+F，或Ctrl+Shift+P后输入format code(format selection)</td></tr>
   <tr><td>修剪空格</td><td>Ctrl+Shift+X</td></tr>
   <tr><td>自动换行</td><td>Alt+Z</td></tr>
   <tr><td>**括号匹配**</td><td>ctrl+shift+\</td></tr>
