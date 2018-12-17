@@ -1,0 +1,74 @@
+[AngularJS Cache-缓存](#top)
+
+- [$cacheFactory与缓存对象](#cachefactory%E4%B8%8E%E7%BC%93%E5%AD%98%E5%AF%B9%E8%B1%A1)
+- [$http中的缓存](#http%E4%B8%AD%E7%9A%84%E7%BC%93%E5%AD%98)
+  - [修改AngularJS中的$http cache中的数据](#%E4%BF%AE%E6%94%B9angularjs%E4%B8%AD%E7%9A%84http-cache%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE)
+
+## $cacheFactory与缓存对象
+
+`$cacheFactory`是一个为Angular服务生产缓存对象的服务。要创建一个缓存对象，可以使用`$cacheFactory`通过一个ID和capacity
+
+ `var myCache = $cacheFactory('myCache')`
+  
+- 定义了一个ID为myCache的缓存。这个$cacheFactory方法可以接受两个参数
+  - ID是一个缓存对象的名称,可以通过get()方法使用缓存名称来引用它
+  - capacity则是描述缓存键值对的最大数量
+- `$cacheFactory()`方法返回一个缓存对象, 缓存对象自身有下列这些方法可以用来与缓存交互
+  - myCache.info() 返回缓存对象的ID，尺寸和选项
+  - myCache.put() 新值键值对并放入缓存对象中 myCache.put("name", "Ben") 
+  - myCache.get() 返回对应的缓存值，若没有找到则返回undefined myCache.get("name") 
+  - myCache.remove() 把键值对从对应缓存对象中移除 myCache.remove("name") 
+  - myCache.remvoeAll() 清空该缓存对象
+
+## $http中的缓存
+
+```javascript
+/* 1) defination */
+$http({
+     method: 'GET',
+     url: 'api/user.json',
+     cache: true     // cache参数
+});
+// 或者使用辅助方法.get()
+$http.get('/api/user.json', {
+    cache: true
+});
+/* 2) use*/ 
+var httpcache = $cacheFactory('$http');    //通过$cacheFactory()使用ID来获取到该缓存
+var usersCache = httpcache.get('http://example.com/api.users.json');   // 获取上一次请求的缓存
+// 删除上一次请求的缓存入口
+httpcache.remove('http://example.com/api.users.json');
+// 重新开始并移除全部缓存
+httpcache.removeAll();
+/* 3) 设置默认cache */
+// 在模块的.config()方法中通过$httpProvider设置$http默认使用的缓存对象
+angular.module('myApp', []).config(function($httpProvider) {
+    $httpProvider.defaults.cache = $cacheFactory('myCache', {capacity: 20});   //会缓存前20个请求，但是进入第21个请求时，最近最少使用的请求条目就会从缓存中被删除
+});
+```
+
+### 修改AngularJS中的$http cache中的数据
+
+```javascript
+var $httpDefaultCache = $cacheFactory.get('$http');
+var cachedJobs = $httpDefaultCache.get('data/jobs.json');
+var dataarray = JSON.parse(cachedJobs[1]);
+var jsonobj = JSON.parse(cachedJobs[1])[4];
+//alert(JSON.stringify(jsonobj));
+dataarray.push(jsonobj);
+//Method 1
+cachedJobs[1] = JSON.stringify(dataarray);
+//Method 2
+var newjson = [];
+for(var i = 0; i < cachedJobs.length; i++){
+	if(i != 1){
+		newjson.push(cachedJobs[i]);
+	}
+	else{
+		newjson.push(JSON.stringify(dataarray));
+	}
+}
+alert(JSON.stringify(newjson));
+$httpDefaultCache.put('data/jobs.json', newjson);
+//alert("after: " + JSON.parse($httpDefaultCache.get('data/jobs.json')[1]).length);
+```
