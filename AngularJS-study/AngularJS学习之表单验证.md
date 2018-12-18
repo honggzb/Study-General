@@ -14,6 +14,7 @@
   - [验证两个密码是否相等](#%E9%AA%8C%E8%AF%81%E4%B8%A4%E4%B8%AA%E5%AF%86%E7%A0%81%E6%98%AF%E5%90%A6%E7%9B%B8%E7%AD%89)
   - [允许输入偶数](#%E5%85%81%E8%AE%B8%E8%BE%93%E5%85%A5%E5%81%B6%E6%95%B0)
   - [input输入框只能输入数字和小数点](#input%E8%BE%93%E5%85%A5%E6%A1%86%E5%8F%AA%E8%83%BD%E8%BE%93%E5%85%A5%E6%95%B0%E5%AD%97%E5%92%8C%E5%B0%8F%E6%95%B0%E7%82%B9)
+  - [asynchronous validator](#asynchronous-validator)
 - [自定义表单元素](#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0)
 - [完整案例](#%E5%AE%8C%E6%95%B4%E6%A1%88%E4%BE%8B)
 
@@ -478,6 +479,55 @@ $scope.clearNoNum = function(obj,attr){
 **HTML方法: 并限制小数位数**
 
 `<span style="font-size:14px;"> <input type="number" step="0.01" ng-model="interest" name="interest" required /></span>`
+
+[back to top](#top)
+
+### asynchronous validator
+
+- https://plnkr.co/edit/4DIIAFF5rdNoHIQjwuVm?p=preview
+
+```html
+<input type="text" name="usernameField" placeholder="username here" ng-model="credentials.username"
+       minlength="3" ng-model-options="{updateOn: 'default blur', debounce: {default: 500, blur: 0}}"
+       check-availability="localhost:3000/users/"/>
+      <span ng-messages="newAccountForm.usernameField.$error" ng-show="newAccountForm.usernameField.$dirty">
+        <span ng-message="required">Required username!</span>
+        <span ng-message="minlength">Too short!</span>
+        <span ng-message="invalidUsername">Username not available!</span>
+      </span>
+<script>
+angular .module('app').directive('checkAvailability', checkAvailabilityFunc);
+
+  function checkAvailabilityFunc($http, $q, $timeout) {
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: function(scope, element, attr, ngModel) {
+        // fetch the call address from directives 'checkIfAvailable' attribute
+        var serverAddr = attr.checkAvailability;
+        ngModel.$asyncValidators.invalidUsername = function(modelValue, viewValue) {
+          var username = modelValue;
+          var deferred = $q.defer();
+          // ask the server if this username exists
+          $http.get(serverAddr, {data: username}).then(
+            function(response) {
+              // simulate a server response delay of half a second
+              $timeout(function() {
+                if (response.data.exists) {
+                  deferred.reject();
+                } else {
+                  deferred.resolve();
+                }
+              }, 500);
+            });
+          // return the promise of the asynchronous validator
+          return deferred.promise;
+        }
+      }
+    }
+  }
+</script>
+```
 
 [back to top](#top)
 
