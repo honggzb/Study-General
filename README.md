@@ -33,8 +33,106 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   ├── Angular之Pipe.md
 │   ├── Angular中Error汇总.md
 │   ├── mocking-backend -API.md
-│   ├── 
 │   └── 
+│
+├── AngularJS-study
+│
+│   ├──  angular-translate-study/
+│   │    ├── simple-sample /
+│   │    └── readme.md
+│   │
+│   ├──  angular-material-study /
+│   │    ├── mdSwitch.md
+│   │    ├── mdToast-study.md
+│   │    └── 
+│   │
+│   ├──  lib /
+│   │    ├── angular /
+│   │    └── bootstraps3 /
+│   │
+│   ├──  plugin /
+│   │    ├── agGrid /
+│   │    │     ├──  Group-rowGroup-sample.html
+│   │    │     ├──  Group-sample.html
+│   │    │     ├──  Simple-sample.html
+│   │    │     ├──  column-fixed-sample.html
+│   │    │     ├──  column-type+group-sample.html
+│   │    │     ├──  external-filter-sample.html
+│   │    │     ├──  filter-sample.html
+│   │    │     ├──  header-Template-sample.html
+│   │    │     ├──  sorting-sample.html
+│   │    │     ├──  style-cell-sample.html
+│   │    │     └──  style-row-sample.html
+│   │    ├── ngInfiniteScroll的使用方法- 滚动触底加载.md
+│   │    └── 
+│   │
+│   ├──  public /    #学习案例
+│   │    ├── 001-controller.html 
+│   │    ├── 002-controller-multi.html 
+│   │    ├── 003-ng-bind.html 
+│   │    ├── 004-$scope中的$apply.html 
+│   │    ├── 005-$scope中的$watch.html 
+│   │    ├── 006-cart.html 
+│   │    ├── 007-module.html 
+│   │    ├── 008-provide.provide.html 
+│   │    ├── 009-provide.factory.html 
+│   │    ├── 010-provide.shareDate.in.multi.controller.html 
+│   │    ├── 011-filter.html 
+│   │    ├── 012-filter-usr-defined.html 
+│   │    ├── 013-controller.DI.html 
+│   │    ├── 014-build-in.directive.html 
+│   │    ├── 015-self-defined.directive-restrict.html 
+│   │    ├── 016-self-defined.directive-transclude-priority-terminal.html 
+│   │    ├── 017-self-defined.directive-compile-link.html 
+│   │    ├── 018-self-defined.directive-controller.html 
+│   │    ├── 019-self-defined.directive-scope.html 
+│   │    ├── 020-self-defined.directive-accordion.html 
+│   │    ├── 021-module-constant-value-run.html 
+│   │    ├── 022-form.html 
+│   │    ├── 023-form-user-defined.html 
+│   │    ├── kittercupCollapse.html 
+│   │    └── other.html
+│   │ 
+│   ├──  Sample /
+│   │    ├── directive /
+│   │    │    ├── 滚屏加载.html
+│   │    │    ├── AngularJS内置服务总览.md
+│   │    │    ├── angular之ng-model-options指令.md
+│   │    │    ├── angular之ng-options用法详解.md
+│   │    │    ├── ng-class in AngularJS.md
+│   │    │    ├── ng-repeat in AngularJS.md
+│   │    │    ├── 自定义一个表格.js
+│   │    │    └── 
+│   │    └── service /
+│   │         ├── AngularJs中$http再次封装.md
+│   │         └──
+│   │ 
+│   ├──  ui-bootstrap-study
+│   │    ├── typeahead /
+│   │    └── ui-Bootstrap之Typeahead.md
+│   │ 
+│   ├── $timeout和$interval的用法.md
+│   ├── $watch详解.md
+│   ├── AngularJS+angularjs作用域的生命周期.md
+│   ├── AngularJS学习之Cache-缓存.md
+│   ├── AngularJS学习之Factory vs Service vs Provider.md
+│   ├── AngularJS学习之directive详解.md
+│   ├── AngularJS学习之表单验证.md
+│   ├── AngularJS给动态生成的元素绑定事件.md
+│   ├── Angularjs Controller间通信机制.md
+│   ├── Angularjs directive通信案例.md
+│   ├── Angularjs使用jQuery-jqLite.md
+│   ├── Angularjs工具方法.md
+│   ├── Angularjs的前端拦截器-interceptor.md
+│   ├── Angular声明注入依赖的方法和自动化插件.md
+│   ├── Smooth transition for scrolled view amd Modal.md
+│   ├── UI-Router for AngularJS 1.x.md 
+│   ├── angularJS-debug-skill.md 
+│   ├── angularjs的directive和component的参数传递问题.md
+│   ├── http拦截器介绍与使用.md
+│   ├── resources.md
+│   ├── tip.md
+│   └── 常见问题和技巧.md
 │ 
 ├── CSS+CSS3-Skill - css技巧
 │   ├──  CSS-Pure
