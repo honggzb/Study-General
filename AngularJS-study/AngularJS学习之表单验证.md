@@ -1,7 +1,7 @@
 [AngularJS学习之表单验证](#top)
 
 - [Basic concept](#basic-concept)
-- [ng-form表单校验实现原理](#ng-form%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86)
+  - [ng-form表单校验实现原理](#ng-form%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86)
   - [angular自带验证器指令- Angular built-in validation directives](#angular%E8%87%AA%E5%B8%A6%E9%AA%8C%E8%AF%81%E5%99%A8%E6%8C%87%E4%BB%A4--angular-built-in-validation-directives)
   - [表单验证状态访问](#%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81%E7%8A%B6%E6%80%81%E8%AE%BF%E9%97%AE)
   - [表单验证状态设置](#%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81%E7%8A%B6%E6%80%81%E8%AE%BE%E7%BD%AE)
@@ -35,7 +35,7 @@
 - 表单元素必须有ng-model，否则无法触发验证
 - ng-form是Angular提供的directive。ng-form指令为form增补了一些额外特性。 它会控制那些带有ng-model指令和name属性的元素，监听他们的属性（包括其有效性）
 
-## ng-form表单校验实现原理
+### ng-form表单校验实现原理
 
 - 通过ng-model指令跟踪修改状态与有效性验证， 
   - 状态：控件被访问过（ng-touched、ng-untouched） 
