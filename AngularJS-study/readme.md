@@ -9,12 +9,29 @@
 │   │    └── readme.md
 │   │
 │   ├──  angular-material-study /
+│   │    ├── mdSwitch.md
 │   │    ├── mdToast-study.md
 │   │    └── 
 │   │
 │   ├──  lib /
 │   │    ├── angular /
 │   │    └── bootstraps3 /
+│   │
+│   ├──  plugin /
+│   │    ├── agGrid /
+│   │    │     ├──  Group-rowGroup-sample.html
+│   │    │     ├──  Group-sample.html
+│   │    │     ├──  Simple-sample.html
+│   │    │     ├──  column-fixed-sample.html
+│   │    │     ├──  column-type+group-sample.html
+│   │    │     ├──  external-filter-sample.html
+│   │    │     ├──  filter-sample.html
+│   │    │     ├──  header-Template-sample.html
+│   │    │     ├──  sorting-sample.html
+│   │    │     ├──  style-cell-sample.html
+│   │    │     └──  style-row-sample.html
+│   │    ├── ngInfiniteScroll的使用方法- 滚动触底加载.md
+│   │    └── 
 │   │
 │   ├──  public /    #学习案例
 │   │    ├── 001-controller.html 
@@ -45,23 +62,44 @@
 │   │ 
 │   ├──  Sample /
 │   │    ├── directive /
+│   │    │    ├── 滚屏加载.html
+│   │    │    ├── AngularJS内置服务总览.md
+│   │    │    ├── angular之ng-model-options指令.md
+│   │    │    ├── angular之ng-options用法详解.md
+│   │    │    ├── ng-class in AngularJS.md
+│   │    │    ├── ng-repeat in AngularJS.md
 │   │    │    ├── 自定义一个表格.js
 │   │    │    └── 
-│   │    └── 
+│   │    └── service /
+│   │         ├── AngularJs中$http再次封装.md
+│   │         └──
 │   │ 
 │   └──  ui-bootstrap-study
 │        ├── typeahead /
 │        └── ui-Bootstrap之Typeahead.md
 │ 
-├── $timeout和$interval的用法.md 
-├── AngularJS directive详解.md
+├── $timeout和$interval的用法.md
+├── $watch详解.md
+├── AngularJS+angularjs作用域的生命周期.md
+├── AngularJS学习之Cache-缓存.md
+├── AngularJS学习之Factory vs Service vs Provider.md
+├── AngularJS学习之directive详解.md
+├── AngularJS学习之表单验证.md
+├── AngularJS给动态生成的元素绑定事件.md
 ├── Angularjs Controller间通信机制.md
 ├── Angularjs directive通信案例.md
+├── Angularjs使用jQuery-jqLite.md
+├── Angularjs工具方法.md
+├── Angularjs的前端拦截器-interceptor.md
+├── Angular声明注入依赖的方法和自动化插件.md
+├── Smooth transition for scrolled view amd Modal.md
 ├── UI-Router for AngularJS 1.x.md 
 ├── angularJS-debug-skill.md 
 ├── angularjs的directive和component的参数传递问题.md
-├── http拦截器介绍与使用.md	Rename http拦截器介绍与使用.md 
-└── tip.md
+├── http拦截器介绍与使用.md
+├── resources.md
+├── tip.md
+└── 常见问题和技巧.md
 ```
 
 ## Setup AngularJS Project in Visual Studio
