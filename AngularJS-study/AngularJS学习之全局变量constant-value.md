@@ -18,11 +18,39 @@ var myApp = angular.module('myApp', [], ['$provide', function ($provide) {
     })
     //定义常量 可以注入任何方法
     .constant('name', 'zhangsan')
+    .constant('config', {
+      appName: 'My App',
+      appVersion: 2.0,
+      apiUrl: ‘http://www.google.com?api’
+    })
     //只能注入到controller/service/factory
     .value('version', 'v-1.0')
     .controller('firstController', ['name', function (name) {
         console.log("controller中的值:" + name);
     }]);
+ 
+app.controller('TestCtrl', ['config', function TestCtrl(config) {   //register config
+    console.log(config);
+    console.log('App Name', config.appName);    //My App
+    console.log('App Name', config.appVersion);
+}]);
+```
+
+better way
+
+```javascript
+// first define the un-changeable constants javascript way
+var constants = constants || {};
+constants.environment = “Development”;
+constants.webService = “someUrl”;
+Object.freeze(constants);
+// add to angular
+var app = angular.module(‘myApp’, []);
+app.constant(‘constants’, constants);
+// inject constants into a controller which won’t be able to change
+app.controller(‘TestCtrl’, [‘constants’, function TestCtrl(constants) {
+console.log(constants.environment);
+}]);
 ```
 
 **value和constant区别**
