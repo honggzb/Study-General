@@ -16,40 +16,60 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   └── resources.md
 │
 ├── Angular-Study
-│   ├── Sample
-│   │   ├── 案例之星级评价.md
-│   │   └── 
-│   ├── Mockup-server
+│   ├── Angular-material/
+│   │   ├── dialog/
+│   │   │    ├── AngularMaterial-dialog.md 
+│   │   │    └── dialog.rar   
+│   │   └── readme.md  
+│   ├── Mockup-server/
+│   │   ├── Node+http_server创建服务器.md
+│   │   ├── mocking-backend -API.md
 │   │   ├── node+express创建服务器.md
-│   │   └── Node+http_server创建服务器.md
-│   │
-│   ├── Angular 2,4 + google map      #Google map在angular>2中的应用
-│   ├── Angular_CLI的使用.md           #useful
-│   ├── Angular学习笔记之lazy loading-使用angular-cli.md     #useful
-│   ├── Angular学习笔记之集成三方UI框架.md
-│   ├── Angular打造股票管理网站.md      #useful
-│   ├── Angular学习笔记之依赖注入.md
-│   ├── Angular系列之变化检测.md
-│   ├── Angular之Pipe.md
-│   ├── Angular中Error汇总.md
-│   ├── mocking-backend -API.md
-│   └── 
+│   │   └── Node+http_server创建服务器.md
+│   ├── Sample/
+│   │   ├── directive/
+│   │   │    ├── input-radio.md
+│   │   │    └── 
+│   │   ├──  Angular 4学习- Angular 4.0从入门到实战 打造股票管理网站.md
+│   │   ├──  Angular 4学习-todo_list.md
+│   │   ├──  Angular Loading Spinner.md
+│   │   ├──  add-loading-screen.md
+│   │   ├──  auction-Angular 4.0从入门到实战-打造股票管理网站+mockServer+websock.rar
+│   │   ├──  auction-Angular 4.0从入门到实战-打造股票管理网站+mockServer.rar
+│   │   ├──  todo-app.rar
+│   │   ├──  案例之星级评价.md
+│   │   └──  
+│   ├── Angular2+Accessibility.md
+│   ├── Angular 2,4 + google map      #Google map在angular>2中的应用
+│   ├── Angular_CLI的使用.md           #useful
+│   ├── Angular中Error汇总.md
+│   ├── Angular之Pipe.md
+│   ├── Angular学习笔记之DI依赖注入.md
+│   ├── Angular学习笔记之lazy loading-使用angular-cli.md     #useful
+│   ├── Create Angular学习笔记之styling in Angular.md
+│   ├── Angular学习笔记之集成三方UI框架.md
+│   ├── Angular打造股票管理网站.md      #useful
+│   ├── Angular系列之变化检测.md
+│   ├── Reactive Extensions for JavaScript (RxJS).md
+│   ├── mocking-backend -API.md
+│   ├── change-detection-default.gif
+│   ├── change-detection-onpush.gif
+│   ├── redux.png
+│   ├── redux.doc
+│   └── 大漠的Angular Workshop.md 
 │
 ├── AngularJS-study
 │
 │   ├──  angular-translate-study/
 │   │    ├── simple-sample /
 │   │    └── readme.md
-│   │
 │   ├──  angular-material-study /
 │   │    ├── mdSwitch.md
 │   │    ├── mdToast-study.md
 │   │    └── 
-│   │
 │   ├──  lib /
 │   │    ├── angular /
 │   │    └── bootstraps3 /
-│   │
 │   ├──  plugin /
 │   │    ├── agGrid /
 │   │    │     ├──  Group-rowGroup-sample.html
@@ -65,7 +85,6 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   │    │     └──  style-row-sample.html
 │   │    ├── ngInfiniteScroll的使用方法- 滚动触底加载.md
 │   │    └── 
-│   │
 │   ├──  public /    #学习案例
 │   │    ├── 001-controller.html 
 │   │    ├── 002-controller-multi.html 
@@ -91,8 +110,7 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   │    ├── 022-form.html 
 │   │    ├── 023-form-user-defined.html 
 │   │    ├── kittercupCollapse.html 
-│   │    └── other.html
-│   │ 
+│   │    └── other.html 
 │   ├──  Sample /
 │   │    ├── directive /
 │   │    │    ├── 滚屏加载.html
@@ -106,11 +124,9 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   │    └── service /
 │   │         ├── AngularJs中$http再次封装.md
 │   │         └──
-│   │ 
 │   ├──  ui-bootstrap-study
 │   │    ├── typeahead /
 │   │    └── ui-Bootstrap之Typeahead.md
-│   │ 
 │   ├── $timeout和$interval的用法.md
 │   ├── $watch详解.md
 │   ├── AngularJS+angularjs作用域的生命周期.md
