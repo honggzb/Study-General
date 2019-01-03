@@ -13,6 +13,7 @@
 - [AngularJS material tips](#angularjs-material-tips)
   - [Angular Material的多行文本框字数校验](#angular-material%E7%9A%84%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%A1%86%E5%AD%97%E6%95%B0%E6%A0%A1%E9%AA%8C)
   - [Angular Material对话框时，对话框显示以后，点击浏览器的返回按钮对话框不会消失的问题](#angular-material%E5%AF%B9%E8%AF%9D%E6%A1%86%E6%97%B6%E5%AF%B9%E8%AF%9D%E6%A1%86%E6%98%BE%E7%A4%BA%E4%BB%A5%E5%90%8E%E7%82%B9%E5%87%BB%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%BF%94%E5%9B%9E%E6%8C%89%E9%92%AE%E5%AF%B9%E8%AF%9D%E6%A1%86%E4%B8%8D%E4%BC%9A%E6%B6%88%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98)
+  -[angular material的md-input-container中ng-messages不显示问题](#angular-material的md-input-container中ng-messages不显示问题)
 
 ## AngularJS tips
 
@@ -346,6 +347,10 @@ dialog和panel对话框关闭时，如果要跳转页面，不应该写成$mdDia
 正确写法为$mdDialog.cancel().then(function(){$state.go();});和mdPanelRef.close().then(function(){$state.go();});
 
 [back to top](#top)
+
+### angular material的md-input-container中ng-messages不显示问题
+
+`angular material的md-input-container中ng-messages不显示问题`
 
 [Angular知识总结及学习资料（中文版）](https://blog.csdn.net/u013915143/article/details/51956582?utm_source=blogxgwz1)
 
