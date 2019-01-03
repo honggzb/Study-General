@@ -10,6 +10,9 @@
 ### 常用快捷键推荐
 
 <table>
+  <tr><th colspan="2">Zoom In/Zoom Out the entire user interface</th></tr>
+  <tr><td>Zoom In</td><td>Ctrl + '+'</td></tr>
+  <tr><td>Zoom Out</td><td>Ctrl + '-'</td></tr>
   <tr><th colspan="2">格式调整</th></tr>
   <tr><td>代码行缩进</td><td>Ctrl+[， Ctrl+]</td></tr>
     <tr><td><b>代码格式化</b></td><td>Shift+Alt+F，或Ctrl+Shift+P后输入format code(format selection)</td></tr>
