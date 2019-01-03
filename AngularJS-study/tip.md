@@ -350,7 +350,10 @@ dialog和panel对话框关闭时，如果要跳转页面，不应该写成$mdDia
 
 ### angular material的md-input-container中ng-messages不显示问题
 
-`angular material的md-input-container中ng-messages不显示问题`
+`<div ng-messages="registrationForm.agencyName.$error" md-auto-hide="false" ng-if="registrationForm.agencyName.$touched">`
+
+- `md-auto-hide="false"`是必须的
+- 其中`$touched`是可选的
 
 [Angular知识总结及学习资料（中文版）](https://blog.csdn.net/u013915143/article/details/51956582?utm_source=blogxgwz1)
 
