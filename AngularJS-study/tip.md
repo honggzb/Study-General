@@ -10,6 +10,7 @@
   - [监听angularJs列表数据是否渲染完毕](#%E7%9B%91%E5%90%ACangularjs%E5%88%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E6%98%AF%E5%90%A6%E6%B8%B2%E6%9F%93%E5%AE%8C%E6%AF%95)
   - [$ctrl的使用](#ctrl%E7%9A%84%E4%BD%BF%E7%94%A8)
   - [Can't make ng-repeat orderBy work - notarray Expected array but received: Object](#cant-make-ng-repeat-orderby-work---notarray-expected-array-but-received-object)
+  - [li中ng-click无效问题](#li中ng-click无效问题)
 - [AngularJS material tips](#angularjs-material-tips)
   - [Angular Material的多行文本框字数校验](#angular-material%E7%9A%84%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%A1%86%E5%AD%97%E6%95%B0%E6%A0%A1%E9%AA%8C)
   - [Angular Material对话框时，对话框显示以后，点击浏览器的返回按钮对话框不会消失的问题](#angular-material%E5%AF%B9%E8%AF%9D%E6%A1%86%E6%97%B6%E5%AF%B9%E8%AF%9D%E6%A1%86%E6%98%BE%E7%A4%BA%E4%BB%A5%E5%90%8E%E7%82%B9%E5%87%BB%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%BF%94%E5%9B%9E%E6%8C%89%E9%92%AE%E5%AF%B9%E8%AF%9D%E6%A1%86%E4%B8%8D%E4%BC%9A%E6%B6%88%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98)
@@ -283,6 +284,12 @@ $scope.dataArray = Object.keys($scope.data).map(function(key) {
 ```
 
 [back to top](#top)
+
+### li中ng-click无效问题
+
+- also happen in div
+- solution
+  - using `popover-trigger="click" `
 
 ## AngularJS material tips
 
