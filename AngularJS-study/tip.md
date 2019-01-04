@@ -291,6 +291,8 @@ $scope.dataArray = Object.keys($scope.data).map(function(key) {
 - solution
   - using `popover-trigger="click"`
   - https://stackoverflow.com/questions/29653348/angular-ng-click-and-li-items
+  - using angular others directive such as: `ng-mousedown`
+  
 ## AngularJS material tips
 
 ### Angular Material的多行文本框字数校验
