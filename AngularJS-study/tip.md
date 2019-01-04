@@ -289,8 +289,8 @@ $scope.dataArray = Object.keys($scope.data).map(function(key) {
 
 - also happen in div
 - solution
-  - using `popover-trigger="click" `
-
+  - using `popover-trigger="click"`
+  - https://stackoverflow.com/questions/29653348/angular-ng-click-and-li-items
 ## AngularJS material tips
 
 ### Angular Material的多行文本框字数校验
@@ -361,6 +361,8 @@ dialog和panel对话框关闭时，如果要跳转页面，不应该写成$mdDia
 
 - `md-auto-hide="false"`是必须的
 - 其中`$touched`是可选的
+
+---------------
 
 [Angular知识总结及学习资料（中文版）](https://blog.csdn.net/u013915143/article/details/51956582?utm_source=blogxgwz1)
 
