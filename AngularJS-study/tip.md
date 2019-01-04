@@ -11,6 +11,7 @@
   - [$ctrl的使用](#ctrl%E7%9A%84%E4%BD%BF%E7%94%A8)
   - [Can't make ng-repeat orderBy work - notarray Expected array but received: Object](#cant-make-ng-repeat-orderby-work---notarray-expected-array-but-received-object)
   - [li中ng-click无效问题](#li中ng-click无效问题)
+  - [angularJS动态生成的页面中ng-click无效解决办法](#angularJS动态生成的页面中ng-click无效解决办法)
 - [AngularJS material tips](#angularjs-material-tips)
   - [Angular Material的多行文本框字数校验](#angular-material%E7%9A%84%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%A1%86%E5%AD%97%E6%95%B0%E6%A0%A1%E9%AA%8C)
   - [Angular Material对话框时，对话框显示以后，点击浏览器的返回按钮对话框不会消失的问题](#angular-material%E5%AF%B9%E8%AF%9D%E6%A1%86%E6%97%B6%E5%AF%B9%E8%AF%9D%E6%A1%86%E6%98%BE%E7%A4%BA%E4%BB%A5%E5%90%8E%E7%82%B9%E5%87%BB%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%BF%94%E5%9B%9E%E6%8C%89%E9%92%AE%E5%AF%B9%E8%AF%9D%E6%A1%86%E4%B8%8D%E4%BC%9A%E6%B6%88%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98)
@@ -292,7 +293,42 @@ $scope.dataArray = Object.keys($scope.data).map(function(key) {
   - using `popover-trigger="click"`
   - https://stackoverflow.com/questions/29653348/angular-ng-click-and-li-items
   - using angular others directive such as: `ng-mousedown`
-  
+- for UI bootstrap
+  - remove `popover-trigger="focus"` or change it to `popover-trigger="click"`
+
+### angularJS动态生成的页面中ng-click无效解决办法
+
+```javascript
+//1) 赋值给页面的数据new一下
+var html = "<a href='javascript:void(0);' ng-click='test()'></a>"
+//2) 用$compile函数编译一下上边的内容
+var $html = $compile(html)($scope);
+//3) 将编译好的内容插入到页面中
+$("body").append($html);
+```
+
+**ng-click not working after compile ng-bind-html**
+
+可以写一个directive, 已属性的形式加到div上, `<div ng-bind-html="item.tmp|htmlContent" compile-html></div>`
+
+```javascript
+angular.module('app', []).directive('compileHtml', function ($compile) {
+  return {
+    restrict: 'A',
+    replace: true,
+    link: function (scope, ele, attrs) {
+      scope.$watch(function () {return scope.$eval(attrs.ngBindHtml);},
+          function(html) {
+            ele.html(html);
+            $compile(ele.contents())(scope);
+          });
+    }
+  };
+});
+```
+
+[back to top](#top)
+
 ## AngularJS material tips
 
 ### Angular Material的多行文本框字数校验
