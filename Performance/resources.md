@@ -1,1 +1,2 @@
 - [A Case Study on Boosting Front-End Performance](https://css-tricks.com/case-study-boosting-front-end-performance/?utm_source=frontendfocus&utm_medium=email)
+- [Front-End Performance Checklist 2019 ](https://www.smashingmagazine.com/2019/01/front-end-performance-checklist-2019-pdf-pages)
