@@ -1,5 +1,5 @@
 
-$q.when() takes a promise or any other type, if it is not a promise then it will wrap it in a promise and call resolve
+`$q.when()` takes a promise or any other type, if it is not a promise then it will wrap it in a promise and call resolve
 
 ```javascript
 //https://jsfiddle.net/jeremylikness/Q2jMG/
