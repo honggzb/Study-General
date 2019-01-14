@@ -14,7 +14,7 @@
 - [补充：JS对以对象组成的数组去重(reduce)- **推荐**](#JS对以对象组成的数组去重)
 - [forEach在js array和angular中的定义](#forEach在js-array和angular中的定义)
 
-![](https://i.imgur.com/4CpDw82.png)
+![](https://i.imgur.com/yDb3kLD.png)
 
 <h2 id="方式一">方式一: 常规模式(优化遍历数组法)(双重循环)</h2>
 
