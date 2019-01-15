@@ -275,3 +275,5 @@
 ```
 
 ## catching with Promises
+
+`alerting.errorHandler`
