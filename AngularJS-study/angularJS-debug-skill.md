@@ -1,13 +1,12 @@
 
-|console command|function|
-|---|---|
-|**scope**||
-|`$s`|scope|
-|`$is`|isolatescope|
-|`$rs`|rootscope|
-|`$($0).scope()`|the scope associated with the element|
-|`$($0).scope().foo`|the scope of property foo|
-|`$($0).scope().$parent`|parent scope, can use chain, `$($0).scope().$parent.$parent`|
+```
+**scope**
+`$s`           |scope
+`$is`          |isolatescope
+`$rs`          |rootscope|
+`$($0).scope()`|the scope associated with the element|
+`$($0).scope().foo`|the scope of property foo|
+`$($0).scope().$parent`|parent scope, can use chain, `$($0).scope().$parent.$parent`|
 |`$($0).scope().$root`|root scope|
 |`$($0).isolateScope()`|directive with isolate scope|
 |**element**||
@@ -20,7 +19,7 @@
 |**controller**||
 |`$($0).attr('ng-controller')`||
 |`$($0).closest('[ng-controller]').attr('ng-controller')`||
-
+```
 - **value change**
   
 ```javascript
