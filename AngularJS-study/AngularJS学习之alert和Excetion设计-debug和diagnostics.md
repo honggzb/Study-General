@@ -268,7 +268,7 @@
     }
 
     angular.module.config(function($httpProvider){
-        $httpProvider.interceptors.push('requestCounter");
+        $httpProvider.interceptors.push('requestCounter');
     });
 })();
 ```
