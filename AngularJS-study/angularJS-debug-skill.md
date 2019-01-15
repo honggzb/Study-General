@@ -1,6 +1,6 @@
 
 ```
-**scope**
+----------- scope -----------
 `$s`                     |scope
 `$is`                    |isolatescope
 `$rs`                    |rootscope 
@@ -9,14 +9,14 @@
 `$($0).scope().$parent`  |parent scope, can use chain, `$($0).scope().$parent.$parent`
 `$($0).scope().$root`    |root scope|
 `$($0).isolateScope()`   |directive with isolate scope
-**element**
+----------- element -----------
 `$el`                    | jQuery element
 `$events`                |  the events associated with the jQuery element
-**Services**
+----------- Services -----------
 `angular.element($0)`    |get the element(jquery)
 `$get`                   |Services/Factories/Constants
 `angular.element(document.querySelector('html')).injector().get('MyService')`
-**controller**
+-----------  controller  -----------
 `$($0).attr('ng-controller')`
 `$($0).closest('[ng-controller]').attr('ng-controller')`
 ```
