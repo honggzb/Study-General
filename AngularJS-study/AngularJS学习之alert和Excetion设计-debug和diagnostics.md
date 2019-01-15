@@ -12,9 +12,10 @@
 
 - alert
   - alert categories
-  - alert service(alerting)
+  - alert service(alerting)- 所有alert和Exception方法
   - alert directive(alerts)
-- Decorating Services(design pattern)
+- Decorating Services(design pattern)- 用于处理Exception
+  - config - 定义controller和Decorators，interceptors
   - decorating `$exceptionHandler`
   - use Decorators and interceptors for runtime diagnostics
   - wrap a service to add behavior
