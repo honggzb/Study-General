@@ -10,6 +10,14 @@
 
 ------------------------------
 
+错误或异常类型|处理方法
+---|---
+Http|`$interpolate`
+语法错误等|`$interpolate`
+Exception运行时的异常|`$exceptionHandler`
+`$q.reject()`|Promise Error
+Route Errors|`$routeChangeError`
+
 - alert
   - alert categories
   - alert service(alerting)- 所有alert和Exception方法
