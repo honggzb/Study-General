@@ -33,6 +33,8 @@ function CodingController($scope, $resource){
 }
 ```
 
+https://github.com/stiekel/angular-interceptors-demo
+
 **hot.json**
 
 ```json
