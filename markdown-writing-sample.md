@@ -119,9 +119,15 @@
 - 表情一：:+1:
 - 表情二：:o:
 - Symbols： :one:
+- 高兴: :happy: 
+- 悲伤 :sad:
+- 哭   :cry:
 
 ```
 表情一：:+1:
 表情二：:o:
 Symbols： :one:
+高兴: :happy: 
+悲伤 :sad:
+哭   :cry:
 ```
