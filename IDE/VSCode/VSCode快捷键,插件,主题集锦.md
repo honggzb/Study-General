@@ -62,19 +62,29 @@
 VSCode 前端开发常用插件列表（字母升序），旨在方便日常使用
 
 - **通用插件**
-  - [Beautify](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag): Beautify javascript, JSON, CSS, Sass, and HTML in Visual Studio Code - Auto Close Tag: 自动标签闭合, Auto Rename Tag
+  - [Beautify](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag): Beautify javascript, JSON, CSS, Sass, and HTML in Visual Studio Code 
+  - Prettier Code Formatter：利用Prettier的支持JavaScript、TypeScript和CSS的插件
+  - JS Refactor：提供许多重构JavaScript代码的实用方法和操作，例如抽取变量和方法，把现有代码转为使用箭头函数和模板字符串的等价形式，导出函数等
+  - JavaScript Booster：一款了不起的代码重构工具。拥有需要代码操作，比如把var转为const或者let，去除多余的else语句，合并声明和初始化。其灵感大量源于WebStorm的启发
+  - Auto Close Tag: 自动标签闭合, Auto Rename Tag
   - [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)：括号颜色匹配
     JavaScript (ES6) code snippets: `imd --> import { } from 'somewhere'`
   - AutoFileName: AutoFileName
-  - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)：路径智能提示
+  - [**Path Intellisense**](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)：路径智能提示, 自动补全文件名
   - [Auto Import](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)：Typescript 、TSX 自动查找、导入
+- Node插件
+  - npm：用package.json来校验安装的npm包，确保安装包的版本正确，对缺少package.json文件的包或者未安装的包给出高亮提示。
+  - Node.js Modules IntelliSense：提供JavaScript和TypeScript导入声明时的自动补全
+  - Node exec：允许你用Node执行当前文件或者选中的代码。
+  - View Node Package：利用此插件可快速查看Node包源码，让你直接在VS Code中打开Node包的代码库或文档。
+  - Search node_modules：通常node_modules文件夹不在默认的搜索范围内，这个插件允许你搜索它
+  -  - [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)：自动计算 Import 包大小
 - **HTML Boilerplate: HTML 模板**
   - [HTML Snippets](https://github.com/abusaidm/html-snippets)：HTML5 代码片段提示
   - [Javascript ES6 Snippets](http://madole.xyz/my-favourite-vscode-plugins/)：Javascript ES6 Snippets
-  - [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)：自动计算 Import 包大小
   - [Npm Intellisense](https://github.com/ChristianKohler/NpmIntellisense)：Npm Module Import 智能补全
   - [Open in Browser](https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser)：在浏览器中打开- 将添加一个 [Open With Default Browser] 选项到右键菜单
-  - change-case: 命名格式插件
+- **change-case**: 命名格式插件
     - camelCase骆驼拼命名
     - PascalCase首字母大写
     - kebab-case中划线命名
@@ -98,11 +108,20 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 - Color Info: 颜色信息及转换
 - Color-Highlight: 在编辑器中高亮显示颜色
 
-**Beauty美化相关**
+**Beauty美化+代码格式化相关**
 
 - Prettier: 格式化代码，快速格式化整个JS和CSS文档, CMD+Shift+P -> Format Document
 - Align: 代码对齐插件, Ctrl+Alt+A
-- Bracket Pair Colorizer 和 Indent Rainbow: 花括号着色和彩虹缩进
+- **Bracket Pair Colorizer** 和 **Indent Rainbow**: 花括号着色和彩虹缩进
+- Beatufy：一个jsBeautifier的插件，支持JavaScript、JSON、CSS和HTML。可通过.jsbeautifyrc文件自定义
+- Prettier Code Formatter：利用Prettier的支持JavaScript、TypeScript和CSS的插件，目前有超过150万的下载量
+- JS Refactor：提供许多重构JavaScript代码的实用方法和操作，例如抽取变量和方法，把现有代码转为使用箭头函数和模板字符串的等价形式，导出函数等
+- JavaScript Booster：一款了不起的代码重构工具。拥有需要代码操作，比如把var转为const或者let，去除多余的else语句，合并声明和初始化。其灵感大量源于WebStorm的启发
+
+作者：开源中国
+链接：https://www.jianshu.com/p/34fa629358f7
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)：VS Code Material Design 主题 icon
   
 **Git**
@@ -125,7 +144,7 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 - [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer)：VS Code 输出彩色日志
 - [Project Manager](https://github.com/alefragnani/vscode-project-manager)：项目管理
 - Regex Previewer: 正则表达式预览
-
+- Paste as JSON：快速地将JSON数据转为JavaScript代码
 
 **Vue 开发**
 
@@ -145,6 +164,13 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 - Markdown PDF：Markdown 转 PDF
 - Markdown Shortcuts: Markdown Shortcuts
 - ...
+
+**测试类插件测试**
+
+- Mocha sidebar：利用Mocha库为项目提供单元测试。这个框架帮你直接在代码里跑测试，把错误信息以装饰器形式显示出来
+- ES Mocha Snippets：提供ES6语法的Mocha代码片段。这个插件的重点在于利用箭头函数，尽可能减少花括号的使用，保持代码的紧凑。可通过设置允许使用分号
+- Jasmine Code Snippets：针对Jasmine测试框架的代码片段
+- Protractor Snippets：针对Protractor端到端测试框架的代码片段。支持JavaScript和TypeScript。Node TDD：为Node和JavaScript项目提供测试驱动开发的支持。能在源码的更新后，立即触发自动化测试的构建
 
 <hr>
 
