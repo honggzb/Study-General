@@ -47,3 +47,6 @@ $ git merge --no-ff hotfix-1.2.1
 # 4. remove the temporary branch
 $ git branch -d hotfix-1.2.1
 ```
+
+- ![](https://i.imgur.com/Sn35QVh.png)
+- [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
