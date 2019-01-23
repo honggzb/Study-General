@@ -129,3 +129,11 @@ APP.filter('ConvertCurrencyFilter', ["$filter", function () {
   }
 }
 ```
+
+```html
+<span style="position: absolute;top:22px;font-size: 0.8rem">
+    {{sumMoneyNum|ConvertCurrencyFilter}}
+</span>
+```
+
+https://blog.csdn.net/m0_37479946/article/details/65444604
