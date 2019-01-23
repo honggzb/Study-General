@@ -13,9 +13,9 @@
 │   │    │    ├── ng-repeat in AngularJS.md
 │   │    │    ├── 自定义一个表格.js
 │   │    │    └── 
-│   │    └── filter /
-│   │         ├── currency-differentDollerSymbol.md
-│   │         └── currency-大写中文数字.md
+│   │    ├── filter /
+│   │    │    ├── currency-differentDollerSymbol.md
+│   │    │    └── currency-大写中文数字.md
 │   │    └── service /
 │   │         ├── AngularJs中$http再次封装.md
 │   │         └──http-error处理.md
