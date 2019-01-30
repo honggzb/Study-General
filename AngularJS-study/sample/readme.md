@@ -12,11 +12,11 @@
 │   │    │    ├── ng-class in AngularJS.md
 │   │    │    ├── ng-repeat in AngularJS.md
 │   │    │    ├── 自定义一个表格.js
-│   │    │    └── 
+│   │    │    └── 数字输入框控制.md      使用autoNumeric.js
 │   │    ├── filter /
-│   │    │    ├── currency-differentDollerSymbol.md
+│   │    │    ├── currency-differentDollerSymbol.md   多国货币
 │   │    │    └── currency-大写中文数字.md
 │   │    └── service /
 │   │         ├── AngularJs中$http再次封装.md
-│   │         └──http-error处理.md
+│   │         └── http-error处理.md
 ```
