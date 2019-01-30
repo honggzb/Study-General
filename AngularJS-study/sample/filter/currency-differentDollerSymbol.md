@@ -50,3 +50,5 @@ app.filter('money', [ '$filter', '$locale', function (filter, locale) {
     };
 }]);
 ```
+
+[World Currency Symbols](https://www.xe.com/symbols.php)
