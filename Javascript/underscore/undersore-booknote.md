@@ -32,7 +32,11 @@ Underscore一个JavaScript实用库，提供了一整套函数式编程的实用
 |size||返回集合的成员数量|`_.sample([1, 2, 3, 4, 5, 6]); // 2`<br>`_.size({one : 1, two : 2, three : 3}); //[6, 1, 4]`|
 |max/min|空集合会返回-Infinity和Infinity，所以要先判断集合不为空<br>如果集合是Object，max()和min()只作用于value，忽略掉key|返回集合中最大和最小的数|`_.max([3, 5, 7, 9])`|
 |first/last|||`_.first([2, 4, 6, 8]); // 2`|
-|数组过滤|用于过滤数组，找到符合要求的成员|||
+
+**数组过滤: 用于过滤数组，找到符合要求的成员**
+
+|方法|说明|是否有返回值|样例|
+|---|---|---|---|
 |filter|依次对集合的每个成员进行某种操作|只返回操作结果为true的成员|`_.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }); //[2,4,6]`|
 |reject|依次对集合的每个成员进行某种操作|只返回操作结果为false的成员|`_.reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }); //[1,3,5]`|
 |find|依次对集合的每个成员进行某种操作|返回第一个操作结果为true的成员。如果所有成员的操作结果都为false，则返回undefined|`_.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }); //2`|
