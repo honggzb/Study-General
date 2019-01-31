@@ -11,6 +11,7 @@
 - [Generating Translation Tables with Automatic Translation](#generating-translation-tables-with-automatic-translation)
   - [my Project setup in grunt](#my-project-setup-in-grunt)
   - [with gulp](#with-gulp)
+- [other issue](#other-issue)
 
 ## Conceptual Overview
 
@@ -424,6 +425,112 @@ function translate(to) {
 gulp.task('translate:tr', () => translate('tr'));
 gulp.task('translate', ['translate:tr']);
 ```
+
+[back to top](#top)
+
+## other issue
+
+```javascript
+//注入, 使用config方式来定义国际化
+angular.module('login', ["ui.bootstrap","ui.router","pascalprecht.translate","ngCookies","toastr"])
+       .config(['$translateProvider', function($translateProvider){
+        //international json file path in nginx
+        $translateProvider.useStaticFilesLoader({
+            prefix: '/static/data/',
+            suffix: '.json'
+        });
+        // let lang;
+        // if (window.localStorage.lang === undefined || window.localStorage.lang === 'undefined') {
+        //     lang = 'en_US';
+        // } else {
+        //     lang = window.localStorage.lang;
+        // }
+        getLang();
+        $translateProvider.preferredLanguage(lang);
+        $translateProvider.useCookieStorage();
+}])；
+//加载主页面的时候，在controller中初始化调用
+getLang();
+function getLang (){
+    if($cookieStore.get("lang") == null||$cookieStore.get("lang") == "en"){
+				$translate.use("en_US");
+            }else if($cookieStore.get("lang") == "zh"){
+				$translate.use("zh_CH");
+            }else if($cookieStore.get("lang") == "de"){
+				$translate.use("de_DE");
+            }else{
+				//other language
+			}
+}
+$cookieStore.put("lang", "it");  //其保存到cookie中，以便在其他的APP中使用
+//国际化文件使用
+angular.module('login')
+       .run(['$rootScope','$location','wizardService',function($rootScope,$location,wizardService) {
+            // lock screen initialization
+       }])
+      .controller("loginCtrl", ['$translate', '$http', '$scope', '$interval', '$modal', 'toastr', 'wizardService','$cookieStore','$timeout',
+            function($translate, $http, $scope, $interval, $modal, toastr, wizardService,$cookieStore,$timeout) {
+       }]);
+```
+
+**国际化文件使用 in controller**
+
+```html
+<a href="#" ng-click="setLang(0)">English</a>
+<a href="#" ng-click="setLang(1)">中文</a>
+<script>
+$scope.setLang = function(langKeyNum) {
+    var langKey = "en_US";
+    switch (langKeyNum) {
+                case 0:
+                    langKey = "en_US";
+                    $cookieStore.put("lang", "en");
+                    break;
+                case 1:
+                    langKey = "zh_CH";
+                    $cookieStore.put("lang", "zh");
+                    break;
+                case 2:
+                    langKey = "de_DE";
+                    $cookieStore.put("lang", "de");
+                    break;
+                case 3:
+                    langKey = "fr_FR";
+                    $cookieStore.put("lang", "fr");
+                    break;
+                case 4:
+                    langKey = "es_ES";
+                    $cookieStore.put("lang", "es");
+                    break;
+                case 5:
+                    langKey = "tr_TR";
+                    $cookieStore.put("lang", "tr");
+                    break;
+                case 6:
+                    langKey = "kr_KR";
+                    $cookieStore.put("lang", "kr");
+                    break;
+                case 7:
+                    langKey = "it_IT";
+                    $cookieStore.put("lang", "it");
+                    break;
+                case 8:
+                    $interval.cancel($scope.langInterval);
+                    langKey = "en_US";
+                    break;
+    }
+    $translate.use(langKey);    //在其他的APP中使用
+};
+</script>
+```
+
+## Angularjs -angular-translate.js闪烁问题
+
+- 在Head 标签里面用`<script>`标签 加载语言文件包
+- 把语言包文件的文件类型由json改为js文件。里面的内容改为如下
+
+- https://blog.csdn.net/chenqk_123/article/details/77878130
+- [Angularjs -angular-translate.js 闪烁问题](https://blog.csdn.net/junli110/article/details/72901671)
 
 [back to top](#top)
 
