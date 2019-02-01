@@ -7,7 +7,7 @@
   - [绑定运行环境和参数](#%E7%BB%91%E5%AE%9A%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E5%8F%82%E6%95%B0)
   - [函数运行控制](#%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%8E%A7%E5%88%B6)
 - [工具方法](#%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95)
-- [useful method](#useful method)
+- [useful method](#useful-method)
 
 Underscore一个JavaScript实用库，提供了一整套函数式编程的实用功能，但是没有扩展任何JavaScript内置对象. 它提供了几十种函数式编程的方法，弥补了标准库的不足，大大方便了javaScript的编程。
 
