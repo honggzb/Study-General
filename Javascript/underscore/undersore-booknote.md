@@ -7,6 +7,7 @@
   - [绑定运行环境和参数](#%E7%BB%91%E5%AE%9A%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%92%8C%E5%8F%82%E6%95%B0)
   - [函数运行控制](#%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%8E%A7%E5%88%B6)
 - [工具方法](#%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95)
+- [useful method](#useful method)
 
 Underscore一个JavaScript实用库，提供了一整套函数式编程的实用功能，但是没有扩展任何JavaScript内置对象. 它提供了几十种函数式编程的方法，弥补了标准库的不足，大大方便了javaScript的编程。
 
@@ -35,8 +36,7 @@ Underscore一个JavaScript实用库，提供了一整套函数式编程的实用
 
 **数组过滤: 用于过滤数组，找到符合要求的成员**
 
-|方法|说明|是否有返回值|样例|
-|---|---|---|---|
+
 |filter|依次对集合的每个成员进行某种操作|只返回操作结果为true的成员|`_.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }); //[2,4,6]`|
 |reject|依次对集合的每个成员进行某种操作|只返回操作结果为false的成员|`_.reject([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }); //[1,3,5]`|
 |find|依次对集合的每个成员进行某种操作|返回第一个操作结果为true的成员。如果所有成员的操作结果都为false，则返回undefined|`_.find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; }); //2`|
@@ -242,6 +242,17 @@ t1({ user: "<Jane>" })   // 'Hello <Jane>!'
 // 因为template在变量替换时，内部使用with语句，所以上面这样的做法，运行速度会比较快
 _.template("<%if (data.title) { %>Title: <%= title %><% } %>", null, { variable: "data" });
 ```
+
+[back to top](#top)
+
+## useful method
+
+方法|样例
+---|---
+`_.extend(destination, *sources)` | `_.extend({name: 'moe'}, {age: 50});` <br>=> `{name: 'moe', age: 50}`
+`_.pick(object, *keys)`|`_.pick({name: 'moe', age: 50, userid: 'moe1'}, 'name', 'age');` <br>=> `{name: 'moe', age: 50}`
+`_.omit(object, *keys)`|`_.omit({name: 'moe', age: 50, userid: 'moe1'}, 'userid');` <br>=> `{name: 'moe', age: 50}`
+`_.defaults(object, *defaults)`|`var iceCream = {flavor: "chocolate"};` <br>`_.defaults(iceCream, {flavor: "vanilla", sprinkles: "lots"});` <br>=> `{flavor: "chocolate", sprinkles: "lots"}`
 
 [back to top](#top)
 
