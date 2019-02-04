@@ -1,7 +1,5 @@
 [Controllers and Directive](#top)
 
-- [前提条件](#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6)
-- [配置](#%E9%85%8D%E7%BD%AE)
 - [test method in controller](#test-method-in-controller)
 - [directive](#directive)
   - [test template part](#test-template-part)
