@@ -6,6 +6,7 @@
     - [Simple HTML Element Directive](#simple-html-element-directive)
     - [Testing Transclusion Directives](#testing-transclusion-directives)
     - [Testing Directives that use templateUrl](#testing-directives-that-use-templateurl)
+  - [directive behavior(such as click) test](#directive-behaviorsuch-as-click-test)
   - [directive with a controllerAs - only test method in controller](#directive-with-a-controlleras---only-test-method-in-controller)
 
 ## test method in controller
@@ -139,6 +140,66 @@ files: [
 
 [back to top](#top)
 
+### directive behavior(such as click) test
+
+1. config karma
+
+- AngularJS' internal jqLite implementation is very light, so light it doesn't include functions like .click(). For tests, it helps to have the convenient jQuery .click() syntax
+- need karma-mocha, karma-chai, and karma-chrome-launcher
+
+```javascript
+module.exports = function(config) {
+  config.set({
+    files: [
+      'http://code.jquery.com/jquery-1.11.3.js',
+      'https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js',
+      './directive.js',
+      './test.js'
+    ],
+    frameworks: ['mocha', 'chai'],
+    browsers: ['Chrome']
+  });
+};
+```
+
+2. test click
+
+```javascript
+var app = angular.module('myApp', ['ng']);
+app.directive('counterDirective', function() {
+  return {
+    controller: 'MyController',
+    template: '<div  ng-controller="MyController"' +
+              '      ng-click="counter = counter + 1">' +
+              'You\'ve clicked this div {{counter}} times' +
+              '</div>'
+  }
+});
+app.controller('MyController', function($scope) {
+  $scope.counter = 0;
+});
+//test case
+describe('counterDirective', function() {
+  var injector;
+  var element;
+  var scope;
+  beforeEach(function() {
+    // Create a new dependency injector using the 'myApp' module
+    injector = angular.injector(['myApp']);
+    injector.invoke(function($rootScope, $compile) {
+      scope = $rootScope.$new();   // Get a new scope
+      element = $compile('<counter-directive></counter-directive>')(scope);   // Compile some HTML that uses the directive
+      scope.$apply();
+    });
+  });
+  it('increments counter when you click', function() {
+    assert.equal(element.text(), 'You\'ve clicked this div 0 times');
+    element.find('div').click();
+    assert.equal(element.text(), 'You\'ve clicked this div 1 times');
+  });
+});
+```
+
 ### directive with a controllerAs - only test method in controller
 
 ```javascript
@@ -184,3 +245,4 @@ describe('CustomerDirective', function(){
 - https://docs.angularjs.org/guide/unit-testing
 - [Testing With AngularJS Part 2: Other Useful Karma Plugin](https://www.credera.com/blog/custom-application-development/testing-angularjs-part-2-useful-karma-plugins/)
 - [Comprehensive Guide To Unit Testing In AngularJS](http://www.syntaxsuccess.com/viewarticle/comprehensive-guide-to-unit-testing-in-angularjs)
+- [Testing AngularJS Directives](https://thecodebarbarian.com/2015/06/12/testing-angularjs-directives)
