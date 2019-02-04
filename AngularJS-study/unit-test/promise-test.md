@@ -27,3 +27,5 @@ describe("Deep Thought", function() {
 
 });
 ```
+
+https://docs.angularjs.org/guide/unit-testing#testing-directives
