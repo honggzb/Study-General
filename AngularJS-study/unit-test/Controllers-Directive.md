@@ -182,5 +182,5 @@ describe('CustomerDirective', function(){
 [back to top](#top)
 
 - https://docs.angularjs.org/guide/unit-testing
-- Testing With AngularJS Part 2: Other Useful Karma Plugin
+- [Testing With AngularJS Part 2: Other Useful Karma Plugin](https://www.credera.com/blog/custom-application-development/testing-angularjs-part-2-useful-karma-plugins/)
 - [Comprehensive Guide To Unit Testing In AngularJS](http://www.syntaxsuccess.com/viewarticle/comprehensive-guide-to-unit-testing-in-angularjs)
