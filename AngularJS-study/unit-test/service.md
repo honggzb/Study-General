@@ -3,6 +3,7 @@
 - [Simple Service](#simple-service)
 - [Simple service with dependency on another simple service](#simple-service-with-dependency-on-another-simple-service)
 - [Service with dependency on asynchronous service](#service-with-dependency-on-asynchronous-service)
+- [Mocking entire services](#mocking-entire-services)
 
 ## Simple Service
 
@@ -120,8 +121,17 @@ describe('getFormattedCustomerInfo-async', function(){
         });
         $scope.$digest();
     });
-    //Mocking entire services
-    describe('show how to use $provide', function(){
+```
+
+[back to top](#top)
+
+## Mocking entire services
+
+- spy method is to mock piecemeal by spying on individual methods
+- to mock entire service, we just use $provide method
+
+```javascript
+describe('show how to use $provide', function(){
         var customerFormattingService;
         var customerServiceMock = {
             getCustomerById:function(){return {firstName:'Joe',lastName:'Smith',totalSales:50}},
@@ -141,7 +151,8 @@ describe('getFormattedCustomerInfo-async', function(){
             expect(formatted).toBe('Joe Smith Total Sales: $50');
         });
     });
-});
 ```
 
 [back to top](#top)
+
+http://www.syntaxsuccess.com/viewarticle/comprehensive-guide-to-unit-testing-in-angularjs
