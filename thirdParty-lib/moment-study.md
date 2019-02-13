@@ -9,24 +9,7 @@
 
 ## 日期格式表
 
-Input| Output
----|---
-M or MM|Month Number (1 - 12)
-MMM or MMMM|Month Name (In currently language set by `moment.lang()`)
-D or DD|Day of month
-DDD or DDDD|Day of year
-d, dd, ddd, or dddd|Day of week <br>NOTE: these tokens are not used to create the date, <br>as there are 4-5 weeks in a month, <br>and it would be impossible to get the date based off the day of the week)
-YY|2 digit year (if greater than 70, will return 1900's, else 2000's)
-YYYY|4 digit year
-a or A|AM/PM
-H, HH|24 hour time
-h, or hh|12 hour time (use in conjunction with a or A)
-m or mm|Minutes
-s or ss|Seconds
-S|Deciseconds (1/10th of a second)
-SS|Centiseconds (1/100th of a second)
-SSS|Milliseconds (1/1000th of a second)
-Z or ZZ|Timezone offset as `+0700` or `+07:30` Available in version *1.2.0*
+https://momentjs.com/docs/#/displaying/
 
 ## 创建时间对象
 
