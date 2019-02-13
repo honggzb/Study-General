@@ -5,6 +5,8 @@
 - [修改时间对象](#%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%E5%AF%B9%E8%B1%A1)
 - [格式化输出](#%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA)
 - [比较](#%E6%AF%94%E8%BE%83)
+- [获取/设置时间信息](#%E8%8E%B7%E5%8F%96%E8%AE%BE%E7%BD%AE%E6%97%B6%E9%97%B4%E4%BF%A1%E6%81%AF)
+- [查询](#%E6%9F%A5%E8%AF%A2)
 - [汉化](#%E6%B1%89%E5%8C%96)
 
 ## 日期格式表
@@ -108,6 +110,48 @@ a.to(b) // "in a day"
 
 [See more discussion on the month and year diffs here](https://github.com/moment/moment/pull/571)
 
+## 获取/设置时间信息
+
+```javascript
+moment().second() //获得 秒
+moment().second(Number) //设置 秒。0 到 59
+moment().minute() //获得 分
+moment().minute(Number) //设置 分。0 到 59
+// 类似的用法
+moment().hour() // 小时
+moment().date() // 一个月里的第几天
+moment().day() // 星期几
+moment().dayOfYear() // 一年里的第几天
+moment().week() // 一年里的第几周
+moment().month() // 第几个月
+moment().quarter() // 一年里的第几个季度
+moment().year() // 年
+moment().daysInMonth() // 当前月有多少天
+```
+
+## 查询
+
+```javascript
+// 早于
+moment('2010-10-20').isBefore('2010-10-21') // true
+moment('2010-10-20').isBefore('2010-12-31', 'year') // false
+moment('2010-10-20').isBefore('2011-01-01', 'year') // true
+// 是否相等
+moment('2010-10-20').isSame('2010-10-20') // true
+moment('2010-10-20').isSame('2009-12-31', 'year')  // false
+moment('2010-10-20').isSame('2010-01-01', 'year')  // true
+// 晚于
+moment('2010-10-20').isAfter('2010-10-19') // true
+moment('2010-10-20').isAfter('2010-01-01', 'year') // false
+moment('2010-10-20').isAfter('2009-12-31', 'year') // true
+// 是否在时间范围内
+moment('2010-10-20').isBetween('2010-10-19', '2010-10-25') // true
+moment('2010-10-20').isBetween('2010-01-01', '2012-01-01', 'year') // false
+moment('2010-10-20').isBetween('2009-12-31', '2012-01-01', 'year') // true
+
+moment().isLeapYear() // 是否是闰年
+````
+
 ## 汉化
 
 ```javascript
@@ -170,3 +214,4 @@ jamoment.lang('zh-cn', {
 > reference
 - [官方文档](http://momentjs.com/docs)
 - [moment.js 日期包装类 （说明示例）](https://www.cnblogs.com/geniusxjq/p/4287158.html)
+- [使用moment.js轻松管理日期和时间](https://blog.csdn.net/wulex/article/details/80402036)
