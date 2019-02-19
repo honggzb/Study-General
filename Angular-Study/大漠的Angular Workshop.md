@@ -1,13 +1,5 @@
 [大漠的Angular Workshop](#top)
 
-- [Angular核心概念](#angular%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5)
-- [UI libraries](#ui-libraries)
-- [Sample](#sample)
-- [tips](#tips)
-    - [去除app前缀](#%E5%8E%BB%E9%99%A4app%E5%89%8D%E7%BC%80)
-    - [angular-cli command](#angular-cli-command)
-    - [shell command](#shell-command)
-
 ## Angular核心概念
 
 **依赖注入**
@@ -462,6 +454,7 @@ let disposable = stream1$.subscribe(value => console.log(value));
 
 - https://buctwbzs.gitbooks.io/rxjs/content/
 - http://reactivex.io/
+- [Observable operator处理过程可视化](https://github.com/moroshko/rxviz)
 - [Introduction to RxJS Observables and Angular](https://coryrylan.com/blog/introduction-to-rxjs-observables-and-angular)
 - [RxJS operator animation](https://github.com/moroshko/rxviz)
 
@@ -471,8 +464,17 @@ let disposable = stream1$.subscribe(value => console.log(value));
 - [Angular+PWA开发跨平台的应用从未如此简单](http://www.ngfans.net/topic/211/post)
   - service-worker.js
   - manifest
+- [让@angular/cli项目支持Hot Module Replacement（HMR）](http://www.ngfans.net/topic/218/post)
 
-第18小节：整体答疑环节
+## 变更检测
+
+### 状态
+
+- 获取程序的内部状态
+- 状态可以是： objects, arrays, primitives
+- value types: string, number..
+- reference types
+
 
 > References
 - https://gitbook.cn/gitchat/column/59dae2081e6d652a5a9c3603
@@ -500,3 +502,6 @@ ng build --prod --source-map
 rmdir foldername /Q /S
 ```
 
+- https://github.com/gdi2290/awesome-angular
+- https://github.com/brillout/awesome-angular-components
+- 
