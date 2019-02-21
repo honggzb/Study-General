@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.table_wrap{
+			width:600px;
+			margin: 0 auto;
+		}
+		table,tr,td,th{
+			border-bottom:1px solid #333;
+			border-collapse:collapse;
+		}
+		th{
+			cursor: pointer;
+		}
+		th,td{
+			width:20%;
+			line-height: 150%;
+		}
+		tr:nth-child(2n){
+			background-color: #eee;
+		}
+		.form_box{
+			background-color:skyblue;
+			padding: 10px;
+			width:400px;
+			margin-top: 10px;
+		}
+	</style>
+	<script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+</head>
+<body ng-controller="MainCtrl as mainctrl">
+	<div class="table_wrap">
+		<table width="600">
+			<tr>
+				<th ng-click="mainctrl.changeSort('sid')">
+					学号
+					<span ng-show="mainctrl.sortBy == 'sid'">{{ mainctrl.asc ? "↓" : "↑" }}</span>
+				</th>
+				<th ng-click="mainctrl.changeSort('name')">
+					姓名
+					<span ng-show="mainctrl.sortBy == 'name'">{{ mainctrl.asc ? "↓" : "↑" }}</span>
+				</th>
+				<th ng-click="mainctrl.changeSort('yuwen')">
+					语文成绩
+					<span ng-show="mainctrl.sortBy == 'yuwen'">{{ mainctrl.asc ? "↓" : "↑" }}</span>
+				</th>
+				<th ng-click="mainctrl.changeSort('shuxue')">
+					数学成绩
+					<span ng-show="mainctrl.sortBy == 'shuxue'">{{ mainctrl.asc ? "↓" : "↑" }}</span>
+				</th>
+				<th ng-click="mainctrl.changeSort('yingyu')">
+					英语成绩
+					<span ng-show="mainctrl.sortBy == 'yingyu'">{{ mainctrl.asc ? "↓" : "↑" }}</span>
+				</th>
+				<th>删除</th>
+			</tr>
+			<tr ng-repeat="item in mainctrl.data">
+				<td>{{ item.sid }}</td>
+				<td>{{ item.name }}</td>
+				<td>{{ item.yuwen }}</td>
+				<td>{{ item.shuxue }}</td>
+				<td>{{ item.yingyu }}</td>
+				<td>
+					<input type="button" value="删除" ng-click="mainctrl.remove(item.sid)">
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="form_box">
+		<p>结果：{{ mainctrl.formobj }}</p>
+		<p>
+			学号：
+			<input type="text" ng-model="mainctrl.formobj.sid"></p>
+		<p>
+			姓名：
+			<input type="text" ng-model="mainctrl.formobj.name"></p>
+		<p>
+			语文：
+			<input type="text" ng-model="mainctrl.formobj.yuwen"></p>
+		<p>
+			数学：
+			<input type="text" ng-model="mainctrl.formobj.shuxue"></p>
+		<p>
+			英语：
+			<input type="text" ng-model="mainctrl.formobj.yingyu"></p>
+		<p>
+			<input type="button" value="插入" ng-click="mainctrl.add()"></p>
+	</div>
+
+	<script type="text/javascript">
+		var myapp = angular.module("myapp",[]);
+
+		// 定义控制器
+		myapp.controller("MainCtrl",[function(){
+			//定义数据，是数组形式。
+			this.data = [
+				{"sid" : 100001 , "name" : "小明" , "yuwen" : 99 , "shuxue" : 44 , "yingyu" : 55},
+				{"sid" : 100002 , "name" : "小红" , "yuwen" : 33 , "shuxue" : 44 , "yingyu" : 99},
+				{"sid" : 100003 , "name" : "小亮" , "yuwen" : 55 , "shuxue" : 66 , "yingyu" : 44},
+				{"sid" : 100004 , "name" : "小篮" , "yuwen" : 66 , "shuxue" : 66 , "yingyu" : 33}
+			];
+
+			var self = this;
+
+			//定义表单对象，供双向数据绑定用的
+			this.formobj = {};
+
+
+			//插入数据
+			this.add = function(){
+				//没有操作DOM，只要数组发生了变化，表格就会发生变化！
+				self.data.push(self.formobj);
+				self.formobj = {};
+			}
+
+			//删除数据
+			this.remove = function(sid){
+				//寻找sid是sid的项目，然后删除，删除使用splice
+				for(var i = 0 ; i < self.data.length ; i++){
+					if(self.data[i].sid == sid){
+						self.data.splice(i,1);
+					}
+				}
+			}
+
+			//按谁排序
+			this.sortBy = "sid";
+			//升序还是降序,true升序，false降序
+			this.asc = true;
+
+
+			//排序方法
+			this.changeSort = function(keyname){
+				//第一步，改变箭头显示
+				//如果你传入的keyname和当前排序key是一样的，此时仅仅改变排序方向
+				if(keyname == this.sortBy){
+					this.asc = !this.asc;
+				}else{
+					//否则改变排序的key
+					this.sortBy = keyname;
+					this.asc = true;
+				}
+
+				//第二步，执行排序
+				//排序就是改变data的顺序
+				self.data.sort(function(a,b){
+					if(a[self.sortBy] > b[self.sortBy]){
+						return self.asc ? 1 : -1;
+					}else{
+						return self.asc ? -1 : 1;
+					}
+				});
+			}
+		}]);
+	</script></body>
+</html>

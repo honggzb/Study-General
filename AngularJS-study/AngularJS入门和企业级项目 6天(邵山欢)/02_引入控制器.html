@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular学习</title>
+	<script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="MainCtrl as mainctrl">
+		<h1>{{ mainctrl.a }}</h1>
+		<h1>{{ mainctrl.a }}</h1>
+		<input type="button" value="按我" ng-click="mainctrl.add()"/>
+	</div>
+
+	<script type="text/javascript">
+		//创建一个angular的module（模块），数组中表示模块的依赖。本案例是空，以后学习了ui-router等等插件，将会写一些内容。
+		var myapp = angular.module("myapp",[]);
+
+		//创建控制器，使用的语法是装饰者模式。所谓的装饰者模式指的是对象打点调用函数，结果导致对象自己被丰富。我们给控制器起一个名字，叫做MainCtrl，你会发现名字大写了，没错！这里我们创建的是一个控制器的类。数组表示依赖注入，后面有用，这里只写一个函数就行。
+		myapp.controller("MainCtrl",[function(){
+			//给实例增加一个a属性，值是100
+			this.a = 100;
+			
+			//备份
+			var self = this;
+			//定义一个方法，Angular给世界一个惊喜，提出了MVVM模式，这就是MVVM模式的例子。我们只需要改变数据，视图会自动变化，并不需要发出类似$("h1").html(a)这样的命令。
+			this.add = function(){
+				self.a ++;
+			}
+		}]);
+	</script>
+</body>
+</html>

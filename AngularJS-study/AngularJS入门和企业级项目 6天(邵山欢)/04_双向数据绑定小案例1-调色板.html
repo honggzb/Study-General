@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular学习</title>
+	<style type="text/css">
+		.box{
+			width:200px;
+			height:200px;
+			border:1px solid #333;
+		}
+	</style>
+	<script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+</head>
+<body ng-controller="MainCtrl as mainctrl">
+	<div class="box" ng-style="mainctrl.getColor()"></div>
+	<p>
+		r:
+		<input type="range" min="0" max="255" ng-model="mainctrl.r">
+		<input type="number" min="0" max="255" ng-model="mainctrl.r">
+	</p>
+	<p>
+		g:
+		<input type="range" min="0" max="255" ng-model="mainctrl.g">
+		<input type="number" min="0" max="255" ng-model="mainctrl.g">
+	</p>
+	<p>
+		b:
+		<input type="range" min="0" max="255" ng-model="mainctrl.b">
+		<input type="number" min="0" max="255" ng-model="mainctrl.b">
+	</p>
+	<p>
+		a:
+		<input type="range"  min="0" max="1" step="0.01" ng-model="mainctrl.a">
+		<input type="number" min="0" max="1" step="0.01" ng-model="mainctrl.a">
+	</p>
+
+	<script type="text/javascript">
+		var myapp = angular.module("myapp",[]);
+
+		myapp.controller("MainCtrl",[function(){
+			this.r = 100;
+			this.g = 200;
+			this.b = 123;
+			this.a = 0.38;
+			this.getColor = function(){
+				return {"background-color" : "rgba(" + this.r + "," + this.g + "," + this.b + "," + this.a + ")"};
+			}
+		}]);
+	</script>
+</body>
+</html>
