@@ -1,0 +1,366 @@
+[Angular CLI- in pluralsight by John Papa](#top)
+
+- [ng generate](#ng-generate)
+- [Angular CLI configuration](#angular-cli-configuration)
+- [Linting -checking and fixing code](#linting--checking-and-fixing-code)
+- [Generating code from blueprints](#generating-code-from-blueprints)
+- [Generating Routing Features](#generating-routing-features)
+  - [generate a sub-module with routing](#generate-a-sub-module-with-routing)
+  - [generating a guard](#generating-a-guard)
+- [Building and Serving](#building-and-serving)
+  - [development build](#development-build)
+  - [Production build](#production-build)
+  - [Serving](#serving)
+- [Adding new Capabilities - new feature in version 6+](#adding-new-capabilities---new-feature-in-version-6)
+  - [adding angular material](#adding-angular-material)
+  - [adding scripts, styles and assets](#adding-scripts-styles-and-assets)
+- [Tests with Angular CLI](#tests-with-angular-cli)
+  - [Unit Tests](#unit-tests)
+  - [End to End test- testing user interaction](#end-to-end-test--testing-user-interaction)
+- [Tooling Features](#tooling-features)
+  - [Updating Angular](#updating-angular)
+  - [Workspace with multiple project](#workspace-with-multiple-project)
+  - [Generating angular library](#generating-angular-library)
+  - [Sample: Generating a Logger library and adding to angular](#sample-generating-a-logger-library-and-adding-to-angular)
+  - [Angular Console](#angular-console)
+
+```shell
+node -v  # 8.x or higher
+npm -v   # 5.x or higher
+npm install -g @angular/cli
+ng --version
+ng new my-first-project
+ng new ngtest --skip-install # generate but skip npm install
+ng new ngtest --prefix=qh 
+cd my-first-project
+ng serve
+ng serve -o  # ng serve –open后，ng会找到.angular-cli.json文件中的main所指的main.ts文件，而main.ts文件加载了根模块
+ng build my-app -c production
+```
+
+## ng generate
+
+- **Sample**: `ng new myApp -dstS --routing --style scss --prefix qh`
+- some flags change the configuration in angular.json
+
+OPTION| short|DESCRIPTION
+---|---|---
+`ng new --help`|| 
+`ng new myApp --defaults`||When true, disables interactive input prompts for options with a default
+`ng new myApp --dryRun`	|`ng new myApp -d`|Don't write the files, but report them, good for checking before generate
+`ng new ngtest --skip-install`||generate without runnign npm install
+`ng new ngtest --inline-style`|`ng new ngtest -s`|includes style inline in the component TS file
+`ng new ngtest --inline-template`|`ng new ngtest -t`|includes template inline in the component TS file
+`ng new ngtest --routing`||generate routing module, app-routing.module.ts
+`ng new ngtest --style scss`||
+`ng new ngtest --prefix qh`|`ng new ngtest -p qh`| change `selector: 'app-root',` `app` to user-defined prefix 
+`ng new ngtest --skip-tests`|`ng new ngtest -S`|
+`ng new ngtest --skip-git`|`ng new ngtest -g`| don't add the project to git
+
+[back to top](#top)
+
+## Angular CLI configuration
+
+- ng new some-flag
+- manually edit angular.json
+- `ng config`, `ng config --global  # -g`
+  - `ng config schematics:@schematics/angular:component.style scss`
+
+[back to top](#top)
+
+## Linting -checking and fixing code
+
+```shell
+ng lint my-app --help
+ng lint my-app --format stylish  # lint and format the output
+ng lint my-app --fix             # lint and attempt to fix all problems
+```
+
+[back to top](#top)
+
+## Generating code from blueprints
+
+`ng generate <blueprint> <options>`
+
+options|Alias| Description
+---|---|---
+--flat||should a folder be created
+--inline-template|-t|will the template be in the .ts file
+--inline-style|-s|will style in the .ts file
+--spec||generate a spec?
+--view-encapsulation|-v|view encapsulation strategy
+--change-detection|-c|change detection strategy
+--dry-run|-d|
+
+**Sample**: 
+
+- `ng g c pet -st --flat --prefix my`
+- `ng g c orders -v Emulated -c Onpush -d`
+- `ng g d search --flat false` - create directive in seperate folder
+- `ng g cl models/customer`   - create class in folder models
+- `ng g e models/person`      - create enum in folder models
+- `ng g i myInterface`        - create interface
+- `ng g p models/person -m app.module`   -create pipe and add to app.module.ts
+- `ng g m login --spec false -m app.module`   -create module and add to app.module.ts
+ 
+[back to top](#top)
+
+## Generating Routing Features
+
+### generate a sub-module with routing
+
+```javascript
+ng g m admin --routing -m app.module    
+//create sub-module(admin.module.ts) with routing(admin-routing.module.ts) and add it to app.module.ts
+ng g c admin      //create new component adminComponent
+ng g c admin/email-blast   //create new child component-emailBlastComponent
+ng g c admin/users         //create new child component-usersComponent
+// write children routing
+const routes: Routes = [
+  {
+    path: 'admin', 
+    component: AdminComponent,
+    children: [
+      { path: '', component: UsersComponent },
+      { path: 'blast', component: EmailBlastComponent }
+    ]
+  }
+];
+```
+
+### generating a guard
+
+- `ng g guard auth` - create auth.guard.ts
+- Routes with CanActivate/CanActivateChild Guards
+- [Protecting Angular v2+ Routes with CanActivate/CanActivateChild Guards](https://scotch.io/tutorials/protecting-angular-v2-routes-with-canactivatecanactivatechild-guards)
+
+[back to top](#top)
+
+## Building and Serving
+
+- compile to an output directory
+- build targets determine the output
+- all builds use bundling
+- Prod builds add uglification and tree-shaking
+- `ng build --help`
+
+**ng build Options**
+
+|Options| Alias | Description|
+|---|---|---|
+|--source-map||Generate a source map|
+|--aot| |Ahead of Time compilation|
+|--watch|-w|Watch and rebuild|
+|--prod|-e|Shortcut for prod env and target|
+
+### development build
+
+**dist里面文件**
+
+```
+  File          |  Description
+runtime.js      | Webpack runtime
+main.js         | App code
+polyfills.js    | Platform polyfills(浏览器的Pollyfills)
+styles.js       | Styles
+vendor.js       | Angular and other vendor files(第三方库)
+```
+
+**Exploring the source in the output**- 分析依赖, 并且查看哪些模块和类在bundle里面
+
+```shell
+# tool 1
+npm install webpack-bundle-analyzer --save-dev
+ng build -stats-json
+npx webpack-bundle=analyzer dist/my-app/stats.json  
+# put it to package.json
+"stats": "npx webpack-bundle=analyzer dist/stats.json"
+npm run stats
+# tool 2
+npm install source-map-explorer --save-dev
+ng build
+npx source-map-explorer disg/my-app/main.js
+```
+
+### Production build
+
+|   | ng build  | ng build --prod |
+|---|---|---|
+|Environment |environment.ts|environment.prod.ts |
+|Cache-busting|only images referenced in css只缓存css里引用的图片|all build files|
+|Source maps|generated|not generated|
+|Extracted CSS|global CSS output to .js|yes, to css files|
+|Uglification|no|yes|
+|Tree-shaking|no不去掉无用代码|yes去掉无用代码|
+|AOT|no|yes|
+|Bundling|yes|yes|
+|--build-optimizer|否|是(和AOT以及Angular5)|
+|--named-chunks|是|否|
+|--output-hashing|media|所有|
+
+### Serving
+
+- `ng serve --help`
+- `ng serve -o`  ng会找到.angular-cli.json文件中的main所指的main.ts文件，而main.ts文件加载了根模块
+- `ng serve --proxy-config proxy.config.json`
+
+|Options| Alias | Description|
+|---|---|---|
+|--open|-o|Opens i the default browser|
+|--port| |Port to listen to when serving|
+|--live-reload||reload when changes occur|
+|--ssl||Serve using HTTPS|
+|--proxy-config||Proxy configuration file|
+|--prod||test production files|
+
+[back to top](#top)
+
+## Adding new Capabilities - new feature in version 6+
+
+### adding angular material
+
+```shell
+ng add @angular/material   # add angular material lib
+ng g @angular/material:material-nav --name nav  #create navComponent which is angular material-nav 
+ng g @angular/material:material-dashboard --name dashboard
+ng g @angular/material:material-table --name customer-list
+```
+
+### adding scripts, styles and assets
+
+**edit angular.json**
+
+```json
+    "assets": [
+        "src/assets"
+    ],
+    "styles": [
+        "src/styles.css"
+    ]
+    "scripts": [
+    
+    ]
+```
+
+[back to top](#top)
+
+## Tests with Angular CLI
+
+### Unit Tests
+
+`ng test [options] --help`
+
+|Options| Description|
+|---|---|
+|--code-coverage|default false|
+|--progress|Log progress to console, default true |
+|--sourcemaps|default true|
+|--watch|default true|
+
+### End to End test- testing user interaction
+
+- configuration file: `\e2e\protractor.conf.js`
+- command: `ng e2e`
+
+[back to top](#top)
+
+## Tooling Features
+
+### Updating Angular
+
+`ng update [options] --help`
+
+|Options| Description|
+|---|---|
+|--dryRun, -d||
+|--all|whether to update all packages in package.json|
+|--force|force updates, or error if installed packages are imcompatible|
+
+- https://update.angular.io/
+- adopt current verions of angular
+- update 3rd party libraries with schematics
+- transform project
+
+### Workspace with multiple project
+
+- `angular.json` schema support multiple projects in one workspace
+- ng build <project>, ng serve <project>, ng test <project>, ng e2e <project>
+
+```shell
+ng build        #build all projects in the workspace
+ng build myApp  #build the myApp project
+```
+
+**Generate multiple project in one workspace**
+
+- `ng g <schematic> --help`
+- `ng g application project2`  create a project2 inside current project
+  - will create new folder - project2
+  - change of `angular.json`
+
+```json
+"projects": {
+    "project1": {
+      ...
+      },
+    "project1-e2e": {
+      ...
+      },
+    "project2": {
+      ...
+      },
+    "project2-e2e": {
+      ...
+      },
+},
+"defaultProject":"project1"
+```
+
+### Generating angular library
+
+- `ng g library <name> <options>`
+- CLI updates tsconfig to look for your library reference
+- Must build your library for your app to see it
+
+|Options| Description|
+|---|---|
+|--dryRun, -d||
+|--entry-file|Path to create library's public API file|
+|--skip-package-json|Do not add dependencies to package.json|
+|--skip-ts-config|Do not update tsconfig.json for dev experience|
+
+- **Way that Angular CLI find libraries**
+  - path in tsconfig.json --> path in the node_module folder  
+- build your library before you use
+  - `ng build my-lib`
+- Import it
+  - `import {logger} from 'my-lib';`
+- [Publishing your library](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry)
+  - `ng build my-lib --prod`, `ng build my-lib`
+    - [Beginning with version 6.1, Angular always does a production build of our library](https://stackoverflow.com/questions/52319576/configuration-production-could-not-be-found-in-project-my-lib)
+    - [The Angular Library Series - Creating a Library with Angular CLI](https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5)
+  - `cd dist/my-lib`
+  - `npm publish`
+
+### Sample: Generating a Logger library and adding to angular
+
+```shell
+ng g library my-lib                   #create a new library
+ng g s logger --project my-lib        #create a new service inside my-lib library
+ng build my-lib
+#edit \projects\my-lib\src\public_api.ts, add "export * from './lib/logger.service';"
+ng build my-lib   #rebuild- need rebuild for any change
+#edit app.component.ts, add "import { LoggerService } from 'my-lib';"
+```
+
+### Angular Console
+
+- https://angularconsole.com/
+
+[back to top](#top)
+
+> Reference
+- [John Papa](https://johnpapa.net/)
+- https://angular.io/cli
+- https://github.com/angular/angular-cli
+- http://angular2-first-look.azurewebsites.net/
