@@ -1,6 +1,6 @@
 [Angular CLI- in pluralsight by John Papa](#top)
 
-- [ng generate](#ng-generate)
+- [ng new](#ng-new)
 - [Angular CLI configuration](#angular-cli-configuration)
 - [Linting -checking and fixing code](#linting--checking-and-fixing-code)
 - [Generating code from blueprints](#generating-code-from-blueprints)
@@ -38,7 +38,7 @@ ng serve -o  # ng serve –open后，ng会找到.angular-cli.json文件中的mai
 ng build my-app -c production
 ```
 
-## ng generate
+## ng new
 
 - **Sample**: `ng new myApp -dstS --routing --style scss --prefix qh`
 - some flags change the configuration in angular.json
