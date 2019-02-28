@@ -66,12 +66,13 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
   - Prettier Code Formatter：利用Prettier的支持JavaScript、TypeScript和CSS的插件
   - JS Refactor：提供许多重构JavaScript代码的实用方法和操作，例如抽取变量和方法，把现有代码转为使用箭头函数和模板字符串的等价形式，导出函数等
   - JavaScript Booster：一款了不起的代码重构工具。拥有需要代码操作，比如把var转为const或者let，去除多余的else语句，合并声明和初始化。其灵感大量源于WebStorm的启发
-  - Auto Close Tag: 自动标签闭合, Auto Rename Tag
+  - **Auto Close Tag**: 自动标签闭合, Auto Rename Tag
   - [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)：括号颜色匹配
     JavaScript (ES6) code snippets: `imd --> import { } from 'somewhere'`
   - AutoFileName: AutoFileName
   - [**Path Intellisense**](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)：路径智能提示, 自动补全文件名
-  - [Auto Import](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)：Typescript 、TSX 自动查找、导入
+  - [**Auto Import**](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)：Typescript 、TSX 自动查找、导入
+  - **Numbered Bookmarks**
 - Node插件
   - npm：用package.json来校验安装的npm包，确保安装包的版本正确，对缺少package.json文件的包或者未安装的包给出高亮提示。
   - Node.js Modules IntelliSense：提供JavaScript和TypeScript导入声明时的自动补全
@@ -94,7 +95,7 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
   - [SVG Viewer](https://marketplace.visualstudio.com/items?itemName=cssho.vscode-svgviewer)：SVG 查看器
     select highlight in minimap: 
   - [Can I Use](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse)：浏览器兼容性查询
-    Quokka.js可以实时运行代码，在你敲键盘的同时就可以把结果显示在编辑器里面, 并能够预览变量的函数和计算值结果, 类似的插件还有：Code Runner，支持实时执行C, C++, Java, JavaScript, PHP, Python, Perl, Perl 6 等语言。
+    Quokka.js可以实时运行代码，在你敲键盘的同时就可以把结果显示在编辑器里面, 并能够预览变量的函数和计算值结果, 类似的插件还有：Code Runner，支持实时执行C, C++, Java, JavaScript, PHP, Python, Perl, Perl 6 等语言
 
 **CSS相关**
 
