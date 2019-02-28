@@ -13,6 +13,9 @@
   <tr><th colspan="2">Zoom In/Zoom Out the entire user interface</th></tr>
   <tr><td>Zoom In</td><td>Ctrl + '+'</td></tr>
   <tr><td>Zoom Out</td><td>Ctrl + '-'</td></tr>
+  <tr><th colspan="2">TS相关</th></tr>
+  <tr><td>@</td><td>'Ctrl+p' => '@'将显示所有的Object，可以迅速定位到该Object </td></tr>
+  <tr><td>Peek</td><td>鼠标右键(Shift+F12) => Peek references</td></tr>
   <tr><th colspan="2">格式调整</th></tr>
   <tr><td>代码行缩进</td><td>Ctrl+[， Ctrl+]</td></tr>
     <tr><td><b>代码格式化</b></td><td>Shift+Alt+F，或Ctrl+Shift+P后输入format code(format selection)</td></tr>
@@ -73,6 +76,7 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
   - [**Path Intellisense**](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)：路径智能提示, 自动补全文件名
   - [**Auto Import**](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)：Typescript 、TSX 自动查找、导入
   - **Numbered Bookmarks**
+  - Paste JSON as Code: Copy JSON, paste as Go, TypeScript, C#, C++ and more
 - Node插件
   - npm：用package.json来校验安装的npm包，确保安装包的版本正确，对缺少package.json文件的包或者未安装的包给出高亮提示。
   - Node.js Modules IntelliSense：提供JavaScript和TypeScript导入声明时的自动补全
