@@ -1,25 +1,26 @@
 [Angular 4依赖注入-study](#top)
 
-- [1. 依赖注入简介](#依赖注入简介)
-- [2. Angular依赖注入体系](#Angular依赖注入体系)
-  - [2.1 Injectors](#Injectors)
-  - [2.2 Provider](#Provider)
-  - [2.3 Token](#Token)
-  - [2.4 Configuring Dependency Injection in Angular](#Configuring)
-- [3. 注入服务的使用](#注入服务)
-  - [3.1 ClassProvider的使用](#ClassProvider的使用)
-  - [3.2 FactoryProvider的使用](#FactoryProvider的使用)
-  - [3.3 ValueProvider的使用](#ValueProvider的使用)
-  - [3.4 InjectToken的使用](#InjectToken的使用)
-- [4. 服务注入](#服务注入)
-  - [4.1. 组件服务注入](#组件服务注入)
-  - [4.2 在服务中注入服务](#在服务中注入服务)
-  - [4.3 在服务中注入服务](#在服务中注入服务)
-  - [4.4 注入到派生组件](#在服务中注入服务)
-  
+- [1. 依赖注入简介](#1-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E7%AE%80%E4%BB%8B)
+- [2. Angular依赖注入体系](#2-angular%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E4%BD%93%E7%B3%BB)
+  - [2.1 Injectors](#21-injectors)
+  - [2.2 Provider](#22-provider)
+  - [2.3 Token](#23-token)
+  - [2.4 Configuring Dependency Injection in Angular](#24-configuring-dependency-injection-in-angular)
+- [3. 注入服务的使用](#3-%E6%B3%A8%E5%85%A5%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BD%BF%E7%94%A8)
+  - [3.1 ClassProvider的使用](#31-classprovider%E7%9A%84%E4%BD%BF%E7%94%A8)
+  - [3.2 FactoryProvider的使用](#32-factoryprovider%E7%9A%84%E4%BD%BF%E7%94%A8)
+  - [3.3 ValueProvider的使用](#33-valueprovider%E7%9A%84%E4%BD%BF%E7%94%A8)
+  - [3.4 InjectToken的使用](#34-injecttoken%E7%9A%84%E4%BD%BF%E7%94%A8)
+- [3. 服务注入](#3-%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%85%A5)
+  - [3.1 组件服务注入](#31-%E7%BB%84%E4%BB%B6%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%85%A5)
+  - [3.2 在服务中注入服务](#32-%E5%9C%A8%E6%9C%8D%E5%8A%A1%E4%B8%AD%E6%B3%A8%E5%85%A5%E6%9C%8D%E5%8A%A1)
+  - [3.3 在模块中注入服务](#33-%E5%9C%A8%E6%A8%A1%E5%9D%97%E4%B8%AD%E6%B3%A8%E5%85%A5%E6%9C%8D%E5%8A%A1)
+  - [3.4 注入到派生组件](#34-%E6%B3%A8%E5%85%A5%E5%88%B0%E6%B4%BE%E7%94%9F%E7%BB%84%E4%BB%B6)
+  - [3.5 限定方式的依赖注入](#35-%E9%99%90%E5%AE%9A%E6%96%B9%E5%BC%8F%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5)
+
 -------------------------
 
-<h2 id="依赖注入简介">1. 依赖注入简介</h2>
+## 1. 依赖注入简介
 
 ```javascript
 // 车身类
@@ -73,7 +74,7 @@ car.run();
 
 [back to top](#top)
 
-<h2 id="Angular依赖注入体系">2. Angular依赖注入体系</h2>
+## 2. Angular依赖注入体系
 
 - **注入器(Inject)**:  就像制造工厂，提供了一些列的接口用于创建依赖对象的实例
 - **Provider**：用于配置注入器，注入器通过它来创建被依赖对象的实例，Provider把标识映射到工厂方法中，被依赖的对象就是通过该方法创建的。
@@ -109,7 +110,7 @@ car.run();
 
 - 在组件的构造函数视图注入某个服务的时候，Angular会先从当前组件的注入器中查找，找不到就继续往父组件的注入器查找，直到根组件注入器，最后到应用根注入器，此时找不到的话就会报错。
 
-<h3 id="Injectors">2.1 Injectors</h3>
+### 2.1 Injectors
 
 - At the core of the DI framework is an injector
 - An injector is passed a token and returns a dependency (or list of)
@@ -139,9 +140,7 @@ console.log(emailService1 === emailService2);     // true
 
 [back to top](#top)
 
-<h3 id="Provider">2.2 Provider</h3>
-
-[back to top](#top)
+### 2.2 Provider
 
 - we can configure injectors with providers and a provider links a token to a dependency(Angular中通过Provider来描述与Token相关联的依赖对象的创建方式)
 - Provider 的分类
@@ -168,7 +167,7 @@ let injector = ReflectiveInjector.resolveAndCreate([
 ]);
 ```
 
-<h3 id="Token">2.3 Token</h3>
+### 2.3 Token
 
 - A token can be either a string, a class or an instance of InjectionToken
   - String tokens
@@ -214,7 +213,7 @@ console.log(emailService);
 
 [back to top](#top)
 
-<h3 id="Configuring">2.4 Configuring Dependency Injection in Angular</h3>
+### 2.4 Configuring Dependency Injection in Angular
 
 - component tree && injector tree
   - There is one top level injector(**root injector**) created for each NgModule and then for each component in our app, from the root component down, there is a tree of injectors created which map to the component tree
@@ -243,9 +242,9 @@ class ParentComponent {
 
 [back to top](#top)
 
-<h2 id="注入服务的使用">3. 注入服务的使用</h2>
+## 3. 注入服务的使用
 
-<h3 id="ClassProvider的使用">3.1 ClassProvider的使用</h3>
+### 3.1 ClassProvider的使用
 
 ```javascript
 @NgModule({
@@ -261,7 +260,7 @@ export interface TypeProvider extends Type<any> {}
 
 [back to top](#top)
 
-<h3 id="FactoryProvider的使用">3.2 FactoryProvider的使用</h3>
+### 3.2 FactoryProvider的使用
 
 - FactoryProvider用于告诉Injector(注入器)，通过调用useFactory对应的函数，返回Token对应的依赖对象
 
@@ -307,7 +306,7 @@ export class AppModule { }
 
 [back to top](#top)
 
-<h3 id="ValueProviderr的使用">3.3 ValueProvider的使用</h3>
+### 3.3 ValueProvider的使用
 
 - ValueProvider 用于告诉 Injector (注入器)，但使用 Token 获取依赖对象时，则返回 useValue 指定的值
 
@@ -338,7 +337,7 @@ export class HeroService {
 
 [back to top](#top)
 
-<h3 id="InjectToken的使用">3.4 InjectToken的使用</h3>
+### 3.4 InjectToken的使用
 
 - ValueProvider(String tokens) can cause name clashes so we prefer to use InjectionTokens instead
 - `GET http://localhost:4200/Other%20value 404 (Not Found)`
@@ -386,9 +385,9 @@ injector.get(t); // "bindingValue"
 
 [back to top](#top)
 
-<h2 id="服务注入">3. 服务注入</h2>
+## 3. 服务注入
 
-<h3 id="组件服务注入">3.1 组件服务注入</h3>
+### 3.1 组件服务注入
 
 - 通过import导入被依赖对象的服务 
 - 在组建中配置注入器。在启动组件时，Angular会读取@Component装饰器里的providers元数据，它是一个数组，配置了该组件需要使用到的所有依赖，Angular的依赖注入框架就会根据这个列表去创建对应对象的实例。 
@@ -420,7 +419,7 @@ export class HeroComponent implements OnInit {
 
 [back to top](#top)
 
-<h3 id="在服务中注入服务">3.2 在服务中注入服务</h3>
+### 3.2 在服务中注入服务
 
 ```javascript
 //logger.service.ts
@@ -448,7 +447,7 @@ providers:[LoggerService,ContactService]
 
 [back to top](#top)
 
-<h3 id="在模块中注入服务">3.3 在模块中注入服务</h3>
+### 3.3 在模块中注入服务
 
 - 在根组件中注入服务，所有子组件都能共享这个服务
 - Angular在启动程序时会启动一个根模块，并加载它所依赖的其他模块，此时会生成一个全局的根注入器，由该注入器创建的依赖注入对象在整个应用程序级别可见，并共享一个实例。同时根模块会指定一个根组件并启动，由该根组件添加的依赖注入对象是组件树级别可见，在根组件以及子组件中共享一个实例
@@ -462,7 +461,7 @@ providers:[LoggerService,ContactService]
 
 [back to top](#top)
 
-<h3 id="注入到派生组件">3.4 注入到派生组件</h3>
+### 3.4 注入到派生组件
 
 -对于有继承关系的组件，当父类组件和派生类组件有相同的依赖注入时，如果父类组件注入了这些依赖，派生组件也需要注入这些相同的依赖，并在派生类组件的构造函数中通过super()往上传递
 
@@ -506,7 +505,7 @@ export class SortedContactComponent extends ContactAppComponent{    //SortedCont
 }
 ```
 
-<h3 id="限定方式的依赖注入">3.5 限定方式的依赖注入</h3>
+### 3.5 限定方式的依赖注入
 
 Angular的限定注入方式使得开发者能够修改默认的额依赖查找规则，Angular依赖注入框架提供了`@Optional`和`@Host`装饰器来实现可选注入，在宿主组件的构造函数中增加装饰器即可
 
@@ -535,4 +534,3 @@ export class ContactService{
 > - [Angular 4 依赖注入教程系列](https://segmentfault.com/a/1190000009612113)
 > - [Angular 2 DI - IoC & DI - 1]()
 > - [Angular 5 Dependency Injection & Providers](https://codecraft.tv/courses/angular/dependency-injection-and-providers/overview/)
-> 
