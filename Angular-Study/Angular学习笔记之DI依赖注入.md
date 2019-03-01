@@ -6,7 +6,7 @@
   - [2.2 Provider](#22-provider)
   - [2.3 Token](#23-token)
   - [2.4 Configuring Dependency Injection in Angular](#24-configuring-dependency-injection-in-angular)
-- [3. 注入服务的使用](#3-%E6%B3%A8%E5%85%A5%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BD%BF%E7%94%A8)
+- [3. 注入服务Provide的使用](#3-%E6%B3%A8%E5%85%A5%E6%9C%8D%E5%8A%A1provide%E7%9A%84%E4%BD%BF%E7%94%A8)
   - [3.1 ClassProvider的使用](#31-classprovider%E7%9A%84%E4%BD%BF%E7%94%A8)
   - [3.2 FactoryProvider的使用](#32-factoryprovider%E7%9A%84%E4%BD%BF%E7%94%A8)
   - [3.3 ValueProvider的使用](#33-valueprovider%E7%9A%84%E4%BD%BF%E7%94%A8)
@@ -89,25 +89,6 @@ car.run();
 
 ![](https://i.imgur.com/FsETSCu.png)
 
-**Configuring Dependency Injection in Angular**
-
-| DI situation|position|
-| :------------- | :------------- |
-|a dependency to be shared across entire application|configure it on NgModule's providers property|
-|a separate instance of a dependency to be shared across each instance of a component and it’s children|configure it on the components providers property|
-|a separate instance of a dependency to be shared across each instance of a component and only it’s view children|configure it on the components viewProviders property|
-
-```javascript
- //父组件HTML中使用
- <ng-content></ng-content>
-  //父组件ts中使用
- @Component({
-   selector: 'parent',
-   template: `...`,
-   viewProviders: [SimpleService ]   //使用viewProviders
-})
-```
-
 - 在组件的构造函数视图注入某个服务的时候，Angular会先从当前组件的注入器中查找，找不到就继续往父组件的注入器查找，直到根组件注入器，最后到应用根注入器，此时找不到的话就会报错。
 
 ### 2.1 Injectors
@@ -143,7 +124,7 @@ console.log(emailService1 === emailService2);     // true
 ### 2.2 Provider
 
 - we can configure injectors with providers and a provider links a token to a dependency(Angular中通过Provider来描述与Token相关联的依赖对象的创建方式)
-- Provider 的分类
+- **Provider 的分类**
   - TypeProvider
   - ClassProvider
   - ValueProvider
@@ -215,7 +196,7 @@ console.log(emailService);
 
 ### 2.4 Configuring Dependency Injection in Angular
 
-- component tree && injector tree
+- **component tree && injector tree**
   - There is one top level injector(**root injector**) created for each NgModule and then for each component in our app, from the root component down, there is a tree of injectors created which map to the component tree
 - `@Injectable` versus `@Component` versus `@Directive`
   - `@Inject` parameter decorator to instruct Angular we want to resolve a token and inject a dependency into a constructor
@@ -242,60 +223,88 @@ class ParentComponent {
 
 [back to top](#top)
 
-## 3. 注入服务的使用
+## 3. 注入服务Provide的使用
 
 ### 3.1 ClassProvider的使用
 
 ```javascript
 @NgModule({
- //...
- providers: [HeroService],                                 // 方式一: 简写
- providers: [provide: HeroService, useClass: HeroService], // 方式二: 标准的语法
- bootstrap: [AppComponent]
+ //使用 MockHeroService服务
+ providers: [provide: HeroService, useClass: MockHeroService], 
 })
-export class AppModule { }
-// TypeProvider接口
-export interface TypeProvider extends Type<any> {}
+// 创建创建一个新的数据服务， MockHeroService, 不必修改HeroService
+export class MockHeroService {
+    heros: Array<{ id: number; name: string }> = [
+        { id: 16, name: 'RubberMan' },
+        { id: 17, name: 'Dynama' },
+        { id: 18, name: 'Dr IQ' },
+        { id: 19, name: 'Magma' },
+        { id: 20, name: 'Tornado' }
+    ];
+    getHeros() {
+        return this.heros;
+    }
+}
 ```
+
+- 方便地验证模拟数据，同时保持较小的改动量
+- 易于进行本地单元测试
 
 [back to top](#top)
 
 ### 3.2 FactoryProvider的使用
 
 - FactoryProvider用于告诉Injector(注入器)，通过调用useFactory对应的函数，返回Token对应的依赖对象
+- FactoryProvider接口
+
+```javascript
+export interface FactoryProvider {
+  // 用于设置与依赖对象关联的Token值，Token值可能是Type、InjectionToken、
+  // OpaqueToken的实例或字符串
+  provide: any;
+  // 设置用于创建对象的工厂函数
+  useFactory: Function;
+  // 依赖对象列表
+  deps?: any[];
+  // 用于标识是否multiple providers，若是multiple类型，则返回与Token关联的依赖
+  // 对象列表
+  multi?: boolean;
+}
+```
+
+**场景： 如果多个组件都使用HeroService去获取英雄数据，创建一个LoggerService来统一调用，输出的调试信息**
 
 ```javascript
 /*用于跨平台开发: console.log()存在兼容性问题 */
 //ConsoleService服务: 实现统一的Console接口
+// 1） 创建 ConsoleService 服务
 import { Injectable } from '@angular/core';
 @Injectable()
 export class ConsoleService {
- log(message) {
-  console.log(`ConsoleService: ${message}`);
- }
+    constructor(private enable: boolean) { }
+    log(message) {
+        console.log(`ConsoleService: ${message}`);
+    }
 }
-//LoggerService服务: 使用ConsoleService服务
-import { Injectable } from '@angular/core';
-@Injectable()
-export class LoggerService {
- constructor(
-   private enable: boolean,
-   consoleService: ConsoleService) { }
- log(message: string) {
-   if(this.enable) {
-    console.log(`LoggerService: ${message}`);
-   }
- }
+//3) 使用ConsoleService服务
+export class HeroComponent implements OnInit {
+  heros: Array<{ id: number; name: string }>;
+  constructor(private heroService: HeroService, private consoleService: ConsoleService) { }
+    ngOnInit() {
+        this.loggerService.log('Fetching heros...');
+        this.heros = this.heroService.getHeros();
+    }
 }
-// LoggerService的正确配置方式
+// 2) 配置ConsoleService服务
+// 创建ConsoleService对象时，需要设置enable参数的值, 此时使用FactoryProvider
 @NgModule({
  //...,
  providers: [
    HeroService,
    ConsoleService,
    { 
-     provide: LoggerService, 
-     useFactory: (consoleService) => { return new LoggerService(true, consoleService) }, //如果enable为true
+     provide: ConsoleService, 
+     useFactory: () => { return new ConsoleService(true) }, //如果enable为true
      deps: [consoleService]
     }
   ],
@@ -308,7 +317,7 @@ export class AppModule { }
 
 ### 3.3 ValueProvider的使用
 
-- ValueProvider 用于告诉 Injector (注入器)，但使用 Token 获取依赖对象时，则返回 useValue 指定的值
+- ValueProvider 用于告诉Injector，但使用Token获取依赖对象时，则返回useValue指定的值
 
 ```javascript
 @NgModule({
@@ -455,7 +464,7 @@ providers:[LoggerService,ContactService]
 ```javascript
 @NgModule({
   //...
-  providers   : [ContactService, UtilService],
+  providers: [ContactService, UtilService],
 })
 ```
 
