@@ -50,6 +50,7 @@ npm install json-server --save
 #}
 # 3) running
 npm run json-server
+# 4) 运行http://localhost:4000/todos就得到数据啦
 ```
 
 Options|function|default
