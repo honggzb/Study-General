@@ -433,7 +433,7 @@ heyClick$                                    //主体流 hey$
 
 > Reference
 
-- [rxjs官网]https://rxjs-dev.firebaseapp.com/)
+- [rxjs官网](https://rxjs-dev.firebaseapp.com/)
 - [rxjs官网Sample](https://github.com/Reactive-Extensions/RxJS/tree/master/examples)
 - RxJS sample Animation
   - [Animated playground for Rx Observables](https://rxviz.com/)
