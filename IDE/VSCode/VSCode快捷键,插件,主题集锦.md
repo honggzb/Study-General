@@ -201,6 +201,10 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 "prettier.semi": false
 //文件末尾后还可以继续下拉为空
 scrollBeyondLastLine
+//to removed extra newlines at the end of a file on save
+"files.trimTrailingWhitespace": true,
+"files.insertFinalNewline": true,
+"files.trimFinalNewlines": true,
 ```
 
 **自动补全括号/引号**
