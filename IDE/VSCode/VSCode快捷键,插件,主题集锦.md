@@ -189,9 +189,18 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 
 ```javascript
  "files.autoGuessEncoding": true,        // 中文注释乱码
- "editor.renderWhitespace": "all",  // 控制编辑器是否应呈现空白字符
+ "editor.renderWhitespace": "all",       // 控制编辑器是否应呈现空白字符
  "files.trimTrailingWhitespace": true,   // 启用后，将在保存文件时剪裁尾随空格
- "editor.wordWrap": "on"          //word wrap自动换行, 打开setting -> 搜索editor.wordWrap
+ "editor.wordWrap": "on"                 //word wrap自动换行, 打开setting -> 搜索editor.wordWrap
+ "search.followSymlinks" ：false；       //CPU利用率100%的情况，两个rg.exe占用了全部的CPU    
+//jsx中使用emmet自动补全代码
+"emmet.triggerExpansionOnTab": true
+"emmet.includeLanguages": {"javascript":"html"},
+//自动分号:  若安装了prettier插件，粘贴代码，或格式化文件时，会自动添加分号，并由双引号变成单引号
+"prettier.singleQuote": true
+"prettier.semi": false
+//文件末尾后还可以继续下拉为空
+scrollBeyondLastLine
 ```
 
 **自动补全括号/引号**
