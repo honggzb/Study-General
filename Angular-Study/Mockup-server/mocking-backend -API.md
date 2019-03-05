@@ -13,9 +13,27 @@
 
 ```json
 {
-  "/api":{
-    "target": "http://localhost: 8808",
-    "secure": false
+  "/api/*":{
+    "target": "http://localhost:8089",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
+```
+
+If you need to access a backend that is not on localhost, you will need to add the changeOrigin option as follows:
+
+```json
+{
+  "/api": {
+    "target": "http://npmjs.org",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
   }
 }
 ```
@@ -139,3 +157,6 @@ app.listen(3000, ()=>console.log('Koa start at 3000...'));
 ## express
 
 https://github.com/honggzb/Study-General/blob/master/Angular-Study/node%2Bexpress%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8.md
+
+> Reference
+- https://github.com/angular/angular-cli/wiki/stories-proxy
