@@ -353,6 +353,8 @@ ng build my-lib   #rebuild- need rebuild for any change
 #edit app.component.ts, add "import { LoggerService } from 'my-lib';"
 ```
 
+- [The Angular Library Series — Publishing](https://blog.angularindepth.com/the-angular-library-series-publishing-ce24bb673275)
+
 ### Angular Console
 
 - https://angularconsole.com/
