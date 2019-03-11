@@ -1,0 +1,25 @@
+<div class="row" *ngFor="let session of visibleSessions">
+  <div class="col-md-1">
+    <div *ngIf="auth.isAuhtenticated()">
+        <up-vote
+        (vote)="toggleVoted(session)"
+        [count]="session.voters.length"
+        [voted]="userHasVoted(session)"></up-vote>
+    </div>
+  </div>
+  <div class="col-md-11">
+    <collapsible-card>
+      <span card-title class="card-title">
+        {{session.name}}
+        <i *ngIf="session.voters.length >2" class="fa fa-fire" style="color: red;"></i>
+        <small style="color: red; font-size: 0.85rem;">{{session.voters.length}}</small>
+      </span>
+      <div class="card-text" card-body>
+        <h6>{{session.presenter}}</h6>
+        <span>Duration: {{session.duration | duration}}</span><br />
+        <span>Level: {{session.level}}</span>
+        <p>{{session.abstract}}</p>
+      </div>
+    </collapsible-card>
+  </div>
+</div>

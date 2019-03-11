@@ -1,0 +1,25 @@
+
+  <div class="card bg-light mb-3">
+    <div class="card-body">
+      <h3 class="card-title"><a [routerLink]="['/events', event.id]" routerLinkActive="active">{{event?.name | uppercase}}</a></h3>
+      <div class="card-text">Date: {{event?.date | date : 'short'}}</div>
+      <!-- <div class="card-text"
+        [ngClass]="{green: event?.time === '8:00 am', bold: event?.time === '8:00 am'}"
+        [ngSwitch]="event?.time"> -->
+      <div class="card-text"
+        [ngClass]="getStartTimeClass()"
+        [ngSwitch]="event?.time">
+        Time: {{event?.time}}
+        <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+        <span *ngSwitchCase="'10:00 am'">(late Start)</span>
+        <span *ngSwitchDefault>(Normal Start)</span>
+      </div>
+      <div class="card-text">Price: {{event?.price | currency:'USD' }}</div>
+      <!-- <div class="card-text" *ngIf="event?.location"> -->
+      <div class="card-text" [hidden]="!event?.location">
+        <span>Location: {{event?.location?.address}}, {{event?.location?.city}}, {{event?.location?.country}}</span>
+      </div>
+      <div class="card-text" *ngIf="event?.onlineUrl">OnlineUrl: ${{event?.onlineUrl}}</div>
+    </div>
+  </div>
+

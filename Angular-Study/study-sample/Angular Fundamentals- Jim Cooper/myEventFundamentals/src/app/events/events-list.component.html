@@ -1,0 +1,17 @@
+<div>
+  <h1>Upcoming Angular Events</h1>
+  <hr style="height: 2px;">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let event of events">
+        <!-- <app-event-card
+          #card
+          [event]="event"
+          (click)="handleCardClick(event.name)"></app-event-card> -->
+          <app-event-card #card [event]="event"></app-event-card>
+    </div>
+  </div>
+
+    <!-- <br>
+    <h4>{{card.someProperty}}</h4>
+    <button type="button" class="btn btn-primary" (click)="card.logFoo()">Log me some foo</button> -->
+</div>
