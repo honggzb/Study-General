@@ -18,6 +18,7 @@
   - [Filtering and Sorting Data](#filtering-and-sorting-data)
 - [Dependency Injection](#dependency-injection)
   - [Opaque Token & Inject() to avoid global defining](#opaque-token--inject-to-avoid-global-defining)
+  - [@ViewChild Decorator vs. ElementRef](#viewchild-decorator-vs-elementref)
 - [Directives and custom validators](#directives-and-custom-validators)
   - [using @Input Setter](#using-input-setter)
   - [add custom validator to angular's Validator](#add-custom-validator-to-angulars-validator)
@@ -440,7 +441,7 @@ export class DurationPipe implements PipeTransform {
 
 - Sort and filter AngularJS Filters have performance issue
 - Angular need wrote sort and filter by yourself
-- Sample: add filterBy and sortBy
+- Sample: add filterBy and sortBy as template variable
   - `<session-list *ngIf="!addMode" [sessions]="event?.sessions" [filterBy]="filterBy" [sortBy]="sortBy"></session-list>`
   - In parent component, adding `filterBy: string = 'all';sortBy: string = 'name';`
 
@@ -520,6 +521,50 @@ export class ProfileComponent implements OnInit {
       this.router.navigate(['events']);
       this.toastr.success('Profile Saved!');
     }
+}
+```
+
+### @ViewChild Decorator vs. ElementRef
+
+```javascript
+@Component({
+  selector: 'simple-modal',
+  template: `
+    <div id="{{elementId}}" #modalcontainer class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">{{title}}</h4>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+          </div>
+          <div class="modal-body" (click)="closeModal()">
+            <ng-content></ng-content>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>`,
+  styles: [`.modal-body { height: 250px; overflow-y: scroll; }`]
+})
+export class SimpleModalComponent {
+  @Input() title:string
+  @Input() elementId: string
+  //@ViewChild('modalcontainer') containerEI: ElementRef
+  @Input() closeOnBodyClick: string
+  private el: HTMLElement;
+  constructor(@Inject(JQ_TOKEN) private $: any, ref: ElementRef) {
+    //or
+    this.el = ref.nativeElement;
+   }
+  closeModal(){
+    if(this.closeOnBodyClick.toLocaleLowerCase() === 'true'){
+      //this.$(this.containerEI.nativeElement).modal('hide');
+      // or
+      this.$('.modal').modal('hide');
+    }
+  }
 }
 ```
 
