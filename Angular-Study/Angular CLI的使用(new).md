@@ -14,6 +14,7 @@
 - [Adding new Capabilities - new feature in version 6+](#adding-new-capabilities---new-feature-in-version-6)
   - [adding angular material](#adding-angular-material)
   - [adding scripts, styles and assets](#adding-scripts-styles-and-assets)
+  - [Using 3th-library](#Using-3th-library)
 - [Tests with Angular CLI](#tests-with-angular-cli)
   - [Unit Tests](#unit-tests)
   - [End to End test- testing user interaction](#end-to-end-test--testing-user-interaction)
@@ -240,6 +241,38 @@ ng g @angular/material:material-table --name customer-list
     "scripts": [
     
     ]
+```
+
+### Using 3th-library
+
+**use ng add, such as angular material which has support schematics**
+
+```shell
+ng add @angular/material   # add angular material lib
+ng g @angular/material:material-nav --name nav  #create navComponent which is angular material-nav
+ng g @angular/material:material-dashboard --name dashboard
+ng g @angular/material:material-table --name customer-list
+```
+
+**some library which did not support schematic, such as bootstrap, toastr**
+
+```shell
+# 1) install
+npm install bootstrap font-awesome toastr jquery --save
+# 2) configuration
+# 2.1) method1 to use css, edit styles.scss file
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+# 2.2) edit angular.json
+"styles": [
+              "node_modules/toastr/build/toastr.min.css",
+              "src/styles.scss"
+          ],
+"scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/toastr/build/toastr.min.js"
+           ],
 ```
 
 [back to top](#top)
