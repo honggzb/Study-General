@@ -4,8 +4,6 @@
 - [ReplaySubject](#replaysubject)
 - [AsyncSubject](#asyncsubject)
 
--------------------------------------
-
 |   |是否存储数据|是否需要初始值|何时向订阅者发布数据|
 |---|---|---|---|
 |Subject|否|否|及时发布，有新数据就发布|
