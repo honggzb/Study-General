@@ -1,0 +1,23 @@
+- **beautify**
+- **auto close tag**
+- auto import
+- auto rename tag
+- bracket pair colorizer
+- **change-case**
+- Color Picker
+- Css peek
+- Document This - JSDoc(Ctrl+Alt+D and Ctrl+Alt+D again)
+- intellisense for CSS calss names in HTML
+- Markdown All in One
+- Markdown Preview Enhanced
+- Node.js Modules Intellisense
+- npm 
+- npm intellisense
+- open in browser
+- Path Autocomplete
+- Path Intellisense
+- Highlight Matching Tag
+- select highlight in minimap
+- View Node Package
+
+
