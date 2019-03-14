@@ -35,6 +35,7 @@
 │   ├── Angular之Pipe.md
 │   ├── Angular学习笔记之DI依赖注入.md
 │   ├── Angular学习笔记之lazy loading-使用angular-cli.md     #useful
+│   ├── Angular学习笔记之模板ng-template, ng-content, ng-container and ngTemplateOutlet
 │   ├── Create Angular学习笔记之styling in Angular.md
 │   ├── Angular学习笔记之集成三方UI框架.md
 │   ├── Angular打造股票管理网站.md      #useful
