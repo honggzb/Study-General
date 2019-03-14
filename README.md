@@ -59,7 +59,13 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   └── 大漠的Angular Workshop.md 
 │
 ├── AngularJS-study
-│   ├── angular-translate-study/
+│   ├──  AngularJS入门和企业级项目 6天(邵山欢)/
+│   │    ├── 02_引入控制器.html
+│   │    ├── 04_双向数据绑定小案例1-调色板.html
+│   │    ├── 06_双向数据绑定小案例3-模拟表格.html
+│   │    ├── 08_双向数据绑定小案例4-表单联动.html
+│   │    └── city.json
+│   ├──  angular-translate-study/
 │   │    ├── simple-sample /
 │   │    └── readme.md
 │   ├──  angular-material-study /
@@ -109,8 +115,12 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   │    ├── 022-form.html 
 │   │    ├── 023-form-user-defined.html 
 │   │    ├── kittercupCollapse.html 
-│   │    └── other.html 
+│   │    └── other.html
 │   ├──  Sample /
+│   │    ├── SVG /
+│   │    │    ├── barGraphdirective.md
+│   │    │    ├── gaugeWidgetDirective.md
+│   │    │    └── peiChartDirective.md
 │   │    ├── directive /
 │   │    │    ├── 滚屏加载.html
 │   │    │    ├── AngularJS内置服务总览.md
@@ -120,20 +130,36 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   │    │    ├── ng-repeat in AngularJS.md
 │   │    │    ├── 自定义一个表格.js
 │   │    │    └── 
-│   │    └── service /
-│   │         ├── AngularJs中$http再次封装.md
-│   │         └──
+│   │    ├── filter /
+│   │    │    ├── currency-differentDollerSymbol.md
+│   │    │    └── currency-大写中文数字.md
+│   │    ├── service /
+│   │    │    ├── AngularJs中$http再次封装.md
+│   │    │    └── http-error处理.md
+│   │    ├── 页面加载时遮罩过渡.md
+│   │    └── 
 │   ├──  ui-bootstrap-study
 │   │    ├── typeahead /
 │   │    └── ui-Bootstrap之Typeahead.md
+│   ├──  unit-test
+│   │    ├── Controllers test-Directive test.md
+│   │    ├── promise-test.md
+│   │    └── ervice-test.md
+│   │ 
 │   ├── $timeout和$interval的用法.md
 │   ├── $watch详解.md
+│   ├── Angular+AngularJS Material Textarea.md
 │   ├── AngularJS+angularjs作用域的生命周期.md
+│   ├── AngularJS内置服务总览.md
 │   ├── AngularJS学习之Cache-缓存.md
 │   ├── AngularJS学习之Factory vs Service vs Provider.md
+│   ├── AngularJS学习之alert和Excetion设计-debug和diagnostics.md
 │   ├── AngularJS学习之directive详解.md
+│   ├── AngularJS学习之ngAnimate动画.md
+│   ├── AngularJS学习之全局变量constant-value.md
 │   ├── AngularJS学习之表单验证.md
 │   ├── AngularJS给动态生成的元素绑定事件.md
+│   ├── AngularJs中promise-$q.md
 │   ├── Angularjs Controller间通信机制.md
 │   ├── Angularjs directive通信案例.md
 │   ├── Angularjs使用jQuery-jqLite.md
@@ -144,7 +170,8 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   ├── UI-Router for AngularJS 1.x.md 
 │   ├── angularJS-debug-skill.md 
 │   ├── angularjs的directive和component的参数传递问题.md
-│   ├── http拦截器介绍与使用.md
+│   ├── ng-class in AngularJS.md
+│   ├── ng-repeat in AngularJS.md
 │   ├── resources.md
 │   ├── tip.md
 │   └── 常见问题和技巧.md
