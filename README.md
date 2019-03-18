@@ -16,16 +16,19 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   └── resources.md
 │
 ├── Angular-Study
+│   │
 │   ├── Angular-material/
 │   │   ├── dialog/
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
-│   │   └── readme.md  
+│   │   └── readme.md
+│   │
 │   ├── Mockup-server/
-│   │   ├── Node+http_server创建服务器.md
+│   │   ├── angular-in-memory-web-api.md
+│   │   ├── liverload-mockup+gulp.md
 │   │   ├── mocking-backend -API.md
-│   │   ├── node+express创建服务器.md
-│   │   └── Node+http_server创建服务器.md
+│   │   └── node+express创建服务器.md
+│   │
 │   ├── Sample/
 │   │   ├── directive/
 │   │   │    ├── input-radio.md
@@ -39,9 +42,11 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   │   ├──  todo-app.rar
 │   │   ├──  案例之星级评价.md
 │   │   └──  
+│   │ 
+│   ├── Angular CLI的使用(new).md     #useful
+│   ├── Angular_CLI的使用.md           
 │   ├── Angular2+Accessibility.md
 │   ├── Angular 2,4 + google map      #Google map在angular>2中的应用
-│   ├── Angular_CLI的使用.md           #useful
 │   ├── Angular中Error汇总.md
 │   ├── Angular之Pipe.md
 │   ├── Angular学习笔记之DI依赖注入.md
@@ -50,16 +55,20 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   ├── Angular学习笔记之集成三方UI框架.md
 │   ├── Angular打造股票管理网站.md      #useful
 │   ├── Angular系列之变化检测.md
-│   ├── Reactive Extensions for JavaScript (RxJS).md
-│   ├── mocking-backend -API.md
 │   ├── change-detection-default.gif
 │   ├── change-detection-onpush.gif
+│   ├── redux-angular.gif
 │   ├── redux.png
 │   ├── redux.doc
-│   └── 大漠的Angular Workshop.md 
+│   └── 大漠的Angular Workshop.md
 │
 ├── AngularJS-study
-│
+│   ├──  AngularJS入门和企业级项目 6天(邵山欢)/
+│   │    ├── 02_引入控制器.html
+│   │    ├── 04_双向数据绑定小案例1-调色板.html
+│   │    ├── 06_双向数据绑定小案例3-模拟表格.html
+│   │    ├── 08_双向数据绑定小案例4-表单联动.html
+│   │    └── city.json
 │   ├──  angular-translate-study/
 │   │    ├── simple-sample /
 │   │    └── readme.md
@@ -110,8 +119,12 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   │    ├── 022-form.html 
 │   │    ├── 023-form-user-defined.html 
 │   │    ├── kittercupCollapse.html 
-│   │    └── other.html 
+│   │    └── other.html
 │   ├──  Sample /
+│   │    ├── SVG /
+│   │    │    ├── barGraphdirective.md
+│   │    │    ├── gaugeWidgetDirective.md
+│   │    │    └── peiChartDirective.md
 │   │    ├── directive /
 │   │    │    ├── 滚屏加载.html
 │   │    │    ├── AngularJS内置服务总览.md
@@ -121,20 +134,36 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   │    │    ├── ng-repeat in AngularJS.md
 │   │    │    ├── 自定义一个表格.js
 │   │    │    └── 
-│   │    └── service /
-│   │         ├── AngularJs中$http再次封装.md
-│   │         └──
+│   │    ├── filter /
+│   │    │    ├── currency-differentDollerSymbol.md
+│   │    │    └── currency-大写中文数字.md
+│   │    ├── service /
+│   │    │    ├── AngularJs中$http再次封装.md
+│   │    │    └── http-error处理.md
+│   │    ├── 页面加载时遮罩过渡.md
+│   │    └── 
 │   ├──  ui-bootstrap-study
 │   │    ├── typeahead /
 │   │    └── ui-Bootstrap之Typeahead.md
+│   ├──  unit-test
+│   │    ├── Controllers test-Directive test.md
+│   │    ├── promise-test.md
+│   │    └── ervice-test.md
+│   │ 
 │   ├── $timeout和$interval的用法.md
 │   ├── $watch详解.md
+│   ├── Angular+AngularJS Material Textarea.md
 │   ├── AngularJS+angularjs作用域的生命周期.md
+│   ├── AngularJS内置服务总览.md
 │   ├── AngularJS学习之Cache-缓存.md
 │   ├── AngularJS学习之Factory vs Service vs Provider.md
+│   ├── AngularJS学习之alert和Excetion设计-debug和diagnostics.md
 │   ├── AngularJS学习之directive详解.md
+│   ├── AngularJS学习之ngAnimate动画.md
+│   ├── AngularJS学习之全局变量constant-value.md
 │   ├── AngularJS学习之表单验证.md
 │   ├── AngularJS给动态生成的元素绑定事件.md
+│   ├── AngularJs中promise-$q.md
 │   ├── Angularjs Controller间通信机制.md
 │   ├── Angularjs directive通信案例.md
 │   ├── Angularjs使用jQuery-jqLite.md
@@ -145,52 +174,83 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   ├── UI-Router for AngularJS 1.x.md 
 │   ├── angularJS-debug-skill.md 
 │   ├── angularjs的directive和component的参数传递问题.md
-│   ├── http拦截器介绍与使用.md
+│   ├── ng-class in AngularJS.md
+│   ├── ng-repeat in AngularJS.md
 │   ├── resources.md
 │   ├── tip.md
 │   └── 常见问题和技巧.md
 │ 
 ├── CSS+CSS3-Skill - css技巧
-│   ├──  CSS-Pure
-│   │     ├── 7个CSS单位.md
-│   │     ├── CSS选择器中的正则表达式.md
-│   │     ├── 自动聚焦输入框纯CSS实现SimulateInputFocus.md - focus输入框的时候，外面容器的灰色边框要高亮(不使用JavaScript,纯CSS实现)
-│   │     ├── 中文或英文两端对齐.md
-│   │     ├── 纯CSS实现垂直居中总结.md
-│   │     ├── CSS3利用伪元素与伪类自定义滚动条样式.md
-│   │     └── 常用css技巧
-│   ├──  CSS3-New-Feature新功能
-│   │     ├── CSS变量.md
-│   │     ├── CSS3超高校级好用CSS变量-currentColor.md
-│   │     ├── CSS3-Column分栏.md
-│   │     ├── CSS3-Flex布局.md
-│   │     ├── CSS3-Flex布局.docx
-│   │     ├── CSS3-will-change的使用(提高页面滚动、动画等渲染性能).md
-│   │     │   ├── 移动鼠标改变图片的旋转角度值.html
-│   │     │   └── mustache.html
-│   │     ├── 实现CSS3 3D全景.md
-│   │     │   └── 全景.rar(CSS3 3D全景案例源码)
-│   │     ├── CSS3-flex布局.docx
-│   │     ├── grid-layout布局.md
-│   │     ├── grid-layout.html
-│   │     └── 你可能不知道的5个CSS属性.md
-│   ├──  CSS-Grid 新布局
-│   │     ├── CSS-Grid-layout.md
-│   │     └──grid-layout***.html
-│   ├──  Theory
-│   │     ├── reflow-repaint.md
-│   │     └──    
-│   ├── BootstrapCarouselWithAnimation.html               #使用bootstrap和animation.css制作带动画的幻灯片
-│   ├── CSS属性选择器驱动的过滤搜索技术(autocomplete).md
-│   ├── js控制css伪元素内容（before，after）.md
-│   ├── responsiveTable.md
-│   ├── 中文或英文两端对齐.md
-│   ├── 值得参考的 10 个 LESS CSS 实例.md
-│   ├── 常用css代码.md
-│   ├── css强制换行,超出隐藏和超出显示省略号.md
-│   ├── css3技巧收集.md
-│   ├── css-Hacks-For-IE.md
-│   └── 现代CSS代码的建议.md
+│   ├──  Bootstrap
+│   │     ├── BootstrapCarouse-WithAnimation.html
+│   │     ├── bootstrap使用小tip.md
+│   │     └── Responsive Design with Bootstrap 4.md
+│   ├──  CSS-Pure
+│   │     ├── 7个CSS单位.md
+│   │     ├── CSS选择器中的正则表达式.md
+│   │     ├── 自动聚焦输入框纯CSS实现SimulateInputFocus.md - focus输入框的时候，外面容器的灰色边框要高亮(不使用JavaScript,纯CSS实现)
+│   │     ├── 中文或英文两端对齐.md
+│   │     ├── 纯CSS实现垂直居中总结.md
+│   │     ├── CSS3利用伪元素与伪类自定义滚动条样式.md
+│   │     └── 常用css技巧
+│   ├──  CSS3-New-Feature新功能
+│   │     ├── CSS3-Column分栏.md
+│   │     ├── CSS3-flex布局.docx
+│   │     ├── CSS3-flex布局.md
+│   │     ├── CSS3-transition+animation+background_clip.md
+│   │     ├── CSS3-will-change的使用(提高页面滚动、动画等渲染性能).md
+│   │     ├── CSS3超高校级好用CSS变量-currentColor.md	Update CSS3超高校级好用CSS变量-currentColor.md
+│   │     ├── CSS变量.md	Update CSS变量.md
+│   │     ├── cssVariableProperty.html
+│   │     ├── grid-layout.html
+│   │     ├── grid-layout.md
+│   │     ├── mustache.html
+│   │     ├── 你可能不知道的5个CSS属性.md
+│   │     ├── 全景.rar
+│   │     ├── 实现CSS3 3D全景.md
+│   │     └── 移动鼠标改变图片的旋转角度值.html
+│   ├──  HTML5+CSS
+│   │     ├── HTML5和css3超实用的新属性集合.md
+│   │     └── 
+│   ├──  Theory
+│   │     ├── reflow-repaint.md
+│   │     └──
+│   ├──  CSS-Grid 新布局
+│   │     ├── CSS-Grid-layout.md
+│   │     └── grid-layout***.html
+│   ├──  goodSample
+│   │     ├── counter
+│   │     │   ├── 1.jpg
+│   │     │   ├── Figure-counter.html
+│   │     │   └── counter-sample.html
+│   │     ├── CSS-30 seconds of code.md
+│   │     ├── CSS3奇思妙想.html
+│   │     ├── Double Click Link with Pure CSS.html
+│   │     ├── SVG奇思妙想.html
+│   │     ├── base64-sample.md
+│   │     └── useful CSS tricks.md
+│   ├── BootstrapCarouselWithAnimation.html               #使用bootstrap和animation.css制作带动画的幻灯片
+│   ├── CSS SlideDown-slideUp Transitions on the Display and Height Properties.md
+│   ├── CSS属性选择器驱动的过滤搜索技术(autocomplete).md
+│   ├── CSS选择器小结.md
+│   ├── Less vs SASS.md
+│   ├── PostCSS学习.md
+│   ├── Scrollbar+自定义滚动条样式.md
+│   ├── css-Hacks合集.md
+│   ├── css3技巧收集.md
+│   ├── css3新增属性.md
+│   ├── css强制换行,超出隐藏和超出显示省略号.md
+│   ├── js控制css伪元素内容（before，after）.md
+│   ├── responsiveTable.md
+│   ├── scrollTop、offsetHeight和offsetTop等属性.gif
+│   ├── textarea输入框限制字数.md
+│   ├── 【CSS进阶】伪元素的妙用.md
+│   ├── 中文或英文两端对齐.md
+│   ├── 值得参考的 10 个LESS CSS实例.md
+│   ├── 前端基础知识.md
+│   ├── 基础CSS.md
+│   ├── 常用css代码.md
+│   └── 现代CSS代码的建议.md
 │
 ├── Configuration Study - Build tools 
 │   ├──  Webpack
@@ -467,11 +527,32 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   ├── 常用正则表达式.md
 │   ├── 
 │   └──
+|
+├── RxJS
+│   ├── Reactive Extensions for JavaScript (RxJS).md
+│   ├── RxJS笔记之Subject.md
+│   └──
 │
+├── SVG
+│   ├── AngularJS-SVG /
+│   ├── SVG displacement filter.html
+│   └──
+|
 ├── Samples   --常用&经典样例
-│   ├── InputSamples   --输入框样例集
-│   ├── TableSamples   --表格样例集
-│   ├── 
+│   ├── InputSamples/   --输入框样例集
+│   ├── TableSamples/   --表格样例集
+│   │     ├──CSS&JS_Table_Examples.md
+│   │     ├──table1-accordion-table.html
+│   │     ├──table2-responsive-table1.html
+│   │     ├──table2-responsive-table2.html
+│   │     ├──table3-fixedTableHeader.html
+│   │     ├──table4-ResponsiveFlipPriceTable.html
+│   │     ├──table4-cssPricingTable.html
+│   │     └──table4-flagEffect.html
+│   ├── 02-NodeJS.zip
+│   ├── 03-MongoDB.zip
+│   ├── 05-Angular-2-NodeJS.zip
+│   ├── 06-Auth.zip
 │   └── 
 │
 ├── Security   --安全
@@ -491,22 +572,33 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │
 ├── VirtualReality   #虚拟现实
 │   ├── resource.md
-│   ├── 
 │   └── 
 │
 ├── Vue
 │   ├── Vue学习.md
-│   ├── 
 │   └── 
 │
 ├── SVG
 │   ├── SVG displacement filter.html
-│   ├── 
+│   └── 
+|
+├── qita
+│   ├── Apache ActiveMQ-intro.md
 │   └── 
 │
+├── thirdParty-lib
+│   ├── moment-study.md
+│   └── 
+|
+├── handbook集合.md
+├── markdown-writing-sample.md
+├── npm国内镜像介绍.md
 ├── study-tips.md    --学习过程中的小tip
+├── tools.md
+├── web前端学习资源.md
 ├── 常用node模块.md
-└── web前端学习资源.md
+├──  web前端学习资源.md
+└──常用对照表.md
 ```
 
 **BLOG**

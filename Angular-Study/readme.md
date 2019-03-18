@@ -1,15 +1,18 @@
 ```
 ├── Angular-Study
+│   │
 │   ├── Angular-material/
 │   │   ├── dialog/
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
-│   │   └── readme.md  
+│   │   └── readme.md
+│   │
 │   ├── Mockup-server/
-│   │   ├── Node+http_server创建服务器.md
+│   │   ├── angular-in-memory-web-api.md
+│   │   ├── liverload-mockup+gulp.md
 │   │   ├── mocking-backend -API.md
-│   │   ├── node+express创建服务器.md
-│   │   └── Node+http_server创建服务器.md
+│   │   └── node+express创建服务器.md
+│   │
 │   ├── Sample/
 │   │   ├── directive/
 │   │   │    ├── input-radio.md
@@ -23,21 +26,23 @@
 │   │   ├──  todo-app.rar
 │   │   ├──  案例之星级评价.md
 │   │   └──  
+│   │ 
+│   ├── Angular CLI的使用(new).md     #useful
+│   ├── Angular_CLI的使用.md           
 │   ├── Angular2+Accessibility.md
 │   ├── Angular 2,4 + google map      #Google map在angular>2中的应用
-│   ├── Angular_CLI的使用.md           #useful
 │   ├── Angular中Error汇总.md
 │   ├── Angular之Pipe.md
 │   ├── Angular学习笔记之DI依赖注入.md
 │   ├── Angular学习笔记之lazy loading-使用angular-cli.md     #useful
+│   ├── Angular学习笔记之模板ng-template, ng-content, ng-container and ngTemplateOutlet
 │   ├── Create Angular学习笔记之styling in Angular.md
 │   ├── Angular学习笔记之集成三方UI框架.md
 │   ├── Angular打造股票管理网站.md      #useful
 │   ├── Angular系列之变化检测.md
-│   ├── Reactive Extensions for JavaScript (RxJS).md
-│   ├── mocking-backend -API.md
 │   ├── change-detection-default.gif
 │   ├── change-detection-onpush.gif
+│   ├── redux-angular.gif
 │   ├── redux.png
 │   ├── redux.doc
 │   └── 大漠的Angular Workshop.md
@@ -45,6 +50,7 @@
 
 ## resource
 
+- https://github.com/PatrickJS/awesome-angular
 - [angular style guide](https://angular.io/guide/styleguide)
 - [Angular中文文档](https://angular.cn/)
 - [Angular 4.x 修仙之路](https://segmentfault.com/a/1190000008754631)
