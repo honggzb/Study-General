@@ -29,7 +29,19 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   │   ├── mocking-backend -API.md
 │   │   └── node+express创建服务器.md
 │   │
+│   ├── NgRx/
+│   │   ├── Angular NgRx Getting started/
+│   │   │     ├── Demo-initial/
+│   │   │     └──
+│   │   ├── Observable之Subject.md
+│   │   ├── RxJS笔记-Reactive Extensions for JavaScript (RxJS).md
+│   │   ├── RxJS笔记之Subject.md
+│   │   └── RxJS笔记之switchMap
+│   │
 │   ├── Sample/
+│   │   ├── angular-bootstrap/
+│   │   │    ├── use user-defined directive in Tooltips.md
+│   │   │    └── 
 │   │   ├── directive/
 │   │   │    ├── input-radio.md
 │   │   │    └── 
@@ -51,6 +63,7 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 │   ├── Angular之Pipe.md
 │   ├── Angular学习笔记之DI依赖注入.md
 │   ├── Angular学习笔记之lazy loading-使用angular-cli.md     #useful
+│   ├── Angular学习笔记之模板ng-template, ng-content, ng-container and ngTemplateOutlet
 │   ├── Create Angular学习笔记之styling in Angular.md
 │   ├── Angular学习笔记之集成三方UI框架.md
 │   ├── Angular打造股票管理网站.md      #useful
