@@ -40,8 +40,6 @@ npm i angular-in-memory-web-api --save-dev
 
 ## Redux Pattern
 
-![](https://i.imgur.com/dslkem3.png)
-
 - single source of truth called the **store** -> json database
   - did not include to store
     - unshared state
@@ -51,6 +49,8 @@ npm i angular-in-memory-web-api --save-dev
 - changes are made using pure functions called **reducers**
   - pure functions always return consistent result
   - pure functions will not mutate or access properties outside of function
+
+![](https://i.imgur.com/zCXInZd.png)
 
 ```javascript
 //reducer, two parameters
