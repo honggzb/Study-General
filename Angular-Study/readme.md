@@ -13,7 +13,19 @@
 │   │   ├── mocking-backend -API.md
 │   │   └── node+express创建服务器.md
 │   │
+│   ├── NgRx/
+│   │   ├── Angular NgRx Getting started/
+│   │   │     ├── Demo-initial/
+│   │   │     └──
+│   │   ├── Observable之Subject.md
+│   │   ├── RxJS笔记-Reactive Extensions for JavaScript (RxJS).md
+│   │   ├── RxJS笔记之Subject.md
+│   │   └── RxJS笔记之switchMap
+│   │
 │   ├── Sample/
+│   │   ├── angular-bootstrap/
+│   │   │    ├── use user-defined directive in Tooltips.md
+│   │   │    └── 
 │   │   ├── directive/
 │   │   │    ├── input-radio.md
 │   │   │    └── 
