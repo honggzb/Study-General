@@ -45,7 +45,7 @@ npm i angular-in-memory-web-api --save-dev
     - unshared state
     - angular form state
     - non-serializabld state
-- state is read only and **only** changed by dispatching **actions**
+- state is read only and **only** changed by **dispatching actions**
 - changes are made using pure functions called **reducers**
   - pure functions always return consistent result
   - pure functions will not mutate or access properties outside of function
@@ -607,8 +607,9 @@ ngOnInit() {
 
 ## Architectural Considerations
 
-### Whole architecuree
+### Whole architecure
 
+![](https://i.imgur.com/FJMmj1G.png)
 ![](https://i.imgur.com/t1S3PjA.png)
 
 ### Presentational and Container Component
