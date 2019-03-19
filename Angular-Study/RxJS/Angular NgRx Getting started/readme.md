@@ -5,7 +5,7 @@
   - [installing](#installing)
   - [Developer Tools and Debugging](#developer-tools-and-debugging)
   - [initializing store with reducer](#initializing-store-with-reducer)
-  - [simple implementation](#simple-implementation)
+  - [Simple implementation](#Simple-implementation)
 - [Strongly Typing State](#strongly-typing-state)
   - [Define interfaces for slices of state](#define-interfaces-for-slices-of-state)
 - [strongly typing action](#strongly-typing-action)
@@ -138,7 +138,7 @@ import { StoreModule } from '@ngrx/store';
 })
 ```
 
-### simple implementation
+### Simple implementation
 
 1. create a reducer- `app\products\state\product.reducer.ts`
 2. add `product` state  <-  `this.store.select('products')`
