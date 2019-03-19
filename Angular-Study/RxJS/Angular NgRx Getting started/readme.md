@@ -350,12 +350,12 @@ switch(action.type){
 import * as fromProduct from '../state/product.reducer';
 import * as productActions from '../state/product.actions';
 ngOnInit() {
+    // 3) select state with selector
+    this.store.pipe(select(fromProduct.getProducts)).subscribe(
+      (products: Product[]) => this.products = products
+    );
     this.store.pipe(select(fromProduct.getCurrentProduct)).subscribe(
       selectedProduct => this.selectedProduct = selectedProduct
-    );
-    this.productService.getProducts().subscribe(
-      (products: Product[]) => this.products = products,
-      (err: any) => this.errorMessage = err.error
     );
     this.store.pipe(select(fromProduct.getShowProductCode)).subscribe(
       showProductCode => this.displayCode = showProductCode );
@@ -387,6 +387,9 @@ productSelected(product: Product): void{
 ![](https://i.imgur.com/Rk09Nzb.png)
 
 **Adding new actions- Load, LoadSuccess, LoadFail**
+
+- Load:   filter by loadProduct effect
+- LoadSuccess, LoadFail: work for loadProduct effect
 
 ```javascript
 //product.actions.ts
@@ -477,12 +480,9 @@ export class ProductEffects {
 //product-list.component.ts
 ngOnInit() {
     //...
+    this.products$ = this.store.pipe(select(fromProduct.getProducts)) as Observable<Product[]>;
     // 2) call the dispatch method to use Load effect
     this.store.dispatch(new productActions.Load());
-    // 3) select state with selector
-    this.store.pipe(select(fromProduct.getProducts)).subscribe(
-      (products: Product[]) => this.products = products
-    );
   }
 ```
 
