@@ -8,7 +8,7 @@
   - [Simple implementation](#Simple-implementation)
 - [Strongly Typing State](#strongly-typing-state)
   - [Define interfaces for slices of state](#define-interfaces-for-slices-of-state)
-- [strongly typing action](#strongly-typing-action)
+- [Strongly typing action](#Strongly-typing-action)
   - [Creating strongly typing actions](#creating-strongly-typing-actions)
   - [using strongly typing action in reducer](#using-strongly-typing-action-in-reducer)
 - [Effect](#effect)
@@ -275,7 +275,7 @@ this.store.pipe(select(fromProduct.getShowProductCode))
 
 [back to top](#top)
 
-## strongly typing action
+## Strongly typing action
 
 - prevents hard to find errors
 - improves the tooling experience
@@ -284,6 +284,28 @@ this.store.pipe(select(fromProduct.getShowProductCode))
 ### Creating strongly typing actions
 
 1. Define the action types as named constants: new file named `product.actions.ts`
+
+```javascript
+// 1) define a enum
+export enum ProductActionTypes {
+  ToggleProductCode = '[Product] Toggle Product Code',
+  SetCurrentProduct = '[Product] Set Current Product'
+}
+// 2) create different action with strongly typed
+export class ToggleProductCode implements Action {
+  // readonly
+  readonly type = ProductActionTypes.ToggleProductCode;
+  constructor(public payload: boolean){}
+}
+export class SetCurrentProduct implements Action {
+  // readonly
+  readonly type = ProductActionTypes.SetCurrentProduct;
+  constructor(public payload: Product){}
+}
+// 3) union output type by union pipe operator
+export type ProductActions = ToggleProductCode | SetCurrentProduct;
+```
+
 2. Build the action creators
 3. Define a union type for those action creators
 
