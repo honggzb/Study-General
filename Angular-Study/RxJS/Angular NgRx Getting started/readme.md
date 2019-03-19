@@ -286,12 +286,12 @@ this.store.pipe(select(fromProduct.getShowProductCode))
 1. Define the action types as named constants: new file named `product.actions.ts`
 
 ```javascript
-// 1) define a enum
+//1) define a enum - the action types as named constants
 export enum ProductActionTypes {
   ToggleProductCode = '[Product] Toggle Product Code',
   SetCurrentProduct = '[Product] Set Current Product'
 }
-// 2) create different action with strongly typed
+// 2)create different action strongly type -Build the action creators
 export class ToggleProductCode implements Action {
   // readonly
   readonly type = ProductActionTypes.ToggleProductCode;
@@ -302,7 +302,7 @@ export class SetCurrentProduct implements Action {
   readonly type = ProductActionTypes.SetCurrentProduct;
   constructor(public payload: Product){}
 }
-// 3) union output type by union pipe operator
+// 3) union output type by union pipe operator: Define a union type for those action creators
 export type ProductActions = ToggleProductCode | SetCurrentProduct;
 ```
 
@@ -338,37 +338,6 @@ switch(action.type){
           starRating: 0
         }
       };
-//product.actions.ts
-//1) define a enum - the action types as named constants
-export enum ProductActionTypes {
-  ToggleProductCode = '[Product] Toggle Product Code',
-  SetCurrentProduct = '[Product] Set Current Product',
-  ClearCurrentProduct = '[Product] Clear Current Product',
-  InitializeCurrentProduct = '[Product] Initialize Current Product'
-}
-// 2)create different action type -Build the action creators
-export class ToggleProductCode implements Action {
-  // readonly
-  readonly type = ProductActionTypes.ToggleProductCode;
-  constructor(public payload: boolean){}
-}
-export class SetProductCode implements Action {
-  // readonly
-  readonly type = ProductActionTypes.SetCurrentProduct;
-  constructor(public payload: Product){}
-}
-export class ClearProductCode implements Action {
-  // readonly
-  readonly type = ProductActionTypes.ClearCurrentProduct;
-  // no payload for clear, we can delete constructor
-}
-export class InitializeCurrentProduct implements Action {
-  // readonly
-  readonly type = ProductActionTypes.InitializeCurrentProduct;
-  // no payload for Initalize, we can delete constructor
-}
-//3) union output by union pipe operator: Define a union type for those action creators
-export type ProductActions = ToggleProductCode | SetCurrentProduct |ClearProductCode | InitializeCurrentProduct;
 ```
 
 ### using strongly typing action in reducer
