@@ -1,4 +1,4 @@
-## inital Demo
+## Demo-initial
 
 - use Observable to handle HTTP/async
 - use BehaviorSubject to handle communication between component(product-list.component and product-edit.component)
