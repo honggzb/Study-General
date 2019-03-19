@@ -344,6 +344,8 @@ switch(action.type){
 
 ```javascript
 //product-list.component.ts
+import * as fromProduct from '../state/product.reducer';
+import * as productActions from '../state/product.actions';
 ngOnInit() {
     this.store.pipe(select(fromProduct.getCurrentProduct)).subscribe(
       selectedProduct => this.selectedProduct = selectedProduct
