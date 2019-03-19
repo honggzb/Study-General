@@ -609,7 +609,7 @@ ngOnInit() {
 
 ### Whole architecuree
 
-![](https://i.imgur.com/8sl2FFw.png)
+![](https://i.imgur.com/u6TVTDK.png)
 
 ### Presentational and Container Component
 
