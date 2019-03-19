@@ -265,6 +265,7 @@ export const getShowProductCode = createSelector(
 
 ```javascript
 //product-list.component.ts
+import * as fromProduct from '../state/product.reducer';
 this.store.pipe(select(fromProduct.getShowProductCode))
           .subscribe(showProductCode => this.displayCode = showProductCode);
 ```
@@ -340,6 +341,8 @@ switch(action.type){
       };
 ```
 
+[back to top](#top)
+
 ### using strongly typing action in reducer
 
 ```javascript
@@ -406,6 +409,8 @@ export class LoadFail implements Action {
 export type ProductActions = ToggleProductCode | SetCurrentProduct |ClearProductCode | InitializeCurrentProduct | Load | LoadSuccess | LoadFail;
 ```
 
+[back to top](#top)
+
 ### Defining an effect
 
 - effect is a kind type of angular Service
@@ -430,6 +435,8 @@ export class ProductEffects {
 }
 ```
 
+[back to top](#top)
+
 ### Registering an effect
 
 ```javascript
@@ -450,6 +457,8 @@ export class ProductEffects {
   ]
 })
 ```
+
+[back to top](#top)
 
 ### Using an Effect in components
 
@@ -613,6 +622,8 @@ Don’t specify how data is loaded or changed but emit events via @Outputs | Are
 Receive data via @Inputs                                                 | Top level routes
 May contain other components                                             | May contain other components
 ```
+
+[back to top](#top)
 
 ### Other NgRx Library
 
