@@ -610,6 +610,8 @@ ngOnInit() {
 
 ### Implementation of Update a Product
 
+- change state 'currentProduct' to 'currentProductId'
+
 ![](https://i.imgur.com/KSuR8ol.png)
 
 [back to top](#top)
