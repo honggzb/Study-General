@@ -5,6 +5,8 @@
 - [container refracture](#container-refracture)
 - [components refracture](#components-refracture)
 
+-----------------------
+
 1. create index.ts
    1. move all selector from xxx.reducer.ts to index.ts
    2. xxx.reducer.ts only contain state and reducer(ruler)
