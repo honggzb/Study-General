@@ -1,4 +1,3 @@
-import { State } from './../../../../apm/src/app/state/app.state';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -7,7 +6,7 @@ import { AuthService } from './auth.service';
 
 /* NgRx */
 import { Store, select } from '@ngrx/store';
-import * as fromUser from './state';y
+import * as fromUser from './State';
 import * as userActions from './state/user.actions';
 import * as fromRoot from '../state/app.state';
 import { takeWhile } from 'rxjs/operators';
