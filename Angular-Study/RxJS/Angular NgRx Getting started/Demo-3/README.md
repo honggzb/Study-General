@@ -1,8 +1,6 @@
 [Refracture and Improvement](#top)
 
-- [FormControl](#formcontrol)
-- [FormGroup](#formgroup)
-- [file structure](#file-structure)
+- [File structure](#File-structure)
 - [index.ts](#indexts)
 - [container refracture](#container-refracture)
 - [components refracture](#components-refracture)
@@ -16,7 +14,7 @@
       1. receive data via @Input
       2. emit function via @Output
 
-## file structure
+## File structure
 
 ```
 ├── product/
