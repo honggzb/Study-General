@@ -156,4 +156,7 @@ export function reducer(state=initalState, action: ProductActions): ProductState
 
 ### define effect - product.effect.ts
 
-## Demo 3 - Refracture and Improvement
+## Demo 3 - Refracture and Performance Improvements 
+
+- Container and Presentational Components
+- index.ts
