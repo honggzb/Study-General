@@ -5,10 +5,13 @@
   - [installing](#installing)
   - [Developer Tools and Debugging](#developer-tools-and-debugging)
   - [initializing store with reducer](#initializing-store-with-reducer)
-  - [Simple implementation](#Simple-implementation)
+  - [Simple implementation](#simple-implementation)
 - [Strongly Typing State](#strongly-typing-state)
   - [Define interfaces for slices of state](#define-interfaces-for-slices-of-state)
-- [Strongly typing action](#Strongly-typing-action)
+  - [Build selectors](#build-selectors)
+  - [using a Selector](#using-a-selector)
+  - [Composing Selectors](#composing-selectors)
+- [Strongly typing action](#strongly-typing-action)
   - [Creating strongly typing actions](#creating-strongly-typing-actions)
   - [using strongly typing action in reducer](#using-strongly-typing-action-in-reducer)
 - [Effect](#effect)
@@ -21,7 +24,8 @@
   - [Exception Handling in Effects](#exception-handling-in-effects)
   - [Implementation of Update a Product](#implementation-of-update-a-product)
 - [Architectural Considerations](#architectural-considerations)
-  - [Whole architecuree](#whole-architecuree)
+  - [Whole architecure](#whole-architecure)
+  - [General steps](#general-steps)
   - [Presentational and Container Component](#presentational-and-container-component)
   - [Other NgRx Library](#other-ngrx-library)
 
@@ -203,7 +207,7 @@ checkChanged(value: boolean): void {
 
    ![](https://i.imgur.com/KSvw2o2.png)
 
-   **extending the state interface for lazy loaded modules**
+   1. **extending the state interface for lazy loaded modules**
 
    ```javascript
    //remove some codes in app.state.ts
@@ -238,7 +242,8 @@ this.store.pipe(select('products')).subscribe(
     });
 ```
 
-4. Build selectors
+### Build selectors
+
 - benefits of selector
   - provide a strongly typed API
   - decouple the store from the components
@@ -261,7 +266,7 @@ export const getShowProductCode = createSelector(
 );
 ```
 
-1. using a Selector
+### using a Selector
 
 ```javascript
 //product-list.component.ts
@@ -270,7 +275,7 @@ this.store.pipe(select(fromProduct.getShowProductCode))
           .subscribe(showProductCode => this.displayCode = showProductCode);
 ```
 
-6. Composing Selectors
+### Composing Selectors
 
 ![](https://i.imgur.com/UH2Uqwu.png)
 
@@ -622,6 +627,23 @@ ngOnInit() {
 
 ![](https://i.imgur.com/FJMmj1G.png)
 ![](https://i.imgur.com/t1S3PjA.png)
+
+### General steps
+
+1. import StoreModule in different module
+   1. `StoreModule.forRoot({})` in app.module.ts
+   2. `StoreModule.forFeature('products', reducer)` in sub module, product.module.ts, user.module.ts
+2. Define state and initalizing store in reducer
+   1. import typed state, `import * as fromRoot from '../../state/app.state';`
+   2. Extending the state interface for lazy loaded modules, `export interface State extends fromRoot.State`
+3. Define actions in xxx.actions.ts
+4. Define effects in xxx.effects.ts
+5. implementation reducer in components
+   1. add different selector to store in `ngOninit()`
+   2. dispatch action in functions
+   3. unsubscribe in `ngOnDestroy()`
+   4. note: 
+      1. import typed selector, `import * as fromProduct from '../state/product.reducer';`
 
 ### Presentational and Container Component
 
