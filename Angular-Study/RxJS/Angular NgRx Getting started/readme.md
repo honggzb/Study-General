@@ -678,3 +678,4 @@ May contain other components                                             | May c
 > Reference
 
 - [Angular 7|6 In-Memory Web API Tutorial | CRUD Example](https://www.techiediaries.com/angular-inmemory-web-api/)
+- https://github.com/DeborahK/Angular-NgRx-GettingStarted
