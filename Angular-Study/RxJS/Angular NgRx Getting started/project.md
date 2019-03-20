@@ -1,3 +1,11 @@
+- [Demo-initial](#demo-initial)
+- [Demo 1](#demo-1)
+- [Demo 2 - effect to handle async HTTP](#demo-2---effect-to-handle-async-http)
+  - [add actions](#add-actions)
+  - [add reducer](#add-reducer)
+  - [define effect - product.effect.ts](#define-effect---producteffectts)
+- [Demo 3 - Refracture and Improvement](#demo-3---refracture-and-improvement)
+
 ## Demo-initial
 
 - use Observable to handle HTTP/async
@@ -65,3 +73,87 @@ ngOnInit(): void {
   - getShowProductCode
   - getCurrentProduct
   - getProducts
+
+## Demo 2 - effect to handle async HTTP
+
+### add actions
+
+- Load
+- LoadSuccess
+- LoadFail
+- UpdateProduct
+- UpdateProductSuccess
+- UpdateProductFail
+- CreateProduct
+- CreateProductSuccess
+- CreateProductFail
+- DeleteProduct
+- DeleteProductSuccess
+- DeleteProductFail
+
+### add reducer
+
+```javascript
+export function reducer(state=initalState, action: ProductActions): ProductState {
+  switch(action.type) {
+    //...no Load, Update, CreateProduct, DeleteProduct, it should use in effect
+    case ProductActionTypes.LoadSuccess:
+      return {
+        ...state,
+        products: action.payload,
+        error: ''
+      };
+    case ProductActionTypes.LoadFail:
+      return {
+        ...state,
+        error: action.payload
+      };
+    case ProductActionTypes.UpdateProductSuccess:
+      const updatedProducts = state.products.map(
+      item => action.payload.id === item.id ? action.payload : item);
+      return {
+        ...state,
+        products: updatedProducts,
+        currentProductId: action.payload.id,
+        error: ''
+      };
+    case ProductActionTypes.UpdateProductFail:
+      return {
+        ...state,
+        error: action.payload
+      };
+    // add to products after create
+    case ProductActionTypes.CreateProductSuccess:
+      return {
+        ...state,
+        products: [...state.products, action.payload],
+        currentProductId: action.payload.id,
+        error: ''
+      };
+    case ProductActionTypes.CreateProductFail:
+      return {
+        ...state,
+        error: action.payload
+      };
+     // After a delete, the currentProduct is null.
+    case ProductActionTypes.DeleteProductSuccess:
+      return {
+        ...state,
+        products: state.products.filter(product => product.id !== action.payload),
+        currentProductId: null,
+        error: ''
+      };
+    case ProductActionTypes.DeleteProductFail:
+      return {
+        ...state,
+        error: action.payload
+      };
+    default:
+      return state;
+  }
+}
+```
+
+### define effect - product.effect.ts
+
+## Demo 3 - Refracture and Improvement
