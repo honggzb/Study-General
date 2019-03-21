@@ -6,6 +6,7 @@
 - [components refracture](#components-refracture)
 
 -----------------------
+![](https://i.imgur.com/LfCf8WC.png)
 
 1. create index.ts
    1. move all selector from xxx.reducer.ts to index.ts
