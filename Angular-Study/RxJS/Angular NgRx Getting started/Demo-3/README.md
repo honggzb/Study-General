@@ -86,7 +86,7 @@ export const getError = createSelector(
 
 - add input and output attribute in html template
 - move all service inject and store action from xxx.component.ts in components folder to container component
-- add onPush change DetectionStrategy
+- add onPush change DetectionStrategy, same as /home/shell.component.ts
 
 **product-shell.component.html**
 
@@ -123,10 +123,10 @@ import * as productActions from '../../state/product.actions';
 import { Product } from '../../product';
 @Component({
     templateUrl: './product-shell.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush   //onPush
 })
 export class ProductShellComponent implements OnInit {
-
+  //observable varibles
   displayCode$: Observable<boolean>;
   selectedProduct$: Observable<Product>;
   products$: Observable<Product[]>;
