@@ -8,7 +8,8 @@ import * as productActions from '../../state/product.actions';
 import { Product } from '../../product';
 
 @Component({
-    templateUrl: './product-shell.component.html'
+    templateUrl: './product-shell.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductShellComponent implements OnInit {
 
