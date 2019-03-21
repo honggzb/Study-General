@@ -32,7 +32,14 @@
 
 ## improvement- define $self to instead of &
 
-```css
+```html
+<div class="component">
+    <div class="component__child-element"></div>
+</div>
+<div class="component component--reversed">
+    <div class="component__child-element"></div>
+</div>
+<style>
 .component {
   $self: &; /* Hey look, it's our new best friend!*/
   display: block;
@@ -47,6 +54,7 @@
     }
   }
 }
+</style>
 ```
 
 > References
