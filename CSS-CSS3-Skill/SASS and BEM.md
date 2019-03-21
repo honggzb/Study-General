@@ -1,20 +1,12 @@
 [SASS and BEM](#top)
 
+## Principle
+
 ```css
 .block{} // the ‘thing’ like .list
 .block__element{} // a child of the block like .list__item
 .block--modifier{} // a variation of the ‘thing’ like .list-—vertical
-```
 
-## using `@at-root` or `&`
-
-```css
-.block {
-}
-.block__element {
-}
-.block--modifier {
-}
 .block {
     @at-root #{&}__element {
     }
@@ -28,6 +20,38 @@
     &--modifier {
     }
 }
+```
+
+## using `@at-root` or `&`
+
+```html
+<nav role="navigation" aria-label="primary">
+  <ul class="nav__list">
+    <li class="nav__list__item">
+      <a href="" class="nav__link"></a>
+    </li>
+    <li class="nav__list__item">
+      <a href="" class="nav__link--active"></a>
+    </li>
+    <li class="nav__list__item">
+      <a href="" class="nav__link"></a>
+    </li>
+  </ul>
+</nav>
+<style>
+nav[role=navigation] {
+}
+.nav {
+    &__list {
+      &__item {
+      }    
+    }
+  &__link {
+    &--active { 
+    }
+  }
+}
+</style>
 ```
 
 ## improvement- define $self to instead of &
