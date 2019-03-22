@@ -1,5 +1,34 @@
 [大漠的Angular Workshop](#top)
 
+- [Angular核心概念](#angular%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5)
+  - [UI libraries组件库类](#ui-libraries%E7%BB%84%E4%BB%B6%E5%BA%93%E7%B1%BB)
+  - [开源项目类](#%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E7%B1%BB)
+  - [源类](#%E6%BA%90%E7%B1%BB)
+- [Angular模板引擎](#angular%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E)
+- [组件间通讯](#%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E8%AE%AF)
+  - [父子组件](#%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6)
+  - [兄弟组件](#%E5%85%84%E5%BC%9F%E7%BB%84%E4%BB%B6)
+- [生命周期钩子'](#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
+- [angular动效](#angular%E5%8A%A8%E6%95%88)
+- [动态组件](#%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6)
+- [Angular渲染组件的3种方式和影子DOM](#angular%E6%B8%B2%E6%9F%93%E7%BB%84%E4%BB%B6%E7%9A%843%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%92%8C%E5%BD%B1%E5%AD%90dom)
+- [内容投影ng-content](#%E5%86%85%E5%AE%B9%E6%8A%95%E5%BD%B1ng-content)
+- [指令](#%E6%8C%87%E4%BB%A4)
+  - [组件与指令之间的关系](#%E7%BB%84%E4%BB%B6%E4%B8%8E%E6%8C%87%E4%BB%A4%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB)
+  - [指令之间交互](#%E6%8C%87%E4%BB%A4%E4%B9%8B%E9%97%B4%E4%BA%A4%E4%BA%92)
+- [模块和路由](#%E6%A8%A1%E5%9D%97%E5%92%8C%E8%B7%AF%E7%94%B1)
+  - [模块](#%E6%A8%A1%E5%9D%97)
+  - [路由的基本用法](#%E8%B7%AF%E7%94%B1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95)
+- [表单与数据校验niceFish](#%E8%A1%A8%E5%8D%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%A0%A1%E9%AA%8Cnicefish)
+- [RxJS](#rxjs)
+- [两个完整的案例（OpenWMS和基于Ionic的PWA）](#%E4%B8%A4%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84%E6%A1%88%E4%BE%8Bopenwms%E5%92%8C%E5%9F%BA%E4%BA%8Eionic%E7%9A%84pwa)
+- [变更检测](#%E5%8F%98%E6%9B%B4%E6%A3%80%E6%B5%8B)
+  - [状态](#%E7%8A%B6%E6%80%81)
+- [tips](#tips)
+  - [去除app前缀](#%E5%8E%BB%E9%99%A4app%E5%89%8D%E7%BC%80)
+  - [angular-cli command](#angular-cli-command)
+  - [shell command](#shell-command)
+
 ## Angular核心概念
 
 **依赖注入**
@@ -35,7 +64,7 @@
 - [Angular-material](https://github.com/angular/material2): 目前（2017-10）一共规划了38个组件
 - [Ionic](https://ionic.io/)，专门为移动端打造的组件库，自带周边工具，生态很完善。
 - [Element-Angular](https://element-angular.faas.ele.me/guide/install) ，作者来自饿了么团队。
-- [Clarity](https://vmware.github.io/clarity/) ，来自Vmware团队。 
+- [Clarity](https://vmware.github.io/clarity/) ，来自Vmware团队。
 - [ng2-admin](https://github.com/akveo/ng2-admin):一个非常完整的Angular新版本模板项目，项目里面有在线演示链接。
 - [KendoUI for Angular](http://www.telerik.com/kendo-angular-ui/) ，Telerik的这套组件库的特色是组件的功能比较强大，尤其是Grid，做得非常强，这套组件库是收费的。
 
@@ -48,7 +77,7 @@
 
 ### 源类
 
-- [AngularDoc-查看angular工具](https://angulardoc.github.io/#/products) 
+- [AngularDoc-查看angular工具](https://angulardoc.github.io/#/products)
 - [TypeScript官方网站](http://www.typescriptlang.org/)
 - [Angular官方网站](www.angular.io)
 - [Angular官方Blog](https://blog.angular.io/)
@@ -56,19 +85,19 @@
 
 ## Angular模板引擎
 
-- 插值语法和表达式 
+- 插值语法和表达式
 - 在模板内定义局部变量: `<input #heroInput>`
 - 绑定
     - 值绑定    `[ ]`, `<img [src]="imgSrc" />`
     - 事件绑定  `( )`, `<button (click)="btnClick($event)"></button>`
     - 双向绑定  `[()]`
 - 内置结构型指令用法：`*ngIf`、`*ngFor`、 `ngSwitch`
-- 内置属性型指令用法：`NgClass`、`NgStyle`、`NgModel-另一种双向绑定` 
+- 内置属性型指令用法：`NgClass`、`NgStyle`、`NgModel-另一种双向绑定`
 - 小工具：
     - **管道**:   `{{ currenTime | date: 'yyyy-mm-dd HH:mm:ss' }}`
       - 管道可级联
     - **安全导航**:  `{{ currentValue?.name }}`
-    - 非空断言:   
+    - 非空断言:
 
 [back to top](#top)
 
@@ -76,7 +105,7 @@
 
 **组件是带有视图的指令** - Angular新版本中指令是不能带有视图的
 
-![](https://i.imgur.com/1gJAJjA.png)
+![](https://i.imgur.com/ZZ6AR3f.png)
 
 - 父子组件之间： @input\@output\模板变量\@viewChild
 - 非父子组件之间： service\localstorage\Cookie
@@ -202,7 +231,7 @@ export class Child2Component implements OnInit {
 
 ## 生命周期钩子'
 
-![](https://i.imgur.com/vzV2pfG.png)
+![](https://i.imgur.com/ZZ6AR3f.png)
 
 - ngOnChanges
   - @Input属性发生变化的时候被调用
@@ -329,7 +358,7 @@ export class ShadowDomModeComponent implements OnInit {
   ngOnInit() {}
 }
 ```
- 
+
 [back to top](#top)
 
 ## 内容投影ng-content
@@ -374,7 +403,7 @@ export class ShadowDomModeComponent implements OnInit {
 - 用`@ViewChild`操作视图子节点
 - 用`@ViewChildren`批量操作多个视图子节点
 - ngAfterContentInit/ngAfterContentChecked在ngAfterViewInit/ngAfterViewChecked之前执行
- 
+
 [back to top](#top)
 
 ## 指令
@@ -390,7 +419,7 @@ export class ShadowDomModeComponent implements OnInit {
 [80行代码为你详解Angular版下拉菜单的实现细节](http://www.ngfans.net/topic/40/post)
 
 ### 指令之间交互
- 
+
 [back to top](#top)
 
 ## 模块和路由
@@ -403,7 +432,7 @@ export class ShadowDomModeComponent implements OnInit {
 - 模块是`@angular/cli`打包的最小单位
 - 模块也是Router异步加载时的最小单位
 - Angular框架自身的重要模块
-![](https://i.imgur.com/Fi8eRke.png)
+![](https://i.imgur.com/CKtDBwL.png)
 
 http://git.oschina.net/mumu-osc/learn-module
 
@@ -430,7 +459,7 @@ https://gitee.com/learn-angular-series/learn-router
 - 模板驱动型表单： login
 - 响应式表单
 - 动态表单： 用户个人设置
-- 自定义数据校验：equalValidate <- 
+- 自定义数据校验：equalValidate <-
 
 ## RxJS
 
@@ -504,4 +533,3 @@ rmdir foldername /Q /S
 
 - https://github.com/gdi2290/awesome-angular
 - https://github.com/brillout/awesome-angular-components
-- 
