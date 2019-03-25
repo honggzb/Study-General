@@ -30,7 +30,7 @@ export class DataService implements InMemoryDbService{   //implement InMemoryDbS
 - provide the data service as a parameter for the `.forRoot` method of the InMemoryWebApiModule module
 
 ```javascript
-import { InMemoryWebApiModule } from “angular-in-memory-web-api”;  
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';  
 import { DataService } from “./data.service”;
 @NgModule({
    // ...
