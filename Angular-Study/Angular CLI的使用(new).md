@@ -103,6 +103,7 @@ options|Alias| Description
 - `ng g i myInterface`        - create interface
 - `ng g p models/person -m app.module`   -create pipe and add to app.module.ts
 - `ng g m login --spec false -m app.module`   -create module and add to app.module.ts
+- `ng g s products/product-parameter -m products/product.module`   -**create service and automatically register to product.module**
  
 [back to top](#top)
 
