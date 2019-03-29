@@ -10,7 +10,6 @@
   - [State Management Service](#state-management-service)
   - [State Management Service with Notifications](#state-management-service-with-notifications)
 - [Communicating Using the Router](#communicating-using-the-router)
-- [ErrorObservable or _throw](#errorobservable-or-throw)
 
 ![](https://i.imgur.com/zQztxhg.png)
 
@@ -81,7 +80,7 @@ viewChild and ViewChildren provides a `nativeElement` property
 <javascript>
 @ViewChild('filterElement') filterElementRef;
 @ViewChild(NgModel) filterInput;
-//必须放在ngAfterViewInit
+//必须放在ngAfterViewInit, ngAfterViewInit必须放在ngOninit()之前
 ngAfterViewInit(): void {
     setTimeout(() => {
       console.log(this.filterElementRef);
