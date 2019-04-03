@@ -1,7 +1,5 @@
 [Angular Routing- Deborah Kurata](#top)
 
-[Angular Routing- Deborah Kurata](#top)
-
 - [Route Parameters](#route-parameters)
   - [Populating Route Parameters](#populating-route-parameters)
   - [Reading Route Parameters- ActivatedRoute Service](#reading-route-parameters--activatedroute-service)
