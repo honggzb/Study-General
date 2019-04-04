@@ -1200,3 +1200,4 @@ const ROUTES: Routes = [
 
 > Reference
 - https://github.com/DeborahK/Angular-Routing
+- [Angular CanDeactivate Guard Example](https://www.concretepage.com/angular-2/angular-candeactivate-guard-example)
