@@ -11,6 +11,7 @@
 ```css
 -moz-padding-start:    /*firefox*/
 -webkit-      /*chrome*/
+-ms-          /*IE*/
 ```
 
 <h2 id="HACK的3种表现形式">1. CSS HACK的3种表现形式</h2>
