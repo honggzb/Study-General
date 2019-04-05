@@ -6,6 +6,7 @@
 - [4. 条件注释](#条件注释)
 - [5. 针对其他浏览器的HACK](#针对其他浏览器的HACK)
 - [6. IE11的hack](#IE11的hack)
+- [7. CSS3 Media Query to target different Browser](#CSS3-Media-Query-to-target)
 
 ```css
 -moz-padding-start:    /*firefox*/
@@ -158,7 +159,155 @@ win8的Metro版IE10将不再支持插件，并且不再支持条件注释
 
 [back to top](#top)
 
+<h2 id="CSS3-Media-Query-to-target">7. CSS3 Media Query to target different Browser</h2>
+
+```css
+/* Internet Explorer */
+/* IE 6 */
+* html .ie6 { property: value; }
+/* or */
+.ie6 { _property: value; }
+/* IE 7 */
+*+html .ie7 { property: value; }
+/* or */
+*:first-child+html .ie7 { property: value; }
+
+/* IE 6 and 7 */
+@media screen\9 {
+    .ie67 {
+        property: value;
+    }
+/* or */
+.ie67 { *property: value; }
+/* or */
+.ie67 { #property: value; }
+/* IE 6, 7 and 8 */
+@media \0screen\,screen\9 {
+    .ie678 {
+        property: value;
+    }
+}
+
+/* IE 8 */
+html>/**/body .ie8 { property: value; }
+/* or */
+@media \0screen {
+    .ie8 {
+        property: value;
+    }
+}
+/* IE 8 Standards Mode Only */
+.ie8 { property /*\**/: value\9 }
+/* IE 8,9 and 10 */
+@media screen\0 {
+    .ie8910 {
+        property: value;
+    }
+}
+/* IE 9 only */
+@media screen and (min-width:0\0) and (min-resolution: .001dpcm) {
+    // IE9 CSS
+    .ie9{
+        property: value;
+    }
+}
+/* IE 9 and above */
+@media screen and (min-width:0\0) and (min-resolution: +72dpi) {
+    // IE9+ CSS
+    .ie9up {
+        property: value;
+    }
+}
+/* IE 9 and 10 */
+@media screen and (min-width:0\0) {
+    .ie910 {
+        property: value\9;
+    } /* backslash-9 removes ie11+ & old Safari 4 */
+}
+/* IE 10 only */
+_:-ms-lang(x), .ie10 { property: value\9; }
+/* IE 10 and above */
+_:-ms-lang(x), .ie10up { property: value; }
+/* or */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .ie10up {
+        property:value;
+    }
+}
+/* IE 11 (and above..) */
+_:-ms-fullscreen, :root .ie11up { property: value; }
+/* Microsoft Edge */
+@supports (-ms-ime-align:auto) {
+    .selector {
+        property: value;
+    }
+}
+
+/* Firefox */
+/* Any version (Gecko) */
+@-moz-document url-prefix() {
+    .ff {
+        color: red;
+    }
+}
+/* Quantum Only (Stylo) */
+@-moz-document url-prefix() {
+    @supports (animation: calc(0s)) {
+        /* Stylo */
+        .ffStylo {
+            property: value;
+        }
+    }
+}
+/* Legacy (pre-Stylo) */
+@-moz-document url-prefix() {
+    @supports not (animation: calc(0s)) {
+        /* Gecko */
+        .ffGecko {
+            property: value;
+        }
+    }
+}
+
+/* Webkit */
+/* Chrome & Safari (any version) */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    property: value;
+}
+/* Chrome 29+ */
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+    .chrome {
+        property: value;
+    }
+}
+/* Safari (7.1+) */
+_::-webkit-full-page-media, _:future, :root .safari_only {
+    property: value;
+}
+/* Safari (from 6.1 to 10.0) */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+    @media {
+        .safari6 {
+            color:#0000FF;
+            background-color:#CCCCCC;
+        }
+    }
+}
+/* Safari (10.1+) */
+@media not all and (min-resolution:.001dpcm) {
+    @media {
+        .safari10 {
+            color:#0000FF;
+            background-color:#CCCCCC;
+        }
+    }
+}
+```
+
+[back to top](#top)
+
 -------------------------------------
 
 > Reference
-> - [史上最全的CSS hack方式一览（解决IE6-IE11,Firefox/Safari/Opera/Chrome兼容问题）](https://blog.csdn.net/dayu9216/article/details/70225261)
+- [史上最全的CSS hack方式一览（解决IE6-IE11,Firefox/Safari/Opera/Chrome兼容问题）](http1s://blog.csdn.net/dayu9216/article/details/70225261)
+- [CSS3 Media Query to target only Internet Explorer (from IE6 to IE11+), Firefox, Chrome, Safari and/or Edge](https://www.ryadel.com/en/css3-media-query-target-only-ie-ie6-ie11-firefox-chrome-safari-edge/#Chrome_Safari_any_version)
