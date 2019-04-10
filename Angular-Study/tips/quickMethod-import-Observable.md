@@ -1,5 +1,6 @@
 - create a rxjsOperations.ts
-- add `import './app/rxjsOpertions';` in 
+- add `import './app/rxjsOpertions';` in 'main.ts'
+  - note: must before `import { AppModule } from "./app/app.module";`
 
 ```javascript
 import 'rxjs/add/operator/catch';
