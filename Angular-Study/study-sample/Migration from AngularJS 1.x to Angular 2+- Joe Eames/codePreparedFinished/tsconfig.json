@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "lib": ["es2017", "dom"]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
