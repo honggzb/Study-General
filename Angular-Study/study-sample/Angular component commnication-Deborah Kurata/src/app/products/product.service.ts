@@ -20,7 +20,8 @@ export class ProductService {
   selectedProductChange$ = this.selectedProductSource.asObservable();
 
   constructor(private http: HttpClient) { }
-
+  
+  // broadcast Notification
   changeSelectedProduct(selectedProduct:IProduct | null): void {
     this.selectedProductSource.next(selectedProduct);
   }
@@ -121,11 +122,6 @@ export class ProductService {
         imageUrl: ''
     };
 }
-
-  // broadcast Notification
-  changeSelectedProduct(product: IProduct){
-    this.selectedProductSource.next(product);
-  }
 
   private handleError(err) {
     // in a real world app, we may send the server to some remote logging infrastructure

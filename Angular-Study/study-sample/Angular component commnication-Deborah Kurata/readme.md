@@ -1,6 +1,7 @@
 [Angular学习笔记之组件通讯Component Communication](#top)
 
 - [Communicating with a Template](#communicating-with-a-template)
+  - [Methods to achieve two-way binding](#Methods-to-achieve-two-way-binding)
   - [ViewChild and ViewChildren](#viewchild-and-viewchildren)
   - [Parent to Child Component](#parent-to-child-component)
   - [Child to Parent Component](#child-to-parent-component)
@@ -17,7 +18,7 @@
 
 ![](https://i.imgur.com/BmjF7Ir.png)
 
-**Methods to achieve two-way binding**
+### Methods to achieve two-way binding
 
 1. the long way of two-way binding
 2. getter and setter: clear and easy way
@@ -278,3 +279,4 @@ ngOnInit(): void {
 
 > Reference
 - https://blogs.msmvps.com/deborahk/
+- https://github.com/DeborahK/Angular-Communication
