@@ -1,4 +1,10 @@
-- [常用快捷键推荐](#常用快捷键推荐)
+- [常用快捷键](#常用快捷键)
+  - [基础编辑 Basic editing](#%E5%9F%BA%E7%A1%80%E7%BC%96%E8%BE%91-basic-editing)
+  - [导航Navigation](#%E5%AF%BC%E8%88%AAnavigation)
+  - [搜索和替换Search and replace](#%E6%90%9C%E7%B4%A2%E5%92%8C%E6%9B%BF%E6%8D%A2search-and-replace)
+  - [多光标和选择 Multi-cursor and selection](#%E5%A4%9A%E5%85%89%E6%A0%87%E5%92%8C%E9%80%89%E6%8B%A9-multi-cursor-and-selection)
+  - [丰富的语言编辑 Rich languages editing](#%E4%B8%B0%E5%AF%8C%E7%9A%84%E8%AF%AD%E8%A8%80%E7%BC%96%E8%BE%91-rich-languages-editing)
+  - [调试 Debug](#%E8%B0%83%E8%AF%95-debug)
 - [前端开发常用插件列表](#前端开发常用插件列表)
 - [Theme](#theme)
 - [自定义设置参考](#自定义设置参考)
@@ -7,7 +13,7 @@
     - [自动保存](#自动保存)
     - [小结](#小结)
 
-### 常用快捷键推荐
+### 常用快捷键
 
 ### 基础编辑 Basic editing
 
@@ -112,48 +118,6 @@
 `F11` / Shift+F11	|下一步/上一步 |Step into/out
 `F10`	|跳过| Step over
 `Ctrl+K Ctrl+I`|	显示悬停 |Show hover
-
-<table>
-  <tr><th colspan="2">Zoom In/Zoom Out the entire user interface</th></tr>
-  <tr><td>Zoom In</td><td>Ctrl + '+'</td></tr>
-  <tr><td>Zoom Out</td><td>Ctrl + '-'</td></tr>
-  <tr><th colspan="2">TS相关</th></tr>
-  <tr><td>@</td><td>'Ctrl+p' => '@'将显示所有的Object，可以迅速定位到该Object </td></tr>
-  <tr><td>Peek</td><td>鼠标右键(Shift+F12) => Peek references</td></tr>
-  <tr><th colspan="2">格式调整</th></tr>
-  <tr><td>代码行缩进</td><td>Ctrl+[， Ctrl+]</td></tr>
-    <tr><td><b>代码格式化</b></td><td>Shift+Alt+F，或Ctrl+Shift+P后输入format code(format selection)</td></tr>
-  <tr><td>修剪空格</td><td>Ctrl+Shift+X</td></tr>
-  <tr><td>自动换行</td><td>Alt+Z</td></tr>
-  <tr><td>**括号匹配**</td><td>ctrl+shift+\</td></tr>
-  <tr><td>**符号查找**</td><td>ctrl+shift+o</td></tr>
-  <tr><td>修整行尾空格</td><td>ctrl+shift+x</td></tr>
-  <tr><td>**代码折叠**</td><td>ctrl+shift+[ and ctrl+shift+]</td></tr>
-  <tr><th colspan="2">重构代码</th></tr>
-  <tr><td>**跳转到定义处**</td><td>F12</td></tr>
-  <tr><td>**跳转行号**</td><td>ctrl+G</td></tr>
-  <tr><td>转到实现 </td><td>ctrl+F12 </td></tr>
-  <tr><td>列出所有的引用</td><td>shift+F12</td></tr>
-  <tr><td>**同时修改本文件中所有匹配的**</td><td>ctrl+F12</td></tr>
-  <tr><td>重命名所有方法名</td><td>选中后按F2，输入新的名字，回车，会发现所有的文件都修改</td></tr>
-  <tr><td>跳转到下一个Error或Warning</td><td>F8</td></tr>
-  <tr><td>比较文件</td><td>选择文件右键compare selected</td></tr>
-  <tr><td>**拆分编辑器**</td><td>ctrl+\</td></tr>
-  <tr><td>**添加函数注释**</td><td>在函数上方输入“/**”，然后点击enter</td></tr>
-  <tr><th colspan="2">文件相关</th></tr>
-  <tr><td>全部保存</td><td>ctrl+k, 然后只按s一个键</td></tr>
-  <tr><td>关闭文件夹</td><td>ctrl+k, 然后单按一个f</td></tr>
-  <tr><th colspan="2">显示相关</th></tr>
-  <tr><td>侧边栏显/隐</td><td>ctrl+B</td></tr>
-  <tr><td>预览markdown</td><td>Ctrl+Shift+V</td></tr>
-  <tr><td>zoomIn/zoomOut</td><td>Ctrl + =/Ctrl + -</td></tr>
-  <tr><td>全屏</td><td>F11</td></tr>
-  <tr><th colspan="2">打开相关</th></tr>
-  <tr><td>历史打开文件之间切换</td><td>Ctrl+Tab，Alt+Left，Alt+Right</td></tr>
-  <tr><td>左中右3个编辑器的快捷键</td><td>Ctrl+1 Ctrl+2 Ctrl+3</td></tr>
-  <tr><td>3个编辑器之间循环切换</td><td>Ctrl+`</td></tr>
-  <tr><td>全屏</td><td>F11</td></tr>
-</table>
 
 **new for 1.28**
 
