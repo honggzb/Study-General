@@ -1,23 +1,58 @@
 [Migration from AngularJS1.x to Angular2+](#top)
 
+- [Migration Overview](#migration-overview)
+  - [Upgrading with ngUpgrade- Using UpgradeModule with Angular NgModules](#upgrading-with-ngupgrade--using-upgrademodule-with-angular-ngmodules)
+  - [Overview](#overview)
+- [VS code setting](#vs-code-setting)
+  - [Preparing your code](#preparing-your-code)
+- [ui-router Migration to component](#ui-router-migration-to-component)
+
 ## Migration Overview
+
+### Upgrading with ngUpgrade- Using UpgradeModule with Angular NgModules
+
+**Dependency Injection**
+
+AngularJS|	Angular
+---|---
+Dependency injection tokens are always strings|Tokens can have different types.<br> They are often classes. They may also be strings
+There is exactly one injector.<br>Even in multi-module applications, everything is poured into one big namespace|There is a tree hierarchy of injectors, <br>with a root injector and an additional injector for each component
+
+- **upgrade:**   AngularJS services available for injection to Angular
+  - in app.module.ts, `{ provide: 'auth', useFactory: getAuth, deps: ['$injector'] }`
+- **downgrade**: Angular services available for injection to AngularJS
+  - in main.ts, `.factory('sessions', downgradeInjectable(Sessions))`
+- ![](https://i.imgur.com/oWgOVzO.png)
+
+**Change Detection**
+
+The UpgradeModule will invoke the AngularJS `$rootScope.$apply()` after every turn of the Angular zone. This also triggers AngularJS change detection after every event
 
 ### Overview
 
 ![](https://i.imgur.com/g1B31QQ.png)
 
 1. Follow the style guide -[Angular Style Guide-johnpapa](https://github.com/johnpapa/angular-styleguide)
-   1. use controllAs
+   1. The [Rule of 1](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#single-responsibility) states that there should be one component per file
+   2. The [Folders-by-Feature Structure](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#folders-by-feature-structure) and [Modularity](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md#modularity) rules
 2. Update to the Latest Version of Angular 1
 3. All new Development with components:
    1. components is new feature in angularJS 1.5
 4. Switch controllers to components
-5. Remove Invompatible features from directives
-   1. Compile,
-   2. Terminal,
-   3. Priority,
-   4. Replace: remove all `transclude: true` in directive or component
-6. Switch component directives to components
+5. Remove Incompatible features from directives, should not use the following attributes
+   1. `compile`. This will not be supported in Angular
+   2. `replace`: true. Angular never replaces a component element with the component template. This attribute is also deprecated in AngularJS.
+   3. `priority` and `terminal`. While AngularJS components may use these, they are not used in Angular and it is better not to write code that relies on them
+6. Switch component directives to components,
+   1. an AngularJS component directive **should** configure these attributes:
+      1. `restrict: 'E'`. Components are usually used as elements
+      2. `scope: {}` - an isolate scope. In Angular, components are always isolated from their surroundings, and you should do this in AngularJS too
+      3. `bindToController: {}`. Component inputs and outputs should be bound to the controller instead of using the $scope
+      4. `controller` and `controllerAs`. Components have their own controllers
+      5. `template` or `templateUrl`. Components have their own templates
+   2. Component directives **may also** use the following attributes:
+      1. `transclude: true/{}`, if the component needs to transclude content from elsewhere
+      2. `require`, if the component needs to communicate with some parent component's controller
 
 ```javascript
 // old component directive
@@ -373,6 +408,8 @@ angular.module('app').component('createUsers', {
   }
 });
 ```
+
+[back to top](#top)
 
 > Reference
 - [Migrating AngularJS UI Router to Angular Router](https://gist.github.com/zaenk/21e8bee3071f339aed27f411822bb8d9)
