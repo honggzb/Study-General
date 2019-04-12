@@ -1,0 +1,4 @@
+- `net user`
+- 控制面板 -> 用户账户 -> 凭据管理器
+- control panel -> user account -> Credential Manager
+- `cmdkey /list`
