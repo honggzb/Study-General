@@ -18,13 +18,15 @@ import { Sessions } from './sessions/sessions.service';
 import { DetailPanelComponent } from "./common/detailPanel.component";
 import { ResultsComponent } from './admin/results.component';
 import { SessionDetailWithVotesComponent } from './sessions/sessionDetailWithVotes.component';
+import { LoginComponent } from './security/login.component';
 
 import { AllSessionsResolver } from './sessions/allSessions.resolver';
+import { CurrentIdentity } from './security/currentIdentity.service';
 
 let toastr:Toastr = window['toastr'];
 //use angularJS service in angular
 export function getLocation(i: any) { return i.get('$location') }
-export function getCurrentIdentity(i: any) { return i.get('currentIdentity') }
+//export function getCurrentIdentity(i: any) { return i.get('currentIdentity') }
 export function getAuth(i:any) { return i.get('auth') }
 export function getToastr() { return toastr; }
 
@@ -63,13 +65,14 @@ class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     NavComponent,
     DetailPanelComponent,
     ResultsComponent,
-    SessionDetailWithVotesComponent
+    SessionDetailWithVotesComponent,
+    LoginComponent
   ],
   providers: [
     NameParser,
     //use angularJs service in anguar
     { provide: '$location', useFactory: getLocation, deps: ['$injector']},
-    { provide: 'currentIdentity', useFactory: getCurrentIdentity, deps: ['$injector']},
+    //{ provide: 'currentIdentity', useFactory: getCurrentIdentity, deps: ['$injector']},
     { provide: 'auth', useFactory: getAuth, deps: ['$injector'] },
     { provide: TOASTR_TOKEN, useFactory: getToastr },
     { provide: UrlHandlingStrategy, useClass: Ng1Ng2UrlHandlingStrategy },
@@ -77,7 +80,8 @@ class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     { provide: '$scope', useExisting: '$rootScope'},
     Sessions,
     AllSessionsResolver,
-    AdminGuard
+    AdminGuard,
+    CurrentIdentity
   ],
   bootstrap: [
     AppComponent
@@ -86,7 +90,8 @@ class Ng1Ng2UrlHandlingStrategy implements UrlHandlingStrategy {
     UnreviewedTalkComponent,
     ProfileComponent,
     DetailPanelComponent,
-    ResultsComponent
+    ResultsComponent,
+    LoginComponent
   ]
 })
 export class AppModule {}

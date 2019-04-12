@@ -16,10 +16,10 @@ angular.module('app').component('createNewSession', {
         userId: currentIdentity.currentUser.id,
       }
 
-      sessions.createNewSession(newUserSession).then(function(response) {
+      sessions.createNewSession(newUserSession).then(response =>  {
         console.log(response);
         this.userSessions.push(response);
-      }.bind(this))
+      })
 
     }
   }
