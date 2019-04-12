@@ -18,6 +18,8 @@
 
 ## 常用快捷键
 
+[VS Code 快捷键（中英文对照版）](https://segmentfault.com/a/1190000007688656)
+
 ### 基础编辑 Basic editing
 
  快捷键|基础编辑|Basic editing
