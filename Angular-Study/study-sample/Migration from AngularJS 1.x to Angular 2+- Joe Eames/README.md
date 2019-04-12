@@ -416,6 +416,7 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
     - change all `ng-model` to `[ngModel]`, and add **name** attribute
       - `<input type="text" id="lastName" placeholder="Last Name" class="form-control" [ngModel]="profile.lastName" name="lastName">`
     - add `#form="ngForm"` to form
+    - Template migration principle
 - move this component to app directory
 - add component to app.module.ts, should add it into 2 places
   - `declarations: []`
@@ -423,6 +424,15 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
 - remove component from index.ts
 - need downgrades component, then angularJS(component/service) can use this angular component in main.ts
   - `.directive('unreviewedTalk', downgradeComponent({ component: UnreviewedTalkComponent }));`
+
+**Template migration principle**
+
+|Binding definition|Template syntax
+---|---|---
+Attribute binding	|` myAttribute: '@myAttribute'`|`<my-component myAttribute="value">`
+Expression binding|`myOutput: '&myOutput'`|`<my-component (myOutput)="action()">`
+One-way binding	|`myValue: '<myValue'`|`<my-component [myValue]="anExpression">`
+Two-way binding	|`myValue: '=myValue'`|As a two-way binding: `<my-component [(myValue)]="anExpression">`. <br>Since most AngularJS two-way bindings actually only need a one-way binding in practice, <br>`<my-component [myValue]="anExpression">`is often enough
 
 ```javascript
 // change component from angularJS to angular
