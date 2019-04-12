@@ -1,3 +1,5 @@
+[top](#top)
+
 - [常用快捷键](#常用快捷键)
   - [基础编辑 Basic editing](#%E5%9F%BA%E7%A1%80%E7%BC%96%E8%BE%91-basic-editing)
   - [导航Navigation](#%E5%AF%BC%E8%88%AAnavigation)
@@ -5,6 +7,7 @@
   - [多光标和选择 Multi-cursor and selection](#%E5%A4%9A%E5%85%89%E6%A0%87%E5%92%8C%E9%80%89%E6%8B%A9-multi-cursor-and-selection)
   - [丰富的语言编辑 Rich languages editing](#%E4%B8%B0%E5%AF%8C%E7%9A%84%E8%AF%AD%E8%A8%80%E7%BC%96%E8%BE%91-rich-languages-editing)
   - [调试 Debug](#%E8%B0%83%E8%AF%95-debug)
+  - [Others](#Others)
 - [前端开发常用插件列表](#前端开发常用插件列表)
 - [Theme](#theme)
 - [自定义设置参考](#自定义设置参考)
@@ -13,7 +16,7 @@
     - [自动保存](#自动保存)
     - [小结](#小结)
 
-### 常用快捷键
+## 常用快捷键
 
 ### 基础编辑 Basic editing
 
@@ -46,6 +49,8 @@
 `Shift+Alt+A`|	切换块注释| Toggle block comment
 `Alt+Z`	|切换换行| Toggle word wrap
 
+[back to top](#top)
+
 ### 导航Navigation
 
 快捷键|导航|Navigation
@@ -61,6 +66,8 @@
 `Alt + ←/→`|返回/前进 |Go back / forward
 `Ctrl + M`|切换选项卡移动焦点 |Toggle Tab moves focus
 
+[back to top](#top)
+
 ### 搜索和替换Search and replace
 
 快捷键|搜索和替换|Search and replace
@@ -72,6 +79,8 @@
 `Ctrl + D`|将选择添加到下一个查找匹配 |Add selection to next Find match
 `Ctrl + K Ctrl + D`|将最后一个选择移至下一个查找匹配项 |Move last selection to next Find match
 `Alt + C / R / W`	|切换区分大小写/正则表达式/整个词 |Toggle case-sensitive / regex / whole word
+
+[back to top](#top)
 
 ### 多光标和选择 Multi-cursor and selection
 
@@ -89,6 +98,8 @@
 `Shift + Alt + （拖动鼠标）`|	列（框）选择| Column (box) selection
 `Ctrl + Shift + Alt +（箭头键）`|	列（框）选择 |Column (box) selection
 `Ctrl + Shift + Alt + PgUp / PgDown`|列（框）选择页上/下 |Column (box) selection page up/down
+
+[back to top](#top)
 
 ### 丰富的语言编辑 Rich languages editing
 
@@ -108,6 +119,8 @@
 `Ctrl + K Ctrl + X`|修剪尾随空格 |Trim trailing whitespace
 `Ctrl + K M`|更改文件语言| Change file language
 
+[back to top](#top)
+
 ### 调试 Debug
 
 快捷键|调试|Debug
@@ -119,6 +132,30 @@
 `F10`	|跳过| Step over
 `Ctrl+K Ctrl+I`|	显示悬停 |Show hover
 
+[back to top](#top)
+
+### Others
+
+快捷键|others|others
+---|---|---
+`@`|TS相关'Ctrl+p' => '@'|将显示所有的Object，可以迅速定位到该Object
+`Peek`|鼠标右键(Shift+F12) => Peek references|
+`Ctrl+Shift+X`|修剪空格||
+自动换行	Alt+Z
+`ctrl+shift+\`|括号匹配	|
+`ctrl+shift+o`|符号查找|	
+`ctrl+shift+x`|修整行尾空格|
+`F12`|跳转到定义处|	
+`ctrl+G`|跳转行号|
+`shift+F12`|列出所有的引用|
+`ctrl+F12`|同时修改本文件中所有匹配的|	
+`F2`|选中后按F2，输入新的名字，回车，会发现所有的文件都修改|重命名所有方法名
+`F8`|跳转到下一个Error或Warning|
+N/A|选择文件右键compare selected|比较文件
+`/**`|在函数上方输入“/**”，然后点击enter|添加函数注释
+
+[back to top](#top)
+
 **new for 1.28**
 
 - Editor Tab completion: use tab -> intellisense
@@ -128,7 +165,9 @@
 
 <hr>
 
-### 前端开发常用插件列表
+[back to top](#top)
+
+## 前端开发常用插件列表
 
 VSCode 前端开发常用插件列表（字母升序），旨在方便日常使用
 
@@ -169,6 +208,8 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
   - [Can I Use](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse)：浏览器兼容性查询
     Quokka.js可以实时运行代码，在你敲键盘的同时就可以把结果显示在编辑器里面, 并能够预览变量的函数和计算值结果, 类似的插件还有：Code Runner，支持实时执行C, C++, Java, JavaScript, PHP, Python, Perl, Perl 6 等语言
 
+[back to top](#top)
+
 **CSS相关**
 
 - CSS Peek: 追踪至样式表中 CSS 类和 ids 定义的地方, 在 HTML 文件中右键单击选择器时，选择“ Go to Definition 和 Peek definition ”选项，它便会给你发送样式设置的 CSS 代码
@@ -180,6 +221,8 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 - Color Picker: 代码的颜色选择器
 - Color Info: 颜色信息及转换
 - Color-Highlight: 在编辑器中高亮显示颜色
+
+[back to top](#top)
 
 **Beauty美化+代码格式化相关**
 
@@ -197,6 +240,8 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)：VS Code Material Design 主题 icon
   
+[back to top](#top)
+
 **Git**
 
 - [Git Blame](https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame)：查看当前选中行的 Git 提交信息
@@ -205,6 +250,8 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 -[ Open in GitHub / Bitbucket / Gitlab / VisualStudio.com](https://marketplace.visualstudio.com/items?itemName=ziyasal.vscode-open-in-github) ! — It lets you open the repo in the browser with a single command.
 - Git Indicators — It lets you see the affected files and how many lines have been added or deleted in the status bar.
   
+[back to top](#top)
+
 **其他**
 
 - [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis): 自动生成 JSDoc 注释, Ctrl+Alt+D
@@ -218,6 +265,8 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 - [Project Manager](https://github.com/alefragnani/vscode-project-manager)：项目管理
 - Regex Previewer: 正则表达式预览
 - Paste as JSON：快速地将JSON数据转为JavaScript代码
+
+[back to top](#top)
 
 **Vue 开发**
 
@@ -247,13 +296,13 @@ VSCode 前端开发常用插件列表（字母升序），旨在方便日常使�
 
 <hr>
 
-### Theme
+## Theme
 
 - One Monokai
 - One Dark
 - Material Icon:   icon
 
-### 自定义设置参考
+## 自定义设置参考
 
 ```javascript
  "files.autoGuessEncoding": true,        // 中文注释乱码
@@ -279,7 +328,7 @@ scrollBeyondLastLine
 
 选项 -> 文本编辑器 -> "auto close ..."
 
-#### 改变theme的高亮highlight颜色
+### 改变theme的高亮highlight颜色
 
 ```json
  "workbench.colorCustomizations": {
@@ -290,18 +339,18 @@ scrollBeyondLastLine
  }
 ```
 
-#### 设置tab转空格并设置数量
+### 设置tab转空格并设置数量
 
 1. 在状态栏右下角点击  ---》空格：
 2. 选择“使用空格缩进”
 3. 选择 2
 4. 然后就可以看到缩进变为2个空格了
 
-#### 自动保存
+### 自动保存
 
 打开settings.json： `"files.autoSave": "afterDelay"`
 
-#### 小结
+### 小结
 
 ```json
 { // VScode主题配置
