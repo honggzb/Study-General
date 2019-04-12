@@ -238,6 +238,9 @@ app.use('/styles.css', express.static(rootPath + '/public/styles.css'));
 
 ### 5. Bootstrapping Angular
 
+- To bootstrap a hybrid application, you must bootstrap each of the Angular and AngularJS parts of the application. You must bootstrap the Angular bits first and then ask the UpgradeModule to bootstrap the AngularJS bits next
+- Pure AngularJS applications can be automatically bootstrapped by using an ng-app directive somewhere on the HTML page. But for hybrid applications, you manually bootstrap via the UpgradeModule
+
 ```javascript
 //1) delete following code in public/app.ts
 angular.element(document).ready(() => {
