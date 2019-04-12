@@ -9,6 +9,110 @@
 
 ### 常用快捷键推荐
 
+### 基础编辑 Basic editing
+
+ 快捷键|基础编辑|Basic editing
+---|---|---
+`Ctrl+X`|剪切行（空选定）| Cut line (empty selection)
+`Ctrl+C`|复制行（空选定）|Copy line (empty selection)
+`Alt+ ↑ / ↓`	|向上/向下移动行| Move line up/down
+`Shift+Alt + ↓ / ↑`|	向上/向下复制行| Copy line up/down
+`Ctrl+Shift+K`|	删除行 |Delete line
+`Ctrl+Enter`|	在下面插入行 |Insert line below
+`Ctrl+Shift+Enter`|	在上面插入行| Insert line above
+`Ctrl+Shift+\`|	跳到匹配的括号 |Jump to matching bracket
+`Ctrl+] / [`|	缩进/缩进行| Indent/outdent line
+`Home`|	转到行首| Go to beginning of line
+`End`|	转到行尾 |Go to end of line
+`Ctrl+Home`|	转到文件开头 |Go to beginning of file
+`Ctrl+End`|	转到文件末尾 |Go to end of file
+`Ctrl+↑ / ↓`	|向上/向下滚动行| Scroll line up/down
+`Alt+PgUp / PgDown`|	向上/向下滚动页面 |Scroll page up/down
+`Ctrl+Shift+[`|	折叠（折叠）区域 |Fold (collapse) region
+`Ctrl+Shift+]`|	展开（未折叠）区域| Unfold (uncollapse) region
+`Ctrl+K Ctrl+[`|	折叠（未折叠）所有子区域 |Fold (collapse) all subregions
+`Ctrl+K Ctrl+]`|	展开（未折叠）所有子区域 |Unfold (uncollapse) all subregions
+`Ctrl+K Ctrl+0`	|折叠（折叠）所有区域 |Fold (collapse) all regions
+`Ctrl+K Ctrl+J`|	展开（未折叠）所有区域| Unfold (uncollapse) all regions
+`Ctrl+K Ctrl+C`	|添加行注释 |Add line comment
+`Ctrl+K Ctrl+U`	|删除行注释 |Remove line comment
+`Ctrl+/`|切换行注释| Toggle line comment
+`Shift+Alt+A`|	切换块注释| Toggle block comment
+`Alt+Z`	|切换换行| Toggle word wrap
+
+### 导航Navigation
+
+快捷键|导航|Navigation
+---|---|---
+`Ctrl + T`|显示所有符号 |Show all Symbols
+`Ctrl + G`|转到行... |Go to Line...
+`Ctrl + P`|转到文件... |Go to File...
+`Ctrl + Shift + O`|转到符号... |Go to Symbol...
+`Ctrl + Shift + M`|显示问题面板| Show Problems panel
+`F8`|	转到下一个错误或警告| Go to next error or warning
+`Shift + F8`|	转到上一个错误或警告 |Go to previous error or warning
+`Ctrl + Shift + Tab`|	导航编辑器组历史记录| Navigate editor group history
+`Alt + ←/→`|返回/前进 |Go back / forward
+`Ctrl + M`|切换选项卡移动焦点 |Toggle Tab moves focus
+
+### 搜索和替换Search and replace
+
+快捷键|搜索和替换|Search and replace
+---|---|---
+`Ctrl + F`|查找 |Find
+`Ctrl + H`|替换 |Replace
+`F3 / Shift + F3`|查找下一个/上一个|Find next/previous
+`Alt + Enter`|选择查找匹配的所有出现 |Select all occurences of Find match
+`Ctrl + D`|将选择添加到下一个查找匹配 |Add selection to next Find match
+`Ctrl + K Ctrl + D`|将最后一个选择移至下一个查找匹配项 |Move last selection to next Find match
+`Alt + C / R / W`	|切换区分大小写/正则表达式/整个词 |Toggle case-sensitive / regex / whole word
+
+### 多光标和选择 Multi-cursor and selection
+
+快捷键|多光标和选择|Multi-cursor and selection
+---|---|---
+`Alt +单击`|插入光标 Insert cursor
+`Ctrl + Alt +↑/↓`	|在上/下插入光标 |Insert cursor above / below
+`Ctrl + U`|撤消上一个光标操作 |Undo last cursor operation
+`Shift + Alt + I`|在选定的每一行的末尾插入光标| Insert cursor at end of each line selected
+`Ctrl + I`|选择当前行 |Select current line
+`Ctrl + Shift + L`|选择当前选择的所有出现| Select all occurrences of current selection
+`Ctrl + F2`|选择当前字的所有出现| Select all occurrences of current word
+`Shift + Alt + →`	|展开选择 |Expand selection
+`Shift + Alt + ←`	|缩小选择 |Shrink selection
+`Shift + Alt + （拖动鼠标）`|	列（框）选择| Column (box) selection
+`Ctrl + Shift + Alt +（箭头键）`|	列（框）选择 |Column (box) selection
+`Ctrl + Shift + Alt + PgUp / PgDown`|列（框）选择页上/下 |Column (box) selection page up/down
+
+### 丰富的语言编辑 Rich languages editing
+
+快捷键|丰富的语言编辑|Rich languages editing
+---|---|---
+`Ctrl + 空格`	|触发建议| Trigger suggestion
+`Ctrl + Shift + Space`|触发器参数提示 |Trigger parameter hints
+`Tab	Emmet`| 展开缩写| Emmet expand abbreviation
+`Shift + Alt + F`	|格式化文档 |Format document
+`Ctrl + K Ctrl + F`|格式选定区域 |Format selection
+`F12`	|转到定义 |Go to Definition
+`Alt + F12`|Peek定义 |Peek Definition
+`Ctrl + K F12`|打开定义到边 |Open Definition to the side
+`Ctrl + .`|快速解决 |Quick Fix
+`Shift + F12`	|显示引用| Show References
+`F2`|	重命名符号| Rename Symbol
+`Ctrl + K Ctrl + X`|修剪尾随空格 |Trim trailing whitespace
+`Ctrl + K M`|更改文件语言| Change file language
+
+### 调试 Debug
+
+快捷键|调试|Debug
+---|---|---
+`F9`|	切换断点 |Toggle breakpoint
+`F5`|	开始/继续 |Start/Continue
+`Shift+F5`|停止 Stop
+`F11` / Shift+F11	|下一步/上一步 |Step into/out
+`F10`	|跳过| Step over
+`Ctrl+K Ctrl+I`|	显示悬停 |Show hover
+
 <table>
   <tr><th colspan="2">Zoom In/Zoom Out the entire user interface</th></tr>
   <tr><td>Zoom In</td><td>Ctrl + '+'</td></tr>
