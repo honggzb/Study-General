@@ -377,3 +377,8 @@ angular.module('app').component('createUsers', {
 > Reference
 - [Migrating AngularJS UI Router to Angular Router](https://gist.github.com/zaenk/21e8bee3071f339aed27f411822bb8d9)
 - https://ui-router.github.io/guide/ng1/route-to-component
+- [offical upgrade tutorial](https://angular.io/guide/upgrade)
+- [CodeCraft angualrJS Migration](https://codecraft.tv/courses/angularjs-migration/)
+- [offical Angular update guide-v2-to-v9](https://update.angular.io/)
+- [Migrating AngularJS UI Router to Angular Router](https://gist.github.com/zaenk/21e8bee3071f339aed27f411822bb8d9)()
+- [UI-Router angular-hybrid](https://github.com/ui-router/angular-hybrid)
