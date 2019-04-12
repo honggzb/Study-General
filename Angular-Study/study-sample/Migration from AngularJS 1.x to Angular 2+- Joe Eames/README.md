@@ -730,7 +730,8 @@ export class DetailPanelComponent implements OnChanges {
   - add AotPlugin, UglifyJsPlugin
   - remove SourceMapDevToolPlugin
 - create 'tsconfig.aot.json'
-- create 'main-aot.ts'
+- create 'main-aot.ts', adding
+  - `import { AppModuleNgFactory } from './app/app.module.ngfactory';`
 - modify package.json
   - `"clean-aot": "rimraf dist/aot/*",`
   - `"build": "npm run clean-aot && webpack --config config/webpack.prod.js --profile --progress --bail"`
