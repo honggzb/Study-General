@@ -933,9 +933,9 @@ rules: [{
 - [offical upgrade tutorial](https://angular.io/guide/upgrade)
 - [CodeCraft angualrJS Migration](https://codecraft.tv/courses/angularjs-migration/)
 - [offical Angular update guide-v2-to-v9](https://update.angular.io/)
-- [Migrating AngularJS UI Router to Angular Router](https://gist.github.com/zaenk/21e8bee3071f339aed27f411822bb8d9)()
-- [UI-Router angular-hybrid](https://github.com/ui-router/angular-hybrid)
-
+- angular ui router migration
+  - [Migrating AngularJS UI Router to Angular Router](https://gist.github.com/zaenk/21e8bee3071f339aed27f411822bb8d9)
+  - [UI-Router angular-hybrid](https://github.com/ui-router/angular-hybrid)
 
 
 to install & Run:
