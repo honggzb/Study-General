@@ -1,4 +1,4 @@
-![](https://i.imgur.com/hdguRLi.png)
+![](https://i.imgur.com/naxyjwf.png)
 
 ## 学习准备 - 模块化
 
