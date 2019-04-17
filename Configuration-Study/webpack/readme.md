@@ -5,4 +5,5 @@
 
 ## resources
 
+- [官方demo](https://github.com/webpack/webpack/tree/master/examples/)
 - https://github.com/AndTem/webpack-spa-config
