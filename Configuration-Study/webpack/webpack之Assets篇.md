@@ -92,8 +92,4 @@ new SpritesmithPlugin({
 
 - 矢量图为svg格式，既可以使用inline-svg-loader进行资源嵌入，也可以使用svg-sprite-loader将矢量图资源合并为雪碧图
 
-```javascript
-
-```
-
 [back to top](#top)
