@@ -10,6 +10,7 @@
   - [7. ‘ANGULAR.JSON’ COULD NOT BE FOUND](#COULD-NOT-BE-FOUND)
 - [Angular MATERIAL](#angularM)
   - [1. Type 'ElementRef' is not generic](#ElementRef)
+  - [2. unable to call a controller function from inside a custom-template with ui-typeahead](#ui-typeahead)
 
 <h2 id="angular">Angular 2+</h2>
 
@@ -173,5 +174,9 @@ npm install -g @angular/cli@latest
    "@angular/material": "^5.2.0"    
  },
 ```
+
+<h3 id="ui-typeahead">2. unable to call a controller function from inside a custom-template with ui-typeahead</h3>
+
+https://stackoverflow.com/questions/18441928/access-controller-scope-from-bootstrap-ui-typeahead-template
 
 [back to top](#top)
