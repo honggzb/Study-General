@@ -108,6 +108,13 @@ rules: [
 
 webpack4废弃了CommonsChunkPlugin插件，使用optimization.splitChunks和optimization.runtimeChunk来代替
 
+**optimization.splitChunks参数**
+
+- chunks: 表示显示块的范围
+  - 有三个可选值：initial(初始块)、async(按需加载块)、all(全部块)，默认为all
+  - async: Optimization over **async module**, optimization of modules imported dynamically.leave non-dynamic modules as they are
+  - initial: **Optimization over **Sync Module**, optimization of all non-dynamically imported modules in one bundle, even
+  - all: Optimization over **Async and Sync Module**, 
 - minSize(默认是30000)：形成一个新代码块最小的体积
 - minChunks（默认是1）：在分割之前，这个代码块最小应该被引用的次数（译注：保证代码块复用性，默认配置的策略是不需要多次引用也可以被分割）
 - maxInitialRequests（默认是3）：一个入口最大的并行请求数
@@ -116,6 +123,14 @@ webpack4废弃了CommonsChunkPlugin插件，使用optimization.splitChunks和opt
 - test： 用于控制哪些模块被这个缓存组匹配到。原封不动传递出去的话，它默认会选择所有的模块。可以传递的值类型：RegExp、String和Function
 - name(打包的chunks的名字)：字符串或者函数(函数可以根据条件自定义名字)
 - priority ：缓存组打包的先后优先级
+
+chunks| talk
+---|---
+async|Hey, webpack ! I only care about optimization of modules imported dynamically. You can just leave non-dynamic modules as they are
+inital|Hey, webpack !<br> I don’t care about the dynamically imported modules, you can have separate files for each one of them. <br>However, I want all my non-dynamically imported modules in one bundle, <br>although I am ready to share and chunk my non-dynamically imported modules with other files if they also want non-dynamically imported modules.
+all|Hey, webpack ! I don’t care if it is a dynamically imported module or non-dynamically imported module. <br>Apply optimization over all of them. But make sure that…naah, you are smart enough to do that !
+
+[Webpack 4 — Mysterious SplitChunks Plugin](https://medium.com/dailyjs/webpack-4-splitchunks-plugin-d9fbbe091fd0)
 
 ```javascript
 module.exports = {
@@ -152,8 +167,12 @@ module.exports = {
 
 **[some samples](https://github.com/Faithree/web-build-tool-demo)**
 
-Here are some other useful plugins and loaders provided by the community for splitting code:
+**Graphical bunder analyze plugin**
 
+Here are some other useful plugins and loaders provided by the community for splitting code
+
+- [offical tool]()
+- [Webpack Bundle Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)
 - [mini-css-extract-plugin](https://webpack.js.org/plugins/mini-css-extract-plugin): Useful for splitting CSS out from the main application.
 - [bundle-loader](https://webpack.js.org/loaders/bundle-loader): Used to split code and lazy load the resulting bundles.
 - [promise-loader](https://github.com/gaearon/promise-loader): Similar to the bundle-loader but uses promises.
