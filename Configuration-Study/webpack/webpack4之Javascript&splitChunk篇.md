@@ -112,9 +112,9 @@ webpack4废弃了CommonsChunkPlugin插件，使用optimization.splitChunks和opt
 
 - chunks: 表示显示块的范围
   - 有三个可选值：initial(初始块)、async(按需加载块)、all(全部块)，默认为all
-  - async: Optimization over **async module**, optimization of modules imported dynamically.leave non-dynamic modules as they are
-  - initial: **Optimization over **Sync Module**, optimization of all non-dynamically imported modules in one bundle, even
-  - all: Optimization over **Async and Sync Module**, 
+  - **async**: Optimization over **async module**, optimization of modules imported dynamically.leave non-dynamic modules as they are
+  - **initial**: Optimization over **Sync Module**, optimization of all non-dynamically imported modules in one bundle, even
+  - **all**: Optimization over **Async and Sync Module**, 
 - minSize(默认是30000)：形成一个新代码块最小的体积
 - minChunks（默认是1）：在分割之前，这个代码块最小应该被引用的次数（译注：保证代码块复用性，默认配置的策略是不需要多次引用也可以被分割）
 - maxInitialRequests（默认是3）：一个入口最大的并行请求数
