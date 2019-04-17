@@ -6,5 +6,5 @@
 ## resources
 
 - [官方demo](https://github.com/webpack/webpack/tree/master/examples/)
-- [Faithree-demo：比较全面的前端构建工具demo](https://github.com/Faithree/web-build-tool-demo)
+- [Faithree-webpack3-demo：比较全面的前端构建工具demo](https://github.com/Faithree/web-build-tool-demo)
 - https://github.com/AndTem/webpack-spa-config
