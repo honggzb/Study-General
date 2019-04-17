@@ -108,6 +108,20 @@ rules: [
 
 webpack4废弃了CommonsChunkPlugin插件，使用optimization.splitChunks和optimization.runtimeChunk来代替
 
+- minSize(默认是30000)：形成一个新代码块最小的体积
+- minChunks（默认是1）：在分割之前，这个代码块最小应该被引用的次数（译注：保证代码块复用性，默认配置的策略是不需要多次引用也可以被分割）
+- maxInitialRequests（默认是3）：一个入口最大的并行请求数
+- maxAsyncRequests（默认是5）：按需加载时候最大的并行请求数。
+- chunks (默认是async) ：initial、async和all
+- test： 用于控制哪些模块被这个缓存组匹配到。原封不动传递出去的话，它默认会选择所有的模块。可以传递的值类型：RegExp、String和Function
+- name(打包的chunks的名字)：字符串或者函数(函数可以根据条件自定义名字)
+- priority ：缓存组打包的先后优先级。
+
+作者：乘风gg
+链接：https://juejin.im/post/5af1677c6fb9a07ab508dabb
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
 ```javascript
 module.exports = {
   //...
@@ -161,3 +175,4 @@ Here are some other useful plugins and loaders provided by the community for spl
 - https://webpack.js.org/guides/code-splitting/
 - https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting/
 - [webpack4：连奏中的进化](https://www.cnblogs.com/wmhuang/p/8967639.html)
+- [一步一步的了解webpack4的splitChunk插件](https://juejin.im/post/5af1677c6fb9a07ab508dabb)
