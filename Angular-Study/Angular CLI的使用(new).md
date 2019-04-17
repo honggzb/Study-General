@@ -186,19 +186,24 @@ npx source-map-explorer disg/my-app/main.js
 
 ### Production build
 
+`ng build --target production --build-optimizer --vendor-chunk`
+
 |   | ng build  | ng build --prod |
 |---|---|---|
-|Environment |environment.ts|environment.prod.ts |
+|`--environment` |use environment.ts|use environment.prod.ts |
 |Cache-busting|only images referenced in css只缓存css里引用的图片|all build files|
-|Source maps|generated|not generated|
-|Extracted CSS|global CSS output to .js|yes, to css files|
+|`--sourcemaps false/true`|generated|not generated|
+|`--extract-css true`|global CSS output to .js|yes, to css files|
 |Uglification|no|yes|
 |Tree-shaking|no不去掉无用代码|yes去掉无用代码|
-|AOT|no|yes|
+|`--aot`|no|yes|
 |Bundling|yes|yes|
-|--build-optimizer|否|是(和AOT以及Angular5)|
 |--named-chunks|是|否|
 |--output-hashing|media|所有|
+|`--build-optimizer`|否|是(和AOT以及Angular5)|
+|`--vendor-chunk`||extract all vendor code into separate chunk|
+
+- When using **Build Optimizer** the **vendor chunk** will be disabled by default. You can override this with `--vendor-chunk=true`
 
 ### Serving
 
