@@ -8,6 +8,12 @@ const app = require('express')();
 
 const ncSchema = require('../schema');
 const { graphql } = require('graphql');
+const graphqlHTTP = require('express-graphql');
+
+app.use('/graphql', graphqlHTTP({
+    schema: ncSchema,
+    graphiql: true
+}))
 
 // execute the query against the defined server schema
 // graphql(ncSchema, query).then(result => {
