@@ -43,6 +43,29 @@
 │   │   ├──  todo-app.rar
 │   │   ├──  案例之星级评价.md
 │   │   └──  
+│   │
+│   ├── study-Sample/
+│   │   ├── Angular Fundamentals- Jim Cooper/
+│   │   │    ├── myEventFundamentals/
+│   │   │    ├── Angular_Content_Projection_Guide.pdf
+│   │   │    └── ng-fundamentals.zip
+│   │   ├── Angular Routing-Deborah Kurata/
+│   │   ├── Angular component commnication-Deborah Kurata/
+│   │   ├── Angular Routing-Deborah Kurata/
+│   │   │    ├── input-radio.md
+│   │   │    └── 
+│   │   ├── DaMo-Angular Workshop/
+│   │   │    └── 大漠的Angular Workshop.md
+│   │   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
+│   │   │    ├── codeFinished/
+│   │   │    ├── codeInit/
+│   │   │    ├── codePreparedFinished/
+│   │   │    ├── Migration from AngularJS 1.x to Angular 2+.zip
+│   │   │    ├── Preparing for Migration from AngularJS (1.x) to Angular (2+).zip
+│   │   │    └── prepare.md
+│   │   ├──  Angular打造股票管理网站.md
+│   │   ├──  大漠的Angular Workshop.md
+│   │   └──  
 │   │ 
 │   ├── Angular CLI的使用(new).md     #useful
 │   ├── Angular_CLI的使用.md           
