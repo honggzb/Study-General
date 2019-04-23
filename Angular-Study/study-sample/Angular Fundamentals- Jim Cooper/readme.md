@@ -412,6 +412,7 @@ apply to session-list.component
 - `:host` selector:  the styles will be applied only inside this component
 - `/deep/` modifier: the style will no longer be scoped only to HTML elements of this particular component, but it will also affect any
 descendant elements
+- [Learn Angular Multi Slot Content Projection](https://www.youtube.com/watch?v=L7aUACC0xXE)
 
 ```css
 :host /deep/ input {
