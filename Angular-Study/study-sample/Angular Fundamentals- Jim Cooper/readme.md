@@ -414,8 +414,16 @@ apply to session-list.component
 descendant elements
 - [Learn Angular Multi Slot Content Projection](https://www.youtube.com/watch?v=L7aUACC0xXE)
 
+```html
+<div class="close-icon">
+  <ng-content select="i"></ng-content>
+</div>
+<!--  -->
+<i class="fa fa-times"></i>
+```
+
 ```css
-:host /deep/ input {
+:host .close-icon /deep/ i {
   border: none;
   outline: none;
 }
