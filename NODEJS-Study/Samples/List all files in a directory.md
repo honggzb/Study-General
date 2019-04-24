@@ -85,3 +85,5 @@ output: {
 }
 ```
 
+- https://stackoverflow.com/questions/32874025/how-to-add-wildcard-mapping-in-entry-of-webpack
+
