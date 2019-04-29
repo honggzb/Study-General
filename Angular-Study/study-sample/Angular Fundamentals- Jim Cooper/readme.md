@@ -13,6 +13,9 @@
   - [Communicating with Child Components](#communicating-with-child-components)
   - [Communicating with Parent Components](#communicating-with-parent-components)
   - [Using Content Project in component](#using-content-project-in-component)
+    - [using multiple slot Content projection](#using-multiple-slot-content-projection)
+    - [Styling projected content](#styling-projected-content)
+    - [Interacting with Projected Content inside ng-content](#interacting-with-projected-content-inside-ng-content)
 - [Pipe- displaying data](#pipe--displaying-data)
   - [custom Pipe](#custom-pipe)
   - [Filtering and Sorting Data](#filtering-and-sorting-data)
@@ -356,7 +359,7 @@ apply to session-list.component
 </div>
 ```
 
-**using multiple slot Content projection**
+### using multiple slot Content projection
 
 - use select property of ng-content, it can be a class, id or tag
 
@@ -404,6 +407,83 @@ apply to session-list.component
 </div>
 ```
 
+### Styling projected content
+
+- `:host` selector:  the styles will be applied only inside this component
+- `/deep/` modifier: the style will no longer be scoped only to HTML elements of this particular component, but it will also affect any
+descendant elements
+- [Learn Angular Multi Slot Content Projection](https://www.youtube.com/watch?v=L7aUACC0xXE)
+
+```html
+<div class="close-icon">
+  <ng-content select="i"></ng-content>
+</div>
+<!--  -->
+<i class="fa fa-times"></i>
+```
+
+```css
+:host .close-icon /deep/ i {
+  border: none;
+  outline: none;
+}
+```
+
+### Interacting with Projected Content inside ng-content
+
+- cannot interact with the ng-content tag
+- Instead, the best way to interact with the projected input is to start by applying a **new separate directive** to the input 
+
+```html
+<h1>FA Input</h1>
+<fa-input icon="envelope">
+  <input inputRef type="email" placeholder="Email">
+ </fa-input>
+```
+
+The we can use that this directive to track if the input has the focus or not
+
+```javascript
+//create a directive named inputRef
+@Directive({
+  selector: '[inputRef]'
+})
+export class InputRefDirective {
+  focus = false;
+  // native focus and blur DOM event are being detected using @HostListener decorator
+  @HostListener("focus")
+  onFocus() {
+    this.focus = true;
+  }
+  @HostListener("blur")
+  onBlur() {
+    this.focus = false;
+  }
+}
+// to interact with projected content
+@Component({
+  selector: 'fa-input',
+  template: `
+    <i class="fa" [ngClass]="classes"></i>
+    <ng-content></ng-content>
+    `,
+  styleUrls: ['./fa-input.component.css']
+})
+export class FaInputComponent {
+  @Input() icon: string;
+  @ContentChild(InputRefDirective)   //inject inputRef directive
+  input: InputRefDirective;
+  @HostBinding("class.focus")
+  get focus() {
+    return this.input ? this.input.focus : false;
+  }
+  get classes() {
+    const cssClasses = { fa: true };
+    cssClasses['fa-' + this.icon] = true;
+    return cssClasses;
+  }
+}
+```
 
 [back to top](#top)
 

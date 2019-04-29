@@ -1,5 +1,17 @@
 ```
 ├── Javascript                         --javascript学习过程中的小tip
+│   ├── Advanced-JavaScript-Study
+│   │   ├── sample/
+│   │   │     ├── 01构造函数和实例对象的关系.html
+│   │   │     ├── 02面向过程和面向对象编程思想不同.html
+│   │   │     ├── 03原型.html	Update 03原型.html
+│   │   │     ├── 04随机小方块.html
+│   │   │     ├── 05贪吃蛇.html
+│   │   │     ├── 05贪吃蛇.md
+│   │   │     └── common.js
+│   │   ├── 01-JavaScript基础复习.md
+│   │   └── 02-JavaScript面向对象编程.md
+│   │
 │   ├── GoogleMapAPI
 │   │   ├── 谷歌地图地理编码.md
 │   │   └──
@@ -22,11 +34,25 @@
 │   │   ├── 
 │   │   └── 
 │   │
+│   ├── sort                  #算法图示
+│   │   ├── 冒泡排序.gi
+│   │   ├── 基数排序.gif
+│   │   ├── 堆排序.gif
+│   │   ├── 希尔排序.jpg
+│   │   ├── 归并排序.gif
+│   │   ├── 快速排序.gi
+│   │   ├── 插入排序.gif
+│   │   ├── 桶排序.gif
+│   │   ├── 计数排序.gif
+│   │   └── 选择排序.gif 
+│   │
 │   ├── tips                  #常见的技巧
 │   │   ├── 19 个JavaScript 常用的简写技术.md
+│   │   ├── functional-programing-with-js-cheatsheet---progress-whitepaper.pdf
 │   │   ├── javascript常用技巧.md
 │   │   ├── javascript知识点积累汇总.md
 │   │   ├── js和jq中常用追加元素方法+append()和appendChild区别.md
+│   │   ├── textarea输入框限制字数.md
 │   │   ├── 利用ES6新特性对数组实现的一些hack方法.md
 │   │   └── 
 │   │ 
