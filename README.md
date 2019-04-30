@@ -1,10 +1,48 @@
+[Content](#top)
+- [Angular-Study](#angular-study)
+- [AngularJS-study](#angularjs-study)
+- [CSS+CSS3-Skill - css技巧](#csscss3-skill---css%E6%8A%80%E5%B7%A7)
+- [Configuration Study - Build tools](#configuration-study---build-tools)
+- [D3](#d3)
+- [Database学习](#database%E5%AD%A6%E4%B9%A0)
+- [Debug-Skill调试技巧](#debug-skill%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7)
+- [Design Pattern](#design-pattern)
+- [Git Study](#git-study)
+- [GraphQL](#graphql)
+- [HTML5](#html5)
+- [Hybrid Web](#hybrid-web)
+- [IDE](#ide)
+- [JAVA-Study](#java-study)
+- [Javascript-javascript学习过程中的小tip](#javascript-javascript%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%B0%8Ftip)
+- [JQuery](#jquery)
+- [Miscellaneous杂项](#miscellaneous%E6%9D%82%E9%A1%B9)
+- [NodeJS 学习](#nodejs-%E5%AD%A6%E4%B9%A0)
+- [Regular Expression - 正则表达式](#regular-expression---%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
+- [RxJS](#rxjs)
+- [Performance 性能分析](#performance-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90)
+- [SVG](#svg)
+- [Samples   --常用&经典样例](#samples---%E5%B8%B8%E7%94%A8%E7%BB%8F%E5%85%B8%E6%A0%B7%E4%BE%8B)
+- [Security   --安全](#security---%E5%AE%89%E5%85%A8)
+- [Theory 理论和源码](#theory-%E7%90%86%E8%AE%BA%E5%92%8C%E6%BA%90%E7%A0%81)
+- [VirtualReality   #虚拟现实](#virtualreality-%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E)
+- [Vue](#vue)
+- [interview](#interview)
+- [qita](#qita)
+- [thirdParty-lib](#thirdparty-lib)
+
+### Accessiblity
+
 ```
 ├── Accessiblity
 │   ├── Accessibility应用之focus篇.md
 │   ├── 创建无障碍的对话框.md
 │   ├── 响应式设计(responsive design)中的Assesibility.md
 │   └── resources.md
-│
+```
+
+### Angular-Study
+
+```
 ├── Angular-Study
 │   │
 │   ├── Angular-material/
@@ -13,7 +51,7 @@
 │   │   │    └── dialog.rar   
 │   │   └── readme.md
 │   │
-│   ├── Mockup-server/
+│   ├── Mockup-server/- [Accessiblity](#accessiblity)
 │   │   ├── angular-in-memory-web-api.md
 │   │   ├── liverload-mockup+gulp.md
 │   │   ├── mocking-backend -API.md
@@ -69,7 +107,13 @@
 │   ├── redux.png
 │   ├── redux.doc
 │   └── 大漠的Angular Workshop.md
-│
+```
+
+[back to top](#top)
+
+### AngularJS-study
+
+```
 ├── AngularJS-study
 │   ├──  AngularJS入门和企业级项目 6天(邵山欢)/
 │   │    ├── 02_引入控制器.html
@@ -187,7 +231,13 @@
 │   ├── resources.md
 │   ├── tip.md
 │   └── 常见问题和技巧.md
-│ 
+```
+
+[back to top](#top)
+
+### CSS+CSS3-Skill - css技巧
+
+```
 ├── CSS+CSS3-Skill - css技巧
 │   ├──  Bootstrap
 │   │     ├── BootstrapCarouse-WithAnimation.html
@@ -259,7 +309,13 @@
 │   ├── 基础CSS.md
 │   ├── 常用css代码.md
 │   └── 现代CSS代码的建议.md
-│
+```
+
+[back to top](#top)
+
+### Configuration Study - Build tools 
+
+```
 ├── Configuration Study - Build tools 
 │   ├──  Webpack
 │   │    ├── samples
@@ -287,7 +343,13 @@
 │   │    └── gruntStudy.md
 │   └──  Ant
 │        └── ant学习.md
-│
+```
+
+[back to top](#top)
+
+### D3
+
+```
 ├── D3
 │   ├── 00.prepare	Add files
 │   │   └── mockServer代码和说明
@@ -365,7 +427,18 @@
 │   ├── readme.md
 │   ├── todo-list.md
 │   └── file-list.md
-│
+```
+
+[back to top](#top)
+
+### Database学习
+### Debug-Skill调试技巧
+### Design Pattern
+### Git Study
+### GraphQL
+### HTML5
+
+```
 ├── Database学习
 │   ├──MySql的安装和设置.md
 │   ├──Redis安装、配置和使用.md
@@ -406,7 +479,13 @@
 │   ├── 应用缓存App Cache指南.md
 │   ├── IntersectionObserver API: defer, lazy-load.md
 │   └── Service Workers- HTML5 Web push notifications桌面通知.md
-│
+```
+
+[back to top](#top)
+
+### Hybrid Web
+
+```
 ├── Hybrid Web
 │   ├──HTML5 Input Types in Mobile.docx
 │   ├──HTML5-各种Tag.md
@@ -425,27 +504,42 @@
 │   ├──获取viewport高度when soft keyboard is on.md
 │   ├──虚拟键盘遮挡input输入框问题&fixed+input布局bug.md
 │   └── 远程调试工具.md
-│ 
-├── IDE
-│   ├── Atom
-│   │   ├── 
-│   │   └──
-│   ├── Eclipse
-│   │   ├── 
-│   │   └──
-│   └── VSCode
-│       ├── 
-│       └──
-│ 
-├── JAVA-Study
-│   ├── configuration-study
-│   │   ├── ant学习.md
-│   │   └──
-│   ├── spring root+angular.md
-│   └──
 ```
 
-[Javascript](https://github.com/honggzb/Study-General/blob/master/Javascript/readme.md)   --javascript学习过程中的小tip
+[back to top](#top)
+
+### IDE
+### JAVA-Study
+
+```
+├── IDE/
+│   ├── Atom/
+│   │   ├── 
+│   │   └──
+│   ├── Eclipse/
+│   │   ├── 
+│   │   └──
+│   └── VSCode/
+│       ├── VSCode快捷键,插件,主题集锦.md
+│       ├── my-vsCode.md
+│       └── vsCodeOpenFolder.reg
+│ 
+├── JAVA-Study/
+│   ├── configuration-study/
+│   │   ├── ant学习.md
+│   │   └──
+│   ├── spring-boot/
+│   │   ├── starter-sample-dan Bunker/
+│   │   └── starter-sample-dan Bunker.md
+│   ├── eclipse设置.md
+│   ├── spring root+angular.md
+│   └── 
+```
+
+[back to top](#top)
+
+### Javascript-javascript学习过程中的小tip
+### JQuery
 
 ```
 ├── Javascript                         --javascript学习过程中的小tip
@@ -535,18 +629,37 @@
 │   ├── js标准对象之Date.md
 │   └── 
 │
-├── JQuery
+├── JQuery/
 │   ├── Jquery判断checked 是否选中.md
 │   ├── jQuery中的text()、html()和val()以及innerText、innerHTML和value.md
 │   ├── jquery判断一个元素下面是否有内容或者有某个标签.md
 │   └── jquery选择器总结.md
-│
-├── Miscellaneous杂项
+```
+
+[back to top](#top)
+
+### Miscellaneous杂项
+### NodeJS 学习
+### Regular Expression - 正则表达式
+### RxJS
+### Performance 性能分析
+### SVG
+### Samples   --常用&经典样例
+### Security   --安全
+### Theory 理论和源码
+### VirtualReality   #虚拟现实
+### Vue
+### interview
+### qita
+### thirdParty-lib
+
+```
+├── Miscellaneous杂项/
 │   ├── convert-octet-stream-to-image.md     - http的octex-stream类型（binary file)处理，转换为<img src="" />
 │   ├── lodash学习笔记.md
 │   └── 
 │
-├── NodeJS 学习
+├── NodeJS 学习/
 │   ├── 设置
 │   │    ├──  nodeModule汇总.md
 │   │    └──  npm常用命令.md
