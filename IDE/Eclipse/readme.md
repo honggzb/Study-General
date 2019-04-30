@@ -23,6 +23,7 @@
 2. 打开<workspaceDir>\.metadata\.plugins\org.eclipse.core.resources\.projects
 3. 删除你的项目
 4. 打开eclipse,根据提示删除工程
-or
-5. 删除.metadata文件夹
+5. or
+    1. 删除.metadata文件夹
+    2. 打开eclipse, 重新import project
     
