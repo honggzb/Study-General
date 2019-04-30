@@ -13,3 +13,10 @@
 4. 点击Common-->External Tools -> 点击apply
     1. ![](https://i.imgur.com/Tnf1MkQ.png)
     
+## eclipse删除工程失败的解决方案(强制删除工程）
+
+1. 关闭eclipse
+2. 打开<workspaceDir>\.metadata\.plugins\org.eclipse.core.resources\.projects
+3. 删除你的项目
+4. 打开eclipse,根据提示删除工程
+    
