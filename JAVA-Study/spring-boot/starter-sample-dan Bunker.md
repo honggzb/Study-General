@@ -1,13 +1,21 @@
 [Spring boot study-Dan Bunker](#top)
 
-## Environment Setup
+- [create a simple spring boot Project](#create-a-simple-spring-boot-project)
+  - [Spring MVC Integration Overview](#spring-mvc-integration-overview)
+  - [Default static content locations of Spring boot Project](#default-static-content-locations-of-spring-boot-project)
+  - [Spring Boot Initializers](#spring-boot-initializers)
+  - [How does Spring boot work?](#how-does-spring-boot-work)
+- [Configuration and Accessing a Data Source](#configuration-and-accessing-a-data-source)
+  - [add H2 dependency](#add-h2-dependency)
+  - [Add the flyway migration dependency - migrated with Flyway DB](#add-the-flyway-migration-dependency---migrated-with-flyway-db)
+  - [Spring Boot Java Configuration(JPA)](#spring-boot-java-configurationjpa)
+- [Test the spring boot project](#test-the-spring-boot-project)
+  - [spring-boot-starter-test](#spring-boot-starter-test)
+  - [Mockito and Hamcrest test](#mockito-and-hamcrest-test)
+  - [Intergration Testing - ShipwreckRepositoryIntergartion.ava](#intergration-testing---shipwreckrepositoryintergartionava)
+  - [Web Intergration Testing](#web-intergration-testing)
 
-### Eclipse setup
-
-- install sprint tools in eclipse
-  - http://download.springsource.com/snapshot/TOOLS/nightly/e4.5
-
-### create a simple spring boot Project
+## create a simple spring boot Project
 
 1. create a new maven project
 2. modify 'pom.xml', adding dependencies of springboot
@@ -28,7 +36,7 @@
 
    1. if "The import org.springframework cannot be resolved."
    2. 'project --> Maven --> Update Project' then click OK
-   3. 'project --> Maven ---> Add Dependency' == then choose the name or parent name of missing dependency
+   3. 'project --> Maven ---> Add Dependency' ---> then choose the name or parent name of missing dependency
 3. modify 'com.boot.App.java'
 
    ```java
@@ -65,7 +73,7 @@
 
 ### Spring MVC Integration Overview
 
-1. dsf
+1. approach
    - edit pom.xml
    - setup viewResolvers
    - set up static resource serving
@@ -84,9 +92,10 @@
     - /static
     - /public
     - /resources
+- static content of this project
 
 ```
-|src/
+src/
 ├───main/
 │   ├╌╌╌╌ resources/
 │   │     └╌╌╌public/
@@ -96,12 +105,10 @@
 │   │           ├╌╌╌╌╌lib/
 │   │           ├╌╌╌╌╌views/
 │   │           └╌╌╌╌╌index.html
-│   └╌╌╌╌ java
+│   └╌╌╌╌ java/
 │         └╌╌╌com/
 ├───test/
 ```
-
-## Configuration and Accessing a Data Source
 
 ### Spring Boot Initializers
 
@@ -110,7 +117,7 @@
 
 ### How does Spring boot work?
 
-- Main method entry point: App.java  (Plain Java program)
+- Main method entry point: **App.java**  (Plain Java program)
 - Spring context initialization
 - Embedded container and container less deployments
 - Embedded Server: default is Tomcat, auto configured
@@ -118,6 +125,8 @@
 ![](https://i.imgur.com/jPKPm0b.png)
 
 [back to top](#top)
+
+## Configuration and Accessing a Data Source
 
 ### add H2 dependency
 
@@ -135,13 +144,12 @@
 </dependency>
 ```
 
-- run --> run configuration --> `-Dspring.profiles.active=test`
-- DataSource configuration: adding following code in application.properities
+- adding following code in application.properities
 
 ```shell
 spring.h2.console.enabled=true
 spring.h2.console.path=/h2
-
+## spring.datasource
 spring.datasource.url=jdbc:h2:file:~/dasboot
 spring.datasource.username=sa
 spring.datasource.password=
@@ -159,7 +167,11 @@ spring.datasource.time-between-eviction-runs-millis=1
 
 - `http://localhost:9090/h2`
 
-###  Add the flyway migration dependency - migrated with Flyway DB
+- run --> run configuration
+- DataSource configuration: adding following code in application.properities
+  - `-Dspring.profiles.active=test` if want to switch to test environment
+
+### Add the flyway migration dependency - migrated with Flyway DB
 
 - adding following code in pom.xml
 - update maven project
@@ -172,19 +184,19 @@ spring.datasource.time-between-eviction-runs-millis=1
 </dependency>
 ```
 
-- adding following code in application.properits
+- adding following code in application.properities
 
 ```shell
 flyway.baseline-on-migrate=true
-spring.jpa.hibernate.ddl-auto=false;
+spring.jpa.hibernate.ddl-auto=false
 ```
 
 **error -> org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer'**
 
 - https://stackoverflow.com/questions/41147768/caused-by-org-flywaydb-core-api-flywayexception-validate-failed-migration-che/41147917
 - Delete the file called `V2__create_shipwreck.sql`, clean and build the project again
-- Run the project again, login into h2 and delete the table called "schema_version": `drop table 'schema_version';`
-- create `V2__create_shipwreck.sql` file and rerun the project again
+- Run the project again, login into h2 and delete the table called "schema_version": `drop table "schema_version";`
+- create `V2__create_shipwreck.sql` file and return the project again
 
 ```sql
 /* according to com.boot.model.shipWrack.java */
@@ -205,10 +217,10 @@ CREATE TABLE SHIPWRECK(
 ### Spring Boot Java Configuration(JPA)
 
 - add datasource.flyway in application.properties
-- create a persistenceConfiguration, com.boot.config.PersistenceConfiguration.java
-- create a repository interface, com.boot.repository.ShipWreckRepository.java
-- add inject to model, com.boot.model.Shipwreck.java
-- modify controller to use repository, com.boot.controller.ShipwreckController.java
+- create a persistenceConfiguration, **com.boot.config.PersistenceConfiguration.java**
+- create a repository interface, **com.boot.repository.ShipWreckRepository.java**
+- add inject to model, **com.boot.model.Shipwreck.java**
+- modify controller to use repository, **com.boot.controller.ShipwreckController.java**
 
 ```java
 //application.properites
@@ -460,39 +472,10 @@ Database state needs to be consistent  | Database state needs to be consistent
 
 ### Web Intergration Testing
 
+
+
 [back to top](#top)
 
 > references
 - https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples
 - https://github.com/dlbunker/ps-spring-boot-resources
-
-
-Eclipse Theme
-
-- Eclipse Marketplace --> 搜索DevStyle
-- Window --> Preference --> General --> Appearance --> Color Theme
-- http://eclipse-color-theme.github.io/update/
-
-
-```
-│   package.json
-├───node_modules
-│       └╌╌ 下面是npm包
-├───dist
-│     └╌╌╌╌╌logo.jpg
-├───build
-│   ├╌╌╌╌╌ build.js
-│   ├╌╌╌╌╌ webpack.base.conf.js
-│   ├╌╌╌╌╌ webpack.dev.conf.js
-│   └╌╌╌╌╌ webpack.prod.conf.js
-├───src
-│   ├╌╌╌╌╌ main.js
-│   └╌╌╌╌╌tmp
-│         ├╌╌╌╌╌home.js
-│         ├╌╌╌╌╌about.js
-│         └╌╌╌╌╌contact.js
-│   └╌╌╌╌╌template
-│         └╌╌╌╌╌daqi.html // 为hmtl插件的模板
-│   └╌╌╌╌╌images
-│         └╌╌╌╌╌logo.jpg
-```
