@@ -496,18 +496,17 @@ AngularJS Filters    | Angular Pipe
 Formatting           | Formatting
 Sorting              | No sorting
 Filtering            | No filtering
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
+===================================================================================================================
            Build in Pipe  
 ---------------|----------------------------------------------------------------------------------------------------
 DatePipe       |  日期管道，格式化日期
 JsonPipe       |  将输入数据对象经过JSON.stringify()方法转换后输出对象的字符串
-UpperCasePipe	 |  将文本所有小写字母转换成大写字母
-LowerCasePipe  |	将文本所有大写字母转换成小写字母
-DecimalPipe    |	将数值按特定的格式显示文本
-CurrentcyPipe  |	将数值进行货币格式化处理
-SlicePipe      |	将数组或者字符串裁剪成新子集, 是基于`Array.prototype.slice()`方法和`String.prototype.slice()`方法来实现的
-PercentPipe    |	将数值转百分比格式
+UpperCasePipe  |  将文本所有小写字母转换成大写字母
+LowerCasePipe  |  将文本所有大写字母转换成小写字母
+DecimalPipe    |  将数值按特定的格式显示文本
+CurrentcyPipe  |  将数值进行货币格式化处理
+SlicePipe      |  将数组或者字符串裁剪成新子集, 是基于`Array.prototype.slice()`方法和`String.prototype.slice()`方法来实现的
+PercentPipe    |  将数值转百分比格式
 ```
 
 - DecimalPipe, `expression | number[:digitInfo]`, `{{ number | number: '3.1-2'}}`
