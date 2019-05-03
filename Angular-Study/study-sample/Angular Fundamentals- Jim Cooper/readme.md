@@ -489,14 +489,41 @@ export class FaInputComponent {
 
 ## Pipe- displaying data
 
+`{{ 输入数据 | 管道 : 管道参数 }}`
+
 ```
            Pipes vs Filters
+---------------------|---------------------------------------------------------------------------------------------
 AngularJS Filters    | Angular Pipe
 Formatting           | Formatting
 Sorting              | No sorting
 Filtering            | No filtering
+===================================================================================================================
+           Build in Pipe  
+---------------|----------------------------------------------------------------------------------------------------
+DatePipe       |  日期管道，格式化日期
+JsonPipe       |  将输入数据对象经过JSON.stringify()方法转换后输出对象的字符串
+UpperCasePipe  |  将文本所有小写字母转换成大写字母
+LowerCasePipe  |  将文本所有大写字母转换成小写字母
+DecimalPipe    |  将数值按特定的格式显示文本
+CurrentcyPipe  |  将数值进行货币格式化处理
+SlicePipe      |  将数组或者字符串裁剪成新子集, 是基于`Array.prototype.slice()`方法和`String.prototype.slice()`方法来实现的
+PercentPipe    |  将数值转百分比格式
 ```
 
+- DecimalPipe, `expression | number[:digitInfo]`, `{{ number | number: '3.1-2'}}`
+  - `{minIntegerDigits}.{minFractionDigits}-{maxfractionDigits}`
+  - minIntegerDigits：  整数部分保留最小的位数，默认值为1
+  - minFractionDigits：小数部分保留最小的位数，默认值为0
+  - maxFractionDigits：小数部分保留最大的位数，默认值为3
+- SlicePipe: `expression | slice: start[: end]`
+- CurrentcyPipe: `expression | currency[: currencyCode[: symbolDisplay[: digitInfo]]]`
+  - currentcyCode： 表示要格式化的目标货币格式，值为ISO 4217货币码，如CNY人民币、USD美元、EUR欧元等。 
+  - symbolDisplay：表示以该类型货币的哪种格式显示，值为布尔值，true表示显示货币符号如￥、$等，false表示显示ISO 4217货币码如CNY、USD等。 
+  - digitInfo: 参考DecimalPipe管道
+  
+[back to top](#top)
+ 
 ### custom Pipe
 
 ```javascript

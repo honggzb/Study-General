@@ -1,15 +1,20 @@
-## Setup environment
+```
+│   ├── spring-boot/
+│   │   ├── starter-sample-dan Bunker/
+│   │   └── starter-sample-dan Bunker.md
+```
 
-### install Spring tools in eclipse
+### Setup environment
 
-http://download.springsource.com/snapshot/TOOLS/nightly/e4.5
-
-### Dependency issue
+- install Spring tools in eclipse:  http://download.springsource.com/snapshot/TOOLS/nightly/e4.5
+- Dependency issue
 
 solve the problem: "The import org.springframework cannot be resolved."
 
 - 'project --> Maven --> Update Project' then click OK.
-- 'project --> Maven ---> Add Dependency' == then choose the name or parent name of missing dependency
-- ctrl+shift+O
+- 'project --> Maven ---> Add Dependency' ---> then choose the name or parent name of missing dependency
 
-## create a simple spring boot Project
+
+### shortCut
+
+- ctrl+shift+o 

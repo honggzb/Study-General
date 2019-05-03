@@ -24,6 +24,7 @@
   - [Generating angular library](#generating-angular-library)
   - [Sample: Generating a Logger library and adding to angular](#sample-generating-a-logger-library-and-adding-to-angular)
   - [Angular Console](#angular-console)
+- [other command](#other-command) 
 
 ```shell
 node -v  # 8.x or higher
@@ -397,6 +398,20 @@ ng build my-lib   #rebuild- need rebuild for any change
 ### Angular Console
 
 - https://angularconsole.com/
+
+## other command
+
+```shell
+#see angular cli version
+npm ls -g @angular/cli
+# Updating our Project to the latest version, package.json will up to date
+ng update @angular/cli @angular/core
+npm update
+ng serve
+#If ng serve is still throwing errors, try to update the CLI again by running the following commands:
+npm update
+ng serve
+````
 
 [back to top](#top)
 

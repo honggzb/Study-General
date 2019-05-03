@@ -34,6 +34,7 @@
 
 - JavaScript (ES6) code snippets : ES6的代码片段，实用
 - JavaScript Snippet Pack : ES5及以下的代码片段，实用
+- Angular Language Service
 
 ### 语法校验
 
