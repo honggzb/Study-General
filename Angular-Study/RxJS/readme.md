@@ -1,5 +1,5 @@
 ```
-├── RxJS
+├── NgRx
 │   ├── Observable之Subject.md
 │   ├── RxJS笔记-Reactive Extensions for JavaScript (RxJS).md
 │   ├── RxJS笔记之Subject.md
