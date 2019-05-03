@@ -57,14 +57,15 @@
 │   │   ├── mocking-backend -API.md
 │   │   └── node+express创建服务器.md
 │   │
-│   ├── NgRx/
+│   ├── NgRx
 │   │   ├── Angular NgRx Getting started/
+│   │   │     ├── Demo-1/
+│   │   │     ├── Demo-2/
+│   │   │     ├── Demo-3/
 │   │   │     ├── Demo-initial/
-│   │   │     └──
-│   │   ├── Observable之Subject.md
-│   │   ├── RxJS笔记-Reactive Extensions for JavaScript (RxJS).md
-│   │   ├── RxJS笔记之Subject.md
-│   │   └── RxJS笔记之switchMap
+│   │   │     └── project.md
+│   │   ├── Tips-use-rxjs-in-Angular.md
+│   │   └──
 │   │
 │   ├── Unit-Test/
 │   │   ├── NgRx-test-sample.md
