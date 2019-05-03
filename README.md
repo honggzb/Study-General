@@ -691,10 +691,12 @@
 │   ├── 
 │   └──
 |
-├── RxJS
-│   ├── Reactive Extensions for JavaScript (RxJS).md
-│   ├── RxJS笔记之Subject.md
-│   └──
+├── RxJs
+│   ├── Observable之Subject.md
+│   ├── RxJS笔记-Reactive Extensions for JavaScript (RxJS).md
+│   ├── RxJS笔记之Subject.md
+│   ├── RxJS笔记之switchMap, concatMap, mergeMap和exhaustMap.md
+│   └── 
 │
 ├── SVG
 │   ├── AngularJS-SVG /
