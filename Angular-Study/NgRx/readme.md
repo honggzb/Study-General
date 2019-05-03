@@ -1,6 +1,11 @@
 ```
 ├── NgRx
 │   ├── Angular NgRx Getting started/
+│   │   ├── Demo-1/
+│   │   ├── Demo-2/
+│   │   ├── Demo-3/
+│   │   ├── Demo-initial/
+│   │   └── project.md
 │   ├── Tips-use-rxjs-in-Angular.md
 │   └── 
 ```
