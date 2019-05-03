@@ -13,7 +13,7 @@
 │   │   ├── mocking-backend -API.md
 │   │   └── node+express创建服务器.md
 │   │
-│   ├── RxJs/
+│   ├── NgRx/
 │   │   ├── Angular NgRx Getting started/
 │   │   │     ├── Demo-initial/
 │   │   │     └──
