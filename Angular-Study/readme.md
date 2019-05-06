@@ -98,6 +98,7 @@
 
 ## resource
 
+- [Angular in depth by ag-grid](https://blog.angularindepth.com/)
 - https://github.com/PatrickJS/awesome-angular
 - [angular style guide](https://angular.io/guide/styleguide)
 - [Angular中文文档](https://angular.cn/)
