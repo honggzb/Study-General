@@ -324,14 +324,14 @@ var app = angular.module('myApp', ['ui.router']);
                     email: "audiogroup@qq.com"
                   }
                 },
-                //这个函数为数据保证, 因此它将在控制器被实例化之前载入
+                //这个函数为promise, 因此它将在控制器被实例化之前载入
                 detail: function($http) {
                   return $http({
                     method: 'JSONP',
                     url: '/current_details'
                   });
                 },
-                //前一个数据保证也可作为依赖注入到其他数据保证中！（这个非常实用）
+                //前一个promise也可作为依赖注入到其他promise中！（这个非常实用）
                 myId: function($http, detail) {
                   $http({
                     method: 'GET',
