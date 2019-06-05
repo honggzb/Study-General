@@ -16,7 +16,7 @@
   - 非纯管道 Impure Pipe: Angular会在每个组件的变更检测周期执行非纯管道。所以，如果使用非纯管道，我们就得注意性能问题了
   - 默认情况下，管道都是纯的，在自定义管道的时候，如果把pure标志为false,就是非纯管道了
   
- ···javascript
+```javascript
  @Pipe({ 
   name: 'format'
   pure: false
