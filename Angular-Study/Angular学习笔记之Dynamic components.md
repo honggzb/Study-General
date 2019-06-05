@@ -109,7 +109,6 @@ export class ModuleLoaderComponent {
       const module = factory.create(this._injector);
       const r = module.componentFactoryResolver;
       const cmpFactory = r.resolveComponentFactory(AComponent);
-      
       // create a component and attach it to the view
       const componentRef = cmpFactory.create(this._injector);
       this.container.insert(componentRef.hostView);
@@ -120,7 +119,7 @@ export class ModuleLoaderComponent {
 
 ### 使用compileModuleAndAllComponentsAsync方法自己去加载模块- 组件没有注册在entryComponents属性里
 
-使用compileModuleAndAllComponentsAsync方法自己去加载模块。该方法会为模块里所有组件生成组件工厂，并返回 ModuleWithComponentFactories 对象
+使用compileModuleAndAllComponentsAsync方法自己去加载模块。该方法会为模块里所有组件生成组件工厂，并返回ModuleWithComponentFactories对象
 
 ```javascript
 ngAfterViewInit() {
@@ -132,6 +131,42 @@ ngAfterViewInit() {
           const cmp = factory.create(this._injector, [], null, m);
         })
     })
+}
+/* if b are in another lazy-load module */
+//lac.module.ts
+import {LACAComponent} from "./a.component";
+@NgModule({
+    declarations: [LACAComponent],
+    entryComponents: [LACAComponent],
+    exports: [LACAComponent]
+})
+export class LACModule {}
+//lac-lazy.module.ts
+import {LACBComponent} from "./b.component";
+@NgModule({
+    declarations: [LACBComponent]
+})
+export class LACLazyModule {}
+//a.component.ts
+import {Compiler, Component, Injector, ViewChild, ViewContainerRef} from "@angular/core";
+declare const System;
+@Component({
+    moduleId: module.id,
+    selector: 'lac-a-component',
+    template: 'I am A component that inserts dynamic B component below: <div #vc></div>'
+})
+export class LACAComponent {
+    @ViewChild('vc', {read: ViewContainerRef}) _container: ViewContainerRef;
+    constructor(private _compiler: Compiler, private _injector: Injector) {}
+    ngAfterViewInit() {
+        System.import('app/loaded-and-compiled/lac-lazy.module.js').then((module) => {
+            this._compiler.compileModuleAndAllComponentsAsync(module.LACLazyModule)
+                .then((compiled) => {
+                    const factory = compiled.componentFactories[0];
+                    this._container.createComponent(factory);
+                })
+        })
+    }
 }
 ```
 
@@ -156,6 +191,14 @@ dataModel.name = 'dynamic'
 linkFn(dataModel);  // link data model to a template
 
 // Angular的代码
+//otf.module.ts
+@NgModule({
+    declarations: [OTFAComponent],
+    entryComponents: [OTFAComponent],
+    exports: [OTFAComponent]
+})
+export class OTFModule {}
+//a.component.ts
 @ViewChild('vc', {read: ViewContainerRef}) vc: ViewContainerRef;
 constructor(private _compiler: Compiler,
             private _injector: Injector,
@@ -199,6 +242,6 @@ ngOnDestroy() {
 
 > Reference
 - [译-关于Angular动态组件你需要知道的](https://segmentfault.com/a/1190000014688076)
-- [](https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e)
+- [Here is what you need to know about dynamic components in Angular](https://blog.angularindepth.com/here-is-what-you-need-to-know-about-dynamic-components-in-angular-ac1e96167f9e)
 - [How I built a customizable loading-indicator with Angular dynamic components](https://www.freecodecamp.org/news/how-i-built-a-customizable-loading-indicator-with-angular-dynamic-components-a291310f01d/)
 - https://github.com/TapaiBalazs/angular-reusables/tree/master/projects/loading-indicator
