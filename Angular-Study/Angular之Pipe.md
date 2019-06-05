@@ -55,6 +55,7 @@
 - symbolDisplay：表示以该类型货币的哪种格式显示，值为布尔值，true表示显示货币符号如￥、$等，false表示显示ISO 4217货币码如CNY、USD等
 - digitInfo, 参考DecimalPipe管道
 
+
 **内建管道使用示例**
 
 <table border="1">
