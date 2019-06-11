@@ -15,6 +15,16 @@
 │   ├── GoogleMapAPI
 │   │   ├── 谷歌地图地理编码.md
 │   │   └──
+│   │
+│   ├── JavaScript数组专题
+│   │   ├── JavaScript专题之es6数组处理.md
+│   │   ├── JavaScript专题之数组中删除某一项或几项.md
+│   │   ├── JavaScript专题之判断数组中是否包含指定元素.md
+│   │   ├── JavaScript专题之去掉数组中的重复项.md
+│   │   ├── JavaScript专题之复制数组.md
+│   │   ├── JavaScript专题之数组中插入元素的几个方法-性能比较.md
+│   │   ├── JavaScript专题之数组合并方法和对象合并方法.md
+│   │   └──
 │   │ 
 │   ├── javascript+css
 │   │   ├── javascript关于页面坐标api.md
@@ -58,19 +68,14 @@
 │   │ 
 │   ├── JavaScript专题之Call,apply,bind详解.md
 │   ├── JavaScript专题之Lazy Loading Images and Video
-│   ├── JavaScript专题之数组中删除某一项或几项.md
-│   ├── JavaScript专题之判断数组中是否包含指定元素.md
 │   ├── JavaScript专题之判断浏览器种类及版本+http协议.md
 │   ├── JavaScript专题之前端复制功能总结-sample.html
 │   ├── JavaScript专题之前端复制功能总结.md
-│   ├── JavaScript专题之去掉数组中的重复项.md
-│   ├── JavaScript专题之复制数组.md
 │   ├── JavaScript专题之如何判断两个对象相等.md
 │   ├── JavaScript专题之字符串的操作.md
 │   ├── JavaScript专题之排序1-sort解析.md
 │   ├── JavaScript专题之排序2-排序算法详解.md
 │   ├── JavaScript专题之数据类型判断.md
-│   ├── JavaScript专题之数组合并方法和对象合并方法.md
 │   ├── JavaScript专题之文件上传下载.md
 │   ├── JavaScript中对象的深拷贝.md
 │   ├── Javascript中bind()方法的使用与实现.md

@@ -8,16 +8,53 @@
 - [4. Async管道](#Async管道)
 - [5. 案例1- 管道实现autocomplete](#管道实现autocomplete)
 
-Angular中 Pipe(管道)与 AngularJS中的 filter(过滤器) 的作用的是一样的
+**一些概念**
+
+- Angular中 Pipe(管道)与 AngularJS中的 filter(过滤器) 的作用的是一样的
+- 管道分为两种
+  - 纯管道 Pure Pipe: Angular只有检查到输入值发生纯变更时，才会执行纯管道。纯变更指的是，原始类型值(String,Number,Boolean,Symbol)的改变，或者对象引用的改变(对象值改变不是纯变更，不会执行)
+  - 非纯管道 Impure Pipe: Angular会在每个组件的变更检测周期执行非纯管道。所以，如果使用非纯管道，我们就得注意性能问题了
+  - 默认情况下，管道都是纯的，在自定义管道的时候，如果把pure标志为false,就是非纯管道了
+  
+```javascript
+ @Pipe({ 
+  name: 'format'
+  pure: false
+})
+ ```
 
 <h2 id="Angular内建管道及分类">1. Angular内建管道及分类</h2>
 
-| Angular内建管道分类 | Header Two     |
+- 内建管道可以将数据格式化显示，但是不改变源数据，所以是一个深复制，比如日期的显示
+
+| Angular内建管道分类 | Header Two |
 | :------------- | :------------- |
 |String -> String|uppercase, lowercase, TitleCasePipe|
 |Number -> String|decimal, percent, currency|
 |Object -> String|json, date|
 |Tools|slice, async, i18nplural, i18nselect|
+
+**DecimalPipe**
+
+`expression | number[:{minIntegerDigits}.{minFractionDigits}-{maxfractionDigits}]`
+`<p>{{ number | number: '3.1-2'}}</p>`
+
+- minIntegerDigits：整数部分保留最小的位数，默认值为1
+- minFractionDigits：小数部分保留最小的位数，默认值为0
+- maxFractionDigits：小数部分保留最大的位数，默认值为3
+
+**SlicePipe-裁剪数组或字符串，返回裁剪后的目标子集**
+
+`expression | slice: start[: end]`
+
+**CurrentPipe-将数值进行货币格式化处理**
+
+`expression | currency[: currencyCode[: symbolDisplay[: digitInfo]]]`
+
+- currentcyCode：表示要格式化的目标货币格式，值为ISO 4217货币码，如CNY人民币、USD美元、EUR欧元等
+- symbolDisplay：表示以该类型货币的哪种格式显示，值为布尔值，true表示显示货币符号如￥、$等，false表示显示ISO 4217货币码如CNY、USD等
+- digitInfo, 参考DecimalPipe管道
+
 
 **内建管道使用示例**
 
