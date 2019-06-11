@@ -9,6 +9,9 @@
   - [ngProjectAs](#ngprojectas)
   - [获取ng-conent包含组件](#%E8%8E%B7%E5%8F%96ng-conent%E5%8C%85%E5%90%AB%E7%BB%84%E4%BB%B6)
 - [ng-container](#ng-container)
+- [Demo of using ng-conent- icon input](#demo-of-using-ng-conent--icon-input)
+  - [style projected content](#style-projected-content)
+  - [interact with projected content](#interact-with-projected-content)
 - [*ngTemplateOutlet](#ngtemplateoutlet)
 
 ## ng-template
@@ -241,6 +244,113 @@ export class NgContainerComponent {
 }
 ```
 [back to top](#top)
+
+## Demo of using ng-conent- icon input
+
+- @HostBinding()可以为指令的宿主元素添加类、样式、属性等
+- @HostListener()可以监听宿主元素上的事件
+
+**Benefit of using projected content -no need to forward all properties**
+
+- can support HTML itself attributes, such as `<input type="email" autocomplete="off" placeholder='Email'>`
+- integration with angular forms
+- can detect plain browser events
+- can use custom third party properties, such as `data-`
+
+### style projected content
+
+```css
+:host /deep/ input {
+  border: none;
+  outline: none;
+}
+```
+
+### interact with projected content
+
+cannot interact with the ng-content tag. Instead, the best way to interact with the projected input is to start by applying a new separate directive to the input.
+
+```javascript
+//input-ref.directive.ts
+@Directive({
+  selector: '[inputRef]'
+})
+export class InputRefDirective {
+  focus = false;
+ @HostListener("focus")
+ onfocus(){
+   this.focus = true;
+ }
+ @HostListener("blur")
+ onblur(){
+   this.focus = false;
+ }
+}
+//icon-input.component.ts- for fontawesome
+//<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+@Component({
+  selector: 'icon-input',
+  template: `
+    <i class="fa" [ngClass]="classes"></i>
+    <ng-content></ng-content>`,
+  style: `
+    :host {
+      border: 1px solid grey;
+      display: inline-block;
+    }
+    :host /deep/ input {
+      border: none;
+      outline: none;
+      padding-left: 3px;
+    }
+    :host(.focus) {
+      border: 1px solid blue;
+    }`
+})
+export class IconInputComponent {
+  @Input() icon: string;
+  @ContentChild(InputRefDirective)   //获取ng-conent包含组件
+  input: InputRefDirective
+  @HostBinding("class.focus")
+  get focus() {
+    return this.input ? this.input.focus : false;
+  }
+  @Output() inputValue = new EventEmitter();
+  inputFocus = false;
+
+  get classes() {
+    const cssClasses = { fa: true };
+    cssClasses['fa-' + this.icon] = true;
+    return cssClasses;
+  }
+}
+//icon-input.component.ts- for material Design
+//<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+@Component({
+    selector: 'au-md-input',
+    template: `
+        <i class="md-icon" [innerHtml]="icon"></i>
+        <ng-content></ng-content>`,
+    styles: [ commonCss, defaultThemeCss , mdInputStyles ]
+})
+export class AuMdInputComponent implements AfterContentInit {
+    @Input()
+    icon: string;
+    @ContentChild(InputRefDirective)
+    input: InputRefDirective;
+    ngAfterContentInit() {
+        if (!this.input) {
+            console.error("the au-md-input needs an input inside its content");
+        }
+    }
+    @HostBinding('class.input-focus')
+    get isInputFocus() {
+        return this.input ? this.input.focus : false;
+    }
+}
+```
+
+> https://github.com/angular-university/au-input
 
 ## *ngTemplateOutlet
 
