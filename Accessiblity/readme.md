@@ -1,5 +1,25 @@
+### Shortcuts
 
+### windows 10- Narrator
+
+- Windows logo key + Ctrl + Enter
+- go to Settings  > Ease of Access > Narrator, and then turn on the toggle under Use Narrator
+
+### resources
+
+- [Web Content Accessibility Guidelines (WCAG) 2.0 ](https://www.w3.org/TR/WCAG20/)
+- [WebAIM’s WCAG 2.0 Checklist](http://webaim.org/standards/wcag/checklist)
+- [Wuhcag: WCAG 2.0 checklists](https://www.wuhcag.com/wcag-checklist/)
+- [Wuhcag: Web Accessibility for developers](https://www.wuhcag.com/)
+- [The Accessibility Project](https://a11yproject.com/)
 - [Angular>2 + Accessibility](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Angular2%2BAccessibility.md)
+
+
+### Tools
+
+- [Accessibility Reference of Chrome](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference)
+- [aXe extension for Chrome](
+- [Color Contrast Analyzer for Chrome](https://accessibility.oit.ncsu.edu/tools/color-contrast-chrome/)
 
 --------------------
 
