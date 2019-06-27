@@ -1,6 +1,6 @@
 ### Shortcuts
 
-### windows 10- Narrator
+#### windows 10- Narrator
 
 - Windows logo key + Ctrl + Enter
 - go to Settings  > Ease of Access > Narrator, and then turn on the toggle under Use Narrator
