@@ -9,12 +9,15 @@
 
 - [Web Content Accessibility Guidelines (WCAG) 2.0 ](https://www.w3.org/TR/WCAG20/)
 - [Web Content Accessibility Tutorials](https://www.w3.org/WAI/tutorials/page-structure/sections/)
-- [WebAIM’s WCAG 2.0 Checklist](http://webaim.org/standards/wcag/checklist)
-- [Wuhcag: WCAG 2.0 checklists](https://www.wuhcag.com/wcag-checklist/)
 - [Wuhcag: Web Accessibility for developers](https://www.wuhcag.com/)
 - [The Accessibility Project](https://a11yproject.com/)
 - [Angular>2 + Accessibility](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Angular2%2BAccessibility.md)
+- [WebAIM -Web Accessiblilty In Mind](https://webaim.org/)
 
+### checklist
+
+- [WebAIM’s WCAG 2.0 Checklist](http://webaim.org/standards/wcag/checklist)
+- [Wuhcag: WCAG 2.0 checklists](https://www.wuhcag.com/wcag-checklist/)
 
 ### Tools
 
