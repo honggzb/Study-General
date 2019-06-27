@@ -5,7 +5,7 @@
 - Windows logo key + Ctrl + Enter
 - go to Settings  > Ease of Access > Narrator, and then turn on the toggle under Use Narrator
 
-### resources
+### Resources
 
 - [Web Content Accessibility Guidelines (WCAG) 2.0 ](https://www.w3.org/TR/WCAG20/)
 - [Web Content Accessibility Tutorials](https://www.w3.org/WAI/tutorials/page-structure/sections/)
@@ -14,7 +14,7 @@
 - [Angular>2 + Accessibility](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Angular2%2BAccessibility.md)
 - [WebAIM -Web Accessiblilty In Mind](https://webaim.org/)
 
-### checklist
+### Checklist
 
 - [WebAIM’s WCAG 2.0 Checklist](http://webaim.org/standards/wcag/checklist)
 - [Wuhcag: WCAG 2.0 checklists](https://www.wuhcag.com/wcag-checklist/)
