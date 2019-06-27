@@ -21,6 +21,10 @@
 - [aXe extension for Chrome](
 - [Color Contrast Analyzer for Chrome](https://accessibility.oit.ncsu.edu/tools/color-contrast-chrome/)
 
+### Screen Reader
+
+- [NVDA](http://www.nvaccess.org/)
+
 --------------------
 
 to-dos
