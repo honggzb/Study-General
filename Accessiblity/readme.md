@@ -8,6 +8,7 @@
 ### resources
 
 - [Web Content Accessibility Guidelines (WCAG) 2.0 ](https://www.w3.org/TR/WCAG20/)
+- [Web Content Accessibility Tutorials](https://www.w3.org/WAI/tutorials/page-structure/sections/)
 - [WebAIM’s WCAG 2.0 Checklist](http://webaim.org/standards/wcag/checklist)
 - [Wuhcag: WCAG 2.0 checklists](https://www.wuhcag.com/wcag-checklist/)
 - [Wuhcag: Web Accessibility for developers](https://www.wuhcag.com/)
