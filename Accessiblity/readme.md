@@ -13,7 +13,7 @@
 - [The Accessibility Project](https://a11yproject.com/)
 - [Angular>2 + Accessibility](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Angular2%2BAccessibility.md)
 - [WebAIM -Web Accessiblilty In Mind](https://webaim.org/)
-- [aria_examples for jQuery](http://heydonworks.com/practical_aria_examples/
+- [aria_examples for jQuery](http://heydonworks.com/practical_aria_examples/)
 
 ### Checklist
 
