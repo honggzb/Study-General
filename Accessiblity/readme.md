@@ -9,6 +9,7 @@
 
 - [Web Content Accessibility Guidelines (WCAG) 2.0 ](https://www.w3.org/TR/WCAG20/)
 - [Web Content Accessibility Tutorials](https://www.w3.org/WAI/tutorials/page-structure/sections/)
+- [WAI-ARIA Authoring Practices 1.1](https://www.w3.org/TR/wai-aria-practices-1.1)
 - [Wuhcag: Web Accessibility for developers](https://www.wuhcag.com/)
 - [The Accessibility Project](https://a11yproject.com/)
 - [Developer Guide: Accessibility - AngularJS](https://docs.angularjs.org/guide/accessibility)
