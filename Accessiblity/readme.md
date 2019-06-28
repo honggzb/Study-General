@@ -11,6 +11,7 @@
 - [Web Content Accessibility Tutorials](https://www.w3.org/WAI/tutorials/page-structure/sections/)
 - [Wuhcag: Web Accessibility for developers](https://www.wuhcag.com/)
 - [The Accessibility Project](https://a11yproject.com/)
+- [Developer Guide: Accessibility - AngularJS](https://docs.angularjs.org/guide/accessibility)
 - [Angular>2 + Accessibility](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Angular2%2BAccessibility.md)
 - [WebAIM -Web Accessiblilty In Mind](https://webaim.org/)
 - [aria_examples for jQuery](http://heydonworks.com/practical_aria_examples/)
