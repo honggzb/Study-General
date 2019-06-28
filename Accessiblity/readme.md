@@ -32,6 +32,12 @@
 
 - [NVDA](http://www.nvaccess.org/)
 
+### Accessible JavaScript components
+
+- [Modaal — Modaal is a WCAG 2.0 Level AA accessible modal window plugin](https://github.com/humaan/Modaal)
+- [Frend — A collection of accessible, modern front-end components](https://frend.co/)
+- [The A11Y Project patterns](http://a11yproject.com/patterns.html)
+
 --------------------
 
 to-dos
