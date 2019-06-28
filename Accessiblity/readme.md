@@ -24,7 +24,7 @@
 ### Tools
 
 - [Accessibility Reference of Chrome](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference)
-- [axe extension for Chrome - Accessibility testing](https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd)
+- [aXe Coconut extension for Chrome](https://chrome.google.com/webstore/detail/axe-coconut/iobddmbdndbbbfjopjdgadphaoihpojp/related?hl=en)
 - [Color Contrast Analyzer for Chrome](https://accessibility.oit.ncsu.edu/tools/color-contrast-chrome/)
 
 ### Screen Reader
