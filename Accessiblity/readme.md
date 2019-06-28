@@ -13,6 +13,7 @@
 - [The Accessibility Project](https://a11yproject.com/)
 - [Angular>2 + Accessibility](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Angular2%2BAccessibility.md)
 - [WebAIM -Web Accessiblilty In Mind](https://webaim.org/)
+- [aria_examples for jQuery](http://heydonworks.com/practical_aria_examples/
 
 ### Checklist
 
@@ -22,7 +23,7 @@
 ### Tools
 
 - [Accessibility Reference of Chrome](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference)
-- [aXe extension for Chrome](
+- [axe extension for Chrome - Accessibility testing](https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd)
 - [Color Contrast Analyzer for Chrome](https://accessibility.oit.ncsu.edu/tools/color-contrast-chrome/)
 
 ### Screen Reader
