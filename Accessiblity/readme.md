@@ -42,6 +42,11 @@
 
 to-dos
 
+- https://coryrylan.com/blog/angular-accessibility-tips-and-tricks
+- https://medium.com/dailyjs/angular-and-accessibility-8ae1f601803a
+- https://netbasal.com/accessibility-made-easy-with-angular-cdk-1caaf3d98de2
+
+
 - [Using JavaScript to trap focus in an element](https://hiddedevries.nl/en/blog/2017-01-29-using-javascript-to-trap-focus-in-an-element)
 - [Trapping focus inside the dialog](https://allyjs.io/tutorials/accessible-dialog.html#trapping-focus-inside-the-dialog) by allyjs
 - [Dialog (non-modal) in WAI-ARIA](https://www.w3.org/TR/wai-aria-practices/#dialog_modal) Authoring Practices
