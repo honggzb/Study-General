@@ -161,8 +161,6 @@
   - 组件和指令的属性都是nz打头其后驼峰命名，比如nzSize
   - 栅格划为24等分
 
-```
-
 [back to top](#top)
 
 ### AngularJS-study
