@@ -427,7 +427,7 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
 
 **Template migration principle**
 
-|Binding definition|Template syntax
+binding|Binding definition|Template syntax
 ---|---|---
 Attribute binding	|` myAttribute: '@myAttribute'`|`<my-component myAttribute="value">`
 Expression binding|`myOutput: '&myOutput'`|`<my-component (myOutput)="action()">`
