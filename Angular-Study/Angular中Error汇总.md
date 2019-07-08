@@ -11,6 +11,7 @@
 - [Angular MATERIAL](#angularM)
   - [1. Type 'ElementRef' is not generic](#ElementRef)
   - [2. unable to call a controller function from inside a custom-template with ui-typeahead](#ui-typeahead)
+  - [3. Sub-menu items is not closing even after clicking outside the menu list](#Sub-menu)
 
 <h2 id="angular">Angular 2+</h2>
 
@@ -178,5 +179,14 @@ npm install -g @angular/cli@latest
 <h3 id="ui-typeahead">2. unable to call a controller function from inside a custom-template with ui-typeahead</h3>
 
 https://stackoverflow.com/questions/18441928/access-controller-scope-from-bootstrap-ui-typeahead-template
+
+<h3 id="Sub-menu">3. Sub-menu items is not closing even after clicking outside the menu list</h3>
+
+using `popover-trigger="outsideClick"` instead of `popover-trigger="focus"`
+
+```html
+<button uib-popover-template popover-trigger="outsideClick" ...>
+<button uib-popover-template popover-trigger="focus" ...>
+```
 
 [back to top](#top)
