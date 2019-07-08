@@ -12,8 +12,6 @@
 - [WAI-ARIA Authoring Practices 1.1](https://www.w3.org/TR/wai-aria-practices-1.1)
 - [Wuhcag: Web Accessibility for developers](https://www.wuhcag.com/)
 - [The Accessibility Project](https://a11yproject.com/)
-- [Developer Guide: Accessibility - AngularJS](https://docs.angularjs.org/guide/accessibility)
-- [Angular>2 + Accessibility](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Angular2%2BAccessibility.md)
 - [WebAIM -Web Accessiblilty In Mind](https://webaim.org/)
 - [aria_examples for jQuery](http://heydonworks.com/practical_aria_examples/)
 
@@ -30,7 +28,16 @@
 
 ### Screen Reader
 
-- [NVDA](http://www.nvaccess.org/)
+- [NVDA](http://www.nvaccess.org/)- NVDA is a free, open-source, portable screen reader  for Microsoft Windows.
+
+### Accessiblity and AngularJS/Angular
+
+- [Developer Guide: Accessibility - AngularJS](https://docs.angularjs.org/guide/accessibility)
+- [Angular>2 + Accessibility](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Angular2%2BAccessibility.md)
+
+### Accessiblility and React
+
+- [Creating accessible React apps](https://simplyaccessible.com/article/react-a11y/)
 
 ### Accessible JavaScript components
 
