@@ -1,4 +1,5 @@
 [Content](#top)
+- [Accessiblity](#Accessiblity)
 - [Angular-Study](#angular-study)
 - [AngularJS-study](#angularjs-study)
 - [CSS+CSS3-Skill - css技巧](#csscss3-skill---css%E6%8A%80%E5%B7%A7)
@@ -33,11 +34,16 @@
 ### Accessiblity
 
 ```
-├── Accessiblity
-│   ├── Accessibility应用之focus篇.md
-│   ├── 创建无障碍的对话框.md
-│   ├── 响应式设计(responsive design)中的Assesibility.md
-│   └── resources.md
+├── Accessiblity/
+|    ├── Accessibility of hiding content.md
+|    ├── Accessibility应用之focus篇.md
+|    ├── AngularJS and Accessibility-General.md
+|    ├── HTML+CSS+Javascript in accessibility.md
+|    ├── a11y-css-reset.css
+|    ├── css-tip.md
+|    ├── 创建无障碍的对话框.md
+|    ├── 响应式设计(responsive design)中的Assesibility.md
+│    └──  resources.md
 ```
 
 ### Angular-Study
