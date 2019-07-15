@@ -24,6 +24,8 @@
 
  快捷键|基础编辑|Basic editing
 ---|---|---
+`ctrl+=`|zoom in|
+`ctrl+-`|zoom out|
 `Ctrl+X`|剪切行（空选定）| Cut line (empty selection)
 `Ctrl+C`|复制行（空选定）|Copy line (empty selection)
 `Alt+ ↑ / ↓`	|向上/向下移动行| Move line up/down
