@@ -448,6 +448,8 @@ note:
 
 - https://developer.salesforce.com/trailhead/force_com_dev_intermediate/asynchronous_apex/async_apex_batch
 - [salesforce零基础开发入门学习（五）异步进程介绍与数据批处理Batchable](https://www.cnblogs.com/zero-zyq/p/5287343.html)
+- [salesforce-administration-test quiz](https://www.proprofs.com/quiz-school/story.php?title=salesforce-administration-test-adm201)
+- [Visualforce初步 [1] —— 基本概念](https://www.cnblogs.com/abovecloud/p/6346986.html)
 
 [back to top](#top)
 
