@@ -1,6 +1,6 @@
 
 ```
-├── Angular-Study
+├── thirdParty-lib
 │   ├── autoNumber-study.md
 │   ├── lodash学习笔记.md
 │   ├── moment-study.md
