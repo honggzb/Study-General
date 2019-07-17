@@ -456,9 +456,13 @@ note:
 ##
 
 > Reference
+- [Salesforce Certified Administrator Exam Guide](https://trailhead.salesforce.com/help?article=Salesforce-Certified-Administrator-Exam-Guide)
+- [Administration Essentials for New Admins (ADM201)](https://trailhead.salesforce.com/en/academy/classes/adm201-administration-essentials-for-new-admins/)
+- [Build a Conference Management App-official Demo](https://trailhead.salesforce.com/content/learn/projects/salesforce_developer_workshop)
 - [salesforce 401在线练习](http://www.proprofs.com/quiz-school/story.php?title=mtm3mza4ng2tli)
 - [salesforce帮助文档入口](https://help.salesforce.com/apex/HTHome)
 - [salesforce零基础开发入门学习](https://zzk.cnblogs.com/s?w=blog%3Azero-zyq%20salesforce%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0)
+- [Salesforce 入门学习](https://blog.csdn.net/ss19497/article/details/54598738)
 
 
 [APEX](#top)
