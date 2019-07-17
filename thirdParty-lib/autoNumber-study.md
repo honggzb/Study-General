@@ -1,6 +1,9 @@
 [autoNumeric.js数字格式化文本](#top)
 
-## alt
+- [alt的定义](#alt%E7%9A%84%E5%AE%9A%E4%B9%89)
+- [Upgrade Autonumeric in AngularJs Directive](#Upgrade-Autonumeric-in-AngularJs-Directive)
+
+## alt的定义
 
 `<input id="text1" value=""  type="text"  alt="p1c3p0s"  />`
 
@@ -30,3 +33,154 @@ alt中一共有7个字符，分别代表了7个格式化属性: 其实主要用�
   - D = Round Down "Round-Toward-Zero"(最小整数时用这个) 
   - C = Round to Ceiling "Toward Positive Infinity" 
   - F = Round to Floor "Toward Negative Infinity" 
+
+[back to top](#top)
+
+## Upgrade Autonumeric in AngularJs Directive
+
+- https://github.com/autoNumeric/autoNumeric/blob/next/doc/HowToUpgradeToV4.md
+
+```javascript
+// 1) updating customized AutoNumeric Directive
+(function () {
+  'use strict';
+  angular.module('cgiW360App').directive('cgiAutonumeric', function () {
+    // Declare a empty options object
+    var options = {};
+    var upgradeOptionsMap = { // from https://github.com/autoNumeric/autoNumeric/blob/next/doc/HowToUpgradeToV4.md
+      aSep: 'digitGroupSeparator',
+      nSep: 'showOnlyNumbersOnFocus',
+      dGroup: 'digitalGroupSpacing',
+      aDec: 'decimalCharacter',
+      altDec: 'decimalCharacterAlternative',
+      aSign: 'currencySymbol',
+      pSign: 'currencySymbolPlacement',
+      pNeg: 'negativePositiveSignPlacement',
+      aSuffix: 'suffixText',
+      oLimits: 'overrideMinMaxLimits',
+      vMax: 'maximumValue',
+      vMin: 'minimumValue',
+      mDec: 'decimalPlacesOverride', //'decimalPlaces'
+      eDec: 'decimalPlacesShownOnFocus',
+      scaleDecimal: 'decimalPlacesShownOnBlur',
+      aStor: 'saveValueToSessionStorage',
+      mRound: 'roundingMethod',
+      aPad: 'allowDecimalPadding',
+      nBracket: 'negativeBracketsTypeOnBlur',
+      wEmpty: 'emptyInputBehavior',
+      lZero: 'leadingZero',
+      aForm: 'formatOnPageLoad',
+      sNumber: 'selectNumberOnly',
+      anDefault: 'defaultValueOverride',
+      unSetOnSubmit: 'unformatOnSubmit',
+      outputType: 'outputFormat',
+      debug: 'showWarnings'
+    };
+    return {
+      // Require ng-model in the element attribute for watching changes.
+      require: '?ngModel',
+      // This directive only works when used in element's attribute (e.g: cgi-autonumeric)
+      restrict: 'A',
+      scope: { currencyOptions: '=' },
+      compile: function (tElm, tAttrs) {
+        //var isTextInput = tElm.is('input:text');
+        var isTextInput = tElm && tElm.length > 0 ? tElm[0].tagName === 'INPUT' && tElm[0].type === 'text' : false;
+        return function (scope, elm, attrs, controller) {
+          // Get instance-specific options.
+          var properties = Object.keys(scope.currencyOptions || {});
+          // defining newKey to instead of oldkey
+          for (var i = 0; i < properties.length; i++) {
+            var oldKey = properties[i];
+            var newKey = upgradeOptionsMap[oldKey];
+            if (newKey) {
+              scope.currencyOptions[newKey] = scope.currencyOptions[oldKey];
+              delete scope.currencyOptions[oldKey];
+            }
+          }
+          var opts = angular.extend({}, options, scope.currencyOptions);
+
+          // Initialize element as autoNumeric with options.
+          // elm.autoNumeric('init', opts);
+          var anElement = new Autonumeric(elm[0], opts);
+          // if element has controller, wire it (only for <input type="text" />)
+          if (controller && isTextInput) {
+            // watch for external changes to model and re-render element
+            scope.$watch(tAttrs.ngModel, function () {
+              controller.$render();
+            });
+            // render element as autoNumeric
+            controller.$render = function () {
+              updateElement(elm, controller.$viewValue);
+            };
+            // Detect changes on element and update model.
+            elm.on('keypress', function () {
+              scope.$apply(function () {
+                //controller.$setViewValue(elm.autoNumeric('get'));
+                controller.$setViewValue(anElement.getNumericString());
+              });
+            });
+            elm.on('keydown', function () {
+              scope.$apply(function () {
+                //controller.$setViewValue(elm.autoNumeric('get'));
+                controller.$setViewValue(anElement.getNumericString());
+              });
+            });
+            elm.on('keyup', function () {
+              scope.$apply(function () {
+                //controller.$setViewValue(elm.autoNumeric('get'));
+                controller.$setViewValue(anElement.getNumericString());
+              });
+            });
+          } else {
+            // Listen for changes to value changes and re-render element.
+            // Useful when binding to a readonly input field.
+            if (isTextInput) {
+              attrs.$observe('value', function (val) {
+               // updateElement(elm, val);
+                updateElement(elm[0], val);
+              });
+            }
+          }
+          // Helper method to update autoNumeric with new value.
+          function updateElement(element, newVal) {
+            // Only set value if value is numeric
+            //if ($.isNumeric(newVal)) {
+            //  element.autoNumeric('set', newVal);
+            if (_.isNumber(newVal)) {
+              anElement.set(newVal);
+            } else if (typeof newVal === 'string') {
+              newVal = newVal.replace(/[^0-9\.-]+/g, '');
+              //element.autoNumeric('set', newVal);
+              anElement.set(newVal);
+            }
+            if (newVal === null || newVal === undefined || newVal === '') {
+              //element.autoNumeric('set', '');
+              anElement.set('');
+            }
+          };
+        };
+      }  // compile
+    };  // return
+  });
+})();
+/* 2) updating if using AutoNumeric directly in other Directive */
+// old code
+ element.autoNumeric('init', {
+    aSep: thousandsDelimiter,
+    aDec: decimalDelimiter,
+    // aSign: currencySym,
+    nBracket: '(,)',
+    vMin: _min,
+    vMax: _max
+})
+// new Code
+new Autonumeric(element[0], {
+    digitGroupSeparator: thousandsDelimiter,
+    decimalCharacter: decimalDelimiter,
+    negativeBracketsTypeOnBlur: '(,)',
+    maximumValue: _max,
+    minimumValue: _min
+});
+```
+
+[back to top](#top)
