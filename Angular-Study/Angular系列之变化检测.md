@@ -79,7 +79,7 @@ class ApplicationRef {
 **变化检测策略** - Angular有两种变化检测策略
 
 - defalut策略: Default是Angular默认的变化检测策略，也就是上述提到的脏检查,只要有值发生变化，就全部从父组件到所有子组件进行检查,
-- OnPush策略:  就是只有当输入数据(即@Input)的引用发生变化或者有事件触发时，组件才进行变化检测, 当使用OnPush策略的时候，若输入属性没有发生变化，组件的变化检测将会被跳过, 可利用该策略来优化变化检测性能
+- OnPush策略:  就是只有当输入数据(即@Input)的引用发生变化或者有事件触发时，组件才进行变化检测, 当使用OnPush策略的时候，若输入属性没有发生变化，组件的变化检测将会被跳过, 可利用该策略来优化变化检测性能, component is only checked when:
   - `@Input` properties change
   - Event emits
   - a bound Observable emits
