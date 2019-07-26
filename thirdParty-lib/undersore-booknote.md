@@ -255,6 +255,35 @@ _.template("<%if (data.title) { %>Title: <%= title %><% } %>", null, { variable:
 `_.omit(object, *keys)`|`_.omit({name: 'moe', age: 50, userid: 'moe1'}, 'userid');` <br>=> `{name: 'moe', age: 50}`
 `_.defaults(object, *defaults)`|`var iceCream = {flavor: "chocolate"};` <br>`_.defaults(iceCream, {flavor: "vanilla", sprinkles: "lots"});` <br>=> `{flavor: "chocolate", sprinkles: "lots"}`
 
+
+```javascript
+var account = {
+	accountId: 55253,
+	accountInvFrameworkCompId: 21315,
+	componentName: "Sree_FNMA25 (Advisor)",
+	inceptionDate: "2019-07-16",
+	mapparticipationEnabled: false,
+	mapvalueFixed: false,
+	overdraftParticipation: false,
+	performanceStartDate: "2019-07-16",
+	reportingCurrency: "USD",
+	sleeveCode: "016566ZV",
+	sleeveCurrency: "USD"
+};
+_.pick(account, 'sleeveCode', 'accountId', 'sleeveCurrency'); 
+/*
+{
+	accountId: 55253,
+	sleeveCode: "016566ZV",
+	sleeveCurrency: "USD"
+}
+*/
+// return true if all sleeveState is 'NOT_CREATED'
+vm.canEditFullyNonManagedAccount = !(investmentFramework.accountIFComponents || []).some(function (component) {
+          return component.sleeveState != 'NOT_CREATED';
+});
+```
+
 [back to top](#top)
 
 > reference
