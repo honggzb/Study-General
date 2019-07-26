@@ -15,19 +15,21 @@ import { ProductCategoryService } from './../product-categories/product-category
 export class ProductListComponent {
   pageTitle = 'Product List';
   errorMessage = '';
+  
   //private categorySelectedSubject = new Subject<number>();
+  // Action stream
   private categorySelectedSubject = new BehaviorSubject<number>(0);  //create action stream with inital value
   categorySelectedAction$ = this.categorySelectedSubject.asObservable();
   private errorMessageSubject = new Subject<string>();
   errorMessage$ = this.errorMessageSubject.asObservable();
 
-  products$ = combineLatest([
+  products$ = combineLatest([                // Merge Data stream with Action stream
     this.productService.productsWithAdd$,
     this.categorySelectedAction$
     //.pipe(startWith(0))   //set intial value
   ]).pipe(
       map(([products,selectedCategoryId]) =>
-            products.filter( product =>
+            products.filter( product =>        // To filter to the selected category
                        selectedCategoryId ? product.categoryId === selectedCategoryId : true
       )),
       catchError(err => {
@@ -36,6 +38,7 @@ export class ProductListComponent {
         return EMPTY;
     })
   );
+  // Categories for drop down list
   categories$ = this.productCategoryService.productCategories$
                     .pipe(
                       catchError(err => {
@@ -50,7 +53,14 @@ export class ProductListComponent {
   //                                 products.filter( product => this.selectedCategoryId ? product.categoryId === this.selectedCategoryId : true)
   //                               )
   //                             );
-
+  
+  // Combine the streams for the view
+    vm$ = combineLatest([ this.products$, this.categories$ ])
+    .pipe(
+      map(([products, categories]) =>
+        ({ products, categories }))
+    );
+  
   constructor(private productService: ProductService,
               private productCategoryService: ProductCategoryService) { }
 
