@@ -51,6 +51,16 @@
 ### Angular-Study
 
 ```
+├── Angular Architecture- Dan Wahlin
+│   ├── Angular-JumpStart-master/
+│   ├── creating-an-observable-service/
+│   ├── demos/
+│   ├── routing-guards-and-preload-strategies/
+│   ├── rxjs-subjects/
+│   ├── shared-library-example/
+│   ├── state-management/
+│   └── readme.md
+│
 ├── Angular-Study
 │   │
 │   ├── Angular-material/
@@ -76,11 +86,13 @@
 │   │   └──
 │   │
 │   ├── RxJs
-│   │   ├── Observable之Subject.md
-│   │   ├── RxJS笔记-Reactive Extensions for JavaScript (RxJS).md
-│   │   ├── RxJS笔记之Subject.md
-│   │   ├── RxJS笔记之switchMap, concatMap, mergeMap和exhaustMap.md
-│   │   └── 
+│   │   ├── RxJS in Angular-Reactive Development-Deborah Kurata/
+│   │   │   └── readme.md
+│   │   ├── Observable之Subject.md
+│   │   ├── RxJS笔记-Reactive Extensions for JavaScript (RxJS).md
+│   │   ├── RxJS笔记之Subject.md
+│   │   ├── RxJS笔记之switchMap, concatMap, mergeMap和exhaustMap.md
+│   │   └── 
 │   │
 │   ├── Unit-Test/
 │   │   ├── NgRx-test-sample.md
