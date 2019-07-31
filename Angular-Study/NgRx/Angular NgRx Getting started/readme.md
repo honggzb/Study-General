@@ -61,11 +61,11 @@ npm i angular-in-memory-web-api --save-dev
 function reducer(state, action){
     switch(action.type){
         case 'LOAD_USER':
-            rturn { users: [...state.users, action.payload]};
+            return { users: [...state.users, action.payload]};
     }
 }
 // pure function vs impure function
-Pure Function                     | impure Ftunction
+Pure Function                     | impure Function
 function sum(a, b){               | let c = 1;
     const result = a + b;         | function sum(a, b){
     return result;                |     result = a + b + c;
