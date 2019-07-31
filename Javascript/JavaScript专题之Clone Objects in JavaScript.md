@@ -28,3 +28,19 @@ note:
   - `deepClone` work with all types, function and Symbol are copied by reference
 - `Object.assign` is a lot faster than `JSON`
 - [Performance Test](https://jsperf.com/3-ways-to-clone-object/1)
+
+```javascript
+const lodashClonedeep = require("lodash.clonedeep");
+const arrOfFunction = [() => 2, {
+    test: () => 3,
+}, Symbol('4')];
+// deepClone copy by refence function and Symbol
+console.log(lodashClonedeep(arrOfFunction));
+// JSON replace function with null and function in object with undefined
+console.log(JSON.parse(JSON.stringify(arrOfFunction)));
+// function and symbol are copied by reference in deepClone
+console.log(lodashClonedeep(arrOfFunction)[0] === lodashClonedeep(arrOfFunction)[0]);
+console.log(lodashClonedeep(arrOfFunction)[2] === lodashClonedeep(arrOfFunction)[2]);
+```
+
+- [3 Ways to Clone Objects in JavaScript](https://medium.com/dailyjs/3-ways-to-clone-objects-in-javascript-22deed66f39d)
