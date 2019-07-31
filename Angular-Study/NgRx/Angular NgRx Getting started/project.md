@@ -160,3 +160,54 @@ export function reducer(state=initalState, action: ProductActions): ProductState
 
 - Container and Presentational Components
 - index.ts
+
+```
+├── app
+│   ├── home/
+│   │   ├── menu.component.html
+│   │   ├── menu.component.ts
+│   │   ├── page-not-found.component.ts 
+│   │   ├── shell.component.html 
+│   │   ├── shell.component.ts
+│   │   ├── welcome.component.html 
+│   │   └── welcome.component.ts 
+│   ├── products/
+│   │   ├── components/
+│   │   │   ├── product-edit/
+│   │   │   └── product-list/
+│   │   ├── container/
+│   │   │   ├── product-shell.component.html
+│   │   │   └── product-shell.component.ts
+│   │   ├── state/
+│   │   │   ├── product.actions.ts
+│   │   │   ├── product.effect.ts
+│   │   │   ├── product.reducer.ts
+│   │   │   └── index.ts
+│   │   ├── product-data.ts
+│   │   ├── product.module.ts
+│   │   ├── product.service.ts
+│   │   └── product.ts
+│   ├── shared/
+│   │   ├── generic-validator.ts
+│   │   ├── number.validator.ts
+│   │   └── shared.module.ts
+│   ├── state/
+│   │   └── app.state.ts
+│   ├── user/
+│   │   ├── state/
+│   │   │   ├── user.actions.ts
+│   │   │   ├── user.reducer.ts
+│   │   │   └── index.ts
+│   │   ├── auth-guard.service.ts
+│   │   ├── auth.service.ts
+│   │   ├── login.component.css
+│   │   ├── login.component.html
+│   │   ├── login.component.ts
+│   │   ├── user.module.ts
+│   │   └── user.ts
+│   ├── app-routing.module.ts
+│   ├── app.component.css
+│   ├── app.component.html
+│   ├── app.component.ts
+│   └── app.module.ts
+```
