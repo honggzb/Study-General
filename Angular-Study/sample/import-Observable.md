@@ -3,8 +3,13 @@
   - note: must before `import { AppModule } from "./app/app.module";`
 
 ```javascript
-import { Observable, throwError } from 'rxjs';
-import { catchError, shareReplay, tap, catch, do, finally, map, pluck, toPromise, mergeMap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, EMPTY, from, merge, Subject, throwError, of } from 'rxjs';
+import {
+  catch, do, finally, catchError, 
+  filter, map, mergeMap, scan, shareReplay, tap, toArray, switchMap,
+  mergeAll, max, reduce, concatMap, delay,
+  toPromise
+} from 'rxjs/operators';
 //or
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';

@@ -15,7 +15,8 @@ export class ProductDetailComponent {
   errorMessage = '';
 
   constructor(private productService: ProductService) { }
-
+  
+  // Product to display
   product$ = this.productService.selectedProduct$
     .pipe(
       catchError(err => {
@@ -23,7 +24,7 @@ export class ProductDetailComponent {
         return EMPTY;
       })
     );
-
+  // Suppliers for this product
   productSuppliers$ = this.productService.selectedProductSuppliers$
     .pipe(
       catchError(err => {
@@ -36,7 +37,9 @@ export class ProductDetailComponent {
       .pipe(
         map((p: Product) => p ? `Product Detail for: ${p.productName}` : null)
       );
-
+  
+  // Create a combined stream with the data used in the view
+  // Use filter to skip if the product is null
   vm$ = combineLatest([
     this.product$,
     this.productSuppliers$,
