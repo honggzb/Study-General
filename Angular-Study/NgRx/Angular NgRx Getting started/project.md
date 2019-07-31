@@ -159,7 +159,9 @@ export function reducer(state=initalState, action: ProductActions): ProductState
 ## Demo 3 - Refracture and Performance Improvements 
 
 - Container and Presentational Components
-- index.ts
+  - move all dispatch method to container(product-shell component)
+  - just use input/output in presentation component(product-list and product-edit components)
+- add index.ts, move all state and selector to index.ts
 
 ```
 ├── app
