@@ -14,6 +14,7 @@
 - [Strongly typing action](#strongly-typing-action)
   - [Creating strongly typing actions](#creating-strongly-typing-actions)
   - [using strongly typing action in reducer](#using-strongly-typing-action-in-reducer)
+  - [using strongly typing action in dispatch(component)](#using-strongly-typing-action-in-dispatch(component))
 - [Effect](#effect)
   - [install NgRx effects Library](#install-ngrx-effects-library)
   - [Defining an effect](#defining-an-effect)
@@ -374,6 +375,17 @@ newProduct(): void {
 productSelected(product: Product): void{
     this.store.dispatch(new productActions.SetCurrentProduct(product));
 }
+```
+
+### using strongly typing action in dispatch(component)
+
+```javascript
+checkChanged(value: boolean): void {
+    this.store.dispatch({
+      type: ProductActionTypes.ToggleProductCode,
+      payload: value
+    });
+  }
 ```
 
 [back to top](#top)
