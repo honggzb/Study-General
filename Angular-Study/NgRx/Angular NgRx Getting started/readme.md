@@ -44,13 +44,13 @@ npm i angular-in-memory-web-api --save-dev
 
 ## Redux Pattern
 
-- single source of truth called the **store** -> json database
+- Single source of truth called the **store** -> json database
   - did not include to store
     - unshared state
     - angular form state
     - non-serializabld state
-- state is read only and **only** changed by **dispatching actions**
-- changes are made using pure functions called **reducers**
+- State is read only and **only** changed by **dispatching actions**
+- Changes are made using pure functions called **reducers**
   - pure functions always return consistent result
   - pure functions will not mutate or access properties outside of function
 
