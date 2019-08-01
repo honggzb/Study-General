@@ -87,7 +87,7 @@ function sum(a, b){               | let c = 1;
 
 ### installing
 
-`npm i @ngrx/store`
+`npm i @ngrx/store --save`
 
 ### Developer Tools and Debugging
 
