@@ -674,7 +674,7 @@ May contain other components                                             | May c
 
 #### refra state
 
-- create `index.ts`, 
+- create `index.ts`,  benefit is just using ``
 - moving selectors to `index.ts`
 - extends root state
   
@@ -703,9 +703,10 @@ export const getCurrentProductId = createSelector(
 
 #### container
 
-- move all store operation, selector, dispatch to container
+- Container Component access the store and then passing down data from the smart component to dumb components as inputs, passing up event from dumb components to smart component as outputs
+  - move all store operation, selector, dispatch to container
+  - modify html to use data/event binding
 - using OnPush Strategy, `changeDetection: ChangeDetectionStrategy.OnPush`
-- modify html to use data/event binding
 
 ```html
 <div class='col-md-4'>
