@@ -674,7 +674,7 @@ May contain other components                                             | May c
 
 #### refra state
 
-- create `index.ts`,  benefit is just using ``
+- create `index.ts`,  benefit is just using `import * as fromProduct from './../../state';` in shell(container) component
 - moving selectors to `index.ts`
 - extends root state
   
