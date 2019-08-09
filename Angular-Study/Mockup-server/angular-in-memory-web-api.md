@@ -3,7 +3,7 @@
 - [modify app.module.ts](#modify-appmodulets)
 - [Creating your Data CRUD Service](#creating-your-data-crud-service)
 
-## create a service for mocking data
+## create a data service for mocking data
 
 - https://github.com/angular/in-memory-web-api
 - `npm i angular-in-memory-web-api -D`
@@ -27,7 +27,7 @@ export class DataService implements InMemoryDbService{   //implement InMemoryDbS
 }
 ```
 
-## modify app.module.ts
+## configuration - modify app.module.ts
 
 - wire the in-memory web api module with your application 
 - provide the data service as a parameter for the `.forRoot` method of the InMemoryWebApiModule module
@@ -45,7 +45,7 @@ import { DataService } from “./data.service”;
 export class AppModule { }
 ```
 
-## Creating your Data CRUD Service
+## Creating your Data CRUD Service to use data service
 
 ```javascript
 import { Injectable } from '@angular/core';
