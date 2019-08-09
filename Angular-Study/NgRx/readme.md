@@ -6,6 +6,9 @@
 │   │   ├── Demo-3/
 │   │   ├── Demo-initial/
 │   │   └── project.md
+│   ├── angular2-redux-Hendrik Swanepoel/
+│   │   ├── projectSample/
+│   │   └── readme.md
 │   ├── Tips-use-rxjs-in-Angular.md
 │   └── 
 ```
