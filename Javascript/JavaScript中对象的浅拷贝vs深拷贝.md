@@ -8,6 +8,9 @@
   - [2.2 方法二：递归拷贝](#递归拷贝)
   - [2.3 方法三：使用Object.create方法](#create方法)
 - [jQuery.extend()方法和lodash的实现对象的深拷贝](#方法的实现对象的深拷贝)
+- [Immutability](#Immutability)
+
+---------------------
 
 - 浅拷贝：仅仅复制对象的引用，而不是对象本身(拷贝就是复制,就相当于把一个对象中的所有的内容,复制一份给另一个对象,直接复制,或者说,就是把一个对象的地址给了另一个对象,他们指向相同,两个对象之间有共同的属性或者方法,都可以使用)
 - 深拷贝：把复制的对象所引用的全部对象都复制一遍(把一个对象中所有的属性或者方法,一个一个的找到.并且在另一个对象中开辟相应的空间,一个一个的存储到另一个对象中)
@@ -145,6 +148,35 @@ var obj1 = {
 };
 var obj2 = _.cloneDeep(obj1);
 console.log(obj1.b.f === obj2.b.f);   // false
+```
+  
+[back to top](#top)
+
+## Immutability
+
+- `Object.freeze()` did not work in nested properies
+- create a function `deepFreeze()`
+
+```javascript
+function deepFreeze(o) {
+  Object.freeze(o);
+  Object.getOwnPropertyNames(o).forEach((prop) => {
+    if(o.hasOwnProperty(prop) && o[prop] != null && typeof o[prop] === 'object' && !Object.isFrozen(o[prop])) {
+        deepFreeze(o[prop]);
+      }
+  });
+  return o;
+}
+const person = deepFreeze({ // cannot change address if use deepFreeze
+  name: 'hendrik',
+  surname: 'swanepoel',
+  address: {
+    city: 'Cape Town',
+    country: 'South Africa'
+  }
+});
+//Object.freeze() 
+person.address.city = 'something else';  // cannot change address if use deepFreeze
 ```
   
 [back to top](#top)
