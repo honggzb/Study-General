@@ -6,6 +6,7 @@
 ## create a service for mocking data
 
 - https://github.com/angular/in-memory-web-api
+- `npm i angular-in-memory-web-api -D`
 
 ```javascript
 @Injectable({
