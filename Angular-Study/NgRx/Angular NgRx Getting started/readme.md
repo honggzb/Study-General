@@ -14,6 +14,7 @@
 - [Strongly typing action](#strongly-typing-action)
   - [Creating strongly typing actions](#creating-strongly-typing-actions)
   - [using strongly typing action in reducer](#using-strongly-typing-action-in-reducer)
+  - [using strongly typing action in dispatch(component)](#using-strongly-typing-action-in-dispatch(component))
 - [Effect](#effect)
   - [install NgRx effects Library](#install-ngrx-effects-library)
   - [Defining an effect](#defining-an-effect)
@@ -27,6 +28,9 @@
   - [Whole architecure](#whole-architecure)
   - [General steps](#general-steps)
   - [Presentational and Container Component](#presentational-and-container-component)
+    - [refra state](#refra-state)
+    - [container](#container)
+    - [dumb components](#dumb-components)
   - [Other NgRx Library](#other-ngrx-library)
 
 ---------------------------------------
@@ -44,13 +48,13 @@ npm i angular-in-memory-web-api --save-dev
 
 ## Redux Pattern
 
-- single source of truth called the **store** -> json database
+- Single source of truth called the **store** -> json database
   - did not include to store
     - unshared state
     - angular form state
     - non-serializabld state
-- state is read only and **only** changed by **dispatching actions**
-- changes are made using pure functions called **reducers**
+- State is read only and **only** changed by **dispatching actions**
+- Changes are made using pure functions called **reducers**
   - pure functions always return consistent result
   - pure functions will not mutate or access properties outside of function
 
@@ -61,11 +65,11 @@ npm i angular-in-memory-web-api --save-dev
 function reducer(state, action){
     switch(action.type){
         case 'LOAD_USER':
-            rturn { users: [...state.users, action.payload]};
+            return { users: [...state.users, action.payload]};
     }
 }
 // pure function vs impure function
-Pure Function                     | impure Ftunction
+Pure Function                     | impure Function
 function sum(a, b){               | let c = 1;
     const result = a + b;         | function sum(a, b){
     return result;                |     result = a + b + c;
@@ -87,7 +91,7 @@ function sum(a, b){               | let c = 1;
 
 ### installing
 
-`npm i @ngrx/store`
+`npm i @ngrx/store --save`
 
 ### Developer Tools and Debugging
 
@@ -376,6 +380,17 @@ productSelected(product: Product): void{
 }
 ```
 
+### using strongly typing action in dispatch(component)
+
+```javascript
+checkChanged(value: boolean): void {
+    this.store.dispatch({
+      type: ProductActionTypes.ToggleProductCode,
+      payload: value
+    });
+  }
+```
+
 [back to top](#top)
 
 ## Effect
@@ -655,6 +670,157 @@ No dependencies on the rest of the app                                   | Have 
 Don’t specify how data is loaded or changed but emit events via @Outputs | Are stateful and specify how data is loaded or changed
 Receive data via @Inputs                                                 | Top level routes
 May contain other components                                             | May contain other components
+```
+
+#### refra state
+
+- create `index.ts`,  benefit is just using `import * as fromProduct from './../../state';` in shell(container) component
+- moving selectors to `index.ts`
+- extends root state
+  
+```javascript
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+
+import * as fromRoot from '../../state/app.state';
+import * as fromProduct from './product.reducer';
+
+export interface State extends fromRoot.State{  //extends root state
+    products: fromProduct.ProductState;
+}
+const getProductFeatureState = createFeatureSelector<fromProduct.ProductState>('products');
+export const getShowProductCode = createSelector(
+  getProductFeatureState,
+  state => state.showProductCode
+);
+export const getCurrentProductId = createSelector(
+    getProductFeatureState,
+    state =>  state.currentProductId
+);
+//...
+```  
+
+[back to top](#top)
+
+#### container
+
+- Container Component access the store and then passing down data from the smart component to dumb components as inputs, passing up event from dumb components to smart component as outputs
+  - move all store operation, selector, dispatch to container
+  - modify html to use data/event binding
+- using OnPush Strategy, `changeDetection: ChangeDetectionStrategy.OnPush`
+
+```html
+<div class='col-md-4'>
+    <!-- using async pipe in container component -->
+    <pm-product-list
+      [displayCode]="displayCode$ | async"  
+      [products]="products$ | async"
+      [selectedProduct]="selectedProduct$ | async"
+      [errorMessage]="errorMessage$ | async"
+      (checked)="checkChanged($event)"
+      (initializeNewProduct)="(newProduct())"
+      (selected)="productSelected($event)"
+    ></pm-product-list>
+  </div>
+  <div class='col-md-8'>
+    <pm-product-edit
+      [selectedProduct]="selectedProduct$ | async"
+      [errorMessage]="errorMessage$ | async"
+      (clearCurrent)="clearProduct()"
+      (update)="updateProduct($event)"
+      (delete)="deleteProduct($event)"
+      (create)="saveProduct($event)"
+    ></pm-product-edit>
+  </div>
+```
+
+```javascript
+import * as fromProduct from './../../state';
+import * as productActions from '../../state/product.actions';
+import { Product } from '../../product';
+@Component({
+    templateUrl: './product-shell.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush    //using OnPush Strategy
+})
+export class ProductShellComponent implements OnInit {
+  //
+  displayCode$: Observable<boolean>;
+  selectedProduct$: Observable<Product>;
+  products$: Observable<Product[]>;
+  errorMessage$: Observable<string>;
+
+  constructor(private store: Store<fromProduct.State>) { }
+
+  ngOnInit() {
+    this.store.dispatch(new productActions.Load());
+    this.products$ = this.store.pipe(select(fromProduct.getProducts)) as Observable<Product[]>;
+    this.errorMessage$ = this.store.pipe(select(fromProduct.getError));
+    this.selectedProduct$ = this.store.pipe(select(fromProduct.getCurrentProduct));
+    this.displayCode$ = this.store.pipe(select(fromProduct.getShowProductCode));
+  }
+
+  checkChanged(value: boolean): void {
+    this.store.dispatch(new productActions.ToggleProductCode(value));
+  }
+
+  newProduct(): void {
+    this.store.dispatch(new productActions.InitializeCurrentProduct());
+  }
+
+  productSelected(product: Product): void {
+    this.store.dispatch(new productActions.SetCurrentProduct(product));
+  }
+
+  deleteProduct(product: Product): void {
+    this.store.dispatch(new productActions.DeleteProduct(product.id));
+  }
+
+  clearProduct(): void {
+    this.store.dispatch(new productActions.ClearCurrentProduct());
+  }
+  saveProduct(product: Product): void {
+    this.store.dispatch(new productActions.CreateProduct(product));
+  }
+
+  updateProduct(product: Product): void {
+    this.store.dispatch(new productActions.UpdateProduct(product));
+  }
+}
+```
+
+[back to top](#top)
+
+#### dumb components
+
+```html
+<div class="card-body" *ngIf="products"> <!-- remove async pipe in dumb component --></div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  Error: {{ errorMessage }}
+</div>
+```
+
+```javascript
+export class ProductListComponent {
+  pageTitle = 'Products';
+ //using Input() and Output
+  @Input() errorMessage: string;
+  @Input() displayCode: boolean;
+  @Input() products: Product[];
+  @Input() selectedProduct: Product;
+
+  @Output() checked = new EventEmitter<boolean>();
+  @Output() initializeNewProduct = new EventEmitter<void>();
+  @Output() selected = new EventEmitter<Product>();
+
+  checkChanged(value: boolean): void {
+    this.checked.emit(value);
+  }
+  newProduct(): void {
+    this.initializeNewProduct.emit();
+  }
+  productSelected(product: Product): void {
+    this.selected.emit(product);
+  }
+}
 ```
 
 [back to top](#top)

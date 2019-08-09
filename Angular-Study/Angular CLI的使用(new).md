@@ -14,7 +14,8 @@
 - [Adding new Capabilities - new feature in version 6+](#adding-new-capabilities---new-feature-in-version-6)
   - [adding angular material](#adding-angular-material)
   - [adding scripts, styles and assets](#adding-scripts-styles-and-assets)
-  - [Using 3th-library](#Using-3th-library)
+  - [Using 3th-library](#using-3th-library)
+  - [Change css to SCSS for existing projects](#change-css-to-scss-for-existing-projects)
 - [Tests with Angular CLI](#tests-with-angular-cli)
   - [Unit Tests](#unit-tests)
   - [End to End test- testing user interaction](#end-to-end-test--testing-user-interaction)
@@ -24,7 +25,7 @@
   - [Generating angular library](#generating-angular-library)
   - [Sample: Generating a Logger library and adding to angular](#sample-generating-a-logger-library-and-adding-to-angular)
   - [Angular Console](#angular-console)
-- [other command](#other-command) 
+- [other command](#other-command)
 
 ```shell
 node -v  # 8.x or higher
@@ -33,7 +34,7 @@ npm install -g @angular/cli
 ng --version
 ng new my-first-project
 ng new ngtest --skip-install # generate but skip npm install
-ng new ngtest --prefix=qh 
+ng new ngtest --prefix=qh
 cd my-first-project
 ng serve
 ng serve -o  # ng serve –open后，ng会找到.angular-cli.json文件中的main所指的main.ts文件，而main.ts文件加载了根模块
@@ -47,7 +48,7 @@ ng build my-app -c production
 
 OPTION| short|DESCRIPTION
 ---|---|---
-`ng new --help`|| 
+`ng new --help`||
 `ng new myApp --defaults`||When true, disables interactive input prompts for options with a default
 `ng new myApp --dryRun`	|`ng new myApp -d`|Don't write the files, but report them, good for checking before generate
 `ng new ngtest --skip-install`||generate without runnign npm install
@@ -55,7 +56,7 @@ OPTION| short|DESCRIPTION
 `ng new ngtest --inline-template`|`ng new ngtest -t`|includes template inline in the component TS file
 `ng new ngtest --routing`||generate routing module, app-routing.module.ts
 `ng new ngtest --style scss`||
-`ng new ngtest --prefix qh`|`ng new ngtest -p qh`| change `selector: 'app-root',` `app` to user-defined prefix 
+`ng new ngtest --prefix qh`|`ng new ngtest -p qh`| change `selector: 'app-root',` `app` to user-defined prefix
 `ng new ngtest --skip-tests`|`ng new ngtest -S`|
 `ng new ngtest --skip-git`|`ng new ngtest -g`| don't add the project to git
 
@@ -94,7 +95,7 @@ options|Alias| Description
 --change-detection|-c|change detection strategy
 --dry-run|-d|
 
-**Sample**: 
+**Sample**:
 
 - `ng g c pet -st --flat --prefix my`
 - `ng g c orders -v Emulated -c Onpush -d`
@@ -105,7 +106,7 @@ options|Alias| Description
 - `ng g p models/person -m app.module`   -create pipe and add to app.module.ts
 - `ng g m login --spec false -m app.module`   -create module and add to app.module.ts
 - `ng g s products/product-parameter -m products/product.module`   -**create service and automatically register to product.module**
- 
+
 [back to top](#top)
 
 ## Generating Routing Features
@@ -113,7 +114,7 @@ options|Alias| Description
 ### generate a sub-module with routing
 
 ```javascript
-ng g m admin --routing -m app.module    
+ng g m admin --routing -m app.module
 //create sub-module(admin.module.ts) with routing(admin-routing.module.ts) and add it to app.module.ts
 ng g c admin      //create new component adminComponent
 ng g c admin/email-blast   //create new child component-emailBlastComponent
@@ -121,7 +122,7 @@ ng g c admin/users         //create new child component-usersComponent
 // write children routing
 const routes: Routes = [
   {
-    path: 'admin', 
+    path: 'admin',
     component: AdminComponent,
     children: [
       { path: '', component: UsersComponent },
@@ -175,7 +176,7 @@ vendor.js       | Angular and other vendor files(第三方库)
 # tool 1
 npm install webpack-bundle-analyzer --save-dev
 ng build -stats-json
-npx webpack-bundle=analyzer dist/my-app/stats.json  
+npx webpack-bundle=analyzer dist/my-app/stats.json
 # put it to package.json
 "stats": "npx webpack-bundle=analyzer dist/stats.json"
 npm run stats
@@ -229,7 +230,7 @@ npx source-map-explorer disg/my-app/main.js
 
 ```shell
 ng add @angular/material   # add angular material lib
-ng g @angular/material:material-nav --name nav  #create navComponent which is angular material-nav 
+ng g @angular/material:material-nav --name nav  #create navComponent which is angular material-nav
 ng g @angular/material:material-dashboard --name dashboard
 ng g @angular/material:material-table --name customer-list
 ```
@@ -246,7 +247,7 @@ ng g @angular/material:material-table --name customer-list
         "src/styles.css"
     ]
     "scripts": [
-    
+
     ]
 ```
 
@@ -281,6 +282,18 @@ npm install bootstrap font-awesome toastr jquery --save
               "node_modules/toastr/build/toastr.min.js"
            ],
 ```
+
+### Change css to SCSS for existing projects
+
+1. `ng config defaults.styleExt=scss`
+  - if get an error 'Value cannot be found.'
+  - `ng config schematics.@schematics/angular:component.styleext scss`
+2. Rename your existing .css files to .scss
+3. Point the CLI to find styles.scss in angular.json
+4. Change the styleUrls in your components to match your new file names
+5. If you want to set the default for all projects you create in the future run the following command:
+   - `ng config --global defaults.styleExt=scss`
+6. [Official documentation for Angular 6-CSS Preprocessor integration](https://github.com/angular/angular-cli/wiki/stories-css-preprocessors)
 
 [back to top](#top)
 
@@ -370,7 +383,7 @@ ng build myApp  #build the myApp project
 |--skip-ts-config|Do not update tsconfig.json for dev experience|
 
 - **Way that Angular CLI find libraries**
-  - path in tsconfig.json --> path in the node_module folder  
+  - path in tsconfig.json --> path in the node_module folder
 - build your library before you use
   - `ng build my-lib`
 - Import it
