@@ -6,12 +6,10 @@
 ## create a data service for mocking data
 
 - https://github.com/angular/in-memory-web-api
-- `npm i angular-in-memory-web-api -D`
+- `npm i angular-in-memory-web-api --save`
 
 ```javascript
-@Injectable({
-  providedIn: 'root'
-})
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class DataService implements InMemoryDbService{   //implement InMemoryDbService
   constructor() { }
   //override the createDb() method
