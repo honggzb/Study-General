@@ -8,7 +8,7 @@
   - [2.2 方法二：递归拷贝](#递归拷贝)
   - [2.3 方法三：使用Object.create方法](#create方法)
 - [jQuery.extend()方法和lodash的实现对象的深拷贝](#方法的实现对象的深拷贝)
-- [Immutability](#Immutability)
+- [Immutability - 浅freeze和深freeze](#Immutability)
 
 ---------------------
 
