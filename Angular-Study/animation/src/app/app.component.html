@@ -1,0 +1,32 @@
+<header>
+  <div class="row">
+    <ul>
+      <li><a routerLink="howto">How-to</a></li>
+      <li><a routerLink="examples">Examples</a></li>
+    </ul>
+  </div>
+</header>
+<div class="row">
+  <div class="panel" [@focusPanel]="state">
+    <input type="text" placeholder="Add an item here."
+           on-focus="toggleFocus()"
+           on-focusout="toggleFocus()"
+           (keyup.enter)="submitItem($event)" />
+    <p id="subtxt" [@note]="state">Hit enter to add</p>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 medium-6">
+    <div class="card" style="width: 20rem;">
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let item of ourItems; let i=index" [attr.data-index]="i" [@itemEnter]="state">
+            <p>{{item}}</p>
+            <a (click)="removeItem($event,i)">X</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+  <div class="small-12 medium-6 pages">
+    <router-outlet></router-outlet>
+  </div>
+</div>
