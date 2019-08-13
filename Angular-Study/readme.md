@@ -50,6 +50,8 @@
 │   │   ├── wallaby-setup.md
 │   │   └── 
 │   │
+│   ├── animation/
+│   │
 │   ├── Sample/
 │   │   ├── angular-bootstrap/
 │   │   │    ├── use user-defined directive in Tooltips.md
