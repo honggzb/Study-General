@@ -102,6 +102,8 @@
 │   │   ├── wallaby-setup.md
 │   │   └── 
 │   │
+│   ├── animations/
+│   │
 │   ├── Sample/
 │   │   ├── angular-bootstrap/
 │   │   │    ├── use user-defined directive in Tooltips.md
