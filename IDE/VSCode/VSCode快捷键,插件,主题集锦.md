@@ -115,7 +115,7 @@
 `Shift + Alt + F`	|格式化文档 |Format document
 `Ctrl + K Ctrl + F`|格式选定区域 |Format selection
 `F12`	|转到定义 |Go to Definition
-`Alt + F12`|Peek定义 |Peek Definition
+`Alt + F12`|**鼠标定位到方法，可打开Peek定义,非常有用，可查看定义** |Peek Definition
 `Ctrl + K F12`|打开定义到边 |Open Definition to the side
 `Ctrl + .`|快速解决 |Quick Fix
 `Shift + F12`	|显示引用| Show References
