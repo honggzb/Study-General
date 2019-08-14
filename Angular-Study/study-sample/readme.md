@@ -23,6 +23,7 @@
 │   │   ├── app.module.ts
 │   │   └── 
 │   ├── Angular打造股票管理网站.md
+│   ├── 可复用的全局设置- Paul D. Sheriff.md
 │   ├── 大漠的Angular Workshop.md
 │   └── 
 ```
