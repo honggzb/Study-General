@@ -6,6 +6,7 @@ Angular响应式表单之更新表单的值
 ## FormControl
 
 - patchValue() 和 setValue() 这两个方法是等价的
+- 如果只更新subset的值，使用patchvalue
 - 此外setValue() 方法中做了三件事：
   - 更新控件当前值
   - 判断是否注册 onChange 事件，若有则循环调用已注册的 changeFn 函数。
