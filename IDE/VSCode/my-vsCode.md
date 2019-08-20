@@ -62,6 +62,30 @@ scrollBeyondLastLine
 "files.trimFinalNewlines": true,
 ```
 
+### Auto Close Tag设置- settings.json
+
+```
+"auto-close-tag.activationOnLanguage": [
+        "xml",
+        "php",
+        "blade",
+        "ejs",
+        "jinja",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "plaintext",
+        "markdown",
+        "vue",
+        "liquid",
+        "erb",
+        "lang-cfml",
+        "cfml",
+        "HTML (Eex)"
+    ]
+```
+
 ### Theme
 
 - Panda
