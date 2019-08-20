@@ -1,0 +1,74 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\joanna.qian\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add bootstrap
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\WebEx\Productivity Tools;C:\Program Files\Git\cmd;C:\Program Files (x86)\Java\jre1.8.0_102\bin;C:\Program Files\nodejs\;C:\Ruby24-x64\bin;C:\Users\joanna.qian\AppData\Local\Microsoft\WindowsApps;C:\Users\joanna.qian\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\joanna.qian\AppData\Local\GitHubDesktop\bin;C:\apache-maven-3.6.1\bin;C:\Users\joanna.qian\AppData\Roaming\npm
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  10.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: connect ETIMEDOUT 104.16.18.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+
+npm manifest: 
+  {
+    "name": "animate-pro",
+    "version": "0.0.0",
+    "scripts": {
+      "ng": "ng",
+      "start": "ng serve",
+      "build": "ng build",
+      "test": "ng test",
+      "lint": "ng lint",
+      "e2e": "ng e2e"
+    },
+    "private": true,
+    "dependencies": {
+      "@angular/animations": "~7.2.0",
+      "@angular/common": "~7.2.0",
+      "@angular/compiler": "~7.2.0",
+      "@angular/core": "~7.2.0",
+      "@angular/forms": "~7.2.0",
+      "@angular/platform-browser": "~7.2.0",
+      "@angular/platform-browser-dynamic": "~7.2.0",
+      "@angular/router": "~7.2.0",
+      "core-js": "^2.5.4",
+      "rxjs": "~6.3.3",
+      "tslib": "^1.9.0",
+      "zone.js": "~0.8.26"
+    },
+    "devDependencies": {
+      "@angular-devkit/build-angular": "~0.13.0",
+      "@angular/cli": "~7.3.3",
+      "@angular/compiler-cli": "~7.2.0",
+      "@angular/language-service": "~7.2.0",
+      "@types/node": "~8.9.4",
+      "@types/jasmine": "~2.8.8",
+      "@types/jasminewd2": "~2.0.3",
+      "codelyzer": "~4.5.0",
+      "jasmine-core": "~2.99.1",
+      "jasmine-spec-reporter": "~4.2.1",
+      "karma": "~4.0.0",
+      "karma-chrome-launcher": "~2.2.0",
+      "karma-coverage-istanbul-reporter": "~2.0.1",
+      "karma-jasmine": "~1.1.2",
+      "karma-jasmine-html-reporter": "^0.2.2",
+      "protractor": "~5.4.0",
+      "ts-node": "~7.0.0",
+      "tslint": "~5.11.0",
+      "typescript": "~3.2.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
