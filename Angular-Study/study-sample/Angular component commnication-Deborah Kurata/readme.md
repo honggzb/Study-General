@@ -13,8 +13,6 @@
 - [Communicating Using the Router](#communicating-using-the-router)
 
 --------------------
-![](https://i.imgur.com/5CtHOsU.png)
-
 ![](https://i.imgur.com/zQztxhg.png)
 
 ## Communicating with a Template
