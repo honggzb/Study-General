@@ -1,21 +1,27 @@
 ```
-├── Angular Architecture- Dan Wahlin
-│   ├── Angular-JumpStart-master/
-│   ├── creating-an-observable-service/
-│   ├── demos/
-│   ├── routing-guards-and-preload-strategies/
-│   ├── rxjs-subjects/
-│   ├── shared-library-example/
-│   ├── state-management/
-│   └── readme.md
-│
 ├── Angular-Study
 │   │
+│   ├── Angular Architecture- Dan Wahlin
+│   │   ├── Angular-JumpStart-master/
+│   │   ├── creating-an-observable-service/
+│   │   ├── demos/
+│   │   ├── routing-guards-and-preload-strategies/
+│   │   ├── rxjs-subjects/
+│   │   ├── shared-library-example/
+│   │   ├── state-management/
+│   │   └── readme.md
+│   │   
 │   ├── Angular-material/
 │   │   ├── dialog/
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
 │   │   └── readme.md
+│   │
+│   ├── Configuration/
+│   │   ├── angular-itself-multi-config/
+│   │   │    ├── AngularMaterial-dialog.md 
+│   │   │    └── dialog.rar   
+│   │   └── aot-config.md
 │   │
 │   ├── Mockup-server/
 │   │   ├── angular-in-memory-web-api.md
@@ -46,12 +52,15 @@
 │   │   └── 
 │   │
 │   ├── Unit-Test/
+│   │   ├── Unit Testing in Angular Course -Joe Eames/
 │   │   ├── NgRx-test-sample.md
 │   │   ├── wallaby-setup.md
 │   │   └── 
 │   │
 │   ├── animation/
-│   │
+│   │   ├── Angular学习笔记之Animation- Working with Angular Animations/
+│   │   └── 
+
 │   ├── Sample/
 │   │   ├── angular-bootstrap/
 │   │   │    ├── use user-defined directive in Tooltips.md
