@@ -1,21 +1,27 @@
 ```
-├── Angular Architecture- Dan Wahlin
-│   ├── Angular-JumpStart-master/
-│   ├── creating-an-observable-service/
-│   ├── demos/
-│   ├── routing-guards-and-preload-strategies/
-│   ├── rxjs-subjects/
-│   ├── shared-library-example/
-│   ├── state-management/
-│   └── readme.md
-│
 ├── Angular-Study
 │   │
+│   ├── Angular Architecture- Dan Wahlin
+│   │   ├── Angular-JumpStart-master/
+│   │   ├── creating-an-observable-service/
+│   │   ├── demos/
+│   │   ├── routing-guards-and-preload-strategies/
+│   │   ├── rxjs-subjects/
+│   │   ├── shared-library-example/
+│   │   ├── state-management/
+│   │   └── readme.md
+│   │   
 │   ├── Angular-material/
 │   │   ├── dialog/
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
 │   │   └── readme.md
+│   │
+│   ├── Configuration/
+│   │   ├── angular-itself-multi-config/
+│   │   │    ├── AngularMaterial-dialog.md 
+│   │   │    └── dialog.rar   
+│   │   └── aot-config.md
 │   │
 │   ├── Mockup-server/
 │   │   ├── angular-in-memory-web-api.md
@@ -46,12 +52,15 @@
 │   │   └── 
 │   │
 │   ├── Unit-Test/
+│   │   ├── Unit Testing in Angular Course -Joe Eames/
 │   │   ├── NgRx-test-sample.md
 │   │   ├── wallaby-setup.md
 │   │   └── 
 │   │
 │   ├── animation/
-│   │
+│   │   ├── Angular学习笔记之Animation- Working with Angular Animations/
+│   │   └── 
+
 │   ├── Sample/
 │   │   ├── angular-bootstrap/
 │   │   │    ├── use user-defined directive in Tooltips.md
@@ -69,28 +78,37 @@
 │   │   ├──  案例之星级评价.md
 │   │   └──  
 │   │
-│   ├── study-Sample/
-│   │   ├── Angular Fundamentals- Jim Cooper/
-│   │   │    ├── myEventFundamentals/
-│   │   │    ├── Angular_Content_Projection_Guide.pdf
-│   │   │    └── ng-fundamentals.zip
-│   │   ├── Angular Routing-Deborah Kurata/
-│   │   ├── Angular component commnication-Deborah Kurata/
-│   │   ├── Angular Routing-Deborah Kurata/
-│   │   │    ├── input-radio.md
-│   │   │    └── 
-│   │   ├── DaMo-Angular Workshop/
-│   │   │    └── 大漠的Angular Workshop.md
-│   │   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
-│   │   │    ├── codeFinished/
-│   │   │    ├── codeInit/
-│   │   │    ├── codePreparedFinished/
-│   │   │    ├── Migration from AngularJS 1.x to Angular 2+.zip
-│   │   │    ├── Preparing for Migration from AngularJS (1.x) to Angular (2+).zip
-│   │   │    └── prepare.md
-│   │   ├──  Angular打造股票管理网站.md
-│   │   ├──  大漠的Angular Workshop.md
-│   │   └──  
+│   ├── study-sample
+│   │   ├── Angular Fundamentals- Jim Cooper/
+│   │   │   ├── myEventFundamentals/ 
+│   │   │   ├── Angular_Content_Projection_Guide.pdf
+│   │   │   └── ng-fundamentals.zip
+│   │   ├── Angular Http Communication- Brice Wilson/
+│   │   ├── Angular Reactive Forms-Deborah Kurata/
+│   │   │   ├── Demo0/ 
+│   │   │   ├── Demo1/
+│   │   │   └── summary.pdf
+│   │   ├── Angular Routing- Deborah Kurata/
+│   │   │   ├── Angular component commnication- Deborah Kurata/
+│   │   ├── Building Your First App with Spring Boot and Angular- Dan Bunker/
+│   │   ├── DaMo-Angular Workshop/
+│   │   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
+│   │   │   │   ├── codeFinished/ 
+│   │   │   ├── codeInit/
+│   │   │   ├── codePreparedFinished/
+│   │   │   ├── Migration from AngularJS 1.x to Angular 2+.zip
+│   │   │   ├── Preparing for Migration from AngularJS (1.x) to Angular (2+).zip
+│   │   │   └── prepare.md
+│   │   ├── communication/
+│   │   │   ├── brother/ 
+│   │   │   ├── local-storage/
+│   │   │   ├── parent-and-child/
+│   │   │   ├── app.module.ts
+│   │   │   └── 
+│   │   ├── Angular打造股票管理网站.md
+│   │   ├── 可复用的全局设置- Paul D. Sheriff.md
+│   │   ├── 大漠的Angular Workshop.md
+│   │   └── 
 │   │ 
 │   ├── Angular CLI的使用(new).md     #useful
 │   ├── Angular_CLI的使用.md           
