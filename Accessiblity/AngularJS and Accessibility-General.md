@@ -9,6 +9,7 @@
 - [Focus Management](#Focus-Management)
   - [focus in toaster](#focus-in-toaster)
 - [ARIA live and two-way binding of angularJS](#ARIA-live-and-two-way-binding-of-angularJS)
+- [Others](#Others)
 
 ## Good document structure
 
@@ -357,6 +358,14 @@ myApp.run(['$location', '$rootScope', function($location, $rootScope) {
 
 ```html
 <div role="status" id="ticket-table-info" aria-live="polite" aria-atomic="true">Showing {{(tickets|filter:search).length}} of {{tickets.length}}</div>
+```
+
+
+[back to top](#top)
+## Others
+
+```
+ng-click="vm.goToAccount(item.accountId); $event.stopPropagation();"
 ```
 
 [back to top](#top)
