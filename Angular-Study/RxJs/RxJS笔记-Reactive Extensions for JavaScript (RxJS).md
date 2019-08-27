@@ -57,6 +57,8 @@ rxjs适用于异步场景，即前端交互中接口请求、浏览器事件以�
 
 ![](http://i.imgur.com/ZYUr0YG.png)
 
+![](https://i.imgur.com/w1sonOW.png)
+
 **rxjs的几个实例概念**
 
 - **Observable**: 可观察的数据序列.
