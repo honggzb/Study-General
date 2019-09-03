@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.highcharts.com/highcharts.js"></script>
+    </head>
+    <body>
+        <script>
+        //build chart using options above
+        $(document).ready(function(){
+             var options = {
+                 chart: {
+                     renderTo: 'container',
+                     type: 'areaspline'
+                 },
+                 legend: {
+                     enabled: false
+                 },
+                 title: {
+                     text: 'Messages by Hour',
+                     align: 'center'
+                 },
+                 subtitle: {
+                     text: 'past 24hrs',
+                     align: 'center'
+                 },
+                 yAxis: {
+                     title: {
+                         text: 'Messages'
+                     }
+                 },
+                 xAxis: {
+                     title: {
+                         text: 'Hour'
+                     }
+                 },
+                 series:[{}]
+            };
+            $.getJSON('trends.json', function(data){
+                    options.series[0].data = data;   // assign series[0] to data
+                    var chart = new Highcharts.Chart(options);
+                });
+            });
+        </script>
+        <div id="container"></div>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.highcharts.com/highcharts.js"></script>
+        <script src="//code.highcharts.com/modules/data.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                $.get('top-users.csv', function(csvData){
+                    //create chart var
+                    var chart;
+            
+                    //set chart options
+                    var options = {
+                            chart: {
+                                renderTo: 'chart-top-users',
+                                defaultSeriesType: 'bar',
+                            },
+                            data: {
+                              csv: csvData 
+                            },
+                            title: {
+                                text: 'Total Messages Sent'
+                            },
+                            tooltip: {
+                                enabled: false
+                            },
+                            yAxis: {
+                                title: {
+                                    text: '',
+                                    margin: 10
+                                },
+                                labels: {
+                                    enabled: false
+                                },
+                                gridLineWidth: 0
+                            },
+                            series: [{
+                                showInLegend: false,
+                                dataLabels: {
+                                    enabled: true
+                                },
+                                data: [],
+                            }]
+                    
+                    } //end options
+                
+                    // console.log(csvData);
+                    
+                    chart = new Highcharts.Chart(options);
+                    
+                    
+                });
+                
+            
+            });
+            
+            
+        </script>
+    </head>
+    <body>
+        <div id="chart-top-users" style="width:400px"></div>
+    </body>
+</html>

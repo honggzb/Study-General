@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <!-- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> -->
+        <!-- <script src="//code.highcharts.com/highcharts.js"></script> -->
+        <script src="../js/jquery-1.11.3.min.js"></script>
+        <script src="../js/highcharts.js"></script>
+    </head>
+    <body>
+
+        <script>
+             var options = {
+              chart: {
+                        renderTo: 'container',
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Top Users'
+                    },
+                    subtitle: {
+                        text: 'past 3 days'
+                    },
+                    xAxis: {
+                        categories: [
+                            'Jules',
+                            'Francis',
+                            'Bella'
+                        ]
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Messages Sent'
+                        }
+                    },
+                    series: [{
+                        data: [
+                            287,232,170
+                        ]
+                    }]
+            };
+
+
+            //build chart using options above
+            $(document).ready(function(){
+                var chart = new Highcharts.Chart(options);
+            });
+
+
+        </script>
+
+        <div id="container"></div>
+
+    </body>
+</html>

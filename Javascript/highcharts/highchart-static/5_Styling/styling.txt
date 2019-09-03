@@ -1,0 +1,5 @@
+Layout and Options incl colors
+ - http://www.highcharts.com/docs/chart-design-and-style/design-and-style
+ 
+Themes
+ -  

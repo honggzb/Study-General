@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.highcharts.com/stock/highstock.js"></script>
+        
+    </head>
+    <body>
+
+        <script>
+             
+             $(function(){
+                 
+                 $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
+                    
+                    $('#container').highcharts('StockChart', {
+                       
+                       rangeSelector: {
+                           selected:1
+                       },
+                       title: {
+                           text: 'AAPL Stock Price'
+                       },
+                       series: [{
+                           name: 'AAPL',
+                           data: data,
+                           tooltip: {
+                               valueDecimals: 2
+                           }
+                       }]
+                        
+                    });
+                     
+                 });
+                 
+             });
+            
+            
+        </script>
+    
+        <div id="container"></div>
+
+    </body>
+</html>

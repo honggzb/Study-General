@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.highcharts.com/highcharts.js"></script>
+    </head>
+    <body>
+
+        <script>
+        
+            var chart;
+            var options;
+            var dataSource = 'getUserData.php?format=json'
+            
+            function requestData(){
+                $.ajax({
+                    url: dataSource,
+                    success: function(points) {
+                        
+                        chart.xAxis[0].setCategories(points[0]);
+                        
+                        chart.series[0].setData(
+                            points[1],
+                            true
+                        );
+                        
+                        setTimeout(requestData, 1000);
+                        
+                    },
+                    cache: false
+                    
+                });
+            }
+            
+    
+            //build chart using options above
+            $(document).ready(function(){
+
+                //add div for renderingTo
+                $('#container').append('<div id=chart-top-users></div>');
+                
+                var options = {
+                    chart: {
+                        renderTo: 'chart-top-users',
+                        type: 'bar',
+                        events: {
+                            load: requestData
+                        },
+                        animation: {
+                            duration: 1000
+                        }
+                    },
+                    tooltip: {
+                        enabled: true
+                    },
+                    title: {
+                        text: 'Total Messages Sent'
+                    },
+                    xAxis: {
+                        categories: []
+                    },
+                    yAxis: {
+                        title: {
+                            text: '',
+                            margin: 10
+                        },
+                        labels: {
+                            enabled: true
+                        },
+                        gridLineWidth: 0
+                    },
+                    plotOptions: {
+                        bar: {
+                            dataLabels: {
+                                enabled: true
+                            }
+                        }
+                    },
+                    series: [{
+                        showInLegend: false,
+                        dataLables: {
+                            enabled: true
+                        },
+                        data: []
+                    }]
+
+                }    
+                    
+                    
+                chart = new Highcharts.Chart(options);    
+    
+
+            });
+            
+            
+        </script>
+    
+        <div id="container"></div>
+
+    </body>
+</html>

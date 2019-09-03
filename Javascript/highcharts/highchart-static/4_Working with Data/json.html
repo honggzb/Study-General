@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.highcharts.com/highcharts.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                //set chart options
+                var options = {
+                    chart: {
+                        renderTo: 'container',
+                        type: 'areaspline'
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    title: {
+                        text: 'Messages by Hour',
+                        align: 'center',
+                    },
+                    subtitle: {
+                        text: 'past 24hrs',
+                        align: 'center'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Messages'
+                        }
+                    },
+                    xAxis: {
+                        title: {
+                            text: 'Hour'
+                        }
+                    },
+                    series: [{}]
+                };
+            
+                //parse the json file
+                $.getJSON('trends.json', function(data) {
+                    
+                    //set the series based on the json file
+                    options.series[0].data = data;
+                    
+                    //buid the chart
+                    var chart = new Highcharts.Chart(options);
+                });
+            
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container"></div>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <!-- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> -->
+        <!-- <script src="//code.highcharts.com/highcharts.js"></script> -->
+        <script src="./js/jquery-1.11.3.min.js"></script>
+        <script src="./js/highcharts.js"></script>
+    </head>
+    <body>
+        <script>
+        //set global options for charts
+        Highcharts.setOptions({
+            chart: {
+                backgroundColor: {
+                    linearGradient: [0, 0, 500, 500],
+                    stops: [
+                        [0, 'rgb(255, 255, 255)'],
+                        [1, 'rgb(240, 240, 255)']
+                        ]
+                },
+                borderWidth: 1,
+                plotBackgroundColor: '#e5e5e5',
+                plotShadow: true,
+                plotBorderWidth: 0
+            }
+        });
+        var options = {
+                 chart: {
+                    renderTo: 'container',
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Sales by Sector'
+                },
+                xAxis: {
+                    categories: ['Tech', 'Retail', 'Services', 'Other']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Sales in Thousands'
+                    }
+                },
+                series: [{
+                    name: 'Sales Overall',
+                    data: [100,33,58,77]
+                }]
+            };
+        //build chart using options above
+        $(document).ready(function(){
+            var chart = new Highcharts.Chart(options);
+        });
+</script>
+<div id="container"></div>
+</body>
+</html>

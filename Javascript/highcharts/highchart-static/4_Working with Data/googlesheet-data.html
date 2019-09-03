@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.highcharts.com/highcharts.js"></script>
+        <script src="//code.highcharts.com/modules/data.js"></script>
+    </head>
+    <body>
+
+        <script>
+             var options = {
+                 chart: {
+                     renderTo: 'container',
+                     type: 'spline'
+                 },
+                 data: {
+                     googleSpreadsheetKey: '1JEw7Z-f-d0kateieAz7cyFxXUYuaBMoMuSZV7A0fOl4'
+                 },
+                 title: {
+                     text: 'Total Messages by Day'
+                 },
+                 tooltip: {
+                     enabled: false
+                 },
+                 yAxis: {
+                     title:{
+                         text: '',
+                         margin: 10
+                     },
+                     labels: {
+                         enabled: false
+                     },
+                     gridLineWidth: 0
+                 },
+                 series: [{
+                     showInLegend: false
+                }]
+            };
+    
+    
+            //build chart using options above
+            $(document).ready(function(){
+                
+                var chart = new Highcharts.Chart(options);
+                
+            });
+            
+            
+        </script>
+    
+        <div id="container"></div>
+
+    </body>
+</html>

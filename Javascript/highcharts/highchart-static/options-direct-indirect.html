@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <!-- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> -->
+        <!-- <script src="//code.highcharts.com/highcharts.js"></script> -->
+        <script src="./js/jquery-1.11.3.min.js"></script>
+        <script src="./js/highcharts.js"></script>
+    </head>
+    <body>
+        <script>
+            //direct options
+            $(function () {
+                $('#container').highcharts({
+                    chart: {
+                        renderTo: 'container',
+                        type: 'bar'
+                        },
+                        title: {
+                            text: 'Sales by Sector'
+                        },
+                        xAxis: {
+                            categories: ['Tech', 'Retail', 'Services', 'Other']
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Sales in Thousands'
+                            }
+                        },
+                        series: [{
+                            name: 'Sales Overall',
+                            data: [100,33,58,77]
+                        }]
+                });
+            });
+        </script>
+        <script>
+            //indirect options - generate options firstly and then apply it
+             var options = {
+                 chart: {
+                    renderTo: 'container-2',
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Sales by Sector'
+                },
+                xAxis: {
+                    categories: ['Tech', 'Retail', 'Services', 'Other']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Sales in Thousands'
+                    }
+                },
+                series: [{
+                    name: 'Sales Overall',
+                    data: [100,33,58,77]
+                }]
+
+            };
+            //build chart using options above
+            $(document).ready(function(){
+                var chart = new Highcharts.Chart(options);
+            });
+
+        </script>
+        <h2>Direct</h2>
+        <div id="container"></div>
+        <h2>Indirect</h2>
+        <div id="container-2"></div>
+    </body>
+</html>

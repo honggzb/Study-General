@@ -1,0 +1,37 @@
+Basic:
+    --bar/column
+    --line/spline
+    --area/areaspline
+    
+    
+More:
+        
+    --funnel 
+        key thing, adding the extra module (intro to all the add'l modules)
+        http://www.highcharts.com/docs/chart-and-series-types/funnel-series
+    --heatmap 
+        add both the exporting module and heatmap
+        use simple function to update tooltip
+        http://www.highcharts.com/docs/chart-and-series-types/heatmap
+    --scatterplot
+        more options for formatting and placing a legend inside the chart area
+        http://www.highcharts.com/docs/chart-and-series-types/scatter-chart
+    --treemap
+        http://www.highcharts.com/docs/chart-and-series-types/treemap
+    
+
+Advanced:
+    --box plot
+        http://www.highcharts.com/demo/box-plot
+        add the highcharts-more.js file
+        explain what a boxplot is, it would be complicated to generate the data
+        
+    
+    --highstock
+        basic - http://www.highcharts.com/stock/demo
+        
+    --highmaps
+        overview - http://www.highcharts.com/maps/demo/all-maps#
+        walk through connecting data to library
+        
+    

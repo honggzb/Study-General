@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Live Messages</title>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script>
+            /*
+              Polling for New Data
+              Request data from the server, add it to the graph and set a timeout to request again
+              update your projectname and username then browse to the URL hosting your page the preview won't work.
+              https://real-time-web-dashboard-bsullins.c9.io/modules/5 - Working with Data/trend.html
+            */
+            var chart;
+            var dataSource = 'https://real-time-web-dashboard-bsullins.c9.io/modules/5 - Working with Data/getTrendData.php?format=json';
+            function requestData() {
+                $.ajax({
+                    url: dataSource,
+                    success: function(points) {
+                        chart.series[0].setData(
+                            points,
+                            true
+                        );
+                        // refresh after X miliseconds
+                        setTimeout(requestData, 1000);
+                    },
+                    cache: false
+                });
+            }
+
+            $(document).ready(function() {
+                    //add our div for the chart
+                    $("#container").append("<div id=chart-trend></div>");
+                    chart = new Highcharts.Chart({
+                        chart: {
+                            renderTo: 'chart-trend',
+                            defaultSeriesType: 'spline',
+                            events: {
+                                load: requestData()
+                            },
+                            animation: {
+                                duration:1000
+                            }
+                        },
+                        title: {
+                            text: 'Total Messages Sent'
+                        },
+                        subtitle: {
+                            text: 'past 24 hours'
+                        },
+                        xAxis: {
+                            type: 'datetime',
+                            title: {
+                                text: 'Hour'
+                            }
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Messages',
+                                margin: 10
+                            }
+                        },
+                        series: [{
+                            showInLegend: false,
+                            data: [],
+                            // pointInterval: 3600*1000 //minute
+                        }]
+                    }); //end chart
+            }); //end document.ready
+        </script>
+    </head>
+    <body>
+        <div id="container"></div>
+    </body>
+</html>

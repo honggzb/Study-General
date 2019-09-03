@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.highcharts.com/highcharts.js"></script>
+    </head>
+    <body>
+
+        <script>
+             
+             var chart;
+             var options;
+             var dataSource = 'getWeekdayCounts.php?format=json';
+    
+            function requestData(){
+                $.ajax({
+                   url: dataSource,
+                   success: function(points) {
+                       chart.series[0].setData(
+                            points[1],
+                            true
+                        );
+                        
+                        setTimeout(requestData, 1000);
+                   },
+                   cache: false
+                   
+                });
+            }
+    
+    
+            //build chart using options above
+            $(document).ready(function(){
+                
+                $("#container").append('<div id=chart-weekdays></div>');
+                
+                
+                options = {
+                    chart: {
+                        renderTo: 'chart-weekdays',
+                        type: 'column',
+                        events: {
+                            load: requestData()
+                        },
+                        animation: {
+                            duration: 1000
+                        }
+                    },
+                    title: {
+                        text: 'Totals by Weekday'
+                    },
+                    xAxis: {
+                        categories: []
+                    },
+                    yAxis: {
+                        title: {
+                            text: '',
+                            margin: 10
+                        },
+                        gridLineWidth: 0
+                    },
+                    series: [{
+                        showInLegend: false,
+                        dataLabels: {
+                            enabled: true
+                        },
+                        data: []
+                    }]
+                        
+                    
+    
+                };
+                
+                chart = new Highcharts.Chart(options);
+                
+            });
+            
+            
+        </script>
+    
+        <div id="container"></div>
+
+    </body>
+</html>

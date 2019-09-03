@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <!--<script src="//code.highcharts.com/highcharts.js"></script>-->
+        <script src="http://code.highcharts.com/stock/highstock.js"></script>
+        <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+    </head>
+    <body>
+        <script>
+         $.getJSON('trend.json', function (data) {
+            $('#container').highcharts('StockChart', {
+                rangeSelector : {
+                    selected : 1
+                },
+                title : {
+                    text : 'Cogsley Service Chat Trends'
+                },
+                tooltip: {
+                    style: {
+                        width: '200px'
+                    },
+                    valueDecimals: 4,
+                    shared : true
+                },
+                series : [{
+                    name : 'Messages',
+                    data : data,
+                    id : 'dataseries'}]
+            }).error(function(data) {
+                console.log("Error!");
+            });
+        });
+        </script>
+        <div id="container"></div>
+    </body>
+</html>

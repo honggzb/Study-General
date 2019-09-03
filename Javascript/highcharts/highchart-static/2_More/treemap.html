@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+        <!-- <script src="http://code.highcharts.com/highcharts.js"></script> -->
+        <script src="../js/jquery-1.11.3.min.js"></script>
+        <script src="../js/highcharts.js"></script>
+        <script src="http://code.highcharts.com/modules/heatmap.js"></script>
+        <script src="http://code.highcharts.com/modules/treemap.js"></script>
+    </head>
+    <body>
+
+        <script>
+             var options = {
+
+                 chart: {
+                     renderTo: 'container'
+                 },
+                 colorAxis: {
+                    minColor: '#FFFFFF',
+                    maxColor: Highcharts.getOptions().colors[0]
+                },
+                series: [{
+                    type: "treemap",
+                    layoutAlgorithm: 'squarified',
+                    data: [{
+                        name: 'Windows 7',
+                        value: 6,
+                        colorValue: 1
+                    }, {
+                        name: 'OSX',
+                        value: 6,
+                        colorValue: 2
+                    }, {
+                        name: 'Chromebook',
+                        value: 4,
+                        colorValue: 3
+                    }, {
+                        name: 'Firefox OS',
+                        value: 3,
+                        colorValue: 4
+                    }, {
+                        name: 'Android',
+                        value: 2,
+                        colorValue: 5
+                    }, {
+                        name: 'Safari',
+                        value: 2,
+                        colorValue: 6
+                    }, {
+                        name: 'Ubuntu',
+                        value: 1,
+                        colorValue: 7
+                    }]
+                }],
+                title: {
+                    text: 'Visitor OS Breakdown'
+                }
+
+            };
+
+
+            //build chart using options above
+            $(document).ready(function(){
+
+                var chart = new Highcharts.Chart(options);
+
+            });
+
+
+        </script>
+
+        <div id="container"></div>
+
+    </body>
+</html>

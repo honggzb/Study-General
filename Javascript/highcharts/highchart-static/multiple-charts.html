@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <!-- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> -->
+        <!-- <script src="//code.highcharts.com/highcharts.js"></script> -->
+        <script src="./js/jquery-1.11.3.min.js"></script>
+        <script src="./js/highcharts.js"></script>
+    </head>
+    <style>
+        /*set default style for charts*/
+        .chart{
+            margin:10px;
+        }
+
+    </style>
+
+    <!--build the chart-->
+    <script>
+
+        var barOptions = {
+          chart: {
+                    renderTo: 'barChart',
+                    type: 'bar'
+                },
+                title: {
+                    text: 'Sales by Type',
+                    align: 'left'
+                },
+                legend: {
+                    align: 'right',
+                     verticalAlign: 'top'
+                },
+                tooltip: {
+                    valuePrefix: '$',
+                    valueSuffix: 'M'
+                },
+                xAxis: {
+                    categories: ['Support', 'Consulting', 'Reselling']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Millions USD'
+                    }
+                },
+                series: [{
+                    name: 'USA',
+                    data: [20, 40, 18]
+                }, {
+                    name: 'Europe',
+                    data: [14, 22, 10]
+                }]
+        };
+
+        var lineOptions = {
+            chart: {
+                type: 'line',
+                renderTo: 'lineChart'
+            },
+            title: {
+                text: 'Total Revenue by Region',
+                align: 'left',
+            },
+            subtitle: {
+                text: '2014',
+                align: 'left'
+            },
+            xAxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            },
+            yAxis: {
+                title: {
+                    text: 'Million USD'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valuePrefix: '$',
+                valueSuffix: 'M'
+            },
+            legend: {
+                layout: 'horizontal',
+                align: 'right',
+                verticalAlign: 'top',
+                borderWidth: 0,
+                marginTop: 5,
+                marginBottom: 5
+            },
+            series: [{
+                name: 'USA',
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+            }, {
+                name: 'Europe',
+                data: [5.0, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+            }]
+
+
+        };
+
+
+        //build chart using options above
+        $(document).ready(function(){
+            var barChart = new Highcharts.Chart(barOptions);
+            var lineChart = new Highcharts.Chart(lineOptions);
+
+        });
+
+
+    </script>
+
+        <div id="barChart" class="chart" style="width:100%; height:250px;"></div>
+        <div id="lineChart" class="chart" style="width:100%; height:250px;"></div>
+
+    </body>
+</html>

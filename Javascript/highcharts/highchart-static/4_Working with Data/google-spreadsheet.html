@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.highcharts.com/highcharts.js"></script>
+        <script src="//code.highcharts.com/modules/data.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                
+                    //create chart var
+                    var chart;
+            
+                    //set chart options
+                    var options = {
+                            chart: {
+                                renderTo: 'chart-daily-trend',
+                                defaultSeriesType: 'spline',
+                            },
+                            data: {
+                                //pubilsh to the web from google docs, then copy the ID and enter below    
+                                googleSpreadsheetKey: '1JEw7Z-f-d0kateieAz7cyFxXUYuaBMoMuSZV7A0fOl4'
+                                
+                            },
+                            title: {
+                                text: 'Total Messages by Day'
+                            },
+                            tooltip: {
+                                enabled: false
+                            },
+                            yAxis: {
+                                title: {
+                                    text: '',
+                                    margin: 10
+                                },
+                                labels: {
+                                    enabled: false
+                                },
+                                gridLineWidth: 0
+                            },
+                            series: [{
+                                showInLegend: false,
+                            }]
+                    } //end options
+                    
+                    chart = new Highcharts.Chart(options);
+
+            });
+            
+            
+        </script>
+    </head>
+    <body>
+        <div id="chart-daily-trend"></div>
+    </body>
+</html>

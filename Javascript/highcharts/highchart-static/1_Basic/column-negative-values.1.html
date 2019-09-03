@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <!-- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> -->
+        <!-- <script src="//code.highcharts.com/highcharts.js"></script> -->
+        <script src="../js/jquery-1.11.3.min.js"></script>
+        <script src="../js/highcharts.js"></script>
+    </head>
+    <body>
+
+        <script>
+             var options = {
+              chart: {
+                        renderTo: 'container',
+                        type: 'column'   //line, area
+                    },
+                    title: {
+                        text: 'Profit Ratio by Month'
+                    },
+                    subtitle: {
+                        text: 'last 12 months'
+                    },
+                    xAxis: {
+                        categories: [
+                            'Jan',
+                            'Feb',
+                            'Mar',
+                            'Apr',
+                            'May',
+                            'Jun',
+                            'Jul',
+                            'Aug',
+                            'Sep',
+                            'Oct',
+                            'Nov',
+                            'Dec'
+                        ]
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Profit %'
+                        }
+                    },
+                    series: [{
+                        data: [
+                            -10, -6, -1, 2, 5, 7, 9, 12, 8, 6, 10, 7
+                        ],
+                        color: '#999999',
+                        negativeColor: '#ef8a62',
+                        fillOpacity: 0.5
+                    }]
+            };
+
+
+            //build chart using options above
+            $(document).ready(function(){
+                var chart = new Highcharts.Chart(options);
+            });
+
+
+        </script>
+
+        <div id="container"></div>
+
+    </body>
+</html>
