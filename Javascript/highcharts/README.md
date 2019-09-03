@@ -210,34 +210,5 @@ export class AppComponent {
 - [Angular Highcharts Tutorial](https://www.tutorialspoint.com/angular_highcharts/index.htm)
 - https://github.com/highcharts/highcharts-angular
 
-
 [back to top](#top)
 
-
-
-
-
-
-My codeanywhere
-
-```
-This Codeanywhere Container comes with:
-2GB of Disc Storage
-256MB RAM (+ 512 MB swap)
-Sudo access
-
-SSH access on host19.codeanyhost.com -p 45560
-
-Access to all HTTP and Websocket ports
-The operating system running on this Container is Ubuntu 16.04 (64 bit) Linux distribution. Ubuntu uses Advanced Packaging Tool (apt) for updates, package and dependency management. You can read more here: apt
-
-To access your web application over HTTP or HTTPS protocol, make sure your application is running on port 3000 and use the following link:
-
-http(s)://honggzb-gzbhong102004.codeanyapp.com
-
-If the port is blocked by your firewall you can connect through the standard HTTP port: (replace XX with port you have specified in your app)
-
-http://port-XX.honggzb-gzbhong102004.codeanyapp.com
-```
-
-[How to Setup Node and MongoDB with Codeanywhere](https://www.youtube.com/watch?v=yWSmy8jVz1Q)
