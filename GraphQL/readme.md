@@ -23,4 +23,5 @@
 │         │    └── total-votes.js
 │         └── index.js                # GraphQL root Types
 ├── concepts.md
+└── 
 ```
