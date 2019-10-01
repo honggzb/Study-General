@@ -36,12 +36,13 @@
 
 <h4 id="Creating-a-New-Application">1.1 Creating a New Application</h4>
 
+- https://reactjs.org/docs/create-a-new-react-app.html
+
 ```shell
-npm install -g create-react-app
-create-react-app my-app
+npx create-react-app my-app
 cd my-app
-npm start
-npm run build  #deploy to production
+yarn start
+http://localhost:3000/
 ```
 
 <h4 id="Adding-React">1.2 Adding React to an Existing Application</h4>
