@@ -1,5 +1,5 @@
 [Content](#top)
-- [AWS](#AWS]
+- [AWS](#AWS)
 - [Accessiblity](#Accessiblity)
 - [Angular-Study](#angular-study)
 - [AngularJS-study](#angularjs-study)
