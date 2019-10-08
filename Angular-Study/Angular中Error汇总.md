@@ -8,6 +8,7 @@
   - [5. JavaScript heap out of memory](#JavaScript)
   - [6. Can't bind to 'ngModel' since it isn't a known property of 'input'](#input)
   - [7. ‘ANGULAR.JSON’ COULD NOT BE FOUND](#COULD-NOT-BE-FOUND)
+  - [8. angular cli - install stuck when extract rxjs](#install-stuck-when-extract-rxjs)
 - [Angular MATERIAL](#angularM)
   - [1. Type 'ElementRef' is not generic](#ElementRef)
   - [2. unable to call a controller function from inside a custom-template with ui-typeahead](#ui-typeahead)
@@ -158,6 +159,12 @@ npm install -D @angular/cli@5.2.0  #-D or -save-dev: install project package
 # upgrade global run @angular/cli
 npm install -g @angular/cli@latest
 ```
+
+<h3 id="install-stuck-when-extract-rxjs">8. angular cli - install stuck when extract rxjs</h3>
+
+`npm i --unsafe-perm -g @angular/cli`
+
+https://github.com/angular/angular-cli/issues/9942
 
 [back to top](#top)
 
