@@ -30,7 +30,7 @@
       - refect company's borrowings
     - Income before taxes ->  pre-tax income
       - refect taxes that pay to government
-    - Net Income ->
+    - Net Income
 - Balance Sheet:    assets = Liabilities + Own's Equity
   -  Balance sheet did not shows the company's assets worth
   - **Long-term assets** reported at their const minus amounts already sent to Income Statement as depreciation expense
