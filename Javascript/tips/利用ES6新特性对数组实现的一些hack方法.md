@@ -19,6 +19,7 @@
 - [9. 使用对象解构（object destructuring）来模拟命名参数和默认值](#使用对象解构)
 - [10. 使用Spread平铺多维数组](#平铺多维数组)
 - [11. 使用reduce, filter, map求和等](#map求和等)
+- [12. 使用sort排序](#使用sort排序)
 
 <h3 id="利用Set数据结构去重一个数组">1. 利用Set数据结构去重一个数组</h3>
 
@@ -284,6 +285,21 @@ const newArray = booksArray.map((title, index) => ({
   id: index + 1, 
   title 
 }));
+```
+
+[back to top](#top)
+
+<h2 id="使用sort排序Obects">12. 使用sort排序</h2>
+
+```javascript
+const bands = [
+  { genre: 'Rap', band: 'Migos', albums: 2},
+  { genre: 'Pop', band: 'Coldplay', albums: 4},
+  { genre: 'Rock', band: 'Breaking Benjamins', albums: 1}
+];
+bands.sort((a, b) => {
+    return a.albums < b.albums ? 1 : -1;
+})
 ```
 
 [back to top](#top)
