@@ -19,3 +19,4 @@
 - [vuejs官方论坛](https://forum.vuejs.org/c/chinese)
 - [Vue.js 教程](http://www.runoob.com/vue2/vue-tutorial.html)
 - https://github.com/learncodeacademy/react-js-tutorials
+- [Vue基础知识汇总(含webpack打包工具的使用)](https://juejin.im/post/5db25275f265da4d3c071cfa?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
