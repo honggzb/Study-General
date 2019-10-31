@@ -9,6 +9,7 @@
   - [6. Can't bind to 'ngModel' since it isn't a known property of 'input'](#input)
   - [7. ‘ANGULAR.JSON’ COULD NOT BE FOUND](#COULD-NOT-BE-FOUND)
   - [8. angular cli - install stuck when extract rxjs](#install-stuck-when-extract-rxjs)
+  - [9. IE-嵌入iframe时候内容无法居中或变形](#嵌入iframe时候内容无法居中或变形)
 - [Angular MATERIAL](#angularM)
   - [1. Type 'ElementRef' is not generic](#ElementRef)
   - [2. unable to call a controller function from inside a custom-template with ui-typeahead](#ui-typeahead)
@@ -165,6 +166,39 @@ npm install -g @angular/cli@latest
 `npm i --unsafe-perm -g @angular/cli`
 
 https://github.com/angular/angular-cli/issues/9942
+
+<h3 id="嵌入iframe时候内容无法居中或变形">9. IE-嵌入iframe时候内容无法居中或变形</h3>
+
+- 前提： 使用了ts
+- 解决方案： using [mdn-polyfills](https://github.com/msn0/mdn-polyfills) libraty
+
+```javascript
+//To support document's parentNode.children in IE, copied from -> https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children
+(function (constructor) {
+  'use strict';
+  if (constructor &&
+    constructor.prototype &&
+    constructor.prototype.children == null) {
+    Object.defineProperty(constructor.prototype, 'children', {
+      get: function () {
+        var i = 0,
+        node,
+        nodes = this.childNodes,
+        children = [];
+        //iterate all childNodes
+        while (node = nodes[i++]) {
+          //remenber those, that are Node.ELEMENT_NODE (1)
+          if (node.nodeType === 1) {
+            children.push(node);
+          }
+        }
+        return children;
+      }
+    });
+  }
+  //apply the fix to all HTMLElements (window.Element) and to SVG/XML (window.Node)
+})(window.Node || window.Element);
+```
 
 [back to top](#top)
 
