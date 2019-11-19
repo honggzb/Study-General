@@ -70,7 +70,7 @@ Empirical Process Control’s Three Pillars
 - Facilitator, negotiator, responsible for guiding team
 - Ensures that team follows Scrum rules, maximizes team's value, understands product planning, agility/facilitates scrum events
 - Removes impediments or finds someone that can
-  
+
 |Relationship to| |
 |---|--|
 |Product Owner|- Finds techniques for backlog management keeping it clear and concise, and arranged to maximize value<br>- Understanding product planning, practices agility and Facilitates Scrum events as requested or needed|
@@ -136,21 +136,25 @@ Empirical Process Control’s Three Pillars
   - Stop doing?
   - Continue doing?
 
-|Events|Team member|should do|
-|---|---|---|
-|Sprint Planning|Product Owner|discusses the objective of Sprint and Product Backlog items to achieve the Sprint Goal|
-| |Scrum Master |Ensures that the event takes place and that attendants understand its purpose, keeping it within time-box|
-| |Development Team|- Forecasts the functionality that will be developed during the Sprint by assessing what it can accomplish over the upcoming Sprint.<br>- Decides how it will build this functionality into a "Done" product Increment during the Sprint.<br>- Decomposes the backlog units to 1 day or less, by self-organizing.<br>- Determines it has too much or too little work, and if so, renegotiates with owner.<br>- May explain the steps that it will take to make the next increment ("Done").|
-|Daily Scrum|Product Owner| |
-| |Scrum Master |Ensures that the Development Team has the meeting, keeping within a time-box.|
-| |Development Team|- Responsible for conducting the Daily Scrum, enforces the rule that only Development Team participates.<br>- Synchronizes activities and creates a plan for the next 24 hours, inspecting a progress toward the Sprint Goal.|
-|Sprint Review|Product Owner|Can invite key Stake-Holders (informal), Explains what was and was not done, Discusses the current state of Product Backlog|
-| |Scrum Master |May invite Stakeholders.|
-| |Development Team|Discusses what went well during the Sprint, what problems it ran into, and how those problems were solved; demonstrates the work that it has "Done" and answers questions about the Increment|
-| |Stake-Holders|Can attend, if and only if, invited by Scrum Master.|
-|Sprint Retrospective|Product Owner||
-| |Scrum Master |Participates as a peer team member in the meeting from the accountability over the Scrum process.|
-| |Development Team||
+|Events|should do|
+|---|---|
+| |**Sprint Planning**|
+|Product Owner|discusses the objective of Sprint and Product Backlog items to achieve the Sprint Goal|
+|Scrum Master |Ensures that the event takes place and that attendants understand its purpose, keeping it within time-box|
+|Development Team|- Forecasts the functionality that will be developed during the Sprint by assessing what it can accomplish over the upcoming Sprint.<br>- Decides how it will build this functionality into a "Done" product Increment during the Sprint.<br>- Decomposes the backlog units to 1 day or less, by self-organizing.<br>- Determines it has too much or too little work, and if so, renegotiates with owner.<br>- May explain the steps that it will take to make the next increment ("Done").|
+| |**Daily Scrum**|
+Product Owner| |
+|Scrum Master |Ensures that the Development Team has the meeting, keeping within a time-box.|
+|Development Team|- Responsible for conducting the Daily Scrum, enforces the rule that only Development Team participates.<br>- Synchronizes activities and creates a plan for the next 24 hours, inspecting a progress toward the Sprint Goal.|
+| |**Sprint Review**|
+|Product Owner|Can invite key Stake-Holders (informal), Explains what was and was not done, Discusses the current state of Product Backlog|
+|Scrum Master |May invite Stakeholders.|
+|Development Team|Discusses what went well during the Sprint, what problems it ran into, and how those problems were solved; demonstrates the work that it has "Done" and answers questions about the Increment|
+|Stake-Holders|Can attend, if and only if, invited by Scrum Master.|
+| |**Sprint Retrospective**|
+Product Owner||
+|Scrum Master |Participates as a peer team member in the meeting from the accountability over the Scrum process|
+|Development Team||
 
 [back to top](#top)
 
