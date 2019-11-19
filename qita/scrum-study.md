@@ -119,3 +119,91 @@ Use for projects, with defined features  | use for support, unpredictable develo
   - Planning Board
   - Task Board
   - Chart Board
+
+
+[Scrum Essentials Exam Prep- William W. Davis](#top)
+
+
+
+## Scrum Overview
+
+### Empirical Process Control’s Three Pillars
+
+Scrum is founded on empirical process control theory, or empiricism
+
+- Transparency
+- Inspection
+- Adaptation
+
+### Scrum’s Five Values
+
+- Focus
+- Openness
+- Respect
+- Courage
+- Commitment
+
+[back to top](#top)
+
+## Scrum Roles
+
+### Product Owner
+
+- Represents the interests of the stakeholder community to the scrum team. Commonly referred to as the Voice Of the Customer(VOC)
+- Ensuring clear communication of product or service functionality requirements to the scrum team. Ensuring that the scrum team delivers value
+- Defining Acceptance criteria
+- Responsiblilty
+  - create project Vision Process
+    - Define the project vision
+    - Helps create the project Charter and Project Budget
+  - Form scrum Team Process
+    - Helps determine the scrum Team numbers
+    - Develop a collaboration plan with scrum master
+  - Create Sprint backlog process
+    - Clarifies requirements to the scrum team while creating the sprint backlog
+  - Other responsiblities 
+    - Determining the project's initial overall requirements and kicking off project activities
+    - Representing users of the product or service with a thorough understanding of the user community
+    - Securing the inital and ongoing financial resources for the project
+    - Focusing on value creation and overall Return On Investment(ROI)
+    - Accessing the viability and ensuring the delivery of the product or service
+- Chief Product Owner
+  - Responsible for coordinating the work of multiple Product Owners
+  - Prepares and maintains overall prioritized product backlog for large project
+
+### Scrum Master
+
+- Is the ""servant leader" who moderates and facilitates team interactions as team coach and motivator
+- Responsible for ensuring that team has a productive work environment by guarding the team from external influences, removing any obstacles, and enforcing scrum principles, aspects, and processes.
+- Responsiblilty
+  - Develop Epics process -> Facilitates creation of the epics and personas
+  - Create User stories process -> Assist the scrum team in creating user stories and their acceptance criteria
+  - Create Deliverables process ->
+    - Supports the scrum team in creating the deliverables agreed to for the sprint
+    - Helps update the scrumboard and impediment log
+- Scrum of scrums meeting in large projects which have multiple scrum teams working in parallel
+  - Analogous to the daily standup meeting
+  - Facilitated by Chief scrum master 
+
+### The Development Team
+
+- No "project mananagers", no "QA testers", no "programmers"
+
+[back to top](#top)
+
+## Scrum Events and Artifacts
+
+- Scrum Events
+  - Sprint planning
+  - Dialy Scrum: no more than 15 mins
+  - Sprint Review
+  - Sprint Retro
+- Scrum Artifacts:  Definition of Done
+  - Product Increment
+  - Product backlog
+  - Sprint Backlog
+
+[back to top](#top)
+
+> Reference
+- https://www.famousdavis.com/
