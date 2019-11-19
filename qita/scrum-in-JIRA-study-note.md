@@ -52,42 +52,8 @@ Use for projects, with defined features  | use for support, unpredictable develo
 ` project = "ccc" and issuetype= Story and status = "In progress" order by lastViewed DESC`
 - swimlanes: `priority=Highest`
 
+## State of affairs
 
-- Product Owner
-  - Final authority on requirements
-  - Prioritize backlog and provide clear requirements
-- Team members
-  - Cross functional, autonomous, self organizing
-  - Project manager, developer, tester, Swiss Army Knife, CTM, TOC
-- Scrum master
-  - Facilitator, negotiator, responsible for guiding team
-  - Removes impediments or finds someone that can
-
-- Product Backlog
-  - Feature list User stories
-  - Features, bugs, technical work, information, …
-  - Not required to be complete at the beginning
-  - Prioritized for the…
-- Sprint Planning Meeting
-  - Committed parties involved
-    - Product owner, team members
-  - Other parties can attend as listeners
-  - PO describes highest priorities
-  - Detailed tasks created and assigned
-  - Objectives:
-    - Sprint goal
-    - Sprint backlog
-  - Looking ahead recommended
-- Daily Scrum
-  - Moderated by scrum master
-  - 15 min, time boxed, usually in the morning/same location
-  - Every attendee
-    - What did you do yesterday?
-    - What will you do today?
-    - Is there any impediment on your way?
-  - Scrum master helps remove impediments
-    - Or find someone who will
-  - State of affairs
 - Burndownchart
   - Graphical representation of work pending vs. time left
   - Are you going to make it?
@@ -95,22 +61,8 @@ Use for projects, with defined features  | use for support, unpredictable develo
   - Amount of work per particular sprint
   - Helpful in planning upcoming sprints
   - Dynamic
-- Sprint Retrospective
-  - Objective: determine ways to improve at end of sprint
-  - Suggestion: (What should we…)
-    - Start doing?
-    - Stop doing?
-    - Continue doing?
-  - Prioritize
-  - Work on improving
-- Sprint Review
-  - Goal: Ship Ready State!
-    - Scrum  Deliver Potentially Shippable Product
-  - Hold a meeting to present the outcome
-  - Typically a demo
-  - Assessed towards the sprint goal
 
-- JIRA Agile
+## JIRA Agile
 
 - JIRA’s way of Agile project management
 - Scrum
@@ -120,30 +72,7 @@ Use for projects, with defined features  | use for support, unpredictable develo
   - Task Board
   - Chart Board
 
-
 [Scrum Essentials Exam Prep- William W. Davis](#top)
-
-
-
-## Scrum Overview
-
-### Empirical Process Control’s Three Pillars
-
-Scrum is founded on empirical process control theory, or empiricism
-
-- Transparency
-- Inspection
-- Adaptation
-
-### Scrum’s Five Values
-
-- Focus
-- Openness
-- Respect
-- Courage
-- Commitment
-
-[back to top](#top)
 
 ## Scrum Roles
 
@@ -184,24 +113,6 @@ Scrum is founded on empirical process control theory, or empiricism
 - Scrum of scrums meeting in large projects which have multiple scrum teams working in parallel
   - Analogous to the daily standup meeting
   - Facilitated by Chief scrum master 
-
-### The Development Team
-
-- No "project mananagers", no "QA testers", no "programmers"
-
-[back to top](#top)
-
-## Scrum Events and Artifacts
-
-- Scrum Events
-  - Sprint planning
-  - Dialy Scrum: no more than 15 mins
-  - Sprint Review
-  - Sprint Retro
-- Scrum Artifacts:  Definition of Done
-  - Product Increment
-  - Product backlog
-  - Sprint Backlog
 
 [back to top](#top)
 
