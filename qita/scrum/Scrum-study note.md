@@ -41,9 +41,11 @@ Project are impacted by
 
 Empirical Process Control’s Three Pillars
 
-- Transparency:  Use of common language and defintions
-- Inspection: Inspections of progress and artifacts
-- Adaption: Adjustments to minimize deviation
+|Pillars| |
+|---|---|
+|Transparency|Use of common language and defintions|
+|Inspection|Inspections of progress and artifacts|
+|Adaption| Adjustments to minimize deviation|
   
 ## Scrum Team
 
