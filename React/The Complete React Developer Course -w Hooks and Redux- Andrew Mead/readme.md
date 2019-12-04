@@ -28,16 +28,32 @@
   - [Test Dynamic components](#test-dynamic-components)
     - [Simple component - without 3rd libraries](#simple-component---without-3rd-libraries)
     - [complex components - with 3rd libraries](#complex-components---with-3rd-libraries)
-  - [Test Non-state components with parameters](#test-non-state-components-with-parameters)
+  - [Test stateless function components with parameters](#test-stateless-function-components-with-parameters)
+- [Combining with Firebase - Web app](#combining-with-firebase---web-app)
+  - [setup Firebase and connect webApp](#setup-firebase-and-connect-webapp)
+  - [Operating data](#operating-data)
+  - [Listening data and stop Listening](#listening-data-and-stop-listening)
+  - [Array data in Firebase](#array-data-in-firebase)
+  - [Combing redux to Firebase](#combing-redux-to-firebase)
+    - [Using in Codes](#using-in-codes)
+    - [Unit test](#unit-test)
+    - [set up seperate database for testing](#set-up-seperate-database-for-testing)
+    - [Firebase rule setup](#firebase-rule-setup)
+  - [Error issues Fix](#error-issues-fix)
 - [React Debug Tools](#react-debug-tools)
+- [Deploying application](#deploying-application)
+  - [Production Webpack](#production-webpack)
+  - [Creating Separate CSS Files](#creating-separate-css-files)
+- [Dynamically add version number to application based on grunt](#dynamically-add-version-number-to-application-based-on-grunt)
+  - [Method 1: grunt-string-replace](#method-1-grunt-string-replace)
+  - [Method 2: grunt-string-replace](#method-2-grunt-string-replace)
 
 ## Environment setup
 
 - [Babel setup for react](https://babeljs.io/docs/en/babel-preset-react)
 - Methods
   - Via CLI: `npm install --save-dev @babel/preset-react`
-  - via `.babelrc`
- - package.json, .babelrc, jest.config.js, jest.config.json, webpack.config.js
+  - via `.babelrc`:
 
 `babel src/app.js --out-file=public//scripts/app.js --presets=env,react`
 
@@ -814,7 +830,7 @@ test('should set new date on date change', () => {
 
 [back to top](#top)
 
-### Test Non-state components with parameters
+### Test stateless function components with parameters
 
 - refactor Non-state component to class based component
   - add function insteads of inline codes
@@ -878,6 +894,371 @@ test('should handle filter text change on ExpenseListFilters Page correctly', ()
 
 [back to top](#top)
 
+## Combining with Firebase - Web app
+
+### setup Firebase and connect webApp
+
+1. Add Project
+2. Add App to project, ![](https://i.imgur.com/8nEHfVR.png)
+3. From menu, right-click 'setting', ![](https://i.imgur.com/5aSVJQk.png)
+4. Rolling down and location to Your apps tab. Copying SDK snippet
+
+![](https://i.imgur.com/e4SyRNt.png)
+
+```javascript
+// src/firebase/firebase.js
+// Firebase App (the core Firebase SDK) is always required and must be listed first
+import * as firebase from "firebase/app";
+// Add the Firebase products that you want to use
+import "firebase/auth";
+import "firebase/database";
+import * as expensesActions from '../actions/expenses';
+
+var firebaseConfig = {
+    apiKey: "...",
+    authDomain: "...",
+    databaseURL: "...",
+    projectId: "...",
+    storageBucket: "...",
+    messagingSenderId: "...",
+    appId: "...",
+  };
+
+firebase.initializeApp(firebaseConfig);
+```
+
+### Operating data
+
+```javascript
+//
+const database = firebase.database();
+//write data
+database.ref().set({
+    name: 'Andrew Mead',
+    age: 26,
+    isSingle: false,
+    location: {
+        city: 'city',
+        country: 'abc'
+    }
+}).then(() => {
+    console.log('Synchronization data is saved.');
+}).catch((e) => {
+    console.log('Synchronization failed.', e);
+});
+//update data
+// method 1: using ref
+database.ref('age').set(27);
+database.ref('location/city').set('New York');
+// method 2: using update, note: parameter is object
+database.ref().update({
+    name: 'Mike',
+    age: 29,
+    job: 'software developer'
+});
+// remove all data
+database.ref()
+    .remove()
+    .then(() => {
+        console.log('Synchronization data was removed');
+    }).catch((e) => {
+        console.log('Second synchronization failed.', e);
+    });
+```
+
+### Listening data and stop Listening
+
+```javascript
+// Listen for data changes
+const onValueChange =  (snapshot) => {
+    console.log(snapshot.val());
+};
+// start listen
+database.ref().on('value', onValueChange, (e) => {
+    console.log('Error with data fetching', e);
+})
+setTimeout(() => {
+    database.ref('age').set(30);
+}, 3000);
+//stop listen
+setTimeout(() => {
+    database.ref().off('value', onValueChange);
+}, 5000);
+setTimeout(() => {
+    database.ref('age').set(60);
+}, 8000);
+```
+
+[back to top](#top)
+
+### Array data in Firebase
+
+- Firebase just handle object, the struction is
+- ![](https://i.imgur.com/3UqtRil.png)
+- using `dataSnapshot` to handle array data in Firebase
+- https://firebase.google.com/docs/reference/js/firebase.database.DataSnapshot
+
+```javascript
+// read from firebase and add to array
+database.ref('expenses')
+    .once('value')
+    .then((snapshot) => {
+        const expenses = [];
+        snapshot.forEach((childSnapshot) => {
+            expenses.push({
+                id: childSnapshot.key,
+                ...childSnapshot.val()
+            })
+        });
+    });
+// child remove
+database.ref('expenses').on('child_removed', (snapshot) => {
+    console.log(snapshot.key, snapshot.val());
+});
+// child changed
+database.ref('expenses').on('child_changed', (snapshot) => {
+    console.log(snapshot.key, snapshot.val());
+});
+// child added
+database.ref('expenses').on('child_added', (snapshot) => {
+    console.log(snapshot.key, snapshot.val());
+});
+```
+
+[back to top](#top)
+
+### Combing redux to Firebase
+
+- just need modify action
+- using [redux-thunk](https://www.npmjs.com/package/redux-thunk) middleware,
+  - Redux Thunk middleware allows you to write action creators that return a function instead of an action
+  - dispatching async actions
+
+```
+     before firebase                 |  after firebase
+-------------------------------------|-------------------------------------
+ component calls action generator    | Same
+ action generator returns object     | action generator returns function
+ component dispatches object         | component dispatches function(?)
+ redux store changes                 | function runs(has the ability to dispatch other actions and do whatever it wants)
+```
+
+#### Using in Codes
+
+```javascript
+//1) configuration - src/stores/configureStore.js
+import thunk from 'redux-thunk';
+const composeEnhances = window.__REDUX_DEVTOOLS_EXTENSION__ || compose;
+export default () => {
+    //store creation
+    const store = createStore(
+        combineReducers({  //multiple reducers
+            expenses: expensesReducer,
+            filters: filtersReducer
+        }),
+        composeEnhances(applyMiddleware(thunk))
+    );
+    return store;
+}
+//2) using in action file, src/actions/expenses.js
+export const addExpense = (expense) => ({
+    type: 'ADD_EXPENSE',
+    expense
+});
+//add a new function to operate DB and handle dispatch at mean time
+export const startAddExpense = (expenseData ={}) => {
+    return (dispatch) => {
+        const {description='', note='', amount=0, createdAt=0} = expenseData;
+        const expense = { description, note, amount, createdAt };
+        database.ref('expenses').push(expense).then((ref) => {
+            dispatch(addExpense({
+                id: ref.key,
+                ...expense
+            }));
+        })
+    }
+}
+//3) using startAddExpense in component(src/components/addExpenses.js)
+```
+
+- [Creating promise actions in redux](http://ramblings.mcpher.com/Home/excelquirks/reactredux/promiseactioncreator)
+- [Firebase authentication with react and redux](http://ramblings.mcpher.com/Home/excelquirks/reactredux/firebaseauth)
+- [React Redux Firebase - onAuthStateChanged delay prevents from using life cycle methods](https://stackoverflow.com/questions/51312765/react-redux-firebase-onauthstatechanged-delay-prevents-from-using-life-cycle-m)
+
+[back to top](#top)
+
+#### Unit test
+
+- using [redux-mock-store](https://github.com/dmitry-zaets/redux-mock-store) to mockup store for testing Redux async action creators and middleware
+- using new function as mentioned above
+
+```javascript
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+const middlewares = [thunk];
+const createMockStore = configureStore(middlewares);
+test('should add expense to database and store', (done) => {   //use params done
+    const store = createMockStore({});
+    const expenseData = {
+        description: 'Mouse',
+        amount: 3000,
+        note: 'This is test for store',
+        createdAt: 1000
+    }
+    store.dispatch(startAddExpense(expenseData)).then(() => {
+        //expect(1).toBe(1);
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type: 'ADD_EXPENSE',
+            expense: {
+                id: expect.any(String),
+                ...expenseData
+            }
+        });
+        return database.ref(`expenses/${actions[0].expense.id}`).once('value').then((snapshot) => {
+            expect(snapshot.val()).toEqual(expenseData);
+             // actual execute dispatch, otherwise it will never happen
+            done();
+        });
+    });
+});
+```
+
+[back to top](#top)
+
+#### set up seperate database for testing
+
+- [cross-env](https://www.npmjs.com/package/cross-env): using the environment variable properly for different platform
+- [dotenv](https://www.npmjs.com/package/dotenv): loads environment variables from a .env file into process.env
+- create two files under root path: '.env.test' and '.env.development`
+- modify `package.json`, `webpack.config.js` and 'firebase/firebase.js`
+
+```javascript
+// 1) package.json - add 'cross-env NODE_ENV=test' in test command
+"test": "cross-env NODE_ENV=test jest --config=jest.config.json -u --watchAll --colors",
+// 2) create .env.test and .env.development file
+FIREBASE_API_KEY=...
+FIREBASE_AUTH_DOMAIN=...
+FIREBASE_DATABASE_URL=...
+FIREBASE_PROJECT_ID=...
+FIREBASE_STORAGE_BUCKET=...
+FIREBASE_MESSAGING_SENDER_ID=...
+FIREBASE_APP_ID=...
+// 3) webpack.config.js
+const webpack = require('webpack');
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';  // define key for using cross-env
+ // load different .env file according to different key(environment)
+if(process.env.NODE_ENV === 'test'){
+    require('dotenv').config({path: '.env.test' });
+} else if(process.env.NODE_ENV === 'development') {
+    require('dotenv').config({path: '.env.development' });
+}
+// ...
+plugins: [
+  new webpack.DefinePlugin({
+      'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
+      'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
+      'process.env.FIREBASE_DATABASE_URL': JSON.stringify(process.env.FIREBASE_DATABASE_URL),
+      'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
+      'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
+      'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID),
+      'process.env.FIREBASE_APP_ID': JSON.stringify(process.env.FIREBASE_APP_ID)
+    })
+  ],
+// 4) src/firebase/firebase.js
+var firebaseConfig = {
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.FIREBASE_DATABASE_URL,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.FIREBASE_APP_ID
+};
+```
+
+- create mock test dummy data in test file,such as 'tests/actions/expenses.test.js'
+
+```javascript
+beforeEach((done) => {
+    const expenseData = {};
+    expenses.forEach(({id, description, note, amount, createdAt}) => {
+        expenseData[id] = {description, note, amount, createdAt};  // change expenses format to Firebase format
+    })
+    database.ref('expenses').set(expenseData).then(() => done());
+})
+```
+
+[back to top](#top)
+
+#### Firebase rule setup
+
+- ![](https://i.imgur.com/55hqqUB.png)
+- https://firebase.google.com/docs/reference/security/database
+
+```javascript
+//location is '/users/fb69ecde-8e81-4e34-a339-12606f7d79c9/expenses/abc123'
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+        "$user_id": {
+          ".read":"$user_id === auth.uid",
+          ".write":"$user_id === auth.uid",
+          "expenses" : {
+            "$expense_id": {
+              	".validate": "newData.hasChildren(['description', 'note', 'createdAt', 'amount'])",
+                "description": {
+                 	".validate": "newData.isString() && newData.val().length > 0"
+                },
+                "note": {
+                   ".validate": "newData.isString()"
+                },
+                "createdAt": {
+                  ".validate": "newData.isNumber()"
+                },
+                "amount": {
+                  ".validate": "newData.isNumber()"
+                },
+                "$other": {
+                  ".validate": false
+                }
+            }
+          },
+          // 除了expenses，其他的不能访问
+          "$other": {
+            ".validate": false
+          }
+        }
+      }
+  }
+}
+```
+
+[back to top](#top)
+
+### Error issues Fix
+
+1. switch to Realtime Database
+2. change rules to
+
+```json
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+```
+
+3. disable some plugin if chrome did not show data
+
+- [Firebase console](https://console.firebase.google.com/)
+- [Firebase JavaScript SDK Reference](https://firebase.google.com/docs/reference/js)
+
+[back to top](#top)
+
 ## React Debug Tools
 
 - remove constructor and bind , arrow function when using webpack plugin- transform-class-properties
@@ -886,11 +1267,135 @@ test('should handle filter text change on ExpenseListFilters Page correctly', ()
 
 [back to top](#top)
 
+## Deploying application
+
+### Production Webpack
+
+- `webpack -p` in package.json
+- output function insteads of output object - https://webpack.js.org/configuration/configuration-types/
+
+### Creating Separate CSS Files
+
+- [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) for webpack<=3
+- [mini-css-extract-pluginnpm ](https://github.com/webpack-contrib/mini-css-extract-plugin)
+
+```javascript
+//webpack.config.js
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+plugins: [
+    new MiniCssExtractPlugin({
+          filename: '[name].css',
+          chunkFilename: '[id].css',
+          ignoreOrder: false,
+        }),
+    ],
+module: {
+    rules: [{
+                test: /\.s?css$/,
+                use: [{ loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: '../',  // by default it uses publicPath in webpackOptions.output
+                            hmr: process.env.NODE_ENV === 'dev',
+                        },
+                      },
+                      'css-loader', 'sass-loader'
+                    ]
+            }]
+},
+```
+
+[back to top](#top)
+
 > References && resources
 - [Project sample](http://indecision.mead.io/)
-- [Project source code](https://github.com/andrewjmead/react-course-2-indecision-app)
+- [Project source code 1](https://github.com/andrewjmead/react-course-2-indecision-app)
+- [Project source code 2](https://github.com/andrewjmead/react-course-2-expensify-app)
 - https://airbnb.io/react-dates
 - https://momentjs.com/
 - https://regex101.com/
 - [enzyme](https://airbnb.io/enzyme/)
 - [Jest test samples](https://github.com/facebook/jest/tree/master/examples)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Dynamically add version number to application based on grunt
+
+### Method 1: grunt-string-replace
+
+- [grunt-string-replace](https://github.com/erickrdch/grunt-string-replace)
+- use the text {{ VERSION }} which gets replaced with the version number set in the package.json file.
+- modify Gruntfile.js
+
+```javascript
+'string-replace': {
+  version: {
+    files: {
+      // the files I did string replacement on
+    },
+    options: {
+      replacements: [{
+        pattern: /{{ VERSION }}/g,
+        replacement: '<%= pkg.version %>'
+      }]
+    }
+  }
+},
+pkg: grunt.file.readJSON('package.json'),
+
+// These plugins provide necessary tasks.
+grunt.loadNpmTasks('grunt-string-replace');
+// Default task.
+grunt.registerTask('default', ['string-replace']);
+```
+
+### Method 2: grunt-string-replace
+
+- version.html
+  - `<body>@@advisorVersion</body>`
+- gruntfile.js
+
+```javascript
+grunt.initConfig({
+  advisorVersion: { // replaces the version used in local development bypass
+    options: {
+      patterns: [{
+              match: 'advisorVersion',
+              replacement: advisorVersion,
+            }],
+      },
+      files: [
+          ['<%= yeoman.dist %>/version.html'],
+          dest: '<%= yeoman.dist %>/version.html',
+      }],
+      },
+  }
+})
+//...
+grunt.registerTask('build', function (target) {
+    var tasks = [
+      'clean:dist',
+      'copy:vendor',
+      'concurrent:prod',  // run concurrent tasks
+      'sync:build',  // move built files into build folder
+      'createIndex',  // creates index.html
+      'minify',  // minifying and optimizing build below
+      'replace:advisorVersion',  // updates version.html
+    ];
+//...
+}
+```
