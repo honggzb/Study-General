@@ -37,12 +37,13 @@ Integration or functional testing|More than a unit, less than the complete appli
 End to end| A single “unit” of code|![](https://i.imgur.com/ea8zTzI.png)
 
 **Types of Mocks**
-
-- Mocking is one type of Unit tests
-- Dummies: the object that fill a place, used in place of real object
-- Stubs:  the object has controllable behavior
-- Spies:  the object that keep track of which of its methods were called, and how many times they were called, and what parameters were used for each call
-- True mocks: complex objects that verify that they were used in exactly a specific way
+Types of Mocks| explanation
+---|---
+Mocking|is one type of Unit tests
+Dummies|the object that fill a place, used in place of real object
+Stubs|the object has controllable behavior
+Spies|the object that keep track of which of its methods were called, and how many times they were called, and what parameters were used for each call
+True mocks|complex objects that verify that they were used in exactly a specific way
 
 ### Unit Tests in Angular
 
