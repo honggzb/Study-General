@@ -29,9 +29,13 @@ Project are impacted by
 - Creates collective accountability and progress
 - Scrum framework supports all kinds of projects regardless of its complexibility
 
+### Scrum Five Values
+
+- Commitment, courage, focus, openness, respect
+
 ### Scrum Theory
 
-- Scrum is founded on empirical process control theory, or empiricism
+- Scrum is founded on **empirical** process control theory, or **empiricism**
 
 ![](https://i.imgur.com/CXUYG04.png)
 
@@ -186,3 +190,6 @@ Scrum’s artifacts represent work or value to provide transparency and opportun
 | |Development Team|-Express Backlog items, Orders items to achieve goal, optimize value of development team work, Ensure transparency and understanding of items.<br>- Does not act on anyone's requirements other than the ones of the product Owner.<br>- Only the Development Team can change its Sprint Backlog during a Sprint|
 
 [back to top](#top)
+
+> Reference
+- https://www.scrum.org/professional-scrum-master-i-certification
