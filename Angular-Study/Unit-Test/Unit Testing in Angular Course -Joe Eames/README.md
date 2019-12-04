@@ -22,10 +22,14 @@
 
 ## Automated Testing Overview
 
-testing| explanation |demo
+- Unit Test: test a component **in isolation**, without external resources(e.g. file system, db, API endpoints)
+- Integration:
+- End to end: 
+
+Types of Tests| explanation |demo
 ---|---|---
-Unit testing| Live running application, Tests exercise live application|![](https://i.imgur.com/O7cNIoa.png)
-End to end testing| A single “unit” of code|![](https://i.imgur.com/ea8zTzI.png)
+Unit test| Live running application, Tests exercise live application|![](https://i.imgur.com/O7cNIoa.png)
+End to end| A single “unit” of code|![](https://i.imgur.com/ea8zTzI.png)
 Integration or functional testing|More than a unit, less than the complete application, everything in between|![](https://i.imgur.com/CzmKCdl.png), ![](https://i.imgur.com/UZrhkzS.png)
 
 **Types of Mocks**
