@@ -1,6 +1,8 @@
 [Unit Testing in Angular Course -Joe Eames](#top)
 
 - [Automated Testing Overview](#automated-testing-overview)
+  - [Types of Tests](#types-of-tests)
+  - [Types of Mocks](#types-of-mocks)
   - [Unit Tests in Angular](#unit-tests-in-angular)
 - [Isolated Unit Tests](#isolated-unit-tests)
   - [Testing a pipe](#testing-a-pipe)
@@ -36,7 +38,8 @@ Unit test| Live running application, Tests exercise live application|![](https:/
 Integration or functional testing|More than a unit, less than the complete application, everything in between|![](https://i.imgur.com/CzmKCdl.png), ![](https://i.imgur.com/UZrhkzS.png)
 End to end| A single “unit” of code|![](https://i.imgur.com/ea8zTzI.png)
 
-**Types of Mocks**
+### Types of Mocks
+
 Types of Mocks| explanation
 ---|---
 Mocking|is one type of Unit tests
