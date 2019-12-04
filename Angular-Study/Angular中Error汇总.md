@@ -9,7 +9,7 @@
   - [6. Can't bind to 'ngModel' since it isn't a known property of 'input'](#input)
   - [7. ‘ANGULAR.JSON’ COULD NOT BE FOUND](#COULD-NOT-BE-FOUND)
   - [8. angular cli - install stuck when extract rxjs](#install-stuck-when-extract-rxjs)
-  - [9. IE-嵌入iframe时候内容无法居中或变形](#嵌入iframe时候内容无法居中或变形)
+  - [9. IE-嵌入iframe时候内容无法居中或变形(pop-up screen frozen)](#嵌入iframe时候内容无法居中或变形)
 - [Angular MATERIAL](#angularM)
   - [1. Type 'ElementRef' is not generic](#ElementRef)
   - [2. unable to call a controller function from inside a custom-template with ui-typeahead](#ui-typeahead)
@@ -167,8 +167,9 @@ npm install -g @angular/cli@latest
 
 https://github.com/angular/angular-cli/issues/9942
 
-<h3 id="嵌入iframe时候内容无法居中或变形">9. IE-嵌入iframe时候内容无法居中或变形</h3>
+<h3 id="嵌入iframe时候内容无法居中或变形">9. IE-嵌入iframe时候内容无法居中或变形(pop-up screen frozen)</h3>
 
+- 同时导致： On IE browser, once this pop-up appears the screen is frozen and doesn't allow user to proceed further(WPM-21462)
 - 前提： 使用了ts
 - 解决方案： using [mdn-polyfills](https://github.com/msn0/mdn-polyfills) libraty
 
