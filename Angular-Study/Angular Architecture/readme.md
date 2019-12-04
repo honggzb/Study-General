@@ -1,3 +1,4 @@
+```
 │   ├── Angular Architecture
 │   │   ├── Angular Architecture- Dan Wahlin
 │   │   │   ├── Angular-JumpStart-master/
@@ -10,3 +11,4 @@
 │   │   │   └── readme.md
 │   │   ├── Angular Scalable Architecture-The PRPL Pattern.md
 │   │   └──
+```
