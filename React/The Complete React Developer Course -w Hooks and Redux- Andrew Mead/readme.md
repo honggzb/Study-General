@@ -1081,9 +1081,12 @@ export const startAddExpense = (expenseData ={}) => {
 //3) using startAddExpense in component(src/components/addExpenses.js)
 ```
 
+#### Async Auth???- todo
+
 - [Creating promise actions in redux](http://ramblings.mcpher.com/Home/excelquirks/reactredux/promiseactioncreator)
 - [Firebase authentication with react and redux](http://ramblings.mcpher.com/Home/excelquirks/reactredux/firebaseauth)
 - [React Redux Firebase - onAuthStateChanged delay prevents from using life cycle methods](https://stackoverflow.com/questions/51312765/react-redux-firebase-onauthstatechanged-delay-prevents-from-using-life-cycle-m)
+- https://github.com/clairechabas/firebase-auth-react-redux
 
 [back to top](#top)
 
