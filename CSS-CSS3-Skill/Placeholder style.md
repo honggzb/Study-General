@@ -1,6 +1,6 @@
 ## Placeholder style
 
-### pseudo class- non-standard
+### pseudo class- **non-standard class**
 
 ![](https://i.imgur.com/U1KPC7H.png)
 
