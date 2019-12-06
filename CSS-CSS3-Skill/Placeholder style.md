@@ -1,15 +1,15 @@
 ## Placeholder style
 
-## pseudo class- non-standard
+### pseudo class- non-standard
 
 ![](https://i.imgur.com/U1KPC7H.png)
 
 - `::placeholder`      : did not support by IE
 - `:placeholder-shown` : 
 
-> note: `::placeholder{font-size: 50%; }` will resize an input field at well
+> note: `::placeholder{font-size: 50%; }` will resize an input field at well in IE, will not resize input field in Chrome
 
-## Browser compatible
+### Browser compatible
 
 ```css
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
