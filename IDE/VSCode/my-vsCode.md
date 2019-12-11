@@ -1,31 +1,32 @@
-|Plugin| 说明  |
-|---|---|
-|**beautify**|良好的拓展性，可以格式化JSON|JS|HTML|CSS|SCSS,比内置格式化好用|
-|**auto close tag**|匹配标签，关闭对应的标签。很实用【HTML/XML】|
-|auto import||
-|**auto rename tag**|Auto Rename Tag |sublime和webstorm也有这个内置功能，改变标签的时候同时改动开闭合标签；【HTML/XML】|
-|bracket pair colorizer||
-|**change-case**||
-|Color Picker||
-|Css peek||
-|Document This |JSDOC注解调用，值得易用, <br>JSDoc(Ctrl+Alt+D and Ctrl+Alt+D again)
-|intellisense for CSS calss names in HTML|
-|**Markdown All in One**||
-|Markdown Preview Enhanced||
-|**Markdown Extended**||
-|Node.js Modules Intellisense||
-|npm ||
-|**npm intellisense**||
-|**open in browser**||
-|**Path Autocomplete**|路径智能补全|
-|Path Intellisense|路径智能提示|
-|SCSS IntelliSense Preview |SCSS智能提醒，配置强大|
-|Highlight Matching Tag|
-|**select highlight in minimap**||
-|View Node Package|
-|Git History |不得不赞的插件，谁用谁知道，功能很赞|
-|Quokka.js| Quokka is a debugging tool that gives live feedback <br>on the code you are writing for javascript|
-|Better Comments|colorful comment|
+```
+----------------------------|--------------------------------------------------------
+*beautify                   |良好的拓展性，可以格式化JSON|JS|HTML|CSS|SCSS,比内置格式化好用
+*auto close tag             | 匹配标签，关闭对应的标签。很实用【HTML/XML】
+auto import                 |
+*auto rename tag            |Auto Rename Tag : sublime和webstorm也有这个内置功能，改变标签的时候同时改动开闭合标签；【HTML/XML】
+bracket pair colorizer      |
+*change-case                |
+Color Picker                |
+Css peek                    |
+Document This               |JSDOC注解调用，值得易用, JSDoc(Ctrl+Alt+D and Ctrl+Alt+D again)
+intellisense for CSS class names in HTML|
+*Markdown All in One        |
+Markdown Preview Enhanced   |
+*Markdown Extended          |
+Node.js Modules Intellisense|
+*npm                        |
+*npm intellisense           |   
+*open in browser            |
+*Path Autocomplete          | 路径智能补全
+Path Intellisense           | 路径智能提示
+SCSS IntelliSense Preview   | SCSS智能提醒，配置强大
+Highlight Matching Tag      |
+*select highlight in minimap|
+View Node Package           |
+Git History                 |不得不赞的插件，谁用谁知道，功能很赞
+Quokka.js                   |Quokka is a debugging tool that gives live feedback on the code you are writing for javascript
+Better Comments             |colorful comment
+```
 
 ### 功能性
 
