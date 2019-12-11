@@ -25,6 +25,10 @@
 - Quokka.js:  Quokka is a debugging tool that gives live feedback on the code you are writing for javascript
 - Better Comments: colorful comment
 
+|Plugin|   |
+|---|---|
+|**beautify**|良好的拓展性，可以格式化JSON|JS|HTML|CSS|SCSS,比内置格式化好用|
+
 ### 功能性
 
 - HTML CSS Support : 这个也是必备插件之一
