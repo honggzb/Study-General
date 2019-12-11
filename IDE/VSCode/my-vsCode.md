@@ -6,7 +6,7 @@
 *auto rename tag             | Auto Rename Tag : sublime和webstorm也有这个内置功能，
                              | 改变标签的时候同时改动开闭合标签；【HTML/XML】
  bracket pair colorizer      |
-*change-case                 |
+*change-case                 | 各种字符格式化
  Color Picker                |
  Css peek                    |
  Document This               | JSDOC注解调用，值得易用, JSDoc(Ctrl+Alt+D and Ctrl+Alt+D again)
