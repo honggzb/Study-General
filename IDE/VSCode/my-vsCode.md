@@ -1,4 +1,4 @@
-|Plugin|   |
+|Plugin| 说明  |
 |---|---|
 |**beautify**|良好的拓展性，可以格式化JSON|JS|HTML|CSS|SCSS,比内置格式化好用|
 |**auto close tag**|匹配标签，关闭对应的标签。很实用【HTML/XML】|
@@ -8,7 +8,7 @@
 |**change-case**||
 |Color Picker||
 |Css peek||
-|Document This |JSDOC注解调用，值得易用, JSDoc(Ctrl+Alt+D and Ctrl+Alt+D again)
+|Document This |JSDOC注解调用，值得易用, <br>JSDoc(Ctrl+Alt+D and Ctrl+Alt+D again)
 |intellisense for CSS calss names in HTML|
 |**Markdown All in One**||
 |Markdown Preview Enhanced||
@@ -24,7 +24,7 @@
 |**select highlight in minimap**||
 |View Node Package|
 |Git History |不得不赞的插件，谁用谁知道，功能很赞|
-|Quokka.js| Quokka is a debugging tool that gives live feedback on the code you are writing for javascript|
+|Quokka.js| Quokka is a debugging tool that gives live feedback <br>on the code you are writing for javascript|
 |Better Comments|colorful comment|
 
 ### 功能性
