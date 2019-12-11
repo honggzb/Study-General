@@ -22,6 +22,8 @@
 - **select highlight in minimap**
 - View Node Package
 - Git History : 不得不赞的插件，谁用谁知道，功能很赞
+- Quokka.js:  Quokka is a debugging tool that gives live feedback on the code you are writing for javascript
+- Better Comments: colorful comment
 
 ### 功能性
 
@@ -39,6 +41,11 @@
 ### 语法校验
 
 - stylelint : 比内置的要全，更智能
+
+### Open code Outline
+
+- View → Open View... → Outline
+- 命令行： `Explorer: Focus on Outline view`
 
 ### 自定义设置参考
 
