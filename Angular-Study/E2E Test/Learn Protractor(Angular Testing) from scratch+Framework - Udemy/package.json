@@ -1,0 +1,27 @@
+{
+  "name": "unittest",
+  "version": "1.0.0",
+  "description": "[Learn Protractor(Angular Testing) from scratch+Framework - Udemy](#top)",
+  "main": "alert-java.spec.js",
+  "dependencies": {
+    "@types/jasmine": "^3.5.0",
+    "@types/jasminewd2": "^2.0.8",
+    "jasmine": "^3.5.0",
+    "protractor": "^5.4.2",
+    "typescript": "^3.7.3"
+  },
+  "devDependencies": {
+    "cucumber": "^6.0.5",
+    "jasmine-data-provider": "^2.2.0",
+    "protractor-cucumber-framework": "^6.2.0",
+    "protractor-jasmine2-html-reporter": "^0.0.7",
+    "ts-node": "^8.5.4"
+  },
+  "scripts": {
+    "test": "webdriver-manager update && protractor conf.js",
+    "webdriver": "webdriver-manager start",
+    "webdriver-update": "webdriver-manager update"
+  },
+  "author": "",
+  "license": "ISC"
+}
