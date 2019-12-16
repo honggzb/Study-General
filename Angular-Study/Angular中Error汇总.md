@@ -10,6 +10,7 @@
   - [7. ‘ANGULAR.JSON’ COULD NOT BE FOUND](#COULD-NOT-BE-FOUND)
   - [8. angular cli - install stuck when extract rxjs](#install-stuck-when-extract-rxjs)
   - [9. IE-嵌入iframe时候内容无法居中或变形(pop-up screen frozen)](#嵌入iframe时候内容无法居中或变形)
+  - [10. Can't bind to 'ngModel' since it isn't a known property of 'input'](#bind-to-ngModel)
 - [Angular MATERIAL](#angularM)
   - [1. Type 'ElementRef' is not generic](#ElementRef)
   - [2. unable to call a controller function from inside a custom-template with ui-typeahead](#ui-typeahead)
@@ -200,6 +201,13 @@ https://github.com/angular/angular-cli/issues/9942
   //apply the fix to all HTMLElements (window.Element) and to SVG/XML (window.Node)
 })(window.Node || window.Element);
 ```
+
+[back to top](#top)
+
+<h3 id="bind-to-ngModel">10. Can't bind to 'ngModel' since it isn't a known property of 'input'</h3>
+
+- **Reason**: In order to use two-way data binding for form inputs you need to import the FormsModule package
+- **Solution**: `import { FormsModule } from '@angular/forms';` in angular module
 
 [back to top](#top)
 
