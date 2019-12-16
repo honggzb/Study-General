@@ -85,11 +85,6 @@
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
 │   │   └── aot-config.md
-│   │
-│   ├── E2E Test/
-│   │   ├── Learn Protractor(Angular Testing) from scratch+Framework - Udemy/
-│   │   ├── tsconfig.sample.js
-│   │   └── 
 │   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
 │   │   │   ├── codeFinished/ 
 │   │   ├── codeInit/
@@ -122,12 +117,6 @@
 │   │   ├── RxJS笔记之Subject.md
 │   │   ├── RxJS笔记之switchMap, concatMap, mergeMap和exhaustMap.md
 │   │   └── 
-│   ├── Unit-Test/
-│   │   ├── Unit Testing in Angular Course -Joe Eames/
-│   │   ├── NgRx-test-sample.md
-│   │   ├── wallaby-setup.md
-│   │   └── 
-│   │
 │   ├── animation/
 │   │   ├── Angular学习笔记之Animation- Working with Angular Animations/
 │   │   └── 
@@ -171,6 +160,16 @@
 │   │   ├── 可复用的全局设置- Paul D. Sheriff.md
 │   │   ├── 大漠的Angular Workshop.md
 │   │   └── 
+│   ├── Testing/
+│   │   ├── E2E Test/
+│   │   │   ├── Learn Protractor(Angular Testing) from scratch+Framework - Udemy/
+│   │   │   ├── tsconfig.sample.js
+│   │   │   └── 
+│   │   └── Unit-Test/
+│   │       ├── Unit Testing in Angular Course -Joe Eames/
+│   │       ├── NgRx-test-sample.md
+│   │       ├── wallaby-setup.md
+│   │       └── 
 │   ├── Angular CLI的使用(new).md     #useful
 │   ├── Angular_CLI的使用.md           
 │   ├── Angular2+Accessibility.md
