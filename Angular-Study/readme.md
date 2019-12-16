@@ -17,6 +17,9 @@
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
 │   │   └── readme.md
+│   ├── Animation/
+│   │   ├── Angular学习笔记之Animation- Working with Angular Animations/
+│   │   └── 
 │   ├── Configuration/
 │   │   ├── angular-itself-multi-config/
 │   │   │    ├── AngularMaterial-dialog.md 
@@ -54,9 +57,6 @@
 │   │   ├── RxJS笔记之Subject.md
 │   │   ├── RxJS笔记之switchMap, concatMap, mergeMap和exhaustMap.md
 │   │   └── 
-│   ├── animation/
-│   │   ├── Angular学习笔记之Animation- Working with Angular Animations/
-│   │   └── 
 │   ├── Sample/
 │   │   ├── angular-bootstrap/
 │   │   │    ├── use user-defined directive in Tooltips.md
@@ -73,7 +73,7 @@
 │   │   ├──  todo-app.rar
 │   │   ├──  案例之星级评价.md
 │   │   └──  
-│   ├── study-sample
+│   ├── Study-sample
 │   │   ├── Angular Fundamentals- Jim Cooper/
 │   │   │   ├── myEventFundamentals/ 
 │   │   │   ├── Angular_Content_Projection_Guide.pdf
@@ -102,11 +102,12 @@
 │   │   │   ├── Learn Protractor(Angular Testing) from scratch+Framework - Udemy/
 │   │   │   ├── tsconfig.sample.js
 │   │   │   └── 
-│   │   └── Unit-Test/
-│   │       ├── Unit Testing in Angular Course -Joe Eames/
-│   │       ├── NgRx-test-sample.md
-│   │       ├── wallaby-setup.md
-│   │       └── 
+│   │   ├── Unit-Test/
+│   │   │   ├── Unit Testing in Angular Course -Joe Eames/
+│   │   │   ├── NgRx-test-sample.md
+│   │   │   ├── wallaby-setup.md
+│   │   │   └── 
+│   │   └── readme.md
 │   ├── Angular CLI的使用(new).md     #useful
 │   ├── Angular_CLI的使用.md           
 │   ├── Angular2+Accessibility.md
