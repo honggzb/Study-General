@@ -26,6 +26,19 @@
 │   │   │    └── dialog.rar   
 │   │   └── aot-config.md
 │   │
+│   ├── E2E Test/
+│   │   ├── Learn Protractor(Angular Testing) from scratch+Framework - Udemy/
+│   │   ├── tsconfig.sample.js
+│   │   └── 
+│   │
+│   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
+│   │   │   ├── codeFinished/ 
+│   │   ├── codeInit/
+│   │   ├── codePreparedFinished/
+│   │   ├── Migration from AngularJS 1.x to Angular 2+.zip
+│   │   ├── Preparing for Migration from AngularJS (1.x) to Angular (2+).zip
+│   │   └── prepare.md
+│   │
 │   ├── Mockup-server/
 │   │   ├── angular-in-memory-web-api.md
 │   │   ├── liverload-mockup+gulp.md
@@ -95,13 +108,6 @@
 │   │   │   ├── Angular component commnication- Deborah Kurata/
 │   │   ├── Building Your First App with Spring Boot and Angular- Dan Bunker/
 │   │   ├── DaMo-Angular Workshop/
-│   │   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
-│   │   │   │   ├── codeFinished/ 
-│   │   │   ├── codeInit/
-│   │   │   ├── codePreparedFinished/
-│   │   │   ├── Migration from AngularJS 1.x to Angular 2+.zip
-│   │   │   ├── Preparing for Migration from AngularJS (1.x) to Angular (2+).zip
-│   │   │   └── prepare.md
 │   │   ├── communication/
 │   │   │   ├── brother/ 
 │   │   │   ├── local-storage/
