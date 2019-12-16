@@ -1,6 +1,5 @@
 ```
 ├── Angular-Study
-│   │
 │   ├── Angular Architecture
 │   │   ├── Angular Architecture- Dan Wahlin
 │   │   │   ├── Angular-JumpStart-master/
@@ -13,25 +12,28 @@
 │   │   │   └── readme.md
 │   │   ├── Angular Scalable Architecture-The PRPL Pattern.md
 │   │   └──
-│   │   
 │   ├── Angular-material/
 │   │   ├── dialog/
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
 │   │   └── readme.md
-│   │
 │   ├── Configuration/
 │   │   ├── angular-itself-multi-config/
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
 │   │   └── aot-config.md
-│   │
+│   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
+│   │   │   ├── codeFinished/ 
+│   │   ├── codeInit/
+│   │   ├── codePreparedFinished/
+│   │   ├── Migration from AngularJS 1.x to Angular 2+.zip
+│   │   ├── Preparing for Migration from AngularJS (1.x) to Angular (2+).zip
+│   │   └── prepare.md
 │   ├── Mockup-server/
 │   │   ├── angular-in-memory-web-api.md
 │   │   ├── liverload-mockup+gulp.md
 │   │   ├── mocking-backend -API.md
 │   │   └── node+express创建服务器.md
-│   │
 │   ├── NgRx
 │   │   ├── Angular NgRx Getting started/
 │   │   │     ├── Demo-1/
@@ -44,7 +46,6 @@
 │   │   │   └── readme.md
 │   │   ├── Tips-use-rxjs-in-Angular.md
 │   │   └──
-│   │
 │   ├── RxJs
 │   │   ├── RxJS in Angular-Reactive Development-Deborah Kurata/
 │   │   │   └── readme.md
@@ -53,17 +54,9 @@
 │   │   ├── RxJS笔记之Subject.md
 │   │   ├── RxJS笔记之switchMap, concatMap, mergeMap和exhaustMap.md
 │   │   └── 
-│   │
-│   ├── Unit-Test/
-│   │   ├── Unit Testing in Angular Course -Joe Eames/
-│   │   ├── NgRx-test-sample.md
-│   │   ├── wallaby-setup.md
-│   │   └── 
-│   │
 │   ├── animation/
 │   │   ├── Angular学习笔记之Animation- Working with Angular Animations/
 │   │   └── 
-
 │   ├── Sample/
 │   │   ├── angular-bootstrap/
 │   │   │    ├── use user-defined directive in Tooltips.md
@@ -80,7 +73,6 @@
 │   │   ├──  todo-app.rar
 │   │   ├──  案例之星级评价.md
 │   │   └──  
-│   │
 │   ├── study-sample
 │   │   ├── Angular Fundamentals- Jim Cooper/
 │   │   │   ├── myEventFundamentals/ 
@@ -95,13 +87,6 @@
 │   │   │   ├── Angular component commnication- Deborah Kurata/
 │   │   ├── Building Your First App with Spring Boot and Angular- Dan Bunker/
 │   │   ├── DaMo-Angular Workshop/
-│   │   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
-│   │   │   │   ├── codeFinished/ 
-│   │   │   ├── codeInit/
-│   │   │   ├── codePreparedFinished/
-│   │   │   ├── Migration from AngularJS 1.x to Angular 2+.zip
-│   │   │   ├── Preparing for Migration from AngularJS (1.x) to Angular (2+).zip
-│   │   │   └── prepare.md
 │   │   ├── communication/
 │   │   │   ├── brother/ 
 │   │   │   ├── local-storage/
@@ -112,7 +97,16 @@
 │   │   ├── 可复用的全局设置- Paul D. Sheriff.md
 │   │   ├── 大漠的Angular Workshop.md
 │   │   └── 
-│   │ 
+│   ├── Testing/
+│   │   ├── E2E Test/
+│   │   │   ├── Learn Protractor(Angular Testing) from scratch+Framework - Udemy/
+│   │   │   ├── tsconfig.sample.js
+│   │   │   └── 
+│   │   ├── Unit-Test/
+│   │   │   ├── Unit Testing in Angular Course -Joe Eames/
+│   │   │   ├── NgRx-test-sample.md
+│   │   │   ├── wallaby-setup.md
+│   │   │   └── 
 │   ├── Angular CLI的使用(new).md     #useful
 │   ├── Angular_CLI的使用.md           
 │   ├── Angular2+Accessibility.md
