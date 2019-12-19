@@ -4,6 +4,10 @@
 - [Setup and building step](#setup-and-building-step)
 - [Cucumber HTML reporter 5+ and Cucumber 6+](#cucumber-html-reporter-5-and-cucumber-6)
 
+------------------------------------
+
+**[config file sample - protractor.conf.js](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Testing/E2E%20Test/protractor-cucumber.conf.js)**
+
 ## Structure of test files(cucumber)
 
 ```shell
