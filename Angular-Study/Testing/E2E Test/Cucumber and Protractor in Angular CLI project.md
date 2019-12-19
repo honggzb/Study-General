@@ -1,5 +1,6 @@
 [Cucumber and Protractor in Angular CLI project](#top)
 
+- [Gherkin](#Gherkin)
 - [Structure of test files(cucumber)](#structure-of-test-filescucumber)
 - [Setup and building step](#setup-and-building-step)
 - [Cucumber HTML reporter 5+ and Cucumber 6+](#cucumber-html-reporter-5-and-cucumber-6)
@@ -7,6 +8,31 @@
 ------------------------------------
 
 **[config file sample - protractor.conf.js](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Testing/E2E%20Test/protractor-cucumber.conf.js)**
+
+## Gherkin
+
+**concept**
+
+- Gherkin is the format for Cucumber specification
+- https://cucumber.io/docs/gherkin/
+
+**Gherkin Syntax**
+
+- https://cucumber.io/docs/gherkin/reference/
+  - Feature
+  - Background
+  - Scenario
+  - Given
+  - When
+  - Then
+  - And
+  - But
+  - Scenario outline
+  - Examples
+  - Scenario Templates
+- ![](https://i.imgur.com/NgcTgHD.png)
+
+[back to top](#top)
 
 ## Structure of test files(cucumber)
 
