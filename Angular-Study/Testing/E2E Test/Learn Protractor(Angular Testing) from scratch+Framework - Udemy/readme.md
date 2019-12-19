@@ -3,23 +3,28 @@
 - [Overview](#overview)
 - [Protractor setup](#protractor-setup)
   - [VS code Setup](#vs-code-setup)
+  - [lifecycle hooks and the order they are triggered in configuration file](#lifecycle-hooks-and-the-order-they-are-triggered-in-configuration-file)
   - [configuration file for debuging async/await](#configuration-file-for-debuging-asyncawait)
   - [Eclipse Setup](#eclipse-setup)
   - [Multi-browser support](#multi-browser-support)
+- [Angular CLI Protractor setup](#angular-cli-protractor-setup)
 - [Jasmine Terminology](#jasmine-terminology)
 - [Protractor Global Variables](#protractor-global-variables)
 - [Practical usages](#practical-usages)
   - [General usages](#general-usages)
   - [Realtime Angular Test Sample](#realtime-angular-test-sample)
 - [Page object Mechanism for Protractor tests](#page-object-mechanism-for-protractor-tests)
-  - [define as object](#define-as-object)
-  - [define as class](#define-as-class)
+  - [Page Object Model(POM) - define as object](#page-object-modelpom---define-as-object)
+  - [Define as class(POM)](#define-as-classpom)
   - [define using async / await](#define-using-async--await)
 - [jasmine-data-provider](#jasmine-data-provider)
 - [Jenkins Protractor Integration](#jenkins-protractor-integration)
-- [Typescript and Protractor](#typescript-and-protractor)
-  - [Setup Typescript](#setup-typescript)
-  - [cucumber](#cucumber)
+- [Jasmine and Protractor in Angular CLI project](#jasmine-and-protractor-in-angular-cli-project)
+  - [Setup for Non-Angular CLI Project](#setup-for-non-angular-cli-project)
+  - [Typescript and Cucumber in Angular CLI project](#typescript-and-cucumber-in-angular-cli-project)
+  - [Gherkin](#gherkin)
+  - [Cucumber in Angular CLI project](#cucumber-in-angular-cli-project)
+- [Debug](#debug)
 - [踩过的坑](#%e8%b8%a9%e8%bf%87%e7%9a%84%e5%9d%91)
 
 ## Overview
@@ -83,6 +88,25 @@ exports.config = {
 - `protractor conf.js` general command
 - `protractor protractor.conf.js --suite homepage` or `protractor protractor.conf.js --suite homepage,search` if there is suites in conf.js
 
+###  lifecycle hooks and the order they are triggered in configuration file
+
+```
+--- beforeLaunch
+    --- onPrepare          (set in conf) ***reporters initialized here
+      --- jasmineStarted   (set in reporter)
+        --- beforeAll
+         --- suiteStarted  (set in reporter)
+          --- specStarted  (set in reporter)
+           --- beforeEach  (set in testFile)
+           +++ afterEach   (set in testFile)
+          +++ specDone     (set in reporter)
+         +++ suiteDone     (set in reporter)
+        +++ afterAll
+      +++ jasmineDone      (set in reporter)
+    +++ onComplete         (set in conf)
++++ afterLaunch
+```
+
 ### configuration file for debuging async/await
 
 - https://github.com/angular/protractor/blob/master/docs/async-await.md
@@ -128,6 +152,22 @@ exports.config = {
   4. Navigate to Privacy tab TurnOff PopUp Blocker
   5. Navigate to Advanced tab
   - ![](https://i.imgur.com/7xssVIf.png)
+
+[back to top](#top)
+
+## Angular CLI Protractor setup
+
+1. `ng new projectName`
+   1. the Angular CLI sets up everything you need for End-to-end testing using **Protractor** and **Jasmine.**
+2. It will create the following files automatically
+   1. 'e2e/src/app.po.ts'
+   2. 'e2e/src/app.e2e-spec.ts'
+   3. 'e2e/protractor.conf.js'
+   4. 'e2e/tsconfig.json'
+3. `ng e2e` to execute e2e testing
+4. add testing report
+   1. install library, `npm i --save-dev protractor-jasmine2-html-reporter`
+   2. modify protractor.conf.js, `jasmine.getEnv().addReporter( new Jasmine2HtmlReporter({ savePath: 'e2e/target/screenshots' }) );`
 
 [back to top](#top)
 
@@ -200,7 +240,7 @@ exports.config = {
 - One file, one page object class
 - Deal with JavaScript’s asynchronous behavior using async & await
 
-### define as object
+### Page Object Model(POM) - define as object
 
 ```javascript
 //toDoPage.js- define Page Objects
@@ -234,7 +274,11 @@ describe('Protractor Test', function() {
 });
 ```
 
-### define as class
+### Define as class(POM)
+
+- create a class for each page
+- will have handle of each page using ites instance
+- establish the relation between each pages directly in code, so that performing an operation in one page will return another page(which is expected) can be maintained in POM
 
 ```javascript
 var AngularHomepage = function() {
@@ -328,19 +372,28 @@ npm run test
 
 [back to top](#top)
 
-## Typescript and Protractor
+## Jasmine and Protractor in Angular CLI project
 
 - refer to https://github.com/angular/protractor/tree/5.4.1/exampleTypescript
 
-### Setup Typescript
+### Setup for Non-Angular CLI Project
 
 - Protractor also uses ambient types including jasmine, jasminewd2, and node
   - `npm i --save typescript @types/jasmine @types/jasminewd2 ts-node`
+  - JasmineWd is adapter for Jasmine-to-WebdriverJS, which is used by protractor
+  - JasmineWd features
+    - automatically makes tests asynchronously wait util the webDriverJS control flow is empty
+    - If a done function is passed to the test, waits for both the control flow and until done is called
+    - If a test returns a promise, waits for both the control flow and the promise to resolve
+    - Enhances expect so that it automatically unwraps promises before performing the assertion
 - create file 'tsconfig.json'
 - add 'beforelaunch' to 'conf.js'
+- run `tsc -w` for transpiling typescripts to JS
+- run `webdriver-manager start` to run selenium server
+- `protractor start` to run test
 
 ```javascript
-//tsconfig.json
+//e2e/tsconfig.json
 {
     "compilerOptions": {
         "module": "commonjs",
@@ -369,13 +422,16 @@ exports.config = {
     }
 ```
 
-### cucumber
+[back to top](#top)
 
-- `npm install --save-dev cucumber`
+### Typescript and Cucumber in Angular CLI project
+
+- `npm install --save-dev cucumber @type/cucumber`
 - `npm install --save-dev protractor-cucumber-framework`
 
 ```javascript
 /*
+conf.js
 Basic configuration to run your cucumber
 feature files and step definitions with protractor.
 **/
@@ -405,6 +461,63 @@ exports.config = {
 };
 ```
 
+- [Detail](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Testing/E2E%20Test/Cucumber%20and%20Protractor%20in%20Angular%20CLI%20project.md)
+
+[back to top](#top)
+
+### Gherkin
+
+**concept**
+
+- Gherkin is the format for Cucumber specification
+- https://cucumber.io/docs/gherkin/
+
+**Gherkin Syntax**
+
+- https://cucumber.io/docs/gherkin/reference/
+  - Feature
+  - Background
+  - Scenario
+  - Given
+  - When
+  - Then
+  - And
+  - But
+  - Scenario outline
+  - Examples
+  - Scenario Templates
+- ![](https://i.imgur.com/NgcTgHD.png)
+
+[back to top](#top)
+
+### Cucumber in Angular CLI project
+
+## Debug
+
+- Using protractor debugger `browser.debugger()`
+- Using Editor(VS code)- https://code.visualstudio.com/docs/editor/debugging
+  - Open Debug(ctrl+shift+D)
+  - ![](https://i.imgur.com/acVFAq4.png)
+- **Note:** To debug node js on vs-code two extensions are required.
+  - Node Debug
+  - Node Debug(legacy)
+
+```javascript
+//lauch.json for angular CLI project
+"configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Protractor",
+            "program": "${workspaceFolder}/examples/node_modules/protractor/bin/protractor",
+            "args": ["${workspaceFolder}/examples/e2e/protractor.conf.js"],
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        }
+    ]
+```
+
 [back to top](#top)
 
 ## 踩过的坑
@@ -423,18 +536,14 @@ exports.config = {
 - [Table of Contents-Protractor](http://www.protractortest.org/#/toc)
 - [protractor docs](https://github.com/angular/protractor/tree/master/docs)
 - [Protractor Tutorial](http://www.protractortest.org/#/tutorial)
+- [15 Best Practices for Building an Efficient Protractor Automation Framework](https://www.logigear.com/blog/test-automation/15-best-practices-for-building-an-awesome-protractor-framework/)
 - [Jasmine](https://jasmine.github.io/)
 - [Cucumber](https://cucumber.io/)
 - [Eclipse IDE for JavaScript and Web Developers](https://www.eclipse.org/downloads/packages/release/2019-09/r/eclipse-ide-web-and-javascript-developers-includes-incubating-components)
 - [protractor自动化测试注意事项](https://blog.csdn.net/weixin_39430584/article/details/86677486)
-- https://cucumber.io/
-
-
-
 
 
 =============================================
-
 
 
 - https://www.devopsroles.com/jenkins-build-periodically-parameters/
