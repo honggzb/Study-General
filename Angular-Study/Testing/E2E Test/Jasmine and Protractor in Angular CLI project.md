@@ -1,4 +1,4 @@
-[config file](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Testing/E2E%20Test/protractor-jasmine.conf.js)
+**[config file sample -protractor.conf.js](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Testing/E2E%20Test/protractor-jasmine.conf.js)**
 
 ## Test file structure
 
