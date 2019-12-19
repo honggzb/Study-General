@@ -19,10 +19,12 @@
   - [define using async / await](#define-using-async--await)
 - [jasmine-data-provider](#jasmine-data-provider)
 - [Jenkins Protractor Integration](#jenkins-protractor-integration)
-- [Jasmine and Protractor in Angular CLI project](#jasmine-and-protractor-in-angular-cli-project)
+- [Jasmine and Protractor](#jasmine-and-protractor)
   - [Setup for Non-Angular CLI Project](#setup-for-non-angular-cli-project)
   - [Typescript and Cucumber in Angular CLI project](#typescript-and-cucumber-in-angular-cli-project)
+- [Typescript and Cucumber](#typescript-and-cucumber)
   - [Gherkin](#gherkin)
+  - [Setup](#setup)
   - [Cucumber in Angular CLI project](#cucumber-in-angular-cli-project)
 - [Debug](#debug)
 - [踩过的坑](#%e8%b8%a9%e8%bf%87%e7%9a%84%e5%9d%91)
@@ -372,7 +374,7 @@ npm run test
 
 [back to top](#top)
 
-## Jasmine and Protractor in Angular CLI project
+## Jasmine and Protractor
 
 - refer to https://github.com/angular/protractor/tree/5.4.1/exampleTypescript
 
@@ -422,9 +424,40 @@ exports.config = {
     }
 ```
 
+### Typescript and Cucumber in Angular CLI project
+
+refer to [Jasmine and Protractor in Angular CLI](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Testing/E2E%20Test/Jasmine%20and%20Protractor%20in%20Angular%20CLI%20project.md)
+
 [back to top](#top)
 
-### Typescript and Cucumber in Angular CLI project
+## Typescript and Cucumber
+
+### Gherkin
+
+**concept**
+
+- Gherkin is the format for Cucumber specification
+- https://cucumber.io/docs/gherkin/
+
+**Gherkin Syntax**
+
+- https://cucumber.io/docs/gherkin/reference/
+  - Feature
+  - Background
+  - Scenario
+  - Given
+  - When
+  - Then
+  - And
+  - But
+  - Scenario outline
+  - Examples
+  - Scenario Templates
+- ![](https://i.imgur.com/NgcTgHD.png)
+
+[back to top](#top)
+
+### Setup
 
 - `npm install --save-dev cucumber @type/cucumber`
 - `npm install --save-dev protractor-cucumber-framework`
@@ -461,36 +494,11 @@ exports.config = {
 };
 ```
 
-- [Detail](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Testing/E2E%20Test/Cucumber%20and%20Protractor%20in%20Angular%20CLI%20project.md)
-
-[back to top](#top)
-
-### Gherkin
-
-**concept**
-
-- Gherkin is the format for Cucumber specification
-- https://cucumber.io/docs/gherkin/
-
-**Gherkin Syntax**
-
-- https://cucumber.io/docs/gherkin/reference/
-  - Feature
-  - Background
-  - Scenario
-  - Given
-  - When
-  - Then
-  - And
-  - But
-  - Scenario outline
-  - Examples
-  - Scenario Templates
-- ![](https://i.imgur.com/NgcTgHD.png)
-
-[back to top](#top)
-
 ### Cucumber in Angular CLI project
+
+refer to [Jasmine and Protractor in Angular CLI project](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Testing/E2E%20Test/Cucumber%20and%20Protractor%20in%20Angular%20CLI%20project.md)]
+
+[back to top](#top)
 
 ## Debug
 
