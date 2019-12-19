@@ -1,5 +1,9 @@
 [Cucumber and Protractor in Angular CLI project](#top)
 
+- [Structure of test files(cucumber)](#structure-of-test-filescucumber)
+- [Setup and building step](#setup-and-building-step)
+- [Cucumber HTML reporter 5+ and Cucumber 6+](#cucumber-html-reporter-5-and-cucumber-6)
+
 ## Structure of test files(cucumber)
 
 ```shell
@@ -25,7 +29,7 @@
 │   │   └── tsconfig.json
 ```
 
-## setup
+## Setup and building step
 
 1. Install libraries
   - `npm install --save-dev cucumber chai protractor-cucumber-framework chai-as-promised @types/cucumber @types/chai`
@@ -74,7 +78,6 @@ onPrepare() {
    2. The Page Object - such like `e2e/src/pages/app.po.ts`
    3. The Step Definition - such like `e2e/src/steps/app.steps.ts`
 5. Launch the Tests: `ng e2e`
-6. How to Set Up Angular E2E Testing with Cucumber](https://www.amadousall.com/angular-e2e-with-cucumber/)
 
 ## Cucumber HTML reporter 5+ and Cucumber 6+
 
@@ -86,7 +89,6 @@ onPrepare() {
   - 'foundation' 基金会主题报告
   - 'simple'     简单主题报告
 - [cucumber-html-reporter, 在三个不同的主题中，生成 Cucumber HTML报告])(https://www.helplib.com/GitHub/article_141521)
-- ![](https://i.imgur.com/09LLGLC.png)
 
 ```javascript
 //e2e/protractor.conf.js
@@ -131,3 +133,7 @@ onComplete: () => {
 
 [back to top](#top)
 
+> other
+- Upgrading
+  - ![](https://i.imgur.com/09LLGLC.png)
+- [How to Set Up Angular E2E Testing with Cucumber](https://www.amadousall.com/angular-e2e-with-cucumber/)
