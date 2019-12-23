@@ -46,19 +46,20 @@ ng build my-app -c production
 - **Sample**: `ng new myApp -dstS --routing --style scss --prefix qh`
 - some flags change the configuration in angular.json
 
-OPTION| short|DESCRIPTION
----|---|---
-`ng new --help`||
-`ng new myApp --defaults`||When true, disables interactive input prompts for options with a default
-`ng new myApp --dryRun`	|`ng new myApp -d`|Don't write the files, but report them, good for checking before generate
-`ng new ngtest --skip-install`||generate without runnign npm install
-`ng new ngtest --inline-style`|`ng new ngtest -s`|includes style inline in the component TS file
-`ng new ngtest --inline-template`|`ng new ngtest -t`|includes template inline in the component TS file
-`ng new ngtest --routing`||generate routing module, app-routing.module.ts
-`ng new ngtest --style scss`||
-`ng new ngtest --prefix qh`|`ng new ngtest -p qh`| change `selector: 'app-root',` `app` to user-defined prefix
-`ng new ngtest --skip-tests`|`ng new ngtest -S`|
-`ng new ngtest --skip-git`|`ng new ngtest -g`| don't add the project to git
+```
+---------OPTION------------------|---short-------------|---------------------------------------------------------------
+ng new --help                    |                     |
+ng new myApp --defaults          |                     |When true, disables interactive input prompts for options with a default
+ng new myApp --dryRun	         |ng new myApp -d      |Don't write the files, but report them, good for checking before generate
+ng new ngtest --skip-install     |                     |generate without runnign npm install
+ng new ngtest --inline-styl      |ng new ngtest -s     |includes style inline in the component TS file
+ng new ngtest --inline-template  |ng new ngtest -t     |includes template inline in the component TS file
+ng new ngtest --routing          |                     |generate routing module, app-routing.module.ts
+ng new ngtest --style scss       |                     |
+ng new ngtest --prefix qh        |ng new ngtest -p qh  | change selector: 'app-root', app to user-defined prefix
+ng new ngtest --skip-tests       |ng new ngtest -S     |
+ng new ngtest --skip-git         |ng new ngtest -g     | don't add the project to git
+```
 
 [back to top](#top)
 
