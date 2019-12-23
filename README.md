@@ -161,15 +161,23 @@
 │   │   ├── 大漠的Angular Workshop.md
 │   │   └── 
 │   ├── Testing/
-│   │   ├── E2E Test/
-│   │   │   ├── Learn Protractor(Angular Testing) from scratch+Framework - Udemy/
+│   │   ├── E2E Test/ 
+│   │   │   ├── Cucumber+AngularCLI project/                                         ## angular8 CLI project
+│   │   │   ├── Learn Protractor(Angular Testing) from scratch+Framework - Udemy/    ## General non-angularCLI8 project
+│   │   │   ├── Angular 2_WithScreenshot.zip                                         ## General non-angularCLI2 project
+│   │   │   ├── Cucumber+Protractor Tidbits.md
+│   │   │   ├── Cucumber and Protractor in Angular CLI project.md
+│   │   │   ├── Jasmine and Protractor in Angular CLI project.md
+│   │   │   ├── protractor-cucumber.conf.js
+│   │   │   ├── protractor-jasmine.conf.js
 │   │   │   ├── tsconfig.sample.js
+│   │   │   └── 
+│   │   ├── Unit-Test/
+│   │   │   ├── Unit Testing in Angular Course -Joe Eames/
+│   │   │   ├── NgRx-test-sample.md
+│   │   │   ├── wallaby-setup.md
 │   │   │   └── 
-│   │   └── Unit-Test/
-│   │       ├── Unit Testing in Angular Course -Joe Eames/
-│   │       ├── NgRx-test-sample.md
-│   │       ├── wallaby-setup.md
-│   │       └── 
+│   │   └── readme.md
 │   ├── Angular CLI的使用(new).md     #useful
 │   ├── Angular_CLI的使用.md           
 │   ├── Angular2+Accessibility.md
