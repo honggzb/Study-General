@@ -108,6 +108,7 @@ options|Alias| Description
 - `ng g p models/person -m app.module`   -create pipe and add to app.module.ts
 - `ng g m login --spec false -m app.module`   -create module and add to app.module.ts
 - `ng g s products/product-parameter -m products/product.module`   -**create service and automatically register to product.module**
+- `ng g c lib/au-md-input --module=lib/au-input`
 
 [back to top](#top)
 
