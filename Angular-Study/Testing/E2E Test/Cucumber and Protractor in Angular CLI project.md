@@ -164,7 +164,6 @@ onComplete: () => {
 [back to top](#top)
 
 > other
-- Upgrading
-  - ![](https://i.imgur.com/09LLGLC.png)
+- https://github.com/ahasall/angular-cucumber-demo
 - [How to Set Up Angular E2E Testing with Cucumber](https://www.amadousall.com/angular-e2e-with-cucumber/)
 - https://cucumber.io/
