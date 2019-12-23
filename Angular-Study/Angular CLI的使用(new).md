@@ -285,9 +285,19 @@ npm install bootstrap font-awesome toastr jquery --save
 
 ### Change css to SCSS for existing projects
 
-1. `ng config defaults.styleExt=scss`
+1. `ng config defaults.styleExt=scss`   - for angular 2
   - if get an error 'Value cannot be found.'
-  - `ng config schematics.@schematics/angular:component.styleext scss`
+  - `ng config schematics.@schematics/angular:component.styleext scss`  -for angular 6+
+  - change angular.json
+  
+```javascript
+"schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+},
+```
+
 2. Rename your existing .css files to .scss
 3. Point the CLI to find styles.scss in angular.json
 4. Change the styleUrls in your components to match your new file names
