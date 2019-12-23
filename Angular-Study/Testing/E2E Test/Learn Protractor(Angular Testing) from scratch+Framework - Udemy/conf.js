@@ -4,7 +4,7 @@ exports.config = {
     directConnect: true,
     framework: 'jasmine',
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['tttt.spec.js'],
+    specs: ['./src/dropdown.spec.js'],
     // suites: {
     //     homepage: '*.spec.js',
     //     // search: ['tests/e2e/contact_search/**/*Spec.js',

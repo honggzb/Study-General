@@ -1,0 +1,23 @@
+<div class="row bg-dark">
+  <div class="col-md-12">
+    <img [src]="course?.imageurl" [alt]="course?.Name" class="course-image">
+  </div>
+  <div class="col-md-12">
+    <h2>{{course?.Name}} </h2>
+  </div>
+
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <div><strong>Release Date:</strong> {{course?.ReleaseDate}}</div>
+      <div><strong>Duration:</strong> {{course?.Duration}}</div>
+      <div><strong>Level:</strong> {{course?.Level}}</div>
+    </div>
+    <!--<div class="col-md-6">
+      <address>
+        <strong>Address:</strong><br />
+        {{event?.location?.address}}<br />
+        {{event?.location?.city}}, {{event?.location?.country}}
+      </address>
+    </div>-->
+    <!--</div>-->
+  </div>

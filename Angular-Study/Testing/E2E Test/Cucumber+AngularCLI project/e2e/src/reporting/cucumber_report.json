@@ -1,0 +1,259 @@
+[
+  {
+    "description": "    As a user\n    I want to visit the homepage\n    So that I can see all course information",
+    "keyword": "Feature",
+    "name": "To work with app home page",
+    "line": 1,
+    "id": "to-work-with-app-home-page",
+    "tags": [],
+    "uri": "e2e\\src\\features\\app.feature",
+    "elements": [
+      {
+        "id": "to-work-with-app-home-page;app-page",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "App Page",
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 6
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I navigate to application",
+            "match": {
+              "location": "e2e\\src\\steps\\app.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1713000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I get the heading",
+            "match": {
+              "location": "e2e\\src\\steps\\app.steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 48000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Courses",
+                      "Duration"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Selenium",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Java",
+                      "3"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I should see all course information in Home page",
+            "match": {
+              "location": "e2e\\src\\steps\\app.steps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click the 'Selenium Framework development' course",
+            "match": {
+              "location": "e2e\\src\\steps\\app.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 126000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "I should see 'Selenium Framework development' course in courseDetails page",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "to-work-with-app-home-page;search-for-course-from-external-datasource",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Search for course from External DataSource",
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 17
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "I navigate to application",
+            "match": {
+              "location": "e2e\\src\\steps\\app.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1109000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I enter text in search from external data source",
+            "match": {
+              "location": "e2e\\src\\steps\\app.steps.ts:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 77000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I get the heading",
+            "match": {
+              "location": "e2e\\src\\steps\\app.steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 60000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "To work with Course Detail page",
+    "line": 1,
+    "id": "to-work-with-course-detail-page",
+    "tags": [],
+    "uri": "e2e\\src\\features\\CourseDetail.feature",
+    "elements": [
+      {
+        "id": "to-work-with-course-detail-page;click-course-details-of-application",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Click Course details of application",
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 3
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "I get the heading",
+            "match": {
+              "location": "e2e\\src\\steps\\app.steps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I click the 'Selenium Framework development' course",
+            "match": {
+              "location": "e2e\\src\\steps\\app.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 111000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should see 'Selenium Framework development' course in courseDetails page",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

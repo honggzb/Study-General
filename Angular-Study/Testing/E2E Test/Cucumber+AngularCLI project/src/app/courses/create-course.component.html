@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-11">
+      <h2>Create New Course </h2>
+    </div>
+  </div>
+  <hr/>
+  <form>
+    <div class="form-group">
+      <label for="CourseName">CourseName: </label>
+      <input type="text" class="form-control" id="name" required minlength="4" maxlength="20" name="name">
+
+      <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+        <div [hidden]="!name.errors.required">
+          Course name is required
+        </div>
+        <div [hidden]="!name.errors.minlength">
+          Course Name must be at least 4 characters long.
+        </div>
+        <div [hidden]="!name.errors.maxlength">
+          Course Name cannot be more than 20 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Duration">Duration: </label>
+      <input type="text" class="form-control" id="duration">
+    </div>
+    <div class="form-group">
+      <label for="level">Level: </label>
+      <select id="level">
+        <option *ngFor="let level of levels" [value]="level">{{level}} </option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
