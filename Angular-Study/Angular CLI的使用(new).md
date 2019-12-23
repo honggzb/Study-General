@@ -47,7 +47,8 @@ ng build my-app -c production
 - some flags change the configuration in angular.json
 
 ```
----------OPTION------------------|---short-------------|---------------------------------------------------------------
+           OPTION                |     short           | 
+---------------------------------|---------------------|------------------------------------------------------------------------
 ng new --help                    |                     |
 ng new myApp --defaults          |                     |When true, disables interactive input prompts for options with a default
 ng new myApp --dryRun	         |ng new myApp -d      |Don't write the files, but report them, good for checking before generate
@@ -164,6 +165,7 @@ const routes: Routes = [
 
 ```
   File          |  Description
+----------------|----------------------------------------------
 runtime.js      | Webpack runtime
 main.js         | App code
 polyfills.js    | Platform polyfills(浏览器的Pollyfills)
