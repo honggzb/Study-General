@@ -53,11 +53,10 @@ ng new --help                    |                     |
 ng new myApp --defaults          |                     |When true, disables interactive input prompts for options with a default
 ng new myApp --dryRun	         |ng new myApp -d      |Don't write the files, but report them, good for checking before generate
 ng new ngtest --skip-install     |                     |generate without runnign npm install
-ng new ngtest --inline-styl      |ng new ngtest -s     |includes style inline in the component TS file
 ng new ngtest --inline-template  |ng new ngtest -t     |includes template inline in the component TS file
-ng new ngtest --routing          |                     |generate routing module, app-routing.module.ts
-ng new ngtest --style scss       |                     |
-ng new ngtest --prefix qh        |ng new ngtest -p qh  | change selector: 'app-root', app to user-defined prefix
+ng new ngtest --routing          |                     |generate routing module, app-routing.module.ts, 表示新增带有路由信息的模块，并添加到根模块中
+ng new ngtest --style scss       |                     |默认为 'css', 用于设置选用的样式语法 ('css', 'less' or 'scss')
+ng new ngtest --prefix qh        |ng new ngtest -p qh  |默认为 'app', 用于设置创建新组件时，组件选择器使用的前缀
 ng new ngtest --skip-tests       |ng new ngtest -S     |
 ng new ngtest --skip-git         |ng new ngtest -g     | don't add the project to git
 ```
@@ -95,7 +94,12 @@ options|Alias| Description
 --spec||generate a spec?
 --view-encapsulation|-v|view encapsulation strategy
 --change-detection|-c|change detection strategy
---dry-run|-d|
+--dry-run|-d|不会创建任何文件, 用于测试创建文件是否正确
+--link-cli||默认为 false, 自动链接到 @angular/cli包
+--skip-install||默认为 false, 表示跳过 npm install
+--skip-git||默认为 false, 表示该目录不初始化为 git 仓库
+--skip-tests||默认为 false, 表示不创建 tests 相关文件
+--skip-commit||默认为 false, 表示不进行初始提交
 
 **Sample**:
 
