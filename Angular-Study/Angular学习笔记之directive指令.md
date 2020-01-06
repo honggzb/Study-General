@@ -1,7 +1,7 @@
 [Angular学习笔记之directive指令](#top)
 
 - [Angular的指令分类](#angular%e7%9a%84%e6%8c%87%e4%bb%a4%e5%88%86%e7%b1%bb)
-- [补充-host element(宿主元素)](#%e8%a1%a5%e5%85%85-host-element%e5%ae%bf%e4%b8%bb%e5%85%83%e7%b4%a0)
+- [补充：host element(宿主元素)](#%e8%a1%a5%e5%85%85host-element%e5%ae%bf%e4%b8%bb%e5%85%83%e7%b4%a0)
   - [宿主元素事件监听-HostListener装饰器](#%e5%ae%bf%e4%b8%bb%e5%85%83%e7%b4%a0%e4%ba%8b%e4%bb%b6%e7%9b%91%e5%90%ac-hostlistener%e8%a3%85%e9%a5%b0%e5%99%a8)
   - [动态设置宿主元素的属性值-HostBinding属性装饰器](#%e5%8a%a8%e6%80%81%e8%ae%be%e7%bd%ae%e5%ae%bf%e4%b8%bb%e5%85%83%e7%b4%a0%e7%9a%84%e5%b1%9e%e6%80%a7%e5%80%bc-hostbinding%e5%b1%9e%e6%80%a7%e8%a3%85%e9%a5%b0%e5%99%a8)
   - [获取宿主元素属性值](#%e8%8e%b7%e5%8f%96%e5%ae%bf%e4%b8%bb%e5%85%83%e7%b4%a0%e5%b1%9e%e6%80%a7%e5%80%bc)
@@ -24,7 +24,7 @@ Angular的指令分为三种：
 - **指令与组件的关系:** 组件继承于指令，并扩展了与UI视图相关的属性，如 template、styles、animations、encapsulation 等
 - ![](https://i.imgur.com/55yObif.png)
 
-## 补充-host element(宿主元素)
+## 补充：host element(宿主元素)
 
 - host element(宿主元素): 应用指令的元素，就是宿主元素
 
