@@ -1,7 +1,7 @@
 [Angular学习笔记之模板ng-template, ng-content, ng-container and ngTemplateOutlet](#top)
 
 - [ng-template](#ng-template)
-  - [借助其他结构型指令如×ngIf，来显示ng-template的内容](#%e5%80%9f%e5%8a%a9%e5%85%b6%e4%bb%96%e7%bb%93%e6%9e%84%e5%9e%8b%e6%8c%87%e4%bb%a4%e5%a6%82%c3%97ngif%e6%9d%a5%e6%98%be%e7%a4%bang-template%e7%9a%84%e5%86%85%e5%ae%b9)
+  - [借助其他结构型指令如ngIf，来显示ng-template的内容](#%e5%80%9f%e5%8a%a9%e5%85%b6%e4%bb%96%e7%bb%93%e6%9e%84%e5%9e%8b%e6%8c%87%e4%bb%a4%e5%a6%82ngif%e6%9d%a5%e6%98%be%e7%a4%bang-template%e7%9a%84%e5%86%85%e5%ae%b9)
   - [通过TemplateRef、ViewContainerRef把ng-template对应的元素显示出来](#%e9%80%9a%e8%bf%87templaterefviewcontainerref%e6%8a%8ang-template%e5%af%b9%e5%ba%94%e7%9a%84%e5%85%83%e7%b4%a0%e6%98%be%e7%a4%ba%e5%87%ba%e6%9d%a5)
   - [通过NgTemplateOutlet指令来显示已有的ng-template对应的视图](#%e9%80%9a%e8%bf%87ngtemplateoutlet%e6%8c%87%e4%bb%a4%e6%9d%a5%e6%98%be%e7%a4%ba%e5%b7%b2%e6%9c%89%e7%9a%84ng-template%e5%af%b9%e5%ba%94%e7%9a%84%e8%a7%86%e5%9b%be)
   - [通过ng-container来显示已有的ng-template对应的视图](#%e9%80%9a%e8%bf%87ng-container%e6%9d%a5%e6%98%be%e7%a4%ba%e5%b7%b2%e6%9c%89%e7%9a%84ng-template%e5%af%b9%e5%ba%94%e7%9a%84%e8%a7%86%e5%9b%be)
@@ -12,15 +12,16 @@
 - [Demo of using ng-conent- icon input](#demo-of-using-ng-conent--icon-input)
   - [style projected content](#style-projected-content)
   - [interact with projected content](#interact-with-projected-content)
-- [*ngTemplateOutlet](#ngtemplateoutlet)
+- [ngTemplateOutlet](#ngtemplateoutlet)
 
 ## ng-template
 
-- `ng-template`是一个默认隐藏的元素
--  `ng-template`是Angular结构型指令中的一种，用于定义模板渲染HTML(模板加载)。定义的模板不会直接显示出来，需要通过其他结构型指令（如`ng-if`）或`template-ref`将模块内容渲染到页面中
+- `ng-template`是一个默认隐藏的元素,用来定义模板的, 其本身是不渲染
+- `ng-template`是Angular结构型指令中的一种，用于定义模板渲染HTML(模板加载)。定义的模板不会直接显示出来，需要通过其他结构型指令（如`ng-if`）或`template-ref`将模块内容渲染到页面中， 或用`ng-container`和`templateOutlet`指令来进行使用
+- ng-template在编写高定制性的组件时非常有用。可以把需要定制的内容作为模板传到组件中
 - 通常将它当作一个嵌入式的模版, 通过`ViewChild`获取它的一个实例
 
-### 借助其他结构型指令如×ngIf，来显示ng-template的内容
+### 借助其他结构型指令如ngIf，来显示ng-template的内容
 
 ```html
 <div class="lessons-list" *ngIf="condition else elseTemplate">
@@ -142,6 +143,7 @@ export class NgContainerComponent {
     list = ['1号位置', '2号位置', '3号位置', '4号位置', '5号位置', '6号位置', '7号位置', '8号位置', '9号位置'];
 }
 ```
+
 [back to top](#top)
 
 ## ng-content
@@ -188,7 +190,7 @@ export class ContentSectionComponent {
 </app-content-section>
 ```
 
-通过使用 ngProjectAs 让ng-content的内容能正确的投射过来。
+通过使用`ngProjectAs`(work with`<ng-container>`)让ng-content的内容能正确的投射过来。
 
 ```html
 <app-content-section>
@@ -352,11 +354,10 @@ export class AuMdInputComponent implements AfterContentInit {
 
 > https://github.com/angular-university/au-input
 
-## *ngTemplateOutlet
+## ngTemplateOutlet
 
 [back to top](#top)
 
-> References
 - [<ng-template>, <ng-content>, <ng-container> and *ngTemplateOutlet in Angular](https://medium.freecodecamp.org/everything-you-need-to-know-about-ng-template-ng-content-ng-container-and-ngtemplateoutlet-4b7b51223691)
 - [ng-template、ng-content、ng-container](https://www.jianshu.com/p/0f5332f2bbf8)
 - [Angular ng-template, ng-container and ngTemplateOutlet - The Complete Guide To Angular Templates](https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/)
