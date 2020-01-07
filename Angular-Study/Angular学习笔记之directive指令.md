@@ -5,7 +5,7 @@
   - [宿主元素事件监听-HostListener装饰器](#%e5%ae%bf%e4%b8%bb%e5%85%83%e7%b4%a0%e4%ba%8b%e4%bb%b6%e7%9b%91%e5%90%ac-hostlistener%e8%a3%85%e9%a5%b0%e5%99%a8)
   - [动态设置宿主元素的属性值-HostBinding属性装饰器](#%e5%8a%a8%e6%80%81%e8%ae%be%e7%bd%ae%e5%ae%bf%e4%b8%bb%e5%85%83%e7%b4%a0%e7%9a%84%e5%b1%9e%e6%80%a7%e5%80%bc-hostbinding%e5%b1%9e%e6%80%a7%e8%a3%85%e9%a5%b0%e5%99%a8)
   - [获取宿主元素属性值](#%e8%8e%b7%e5%8f%96%e5%ae%bf%e4%b8%bb%e5%85%83%e7%b4%a0%e5%b1%9e%e6%80%a7%e5%80%bc)
-- [补充： 模板元素<ng-template>和ngTemplateOutlet指令-内嵌视图的操作](#%e8%a1%a5%e5%85%85-%e6%a8%a1%e6%9d%bf%e5%85%83%e7%b4%a0ng-template%e5%92%8cngtemplateoutlet%e6%8c%87%e4%bb%a4-%e5%86%85%e5%b5%8c%e8%a7%86%e5%9b%be%e7%9a%84%e6%93%8d%e4%bd%9c)
+- [补充：模板元素<ng-template>和ngTemplateOutlet指令-内嵌视图的操作](#%e8%a1%a5%e5%85%85-%e6%a8%a1%e6%9d%bf%e5%85%83%e7%b4%a0ng-template%e5%92%8cngtemplateoutlet%e6%8c%87%e4%bb%a4-%e5%86%85%e5%b5%8c%e8%a7%86%e5%9b%be%e7%9a%84%e6%93%8d%e4%bd%9c)
 - [属性指令](#%e5%b1%9e%e6%80%a7%e6%8c%87%e4%bb%a4)
   - [内置属性指令](#%e5%86%85%e7%bd%ae%e5%b1%9e%e6%80%a7%e6%8c%87%e4%bb%a4)
   - [自定义属性指令](#%e8%87%aa%e5%ae%9a%e4%b9%89%e5%b1%9e%e6%80%a7%e6%8c%87%e4%bb%a4)
@@ -243,6 +243,22 @@ export class AppComponent {
   context = { message: 'Hello ngOutletContext!',
     $implicit: 'Hello, Semlinker!' };
 }
+```
+
+- 也可用ng-container来配合使用
+
+```html
+<ng-template #defaultTabsHeader>
+    <ul class="tab-panel-buttons">
+        <li *ngFor="let tab of tabs" [ngClass]="{selected: tab.selected}" (click)="selectTab(tab)">
+            {{tab.title}}
+        </li>
+    </ul>
+</ng-template>
+<ng-container *ngIf="headerTemplate else defaultTabsHeader">
+    <ng-container *ngTemplateOutlet="headerTemplate; context: tabsContext;">
+    </ng-container>
+</ng-container>
 ```
 
 [back to top](#top)
