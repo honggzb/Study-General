@@ -81,6 +81,8 @@ export class CountClicks {
 }
 ```
 
+[back to top](#top)
+
 ### 动态设置宿主元素的属性值-HostBinding属性装饰器
 
 ```javascript
@@ -380,6 +382,8 @@ export class AppComponent {
 
 - **TemplateRef：** 用于表示内嵌的template模板元素，通过TemplateRef实例，我们可以方便创建内嵌视图(Embedded Views)，且可以轻松地访问到通过ElementRef封装后的 nativeElement。需要注意的是组件视图中的template模板元素，经过渲染后会被替换成 comment元素
 - **ViewContainerRef：** 用于表示一个视图容器，可添加一个或多个视图。通过ViewContainerRef实例，可基于TemplateRef实例创建内嵌视图，并能指定内嵌视图的插入位置，也可以方便对视图容器中已有的视图进行管理。简而言之，ViewContainerRef **的主要作用是创建和管理内嵌视图或组件视图**
+
+[back to top](#top)
 
 > Reference
 - [Angular 2 Directive](https://segmentfault.com/a/1190000008626070#item-7)
