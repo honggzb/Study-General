@@ -12,7 +12,6 @@
 - [Demo of using ng-conent- icon input](#demo-of-using-ng-conent--icon-input)
   - [style projected content](#style-projected-content)
   - [interact with projected content](#interact-with-projected-content)
-- [ngTemplateOutlet](#ngtemplateoutlet)
 
 ## ng-template
 
@@ -353,8 +352,6 @@ export class AuMdInputComponent implements AfterContentInit {
 ```
 
 > https://github.com/angular-university/au-input
-
-## ngTemplateOutlet
 
 [back to top](#top)
 
