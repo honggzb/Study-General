@@ -1,26 +1,26 @@
 [Angular学习笔记之模板ng-template, ng-content, ng-container and ngTemplateOutlet](#top)
 
 - [ng-template](#ng-template)
-  - [借助其他结构型指令如×ngIf，来显示ng-template的内容](#%E5%80%9F%E5%8A%A9%E5%85%B6%E4%BB%96%E7%BB%93%E6%9E%84%E5%9E%8B%E6%8C%87%E4%BB%A4%E5%A6%82%C3%97ngif%E6%9D%A5%E6%98%BE%E7%A4%BAng-template%E7%9A%84%E5%86%85%E5%AE%B9)
-  - [通过`TemplateRef`、`ViewContainerRef`把`ng-template`对应的元素显示出来](#%E9%80%9A%E8%BF%87templaterefviewcontainerref%E6%8A%8Ang-template%E5%AF%B9%E5%BA%94%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E5%87%BA%E6%9D%A5)
-  - [通过`NgTemplateOutlet`指令来显示已有的`ng-template`对应的视图](#%E9%80%9A%E8%BF%87ngtemplateoutlet%E6%8C%87%E4%BB%A4%E6%9D%A5%E6%98%BE%E7%A4%BA%E5%B7%B2%E6%9C%89%E7%9A%84ng-template%E5%AF%B9%E5%BA%94%E7%9A%84%E8%A7%86%E5%9B%BE)
+  - [借助其他结构型指令如ngIf，来显示ng-template的内容](#%e5%80%9f%e5%8a%a9%e5%85%b6%e4%bb%96%e7%bb%93%e6%9e%84%e5%9e%8b%e6%8c%87%e4%bb%a4%e5%a6%82ngif%e6%9d%a5%e6%98%be%e7%a4%bang-template%e7%9a%84%e5%86%85%e5%ae%b9)
+  - [通过TemplateRef、ViewContainerRef把ng-template对应的元素显示出来](#%e9%80%9a%e8%bf%87templaterefviewcontainerref%e6%8a%8ang-template%e5%af%b9%e5%ba%94%e7%9a%84%e5%85%83%e7%b4%a0%e6%98%be%e7%a4%ba%e5%87%ba%e6%9d%a5)
+  - [通过NgTemplateOutlet指令来显示已有的ng-template对应的视图](#%e9%80%9a%e8%bf%87ngtemplateoutlet%e6%8c%87%e4%bb%a4%e6%9d%a5%e6%98%be%e7%a4%ba%e5%b7%b2%e6%9c%89%e7%9a%84ng-template%e5%af%b9%e5%ba%94%e7%9a%84%e8%a7%86%e5%9b%be)
+  - [补充：ng-container](#%e8%a1%a5%e5%85%85ng-container)
 - [ng-content](#ng-content)
-  - [select属性`select="xx"`，指定html标签或者组件投射的ng-content位置](#select%E5%B1%9E%E6%80%A7select%22xx%22%E6%8C%87%E5%AE%9Ahtml%E6%A0%87%E7%AD%BE%E6%88%96%E8%80%85%E7%BB%84%E4%BB%B6%E6%8A%95%E5%B0%84%E7%9A%84ng-content%E4%BD%8D%E7%BD%AE)
+  - [select属性select=&quot;xx&quot;，指定html标签或者组件投射的ng-content位置](#select%e5%b1%9e%e6%80%a7selectquotxxquot%e6%8c%87%e5%ae%9ahtml%e6%a0%87%e7%ad%be%e6%88%96%e8%80%85%e7%bb%84%e4%bb%b6%e6%8a%95%e5%b0%84%e7%9a%84ng-content%e4%bd%8d%e7%bd%ae)
   - [ngProjectAs](#ngprojectas)
-  - [获取ng-conent包含组件](#%E8%8E%B7%E5%8F%96ng-conent%E5%8C%85%E5%90%AB%E7%BB%84%E4%BB%B6)
-- [ng-container](#ng-container)
+  - [获取ng-conent包含组件](#%e8%8e%b7%e5%8f%96ng-conent%e5%8c%85%e5%90%ab%e7%bb%84%e4%bb%b6)
 - [Demo of using ng-conent- icon input](#demo-of-using-ng-conent--icon-input)
   - [style projected content](#style-projected-content)
   - [interact with projected content](#interact-with-projected-content)
-- [*ngTemplateOutlet](#ngtemplateoutlet)
 
 ## ng-template
 
-- `ng-template`是一个默认隐藏的元素
--  `ng-template`是Angular结构型指令中的一种，用于定义模板渲染HTML(模板加载)。定义的模板不会直接显示出来，需要通过其他结构型指令（如`ng-if`）或`template-ref`将模块内容渲染到页面中
+- `ng-template`是一个默认隐藏的元素,用来定义模板的, 其本身是不渲染
+- `ng-template`是Angular结构型指令中的一种，用于定义模板渲染HTML(模板加载)。定义的模板不会直接显示出来，需要通过其他结构型指令（如`ng-if`）或`template-ref`将模块内容渲染到页面中， 或用`ng-container`和`templateOutlet`指令来进行使用
+- ng-template在编写高定制性的组件时非常有用。可以把需要定制的内容作为模板传到组件中
 - 通常将它当作一个嵌入式的模版, 通过`ViewChild`获取它的一个实例
 
-### 借助其他结构型指令如×ngIf，来显示ng-template的内容
+### 借助其他结构型指令如ngIf，来显示ng-template的内容
 
 ```html
 <div class="lessons-list" *ngIf="condition else elseTemplate">
@@ -115,6 +115,36 @@ export class TemplateInputComponent {
 
 [back to top](#top)
 
+### 补充：ng-container
+
+- `<ng-container>`是Angular2定义的一个特殊的tag, 仅仅是作为一个容器使用，可直接包裹任何元素，包括文本，但本身不会生成元素标签，也不会影响页面样式和布局
+- `<ng-container>`包裹的内容，如果不通过其他指令控制，会直接渲染到页面中
+- `<ng-container>`作用
+  - 一个重要的作用就是和`ng-template`一起使用
+  - 还有一个用处就是配合`ngFor`和`*ngIf`使用, 因为`ngFor`和`*ngIf`不能同时处在一个元素上
+
+```javascript
+@Component({
+    selector: 'app-ng-container',
+    template: `
+        <h1>ng-container</h1>
+        <ul>
+            <ng-container *ngFor="let item of list;let index=index">
+                <li *ngIf="index%2 === 0">
+                    {{"index is " + index + " value is " + item}}
+                </li>
+            </ng-container>
+        </ul>
+    `,
+    styleUrls: ['./ng-container.component.less']
+})
+export class NgContainerComponent {
+    list = ['1号位置', '2号位置', '3号位置', '4号位置', '5号位置', '6号位置', '7号位置', '8号位置', '9号位置'];
+}
+```
+
+[back to top](#top)
+
 ## ng-content
 
 - `<ng-content>`是一个内容映射，内容映射指的是在组件中嵌入模板代码，方便定制可复用的组件
@@ -149,7 +179,7 @@ export class ContentSectionComponent {
 }
 ```
 
-下面中情况下 ng-content没有投射到对应的内容
+**下面中情况下ng-content没有投射到对应的内容**
 
 ```html
 <app-content-section>
@@ -159,7 +189,7 @@ export class ContentSectionComponent {
 </app-content-section>
 ```
 
-通过使用 ngProjectAs 让ng-content的内容能正确的投射过来。
+通过使用`ngProjectAs`(work with`<ng-container>`)让ng-content的内容能正确的投射过来。
 
 ```html
 <app-content-section>
@@ -214,35 +244,6 @@ export class NgContentComponent {
 }
 ```
 
-[back to top](#top)
-
-## ng-container
-
-- `<ng-container>`是Angular2定义的一个特殊的tag, 仅仅是作为一个容器使用，可直接包裹任何元素，包括文本，但本身不会生成元素标签，也不会影响页面样式和布局
-- `<ng-container>`包裹的内容，如果不通过其他指令控制，会直接渲染到页面中
-- `<ng-container>`作用
-  - 一个重要的作用就是和`ng-template`一起使用
-  - 还有一个用处就是配合`ngFor`和`*ngIf`使用, 因为`ngFor`和`*ngIf`不能同时处在一个元素上
-
-```javascript
-@Component({
-    selector: 'app-ng-container',
-    template: `
-        <h1>ng-container</h1>
-        <ul>
-            <ng-container *ngFor="let item of list;let index=index">
-                <li *ngIf="index%2 === 0">
-                    {{"index is " + index + " value is " + item}}
-                </li>
-            </ng-container>
-        </ul>
-    `,
-    styleUrls: ['./ng-container.component.less']
-})
-export class NgContainerComponent {
-    list = ['1号位置', '2号位置', '3号位置', '4号位置', '5号位置', '6号位置', '7号位置', '8号位置', '9号位置'];
-}
-```
 [back to top](#top)
 
 ## Demo of using ng-conent- icon input
@@ -351,8 +352,6 @@ export class AuMdInputComponent implements AfterContentInit {
 ```
 
 > https://github.com/angular-university/au-input
-
-## *ngTemplateOutlet
 
 [back to top](#top)
 
