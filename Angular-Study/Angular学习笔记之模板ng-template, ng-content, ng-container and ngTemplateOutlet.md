@@ -4,7 +4,7 @@
   - [借助其他结构型指令如ngIf，来显示ng-template的内容](#%e5%80%9f%e5%8a%a9%e5%85%b6%e4%bb%96%e7%bb%93%e6%9e%84%e5%9e%8b%e6%8c%87%e4%bb%a4%e5%a6%82ngif%e6%9d%a5%e6%98%be%e7%a4%bang-template%e7%9a%84%e5%86%85%e5%ae%b9)
   - [通过TemplateRef、ViewContainerRef把ng-template对应的元素显示出来](#%e9%80%9a%e8%bf%87templaterefviewcontainerref%e6%8a%8ang-template%e5%af%b9%e5%ba%94%e7%9a%84%e5%85%83%e7%b4%a0%e6%98%be%e7%a4%ba%e5%87%ba%e6%9d%a5)
   - [通过NgTemplateOutlet指令来显示已有的ng-template对应的视图](#%e9%80%9a%e8%bf%87ngtemplateoutlet%e6%8c%87%e4%bb%a4%e6%9d%a5%e6%98%be%e7%a4%ba%e5%b7%b2%e6%9c%89%e7%9a%84ng-template%e5%af%b9%e5%ba%94%e7%9a%84%e8%a7%86%e5%9b%be)
-  - [通过ng-container来显示已有的ng-template对应的视图](#%e9%80%9a%e8%bf%87ng-container%e6%9d%a5%e6%98%be%e7%a4%ba%e5%b7%b2%e6%9c%89%e7%9a%84ng-template%e5%af%b9%e5%ba%94%e7%9a%84%e8%a7%86%e5%9b%be)
+  - [补充：ng-container](#%e8%a1%a5%e5%85%85ng-container)
 - [ng-content](#ng-content)
   - [select属性select=&quot;xx&quot;，指定html标签或者组件投射的ng-content位置](#select%e5%b1%9e%e6%80%a7selectquotxxquot%e6%8c%87%e5%ae%9ahtml%e6%a0%87%e7%ad%be%e6%88%96%e8%80%85%e7%bb%84%e4%bb%b6%e6%8a%95%e5%b0%84%e7%9a%84ng-content%e4%bd%8d%e7%bd%ae)
   - [ngProjectAs](#ngprojectas)
@@ -115,7 +115,7 @@ export class TemplateInputComponent {
 
 [back to top](#top)
 
-### 通过`ng-container`来显示已有的`ng-template`对应的视图
+### 补充：ng-container
 
 - `<ng-container>`是Angular2定义的一个特殊的tag, 仅仅是作为一个容器使用，可直接包裹任何元素，包括文本，但本身不会生成元素标签，也不会影响页面样式和布局
 - `<ng-container>`包裹的内容，如果不通过其他指令控制，会直接渲染到页面中
@@ -179,7 +179,7 @@ export class ContentSectionComponent {
 }
 ```
 
-下面中情况下 ng-content没有投射到对应的内容
+**下面中情况下ng-content没有投射到对应的内容**
 
 ```html
 <app-content-section>
