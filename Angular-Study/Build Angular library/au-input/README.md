@@ -72,7 +72,7 @@ export class AuFaInputComponent {
 
 ## publish procedure
 
-- create lib/index.ts- `export {AuInputModule} from './au-input.module';`
+- create index.ts in root directory- `export {AuInputModule} from './src/app/lib/au-input/au-input.module';';`
 
 ```shell
 ng serve -prod --aot
