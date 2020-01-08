@@ -12,6 +12,7 @@
 - [Demo of using ng-conent- icon input](#demo-of-using-ng-conent--icon-input)
   - [style projected content](#style-projected-content)
   - [interact with projected content](#interact-with-projected-content)
+- [sample + codes](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/tabs-for-ngTemplete%2Bng-content)
 
 ## ng-template
 
