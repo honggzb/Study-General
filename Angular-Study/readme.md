@@ -52,7 +52,7 @@
 │   │   │   └── readme.md
 │   │   ├── Tips-use-rxjs-in-Angular.md
 │   │   └──
-│   ├── RxJs
+│   ├── RxJs/
 │   │   ├── RxJS in Angular-Reactive Development-Deborah Kurata/
 │   │   │   └── readme.md
 │   │   ├── Observable之Subject.md
@@ -60,23 +60,7 @@
 │   │   ├── RxJS笔记之Subject.md
 │   │   ├── RxJS笔记之switchMap, concatMap, mergeMap和exhaustMap.md
 │   │   └── 
-│   ├── Sample/
-│   │   ├── angular-bootstrap/
-│   │   │    ├── use user-defined directive in Tooltips.md
-│   │   │    └── 
-│   │   ├── directive/
-│   │   │    ├── input-radio.md
-│   │   │    └── 
-│   │   ├──  Angular 4学习- Angular 4.0从入门到实战 打造股票管理网站.md
-│   │   ├──  Angular 4学习-todo_list.md
-│   │   ├──  Angular Loading Spinner.md
-│   │   ├──  add-loading-screen.md
-│   │   ├──  auction-Angular 4.0从入门到实战-打造股票管理网站+mockServer+websock.rar
-│   │   ├──  auction-Angular 4.0从入门到实战-打造股票管理网站+mockServer.rar
-│   │   ├──  todo-app.rar
-│   │   ├──  案例之星级评价.md
-│   │   └──  
-│   ├── Study-sample
+│   ├── Sample-Project+course/
 │   │   ├── Angular Fundamentals- Jim Cooper/
 │   │   │   ├── myEventFundamentals/ 
 │   │   │   ├── Angular_Content_Projection_Guide.pdf
@@ -100,6 +84,24 @@
 │   │   ├── 可复用的全局设置- Paul D. Sheriff.md
 │   │   ├── 大漠的Angular Workshop.md
 │   │   └── 
+│   ├── Sample-general/
+│   │   ├── angular-bootstrap/
+│   │   │    ├── use user-defined directive in Tooltips.md
+│   │   │    └── 
+│   │   ├── directive/
+│   │   │    ├── input-radio.md
+│   │   │    └── 
+│   │   ├── tabs-for-ngTemplete+ng-content/
+│   │   │    └── readme.md
+│   │   ├──  Angular 4学习- Angular 4.0从入门到实战 打造股票管理网站.md
+│   │   ├──  Angular 4学习-todo_list.md
+│   │   ├──  Angular Loading Spinner.md
+│   │   ├──  add-loading-screen.md
+│   │   ├──  auction-Angular 4.0从入门到实战-打造股票管理网站+mockServer+websock.rar
+│   │   ├──  auction-Angular 4.0从入门到实战-打造股票管理网站+mockServer.rar
+│   │   ├──  todo-app.rar
+│   │   ├──  案例之星级评价.md
+│   │   └──  
 │   ├── Testing/
 │   │   ├── E2E Test/ 
 │   │   │   ├── Cucumber+AngularCLI project/                                         ## angular8 CLI project
