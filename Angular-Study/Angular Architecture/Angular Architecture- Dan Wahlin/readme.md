@@ -101,6 +101,13 @@ Can result in a lot of files in a folder | Easy to find everything related to a 
                   in larger applications |
 ```
 
+Convention-based | Feature-based
+---:|:---
+Follows strict naming conventions | Features are organized into their own folder
+Related code may be separated | Features are self-contained
+Can result in a lot of files in a folder | Easy to find everything related to a feature
+in larger applications |
+
 ![](https://i.imgur.com/EOfypyO.png)
 
 ### Core Modules vs Shared Modules
