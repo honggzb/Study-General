@@ -1,4 +1,4 @@
-[contents](#top)
+[Contents](#top)
 
 - [Table Format](#table-format)
   - [Using GFM table](#using-gfm-table)
@@ -187,3 +187,8 @@ $x+12$
 $$\int_{-\infty}^\infty e^{-x^2} = \sqrt{\pi}$$
 $$lim_{x \to \infty} \ exp(-x)=0$$
 ```
+
+> References and Tools
+- https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+- [StackEdit](https://stackedit.io/) converts your Markdown to HTML in real-time.
+
