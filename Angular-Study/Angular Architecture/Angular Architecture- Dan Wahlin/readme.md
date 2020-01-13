@@ -9,7 +9,7 @@
   - [Importing Core and Shared](#importing-core-and-shared)
   - [Creating a custom Library](#creating-a-custom-library)
 - [Stucturing Components](#stucturing-components)
-  - [Container and presntation components](#container-and-presntation-components)
+  - [Container and presentation components](#container-and-presentation-components)
   - [ngOnChanges: reference vs value](#ngonchanges-reference-vs-value)
   - [Cloning techniques -deep clone](#cloning-techniques--deep-clone)
   - [Component inheritance](#component-inheritance)
@@ -169,7 +169,7 @@ export class CoreModule extends EndureModuleLoadedOnceGuard {
 
 ## Stucturing Components
 
-### Container and presntation components
+### Container and presentation components
 
 - break complex components into child components
 - using container -> presentation pattern where possible
