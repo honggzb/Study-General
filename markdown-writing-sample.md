@@ -168,9 +168,8 @@ Symbols： :one:
 
 ## 上标, 下标
 
-H~2~O 水分子： 
-
-y^2^=4 平方：
+- 水分子： H~2~O
+- 平方： y^2^=4
 
 ```
 H~2~O
@@ -179,11 +178,9 @@ y^2^=4
 
 ## 数学表达式
 
-$x+12$
-
-$$\int_{-\infty}^\infty e^{-x^2} = \sqrt{\pi}$$
-
-$$lim_{x \to \infty} \ exp(-x)=0$$
+- $x+12$
+- $$\int_{-\infty}^\infty e^{-x^2} = \sqrt{\pi}$$
+- $$lim_{x \to \infty} \ exp(-x)=0$$
 
 ```
 $x+12$
