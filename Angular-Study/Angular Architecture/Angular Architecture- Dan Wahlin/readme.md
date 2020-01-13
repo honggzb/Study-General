@@ -429,8 +429,8 @@ ngOnInit() {
 
 ### Replacing functions with pipe ASAP
 
-Functions vs pipe|
----|---
+Functions vs pipe|#
+---:|:---
 Functions| Function calls made from template are invoked every time a change occurs(no caching)
 pipe| a pure pipe returns same result given the same inputs, only called when inputs are changed
 
