@@ -1,7 +1,3 @@
-- Modularity
-- Reusablility
-- Extensibility
-
 ## SOLID (software design principles)
 
 - **S**ingle responsibility
