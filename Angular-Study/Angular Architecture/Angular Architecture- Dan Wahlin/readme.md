@@ -337,6 +337,15 @@ components don't know where data is coming from by default | Components know whe
                               Relies on subject/observable | Relies on subject/observable
 ```
 
+Event Bus | Observable Service
+---:|:---
+Mediator pattern | Observable pattern
+Angular service acts as the middleman | Angular service exposes observable
+between components | directly to components
+components don't know where data is coming from by default | Components know where data is coming from
+Loosely coupled | Not as loosely coupled as event bus
+Relies on subject/observable | Relies on subject/observable
+
 ![](https://i.imgur.com/kwxHDvt.png)
 
 ```javascript
