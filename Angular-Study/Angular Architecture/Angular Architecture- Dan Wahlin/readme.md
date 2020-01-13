@@ -92,21 +92,11 @@ DELETE| /customers/101| delete date a records
 
 ### Options for Organizing Code
 
-```
-                        Convention-based | Feature-based
------------------------------------------|------------------------------------------------
-       Follows strict naming conventions | Features are organized into their own folder
-           Related code may be separated | Features are self-contained
-Can result in a lot of files in a folder | Easy to find everything related to a feature
-                  in larger applications |
-```
-
 Convention-based | Feature-based
 ---:|:---
 Follows strict naming conventions | Features are organized into their own folder
 Related code may be separated | Features are self-contained
-Can result in a lot of files in a folder | Easy to find everything related to a feature
-in larger applications |
+Can result in a lot of files in a folder in larger applications | Easy to find everything related to a feature
 
 ![](https://i.imgur.com/EOfypyO.png)
 
