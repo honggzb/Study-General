@@ -30,6 +30,20 @@ Note: Tables can be handcrafted or generated at <http://www.tablesgenerator.com/
 | col 2 is |    centered   |   $12 |
 | col 3 is | right-aligned |    $1 |
 
+**To include a pipe `|` as content within your cell, use a `\` before the pipe**
+
+```
+| Name     | Character |
+| ---      | ---       |
+| Backtick | `         |
+| Pipe     | \|        |
+```
+
+| Name     | Character |
+| ---      | ---       |
+| Backtick | `         |
+| Pipe     | \|        |
+
 ### using HTML table
 
 - [在线工具-将excel表格转换为html-table](http://pressbin.com/tools/excel_to_html_table/index.html)
@@ -153,6 +167,7 @@ Note: Tables can be handcrafted or generated at <http://www.tablesgenerator.com/
 ## 使用表情
 
 - [表情大全](http://www.webpagefx.com/tools/emoji-cheat-sheet/)
+- https://www.webfx.com/tools/emoji-cheat-sheet/
 
 - 表情一：:+1:
 - 表情二：:o:
