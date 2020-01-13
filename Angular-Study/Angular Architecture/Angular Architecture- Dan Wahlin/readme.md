@@ -94,6 +94,7 @@ DELETE| /customers/101| delete date a records
 
 ```
                         Convention-based | Feature-based
+-----------------------------------------|------------------------------------------------
        Follows strict naming conventions | Features are organized into their own folder
            Related code may be separated | Features are self-contained
 Can result in a lot of files in a folder | Easy to find everything related to a feature
@@ -106,6 +107,7 @@ Can result in a lot of files in a folder | Easy to find everything related to a 
 
 ```
                                                               Core Moduels | Shared Modules
+---------------------------------------------------------------------------|------------------------------------------------
                       should contain singleton services shared through app | should contain reusable components, pipes, directives
 services that are specific to a feature can go to in the features's folder |
                                  LoggingService, ErrorService, DataService | calendarcomponent, AutoCompleteComponent
