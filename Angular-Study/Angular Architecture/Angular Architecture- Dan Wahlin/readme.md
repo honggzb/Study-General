@@ -9,7 +9,7 @@
   - [Importing Core and Shared](#importing-core-and-shared)
   - [Creating a custom Library](#creating-a-custom-library)
 - [Stucturing Components](#stucturing-components)
-  - [Container and presntation components](#container-and-presntation-components)
+  - [Container and presentation components](#container-and-presentation-components)
   - [ngOnChanges: reference vs value](#ngonchanges-reference-vs-value)
   - [Cloning techniques -deep clone](#cloning-techniques--deep-clone)
   - [Component inheritance](#component-inheritance)
@@ -47,8 +47,6 @@
   - CDN/Containaer, server
   - Unit testing, end-to-end testing
   - APIs
-
-![](https://i.imgur.com/EOfypyO.png)
 
 ### Architecture Planning Template
 
@@ -94,22 +92,20 @@ DELETE| /customers/101| delete date a records
 
 ### Options for Organizing Code
 
-```
-                        Convention-based | Feature-based
-       Follows strict naming conventions | Features are organized into their own folder
-           Related code may be separated | Features are self-contained
-Can result in a lot of files in a folder | Easy to find everything related to a feature
-                  in larger applications |
-```
+Convention-based | Feature-based
+---:|:---
+Follows strict naming conventions | Features are organized into their own folder
+Related code may be separated | Features are self-contained
+Can result in a lot of files in a folder in larger applications | Easy to find everything related to a feature
+
+![](https://i.imgur.com/EOfypyO.png)
 
 ### Core Modules vs Shared Modules
 
-```
-                                                              Core Moduels | Shared Modules
-                      should contain singleton services shared through app | should contain reusable components, pipes, directives
-services that are specific to a feature can go to in the features's folder |
-                                 LoggingService, ErrorService, DataService | calendarcomponent, AutoCompleteComponent
-```
+Core Moduels | Shared Modules
+---:|:---
+should contain singleton services shared through app services that are specific to a feature can go to in the features's folder|should contain reusable components, pipes, directives
+LoggingService, ErrorService, DataService | calendarcomponent, AutoCompleteComponent
 
 ### Importing Core and Shared
 
@@ -173,7 +169,7 @@ export class CoreModule extends EndureModuleLoadedOnceGuard {
 
 ## Stucturing Components
 
-### Container and presntation components
+### Container and presentation components
 
 - break complex components into child components
 - using container -> presentation pattern where possible
@@ -344,7 +340,7 @@ components don't know where data is coming from by default | Components know whe
 ![](https://i.imgur.com/kwxHDvt.png)
 
 ```javascript
-//event-bus.service.ts
+//1) event-bus.service.ts
 // just define 2 methods: on() and emit()
 @Injectable()
 export class EventBusService {
@@ -358,8 +354,7 @@ export class EventBusService {
                     map((e: EmitEvent) => {
                       return e.value;
                     })
-                  )
-                    .subscribe(action);
+                  ).subscribe(action);
     }
     emit(event: EmitEvent) {
         this.subject$.next(event);
@@ -380,7 +375,7 @@ selectCustomer(cust: Customer) {
     // Send customer to any eventbus listeners listening for the CustomerSelected event
     this.eventbus.emit(new EmitEvent(Events.CustomerSelected, cust));
   }
-//sata.service.ts
+//2) data.service.ts- Observable Service
 private customersSubject$ = new BehaviorSubject<Customer[]>(this.customers);
 customersChanged$ = this.customersSubject$.asObservable();
 addCustomer() : Observable<Customer[]> {
@@ -433,8 +428,8 @@ ngOnInit() {
 
 ### Replacing functions with pipe ASAP
 
-Functions vs pipe|
----|---
+Functions -vs |-pipe
+---:|:---
 Functions| Function calls made from template are invoked every time a change occurs(no caching)
 pipe| a pure pipe returns same result given the same inputs, only called when inputs are changed
 
@@ -535,7 +530,7 @@ getCharactersAndPlanets() {
 
 ```javascript
 //core/interceptors/auth.interceptor.ts
-@Injectable()
+@Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   // might inject some type of authservice here for token
   constructor() { }

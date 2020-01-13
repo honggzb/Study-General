@@ -204,3 +204,64 @@ export class ProductListComponent {
   }
 }
 ```
+
+## Whole files structure
+
+```
+├── app
+│   ├── home/
+│   │   ├── menu.component.html
+│   │   ├── menu.component.ts
+│   │   ├── page-not-found.component.ts
+│   │   ├── shell.component.css
+│   │   ├── shell.component.html
+│   │   ├── shell.component.ts
+│   │   ├── welcome.component.html
+│   │   └── welcome.component.ts
+│   ├── products/
+│   │   ├── components/
+│   │   │   ├── product-edit/
+│   │   │   │     ├── product-edit.component.css
+│   │   │   │     ├── product-edit.component.html
+│   │   │   │     └── product-edit.component.ts
+│   │   │   └── product-list/
+│   │   │         ├── product-list.component.css
+│   │   │         ├── product-list.component.html
+│   │   │         └── product-list.component.ts
+│   │   ├── container/
+│   │   │   └── product-shell/
+│   │   │         ├── product-shell.component.html
+│   │   │         └── product-shell.component.ts
+│   │   ├── state/
+│   │   │   ├── index.ts
+│   │   │   ├── product.actions.ts
+│   │   │   ├── product.effect.ts
+│   │   │   └── product.reducer.ts
+│   │   ├── product-data.ts
+│   │   ├── product.module.ts
+│   │   ├── product.service.ts
+│   │   └── product.ts
+│   ├── shared/
+│   │   ├── generic-validator.ts
+│   │   ├── number.validator.ts
+│   │   └── shared.module.ts
+│   ├── state/
+│   │   └── app.state.ts
+│   ├── user/
+│   │   ├── state/
+│   │   │   ├── index.ts
+│   │   │   ├── user.actions.ts
+│   │   │   └── user.reducer.ts
+│   │   ├── auth-guard.service.ts
+│   │   ├── auth.service.ts
+│   │   ├── login.component.css
+│   │   ├── login.component.html
+│   │   ├── login.component.ts
+│   │   ├── user.module.ts
+│   │   └── user.ts
+│   ├── app-routing.module.ts
+│   ├── app.component.css
+│   ├── app.component.html
+│   ├── app.component.ts
+│   └── app.module.ts
+```

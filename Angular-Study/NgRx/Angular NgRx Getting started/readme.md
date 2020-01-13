@@ -662,15 +662,16 @@ ngOnInit() {
 
 ### Presentational and Container Component
 
-```
-           Presentational(dumb)                                          |        Container(smart)
+
+Presentational(dumb)| Container(smart)
+---:|:--- 
 Concerned withhow things look                                            | Concerned withhow things work
 HTML markupand CSS styles                                                | Have little to no HTML and CSS styles
 No dependencies on the rest of the app                                   | Have injected dependencies
 Don’t specify how data is loaded or changed but emit events via @Outputs | Are stateful and specify how data is loaded or changed
 Receive data via @Inputs                                                 | Top level routes
 May contain other components                                             | May contain other components
-```
+
 
 #### refra state
 
