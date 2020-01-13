@@ -105,13 +105,10 @@ Can result in a lot of files in a folder | Easy to find everything related to a 
 
 ### Core Modules vs Shared Modules
 
-```
-                                                              Core Moduels | Shared Modules
----------------------------------------------------------------------------|------------------------------------------------
-                      should contain singleton services shared through app | should contain reusable components, pipes, directives
-services that are specific to a feature can go to in the features's folder |
-                                 LoggingService, ErrorService, DataService | calendarcomponent, AutoCompleteComponent
-```
+Core Moduels | Shared Modules
+---:|:---
+should contain singleton services shared through app services that are specific to a feature can go to in the features's folder|should contain reusable components, pipes, directives
+LoggingService, ErrorService, DataService | calendarcomponent, AutoCompleteComponent
 
 ### Importing Core and Shared
 
