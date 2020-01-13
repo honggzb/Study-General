@@ -48,8 +48,6 @@
   - Unit testing, end-to-end testing
   - APIs
 
-![](https://i.imgur.com/EOfypyO.png)
-
 ### Architecture Planning Template
 
 1. Basic
@@ -101,6 +99,8 @@ DELETE| /customers/101| delete date a records
 Can result in a lot of files in a folder | Easy to find everything related to a feature
                   in larger applications |
 ```
+
+![](https://i.imgur.com/EOfypyO.png)
 
 ### Core Modules vs Shared Modules
 
