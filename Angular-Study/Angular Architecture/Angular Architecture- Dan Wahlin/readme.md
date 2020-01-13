@@ -340,7 +340,7 @@ components don't know where data is coming from by default | Components know whe
 ![](https://i.imgur.com/kwxHDvt.png)
 
 ```javascript
-//event-bus.service.ts
+//1) event-bus.service.ts
 // just define 2 methods: on() and emit()
 @Injectable()
 export class EventBusService {
@@ -354,8 +354,7 @@ export class EventBusService {
                     map((e: EmitEvent) => {
                       return e.value;
                     })
-                  )
-                    .subscribe(action);
+                  ).subscribe(action);
     }
     emit(event: EmitEvent) {
         this.subject$.next(event);
@@ -376,7 +375,7 @@ selectCustomer(cust: Customer) {
     // Send customer to any eventbus listeners listening for the CustomerSelected event
     this.eventbus.emit(new EmitEvent(Events.CustomerSelected, cust));
   }
-//sata.service.ts
+//2) data.service.ts- Observable Service
 private customersSubject$ = new BehaviorSubject<Customer[]>(this.customers);
 customersChanged$ = this.customersSubject$.asObservable();
 addCustomer() : Observable<Customer[]> {
