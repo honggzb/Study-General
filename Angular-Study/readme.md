@@ -17,6 +17,17 @@
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
 │   │   └── readme.md
+│   ├── Angular学习笔记/
+│   │   ├── Angular学习笔记之Animation.md
+│   │   ├── Angular学习笔记之DI依赖注入.md
+│   │   ├── Angular学习笔记之Dynamic components.md
+│   │   ├── Angular学习笔记之Pipe.md
+│   │   ├── Angular学习笔记之directive指令.md
+│   │   ├── Angular学习笔记之lazy loading-使用angular-cli.md     #useful
+│   │   ├── Angular学习笔记之数据绑定、响应式编程.md
+│   │   ├── Create Angular学习笔记之styling in Angular.md
+│   │   ├── Angular学习笔记之模板ng-template, ng-content, ng-container and ngTemplateOutlet
+│   │   └── Angular学习笔记之集成三方UI框架.md
 │   ├── Animation/
 │   │   ├── Angular学习笔记之Animation- Working with Angular Animations/
 │   │   └── 
@@ -126,16 +137,7 @@
 │   ├── Angular 2,4 + google map      # Google map在angular>2中的应用
 │   ├── Angular_Content_Projection_Guide.pdf
 │   ├── Angular中Error汇总.md
-│   ├── Angular之Pipe.md
 │   ├── Angular响应式表单之更新表单的值.md
-│   ├── Angular学习笔记之Animation.md
-│   ├── Angular学习笔记之DI依赖注入.md
-│   ├── Angular学习笔记之Dynamic components.md
-│   ├── Angular学习笔记之lazy loading-使用angular-cli.md     #useful
-│   ├── Angular学习笔记之模板ng-template, ng-content, ng-container and ngTemplateOutlet
-│   ├── Create Angular学习笔记之styling in Angular.md
-│   ├── Angular学习笔记之数据绑定、响应式编程.md
-│   ├── Angular学习笔记之集成三方UI框架.md
 │   ├── Angular打造股票管理网站.md      #useful
 │   ├── Angular系列之变化检测.md
 │   ├── Dynamically add version number to application based on grunt
