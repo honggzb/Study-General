@@ -12,7 +12,8 @@
 - [Demo of using ng-conent- icon input](#demo-of-using-ng-conent--icon-input)
   - [style projected content](#style-projected-content)
   - [interact with projected content](#interact-with-projected-content)
-- [sample + codes](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/tabs-for-ngTemplete%2Bng-content)
+- [project demo1-tabs](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/tabs-for-ngTemplete%2Bng-content)
+- [project demo2-modal](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/tabs-for-ngTemplete%2Bng-content)
 
 ## ng-template
 
@@ -356,8 +357,6 @@ export class AuMdInputComponent implements AfterContentInit {
 
 [back to top](#top)
 
-- [project demo1-tabs](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/tabs-for-ngTemplete%2Bng-content)
-- [project demo2-modal](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/tabs-for-ngTemplete%2Bng-content)
 - [<ng-template>, <ng-content>, <ng-container> and *ngTemplateOutlet in Angular](https://medium.freecodecamp.org/everything-you-need-to-know-about-ng-template-ng-content-ng-container-and-ngtemplateoutlet-4b7b51223691)
 - [ng-template、ng-content、ng-container](https://www.jianshu.com/p/0f5332f2bbf8)
 - [Angular ng-template, ng-container and ngTemplateOutlet - The Complete Guide To Angular Templates](https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/)
