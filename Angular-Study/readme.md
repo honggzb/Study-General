@@ -32,7 +32,7 @@
 │   │   ├── Angular学习笔记之Animation- Working with Angular Animations/
 │   │   └── 
 │   ├── Build angular library/
-│   │   ├── au-input/    #
+│   │   ├── au-input/    # 带有图标的输入框input
 │   │   └── 
 │   ├── Configuration/
 │   │   ├── angular-itself-multi-config/
