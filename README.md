@@ -72,14 +72,14 @@
 │   │   │   ├── rxjs-subjects/
 │   │   │   ├── shared-library-example/
 │   │   │   ├── state-management/
-│   │   │   └── readme.md
+│   │   │   └── readme.md
 │   │   ├── Angular Scalable Architecture-The PRPL Pattern.md
 │   │   └──
 │   ├── Angular-material/
 │   │   ├── dialog/
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
-│   │   └── readme.md
+│   │   └── readme.md
 │   ├── Angular学习笔记/
 │   │   ├── Angular学习笔记之Animation.md
 │   │   ├── Angular学习笔记之DI依赖注入.md
@@ -90,18 +90,18 @@
 │   │   ├── Angular学习笔记之数据绑定、响应式编程.md
 │   │   ├── Create Angular学习笔记之styling in Angular.md
 │   │   ├── Angular学习笔记之模板ng-template, ng-content, ng-container and ngTemplateOutlet
-│   │   └── Angular学习笔记之集成三方UI框架.md
+│   │   └── Angular学习笔记之集成三方UI框架.md
 │   ├── Animation/
-│   │   ├── Angular学习笔记之Animation- Working with Angular Animations/
-│   │   └── 
+│   │   ├── Angular学习笔记之Animation- Working with Angular Animations/
+│   │   └── 
 │   ├── Build angular library/
-│   │   ├── au-input/    #
-│   │   └── 
+│   │   ├── au-input/    # 带有图标的输入框input
+│   │   └── 
 │   ├── Configuration/
 │   │   ├── angular-itself-multi-config/
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
-│   │   └── aot-config.md
+│   │   └── aot-config.md
 │   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
 │   │   │   ├── codeFinished/ 
 │   │   ├── codeInit/
@@ -113,7 +113,7 @@
 │   │   ├── angular-in-memory-web-api.md
 │   │   ├── liverload-mockup+gulp.md
 │   │   ├── mocking-backend -API.md
-│   │   └── node+express创建服务器.md
+│   │   └── node+express创建服务器.md
 │   ├── NgRx
 │   │   ├── Angular NgRx Getting started/
 │   │   │     ├── Demo-1/
@@ -121,19 +121,19 @@
 │   │   │     ├── Demo-3/
 │   │   │     ├── Demo-initial/
 │   │   │     └── project.md
-│   │   ├── angular2-redux-Hendrik Swanepoel/
-│   │   │   ├── projectSample/
-│   │   │   └── readme.md
+│   │   ├── angular2-redux-Hendrik Swanepoel/
+│   │   │   ├── projectSample/
+│   │   │   └── readme.md
 │   │   ├── Tips-use-rxjs-in-Angular.md
 │   │   └──
-│   ├── RxJs/
-│   │   ├── RxJS in Angular-Reactive Development-Deborah Kurata/
-│   │   │   └── readme.md
-│   │   ├── Observable之Subject.md
-│   │   ├── RxJS笔记-Reactive Extensions for JavaScript (RxJS).md
-│   │   ├── RxJS笔记之Subject.md
-│   │   ├── RxJS笔记之switchMap, concatMap, mergeMap和exhaustMap.md
-│   │   └── 
+│   ├── RxJs/
+│   │   ├── RxJS in Angular-Reactive Development-Deborah Kurata/
+│   │   │   └── readme.md
+│   │   ├── Observable之Subject.md
+│   │   ├── RxJS笔记-Reactive Extensions for JavaScript (RxJS).md
+│   │   ├── RxJS笔记之Subject.md
+│   │   ├── RxJS笔记之switchMap, concatMap, mergeMap和exhaustMap.md
+│   │   └── 
 │   ├── Sample-Project+course/
 │   │   ├── Angular Fundamentals- Jim Cooper/
 │   │   │   ├── myEventFundamentals/ 
@@ -158,15 +158,16 @@
 │   │   ├── 可复用的全局设置- Paul D. Sheriff.md
 │   │   ├── 大漠的Angular Workshop.md
 │   │   └── 
-│   ├── Sample-general/
-│   │   ├── angular-bootstrap/
+│   ├── Sample-general/
+│   │   ├── angular-bootstrap/
 │   │   │    ├── use user-defined directive in Tooltips.md
 │   │   │    └── 
-│   │   ├── directive/
+│   │   ├── directive/
 │   │   │    ├── input-radio.md
 │   │   │    └── 
-│   │   ├── tabs-for-ngTemplete+ng-content/
-│   │   │    └── readme.md
+│   │   ├── ngTemplete+ng-content/
+│   │   │    ├── modal/
+│   │   │    └── tabs/
 │   │   ├──  Angular 4学习- Angular 4.0从入门到实战 打造股票管理网站.md
 │   │   ├──  Angular 4学习-todo_list.md
 │   │   ├──  Angular Loading Spinner.md
@@ -189,27 +190,27 @@
 │   │   │   ├── tsconfig.sample.js
 │   │   │   └── 
 │   │   ├── Unit-Test/
-│   │   │   ├── Unit Testing in Angular Course -Joe Eames/
+│   │   │   ├── Unit Testing in Angular Course -Joe Eames/
 │   │   │   ├── NgRx-test-sample.md
 │   │   │   ├── wallaby-setup.md
-│   │   │   └── 
-│   │   └── readme.md
-│   ├── Angular CLI的使用(new).md     # useful
-│   ├── Angular_CLI的使用.md           
-│   ├── Angular2+Accessibility.md
-│   ├── Angular 2,4 + google map      # Google map在angular>2中的应用
-│   ├── Angular_Content_Projection_Guide.pdf
-│   ├── Angular中Error汇总.md
-│   ├── Angular响应式表单之更新表单的值.md
-│   ├── Angular打造股票管理网站.md      #useful
-│   ├── Angular系列之变化检测.md
-│   ├── Dynamically add version number to application based on grunt
-│   ├── change-detection-default.gif
-│   ├── change-detection-onpush.gif
-│   ├── redux-angular.gif
-│   ├── redux.png
-│   ├── redux.doc
-│   └── 大漠的Angular Workshop.md
+│   │   │   └── 
+│   │   └── readme.md
+│   ├── Angular CLI的使用(new).md     # useful
+│   ├── Angular_CLI的使用.md           
+│   ├── Angular2+Accessibility.md
+│   ├── Angular 2,4 + google map      # Google map在angular>2中的应用
+│   ├── Angular_Content_Projection_Guide.pdf
+│   ├── Angular中Error汇总.md
+│   ├── Angular响应式表单之更新表单的值.md
+│   ├── Angular打造股票管理网站.md      #useful
+│   ├── Angular系列之变化检测.md
+│   ├── Dynamically add version number to application based on grunt
+│   ├── change-detection-default.gif
+│   ├── change-detection-onpush.gif
+│   ├── redux-angular.gif
+│   ├── redux.png
+│   ├── redux.doc
+│   └── 大漠的Angular Workshop.md
 ```
 
 [back to top](#top)
