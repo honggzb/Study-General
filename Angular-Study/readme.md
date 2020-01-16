@@ -95,15 +95,16 @@
 │   │   ├── 可复用的全局设置- Paul D. Sheriff.md
 │   │   ├── 大漠的Angular Workshop.md
 │   │   └── 
-│   ├── Sample-general/
-│   │   ├── angular-bootstrap/
+│   ├── Sample-general/
+│   │   ├── angular-bootstrap/
 │   │   │    ├── use user-defined directive in Tooltips.md
 │   │   │    └── 
-│   │   ├── directive/
+│   │   ├── directive/
 │   │   │    ├── input-radio.md
 │   │   │    └── 
-│   │   ├── tabs-for-ngTemplete+ng-content/
-│   │   │    └── readme.md
+│   │   ├── ngTemplete+ng-content/
+│   │   │    ├── modal/
+│   │   │    └── tabs/
 │   │   ├──  Angular 4学习- Angular 4.0从入门到实战 打造股票管理网站.md
 │   │   ├──  Angular 4学习-todo_list.md
 │   │   ├──  Angular Loading Spinner.md
