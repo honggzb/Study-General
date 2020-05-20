@@ -1,6 +1,7 @@
 ```
 │   ├── Angular学习笔记/
 │   │   ├── Angular学习笔记之Animation.md
+│   │   ├── Angular学习笔记之DI decorators.md
 │   │   ├── Angular学习笔记之DI依赖注入.md
 │   │   ├── Angular学习笔记之Dynamic components.md
 │   │   ├── Angular学习笔记之Pipe.md
