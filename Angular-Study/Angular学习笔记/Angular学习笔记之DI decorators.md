@@ -31,3 +31,4 @@
 
 > References
 - [@Self or @Optional @Host? The visual guide to Angular DI decorators](https://medium.com/frontend-coach/self-or-optional-host-the-visual-guide-to-angular-di-decorators-73fbbb5c8658)
+- [A curious case of the @Host decorator and Element Injectors in Angular](https://indepth.dev/a-curious-case-of-the-host-decorator-and-element-injectors-in-angular/)
