@@ -141,6 +141,7 @@
 │   ├── Angular中Error汇总.md
 │   ├── Angular响应式表单之更新表单的值.md
 │   ├── Angular打造股票管理网站.md      #useful
+│   ├── Angular系列之Decorators.md
 │   ├── Angular系列之变化检测.md
 │   ├── Dynamically add version number to application based on grunt
 │   ├── change-detection-default.gif
