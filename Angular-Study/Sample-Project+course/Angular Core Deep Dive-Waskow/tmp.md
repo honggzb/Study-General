@@ -52,7 +52,7 @@
 
 ### Types of Cloud Services
 
- type| |
+ Type|Terms | User
  ---|---|---
 IaaS | Infrastructure As A Service |System administrator
 PaaS | Platform As A Service  | Developer
