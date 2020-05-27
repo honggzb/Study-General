@@ -1,0 +1,38 @@
+<ng-container *ngIf="course">
+
+  <div class="" [ngClass]="cardClasses()">
+    <!-- <div class="course-title" [ngStyle]="{'text-decoration':'underline'}">
+      {{cardIndex + '.  ' + course.description}}
+    </div> -->
+    <course-title [title]=course.description></course-title>
+    <ng-content select="course-image" *ngIf="course.iconUrl;else noImage"></ng-content>
+    <ng-template #noImage>
+      <ng-container *ngTemplateOutlet="noImageTpl;context:{description:course.description}"></ng-container>
+    </ng-template>
+    <br>
+    <div style="width:100%">
+      <input #courseTitle [value]="course.longDescription" style="width: 97%;"/>
+    </div><br>
+    <ng-container [ngSwitch]="course.category">
+      <div class="course-category">
+        <!-- <ng-container *ngSwitchCase="'BEGINNER'">
+          <button class="catergory">BEGINNER</button>
+        </ng-container>
+        <button class="catergory" *ngSwitchCase="'INTERMEDIATE'">INTERMEDIATE</button>
+        <button class="catergory" *ngSwitchCase="'ADVANCED'">ADVANCED</button>
+        <button class="catergory" *ngSwitchDefault>All levels</button> -->
+        {
+          course.category,
+          select,
+          BEGINNER {BEGINNER}
+          INTERMEDIATE {INTERMEDIATE}
+          ADVANCED {ADVANCED}
+        }
+      </div>
+    </ng-container>
+    <br>
+    <button (click)="onCourseSave(courseTitle.value)">save Course</button>&nbsp;&nbsp;
+    <button (click)="onCourseViewed(course)">View Course</button>
+  </div>
+
+</ng-container>
