@@ -975,6 +975,8 @@ export class AppComponent {
 - `ng add @angular/elements`
 - `ng g c course-title`
 
+![elements](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Sample-Project%2Bcourse/Angular%20Core%20Deep%20Dive-Waskow/images-readme/elements.png)
+
 ```javascript
 // course-title.component.ts
 @Component({
