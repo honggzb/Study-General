@@ -28,14 +28,12 @@ export class AppModule {
    - runtime.xxxx.js
    - scripts.xxxx.js
    - style.xxxx.js
-
 6. Optimizing the build process for Custom Elements - not mandatory
-
-  - This is not required, it’s just more convenient to easily distribute your custom elements
-  - need [document-register-element](https://github.com/WebReflection/document-register-element) library firstly
-  - edit angular.json
-  - then run `ng build elements --prod` 
-  - it will easy to concatenate all js files
+   - This is not required, it’s just more convenient to easily distribute your custom elements
+   - need [document-register-element](https://github.com/WebReflection/document-register-element) library firstly
+   - edit angular.json
+   - then run `ng build elements --prod` 
+   - it will easy to concatenate all js files
 
 ![01 images](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Sample-general/elements/images/elements1.png)
  
@@ -89,13 +87,13 @@ const concat = require('concat');
 
 10. build your elements
 
-  - `ng run build:elements`
+   - `ng run build:elements`
 
 ![final output](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Sample-general/elements/images/elements2.png)
 
-  - or using shell command, such as 
-  - `#!/bin/sh ng build angular-app --prod --output-hashing=none && cat dist/my-elements/runtime.js dist/my-elements/polyfills.js dist/my-elements/scripts.js dist/my-elements/main.js > preview/elements.js`
-  - note: using `--output-hashing=none` not to generate any hashing number
+   - or using shell command, such as 
+   - `#!/bin/sh ng build angular-app --prod --output-hashing=none && cat dist/my-elements/runtime.js dist/my-elements/polyfills.js dist/my-elements/scripts.js dist/my-elements/main.js > preview/elements.js`
+   - note: using `--output-hashing=none` not to generate any hashing number
 
 11. create a general web and add elements.js to it
 
