@@ -33,9 +33,10 @@ export class AppModule {
   - This is not required, it’s just more convenient to easily distribute your custom elements
   - need [document-register-element](https://github.com/WebReflection/document-register-element) library firstly
   - edit angular.json
-  - then run `ng build elements --prod`
-  - then we got output ![](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/elements/images/elements1.png)
+  - then run `ng build elements --prod` 
   - it will easy to concatenate all js files
+  
+![output](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/elements/images/elements1.png)
   
 ```javascript
 "elements": {
@@ -88,7 +89,8 @@ const concat = require('concat');
 10. build your elements
 
 - `ng run build:elements`
-- result is ![](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/elements/images/elements2.png)
+
+![final output](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/elements/images/elements2.png)
 
 11. create a general web and add elements.js to it
 
