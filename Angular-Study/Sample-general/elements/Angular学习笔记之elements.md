@@ -34,8 +34,9 @@ export class AppModule {
   - need [document-register-element](https://github.com/WebReflection/document-register-element) library firstly
   - edit angular.json
   - then run `ng build elements --prod`
-  - then we got output ![](), it will easy to concatenate all js files
-
+  - then we got output ![](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/elements/images/elements1.png)
+  - it will easy to concatenate all js files
+  
 ```javascript
 "elements": {
   "root": "elements/",
@@ -87,7 +88,9 @@ const concat = require('concat');
 10. build your elements
 
 - `ng run build:elements`
-- result is
+- result is ![](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/elements/images/elements2.png)
+
+11. create a general web and add elements.js to it
 
 ```html
 <!doctype html>
@@ -110,6 +113,6 @@ const concat = require('concat');
 
 > References
 - https://angular.io/guide/elements
-- [[Tutorial] How to create Custom Angular Elements?](https://blog.angulartraining.com/tutorial-how-to-create-custom-angular-elements-55aea29d80c5)
+- [How to create Custom Angular Elements?](https://blog.angulartraining.com/tutorial-how-to-create-custom-angular-elements-55aea29d80c5)
 - https://github.com/alcfeoh/ng2-training
 - [Using Angular Elements — Why and How? — Part 1](https://blog.bitsrc.io/using-angular-elements-why-and-how-part-1-35f7fd4f0457)
