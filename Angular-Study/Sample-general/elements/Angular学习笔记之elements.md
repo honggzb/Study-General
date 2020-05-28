@@ -35,9 +35,9 @@ export class AppModule {
   - edit angular.json
   - then run `ng build elements --prod` 
   - it will easy to concatenate all js files
-  
-![elements1](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/elements/images/elements1.png)
-  
+
+![01 images](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Sample-general/elements/images/elements1.png)
+ 
 ```javascript
 "elements": {
   "root": "elements/",
@@ -90,7 +90,7 @@ const concat = require('concat');
 
 - `ng run build:elements`
 
-![final output](https://github.com/honggzb/Study-General/tree/master/Angular-Study/Sample-general/elements/images/elements2.png)
+![final output](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Sample-general/elements/images/elements2.png)
 
 11. create a general web and add elements.js to it
 
