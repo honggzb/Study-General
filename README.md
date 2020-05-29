@@ -82,8 +82,11 @@
 │   │   └── readme.md
 │   ├── Angular学习笔记/
 │   │   ├── Angular学习笔记之Animation.md
+│   │   ├── Angular学习笔记之DI decorators.md
 │   │   ├── Angular学习笔记之DI依赖注入.md
 │   │   ├── Angular学习笔记之Dynamic components.md
+│   │   ├── Angular学习笔记之elements1.md
+│   │   ├── Angular学习笔记之elements2.md
 │   │   ├── Angular学习笔记之Pipe.md
 │   │   ├── Angular学习笔记之directive指令.md
 │   │   ├── Angular学习笔记之lazy loading-使用angular-cli.md     #useful
@@ -206,6 +209,7 @@
 │   ├── Angular中Error汇总.md
 │   ├── Angular响应式表单之更新表单的值.md
 │   ├── Angular打造股票管理网站.md      #useful
+│   ├── Angular系列之Decorators.md
 │   ├── Angular系列之变化检测.md
 │   ├── Dynamically add version number to application based on grunt
 │   ├── change-detection-default.gif
