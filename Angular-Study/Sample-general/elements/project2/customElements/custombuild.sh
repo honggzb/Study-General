@@ -1,0 +1,1 @@
+ng build --prod --output-hashing=none && cat dist/myElements/runtime-es5.js dist/myElements/runtime-es2015.js dist/myElements/polyfills-es5.js dist/myElements/polyfills-es2015.js dist/myElements/main-es5.js dist/myElements/main-es2015.js > preview/angularapp.js

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./angularapp.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <hello-world
+        title="another test"
+        rname="Bruce Wayne"
+        occupation="World's Greatest Detective"
+        location="Gotham"
+        first="Detective Comics #27"></hello-world>
+        <hero-form></hero-form>
+<script>
+const component = document.querySelector('hello-world');
+component.addEventListener('display', (event) => {
+    alert(event.detail);
+})
+</script>
+</body>
+</html>
