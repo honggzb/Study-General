@@ -1,10 +1,11 @@
 [Content](#top)
-- [AWS](#AWS)
+
 - [Accessiblity](#Accessiblity)
 - [Angular-Study](#angular-study)
 - [AngularJS-study](#angularjs-study)
 - [CSS+CSS3-Skill - css技巧](#csscss3-skill---css%E6%8A%80%E5%B7%A7)
 - [Configuration Study - Build tools](#configuration-study---build-tools)
+- [Cloud-study](#Cloud-study)
 - [D3](#d3)
 - [Database学习](#database%E5%AD%A6%E4%B9%A0)
 - [Debug-Skill调试技巧](#debug-skill%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7)
@@ -31,16 +32,6 @@
 - [interview](#interview)
 - [qita](#qita)
 - [thirdParty-lib](#thirdparty-lib)
-
-### AWS
-
-```
-├── AWS/
-│   ├── basic of aws.md
-│   ├── Cloud computing focusing on AWS - DevOps - June 14.pdf
-│   └── 
-```
-
 
 ### Accessiblity
 
@@ -562,6 +553,16 @@
 │   ├── todo-list.md
 │   └── file-list.md
 ```
+
+### Cloud-study
+
+```
+├── Cloud-study/
+│   ├── basic of aws.md
+│   ├── Cloud computing focusing on AWS - DevOps - June 14.pdf
+│   └── 
+```
+
 
 [back to top](#top)
 
