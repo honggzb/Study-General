@@ -1,5 +1,5 @@
 ```
-├── AWS/
+├── Cloud-study
 │   ├── AWS/
 │   │   └── basic of aws.md
 │   │   ├── Cloud computing focusing on AWS - DevOps - June 14.pdf
