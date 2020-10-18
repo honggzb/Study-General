@@ -28,6 +28,7 @@
  Quokka.js                   | Quokka is a debugging tool that gives live feedback on the code
                              | you are writing for javascript
  Better Comments             | colorful comment
+*Template String Converter   | convert Javascript/Typescript quotes to backticks when ${ has been entered within a string
 ```
 
 ### 功能性
