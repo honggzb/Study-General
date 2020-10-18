@@ -41,6 +41,7 @@
  Better Comments             | colorful comment
 *Template String Converter   | convert Javascript/Typescript quotes to backticks when ${ has been entered within a string
                              | https://marketplace.visualstudio.com/items?itemName=meganrogge.template-string-converter
+Docs View                    |  displays hover documentation in the sidebar or panel(https://marketplace.visualstudio.com/items?itemName=bierner.docs-view)
 ```
 
 ## 功能性
