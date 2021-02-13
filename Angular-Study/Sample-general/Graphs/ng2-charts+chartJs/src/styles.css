@@ -1,0 +1,21 @@
+.navbar {
+    margin-bottom: 30px;
+}
+
+.navbar-brand {
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.list-group-item {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.list-group-item:hover,
+.list-group-item.active {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    outline: 0;
+}
