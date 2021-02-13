@@ -176,7 +176,7 @@ export class LayoutComponent implements OnInit {
 │       └── icons/
 ```
 
-
+![interfaces](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Sample-general/Drag-Drop-Dashboard/interfaces.png)
 
 ### Drag and Drop Area
 
