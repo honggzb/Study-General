@@ -418,7 +418,8 @@ export class SidenavComponent implements OnInit, OnDestroy {
 - [Drag and Drop dashboard builder with Angular and Gridster](https://medium.com/javascript-in-plain-english/drag-and-drop-dashboard-builder-with-angular-and-gridster-a07592e54ce2)
 - https://github.com/chriskitson/ng-dashboard-builder
 - [Dashboards and Dashboard Widgets - Part 1](https://robferguson.org/blog/2019/06/22/dashboards-and-dashboard-widgets-part-1/)
-- https://github.com/Robinyo/serendipity
+  - [repos](https://github.com/Robinyo/serendipity)
+  - [demo](https://serendipity-f7626.firebaseapp.com/sales/dashboards)
 - https://github.com/nathanagez/angular6-dynamic-dashboard
 - https://github.com/gund/ng-dynamic-component
 - [Angular 11 Chart Js Tutorial with ng2-charts Examples](https://www.positronx.io/angular-chart-js-tutorial-with-ng2-charts-examples/)
