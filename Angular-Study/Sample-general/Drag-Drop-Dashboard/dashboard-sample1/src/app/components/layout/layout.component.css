@@ -1,0 +1,25 @@
+
+    .toolbar {
+        height: 100px;
+        display: flex;
+    }
+
+    gridster{
+        display: flex;
+        height: 88vh;
+        flex-direction: column;
+        background-color: whitesmoke;
+    }
+
+    button {
+        height: 30px;
+    }
+
+    .draggable {
+        padding: 10px;
+        width: 200px;
+        border: solid 2px #000;
+        margin-left: 20px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }

@@ -1,0 +1,20 @@
+.example-container {
+    width: 100%;
+    height: calc(100vh - 12px);
+    overflow: hidden;
+
+  .example-sidenav-content {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .example-sidenav {
+    padding: 10px;
+    top: 20px;
+  }
+
+  .widget-icon {
+    left: 92%;
+  }
+
+}

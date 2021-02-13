@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Sample 3 - Expanding CSS Input Field</title>
+  <link rel="stylesheet prefetch" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<style>
+/* General Styles */        
+center > h4 { color: #00a0d1; margin-top: 50px; }
+        body { margin: 0; font-family: Arial; background-color: #3498db; }
+        ul#growing-search-freebie { display: table; list-style: none; margin: 150px auto 0 auto; padding: 0; }
+        ul#growing-search-freebie > li { float: left; margin-right: 20px; margin-bottom: 20px; padding: 10px 10px; }
+        ul#growing-search-freebie > li:last-child { margin-right: 0; }
+        ul#growing-search-freebie > li > span { margin-bottom: 10px; }
+/* STYLES */
+/*
+ * Freebie from PixelsDaily
+ * (www.pixelsdaily.com)
+ *
+ * @freebie: growing-search
+ * @author: Francisco Neves (@fntneves)
+ * @website: www.francisconeves.com
+ */
+.growing-search {
+    padding: 5px 5px 5px 7px;
+    border-radius: 5px;
+    background: #fff;
+}
+.growing-search div {
+    display: inline-block;
+    font-size: 12px;
+}
+.growing-search .input input {
+    margin-right: 0;
+    border: none;
+    font-size: inherit;
+    transition: width 200ms;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    width: 55px;
+    color: #aaa;
+    border-bottom: 1px solid #eee;
+}
+.growing-search .input input:focus {
+    width: 150px;
+}
+.growing-search .submit button {
+    margin-left: 0;
+    border: none;
+    font-size: 1.15em;
+    color: #aaa;
+    background-color: #fff;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    transition: color 200ms;
+}
+.growing-search .input input:hover, .growing-search .submit button:hover {
+    cursor: pointer;
+}
+.growing-search .input input:focus, .growing-search .submit button:focus {
+    outline: none;
+}
+.growing-search .submit button:hover {
+    color: #3498db;
+}
+</style>
+</head>
+<body>
+  <ul id="growing-search-freebie">
+        <li>
+            <!-- Start Freebie Markup -->
+            <div class="growing-search">
+                <div class="input">
+                    <input type="text" name="search"/>
+                </div><!-- Space hack -->
+                <div class="submit">
+                    <button type="submit" name="go_search"><span class="fa fa-search"></span></button>
+                </div>
+            </div>
+            <!-- End Freebie Markup -->
+        </li>
+    </ul>
+</body>
+</html>

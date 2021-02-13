@@ -1,0 +1,23 @@
+{
+  "id": "1",
+  "name": "Sample Dashboard 1",
+  "widgets": [{
+      "id": "2",
+      "name": "Pie Chart",
+      "component": "pieChart",
+      "cols": 4,
+      "rows": 8,
+      "y": 0,
+      "x": 0
+    },
+    {
+      "id": "7",
+      "name": "Bar Chart",
+      "component": "barChart",
+      "cols": 4,
+      "rows": 8,
+      "y": 0,
+      "x": 4
+    }
+  ]
+}

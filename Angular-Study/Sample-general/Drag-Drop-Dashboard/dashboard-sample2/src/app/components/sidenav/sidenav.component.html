@@ -1,0 +1,22 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" position="end" mode="side">
+        <mat-list style="padding: 10px;">
+            <mat-card *ngFor="let item of toolPaletteItems"
+                style="padding: 5px; margin-bottom: 10px; text-align: center;">
+                <img mat-card-sm-image [src]="item.icon" [alt]="item.name" style="width: 40px; height: 40px;"
+                    draggable="true"
+                    (dragstart)="onDragStart($event, item.id)">
+                <!-- <mat-card-content>
+                    <p> {{item.name}}</p>
+                </mat-card-content> -->
+            </mat-card>
+        </mat-list>
+    </mat-drawer>
+    <div class="example-sidenav-content">
+        <button class="widget-icon" type="button" mat-button (click)="drawer.toggle()">
+            <mat-icon>widgets</mat-icon>
+            <!-- <span class="material-icons">widgets</span> -->
+        </button>
+        <dashboard></dashboard>
+    </div>
+</mat-drawer-container>
