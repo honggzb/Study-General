@@ -1,0 +1,40 @@
+<div class="container">
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#">Drag and Drop example – Angular Material</a>
+  </nav>
+
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="list-group">
+        <li class="list-group-item">Basic
+          <ul>
+            <li class="list-group-item" routerLinkActive="active" routerLink="basic">Basic</li>
+            <li class="list-group-item" routerLinkActive="active" routerLink="lock">Lock Direction</li>
+            <li class="list-group-item" routerLinkActive="active" routerLink="drag-event">Drag Event</li>
+          </ul>
+        </li>
+        <li class="list-group-item">Drag & Drop items in a List
+          <ul>
+            <li class="list-group-item" routerLinkActive="active" routerLink="sorting-list">Basic Sorting List</li>
+            <li class="list-group-item" routerLinkActive="active" routerLink="sorting-animation">Sort list Animations</li>
+          </ul>
+        </li>
+        <li class="list-group-item">Drag & Drop between Lists
+          <ul>
+            <li class="list-group-item" routerLinkActive="active" routerLink="sorting-lists">Basic</li>
+          </ul>
+        </li>
+        <li class="list-group-item">Advances
+          <ul>
+            <li class="list-group-item" routerLinkActive="active" routerLink="dashboard">dashboard</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>

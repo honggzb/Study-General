@@ -1,0 +1,9 @@
+<div
+  class="box-list-horizontal"
+  cdkDropList
+  cdkDropListOrientation="horizontal"
+  (cdkDropListDropped)="drop($event)">
+  <div class="drag-box" *ngFor="let customer of customers" cdkDrag>
+    {{customer.name}}
+  </div>
+</div>

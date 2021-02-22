@@ -1,0 +1,21 @@
+<div>
+    <div class="row" style="min-height: 500px;width:100%;display: block;float: left;">
+        <h4>Drag Event handler</h4>
+        <div cdkDrag class="drag-box"
+            (cdkDragStarted)="dragStarted($event)"
+            (cdkDragEnded)="dragEnded($event)"
+            (cdkDragMoved)="dragMoved($event)">
+            drag me
+        </div>
+        <p>{{state}} {{position}}</p>
+    </div>
+
+    <div class="row" style="min-height: 500px;width:100%;display: block;float: left;">
+        <h4>Drag using a handle</h4>
+        <div class="row" cdkDrag>
+            <div class="box-handler" cdkDragHandle>
+                gkz
+            </div>
+        </div>
+    </div>
+</div>
