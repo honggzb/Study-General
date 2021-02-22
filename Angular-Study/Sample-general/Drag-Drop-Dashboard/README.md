@@ -1,24 +1,25 @@
-[可拖放的面板- angular-gridster2的应用](top)
+[可拖放的面板- angular-gridster2+Angular material CDK的应用](top)
 
-- [应用1- 通过创建appLayoutItem Directive和ng-container](#应用1--通过创建applayoutitem-directive和ng-container)
+- [应用1- GridSter2+创建appLayoutItem Directive和ng-container](#应用1--gridster2创建applayoutitem-directive和ng-container)
   - [Project Structure](#project-structure)
   - [Gridster2 html结构](#gridster2-html结构)
   - [appLayoutItem Directive](#applayoutitem-directive)
   - [Gridster2的公共属性和方法- layout.service](#gridster2的公共属性和方法--layoutservice)
   - [面板组件- layout component](#面板组件--layout-component)
-- [应用2 - Angular-GridSter2+ng-dynamic-component](#应用2---angular-gridster2ng-dynamic-component)
+- [应用2 - GridSter2+ng-dynamic-component](#应用2---gridster2ng-dynamic-component)
   - [Project Structure](#project-structure-1)
   - [Drag and Drop Area](#drag-and-drop-area)
   - [Drag and Drop Event in SideNav](#drag-and-drop-event-in-sidenav)
-- [Use Angular Material CDK](#use-angular-material-cdk)
+- [应用3- Use Angular Material CDK](#应用3--use-angular-material-cdk)
   - [install](#install)
   - [Directive](#directive)
-    - [cdkDrag Directive](#cdkdrag-directive)
-    - [cdkDragHandle Directive](#cdkdraghandle-directive)
-    - [cdkDropListConnectedTo Directive](#cdkdroplistconnectedto-directive)
-    - [cdkDropListData Directive](#cdkdroplistdata-directive)
+    - [cdkDrag Directive - drag function](#cdkdrag-directive---drag-function)
+    - [cdkDragHandle Directive - drag using handle](#cdkdraghandle-directive---drag-using-handle)
+    - [cdkDropListConnectedTo Directive - drag between lists](#cdkdroplistconnectedto-directive---drag-between-lists)
+    - [cdkDropListData Directive - components](#cdkdroplistdata-directive---components)
   - [Sample](#sample)
-## 应用1- 通过创建appLayoutItem Directive和ng-container
+
+## 应用1- GridSter2+创建appLayoutItem Directive和ng-container
 
 ### Project Structure
 
@@ -157,7 +158,7 @@ export class LayoutComponent implements OnInit {
 
 [back to top](#top)
 
-## 应用2 - Angular-GridSter2+ng-dynamic-component
+## 应用2 - GridSter2+ng-dynamic-component
 
 ### Project Structure
 
@@ -421,7 +422,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
 [back to top](#top)
 
-## Use Angular Material CDK
+## 应用3- Use Angular Material CDK
 
 ### install
 
@@ -431,7 +432,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
 ### Directive
 
-#### cdkDrag Directive
+#### cdkDrag Directive - drag function
 
 **Event Handler:** Add functions on cdkDrag to handle events
 
@@ -461,7 +462,7 @@ export class DragComponent implements OnInit {
 }
 ```
 
-#### cdkDragHandle Directive
+#### cdkDragHandle Directive - drag using handle
 
 - drag using a handle
 - to restrict the draggable area by a handle element, just add `cdkDragHandle` directive to an element inside of `cdkDrag`
@@ -472,25 +473,45 @@ export class DragComponent implements OnInit {
 </div>
 ```
 
-#### cdkDropListConnectedTo Directive
+#### cdkDropListConnectedTo Directive - drag between lists
 
   - helps to drag and drop of items between the multiple cdkDropList instances. The communication between two different cdkDropList established either by assigning the cdkDropList template variable to the cdkDropListConnectedTo directive or by assigning the cdkDropList Html element id value to cdkDropListConnectedTo directive
   - transfer data from one cdkDropList instance to another cdkDropList instance which means moving an item from one model object to another model object
+  - Note: Drag & Drop between Lists
+    - Connect one or more `cdkDropList` together using `cdkDropListConnectedTo` property. Then set `cdkDropListData` and `cdkDragData` for associating data with `cdkDropList` and `cdkDrag`
+  - Implementation of `cdkDropListDropped` function will use drag-and-drop CDK `moveItemInArray` and `transferArrayItem`
 
-#### cdkDropListData Directive
+#### cdkDropListData Directive - components
 
   - takes input like a component object that will render as Html Element items in cdkDropList instance. By assigning a component model object to cdkDropListData, makes our data to available in CDK drag and drop instance for sorting the data on each drag and drop of elements
 - transferArrayItem method:
   - This method uses the component model data that was assigned to the cdkDropListData directive and then sort that data
   - By using the transferArrayItem method we can sort the data of both source and destination cdkDroList instances model objects
 
-### Sample
+### Advance Sample
 
-- 
-- Drag & Drop between Lists
-  - Connect one or more `cdkDropList` together using `cdkDropListConnectedTo` property. Then set `cdkDropListData` and `cdkDragData` for associating data with `cdkDropList` and `cdkDrag`
-  - Implementation of `cdkDropListDropped` function will use drag-and-drop CDK `moveItemInArray` and `transferArrayItem`
+- work with Angular material component- Grid list
+- cons: no delete function
 
+```html
+<div class="grid-container" style="overflow: hidden;">
+    <mat-grid-list cols="8" rowHeight="1:1" gutterSize="15px">
+        <mat-grid-tile *ngFor="let card of cards; let i = index;"
+            [colspan]="card.cols"
+            [rowspan]="card.rows">
+            <cdk-drop-list [cdkDropListConnectedTo]="drops" [cdkDropListData]="i">
+                <mat-card cdkDrag (cdkDragEntered)="entered($event)" [cdkDragData]="i" class="dashboard-card"
+                    [style.backgroundColor]="card.color">
+                    <mat-icon cdkDragHandle class="more-button">open_with</mat-icon>
+                    <mat-card-content class="dashboard-card-content">
+                        <h1>{{card.title}}</h1>
+                    </mat-card-content>
+                </mat-card>
+            </cdk-drop-list>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+```
 
 > Refences
 - https://material.angular.io/cdk/drag-drop/overview
