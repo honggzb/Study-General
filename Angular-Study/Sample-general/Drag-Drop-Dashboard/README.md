@@ -10,6 +10,14 @@
   - [Project Structure](#project-structure-1)
   - [Drag and Drop Area](#drag-and-drop-area)
   - [Drag and Drop Event in SideNav](#drag-and-drop-event-in-sidenav)
+- [Use Angular Material CDK](#use-angular-material-cdk)
+  - [install](#install)
+  - [Directive](#directive)
+    - [cdkDrag Directive](#cdkdrag-directive)
+    - [cdkDragHandle Directive](#cdkdraghandle-directive)
+    - [cdkDropListConnectedTo Directive](#cdkdroplistconnectedto-directive)
+    - [cdkDropListData Directive](#cdkdroplistdata-directive)
+  - [Sample](#sample)
 ## 应用1- 通过创建appLayoutItem Directive和ng-container
 
 ### Project Structure
@@ -413,3 +421,92 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
 [back to top](#top)
 
+## Use Angular Material CDK
+
+### install
+
+- `ng add @angular/material`
+- `npm install @angular/cdk`
+- `import { DragDropModule } from '@angular/cdk/drag-drop';` in NgModule
+
+### Directive
+
+#### cdkDrag Directive
+
+**Event Handler:** Add functions on cdkDrag to handle events
+
+– `cdkDragStarted`: emits when user stops dragging.
+– `cdkDragEnded`: emits when user starts dragging.
+– `cdkDragMoved`: emits when user is dragging the item (for every pixel).
+
+```html
+<div cdkDrag class="drag-box" (cdkDragStarted)="dragStarted($event)" (cdkDragEnded)="dragEnded($event)" (cdkDragMoved)="dragMoved($event)">drag me</div>
+<p>{{state}} {{position}}</p>
+```
+
+```javascript
+import { CdkDragEnd, CdkDragStart, CdkDragMove } from '@angular/cdk/drag-drop';
+export class DragComponent implements OnInit {
+  state = '';
+  position = '';
+  dragStarted(event: CdkDragStart) {
+    this.state = 'dragStarted';
+  }
+  dragEnded(event: CdkDragEnd) {
+    this.state = 'dragEnded';
+  }
+  dragMoved(event: CdkDragMove) {
+    this.position = `> Position X: ${event.pointerPosition.x} - Y: ${event.pointerPosition.y}`;
+  }
+}
+```
+
+#### cdkDragHandle Directive
+
+- drag using a handle
+- to restrict the draggable area by a handle element, just add `cdkDragHandle` directive to an element inside of `cdkDrag`
+
+```html
+<div class="drag-box-with-handler" cdkDrag>
+  <div class="box-handler" cdkDragHandle>gkz</div>
+</div>
+```
+
+#### cdkDropListConnectedTo Directive
+
+  - helps to drag and drop of items between the multiple cdkDropList instances. The communication between two different cdkDropList established either by assigning the cdkDropList template variable to the cdkDropListConnectedTo directive or by assigning the cdkDropList Html element id value to cdkDropListConnectedTo directive
+  - transfer data from one cdkDropList instance to another cdkDropList instance which means moving an item from one model object to another model object
+
+#### cdkDropListData Directive
+
+  - takes input like a component object that will render as Html Element items in cdkDropList instance. By assigning a component model object to cdkDropListData, makes our data to available in CDK drag and drop instance for sorting the data on each drag and drop of elements
+- transferArrayItem method:
+  - This method uses the component model data that was assigned to the cdkDropListData directive and then sort that data
+  - By using the transferArrayItem method we can sort the data of both source and destination cdkDroList instances model objects
+
+### Sample
+
+- 
+- Drag & Drop between Lists
+  - Connect one or more `cdkDropList` together using `cdkDropListConnectedTo` property. Then set `cdkDropListData` and `cdkDragData` for associating data with `cdkDropList` and `cdkDrag`
+  - Implementation of `cdkDropListDropped` function will use drag-and-drop CDK `moveItemInArray` and `transferArrayItem`
+
+
+> Refences
+- https://material.angular.io/cdk/drag-drop/overview
+- https://stackblitz.com/edit/drag-drop-dashboard
+- [Angular 7 Drag and Drop example – Angular Material CDK](https://grokonez.com/frontend/angular/angular-7/angular-7-drag-and-drop-example-angular-material-cdk)
+- https://www.codegrepper.com/code-examples/html/how+to+implement+drag+and+drop+in+angular
+
+[back to top](#top)
+
+> References
+- https://tiberiuzuld.github.io/angular-gridster2/
+- [Drag and Drop dashboard builder with Angular and Gridster](https://medium.com/javascript-in-plain-english/drag-and-drop-dashboard-builder-with-angular-and-gridster-a07592e54ce2)
+- https://github.com/chriskitson/ng-dashboard-builder
+- [Dashboards and Dashboard Widgets - Part 1](https://robferguson.org/blog/2019/06/22/dashboards-and-dashboard-widgets-part-1/)
+  - [repos](https://github.com/Robinyo/serendipity)
+  - [demo](https://serendipity-f7626.firebaseapp.com/sales/dashboards)
+- https://github.com/nathanagez/angular6-dynamic-dashboard
+- https://github.com/gund/ng-dynamic-component
+- [Angular 11 Chart Js Tutorial with ng2-charts Examples](https://www.positronx.io/angular-chart-js-tutorial-with-ng2-charts-examples/)
