@@ -85,7 +85,7 @@
 │   │   │   ├── Demo1/
 │   │   │   └── summary.pdf
 │   │   ├── Angular Routing- Deborah Kurata/
-│   │   │   ├── Angular component commnication- Deborah Kurata/
+│   │   │   └── Angular component commnication- Deborah Kurata/
 │   │   ├── Building Your First App with Spring Boot and Angular- Dan Bunker/
 │   │   ├── DaMo-Angular Workshop/
 │   │   ├── communication/
@@ -99,6 +99,10 @@
 │   │   ├── 大漠的Angular Workshop.md
 │   │   └── 
 │   ├── Sample-general/
+│   │   ├── Drag-Drop-Dashboard/
+│   │   │    ├── dashboard-sample1/
+│   │   │    ├── dashboard-sample2/
+│   │   │    └── dashboard-sample3/
 │   │   ├── angular-bootstrap/
 │   │   │    ├── use user-defined directive in Tooltips.md
 │   │   │    └── 
