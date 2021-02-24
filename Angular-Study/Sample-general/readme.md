@@ -2,7 +2,8 @@
 │   ├── Sample-general/
 │   │   ├── Drag-Drop-Dashboard/
 │   │   │    ├── dashboard-sample1/
-│   │   │    └── dashboard-sample2/
+│   │   │    ├── dashboard-sample2/
+│   │   │    └── dashboard-sample3/
 │   │   ├── angular-bootstrap/
 │   │   │    ├── use user-defined directive in Tooltips.md
 │   │   │    └── 
