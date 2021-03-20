@@ -96,13 +96,16 @@
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
 │   │   └── aot-config.md
-│   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
-│   │   │   ├── codeFinished/ 
-│   │   ├── codeInit/
-│   │   ├── codePreparedFinished/
-│   │   ├── Migration from AngularJS 1.x to Angular 2+.zip
-│   │   ├── Preparing for Migration from AngularJS (1.x) to Angular (2+).zip
-│   │   └── prepare.md
+│   ├── Migration/
+│   │   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
+│   │   │   │   ├── codeFinished/
+│   │   │   ├── codeInit/
+│   │   │   ├── codePreparedFinished/
+│   │   │   ├── Migration from AngularJS 1.x to Angular 2+.zip
+│   │   │   ├── Preparing for Migration from AngularJS (1.x) to Angular (2+).zip
+│   │   │   └── prepare.md
+│   │   ├── using Angular in AngularJS.md
+│   │   └── Upgrade AngularJS to Angular-Dual Booting.md
 │   ├── Mockup-server/
 │   │   ├── angular-in-memory-web-api.md
 │   │   ├── liverload-mockup+gulp.md
