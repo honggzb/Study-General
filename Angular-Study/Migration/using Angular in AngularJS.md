@@ -1,8 +1,8 @@
 [How to use/inject Angular service/component/controller in AngularJS](#top)
 
 - [index.ts of module directory](#indexts-of-module-directory)
-- [sleeve-allocator-request-dialog.controller.ts](#sleeve-allocator-request-dialogcontrollerts)
-- [component.js](#componentjs)
+- [Angular class - sleeve-allocator-request-dialog.controller.ts](#angular-class---sleeve-allocator-request-dialogcontrollerts)
+- [AngularJS component- account.profile.component.js](#angularjs-component--accountprofilecomponentjs)
 
 ## index.ts of module directory
 
@@ -23,25 +23,41 @@ export const CgiAccountMaintenance = angular.module('cgiAccountMaintenance', [
   .controller(CgiAccountLiquidationRequestDialog.getName(), CgiAccountLiquidationRequestDialog)
   ```
 
-  ## sleeve-allocator-request-dialog.controller.ts
+ ## Angular class - sleeve-allocator-request-dialog.controller.ts
 
   ```javascript
 export class SleeveAllocatorRequestDialogController {
-  constructor()
+  constructor(
+    private $mdDialog: any,                          // Angular component
     private sleeveAllocatorOnDemandService: any,     // Angular Service
+    private accountId: number,
+    private options: string[],
     private loaderService: LoaderService,            // Angular Service
   ) {
     //...
   }
   // inject Angular service/component
-  static $inject = ['$mdDialog', 'sleeveAllocatorOnDemandService', LoaderService.getName()];
+  static $inject = ['$mdDialog', 'sleeveAllocatorOnDemandService', 'accountId', 'options', LoaderService.getName()];
   //...
 }
 ```
 
-## component.js
+## AngularJS component- account.profile.component.js
 
 ```javascript
+angular.module('cgiAccountMaintenance')
+       .component('cgiAccountProfile', {
+            templateUrl: 'modules/account-maintenance/components/cgi-account-page/cgi-account-profile/cgi-account-profile.component.html',
+            controller: AccountProfileController,
+            controllerAs: 'vm',
+             bindings: {
+                account: '<',
+                accountProgram: '<',
+                userPermissions: '<',
+                accountId: '<',
+                lobConfiguration: '<',
+              },
+ });
   function AccountProfileController($state, $q, $mdDialog, sleeveAllocatorRequestDialogService, TRADING_STATES) {
   //...
   });
