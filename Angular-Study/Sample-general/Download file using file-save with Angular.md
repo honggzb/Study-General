@@ -2,7 +2,8 @@
 
 - [Front End codes](#front-end-codes)
 - [Implement REST API](#implement-rest-api)
-
+- [Unable to view 'Content-Disposition' headers in response of Angular4](#unable-to-view-content-disposition-headers-in-response-of-angular4)
+  
 ## Front End codes
 
 ```javascript
@@ -33,6 +34,8 @@ export class AppComponent {
   }
 }
 ```
+
+[back to top](#top)
 
  ## Implement REST API
 
@@ -85,6 +88,23 @@ class FileResource {
     }
 }
 ```
+
+[back to top](#top)
+
+## Unable to view 'Content-Disposition' headers in response of Angular4
+
+- https://stackoverflow.com/questions/45892875/unable-to-view-content-disposition-headers-in-angular4-get-response
+- need to expose the `Access-Control-Expose-Headers` in java, which can be done using CORS as :
+
+```java
+// expose the required headers in the server response.
+CorsFilter corsFilter = new CorsFilter();
+corsFilter.setAllowedHeaders("Content-Type, Access-Control-Allow-Headers, Access-Control-Expose-Headers, Content-Disposition, 
+Authorization, X-Requested-With");
+corsFilter.setExposedHeaders("Content-Disposition");
+```
+
+[back to top](#top)
 
 > Reference
 - https://github.com/shekhargulati/filesave-angular4-example
