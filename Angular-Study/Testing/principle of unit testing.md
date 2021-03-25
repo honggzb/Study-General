@@ -1,0 +1,8 @@
+- More isolated testing
+  - We want to test the services and components in question, not their dependencies
+- Strongly typed template checking
+  - If a child component definition changes, we want to ensure that dependent unit tests are breaking
+- Less coupling between components and services
+  - Dependency Injection makes it easy to inject services, but if those services are being used all over the shop, refactoring becomes difficult
+- Prefer dumb components over smart components
+  - Dumb components (i.e. those that rely on inputs and outputs) are much easier to test than components dependent on multiple services
