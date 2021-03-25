@@ -195,12 +195,13 @@
 │   │   │   ├── tsconfig.sample.js
 │   │   │   └── 
 │   │   ├── Unit-Test/
-│   │   │   ├── Unit Testing in Angular Course -Joe Eames/
+│   │   │   ├── Unit Testing in Angular Course -Joe Eames/
 │   │   │   ├── NgRx-test-sample.md
 │   │   │   ├── wallaby-setup.md
-│   │   │   └── 
+│   │   │   └── 
+│   │   ├── Angular学习笔记之unit testing
 │   │   ├── Unit test-Karma performance improve.md
-│   │   └── readme.md
+│   │   └── 
 │   ├── Angular CLI的使用(new).md     # useful
 │   ├── Angular_CLI的使用.md           
 │   ├── Angular2+Accessibility.md
