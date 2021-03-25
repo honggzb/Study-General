@@ -201,6 +201,7 @@
 │   │   │   └── 
 │   │   ├── Angular学习笔记之unit testing
 │   │   ├── Unit test-Karma performance improve.md
+│   │   ├── principle of unit testing.md
 │   │   └── 
 │   ├── Angular CLI的使用(new).md     # useful
 │   ├── Angular_CLI的使用.md           
