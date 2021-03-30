@@ -142,13 +142,14 @@
 │   │   │   └── 
 │   │   ├── Unit-Test/
 │   │   │   ├── Unit Testing in Angular Course -Joe Eames/
+│   │   │   ├── Angular学习笔记之unit testing
+│   │   │   ├── Mocking Child Components.md
 │   │   │   ├── NgRx-test-sample.md
 │   │   │   ├── wallaby-setup.md
 │   │   │   └── 
-│   │   ├── Angular学习笔记之unit testing
 │   │   ├── Unit test-Karma performance improve.md
 │   │   ├── principle of unit testing.md
-│   │   └── 
+│   │   └── readme.md
 │   ├── Angular CLI的使用(new).md     # useful
 │   ├── Angular_CLI的使用.md           
 │   ├── Angular2+Accessibility.md
