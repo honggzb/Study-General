@@ -78,11 +78,19 @@ angular.module('cgiAccountMaintenance')
 ```javascript
 // using download.service.js in process-monitor.service.ts
 // 1) core.module.ts
- {
+@NgModule({
+  imports: [
+  ],
+  declarations: [],
+  providers: [
+    {
     provide: Providers.ng2DownloadService,
     useFactory: (injector: Injector): void => injector.get('download'),
     deps: ['$injector'],
-},
+    },
+    //...
+  ]
+})
 //2) upgrade-providers/index.ts
 export const ng2DownloadService = new InjectionToken('download');
 //3) process-monitor.service.ts
