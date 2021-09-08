@@ -15,6 +15,8 @@
   - [1. Type 'ElementRef' is not generic](#ElementRef)
   - [2. unable to call a controller function from inside a custom-template with ui-typeahead](#ui-typeahead)
   - [3. Sub-menu items is not closing even after clicking outside the menu list](#Sub-menu)
+- [其他编译问题](#其他编译问题)
+  - [1. cannot be loaded because running scripts is disabled on this system](#cannot-be-loaded)
 
 <h2 id="angular">Angular 2+</h2>
 
@@ -238,5 +240,14 @@ using `popover-trigger="outsideClick"` instead of `popover-trigger="focus"`
 <button uib-popover-template popover-trigger="outsideClick" ...>
 <button uib-popover-template popover-trigger="focus" ...>
 ```
+
+[back to top](#top)
+
+<h2 id="其他编译问题">其他编译问题</h2>
+
+<h3 id="cannot-be-loaded">1. cannot be loaded because running scripts is disabled on this system</h3>
+
+- ps1 cannot be loaded because running scripts is disabled on this system
+- `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted` (Visual Studio Code terminal or any IDE you are using)
 
 [back to top](#top)
