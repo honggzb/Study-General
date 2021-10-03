@@ -12,7 +12,8 @@ class TodoComponent implements OnInit {
   }
 }
 //1) The solution
-// need to get the method to return an observable stream. For that, we could extend the mock object via passing overrides as the second parameter into MockProvider
+// need to get the method to return an observable stream. For that, 
+// we could extend the mock object via passing overrides as the second parameter into MockProvider
 TestBed.configureTestingModule({
   declarations: [TodoComponent],
   providers: [
