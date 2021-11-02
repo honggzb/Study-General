@@ -61,8 +61,6 @@ export const APP_DATE_FORMATS: MatDateFormats = {
 };
 ```
 
-![angular-material-datepicker-format](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Angular-material/angular-material-datepicker-format-1.jpg)
-
 ### used in component
 
 - Provide this implementation inside the providers tag of Component Decorator by overriding the default
@@ -113,6 +111,8 @@ export const MY_DATE_FORMATS = {
 ```
 
 ### Configure `MAT_DATE_FORMATS` to use Custom Date Format
+
+![angular-material-datepicker-format](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Angular-material/angular-material-datepicker-format-1.jpg)
 
 1. Angular Material uses DateAdapter to create a Datepicker such as `NativeDateAdapter`, `MomentDateAdapter` or custom `DateAdapter`.
 2. The `DateAdapter` can be provided by `MatNativeDateModule`, `MatMomentDateModule`, or a custom `implementation`.
