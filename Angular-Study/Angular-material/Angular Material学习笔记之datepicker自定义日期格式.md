@@ -167,3 +167,4 @@ oment([2019, 5, 14, 15, 25, 50, 525])
 - [Angular Material: DatePicker-Set Custom Date in (DD-MM-YYYY) format](https://amandeepkochhar.medium.com/angular-material-datepicker-set-custom-date-in-dd-mm-yyyy-format-5c0f4340e57)
 - [Angular Material Datepicker Format](https://www.concretepage.com/angular-material/angular-material-datepicker-format)
 - [Customizing the parse and display formats](https://v9.material.angular.io/components/datepicker/overview#customizing-the-parse-and-display-formats)
+- https://github.com/angular/components/blob/master/src/material/core/datetime/native-date-adapter.spec.ts
