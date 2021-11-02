@@ -77,10 +77,7 @@ const loadHighcharts = normalizeCommonJSImport(
   selector: 'widget-pie-chart',
   template: `
     <ng-container *ngIf="highcharts">
-      <highcharts-chart
-        [highcharts]="highcharts"
-        [options]="chartOptions">
-      </highcharts-chart>
+      <highcharts-chart [highcharts]="highcharts" [options]="chartOptions"></highcharts-chart>
     </ng-container>
   `
 })
@@ -190,6 +187,8 @@ export const APP_DATE_FORMATS: MatDateFormats = {
   }
 };
 ```
+
+![angular-material-datepicker-format](https://github.com/honggzb/Study-General/blob/master/Angular-Study/Angular-material/angular-material-datepicker-format-1.jpg)
 
 ### used in component
 
