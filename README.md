@@ -69,7 +69,8 @@
 │   ├── Angular-material/
 │   │   ├── dialog/
 │   │   │    ├── AngularMaterial-dialog.md 
-│   │   │    └── dialog.rar   
+│   │   │    └── dialog.rar
+│   │   ├── Angular Scalable Architecture-The PRPL Pattern.md
 │   │   └── readme.md
 │   ├── Angular学习笔记/
 │   │   ├── Angular学习笔记之Animation.md
