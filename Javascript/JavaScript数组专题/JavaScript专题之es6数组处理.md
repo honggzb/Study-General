@@ -16,7 +16,7 @@
 
 ES6 ships with several array methods that enable one to perform operations such as:
 
-1. Find a single value given a conditio- Filtering values (`find`, `filter`)
+1. Find a single value given a condition- Filtering values (`find`, `filter`)
 2. Summing up array elements (`reduce`)
 3. Performing the same operation on each element (`map`)
 
