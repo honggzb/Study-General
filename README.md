@@ -915,6 +915,8 @@
 │   ├── Financial Statements.md
 │   ├── Team-structure.md
 │   ├── convert-octet-stream-to-image.md
+│   ├──fareware.md
+│   ├──gameTools.md
 │   ├── investment bank.md
 │   └── window-user-password.md
 │
