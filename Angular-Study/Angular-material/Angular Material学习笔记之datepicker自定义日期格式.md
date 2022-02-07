@@ -9,7 +9,7 @@
   - [Create Custom Date Format](#create-custom-date-format)
   - [Configure `MAT_DATE_FORMATS` to use Custom Date Format](#configure-mat_date_formats-to-use-custom-date-format)
   - [moment.js](#momentjs)
-
+- [Company Demo](#company-demo)
 ## Mathod 1
 
 ### HTML Template
@@ -162,6 +162,78 @@ moment("2019-10-20 6:30 +0000", "YYYY-MM-DD HH:mm Z")
 // [year, month, day, hour, minute, second, millisecond]
 oment([2019, 5, 14, 15, 25, 50, 525])
 ```
+
+[back to top](#top)
+
+## Company Demo
+
+```javascript
+import { Injectable, Inject, Optional, PLATFORM_ID } from '@angular/core';
+import { MatDateFormats, NativeDateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
+import { FormatterService } from '@app/core/services';
+@Injectable({
+  providedIn: 'root'
+})
+export class CustomDateAdapter extends NativeDateAdapter {
+  constructor(
+    private readonly formatter: FormatterService,
+    @Optional() @Inject(MAT_DATE_LOCALE) matDateLocale: string,
+    @Optional() @Inject(PLATFORM_ID) platformId) {
+    super(matDateLocale, platformId);
+  }
+  format(date: Date, displayFormat: any): string {
+    if (displayFormat === 'input') {
+      return this.formatter.toDateString(date, FormatterService.DateFormat);
+    }
+    return this.formatter.toDateString(date, FormatterService.MonthYearFormat);
+  }
+}
+export const CGI_DATE_FORMATS: MatDateFormats = {
+  parse: {
+    dateInput: { month: 'short', year: 'numeric', day: 'numeric' },
+  },
+  display: {
+    dateInput: 'input',
+    monthYearLabel: { year: 'numeric', month: 'numeric' },
+    dateA11yLabel: {
+      year: 'numeric', month: 'short', day: 'numeric'
+    },
+    monthYearA11yLabel: { year: 'numeric', month: 'short' },
+  }
+};
+//unit test
+import {waitForAsync, inject, TestBed} from '@angular/core/testing';
+import {  MockProvider } from 'ng-mocks';
+import { DateAdapter, NativeDateAdapter } from '@angular/material/core';
+import { SharedModule } from '../../shared.module';
+import { CustomDateAdapter } from '@app/shared/services';
+describe('CGICustomDateAdapter', () => {
+  let dateAdapter: CustomDateAdapter;
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [SharedModule],
+        providers: [
+          MockProvider(NativeDateAdapter)
+        ]
+      }).compileComponents();
+    }),
+  );
+  beforeEach(inject([DateAdapter], (customDateAdapter: CustomDateAdapter) => {
+    dateAdapter = customDateAdapter;
+  }));
+
+  it('should format datepicker with custom format', () => {
+    expect(
+      dateAdapter.format(new Date(2017, 1, 1), {}),
+    ).toEqual('Feb 2017');
+    expect(
+      dateAdapter.format(new Date(2017, 1, 1), 'input'),
+    ).toEqual('Feb 1, 2017');
+  });
+});
+```
+
 
 > Reference
 - [Angular Material: DatePicker-Set Custom Date in (DD-MM-YYYY) format](https://amandeepkochhar.medium.com/angular-material-datepicker-set-custom-date-in-dd-mm-yyyy-format-5c0f4340e57)
