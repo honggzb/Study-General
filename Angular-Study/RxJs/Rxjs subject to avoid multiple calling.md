@@ -1,9 +1,13 @@
 ### Rxjs subject to avoid multiple calling
 
+- define a `BehaviorSubject` and a Observable variable which return this `BehaviorSubject` in service
+- in component 1: call BehaviorSubject
+- in component 2: call normal method
+
 ```javascript
 // in service - defining
-private accountProgramSubject$ = new BehaviorSubject<AccountProgramEntity>(undefined);
-get accountProgramDetail$(): Observable<AccountProgramEntity> {
+private accountProgramSubject$ = new BehaviorSubject<AccountProgramEntity>(undefined);      //1. define a BehaviorSubject
+get accountProgramDetail$(): Observable<AccountProgramEntity> {                             //2. get a Observable variable which return BehaviorSubject
     return this.accountProgramSubject$.pipe(filter(accountProgram => !!accountProgram));
 }
 getAccountProgramDetail(accountProgramCode: string): Observable<AccountProgramEntity> {
@@ -16,7 +20,7 @@ getAccountProgramDetail(accountProgramCode: string): Observable<AccountProgramEn
       }));
 }
 destroy(): void {
-    this.accountProgramSubject$.next(undefined);
+    this.accountProgramSubject$.next(undefined);                          //importantce
 }
 // in component 1- calling
 this.accountService.accountDetail$.pipe(
