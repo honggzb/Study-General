@@ -8,7 +8,7 @@
 │   │   │   ├── wallaby-setup.md
 │   │   │   ├── unit testing for Angular $localize.md
 │   │   │   ├── unit testing for Angular services with dependencies.md
-│   │   │   ├── unit testing for Angular services with dependencies.md
+│   │   │   ├── unit testing for static property and method.md
 │   │   │   └── 
 │   │   └── readme.md
 ```
