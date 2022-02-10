@@ -16,13 +16,19 @@
 │   │   ├── dialog/
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar 
+│   │   ├──material++flexLayout+ngrx
+│   │   │    ├── 01-optimizations/ 
+│   │   │    ├── 02-ngrx/ 
+│   │   │    └── 
 │   │   ├── Angular Material学习笔记之datepicker自定义日期格式
-│   │   └── readme.md
+│   │   ├── angular-material-datepicker-format-1.jpg
+│   │   ├── angular-material-datepicker-format.zip
+│   │   └──  
 │   ├── Angular学习笔记/
 │   │   ├── Angular学习笔记之Animation.md
 │   │   ├── Angular学习笔记之DI decorators.md
 │   │   ├── Angular学习笔记之DI依赖注入.md
-│   │   ├── Angular学习笔记之Dynamic Importing Large Libraries
+│   │   ├── Angular学习笔记之Dynamic Importing Large Libraries.jd
 │   │   ├── Angular学习笔记之Dynamic components.md
 │   │   ├── Angular学习笔记之elements1.md
 │   │   ├── Angular学习笔记之elements2.md
@@ -32,18 +38,18 @@
 │   │   ├── Angular学习笔记之数据绑定、响应式编程.md
 │   │   ├── Create Angular学习笔记之styling in Angular.md
 │   │   ├── Angular学习笔记之模板ng-template, ng-content, ng-container and ngTemplateOutlet
-│   │   └── Angular学习笔记之集成三方UI框架.md
-│   ├── Animation/
-│   │   ├── Angular学习笔记之Animation- Working with Angular Animations/
-│   │   └── 
-│   ├── Build angular library/
-│   │   ├── au-input/    # 带有图标的输入框input
-│   │   └── 
+│   │   ├── Angular学习笔记之集成三方UI框架.md
+│   │   └──
+│   ├── Build Angular library/
+│   │   ├── au-input/                                        ##带有图标的输入框input
+│   │   └──
 │   ├── Configuration/
 │   │   ├── angular-itself-multi-config/
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
-│   │   └── aot-config.md
+│   │   ├── aot-config.md
+│   │   ├── jit-vs-aot.jpeg
+│   │   └──
 │   ├── Migration/
 │   │   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
 │   │   │   │   ├── codeFinished/
@@ -152,6 +158,10 @@
 │   │   ├── Unit test-Karma performance improve.md
 │   │   ├── principle of unit testing.md
 │   │   └── readme.md
+│   ├── some-tip/
+│   │   ├── AutomumericSetting for Currency.md                                             ## Automumeric librery
+│   │   ├── Create Prevent closing of modal Dialog in Angular Dialog component.md
+│   │   └──
 │   ├── Angular CLI的使用(new).md     # useful
 │   ├── Angular_CLI的使用.md           
 │   ├── Angular2+Accessibility.md
