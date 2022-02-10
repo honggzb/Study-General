@@ -153,11 +153,13 @@
 │   │   │   ├── Angular学习笔记之unit testing
 │   │   │   ├── Mocking Child Components.md
 │   │   │   ├── NgRx-test-sample.md
+│   │   │   ├── Testing Angular services with dependencies.md
+│   │   │   ├── ng-mocks学习笔记.md
 │   │   │   ├── wallaby-setup.md
 │   │   │   └── 
 │   │   ├── Unit test-Karma performance improve.md
 │   │   ├── principle of unit testing.md
-│   │   └── readme.md
+│   │   └── 
 │   ├── some-tip/
 │   │   ├── AutomumericSetting for Currency.md                                             ## Automumeric librery
 │   │   ├── Create Prevent closing of modal Dialog in Angular Dialog component.md
