@@ -149,17 +149,17 @@
 │   │   │   ├── tsconfig.sample.js
 │   │   │   └── 
 │   │   ├── Unit-Test/
-│   │   │   ├── Unit Testing in Angular Course -Joe Eames/
-│   │   │   ├── Angular学习笔记之unit testing
-│   │   │   ├── Mocking Child Components.md
+│   │   │   ├── Unit Testing in Angular Course -Joe Eames/
 │   │   │   ├── NgRx-test-sample.md
-│   │   │   ├── Testing Angular services with dependencies.md
 │   │   │   ├── ng-mocks学习笔记.md
 │   │   │   ├── wallaby-setup.md
-│   │   │   └── 
+│   │   │   ├── unit testing for Angular $localize.md
+│   │   │   ├── unit testing for Angular services with dependencies.md
+│   │   │   ├── unit testing for static property and method.md
+│   │   │   └── 
 │   │   ├── Unit test-Karma performance improve.md
 │   │   ├── principle of unit testing.md
-│   │   └── 
+│   │   └── 
 │   ├── some-tip/
 │   │   ├── AutomumericSetting for Currency.md                                             ## Automumeric librery
 │   │   ├── Create Prevent closing of modal Dialog in Angular Dialog component.md
