@@ -36,3 +36,4 @@ describe('I18nLocalizeComponent', () => {
 > Reference
 - [Advice on testing Angular $localize](https://stackoverflow.com/questions/60847354/advice-on-testing-angular-localize-angular-9)
 - https://github.com/ross-moug/ng9-i18n-unit-test
+- https://github.com/FlorianUhlmann/ng12-i18n-unit-test
