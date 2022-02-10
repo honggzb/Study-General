@@ -53,6 +53,7 @@
 ### Angular-Study
 
 ```
+```
 ├── Angular-Study
 │   ├── Angular Architecture
 │   │   ├── Angular Architecture- Dan Wahlin
@@ -203,17 +204,17 @@
 │   │   │   ├── tsconfig.sample.js
 │   │   │   └── 
 │   │   ├── Unit-Test/
-│   │   │   ├── Unit Testing in Angular Course -Joe Eames/
-│   │   │   ├── Angular学习笔记之unit testing
-│   │   │   ├── Mocking Child Components.md
+│   │   │   ├── Unit Testing in Angular Course -Joe Eames/
 │   │   │   ├── NgRx-test-sample.md
-│   │   │   ├── Testing Angular services with dependencies.md
 │   │   │   ├── ng-mocks学习笔记.md
 │   │   │   ├── wallaby-setup.md
-│   │   │   └── 
+│   │   │   ├── unit testing for Angular $localize.md
+│   │   │   ├── unit testing for Angular services with dependencies.md
+│   │   │   ├── unit testing for static property and method.md
+│   │   │   └── 
 │   │   ├── Unit test-Karma performance improve.md
 │   │   ├── principle of unit testing.md
-│   │   └── 
+│   │   └── 
 │   ├── some-tip/
 │   │   ├── AutomumericSetting for Currency.md                                             ## Automumeric librery
 │   │   ├── Create Prevent closing of modal Dialog in Angular Dialog component.md
@@ -235,6 +236,30 @@
 │   ├── redux.png
 │   ├── redux.doc
 │   └── 大漠的Angular Workshop.md
+```
+
+## resource
+
+- [Angular in depth by ag-grid](https://blog.angularindepth.com/)
+- https://github.com/PatrickJS/awesome-angular
+- [angular style guide](https://angular.io/guide/styleguide)
+- [Angular中文文档](https://angular.cn/)
+- [Angular 4.x 修仙之路](https://segmentfault.com/a/1190000008754631)
+- [Angular4快速入门](https://blog.csdn.net/column/details/17833.html)
+- [仿简书nodejs+express+mongodb+vue2+angular4+爬虫](https://github.com/jiayisheji/jianshu)
+- [Angular中文社区](http://angular-china.org)
+- [Angular中文社区](http://www.iphone3d.cn/)
+- [sitepoint angular文章](https://www.sitepoint.com/?s=angular)
+-  http://angular2-first-look.azurewebsites.net/
+
+## third library
+- [Angular Material](https://material.angular.io/)
+- [阿里的Angular组件库（ng-zorro-antd）](https://github.com/NG-ZORRO/ng-zorro-antd):  Angular的优秀国内UI组件库
+- [Angular 4入门教程系列：15：NG-ZORRO的使用方式](https://blog.csdn.net/liumiaocn/article/details/78526421)
+  - 组件和指令都是以nz-打头，比如按钮的nz-button
+  - 组件和指令的属性都是nz打头其后驼峰命名，比如nzSize
+  - 栅格划为24等分
+
 ```
 
 [back to top](#top)
