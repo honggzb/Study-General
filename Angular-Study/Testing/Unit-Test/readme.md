@@ -6,7 +6,9 @@
 │   │   │   ├── NgRx-test-sample.md
 │   │   │   ├── ng-mocks学习笔记.md
 │   │   │   ├── wallaby-setup.md
-│   │   │   ├── unit test for static property and method.md
+│   │   │   ├── unit testing for Angular $localize.md
+│   │   │   ├── unit testing for Angular services with dependencies.md
+│   │   │   ├── unit testing for Angular services with dependencies.md
 │   │   │   └── 
 │   │   └── readme.md
 ```
