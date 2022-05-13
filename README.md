@@ -53,7 +53,6 @@
 ### Angular-Study
 
 ```
-```
 ├── Angular-Study
 │   ├── Angular Architecture
 │   │   ├── Angular Architecture- Dan Wahlin
