@@ -39,6 +39,21 @@ console.log(r.toString());
 r=Array.from(new Set(arr));   //Array.from方法可以将 Set 结构转为数组
 // 3) 利用...和set去重, 更便捷的方法
 r=[...new Set(arr)];
+// for object array
+const arr = [
+    {place: "here",  name: "x", other: "other stuff1" },
+    {place: "there", name: "x", other: "other stuff2" },
+    {place: "here",  name: "y", other: "other stuff4" },
+    {place: "here",  name: "z", other: "other stuff5" }
+]
+const key = 'place';
+const unique = [...new Map(arr.map(item => [item[key], item])).values()]
+//It can be put into a function:
+function getUniqueListBy(arr, key) {
+    return [...new Map(arr.map(item => [item[key], item])).values()]
+}
+const arr1 = getUniqueListBy(arr, 'place')
+console.log("Unique by place")
 ```
 
 [back to top](#top)
