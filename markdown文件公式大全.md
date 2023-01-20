@@ -1,57 +1,101 @@
-
 [Markdown文件公式大全](#top)
 
-- [一般公式](#一般公式)
+- [概念](#概念)
 - [关系运算符](#关系运算符)
+- [一般公式](#一般公式)
 - [括号](#括号)
+- [集合](#集合)
 - [希腊字母](#希腊字母)
+- [箭头](#箭头)
+- [高数必备](#高数必备)
+- [平面几何](#平面几何)
+- [分支公式](#分支公式)
 - [矩阵](#矩阵)
+
+```
+- 数学公式用$$或$包括起来
+- $表示公式在行内显示,$$表示公式独占一行，并居中显示
+```
+
+## 关系运算符
+
+|关系| 运算符| markdown|
+|---|---|---|
+|正负|$\pm$ | `\pm`|
+|加| $+$ | `+`|
+|减|$-$ | `-`|
+|乘|$1 \times 2$ | `\times`|
+|乘|$1 \cdot 2$ | `\cdot `|
+|乘|$1 \ast 2$ | `\ast`|
+|除|$\div$ | `\div`
+|分数|$\frac{x}{y}$ | `\frac{x}{y}`|
+|总和|$\sum$, $\sum_{i=0}^{n}$ | `\sum`, `$\sum_{i=0}^{n}$`|
+|开二次方|$\sum$ | `\sum`|
+||$\prod$ | `\prod`|
+|不等于|$\neq$ | `\neq`|
+|小于等于|$\leq$ | `\leq`|
+|大于等于|$\geq$ | `\geq`|
+|不大于等于|$\ngeq$ | `\ngeq`|
+|约等于 |$\approx$ | `\approx`|
+|恒等于|$\equiv$ | `\equiv `|
+|`|`|$\mid$ | `$\mid$`|
 
 ## 一般公式
 
 算式  | 语法 | markdown
 ---|---|---
 分数，平方| $\frac{7x+5}{1+y^2}$ | `\frac{7x+5}{1+y^2}`
+上标| $z=z^l$ | `z=z^l`
 下标| $z=z_l$ | `z=z_l`
+hat| $\hat y=a\hat x+b$ | `$\hat y=a\hat x+b$`
 省略号| $\cdots$| `\cdots`
+平均数| $\overline{a+b+c+d}$| `$\overline{a+b+c+d}$`
+下划线| $ \underline{a+b+c+d} $| `$ \underline{a+b+c+d} $`
+上大括号| $\overbrace{a+b+c+d}$,   $\overbrace{a+\underbrace{b+c}_{2.0}}^{3.0}$| `$\overbrace{a+b+c+d}$`, `$\overbrace{a+\underbrace{b+c}_{2.0}}^{3.0}$`
+下大括号| $ \underbrace{a+b+c+d} $| `$ \underbrace{a+b+c+d} $`
 行间公式（使用两个$包含公式可以独立一行）| $\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$ | `$\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$`
 开根号| $\sqrt{2};\sqrt[n]{3}$ | `\sqrt{2};\sqrt[n]{3}`
 矢量 | $\vec{a} \cdot \vec{b}=0$ | `\vec{a} \cdot \vec{b}=0`
-微积分| $\iint$ | `\iint`
-微积分| $\iiint$ | `\iiintx`
-微积分| $\oint$ | `\oint`
-微积分| $\oint$ | `\oint`
+微积分-积分| $\int$, $ \int_0^1 x^2 {\rm d}x $| `\int`, `$ \int_0^1 x^2 {\rm d}x $`
 微积分| $\mathrm{d}$ | `\mathrm{d}`
 微积分| $\prime$ | `\prime`
-微积分| $\lim$ | `\lim`
-微积分| $\infty$ | `\infty`
-微积分| $\partial$ | `\partial`
+微积分-向量| $\vec{a}$ 或 $\overrightarrow{a} $ | `$\vec{a}$` 或 `$\overrightarrow{a} $`
+微积分-收敛| $x_n\stackrel{p}\longrightarrow0$| `$x_n\stackrel{p}\longrightarrow0$`
+微积分-极限| $ \lim_{x\to\infty} $ , $\lim_{n\rightarrow+\infty} n$ | `$ \lim_{x\to\infty} $`, `$\lim_{n\rightarrow+\infty} n$`
+微积分-块公式格式|  $ \displaystyle \lim_{x\to\infty} $ | ` $ \displaystyle \lim_{x\to\infty} $`
+微积分-部分| $ \frac{\partial x}{\partial y} $ | `$ \frac{\partial x}{\partial y} $`
 微积分| $\left.\frac{\partial f(x,y)}{\partial x}\right.$ | `\left.\frac{\partial f(x,y)}{\partial x}\right.`
-微积分| $\sum$ | `\sum`
-极限| $\lim_{n\rightarrow+\infty} n$ | `\lim_{n\rightarrow+\infty} n`
-微积分| $\sum$ | `\sum`
+微积分-求和| $\sum$, $ \sum_1^n $ | `\sum`, `$ \sum_1^n $`
 累加| $\frac{1}{i^2}$ | `\frac{1}{i^2}`
 累乘| $\prod\frac{1}{i^2}$ | `\prod \frac{1}{i^2}`
 给公式编号，如: (1)| $$e^{i\theta}=cos\theta+\sin\theta i\tag{1}$$ | `$$e^{i\theta}=cos\theta+\sin\theta i\tag{1}$$`
-三角函数| $sin$ | `sin`
+三角函数| $sin$, $f(x)=\sin(x)$ | `sin`, `$f(x)=\sin(x)$`
+三角函数| $cos$, $f(x)=\cos(x)$ | `cos`, `$f(x)=\cos(x)$`
+三角函数| $tan$, $f(x)=\tan(x)$ | `tan`, `$f(x)=\tan(x)$`
 对数函数| $\ln15$ | `\ln15`
 对数函数| $\log_2^{10}$ | `\log_2^{10}`
 对数函数| $\lg7$ | `\lg7`
+属于| $x \in y$ | `x \in y`
+不属于| $x \notin y$ | `x \notin y`
+属于| $x \in y$ | `x \in y`
+不属于| $x \notin y$ | `x \notin y`
+子集| $x \subset y$ | `x \subset y`
+非子集| $x \not\subset y$ | `x \not\subset y`
+超集| $x \supset y$ | `x \supset y`
+超集| $x \supseteq y$ | `x \supseteq y`
+并集| $x \cup y$ | `x \cup y`
+交集| $x \cap y$ | `x \cap y`
+转置符号|$\mathtt{X}'$ | `$\mathtt{X}'$`
+异或|$\bigoplus$ | `\bigoplus`
+省略号| $\cdots$| `\cdots`
+底端对齐的省略号| $ 1,2,\ldots,n $ | $ 1,2,\ldots,n $`
+中线对齐的省略号| $ 1,2,\cdots,n $ | `$ 1,2,\cdots,n $`
+随机变量| $\mathtt{X}_n$ | `\mathtt{X}_n`
+期望| $\mathbb{E}$ | `$\mathbb{E}$`
+||${n\choose m}$|`${n\choose m}$`
+||$C_n^m$|`$C_n^m$`
 
 [go to top](#top)
-
-## 关系运算符
-
-关系运算符| markdown
----|---
-$\pm$ | `\pm`
-$\times$ | `\times`
-$\div$ | `\div`
-$\sum$ | `\sum`
-$\prod$ | `\prod`
-$\neq$ | `\neq`
-$\leq$ | `\leq`
-$\geq$ | `\geq`
 
 ## 括号
 
@@ -64,13 +108,30 @@ $\geq$ | `\geq`
 原始括号| $\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \rbrace$ | `\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \rbrace`
 全包括号| $\left\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \right\rbrace$ | `\left\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \right\rbrace`
 
+## 集合
+
+语法 | markdown
+---|---
+$\in$ | `\in`
+$\notin$ | `\notin`
+$\varnothing$ | `\varnothing`
+$\subset$ | `\subset`
+$\not\subset$ | `\not\subset`
+$\subseteq$ | `\subseteq`
+$\not\subseteq$ | `\not\subseteq`
+$\cup$ | `\cup`
+$\cap$ | `\cap`
+$\vee$ | `\vee`
+$\wedge$ | `\wedge`
+$\neg$ | `\neg`
+
 [go to top](#top)
 
 ## 希腊字母
 
 |大写| markdown | 小写 | markdown|
 |---|---|---|---|
-|$A$ | `\A` | $\\alpha$ | `\alpha`|
+|$A$ | `\A` | $\alpha$ | `\alpha`|
 |$B$ | `\B`| $\beta$ | `\beta`|
 |$\Gamma$ | `\Gamma` | $\gamma$ | `\gamma`|
 |$\Delta$ | `\Delta` | $\delta$ | `\delta`|
@@ -97,11 +158,67 @@ $\geq$ | `\geq`
 |$\Psi$ | `\Psi` | $\psi$ | `\psi`|
 |$\Omega$ | `\Omega` | $\omega$ | `\omega`|
 
+## 箭头
+
+|符号| markdown | 符号 | markdown|
+|---|---|---|---|
+|$\uparrow$ | `\uparrow` | $\Uparrow$ | `\Uparrow`|
+|$\downarrow$ | `\downarrow` | $\Downarrow$ | `\Downarrow`|
+|$\leftarrow$ | `\leftarrow` | $\Leftarrow$ | `\Leftarrow`|
+|$\rightarrow$ | `\rightarrow` | $\Rightarrow$ | `\Rightarrow`|
+|$\leftrightarrow$ | `\leftrightarrow` | $\Longleftarrow$ | `\Longleftarrow`|
+|$\longleftarrow$ | `\longleftarrow` | $\Longrightarrow$ | `\Longrightarrow`|
+|$\longleftrightarrow$ | `\longleftrightarrow` | $\Longleftrightarrow$ | `\Longleftrightarrow`|
+
 [go to top](#top)
+
+## 高数必备
+
+语法 | markdown
+---|---
+$\int$ | `\int`
+$\iint$ | `\iint`
+$\oint$ | `\oint`
+$\infty$ | `\infty`
+$\nabla$ | `\nabla`
+$\because$ | `\because`
+$\therefore$ | `\therefore`
+$\forall$ | `\forall`
+$\exists$ | `\exists`
+
+## 平面几何
+
+语法 | markdown
+---|---
+$\triangle$ | `\triangle`
+$\odot$ | `\odot`
+$\angle$ | `\angle`
+$\perp$ | `\perp`
+$30^\circ $| `30^\circ`
+$\sim$ | `\sim`
+$\cong$ | `\cong`
+
+[go to top](#top)
+
+## 分支公式
+
+$f(x)=\begin{cases} 
+		1, & x>0\\ 
+		0, & x=0\\
+		-1, & x<0
+\end{cases}$
+
+```
+$f(x)=\begin{cases} 
+		1, & x>0\\ 
+		0, & x=0\\
+		-1, & x<0
+\end{cases}$
+```
 
 ## 矩阵
 
-- 矩阵
+- 基本矩阵
 
 $$
 \begin{matrix}
@@ -178,5 +295,6 @@ $$
 
 [go to top](#top)
 
-> reference
-> [markdown最全数学公式速查](https://blog.csdn.net/jyfu2_12/article/details/79207643)
+> Reference
+- [markdown最全数学公式速查](https://blog.csdn.net/jyfu2_12/article/details/79207643)
+- [【Markdown】如何用 Markdown 写好数学表达式](https://blog.csdn.net/qq_42907802/article/details/104536794?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-104536794-blog-89952211.pc_relevant_3mothn_strategy_recovery&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-104536794-blog-89952211.pc_relevant_3mothn_strategy_recovery&utm_relevant_index=3)
