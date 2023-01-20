@@ -301,6 +301,20 @@ $$
 \end{Vmatrix} \right]\tag{7}
 $$
 
+```
+$\begin{pmatrix} a & b\\ c & d \\ \end{pmatrix} \quad
+\begin{bmatrix} a & b\\ c & d \\ \end{bmatrix}\quad
+\begin{Bmatrix} a & b\\ c & d\\ \end{Bmatrix}\quad
+\begin{vmatrix} a & b\\ c & d \\ \end{vmatrix}\quad
+\begin{Vmatrix} a & b\\ c & d \\ \end{Vmatrix}$
+```
+
+$\begin{pmatrix} a & b\\ c & d \\ \end{pmatrix} \quad
+\begin{bmatrix} a & b\\ c & d \\ \end{bmatrix}\quad
+\begin{Bmatrix} a & b\\ c & d\\ \end{Bmatrix}\quad
+\begin{vmatrix} a & b\\ c & d \\ \end{vmatrix}\quad
+\begin{Vmatrix} a & b\\ c & d \\ \end{Vmatrix}$
+
 [go to top](#top)
 
 > Reference
