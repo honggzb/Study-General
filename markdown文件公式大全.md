@@ -342,10 +342,19 @@ $$\bbox[yellow]{
 }$$
 
 $$
-\bbox[#9ff, 5px]{
+\bbox[#9ff, 5px]{ % 此处向外添加 5 像素的边距
     e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n \qquad (1)
 }
 $$
+
+$$
+% 此处使用 0.5 倍行高作为边距，附加 2 像素的实线边框（Ctrl+Alt+Y 可见）
+\bbox[#2f3542, 0.5em, border:2px solid #f1f2f6]{
+    \color{#f1f2f6}{e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n \qquad (1)}
+}
+$$
+
+[go to top](#top)
 
 > Reference
 - [Cmd Markdown 公式指导手册](https://www.zybuluo.com/codeep/note/163962)
