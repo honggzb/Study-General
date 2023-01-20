@@ -14,7 +14,19 @@
 ```
 - 数学公式用$$或$包括起来
 - $表示公式在行内显示,$$表示公式独占一行，并居中显示
+- 自动编号的公式可以用如下方法表示
+    \begin{equation}
+        表达式
+        \label{eq:当前公式名}
+    \end{equation}
+    - 若需要手动编号，可在公式后使用 \tag{编号} 语句
+    - 自动编号后的公式可在全文任意处使用 \eqref{eq:公式名} 语句引用。
 ```
+
+- $ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text {，行内公式示例} $
+  - `$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text {，行内公式示例}`
+$$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text{，独立公式示例，使用tag手动编号} \tag{0.1} $$
+  - `$$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text{，独立公式示例，使用 \tag 手动编号} \tag{0.1} $$`
 
 ## 关系运算符
 
@@ -201,11 +213,16 @@ $\cong$ | `\cong`
 
 ## 分支公式
 
-$$
-f(x)=\begin{cases} 
+$$f(x)=\begin{cases} 
 		1, & x>0\\ 
 		0, & x=0\\
 		-1, & x<0
+\end{cases}
+$$
+
+$$y=\begin{cases}
+		-x,\quad x \leq 0\\
+		x, \quad x > 0
 \end{cases}
 $$
 
@@ -215,6 +232,11 @@ $f(x)=\begin{cases}
 		0, & x=0\\
 		-1, & x<0
 \end{cases}$
+$y=\begin{cases}
+-x,\quad x \leq 0\\
+x, \quad x > 0
+\end{cases}
+$
 ```
 
 ## 矩阵
@@ -311,6 +333,22 @@ $$
 
 [go to top](#top)
 
+## 高亮一行公式
+
+- 使用 `\bbox[底色, (可选)边距, (可选)边框 border: 框宽度 框类型 框颜色]` 命令来高亮一行公式
+
+$$\bbox[yellow]{
+    e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n \qquad (1)
+}$$
+
+$$
+\bbox[#9ff, 5px]{
+    e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n \qquad (1)
+}
+$$
+
 > Reference
+- [Cmd Markdown 公式指导手册](https://www.zybuluo.com/codeep/note/163962)
 - [markdown最全数学公式速查](https://blog.csdn.net/jyfu2_12/article/details/79207643)
 - [【Markdown】如何用 Markdown 写好数学表达式](https://blog.csdn.net/qq_42907802/article/details/104536794?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-104536794-blog-89952211.pc_relevant_3mothn_strategy_recovery&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-104536794-blog-89952211.pc_relevant_3mothn_strategy_recovery&utm_relevant_index=3)
+- [Markdown 符号公式大全](http://t.zoukankan.com/izcat-p-14264850.html)
