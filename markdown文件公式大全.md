@@ -302,7 +302,7 @@ $$
 $$
 
 $$
-\begin{pmatrix} a & b \\ c & d \\ \end{pmatrix} \quad
+\left[\begin{pmatrix} a & b \\ c & d \\ \end{pmatrix}\right] \quad
 \begin{bmatrix} a & b \\ c & d \\ \end{bmatrix} \quad
 \begin{Bmatrix} a & b \\ c & d\\ \end{Bmatrix} \quad
 \begin{vmatrix} a & b \\ c & d \\ \end{vmatrix} \quad
