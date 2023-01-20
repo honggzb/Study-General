@@ -238,6 +238,14 @@ c & d
 
 - 带括号的矩阵
 
+$
+\begin{pmatrix} a & b \\ c & d \\ \end{pmatrix} \quad
+\begin{bmatrix} a & b \\ c & d \\ \end{bmatrix} \quad
+\begin{Bmatrix} a & b \\ c & d\\ \end{Bmatrix} \quad
+\begin{vmatrix} a & b \\ c & d \\ \end{vmatrix} \quad
+\begin{Vmatrix} a & b \\ c & d \\ \end{Vmatrix}tag{8}
+$
+
 $$
 \left[
 \begin{matrix}
@@ -299,14 +307,6 @@ $$
 4 & 5 & 6 \\
 7 & 8 & 9 
 \end{Vmatrix} \right]\tag{7}
-$$
-
-$$
-\left[\begin{pmatrix} a & b \\ c & d \\ \end{pmatrix}\right] \quad
-\begin{bmatrix} a & b \\ c & d \\ \end{bmatrix} \quad
-\begin{Bmatrix} a & b \\ c & d\\ \end{Bmatrix} \quad
-\begin{vmatrix} a & b \\ c & d \\ \end{vmatrix} \quad
-\begin{Vmatrix} a & b \\ c & d \\ \end{Vmatrix}tag{8}
 $$
 
 [go to top](#top)
