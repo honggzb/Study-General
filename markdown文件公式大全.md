@@ -229,6 +229,13 @@ $$
 \end{matrix} \tag{1}
 $$
 
+$$\left(              
+\begin{array}{lcr}    
+a & b\\         
+c & d 
+\end{array}         
+\right)\tag{1}$$      
+
 - 带括号的矩阵
 
 $$
