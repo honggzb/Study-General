@@ -201,11 +201,13 @@ $\cong$ | `\cong`
 
 ## 分支公式
 
-$f(x)=\begin{cases} 
+$$
+f(x)=\begin{cases} 
 		1, & x>0\\ 
 		0, & x=0\\
 		-1, & x<0
-\end{cases}$
+\end{cases}
+$$
 
 ```
 $f(x)=\begin{cases} 
