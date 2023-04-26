@@ -1,3 +1,5 @@
+Update NPM:  `npm install -g npm@latest`
+
 [Content](#top)
 
 - [Accessiblity](#Accessiblity)
