@@ -1,4 +1,4 @@
-Angular NgClass Example
+## Angular NgClass Example
 
 1. basic
 `<input type="text" [ngClass]="{ error: control.isInvalid }" />`
@@ -29,5 +29,13 @@ class MyComponent {
 - The `[class]` is almost backward-compatible with `[ngClass]`, with some discrepancies:
 - `[ngClass]="{'a b': true}"` does work, but `[class]="{'a b': true}"` won't work. See this open issue.
 The value of `[class]` is not "deepwatched". See [here](https://hackmd.io/jzDc7hIDTdWtQblv2TbL9A)
+
+4. `[ngStyle]`
+
+```html
+<li *ngFor="let course of courses" [style.color]="isCourse? 'red': 'green'">
+    {{ course.name }}
+ </li>
+```
 
 > [Angular NgClass Example – How to Add Conditional CSS Classes](https://www.freecodecamp.org/news/angular-ngclass-example/)
