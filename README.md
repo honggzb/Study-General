@@ -92,6 +92,7 @@ Update NPM:  `npm install -g npm@latest`
 │   │   ├── Angular学习笔记之Pipe.md
 │   │   ├── Angular学习笔记之directive指令.md
 │   │   ├── Angular学习笔记之lazy loading-使用angular-cli.md     #useful
+│   │   ├── Angular学习笔记之ngClass例子.md
 │   │   ├── Angular学习笔记之数据绑定、响应式编程.md
 │   │   ├── Create Angular学习笔记之styling in Angular.md
 │   │   ├── Angular学习笔记之模板ng-template, ng-content, ng-container and ngTemplateOutlet
