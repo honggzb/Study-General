@@ -33,7 +33,7 @@ The value of `[class]` is not "deepwatched". See [here](https://hackmd.io/jzDc7h
 4. `[ngStyle]`
 
 ```html
-<li *ngFor="let course of courses" [style.color]="isCourse? 'red': 'green'">
+<li *ngFor="let course of courses" [ngStyle]="{'color': course.color, 'font-size':'24px'}">
     {{ course.name }}
  </li>
 ```
