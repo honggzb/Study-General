@@ -1,14 +1,13 @@
 ## Angular NgClass Example
 
 1. basic
-`<input type="text" [ngClass]="{ error: control.isInvalid }" />`
-`<input type="text" [class.error]="control.isInvalid" />`
+
+- `<input type="text" [ngClass]="{ error: control.isInvalid }" />`
+- `<input type="text" [class.error]="control.isInvalid" />`
 
 2. With Object Literals
 
-- traditional way: `<td [ngClass]="{ low: val >= 0 && val <=5, medium: val > 5 && val <= 10, high: val > 10}">
-  {{ val }}
-</td>`
+- traditional way: `<td [ngClass]="{ low: val >= 0 && val <=5, medium: val > 5 && val <= 10, high: val > 10}"> {{ val }} </td>`
 - using class name
 
 ```javascript
