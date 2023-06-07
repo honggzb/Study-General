@@ -61,6 +61,7 @@
 │   │
 │   ├── tips                  #常见的技巧
 │   │   ├── 19 个JavaScript 常用的简写技术.md
+│   │   ├── Check if a string contains another string as a substring in JavaScript.md
 │   │   ├── functional-programing-with-js-cheatsheet---progress-whitepaper.pdf
 │   │   ├── javascript常用技巧.md
 │   │   ├── javascript知识点积累汇总.md
@@ -68,19 +69,21 @@
 │   │   ├── textarea输入框限制字数.md
 │   │   ├── 利用ES6新特性对数组实现的一些hack方法.md
 │   │   └── 
+│   │
+│   ├── JavaScript专题                  #常见的技巧
+│   │   ├── JavaScript专题之Call,apply,bind详解.md
+│   │   ├─── JavaScript专题之Clone Objects in JavaScript.md
+│   │   ├── JavaScript专题之Lazy Loading Images and Video
+│   │   ├─── JavaScript专题之判断浏览器种类及版本+http协议.md
+│   │   ├── JavaScript专题之前端复制功能总结-sample.html
+│   │   ├──JavaScript专题之前端复制功能总结.md
+│   │   ├── JavaScript专题之如何判断两个对象相等.md
+│   │   ├── JavaScript专题之字符串的操作.md
+│   │   ├── JavaScript专题之排序1-sort解析.md
+│   │   ├── JavaScript专题之排序2-排序算法详解.md
+│   │   ├── JavaScript专题之文件上传下载.md
+│   │   └── 
 │   │ 
-│   ├── JavaScript专题之Call,apply,bind详解.md
-│   ├── JavaScript专题之Clone Objects in JavaScript.md
-│   ├── JavaScript专题之Lazy Loading Images and Video
-│   ├── JavaScript专题之判断浏览器种类及版本+http协议.md
-│   ├── JavaScript专题之前端复制功能总结-sample.html
-│   ├── JavaScript专题之前端复制功能总结.md
-│   ├── JavaScript专题之如何判断两个对象相等.md
-│   ├── JavaScript专题之字符串的操作.md
-│   ├── JavaScript专题之排序1-sort解析.md
-│   ├── JavaScript专题之排序2-排序算法详解.md
-│   ├── JavaScript专题之数据类型判断.md
-│   ├── JavaScript专题之文件上传下载.md
 │   ├── JavaScript中对象的深拷贝.md
 │   ├── Javascript中bind()方法的使用与实现.md
 │   ├── Javascript中forEach, reduce详解.md
