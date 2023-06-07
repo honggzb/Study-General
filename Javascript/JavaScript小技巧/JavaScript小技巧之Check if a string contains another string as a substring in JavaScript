@@ -1,0 +1,42 @@
+## JavaScript小技巧之Check if a string contains another string as a substring in JavaScript
+
+- String.prototype.includes() function
+- String.prototype.indexOf() function
+- String.prototype.search() function
+- Lodash Library _includes
+
+### String.prototype.includes() function
+
+```javascript
+var source = 'Hello World';
+var target = 'llo';
+console.log(source.includes(target));
+```
+
+### String.prototype.indexOf() function
+
+```javascript
+var source = 'Hello World';
+var target = 'llo';
+console.log(source.indexOf(target) !== -1);
+```
+
+### String.prototype.search() function
+
+```javascript
+var source = 'Hello World';
+var target = 'llo';
+console.log(source.search(target) !== -1);
+```
+
+### Lodash Library _includes
+
+```javascript
+var source = 'Hello World';
+var target = 'llo';
+console.log(_.includes(source, target));
+```
+
+> [Check if a string contains another string as a substring in JavaScript](https://www.techiedelight.com/check-string-contains-another-string-javascript/)
+
+
