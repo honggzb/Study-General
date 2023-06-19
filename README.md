@@ -35,6 +35,7 @@ Update NPM:  `npm install -g npm@latest`
 - [machineLearning](#machineLearning)
 - [qita](#qita)
 - [thirdParty-lib](#thirdparty-lib)
+- [typescript](#typescript)
 
 ### Accessiblity
 
