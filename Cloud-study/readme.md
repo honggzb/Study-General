@@ -6,6 +6,7 @@
 │   ├── Azure/
 │   │   ├── azure-path.jpg
 │   │   ├── AZ-900.md
+│   │   ├── DP-900.md
 │   │   └── az-90.md
 │   ├── readme.md
 ```
