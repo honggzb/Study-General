@@ -10,6 +10,8 @@
   - [Infinispan Hot Rod Client Dependencies](#infinispan-hot-rod-client-dependencies)
   - [Infinispan Remote Client Setup - HotRod client to connect Infinispan](#infinispan-remote-client-setup---hotrod-client-to-connect-infinispan)
 
+---------------------------------------------------
+
 - Infinispan是开源的分布式内存数据网格(**In-Memory Data Grid**)
 - infinispan是分布式的缓存框架，可以直接嵌入到jboss(WildFly)中运行，也可以独立部署
 - It can be used both as an embedded Java library and as a language-independent service accessed remotely over a variety of protocols (Hot Rod, REST, Memcached and WebSockets)
