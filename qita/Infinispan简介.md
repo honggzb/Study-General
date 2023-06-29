@@ -16,7 +16,7 @@
 - infinispan是分布式的缓存框架，可以直接嵌入到jboss(WildFly)中运行，也可以独立部署
 - It can be used both as an embedded Java library and as a language-independent service accessed remotely over a variety of protocols (Hot Rod, REST, Memcached and WebSockets)
 - It offers advanced functionality such as transactions, events, querying and distributed processing as well as numerous integrations with frameworks such as the JCache API standard, CDI, Hibernate, WildFly, Spring Cache, Spring Session, Lucene, Spark and Hadoop
-- ![Alt text](image-4.png)
+- ![Alt text](Infinispan.png)
 
 ### Infinispan vs Redis
 
