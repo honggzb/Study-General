@@ -1,0 +1,182 @@
+<infinispan
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="urn:infinispan:config:12.0 https://infinispan.org/schemas/infinispan-config-12.0.xsd
+                            urn:infinispan:server:12.0 https://infinispan.org/schemas/infinispan-server-12.0.xsd"
+        xmlns="urn:infinispan:config:12.0"
+        xmlns:server="urn:infinispan:server:12.0">
+
+   <threads>
+	  <thread-factory name="infinispan-factory" group-name="infinispan" thread-name-pattern="%G %i" priority="5"/>
+      <!-- transport.executor -->
+      <blocking-bounded-queue-thread-pool name="infinispan-transport" thread-factory="infinispan-factory"
+            core-threads="5" max-threads="10" queue-length="100" keepalive-time="10000"/>
+   </threads>
+   
+   <cache-container>
+		<transport cluster="${infinispan.cluster.name}" stack="${infinispan.cluster.stack:tcp}" node-name="${infinispan.node.name:}"/>	
+		<metrics gauges="true" histograms="true" />
+		<distributed-cache name="RolePermissionsMapper.permissions" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="UserPrincipal.principal" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="TRADE_PROPOSAL_CATALOG_CACHE" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="DriftTolerances" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="ContFile" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="Constraints" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="AssetCatalog" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="AssetMixCatalog" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="GoalAssetMixCatalog" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="AccProgramDriftTlrcCatalog" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="CurrencyEntities" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="DefaultStructureClasses" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="AssetClassStructure" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="AssetCodeClassificationTuple" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="GoalComposition" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="Long" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="GoalAssetMix" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+		<distributed-cache name="Permissions" mode="SYNC" statistics="true">
+			<locking isolation="READ_COMMITTED"/>
+			<transaction mode="NON_XA"/>
+			<expiration lifespan="600000" interval="200000"/>
+			<memory max-count="1000" when-full="REMOVE"/>
+		</distributed-cache>
+   </cache-container>
+
+   <server xmlns="urn:infinispan:server:12.0">
+      <interfaces>
+         <interface name="public">
+            <inet-address value="${infinispan.bind.address:127.0.0.1}"/>
+         </interface>
+      </interfaces>
+
+      <socket-bindings default-interface="public" port-offset="${infinispan.socket.binding.port-offset:0}">
+         <socket-binding name="default" port="${infinispan.bind.port:11222}"/>
+         <socket-binding name="memcached" port="11221"/>
+		 <socket-binding name="hotrod" interface="public" port="11224" />
+		 <socket-binding name="rest" interface="public" port="11225" />
+      </socket-bindings>
+
+      <security>
+         <security-realms>
+            <security-realm name="default">
+               <!-- Uncomment to enable TLS on the realm -->
+               <server-identities>
+                  <ssl>
+                     <keystore path="cacerts" relative-to="infinispan.server.config.path"
+                               keystore-password="changeit"/>
+					 <engine enabled-protocols="TLSv1.2" 
+                       enabled-ciphersuites="TLS_RSA_WITH_AES_256_CBC_SHA256 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+					   TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+					   ECDHE-ECDSA-AES256-SHA ECDHE-RSA-AES128-SHA
+					   DHE-RSA-AES256-SHA DHE-RSA-AES128-SHA
+                       ECDHE-RSA-AES256-SHA ECDHE-ECDSA-AES128-SHA
+					   AES256-SHA AES128-SHA ECDHE-PSK-AES128-CBC-SHA DHE-PSK-AES128-CBC-SHA
+					   DHE-PSK-AES256-CBC-SHA PSK-AES128-CBC-SHA PSK-AES256-CBC-SHA"/>		   
+                  </ssl>
+               </server-identities>
+			   <!--truststore-realm path="cacerts" 
+                           relative-to="infinispan.server.config.path"
+                           keystore-password="changeit"/-->
+               <!--properties-realm groups-attribute="Roles">
+                  <user-properties path="users.properties" relative-to="infinispan.server.config.path" plain-text="true"/>
+                  <group-properties path="groups.properties" relative-to="infinispan.server.config.path" />
+               </properties-realm-->
+            </security-realm>
+         </security-realms>
+      </security>
+
+      <endpoints socket-binding="default" security-realm="default">
+         <hotrod-connector socket-binding="hotrod">
+			<encryption security-realm="default" require-ssl-client-auth="false" />
+         </hotrod-connector>
+         <rest-connector>
+			<!--encryption security-realm="default" require-ssl-client-auth="false" /-->
+		 </rest-connector>
+         <!-- Uncomment to enable the memcached connector -->
+         <!-- memcached-connector socket-binding="memcached" / -->
+      </endpoints>
+   </server>
+</infinispan>
