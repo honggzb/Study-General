@@ -748,6 +748,10 @@ Update NPM:  `npm install -g npm@latest`
 
 ```
 ├── Javascript                         --javascript学习过程中的小tip
+│   ├── Advanced-JavaScript-Study
+│   │   ├── JavaScript Simplified - Advanced/
+│   │   │     ├── Minesweeper Project/
+│   │   │     └── JavaScript Simplified.md
 │   ├── Advanced-JavaScript-Study
 │   │   ├── sample/
 │   │   │     ├── 01构造函数和实例对象的关系.html
