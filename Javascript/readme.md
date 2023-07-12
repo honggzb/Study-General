@@ -1,6 +1,9 @@
 ```
 ├── Javascript                         --javascript学习过程中的小tip
 │   ├── Advanced-JavaScript-Study
+│   │   ├── JavaScript Simplified - Advanced/
+│   │   │     ├── Minesweeper Project/
+│   │   │     └── JavaScript Simplified.md
 │   │   ├── sample/
 │   │   │     ├── 01构造函数和实例对象的关系.html
 │   │   │     ├── 02面向过程和面向对象编程思想不同.html
