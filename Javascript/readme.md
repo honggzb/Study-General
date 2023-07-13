@@ -3,6 +3,7 @@
 │   ├── Advanced-JavaScript-Study
 │   │   ├── JavaScript Simplified - Advanced/
 │   │   │     ├── Minesweeper Project/
+│   │   │     ├── MathSolver Project/
 │   │   │     └── JavaScript Simplified.md
 │   │   ├── sample/
 │   │   │     ├── 01构造函数和实例对象的关系.html
