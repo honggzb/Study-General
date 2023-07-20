@@ -3,9 +3,10 @@
 - [Accessiblity](#Accessiblity)
 - [Angular-Study](#angular-study)
 - [AngularJS-study](#angularjs-study)
-- [CSS+CSS3-Skill - css技巧](#csscss3-skill---css%E6%8A%80%E5%B7%A7)
-- [Configuration Study - Build tools](#configuration-study---build-tools)
+- [CI-CD](#CI-CD)
+- [CSS+CSS3-Skill - css技巧](#csscss3-skill---css%E6%8A%80%E5%B7%A7)-
 - [Cloud-study](#Cloud-study)
+- [Configuration Study - Build tools](#configuration-study---build-tools)
 - [D3](#d3)
 - [Database学习](#database%E5%AD%A6%E4%B9%A0)
 - [Debug-Skill调试技巧](#debug-skill%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7)
@@ -21,16 +22,20 @@
 - [NodeJS 学习](#nodejs-%E5%AD%A6%E4%B9%A0)
 - [Regular Expression - 正则表达式](#regular-expression---%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
 - [Performance 性能分析](#performance-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90)
+- [Python](#Python)
+- [React](#React]
 - [SVG](#svg)
-- [Samples   --常用&经典样例](#samples---%E5%B8%B8%E7%94%A8%E7%BB%8F%E5%85%B8%E6%A0%B7%E4%BE%8B)
-- [Security   --安全](#security---%E5%AE%89%E5%85%A8)
+- [Salesforce](#Salesforce)
+- [Security](#security---%E5%AE%89%E5%85%A8)
 - [Theory 理论和源码](#theory-%E7%90%86%E8%AE%BA%E5%92%8C%E6%BA%90%E7%A0%81)
-- [VirtualReality   #虚拟现实](#virtualreality-%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E)
+- [VirtualReality -虚拟现实](#virtualreality-%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E)
 - [Vue](#vue)
 - [interview](#interview)
 - [qita](#qita)
 - [thirdParty-lib](#thirdparty-lib)
 
+- [Samples   --常用&经典样例](#samples---%E5%B8%B8%E7%94%A8%E7%BB%8F%E5%85%B8%E6%A0%B7%E4%BE%8B)
+  
 ### Accessiblity
 
 ```
@@ -407,6 +412,8 @@
 ```
 
 [back to top](#top)
+
+### CI-CD
 
 ### CSS+CSS3-Skill - css技巧
 
@@ -850,8 +857,10 @@
 ### Regular Expression - 正则表达式
 ### RxJS
 ### Performance 性能分析
+### Python
+### React
 ### SVG
-### Samples   --常用&经典样例
+### Salesforce
 ### Security   --安全
 ### Theory 理论和源码
 ### VirtualReality   #虚拟现实
@@ -909,39 +918,25 @@
 │   ├── resources.md
 │   └──
 │
-├── Regular Expression - 正则表达式
-│   ├── 常用正则表达式.md
-│   ├── 
+├── Python
+│   ├── python-basic.md
 │   └──
-|
-├── RxJs
-│   ├── Observable之Subject.md
-│   ├── RxJS笔记-Reactive Extensions for JavaScript (RxJS).md
-│   ├── RxJS笔记之Subject.md
-│   ├── RxJS笔记之switchMap, concatMap, mergeMap和exhaustMap.md
-│   └── 
+│
+├── React
+│   ├── The Complete React Developer Course -w Hooks and Redux- Andrew Mead/
+│   ├── Redux/
+│   ├── Sample/
+│   ├── React学习-router.md
+│   ├── React学习-大众点评.md
+│   ├── React学习资源汇总.md
+│   └── react-official-document-study.md
 │
 ├── SVG
-│   ├── AngularJS-SVG /
+│   ├── AngularJS-SVG/
 │   ├── SVG displacement filter.html
 │   └──
-|
-├── Samples   --常用&经典样例
-│   ├── InputSamples/   --输入框样例集
-│   ├── TableSamples/   --表格样例集
-│   │     ├──CSS&JS_Table_Examples.md
-│   │     ├──table1-accordion-table.html
-│   │     ├──table2-responsive-table1.html
-│   │     ├──table2-responsive-table2.html
-│   │     ├──table3-fixedTableHeader.html
-│   │     ├──table4-ResponsiveFlipPriceTable.html
-│   │     ├──table4-cssPricingTable.html
-│   │     └──table4-flagEffect.html
-│   ├── 02-NodeJS.zip
-│   ├── 03-MongoDB.zip
-│   ├── 05-Angular-2-NodeJS.zip
-│   ├── 06-Auth.zip
-│   └── 
+│
+├── Salesforce/
 │
 ├── Security   --安全
 │   ├── 腾讯大牛教你web前后端漏洞分析与防御note.md
@@ -954,21 +949,27 @@
 │   │     ├── your-first-offline-app.rar
 │   │     ├── your-first-pwapp-master
 │   │     └── you-first-push-notifications-master.rar
-│   ├── 
-│   ├── 
-│   └── 
+│   └── 图解Http缓存控制之max-age=0、no-cache、no-store区别.pdf
 │
 ├── VirtualReality   #虚拟现实
 │   ├── resource.md
-│   └── 
+│   └── Detect WebVR Support with JavaScript.md
 │
 ├── Vue
-│   ├── Vue学习.md
-│   └── 
+│   ├── samples/
+│   │     ├── tab-switch.html        -tab切换例子（动态组件） 
+│   │     └── 
+│   ├── Vue官网学习小结.md
+│   ├── Vue官网学习小结之组件.md
+│   └── lifecycle.png
 │
-├── SVG
-│   ├── SVG displacement filter.html
-│   └── 
+├── interview
+│   ├── javascript/
+│   │   ├──Javascript面试之数组的几个不low操作.md
+│   │   └── 前端面试基本知识点—javascript.md
+│   ├── 1. 一次性加载几万条数据，要求不卡住界面.md
+│   ├── 2. 10 个 Ajax 同时发起请求.md
+│   └── Soft-skill.md
 |
 ├── qita/
 │   ├── Microsoft-Teams/
@@ -987,6 +988,7 @@
 │   └── window-user-password.md
 │
 ├── thirdParty-lib
+│   ├── thirdParty-library/
 │   ├── autoNumber-study.md
 │   ├── lodash学习笔记.md
 │   ├── moment-study.md
