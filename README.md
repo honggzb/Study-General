@@ -20,7 +20,6 @@
 - [Miscellaneous杂项](#miscellaneous%E6%9D%82%E9%A1%B9)
 - [NodeJS 学习](#nodejs-%E5%AD%A6%E4%B9%A0)
 - [Regular Expression - 正则表达式](#regular-expression---%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
-- [RxJS](#rxjs)
 - [Performance 性能分析](#performance-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90)
 - [SVG](#svg)
 - [Samples   --常用&经典样例](#samples---%E5%B8%B8%E7%94%A8%E7%BB%8F%E5%85%B8%E6%A0%B7%E4%BE%8B)
