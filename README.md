@@ -29,7 +29,6 @@
 - [VirtualReality   #虚拟现实](#virtualreality-%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E)
 - [Vue](#vue)
 - [interview](#interview)
-- [machineLearning](#machineLearning)
 - [qita](#qita)
 - [thirdParty-lib](#thirdparty-lib)
 
@@ -971,10 +970,6 @@
 ├── SVG
 │   ├── SVG displacement filter.html
 │   └── 
-├── machineLearning/
-│   ├── 机器学习之逻辑回归Logistic Regression模型.md
-│   ├── 
-│   └──
 |
 ├── qita/
 │   ├── Microsoft-Teams/
