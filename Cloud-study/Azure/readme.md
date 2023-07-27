@@ -6,3 +6,5 @@ Data Scientist  DP-100    Designing and Implementing a Data Science Solution on 
                 DP-300    Administering Microsoft Azure SQL Solutions(Azure Database Administrator Associate)
                 AZ-204    (Azure Developer Associate)
 ```
+
+![Azure-ML-workspace1](https://github.com/honggzb/Study-General/blob/master/Cloud-study/images/DP-100.png)
