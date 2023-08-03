@@ -8,3 +8,5 @@ Data Scientist  DP-100    Designing and Implementing a Data Science Solution on 
 ```
 
 ![Azure-ML-workspace1](https://github.com/honggzb/Study-General/blob/master/Cloud-study/images/DP-100.png)
+
+- [Microsoft Azure Machine Learning vs Google Cloud AI Platform](https://www.projectpro.io/compare/microsoft-azure-machine-learning-vs-google-cloud-ai-platform#:~:text=Azure%20Machine%20Learning%20can%20scale,machine%20learning%20models%20at%20scale)
