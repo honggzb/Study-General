@@ -90,3 +90,9 @@
 │   ├── 基础CSS.md
 │   └── 现代CSS代码的建议.md
 ```
+
+> references & tools && useful website
+- [coco's blog](https://chokcoco.github.io/#blog)
+- [Soft-UI CSS code](https://neumorphism.io/#e0e0e0)
+- [css animation library](https://animxyz.com/)
+- [codepen](https://codepen.io/pen/tour/welcome/start)
