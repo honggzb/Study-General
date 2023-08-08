@@ -1,5 +1,4 @@
 ## [Python Basic](#top)
-
 - [Basic](#basic)
   - [数据类型和变量](#数据类型和变量)
   - [字符串和编码](#字符串和编码)
@@ -17,6 +16,17 @@
     - [关键字参数](#关键字参数)
     - [命名关键字参数](#命名关键字参数)
     - [参数组合](#参数组合)
+    - [参数小结](#参数小结)
+  - [递归函数](#递归函数)
+    - [解决递归调用栈溢出的方法 - 尾递归优化](#解决递归调用栈溢出的方法---尾递归优化)
+- [高级特性](#高级特性)
+  - [切片](#切片)
+  - [迭代](#迭代)
+  - [列表生成式](#列表生成式)
+  - [生成器](#生成器)
+  - [迭代器](#迭代器)
+- [函数式编程Functional Programming](#函数式编程functional-programming)
+  - [高阶函数Higher-order function](#高阶函数higher-order-function)
 
 ### Basic
 
@@ -347,8 +357,6 @@ kw = {'d': 88, 'x': '#'}
 f2(*args, **kw)                # a = 1 b = 2 c = 3 d = 88 kw = {'x': '#'}
 ```
 
-[go to top](#top)
-
 ##### 参数小结
 
 - Python的函数具有非常灵活的参数形态，既可以实现简单的调用，又可以传入非常复杂的参数
@@ -373,5 +381,184 @@ def fact(n):
     return n * fact(n - 1)
 ```
 
+##### 解决递归调用栈溢出的方法 - 尾递归优化
+
+- 在计算机中，函数调用是通过栈（stack）这种数据结构实现的，每当进入一个函数调用，栈就会加一层栈帧，每当函数返回，栈就会减一层栈帧。由于栈的大小不是无限的，所以，递归调用的次数过多，会导致栈溢出
+- 尾递归是指，在函数返回的时候，调用自身本身，并且return语句不能包含表达式。这样，编译器或者解释器就可以把尾递归做优化，使递归本身无论调用多少次，都只占用一个栈帧，不会出现栈溢出的情况
+
+```python
+def fact(n):
+    return fact_iter(n, 1)
+def fact_iter(num, product):
+    if num == 1:
+        return product
+    return fact_iter(num - 1, num * product)
+# fact(5)对应的fact_iter(5, 1)
+===> fact_iter(5, 1)
+===> fact_iter(4, 5)
+===> fact_iter(3, 20)
+===> fact_iter(2, 60)
+===> fact_iter(1, 120)
+# 无论多少次调用也不会导致栈溢出
+===> 120
+```
+
 [go to top](#top)
 
+### 高级特性
+
+#### 切片
+
+- 有了切片操作，很多地方循环就不再需要了。Python的切片非常灵活，一行代码就可以实现很多行循环才能完成的操作
+- 切片用于取指定索引范围，如取list或tuple或字符串的部分元素
+
+```python
+L = ['Michael', 'Sarah', 'Tracy', 'Bob', 'Jack']
+L[1:3]          # ['Sarah', 'Tracy']
+L[-2:]          # ['Bob', 'Jack']
+L[-2:-1]        # ['Bob']    #倒数第一个元素的索引是-1
+# sample 2
+L = list(range(100))   #[0, 1, 2, 3, ..., 99]
+# 2.1 后10个数：
+L[-10:]                #[90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+# 2.2 前11-20个数：
+L[10:20]               #[10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+# 2.3 前10个数，每两个取一个：
+L[:10:2]               #[0, 2, 4, 6, 8]
+# 2.4 所有数，每5个取一个：
+ L[::5]                #[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]
+# 2.5 甚至什么都不写，只写[:]就可以原样复制一个list：
+L[:]
+# sample 3   tuple也是一种list，唯一区别是tuple不可变。因此，tuple也可以用切片操作，只是操作的结果仍是tuple
+(0, 1, 2, 3, 4, 5)[:3]         # (0, 1, 2)
+# sample 4   字符串'xxx'也可以看成是一种list，每个元素就是一个字符。因此，字符串也可以用切片操作，只是操作结果仍是字符串
+'ABCDEFG'[:3]         #'ABC'
+'ABCDEFG'[::2]        #'ACEG'
+# sample 4 利用切片操作，实现一个trim()函数，去除字符串首尾的空格，注意不要调用str的strip()方法
+
+```
+
+[go to top](#top)
+
+#### 迭代
+
+- Python的for循环不仅可以用在list或tuple上，还可以作用在其他可迭代对象上
+- 只要是可迭代对象，无论有无下标，都可以迭代，比如dict就可以迭代
+- Python内置的enumerate函数可以把一个list变成索引-元素对
+
+```python
+d = {'a': 1, 'b': 2, 'c': 3}
+for key in d:
+    print(key)
+# a c b     dict的存储不是按照list的方式顺序排列，所以，迭代出的结果顺序很可能不一样
+# 判断一个对象是可迭代对象,: 通过collections.abc模块的Iterable类型判断
+from collections.abc import Iterable
+isinstance('abc', Iterable)
+# Python内置的enumerate函数可以把一个list变成索引-元素对
+for i, value in enumerate(['A', 'B', 'C']):
+     print(i, value)
+# 0 A
+# 1 B
+# 2 C
+```
+
+#### 列表生成式
+
+- 列表生成式(List Comprehensions)是Python内置的非常简单却强大的可以用来创建list的生成式
+
+```python
+list(range(1, 11))    # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# 生成[1x1, 2x2, 3x3, ..., 10x10]
+[x * x for x in range(1, 11)]  # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+# for循环后面还可以加上if判断，这样我们就可以筛选出仅偶数的平方：
+[x * x for x in range(1, 11) if(x%2 == 0)]   # [4, 16, 36, 64, 100]
+# 使用两层循环，可以生成全排列
+[m + n for m in 'ABC' for n in 'XYZ']        # ['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']
+# sample 列出当前目录下的所有文件和目录名
+import os                                    # 导入os模块，模块的概念后面讲到
+[d for d in os.listdir('.')]                 # os.listdir可以列出文件和目录
+```
+
+[go to top](#top)
+
+#### 生成器
+
+- 通过列表生成式，我们可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。而且，创建一个包含100万个元素的列表，不仅占用很大的存储空间，如果我们仅仅需要访问前面几个元素，那后面绝大多数元素占用的空间都白白浪费了。
+- 不必创建完整的list，从而节省大量的空间。在Python中，这种一边循环一边计算的机制，称为生成器：`generator`
+
+```python
+# 创建一个generator 1 - 把一个列表生成式的[]改成()
+L = (x * x for x in range(10))
+L         # <generator object <genexpr> at 0x1022ef630>
+next(L)   # 可以通过next()函数获得generator的下一个返回值
+for n in L:       # 更方便的方法是使用for循环迭代它，因为generator也是可迭代对象
+    print(n)
+# sample 著名的斐波拉契数列（Fibonacci）: 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+# 使用yield， 如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator函数，调用一个generator函数将返回一个generator
+def fib(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        yield b                  # print(b)
+        a, b = b, a + b
+        n = n + 1
+    return 'done'
+# 调用该generator函数时，首先要生成一个generator对象
+for n in fib(6)
+    print(n)
+# call generator manually:
+g = fib(5)
+while 1:
+    try:
+        x = next(g)
+        print('g:', x)
+    except StopIteration as e:
+        print('Generator return value:', e.value)
+        break
+```
+
+#### 迭代器
+
+- 可以直接作用于for循环的数据类型有以下几种(凡是可作用于for循环的对象都是Iterable类型)：
+  - 集合数据类型，如list、tuple、dict、set、str等
+  - 类是generator，包括生成器和带yield的generator function
+- 生成器都是Iterator对象，但list、dict、str虽然是Iterable，却不是Iterator
+  - 可以使用`isinstance()`判断一个对象是否是Iterator对象
+- 把list、dict、str等Iterable变成Iterator可以使用`iter()`函数
+
+```python
+isinstance(iter('abc'), Iterator)   # true
+```
+
+[go to top](#top)
+
+### 函数式编程Functional Programming
+
+- Functional Programming虽然也可以归结到面向过程的程序设计，但其思想更接近数学计算
+- 函数式编程就是一种抽象程度很高的编程范式，纯粹的函数式编程语言编写的函数没有变量，因此，任意一个函数，只要输入是确定的，输出就是确定的，这种纯函数我们称之为没有副作用。而允许使用变量的程序设计语言，由于函数内部的变量状态不确定，同样的输入，可能得到不同的输出，因此，这种函数是有副作用的
+  - 函数式编程的一个特点就是，**允许把函数本身作为参数传入另一个函数，还允许返回一个函数！**
+- Python对函数式编程提供部分支持。由于Python允许使用变量，因此，Python不是纯函数式编程语言
+
+#### 高阶函数Higher-order function
+
+- 变量可以指向函数
+- 函数名也是变量
+- 允许传入函数
+  - 把函数作为参数传入，这样的函数称为高阶函数，函数式编程就是指这种高度抽象的编程范式
+
+```python
+x = abs(-10)
+x        # 10
+f = abs
+f         # <built-in function abs>
+f(-10)    # 10
+# 允许传入函数
+def add(x, y, f):
+    return f(x) + f(y)
+print(add(-5, 6, abs))     # 11
+```
+
+[go to top](#top)
+
+> Reference
+- [learn-python3 samples](https://github.com/michaelliao/learn-python3/tree/master/samples/)
+- [廖雪峰Python教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
