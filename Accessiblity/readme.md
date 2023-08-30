@@ -36,6 +36,7 @@
 
 ### Tools
 
+- WAVE Evaluation Tool: browser plugin
 - [Accessibility Reference of Chrome](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference)
 - [aXe Coconut extension for Chrome](https://chrome.google.com/webstore/detail/axe-coconut/iobddmbdndbbbfjopjdgadphaoihpojp/related?hl=en)
 - [Color Contrast Analyzer for Chrome](https://accessibility.oit.ncsu.edu/tools/color-contrast-chrome/)
