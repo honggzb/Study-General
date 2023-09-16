@@ -30,7 +30,7 @@
 - jenkins有2种流水线分为声明式流水线与脚本化流水线，脚本化流水线是jenkins旧版本使用的流水线脚本，新版本Jenkins推荐使用声明式流水线。只介绍声明流水线
 - 在声明式流水线语法中，流水线过程定义在`Pipeline{}`中，Pipeline块定义了整个流水线中完成的所有工作
 
-```json
+```javascript
 //Jenkinsfile (Declarative Pipeline声明式流水线)
 pipeline {
   agent any                //在任何可用的代理上执行流水线或它的任何阶段，也就是执行流水线过程的位置，也可以指定到具体的节点
