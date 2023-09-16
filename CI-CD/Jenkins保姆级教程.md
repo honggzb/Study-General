@@ -85,7 +85,7 @@ node {                    //在任何可用的代理上执行流水线或它的�
 - 表示整个流水线或特定阶段中的步骤和命令执行的位置，该部分必须在 pipeline 块的顶层被定义，也可以在 stage 中再次定义，但是 stage 级别是可选的
 1. `any`: 在任何可用的代理上执行流水线
    
-```json
+```javascript
 pipeline {
   agent any
 }
@@ -93,7 +93,7 @@ pipeline {
 
 2. `none`: 表示该Pipeline脚本没有全局的 agent 配置。当顶层的 agent 配置为 none 时， 每个 stage 部分都需要包含它自己的 agent
 
-```json
+```javascript
 pipeline {
   agent none
   stages {
@@ -106,7 +106,7 @@ pipeline {
 
 3. `label`: 以节点标签形式选择某个具体的节点执行 Pipeline 命令，例如：agent { label 'my-defined-label' }。节点需要提前配置标签
 
-```json
+```javascript
 pipeline {
   agent none
     stages {
@@ -122,7 +122,7 @@ pipeline {
 
 4. `node`: 和 label 配置类似，只不过是可以添加一些额外的配置，比如 customWorkspace(设置默认工作目录)
 
-```json
+```javascript
 pipeline {
   agent none
     stages {
@@ -143,7 +143,7 @@ pipeline {
 
 5. `dockerfile`: 使用从源码中包含的 Dockerfile 所构建的容器执行流水线或 stage。此时对应的 agent 写法如下
 
-```json
+```javascript
 agent {
    dockerfile {
      filename 'Dockerfile.build'  //dockerfile文件名称
@@ -156,7 +156,7 @@ agent {
 
 6. `docker`: 相当于 dockerfile，可以直接使用 docker 字段指定外部镜像即可，可以省去构建的时间。比如使用 maven 镜像进行打包，同时可以指定 args
 
-```json
+```javascript
 agent {
   docker {
     image '192.168.10.15/kubernetes/alpine:latest'   //镜像地址
@@ -180,7 +180,7 @@ agent {
       7. emptyDirWorkspaceVolume：临时目录，任务执行结束后会随着 pod 删除被删除，主要功能多个任务 container 共享 jenkins 工作目录: `workspaceVolume emptyDirWorkspaceVolume()`
       8. hostPathWorkspaceVolume：挂载 node 节点本机目录，注意挂载本机目录注意权限问题，可以先创建设置 777 权限，否则默认 kubelet 创建的目录权限为 755 默认其他用户没有写权限，执行流水线会报错: `workspaceVolume hostPathWorkspaceVolume(hostPath: "/opt/workspace", readOnly: false`
 
-```json
+```javascript
 agent {
   kubernetes {
       cloud 'kubernetes'
@@ -214,7 +214,7 @@ spec:
 
 #### kubernetes示例
 
-```json
+```javascript
 pipeline {
   agent {
     kubernetes {
@@ -284,7 +284,7 @@ spec:
 
 #### docker的示例
 
-```json
+```javascript
 pipeline {
   agent none
   stages {
@@ -323,7 +323,7 @@ pipeline {
   - `unsuccessful`：当前状态不是 success 时，执行该 post 步骤
   - `cleanup`：无论 pipeline 或 stage 的完成状态如何，都允许运行该 post 中定义的指令。和 always 的区别在于，cleanup 会在其它执行之后执行
 
-```json
+```javascript
 // 一般情况下 post 部分放在流水线的底部，比如本实例，无论 stage 的完成状态如何，都会输出一条 I will always say Hello again!信息
 //Jenkinsfile (Declarative Pipeline)
 pipeline {
@@ -369,7 +369,7 @@ pipeline {
 
 ### steps
 
-```json
+```javascript
 //Steps 部分在给定的 stage 指令中执行的一个或多个步骤，比如在 steps 定义执行一条 shell 命令
 //Jenkinsfile (Declarative Pipeline)
 pipeline {
@@ -411,7 +411,7 @@ Environment 主要用于在流水线中配置的一些环境变量，根据配�
 
 1. 基本变量使用
 
-```json
+```javascript
 //示例
 pipeline {
   agent any
@@ -488,7 +488,7 @@ pipeline {
   - timeout：设置流水线的超时时间，超过流水线时间，job 会自动终止。如果不加 unit 参数默认为 1 分
   - timestamps：为控制台输出时间戳
 
-```json
+```javascript
 // 定义在 pipeline 中
 pipeline {
   agent any
@@ -552,7 +552,7 @@ pipeline {
     - imageTag：镜像 tag，需要安装 Image Tag Parameter 插件后使用
     - gitParameter：获取 git 仓库分支，需要 Git Parameter 插件后使用
 
-```json
+```javascript
 pipeline {
   agent any
   parameters {
@@ -590,7 +590,7 @@ pipeline {
 - `Upstream`: 可以根据上游 job 的执行结果决定是否触发该流水线。比如当 job1 或 job2 执行成功时触发该流水线
   - 目前支持的状态有 SUCCESS、UNSTABLE、FAILURE、NOT_BUILT、ABORTED 等
 
-```json
+```javascript
 // cron
 pipeline {
   agent any
@@ -637,7 +637,7 @@ Input 字段可以实现在流水线中进行交互式操作，比如选择要�
 
 假如需要配置一个提示消息为“还继续么”、确认按钮为“继续”、提供一个 PERSON 的变量的参数，并且只能由登录用户为 alice 和 bob 提交的 input 流水线
 
-```json
+```javascript
 pipeline {
   agent any
   stages {
@@ -675,7 +675,7 @@ pipeline {
   - allOf：当所有的嵌套条件都正确时，执行这个 stage，必须包含至少一个条件，例如：`when { allOf { branch 'master'; environment name: 'DEPLOY_TO', value: 'production' } }；`
   - anyOf：当至少有一个嵌套条件为 True 时，执行这个 stage，例如：`when { anyOf { branch 'master'; branch 'staging' } }`
 
-```json
+```javascript
 //示例：当分支为 main 时执行 Example Deploy 步骤
 pipeline {
   agent any
@@ -758,7 +758,7 @@ pipeline {
   - beforeOptions：如果 beforeInput 为 true，则会先评估 when 条件。在 when 条件为 true 时，才会进入到 options 阶段
   - beforeOptions 优先级大于 beforeInput 大于 beforeAgent
 
-```json
+```javascript
 pipeline {
   agent none
   stages {
@@ -784,7 +784,7 @@ pipeline {
 
 ### Parallel-实现并发构建
 
-```json
+```javascript
 pipeline {
   agent any
   stages {
@@ -863,7 +863,7 @@ WORKSPACE：/bitnami/jenkins/home/workspace/print_env
 
 上述变量会保存在一个 Map 中，可以使用 env.BUILD_ID 或 env.JENKINS_URL 引用某个内置变量
 
-```json
+```javascript
 pipeline {
   agent any
   stages {
@@ -896,7 +896,7 @@ pipeline {
   - returnStdout：将命令的执行结果赋值给变量，比如下述的命令返回的是 clang，此时 CC 的值为“clang”
   - returnStatus：将命令的执行状态赋值给变量，比如下述命令的执行状态为 1，此时 EXIT_STATUS 的值为 1
 
-```json
+```javascript
 //Jenkinsfile (Declarative Pipeline)
 pipeline {
   agent any
@@ -935,7 +935,7 @@ Jenkins 的声明式流水线语法有一个 credentials()函数，它支持 sec
 
 本实例演示将两个 Secret 文本凭证分配给单独的环境变量来访问 Amazon Web 服务，需要 提前创建这两个文件的 credentials（实践的章节会有演示），Jenkinsfile 文件的内容如下
 
-```json
+```javascript
 //Jenkinsfile (Declarative Pipeline)
 pipeline {
   agent any
@@ -962,7 +962,7 @@ pipeline {
 
 本示例用来演示 credentials 账号密码的使用，比如使用一个公用账户访问 Bitbucket、GitLab、 Harbor 等。假设已经配置完成了用户名密码形式的 credentials，凭证 ID 为 harbor-account
 
-```json
+```javascript
 //Jenkinsfile (Declarative Pipeline)
 pipeline {
   agent any
@@ -990,7 +990,7 @@ pipeline {
 - 需要加密保存的文件，也可以使用 credential，比如链接到 Kubernetes 集群的 kubeconfig 文件等。
 - 假如已经配置好了一个 kubeconfig 文件，此时可以在 Pipeline 中引用该文件
   
-```json
+```javascript
 //Jenkinsfile (Declarative Pipeline)
 pipeline {
   agent {
