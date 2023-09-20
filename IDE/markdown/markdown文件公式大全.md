@@ -34,7 +34,8 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 
  - `$$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text{，独立公式示例，使用 \tag 手动编号} \tag{0.1} $$`
  - `$a=\frac{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})^2}$` $$a=\frac{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})^2}$$
- - `$\quad\quad b=\overline{y}-a\overline{x}$`  $$\quad\quad b=\overline{y}-a\overline{x}$$
+ - `$\quad\quad b=\overline{y}-a\overline{x}$`  $$\quad\quad b=\overline{y}-a\overline{x}$$: 
+ - 明可夫斯基距离 `$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$` $$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$$
 
 ## 关系运算符
 
@@ -69,7 +70,7 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 hat| $\hat y=a\hat x+b$ | `$\hat y=a\hat x+b$`
 省略号| $\cdots$| `\cdots`
 平均数| $\overline{a+b+c+d}$| `$\overline{a+b+c+d}$`
-下划线| $ \underline{a+b+c+d} $| `$ \underline{a+b+c+d} $`
+下划线| $\underline{a+b+c+d}$| `$ \underline{a+b+c+d} $`
 上大括号| $\overbrace{a+b+c+d}$,   $\overbrace{a+\underbrace{b+c}_{2.0}}^{3.0}$| `$\overbrace{a+b+c+d}$`, `$\overbrace{a+\underbrace{b+c}_{2.0}}^{3.0}$`
 下大括号| $ \underbrace{a+b+c+d} $| `$ \underbrace{a+b+c+d} $`
 行间公式（使用两个$包含公式可以独立一行）| $\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$ | `$\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$`
