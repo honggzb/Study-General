@@ -45,7 +45,7 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 |乘|$1 \ast 2$ | `\ast`|
 |除|$\div$ | `\div`
 |分数|$\frac{x}{y}$ | `\frac{x}{y}`|
-|总和|$\sum$, $\sum_{i=0}^{n}$ | `\sum`, `$\sum_{i=0}^{n}$`|
+|总和|$\sum$, $\sum \limits_{i=0}^{n}$ | `\sum`, `$\sum \limits_{i=0}^{n}$`|
 |开二次方|$\sum$ | `\sum`|
 ||$\prod$ | `\prod`|
 |不等于|$\neq$ | `\neq`|
