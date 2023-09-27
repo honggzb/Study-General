@@ -6,7 +6,8 @@
   - [Preloading modules and standalone components](#preloading-modules-and-standalone-components)
   - [Standalone application](#standalone-application)
   - [Preloading component data](#preloading-component-data)
-
+- [Troubleshooting lazy-loading moduless](#troubleshooting-lazy-loading-modules)
+  
 ------------------------------------------------------------------------------------------------
 
 ## Lazy loading basics
@@ -173,6 +174,12 @@ class YourComponent {
   }
 }
 ```
+
+## Troubleshooting lazy-loading modules
+
+1. generate the module using the Angular CLI and including the --route route-name parameter, where route-name is the name of your module
+2. create the module without the --route parameter
+3. If ng generate module with the --route parameter returns an error, but runs correctly without it, you might have imported the same module in multiple places
 
 [back to top](#top)
 
