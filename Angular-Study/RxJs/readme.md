@@ -6,8 +6,9 @@
 │   │   ├── RxJS笔记-Reactive Extensions for JavaScript (RxJS).md
 │   │   ├── RxJS笔记之Subject.md
 │   │   ├── RxJS笔记之switchMap, concatMap, mergeMap和exhaustMap.md
-│   │   ├── Rxjs subject switch map to avoid nested calling.md
-│   │   └── 
+│   │   ├── SwitchMap之call another observable with parameter
+│   │   ├── 避免多次调用之Rxjs subject to avoid multiple calling.md
+│   │   └── 避免多次调用之share+shareReplay.md
 ```
 
 > Resources
