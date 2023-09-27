@@ -14,14 +14,12 @@
 *beautify                    |良好的拓展性，可以格式化JSON|JS|HTML|CSS|SCSS,比内置格式化好用
 *auto close tag              | 匹配标签，关闭对应的标签。很实用【HTML/XML】
  auto import                 |
-*auto rename tag             | Auto Rename Tag : sublime和webstorm也有这个内置功能，
-                             | 改变标签的时候同时改动开闭合标签；【HTML/XML】
+*auto rename tag             | Auto Rename Tag : sublime和webstorm也有这个内置功能， 改变标签的时候同时改动开闭合标签；【HTML/XML】
  bracket pair colorizer      |
 *change-case                 | 各种字符格式化
  Color Picker                |
  Css peek                    |
  Document This               | JSDOC注解调用，值得易用, JSDoc(Ctrl+Alt+D and Ctrl+Alt+D again)
- intellisense for CSS class names in HTML
 *Markdown All in One         |
  Markdown Preview Enhanced   |
 *Markdown Extended           |
@@ -41,7 +39,10 @@
  Better Comments             | colorful comment
 *Template String Converter   | convert Javascript/Typescript quotes to backticks when ${ has been entered within a string
                              | https://marketplace.visualstudio.com/items?itemName=meganrogge.template-string-converter
-Docs View                    |  displays hover documentation in the sidebar or panel(https://marketplace.visualstudio.com/items?itemName=bierner.docs-view)
+Docs View                    | displays hover documentation in the sidebar or panel(https://marketplace.visualstudio.com/items?itemName=bierner.docs-view)
+*CodeSnap                    | 代码屏幕截图
+Prettier(optional)           | 代码格式化工具
+indent-rainbow               | 缩进层次以不同颜色高亮显示
 ```
 
 ## 功能性
