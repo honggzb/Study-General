@@ -43,7 +43,7 @@
   3. forEach中的return充当continue使用，只用于控制是否跳出当前循环
 
 | method |是否修改原数组 |返回值|是否需要回调函数|是否可以中断循环|
-|---|---|---|---|---|---|
+|---|---|---|---|---|
 | for |yes | 无返回值| yes | yes|
 | map |No | 新数组| yes | no|
 | forEach |No | 无返回值| yes | no|
