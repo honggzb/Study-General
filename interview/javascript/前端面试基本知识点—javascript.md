@@ -1,3 +1,4 @@
+[Top](#top)
 - [forEach、map和filter的区别](#foreachmap和filter的区别)
 - [js基本数据类型](#js基本数据类型)
 - [js的内置对象](#js的内置对象)
@@ -18,8 +19,9 @@
   - [如何将浮点数小数点左边的每三位添加一个逗号](#如何将浮点数小数点左边的每三位添加一个逗号)
   - [如何实现数组的随机排序？var arr = \[1,2,3,4,5,6,7,8\]](#如何实现数组的随机排序var-arr--12345678)
 
-
+---------------------------------------
 `[...state.products, action.payload]` ===  `Object.assign(Object1, Object2)`
+----------------------------------------
 
 ## forEach、map和filter的区别
 
@@ -40,7 +42,14 @@
   2. forEach会更改原数组，map和filter不会对原数组产生影响
   3. forEach中的return充当continue使用，只用于控制是否跳出当前循环
 
--------------------------------------------
+| method |是否修改原数组 |返回值|是否需要回调函数|是否可以中断循环|
+|---|---|---|---|---|---|
+| for |yes | 无返回值| yes | yes|
+| map |No | 新数组| yes | no|
+| forEach |No | 无返回值| yes | no|
+| map |No | 过滤后的新数组| yes | no|
+
+[back to top](#top)
 
 ## js基本数据类型
 
