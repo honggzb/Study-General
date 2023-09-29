@@ -25,16 +25,29 @@
 
 ## forEach、map和filter的区别
 
-- `forEach(callbackFn, thisArg)`
-  - callbackFn有以下参数：
-    - element数组当前项的值
-    - index数组当前项的索引
-    - array	数组对象本身
+- `forEach(callbackFn(currentValue, index, array))`
   - 对数组的每个元素执行一次给定的函数
-- `map(callbackFn, thisArg)`
+  - currentValue: 当前处理元素
+  - index: 可选，当前处理元素的索引
+  - array: 可选，当前处理的数组
+  - note:
+    - forEach 不支持return、break、continue等，break和continue会直接报错，return会返回 undefined
+    - 不能中断循环
+- `map(callbackFn(element, index, array), thisArg)`
   - 创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成
-- `filter(callbackFn, thisArg)`
-  - 创建一个新数组，新数组中的元素是通过检查指定数组中符合条件的所有元素
+  - element: 当前处理元素
+  - index: 可选，当前处理元素的索引
+  - array: 可选，当前处理的数组
+  - thisArg: 可选， 表示在执行回调函数时使用的this值，如省略，或传入null，undefined，那么this为全局对象
+- `filter(callbackFn(curentValue, index, array), thisArg)`
+  - 创建一个新数组，新数组中的元素是通过检查指定数组中符合条件(筛选)的所有元素
+  - currentValue: 当前处理元素
+  - index: 可选，当前处理元素的索引
+  - array: 可选，当前处理的数组
+  - thisArg: 可选， 表示在执行回调函数时使用的this值，如省略，或传入null，undefined，那么this为全局对象
+  - note：
+    - filter()方法不会对空数组进行检测
+    - filter()函数不会改变原始数组，它形成的是一个新的数组;
 - **区别**
   1. forEach不会返回新数组，map和filter返回新数组
      - map根据当前数组映射一个新的数组，返回新的被改变后的数组，需要return
