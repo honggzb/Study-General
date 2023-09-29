@@ -1,6 +1,46 @@
+- [forEach、map和filter的区别](#foreachmap和filter的区别)
+- [js基本数据类型](#js基本数据类型)
+- [js的内置对象](#js的内置对象)
+- [js基本规范](#js基本规范)
+- [js原型，原型链及其特点](#js原型原型链及其特点)
+- [Javascript有几种类型的值？及关于他们的内存图](#javascript有几种类型的值及关于他们的内存图)
+- [将字符串转换为数字？](#将字符串转换为数字)
+- [Javascript如何实现继承？](#javascript如何实现继承)
+- [javascript创建对象的几种方法](#javascript创建对象的几种方法)
+- [this的理解](#this的理解)
+- [null和undefined的区别](#null和undefined的区别)
+- [事件是什么？火狐和IE事件机制的区别？以及如何阻止冒泡事件](#事件是什么火狐和ie事件机制的区别以及如何阻止冒泡事件)
+- [什么是闭包？为什么要用它](#什么是闭包为什么要用它)
+- [Javascript中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？](#javascript中有一个函数执行时对象查找时永远不会去查找原型这个函数是)
+- [Ajax 解决浏览器缓存问题？](#ajax-解决浏览器缓存问题)
+- [如何解决跨域问题?](#如何解决跨域问题)
+- [面试题](#面试题)
+  - [如何将浮点数小数点左边的每三位添加一个逗号](#如何将浮点数小数点左边的每三位添加一个逗号)
+  - [如何实现数组的随机排序？var arr = \[1,2,3,4,5,6,7,8\]](#如何实现数组的随机排序var-arr--12345678)
+
+
 `[...state.products, action.payload]` ===  `Object.assign(Object1, Object2)`
 
+## forEach、map和filter的区别
 
+- `forEach(callbackFn, thisArg)`
+  - callbackFn有以下参数：
+    - element数组当前项的值
+    - index数组当前项的索引
+    - array	数组对象本身
+  - 对数组的每个元素执行一次给定的函数
+- `map(callbackFn, thisArg)`
+  - 创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成
+- `filter(callbackFn, thisArg)`
+  - 创建一个新数组，新数组中的元素是通过检查指定数组中符合条件的所有元素
+- **区别**
+  1. forEach不会返回新数组，map和filter返回新数组
+     - map根据当前数组映射一个新的数组，返回新的被改变后的数组，需要return
+     - filter返回新的数组，在循环的时候判断true还是false，是true才会return
+  2. forEach会更改原数组，map和filter不会对原数组产生影响
+  3. forEach中的return充当continue使用，只用于控制是否跳出当前循环
+
+-------------------------------------------
 
 ## js基本数据类型
 
