@@ -45,9 +45,9 @@
 | method |是否修改原数组 |返回值|是否需要回调函数|是否可以中断循环|
 |---|---|---|---|---|
 | for |yes | 无返回值| yes | yes|
-| map |No | 新数组| yes | no|
 | forEach |No | 无返回值| yes | no|
-| map |No | 过滤后的新数组| yes | no|
+| map |No | 新数组| yes | no|
+| filter |No | 过滤后的新数组| yes | no|
 
 [back to top](#top)
 
@@ -72,6 +72,8 @@
 ## js原型，原型链及其特点
 
 每个对象都会有一个内部初始化的属性，就是原型（prototype），当我们寻找一个对象的属性，如果内部属性本身不存在，就到对象的原型里面去找，这个原型又会有自己的原型，就这样一步步地找下去，这就是所谓的原型链。
+
+[back to top](#top)
 
 ## Javascript有几种类型的值？及关于他们的内存图
 
@@ -185,6 +187,8 @@ Car.prototype.sell=function(){
    camry.sell();
 ```
 
+[back to top](#top)
+
 ## this的理解
 
 - this指的是函数的直接调用者
@@ -271,6 +275,7 @@ hasOwnProperty
 4. 在URL后面加上时间搓：`"nowtime=" + new Date().getTime();`
 5. 如果是使用jQuery，直接这样就可以了 `$.ajaxSetup({cache:false})`。这样页面的所有ajax都会执行这条语句就是不需要保存缓存记录
 
+[back to top](#top)
 
 ## 如何解决跨域问题?
 
@@ -321,5 +326,7 @@ function RandomSort3(arr){
      arr.sort(sortBy());
 }
 ```
+
+[back to top](#top)
 
 - [前端面试基本知识点——javascript](https://segmentfault.com/a/1190000008574674)
