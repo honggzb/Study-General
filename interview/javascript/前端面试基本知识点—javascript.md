@@ -39,8 +39,7 @@
   1. forEach不会返回新数组，map和filter返回新数组
      - map根据当前数组映射一个新的数组，返回新的被改变后的数组，需要return
      - filter返回新的数组，在循环的时候判断true还是false，是true才会return
-  2. forEach会更改原数组，map和filter不会对原数组产生影响
-  3. forEach中的return充当continue使用，只用于控制是否跳出当前循环
+  2. forEach,map和filter不会对原数组产生影响
 
 | method |是否修改原数组 |返回值|是否需要回调函数|是否可以中断循环|
 |---|---|---|---|---|
