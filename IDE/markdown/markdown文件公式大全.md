@@ -2,6 +2,7 @@
 
 - [运算符-数学关系逻辑](#运算符-数学关系逻辑)
 - [数学符号](#数学符号)
+- [上下位符号](#上下位符号)
 - [一般公式](#一般公式)
 - [括号](#括号)
 - [占位符](#占位符)
@@ -89,6 +90,15 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 一阶导数符号|$\dot{a}$|`\dot{a}`
 二阶导数符号|$\ddot{a}$|`\ddot{a}`
 省略号| $\cdots$| `\cdots`
+
+## 上下位符号
+
+- `$\stackrel{上位内容}{进行上位的符号}$`
+- $\stackrel{n}{\bigcup}$, `$\stackrel{n}{\bigcup}$`
+- $\bigcup\limits_{i=1}$， `$\bigcup\limits_{i=1}$`
+- $\stackrel{n}{\bigcup\limits_{i=1}}$, `$\stackrel{n}{\bigcup\limits_{i=1}}$`
+- $\stackrel{n}{\sum\limits_{i=1}}$, `$\stackrel{n}{\sum\limits_{i=1}}$`
+- $\stackrel{n}{\bigcap\limits_{i=1}}$, `$\stackrel{n}{\bigcap\limits_{i=1}}$`
 
 ## 一般公式
 
