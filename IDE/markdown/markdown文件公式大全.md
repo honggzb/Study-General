@@ -136,8 +136,8 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 尖括号| $\langle x \rangle$ | `\langle x \rangle`
 上取整| $\lceil \frac{x}{2} \rceil$ | `\lceil \frac{x}{2} \rceil`
 下取整| $\lfloor x \rfloor$ | `\lfloor x \rfloor`
-原始括号| $\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \rbrace$ | `\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \rbrace`
-全包括号| $\left\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \right\rbrace$ | `\left\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \right\rbrace`
+原始括号| $\displaystyle \lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \rbrace$ | `\displaystyle \lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \rbrace`
+全包括号| $\displaystyle \left\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \right\rbrace$ | `\displaystyle \left\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \right\rbrace`
 
 ## 集合
 
