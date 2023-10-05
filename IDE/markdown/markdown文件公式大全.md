@@ -70,7 +70,7 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 
 算式  | 语法 | markdown
 ---|---|---
-无穷|$|$\infty$|`\infty`|
+无穷|$\infty$|`\infty`|
 虚数|$\imath$|`\imath`|
 虚数|$\jmath$|`\jmath`|
 矢量hat| $\hat y=a\hat x+b$ | `$\hat y=a\hat x+b$`
