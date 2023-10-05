@@ -94,7 +94,7 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 微积分-块公式格式|  $\displaystyle \lim_{x\to\infty} $ | ` $\displaystyle \lim_{x\to \infty} $`
 微积分-部分| $\frac{\partial x}{\partial y} $ | `$ \frac{\partial x}{\partial y} $`
 微积分| $\left.\frac{\partial f(x,y)}{\partial x}\right.$ | `\left.\frac{\partial f(x,y)}{\partial x}\right.`
-微积分-求和| $\sum$, $\sum_1^n $ | `\sum`, `$\sum_1^n $`
+微积分-求和| $\sum$, $\displaystyle \sum_1^n$ | `\sum`, `$\displaystyle \sum_1^n$`
 累加| $\frac{1}{i^2}$ | `\frac{1}{i^2}`
 累乘| $\prod\frac{1}{i^2}$ | `\prod \frac{1}{i^2}`
 给公式编号，如: (1)| $$e^{i\theta}=cos\theta+\sin\theta i\tag{1}$$ | `$$e^{i\theta}=cos\theta+\sin\theta i\tag{1}$$`
