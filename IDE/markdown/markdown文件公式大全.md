@@ -73,20 +73,20 @@ hat| $\hat y=a\hat x+b$ | `$\hat y=a\hat x+b$`
 平均数| $\overline{a+b+c+d}$| `$\overline{a+b+c+d}$`
 下划线| $\underline{a+b+c+d}$| `$ \underline{a+b+c+d} $`
 上大括号| $\overbrace{a+b+c+d}$,   $\overbrace{a+\underbrace{b+c}_{2.0}}^{3.0}$| `$\overbrace{a+b+c+d}$`, `$\overbrace{a+\underbrace{b+c}_{2.0}}^{3.0}$`
-下大括号| $ \underbrace{a+b+c+d} $| `$ \underbrace{a+b+c+d} $`
+下大括号| $\underbrace{a+b+c+d} $| `$\underbrace{a+b+c+d} $`
 行间公式（使用两个$包含公式可以独立一行）| $\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$ | `$\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$`
 开根号| $\sqrt{2};\sqrt[n]{3}$ | `\sqrt{2};\sqrt[n]{3}`
 矢量 | $\vec{a} \cdot \vec{b}=0$ | `\vec{a} \cdot \vec{b}=0`
-微积分-积分| $\int$, $ \int_0^1 x^2 {\rm d}x $| `\int`, `$ \int_0^1 x^2 {\rm d}x $`
+微积分-积分| $\int$, $\int_0^1 x^2 {\rm d}x $| `\int`, `$\int_0^1 x^2 {\rm d}x $`
 微积分| $\mathrm{d}$ | `\mathrm{d}`
 微积分| $\prime$ | `\prime`
 微积分-向量| $\vec{a}$ 或 $\overrightarrow{a} $ | `$\vec{a}$` 或 `$\overrightarrow{a} $`
 微积分-收敛| $x_n\stackrel{p}\longrightarrow0$| `$x_n\stackrel{p}\longrightarrow0$`
-微积分-极限| $\lim_{x\to \infty} $ , $\lim_{n\rightarrow+\infty} n$ | `$\lim_{x\to \infty} $`, `$\lim_{n\rightarrow+\infty} n$`
+微积分-极限| $\lim_{x\to \infty}$ , $\lim_{n\rightarrow+\infty}n$ | `$\lim_{x\to \infty}$`, `$\lim_{n\rightarrow+\infty}n$`
 微积分-块公式格式|  $\displaystyle \lim_{x\to\infty} $ | ` $\displaystyle \lim_{x\to \infty} $`
 微积分-部分| $\frac{\partial x}{\partial y} $ | `$ \frac{\partial x}{\partial y} $`
 微积分| $\left.\frac{\partial f(x,y)}{\partial x}\right.$ | `\left.\frac{\partial f(x,y)}{\partial x}\right.`
-微积分-求和| $\sum$, $ \sum_1^n $ | `\sum`, `$ \sum_1^n $`
+微积分-求和| $\sum$, $\sum_1^n $ | `\sum`, `$\sum_1^n $`
 累加| $\frac{1}{i^2}$ | `\frac{1}{i^2}`
 累乘| $\prod\frac{1}{i^2}$ | `\prod \frac{1}{i^2}`
 给公式编号，如: (1)| $$e^{i\theta}=cos\theta+\sin\theta i\tag{1}$$ | `$$e^{i\theta}=cos\theta+\sin\theta i\tag{1}$$`
@@ -109,8 +109,8 @@ hat| $\hat y=a\hat x+b$ | `$\hat y=a\hat x+b$`
 转置符号|$\mathtt{X}'$ | `$\mathtt{X}'$`
 异或|$\bigoplus$ | `\bigoplus`
 省略号| $\cdots$| `\cdots`
-底端对齐的省略号| $ 1,2,\ldots,n $ | $ 1,2,\ldots,n $`
-中线对齐的省略号| $ 1,2,\cdots,n $ | `$ 1,2,\cdots,n $`
+底端对齐的省略号| $1,2, \ldots,n$ | `$1,2, \ldots,n$`
+中线对齐的省略号| $1,2, \cdots,n$ | `$1,2, \cdots,n $`
 随机变量| $\mathtt{X}_n$ | `\mathtt{X}_n`
 期望| $\mathbb{E}$ | `$\mathbb{E}$`
 ||${n\choose m}$|`${n\choose m}$`
