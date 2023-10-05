@@ -82,8 +82,8 @@ hat| $\hat y=a\hat x+b$ | `$\hat y=a\hat x+b$`
 微积分-向量| $\vec{a}$ 或 $\overrightarrow{a} $ | `$\vec{a}$` 或 `$\overrightarrow{a} $`
 微积分-收敛| $x_n\stackrel{p}\longrightarrow0$| `$x_n\stackrel{p}\longrightarrow0$`
 微积分-极限| $ \lim_{x\to\infty} $ , $\lim_{n\rightarrow+\infty} n$ | `$ \lim_{x\to\infty} $`, `$\lim_{n\rightarrow+\infty} n$`
-微积分-块公式格式|  $ \displaystyle \lim_{x\to\infty} $ | ` $ \displaystyle \lim_{x\to\infty} $`
-微积分-部分| $ \frac{\partial x}{\partial y} $ | `$ \frac{\partial x}{\partial y} $`
+微积分-块公式格式|  $\displaystyle \lim_{x\to\infty} $ | ` $\displaystyle \lim_{x\to\infty} $`
+微积分-部分| $\frac{\partial x}{\partial y} $ | `$ \frac{\partial x}{\partial y} $`
 微积分| $\left.\frac{\partial f(x,y)}{\partial x}\right.$ | `\left.\frac{\partial f(x,y)}{\partial x}\right.`
 微积分-求和| $\sum$, $ \sum_1^n $ | `\sum`, `$ \sum_1^n $`
 累加| $\frac{1}{i^2}$ | `\frac{1}{i^2}`
