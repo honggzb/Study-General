@@ -167,6 +167,13 @@ $\neg$ | `\neg`
 异或|$\bigoplus$ | `\bigoplus`
 同与|$\bigotimes$ | `\bigotimes`
 同与|$\bigodot$ | `\bigodot`
+实数集合|$\mathbb{R}$|`\mathbb{R}`
+自然数集合|$\mathbb{Z}$|`\mathbb{Z}`
+空集|$\emptyset$|`\emptyset`
+任意|$\forall$|`\forall`
+存在| $\exists$|`\exists`
+析取|$\vee$|`vee`
+合取|$\wedge$|`\wedge`
 
 [go to top](#top)
 
