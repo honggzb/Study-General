@@ -69,6 +69,14 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 上标| $z=z^l$ | `z=z^l`
 下标| $z=z_l$ | `z=z_l`
 hat| $\hat y=a\hat x+b$ | `$\hat y=a\hat x+b$`
+vet| $\vet{a}$ | `$\vet{a}$`
+check| $\check{a}$ | `$\check{a}$`
+breve| $\breve{a}$ | `$\breve{a}$`
+check| $\check{a}$ | `$\check{a}$`
+tilde| $\tilde{a}$ | `$\tilde{a}$`
+bar| $\bar{a}$ | `$\bar{a}$`
+acute| $\acute{a}$ | `$\acute{a}$`
+mathring| $\mathring{a}$ | `$\mathring{a}$`
 省略号| $\cdots$| `\cdots`
 平均数| $\overline{a+b+c+d}$| `$\overline{a+b+c+d}$`
 下划线| $\underline{a+b+c+d}$| `$ \underline{a+b+c+d} $`
