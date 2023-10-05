@@ -68,6 +68,10 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 |`|`|$\mid$ | `$\mid$`|
 | |$\because$|`\because`
 | |$\therefore$|`\therefore`
+|圆括号|$\big(\big)$ |`$\big(\big)$`
+|圆括号|$\Big(\Big)$ |`$\Big(\Big)$`
+|圆括号|$\bigg(\bigg)$ |`$\bigg(\bigg)$`
+|圆括号|$\Bigg(\Bigg)$ |`$\Bigg(\Bigg)$`
 
 ## 数学符号
 
