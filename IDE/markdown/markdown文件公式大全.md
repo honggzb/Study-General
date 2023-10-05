@@ -52,11 +52,13 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 |总和|$\sum$, $\sum \limits_{i=0}^{n}$ | `\sum`, `$\sum \limits_{i=0}^{n}$`|
 |开二次方|$\sqrt{x} $ | `$\sqrt{x}$`|
 |开多次方|$\sqrt[3]{x}$, `sqrt[开方数]{被开方数}`|`$\sqrt[3]{x}$`|
+|对数运算|$\log_5{8}$, `\log_低数{真数}`|`$\log_5{8}$`|
 |连乘|$\prod$, $\prod \limits_{i=1}^{n} P(w_i)$| `\prod`, `$\prod \limits_{i=1}^{n} P(w_i)$`|
 |不等于|$\neq$ | `\neq`|
 |小于等于|$\leq$ | `\leq`|
 |大于等于|$\geq$ | `\geq`|
 |不大于等于|$\ngeq$ | `\ngeq`|
+|不小于等于|$\nleq$ | `\nleq`|
 |约等于 |$\approx$ | `\approx`|
 |恒等于|$\equiv$ | `\equiv `|
 |`|`|$\mid$ | `$\mid$`|
@@ -91,7 +93,7 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 微积分-收敛| $x_n\stackrel{p}\longrightarrow0$| `$x_n\stackrel{p}\longrightarrow0$`
 微积分-极限| $\lim_{x\to \infty}$ , $\lim_{n\rightarrow+\infty}n$ | `$\lim_{x\to \infty}$`, `$\lim_{n\rightarrow+\infty}n$`
 微积分-块公式格式`\displaystyle`|  $\displaystyle \lim_{x\to\infty} $ | ` $\displaystyle \lim_{x\to \infty} $`
-微积分-部分| $\frac{\partial x}{\partial y} $ | `$ \frac{\partial x}{\partial y} $`
+微积分-偏微分| $\frac{\partial x}{\partial y} $, $\displaystyle \frac{\partial xy^2}{\partial y}$| `$ \frac{\partial x}{\partial y} $`, `$\displaystyle \frac{\partial xy^2}{\partial y}$`
 微积分| $\left.\frac{\partial f(x,y)}{\partial x}\right.$ | `\left.\frac{\partial f(x,y)}{\partial x}\right.`
 微积分-求和| $\sum$, $\displaystyle \sum_1^n$ | `\sum`, `$\displaystyle \sum_1^n$`
 块公式（`\displaystyle`）| $\frac{d}{dx}e^{ax}=ae^{ax}\quad \displaystyle sum_{i=1}^{n}{(X_i - \overline{X})^2}$ | `$\frac{d}{dx}e^{ax}=ae^{ax}\quad \displaystyle \sum_{i=1}^{n}{(X_i - \overline{X})^2}$`
@@ -104,18 +106,6 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 对数函数| $\ln15$ | `\ln15`
 对数函数| $\log_2^{10}$ | `\log_2^{10}`
 对数函数| $\lg7$ | `\lg7`
-属于| $x \in y$ | `x \in y`
-不属于| $x \notin y$ | `x \notin y`
-属于| $x \in y$ | `x \in y`
-不属于| $x \notin y$ | `x \notin y`
-子集| $x \subset y$ | `x \subset y`
-非子集| $x \not\subset y$ | `x \not\subset y`
-超集| $x \supset y$ | `x \supset y`
-超集| $x \supseteq y$ | `x \supseteq y`
-并集| $x \cup y$ | `x \cup y`
-交集| $x \cap y$ | `x \cap y`
-转置符号|$\mathtt{X}'$ | `$\mathtt{X}'$`
-异或|$\bigoplus$ | `\bigoplus`
 省略号| $\cdots$| `\cdots`
 底端对齐的省略号| $1,2, \ldots,n$ | `$1,2, \ldots,n$`
 中线对齐的省略号| $1,2, \cdots,n$ | `$1,2, \cdots,n $`
@@ -155,6 +145,28 @@ $\cap$ | `\cap`
 $\vee$ | `\vee`
 $\wedge$ | `\wedge`
 $\neg$ | `\neg`
+
+## 集合运算
+
+算式  | 语法 | markdown
+---|---|---
+属于| $x \in y$ | `x \in y`
+不属于| $x \notin y$ | `x \notin y`
+子集| $x \subset y$, $x \supset y$ | `x \subset y`, `x \supset y`
+子集| $x \subseteq y$, $x \supseteq y$ | `x \subseteq y`, `x \supseteq y`
+非子集| $x \not\subset y$ | `x \not\subset y`
+非子集| $x \not\subseteq  y$,  $x \not\supseteq y$ | `x \not\subseteq  y`,` x \not\supseteq y`
+真子集| $\subsetneq$ , $\supsetneq$| `\subsetneq` , `\supsetneq`
+非真子集| $\not\subsetneq$, $\not\supsetneq$ | `\not\subsetneq` , `\not\supsetneq`
+超集| $x \supset y$ | `x \supset y`
+超集| $x \supseteq y$ | `x \supseteq y`
+并集| $x \cup y$ | `x \cup y`
+交集| $x \cap y$ | `x \cap y`
+差集|$x \setminus y$|`x \setminus y`
+转置符号|$\mathtt{X}'$ | `$\mathtt{X}'$`
+异或|$\bigoplus$ | `\bigoplus`
+同与|$\bigotimes$ | `\bigotimes`
+同与|$\bigodot$ | `\bigodot`
 
 [go to top](#top)
 
@@ -207,9 +219,12 @@ $\neg$ | `\neg`
 
 语法 | markdown
 ---|---
-$\int$ | `\int`
-$\iint$ | `\iint`
-$\oint$ | `\oint`
+$\int$ 定积分| `\int`
+$\displaystyle \int^{\infty}_{1}{\frac{1}{x}dx}$ | `$\displaystyle \int^{\infty}_{1}{\frac{1}{x}dx}$`
+$\iint$ 二重积分| `\iint`
+$\iiint$ 三重积分| `\iiint`
+$\oint$ 曲线积分| `\oint`
+$\oiint$ 曲面积分| `\oiint`
 $\infty$ | `\infty`
 $\nabla$ | `\nabla`
 $\because$ | `\because`
