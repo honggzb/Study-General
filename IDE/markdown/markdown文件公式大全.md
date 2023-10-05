@@ -1,6 +1,6 @@
 [Markdown文件公式大全](#top)
 
-- [关系逻辑运算符](#关系逻辑运算符)
+- [运算符-数学关系逻辑](#运算符-数学关系逻辑)
 - [数学符号](#数学符号)
 - [一般公式](#一般公式)
 - [括号](#括号)
@@ -40,7 +40,7 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
  - `$\quad\quad b=\overline{y}-a\overline{x}$`  $$\quad\quad b=\overline{y}-a\overline{x}$$: 
  - 明可夫斯基距离 `$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$` $$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$$
 
-## 关系逻辑运算符
+## 运算符-数学关系逻辑
 
 |关系| 运算符| markdown|
 |---|---|---|
