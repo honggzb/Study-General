@@ -50,8 +50,8 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 |除|$\div$ | `\div`
 |分数|$\frac{x}{y}$ | `\frac{x}{y}`|
 |总和|$\sum$, $\sum \limits_{i=0}^{n}$ | `\sum`, `$\sum \limits_{i=0}^{n}$`|
-|开二次方|$\sqrt $ | `$\sqrt $`|
-|开多次方\$sqrt[开方数]{被开方数} $|`$\sqrt[3]{x} $`|
+|开二次方|$\sqrt{x} $ | `$\sqrt{x}$`|
+|开多次方|sqrt[开方数]{被开方数},$\sqrt[3]{x}$|`$\sqrt[3]{x}$`|
 |连乘|$\prod$, $\prod \limits_{i=1}^{n} P(w_i)$| `\prod`, `$\prod \limits_{i=1}^{n} P(w_i)$`|
 |不等于|$\neq$ | `\neq`|
 |小于等于|$\leq$ | `\leq`|
