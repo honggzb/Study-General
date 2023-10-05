@@ -65,6 +65,8 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 |约等于 |$\approx$ | `\approx`|
 |恒等于|$\equiv$ | `\equiv `|
 |`|`|$\mid$ | `$\mid$`|
+| |$\because$|`\because`
+| |$\therefore$|`\therefore`
 
 ## 数学符号
 
