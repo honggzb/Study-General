@@ -1,6 +1,7 @@
 [Markdown文件公式大全](#top)
 
 - [关系运算符](#关系运算符)
+- [数学符号](#数学符号)
 - [一般公式](#一般公式)
 - [括号](#括号)
 - [占位符](#占位符)
@@ -65,13 +66,13 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 |恒等于|$\equiv$ | `\equiv `|
 |`|`|$\mid$ | `$\mid$`|
 
-## 一般公式
+## 数学符号
 
 算式  | 语法 | markdown
 ---|---|---
-分数，平方| $\frac{7x+5}{1+y^2}$ | `\frac{7x+5}{1+y^2}`
-上标| $z=z^l$ | `z=z^l`
-下标| $z=z_l$ | `z=z_l`
+无穷|$|$$|$|`\infty`|
+虚数|$\imath$|`\imath`|
+虚数|$\jmath$|`\jmath`|
 矢量hat| $\hat y=a\hat x+b$ | `$\hat y=a\hat x+b$`
 矢量vec| $\vec{a}$ | `$\vec{a}$`
 矢量check| $\check{a}$ | `$\check{a}$`
@@ -81,7 +82,19 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 矢量bar| $\bar{a}$ | `$\bar{a}$`
 矢量acute| $\acute{a}$ | `$\acute{a}$`
 矢量mathring| $\mathring{a}$ | `$\mathring{a}$`
+矢量符号|$\vec{a}|`\vec{a}`
+数学符号|$\acute{a}$|`\acute{a}`
+一阶导数符号|$\dot{a}$|`\dot{a}`
+二阶导数符号|$\ddot{a}$|`\ddot{a}`
 省略号| $\cdots$| `\cdots`
+
+## 一般公式
+
+算式  | 语法 | markdown
+---|---|---
+分数，平方| $\frac{7x+5}{1+y^2}$ | `\frac{7x+5}{1+y^2}`
+上标| $z=z^l$ | `z=z^l`
+下标| $z=z_l$ | `z=z_l`
 平均数| $\overline{a+b+c+d}$| `$\overline{a+b+c+d}$`
 下划线| $\underline{a+b+c+d}$| `$ \underline{a+b+c+d} $`
 上大括号| $\overbrace{a+b+c+d}$,   $\overbrace{a+\underbrace{b+c}_{2.0}}^{3.0}$| `$\overbrace{a+b+c+d}$`, `$\overbrace{a+\underbrace{b+c}_{2.0}}^{3.0}$`
