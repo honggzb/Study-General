@@ -82,7 +82,7 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 下划线| $\underline{a+b+c+d}$| `$ \underline{a+b+c+d} $`
 上大括号| $\overbrace{a+b+c+d}$,   $\overbrace{a+\underbrace{b+c}_{2.0}}^{3.0}$| `$\overbrace{a+b+c+d}$`, `$\overbrace{a+\underbrace{b+c}_{2.0}}^{3.0}$`
 下大括号| $\underbrace{a+b+c+d} $| `$\underbrace{a+b+c+d} $`
-行间公式（使用两个$包含公式可以独立一行）| $\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$ | `$\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$`
+块公式（`\displaystyle`）| $\frac{d}{dx}e^{ax}=ae^{ax}\quad \\displaystyle sum_{i=1}^{n}{(X_i - \overline{X})^2}$ | `$\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$`
 开根号| $\sqrt{2};\sqrt[n]{3}$ | `\sqrt{2};\sqrt[n]{3}`
 矢量 | $\vec{a} \cdot \vec{b}=0$ | `\vec{a} \cdot \vec{b}=0`
 微积分-积分| $\int$, $\int_0^1 x^2 {\rm d}x $| `\int`, `$\int_0^1 x^2 {\rm d}x $`
@@ -91,7 +91,7 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 微积分-向量| $\vec{a}$ 或 $\overrightarrow{a} $ | `$\vec{a}$` 或 `$\overrightarrow{a} $`
 微积分-收敛| $x_n\stackrel{p}\longrightarrow0$| `$x_n\stackrel{p}\longrightarrow0$`
 微积分-极限| $\lim_{x\to \infty}$ , $\lim_{n\rightarrow+\infty}n$ | `$\lim_{x\to \infty}$`, `$\lim_{n\rightarrow+\infty}n$`
-微积分-块公式格式|  $\displaystyle \lim_{x\to\infty} $ | ` $\displaystyle \lim_{x\to \infty} $`
+微积分-块公式格式`\displaystyle`|  $\displaystyle \lim_{x\to\infty} $ | ` $\displaystyle \lim_{x\to \infty} $`
 微积分-部分| $\frac{\partial x}{\partial y} $ | `$ \frac{\partial x}{\partial y} $`
 微积分| $\left.\frac{\partial f(x,y)}{\partial x}\right.$ | `\left.\frac{\partial f(x,y)}{\partial x}\right.`
 微积分-求和| $\sum$, $\displaystyle \sum_1^n$ | `\sum`, `$\displaystyle \sum_1^n$`
