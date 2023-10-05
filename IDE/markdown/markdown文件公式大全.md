@@ -68,15 +68,15 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 分数，平方| $\frac{7x+5}{1+y^2}$ | `\frac{7x+5}{1+y^2}`
 上标| $z=z^l$ | `z=z^l`
 下标| $z=z_l$ | `z=z_l`
-hat| $\hat y=a\hat x+b$ | `$\hat y=a\hat x+b$`
-vec| $\vec{a}$ | `$\vec{a}$`
-check| $\check{a}$ | `$\check{a}$`
-breve| $\breve{a}$ | `$\breve{a}$`
-check| $\check{a}$ | `$\check{a}$`
-tilde| $\tilde{a}$ | `$\tilde{a}$`
-bar| $\bar{a}$ | `$\bar{a}$`
-acute| $\acute{a}$ | `$\acute{a}$`
-mathring| $\mathring{a}$ | `$\mathring{a}$`
+矢量hat| $\hat y=a\hat x+b$ | `$\hat y=a\hat x+b$`
+矢量vec| $\vec{a}$ | `$\vec{a}$`
+矢量check| $\check{a}$ | `$\check{a}$`
+矢量breve| $\breve{a}$ | `$\breve{a}$`
+矢量check| $\check{a}$ | `$\check{a}$`
+矢量tilde| $\tilde{a}$ | `$\tilde{a}$`
+矢量bar| $\bar{a}$ | `$\bar{a}$`
+矢量acute| $\acute{a}$ | `$\acute{a}$`
+矢量mathring| $\mathring{a}$ | `$\mathring{a}$`
 省略号| $\cdots$| `\cdots`
 平均数| $\overline{a+b+c+d}$| `$\overline{a+b+c+d}$`
 下划线| $\underline{a+b+c+d}$| `$ \underline{a+b+c+d} $`
@@ -119,6 +119,8 @@ mathring| $\mathring{a}$ | `$\mathring{a}$`
 省略号| $\cdots$| `\cdots`
 底端对齐的省略号| $1,2, \ldots,n$ | `$1,2, \ldots,n$`
 中线对齐的省略号| $1,2, \cdots,n$ | `$1,2, \cdots,n $`
+竖直对齐的省略号| $\vdots$ | `$\vdots$`
+斜对齐的省略号| $\ddots$ | `$\ddots$`
 随机变量| $\mathtt{X}_n$ | `\mathtt{X}_n`
 期望| $\mathbb{E}$ | `$\mathbb{E}$`
 ||${n\choose m}$|`${n\choose m}$`
