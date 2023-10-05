@@ -129,6 +129,15 @@ $$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\l
 原始括号| $\displaystyle \lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \rbrace$ | `\displaystyle \lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \rbrace`
 全包括号| $\displaystyle \left\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \right\rbrace$ | `\displaystyle \left\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \right\rbrace`
 
+## 占位符
+
+算式  | 语法 | markdown
+---|---|---
+两个quad空格 |$x \qquad y$ |`x \qquad y`
+quad空格 |$x \quad y$ |`x \quad y`
+空格 |$x \ y$ |`x \ y`
+紧贴 |$x \l y$ |`x \l y`
+
 ## 集合
 
 语法 | markdown
