@@ -40,7 +40,8 @@ $$\quad\quad b=\overline{y}-a\overline{x}$$
  - `$\quad\quad b=\overline{y}-a\overline{x}$`
  - 明可夫斯基距离 $$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$$ `$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$`
  - 角标 $$m\leq a,n\leq b$) is $p_1=\dfrac{C_{a}^mC_{b}^n}{C_{a+b}^{m+n}}$$  `$m\leq a,n\leq b$) is $p_1=\dfrac{C_{a}^mC_{b}^n}{C_{a+b}^{m+n}}$`
- - 多个式子组合: 
+ - 多个式子组合:
+
 $$
 \left\{
 \begin{aligned}
@@ -452,8 +453,15 @@ D  &  E  & \cdots\ & F\\
 \end{equation}
 $$
 
-$$\left( \begin{matrix} 1 & x_{11} & x_{12} & \cdots & x_{1p} \\ 1 & x_{11} & x_{12} & \cdots &x_{1p}\\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_{11} & x_{12} & \cdots &x_{1p} \end{matrix} \right)$$
-
+$$
+\left( 
+\begin{matrix} 1 & x_{11} & x_{12} & \cdots & x_{1p} \\ 
+1 & x_{11} & x_{12} & \cdots &x_{1p}\\ 
+\vdots & \vdots & \vdots & \ddots & \vdots \\ 
+1 & x_{11} & x_{12} & \cdots &x_{1p} 
+\end{matrix} 
+\right)
+$$
 
 [go to top](#top)
 
