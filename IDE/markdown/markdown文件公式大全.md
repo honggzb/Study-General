@@ -44,7 +44,7 @@ $$\quad\quad b=\overline{y}-a\overline{x}$$
  - 多个式子组合:
 
 $$
-\left\{
+\left\lbrace
 \begin{aligned}
 \frac{d r}{d \omega^{\prime}}&=\frac{v}{f \omega^{\prime}} \\
 \frac{d v}{d \omega^{\prime}}&=\frac{(F / m) \sin \psi-g / r^{2}+r_{\omega^{2}}}{f \omega^{\prime}} \\
