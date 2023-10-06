@@ -34,10 +34,12 @@
 - $J_\alpha(x) = \displaystyle \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text{, 行内公式示例}$
 - `$ J_\alpha(x) = \displaystyle \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text {，行内公式示例}`
 $$J_\alpha(x) = \displaystyle \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text{，独立公式示例，使用tag手动编号} \tag{0.1} $$
- - `$$ J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text{，独立公式示例，使用 \tag 手动编号} \tag{0.1} $$`
- - `$a=\frac{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})^2}$` $$a=\frac{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})^2}$$
- - `$\quad\quad b=\overline{y}-a\overline{x}$`  $$\quad\quad b=\overline{y}-a\overline{x}$$: 
- - 明可夫斯基距离 `$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$` $$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$$
+ - `$$ J_\alpha(x) = \displaystyle \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text{，独立公式示例，使用 \tag 手动编号} \tag{0.1} $$`
+ $$a=\frac{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})^2}$$
+ - `$a=\frac{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})^2}$`
+$$\quad\quad b=\overline{y}-a\overline{x}$$: 
+ - `$\quad\quad b=\overline{y}-a\overline{x}$`
+ - 明可夫斯基距离 $$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$$ `$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$` 
 
 ## 运算符-数学关系逻辑
 
