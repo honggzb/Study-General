@@ -41,33 +41,6 @@ $$\quad\quad b=\overline{y}-a\overline{x}$$
  - `$\quad\quad b=\overline{y}-a\overline{x}$`
  - 明可夫斯基距离 $$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$$ `$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$`
  - 角标 $$m\leq a,n\leq b$) is $p_1=\dfrac{C_{a}^mC_{b}^n}{C_{a+b}^{m+n}}$$  `$m\leq a,n\leq b$) is $p_1=\dfrac{C_{a}^mC_{b}^n}{C_{a+b}^{m+n}}$`
- - 多个式子组合:
-
-$$
-\left\lbrace
-\begin{aligned}
-\frac{d r}{d \omega^{\prime}}&=\frac{v}{f \omega^{\prime}} \\
-\frac{d v}{d \omega^{\prime}}&=\frac{(F / m) \sin \psi-g / r^{2}+r_{\omega^{2}}}{f \omega^{\prime}} \\
-\frac{\mathrm{d} \theta}{\mathrm{d} \omega^{\prime}}&=\frac{\omega}{f \omega}\\
-\frac{\mathrm{d} \omega}{\mathrm{d} \omega^{\prime}}&=-1 \\
-\frac{\mathrm{d} m}{\mathrm{d} \omega^{\prime}}&=-\frac{F}{I_{\mathrm{sp}}} \cdot \frac{1}{f \omega^{\prime}}
-\end{aligned}
-\right.
-$$
-
-```
-$$
-\left\lbrace
-\begin{aligned}
-\frac{d r}{d \omega^{\prime}}&=\frac{v}{f \omega^{\prime}} \\
-\frac{d v}{d \omega^{\prime}}&=\frac{(F / m) \sin \psi-g / r^{2}+r_{\omega^{2}}}{f \omega^{\prime}} \\
-\frac{\mathrm{d} \theta}{\mathrm{d} \omega^{\prime}}&=\frac{\omega}{f \omega}\\
-\frac{\mathrm{d} \omega}{\mathrm{d} \omega^{\prime}}&=-1 \\
-\frac{\mathrm{d} m}{\mathrm{d} \omega^{\prime}}&=-\frac{F}{I_{\mathrm{sp}}} \cdot \frac{1}{f \omega^{\prime}}
-\end{aligned}
-\right.
-$$
-```
 
 ## 运算符-数学关系逻辑
 
@@ -366,6 +339,34 @@ x, \quad x > 0
 \end{cases}
 $
 ```
+
+$$
+\left\lbrace
+\begin{aligned}
+\frac{d r}{d \omega^{\prime}}&=\frac{v}{f \omega^{\prime}} \\
+\frac{d v}{d \omega^{\prime}}&=\frac{(F / m) \sin \psi-g / r^{2}+r_{\omega^{2}}}{f \omega^{\prime}} \\
+\frac{\mathrm{d} \theta}{\mathrm{d} \omega^{\prime}}&=\frac{\omega}{f \omega}\\
+\frac{\mathrm{d} \omega}{\mathrm{d} \omega^{\prime}}&=-1 \\
+\frac{\mathrm{d} m}{\mathrm{d} \omega^{\prime}}&=-\frac{F}{I_{\mathrm{sp}}} \cdot \frac{1}{f \omega^{\prime}}
+\end{aligned}
+\right.
+$$
+
+```
+$$
+\left\lbrace
+\begin{aligned}
+\frac{d r}{d \omega^{\prime}}&=\frac{v}{f \omega^{\prime}} \\
+\frac{d v}{d \omega^{\prime}}&=\frac{(F / m) \sin \psi-g / r^{2}+r_{\omega^{2}}}{f \omega^{\prime}} \\
+\frac{\mathrm{d} \theta}{\mathrm{d} \omega^{\prime}}&=\frac{\omega}{f \omega}\\
+\frac{\mathrm{d} \omega}{\mathrm{d} \omega^{\prime}}&=-1 \\
+\frac{\mathrm{d} m}{\mathrm{d} \omega^{\prime}}&=-\frac{F}{I_{\mathrm{sp}}} \cdot \frac{1}{f \omega^{\prime}}
+\end{aligned}
+\right.
+$$
+```
+
+[back to top](#top)
 
 ## 矩阵
 
