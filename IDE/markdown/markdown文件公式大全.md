@@ -15,6 +15,7 @@
 - [分支公式](#分支公式)
 - [矩阵](#矩阵)
 - [高亮一行公式](#高亮一行公式)
+- [公式加边框](#公式加边框)
 
 ```
 - 数学公式用$$或$包括起来
@@ -83,6 +84,8 @@ $$
 |`|`|$\mid$ | `$\mid$`|
 | |$\because$|`\because`
 | |$\therefore$|`\therefore`
+|向上取整|$\lceil x \rceil$|`\lceil x \rceil`|
+|向下取整|$\lfloor x \rfloor$|`\lfloor x \rfloor`|
 
 ## 数学符号
 
@@ -178,6 +181,7 @@ $\stackrel{n}{\bigcap\limits_{i=1}}$|`$\stackrel{n}{\bigcap\limits_{i=1}}$`
 圆括号|$\Big(\Big)$ |`$\Big(\Big)$`
 圆括号|$\bigg(\bigg)$ |`$\bigg(\bigg)$`
 圆括号|$\Bigg(\Bigg)$ |`$\Bigg(\Bigg)$`
+尖括号|$\langle x \rangle$|`$\langle x \rangle$`
 
 ## 占位符
 
@@ -488,8 +492,18 @@ $$
 
 [go to top](#top)
 
+## 公式加边框
+
+- `\boxed` 命令修饰
+- `$$\boxed{n = p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}}$$`
+
+$$\boxed{n = p_1^{k_1} p_2^{k_2} \dots p_r^{k_r}}$$
+
+[go to top](#top)
+
 > Reference
 - [Cmd Markdown 公式指导手册](https://www.zybuluo.com/codeep/note/163962)
 - [markdown最全数学公式速查](https://blog.csdn.net/jyfu2_12/article/details/79207643)
+- [MarkDown数学公式语法整理](https://blog.csdn.net/guoxulieying/article/details/131107653)
 - [【Markdown】如何用 Markdown 写好数学表达式](https://blog.csdn.net/qq_42907802/article/details/104536794?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-104536794-blog-89952211.pc_relevant_3mothn_strategy_recovery&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2-104536794-blog-89952211.pc_relevant_3mothn_strategy_recovery&utm_relevant_index=3)
 - [Markdown 符号公式大全](http://t.zoukankan.com/izcat-p-14264850.html)
