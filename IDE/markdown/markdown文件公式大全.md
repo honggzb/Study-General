@@ -38,7 +38,23 @@ $$J_\alpha(x) = \displaystyle \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \al
  - `$a=\frac{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})^2}$`
 $$\quad\quad b=\overline{y}-a\overline{x}$$
  - `$\quad\quad b=\overline{y}-a\overline{x}$`
- - 明可夫斯基距离 $$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$$ `$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$` 
+ - 明可夫斯基距离 $$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$$ `$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$`
+ - 角标 $$m\leq a,n\leq b$) is $p_1=\dfrac{C_{a}^mC_{b}^n}{C_{a+b}^{m+n}}$$  `$m\leq a,n\leq b$) is $p_1=\dfrac{C_{a}^mC_{b}^n}{C_{a+b}^{m+n}}$`
+ - 多个式子组合
+$$
+\left\{
+\begin{aligned}
+\frac{d r}{d \omega^{\prime}}&=\frac{v}{f \omega^{\prime}} \\
+\frac{d v}{d \omega^{\prime}}&=\frac{(F / m) \sin \psi-g / r^{2}+r_{\omega^{2}}}{f \omega^{\prime}} \\
+\frac{\mathrm{d} \theta}{\mathrm{d} \omega^{\prime}}&=\frac{\omega}{f \omega}\\
+\frac{\mathrm{d} \omega}{\mathrm{d} \omega^{\prime}}&=-1 \\
+\frac{\mathrm{d} m}{\mathrm{d} \omega^{\prime}}&=-\frac{F}{I_{\mathrm{sp}}} \cdot \frac{1}{f \omega^{\prime}}
+\end{aligned}
+\right.
+$$
+————————————————
+版权声明：本文为CSDN博主「Jackey_Song_Odd」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/m0_46190471/article/details/126130602
 
 ## 运算符-数学关系逻辑
 
@@ -51,7 +67,9 @@ $$\quad\quad b=\overline{y}-a\overline{x}$$
 |乘|$1 \cdot 2$ | `\cdot `|
 |乘|$1 \ast 2$ | `\ast`|
 |除|$\div$ | `\div`
-|分数|$\frac{x}{y}$ | `\frac{x}{y}`|
+|小字体分数|$\frac{x}{y}$ | `\frac{x}{y}`|
+|大字体分数|$\dfrac{x}{y}$ | `\dfrac{x}{y}`|
+|分数其他表示|${x+y} \over {y+z}$ | `${x+y} \over {y+z}$`|
 |总和|$\sum$, $\sum \limits_{i=0}^{n}$ | `\sum`, `$\sum \limits_{i=0}^{n}$`|
 |开二次方|$\sqrt{x} $ | `$\sqrt{x}$`|
 |开多次方|$\sqrt[3]{x}$, `sqrt[开方数]{被开方数}`|`$\sqrt[3]{x}$`|
@@ -67,10 +85,6 @@ $$\quad\quad b=\overline{y}-a\overline{x}$$
 |`|`|$\mid$ | `$\mid$`|
 | |$\because$|`\because`
 | |$\therefore$|`\therefore`
-|圆括号|$\big(\big)$ |`$\big(\big)$`
-|圆括号|$\Big(\Big)$ |`$\Big(\Big)$`
-|圆括号|$\bigg(\bigg)$ |`$\bigg(\bigg)$`
-|圆括号|$\Bigg(\Bigg)$ |`$\Bigg(\Bigg)$`
 
 ## 数学符号
 
@@ -132,6 +146,7 @@ $\stackrel{n}{\bigcap\limits_{i=1}}$|`$\stackrel{n}{\bigcap\limits_{i=1}}$`
 块公式（`\displaystyle`）| $\frac{d}{dx}e^{ax}=ae^{ax}\quad \displaystyle sum_{i=1}^{n}{(X_i - \overline{X})^2}$ | `$\frac{d}{dx}e^{ax}=ae^{ax}\quad \displaystyle \sum_{i=1}^{n}{(X_i - \overline{X})^2}$`
 累加| $\frac{1}{i^2}$ | `\frac{1}{i^2}`
 累乘| $\prod\frac{1}{i^2}$ | `\prod \frac{1}{i^2}`
+余积|$\coprod\frac{1}{i^2}$|`\coprod\frac{1}{i^2}`
 给公式编号，如: (1)| $$e^{i\theta}=cos\theta+\sin\theta i\tag{1}$$ | `$$e^{i\theta}=cos\theta+\sin\theta i\tag{1}$$`
 三角函数| $sin$, $f(x)=\sin(x)$ | `sin`, `$f(x)=\sin(x)$`
 三角函数| $cos$, $f(x)=\cos(x)$ | `cos`, `$f(x)=\cos(x)$`
@@ -161,6 +176,10 @@ $\stackrel{n}{\bigcap\limits_{i=1}}$|`$\stackrel{n}{\bigcap\limits_{i=1}}$`
 下取整| $\lfloor x \rfloor$ | `\lfloor x \rfloor`
 原始括号| $\displaystyle \lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \rbrace$ | `\displaystyle \lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \rbrace`
 全包括号| $\displaystyle \left\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \right\rbrace$ | `\displaystyle \left\lbrace \sum_{i=0}^{n}i^{2}=\frac{2a}{x^2+1} \right\rbrace`
+圆括号|$\big(\big)$ |`$\big(\big)$`
+圆括号|$\Big(\Big)$ |`$\Big(\Big)$`
+圆括号|$\bigg(\bigg)$ |`$\bigg(\bigg)$`
+圆括号|$\Bigg(\Bigg)$ |`$\Bigg(\Bigg)$`
 
 ## 占位符
 
@@ -216,6 +235,15 @@ $\neg$ | `\neg`
 存在| $\exists$|`\exists`
 析取|$\vee$|`vee`
 合取|$\wedge$|`\wedge`
+空集|$\empty$|`\empty`
+
+- Commutative law 交换律：$A\cup B=B\cup A,\quad A\cap B=B\cap A;$
+- Associative law 结合律：$A\cup(B\cup C)=(A\cup B)\cup C,\quad A\cap(B\cap C)=(A\cap B)\cap C$.
+- Distributive law 分配律：$A\cup (B\cap C)=(A\cup B)\cap(A\cup C),\quad A\cap (B\cup C)=(A\cap B)\cup(A\cap C)$
+- $A\cap (\stackrel{n}{\bigcup\limits_{i=1}}A_i)=\stackrel{n}{\bigcup\limits_{i=1}}(A\cap A_i),\quad A\cup (\stackrel{n}{\bigcap\limits_{i=1}}A_i)=\stackrel{n}{\bigcap\limits_{i=1}}(A\cup A_i);$
+- $A\cap (\stackrel{\infty}{\bigcup\limits_{i=1}}A_i)=\stackrel{\infty}{\bigcup\limits_{i=1}}(A\cap A_i),\quad A\cup (\stackrel{\infty}{\bigcap\limits_{i=1}}A_i)=\stackrel{\infty}{\bigcap\limits_{i=1}}(A\cup A_i).$
+- $\overline{\stackrel{n}{\bigcup\limits_{i=1}}A_i}=\stackrel{n}{\bigcap\limits_{i=1}}\overline{A_i},\quad \overline{\stackrel{n}{\bigcap\limits_{i=1}}A_i}=\stackrel{n}{\bigcup\limits_{i=1}}\overline{A_i};$
+- $\overline{\stackrel{\infty}{\bigcup\limits_{i=1}}A_i}=\stackrel{\infty}{\bigcap\limits_{i=1}}\overline{A_i},\quad \overline{\stackrel{\infty}{\bigcap\limits_{i=1}}A_i}=\stackrel{\infty}{\bigcup\limits_{i=1}}\overline{A_i}.$ 
 
 [go to top](#top)
 
@@ -283,15 +311,15 @@ $\exists$ | `\exists`
 
 ## 平面几何
 
-语法 | markdown
----|---
-$\triangle$ | `\triangle`
-$\odot$ | `\odot`
-$\angle$ | `\angle`
-$\perp$ | `\perp`
-$30^\circ $| `30^\circ`
-$\sim$ | `\sim`
-$\cong$ | `\cong`
+语法 | markdown| 说明
+---|---|---
+$\triangle$ | `\triangle`| 
+$\odot$ | `\odot`| 
+$\angle$ | `\angle`|夹角 
+$\perp$ | `\perp`| 垂直
+$30^\circ $| `30^\circ`|角度
+$\sim$ | `\sim`| 
+$\cong$ | `\cong`| 
 
 [go to top](#top)
 
@@ -414,6 +442,21 @@ $$
 7 & 8 & 9 
 \end{Vmatrix} \right]\tag{7}
 $$
+
+$$
+\begin{equation}
+S
+=\begin{bmatrix}
+A  &  B  & \cdots\ &C\\
+D  &  E  & \cdots\ & F\\
+ \vdots   & \vdots & \ddots  & \vdots  \\
+ G & H  & \cdots\ & I\\
+\end{bmatrix}
+\end{equation}
+$$
+
+$$\left( \begin{matrix} 1 & x_{11} & x_{12} & \cdots & x_{1p} \\ 1 & x_{11} & x_{12} & \cdots &x_{1p}\\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & x_{11} & x_{12} & \cdots &x_{1p} \end{matrix} \right)$$
+
 
 [go to top](#top)
 
