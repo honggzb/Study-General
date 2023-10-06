@@ -31,13 +31,12 @@
 - 连加、连乘、极限、积分等用`\sum, \prod, \lim, \int`,这些符号在行内公式中会被压缩，以适应行高, 加上`\displaystyle`或`\limits`属性后，就会在行内强制正常显示，不会压缩运算符
 	- `$\displaystyle \sum_{i=1}^{m}$`, $$\sum_{i=1}^{m}$$
  	- `$\sum\limits_{i=1}^{m}$`, $$\sum_{i=1}^{m}$$
-- $J_\alpha(x) = \displaystyle \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text{, 行内公式示例}$
 - `$ J_\alpha(x) = \displaystyle \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text {，行内公式示例}`
 $$J_\alpha(x) = \displaystyle \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text{，独立公式示例，使用tag手动编号} \tag{0.1} $$
  - `$$ J_\alpha(x) = \displaystyle \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} \text{，独立公式示例，使用 \tag 手动编号} \tag{0.1} $$`
  $$a=\frac{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})^2}$$
  - `$a=\frac{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})(y_{i}-\overline{y})}{\sum\limits_{i=1}^{m}(x_{i}-\overline{x})^2}$`
-$$\quad\quad b=\overline{y}-a\overline{x}$$: 
+$$\quad\quad b=\overline{y}-a\overline{x}$$
  - `$\quad\quad b=\overline{y}-a\overline{x}$`
  - 明可夫斯基距离 $$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$$ `$(\sum\limits_{i=1}^{n}|X_i^{(a)}-X_i^{(b)}|^{p})^\frac{1}{p}$` 
 
@@ -98,11 +97,14 @@ $$\quad\quad b=\overline{y}-a\overline{x}$$:
 ## 上下位符号
 
 - `$\stackrel{上位内容}{进行上位的符号}$`
-- $\stackrel{n}{\bigcup}$, `$\stackrel{n}{\bigcup}$`
-- $\bigcup\limits_{i=1}$， `$\bigcup\limits_{i=1}$`
-- $\stackrel{n}{\bigcup\limits_{i=1}}$, `$\stackrel{n}{\bigcup\limits_{i=1}}$`
-- $\stackrel{n}{\sum\limits_{i=1}}$, `$\stackrel{n}{\sum\limits_{i=1}}$`
-- $\stackrel{n}{\bigcap\limits_{i=1}}$, `$\stackrel{n}{\bigcap\limits_{i=1}}$`
+
+语法| markdown
+---|---
+$\stackrel{n}{\bigcup}$|`$\stackrel{n}{\bigcup}$`
+$\bigcup\limits_{i=1}$| `$\bigcup\limits_{i=1}$`
+$\stackrel{n}{\bigcup\limits_{i=1}}$|`$\stackrel{n}{\bigcup\limits_{i=1}}$`
+$\stackrel{n}{\sum\limits_{i=1}}$| `$\stackrel{n}{\sum\limits_{i=1}}$`
+$\stackrel{n}{\bigcap\limits_{i=1}}$|`$\stackrel{n}{\bigcap\limits_{i=1}}$`
 
 ## 一般公式
 
