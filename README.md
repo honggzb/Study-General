@@ -18,7 +18,7 @@
 - [IDE](#ide)
 - [JAVA-Study](#java-study)
 - [Javascript-related-javascript学习过程中的小tip](#javascript-related-javascript%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%B0%8Ftip)
-- [Machine-Learning](#Machine-Learning)
+- [Machine-Learning+AI](#Machine-Learning%2BAI)
 - [Miscellaneous杂项](#miscellaneous%E6%9D%82%E9%A1%B9)
 - [NodeJS 学习](#nodejs-%E5%AD%A6%E4%B9%A0)
 - [Regular Expression - 正则表达式](#regular-expression---%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
@@ -854,13 +854,16 @@
 ### Machine-Learning
 
 ```
-├── Machine-Learning/
-│   ├── Batch Normaliztion(BN批标准化).md
-│   ├── KFold交叉验证.md
-│   ├── scikit-learn全解.md
-│   ├── 机器学习之逻辑回归Logistic Regression模型.md
-│   ├── 机器学习之降维算法.md
-│   └── 机器学习基础.md
+│   ├── Machine-Learning/
+│   │   ├── machine-learning/
+│   │   │   ├── Batch Normaliztion(BN批标准化).md
+│   │   │   ├── KFold交叉验证.md
+│   │   │   ├── 机器学习之逻辑回归Logistic Regression模型.md
+│   │   │   ├── 机器学习之降维算法.md
+│   │   │   └── 机器学习基础.md
+│   │   ├── python-library/
+│   │   │   ├── scikit-learn全解.md
+│   │   │   └── 
 ```
 
 ### Miscellaneous杂项
