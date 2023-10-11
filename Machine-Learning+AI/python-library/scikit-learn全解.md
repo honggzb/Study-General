@@ -17,6 +17,7 @@
 - [评估模型和参数调优](#评估模型和参数调优)
   - [模型评估](#模型评估)
   - [参数调优](#参数调优)
+- [launching a scikit-learning training job](#launching-a-scikit-learning-training-job)
 
 
 ### Scikit-learn的主要特性
@@ -245,6 +246,20 @@ grid = GridSearchCV(svc, param_grid, refit=True, verbose=2)
 grid.fit(X, y)
 # 输出最优参数
 print(grid.best_params_)
+```
+
+[back to top](#top)
+
+### launching a scikit-learning training job
+
+- it is implemented through the **SKLearn** class
+
+```python
+from azureml.train.sklearn import SKLearn
+estimator = SKLearn(source_directory=project_folder,
+            compute_target=compute_target,
+            entry_script='train_iris.py'
+            )
 ```
 
 [back to top](#top)
