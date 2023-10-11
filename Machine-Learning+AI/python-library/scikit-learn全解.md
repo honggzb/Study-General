@@ -21,15 +21,15 @@
 
 ### Scikit-learn的主要特性
 
-- ![scikit](https://github.com/honggzb/Study-General/tree/master/Cloud-study/Machine-Learning/images/scikit.png)
+- ![scikit](https://github.com/honggzb/Study-General/blob/master/Machine-Learning%2BAI/images/scikit.png)
 - Scikit-learn是一个基于Python的开源机器学习库，它基于NumPy、SciPy和matplotlib，支持各种机器学习模型，包括分类、回归、聚类和降维等。除了提供大量的机器学习算法外，Scikit-learn还包括了一整套模型评估和选择的工具，以及数据预处理和数据分析的功能。
-- ![Scikit-learn的主要特性](https://github.com/honggzb/Study-General/tree/master/Cloud-study/Machine-Learning/images/Scikit-learn的主要特性.png)
+- ![Scikit-learn的主要特性](https://github.com/honggzb/Study-General/blob/master/Machine-Learning%2BAI/images/Scikit-learn的主要特性.png)
 - Scikit-learn提供了各种常用的监督学习和无监督学习算法，包括回归、分类、聚类、降维等
-  - ![Scikit-learn提供了各种常用的监督学习和无监督学习算法](https://github.com/honggzb/Study-General/tree/master/Cloud-study/Machine-Learning/images/Scikit-learn算法.png)
+  - ![Scikit-learn提供了各种常用的监督学习和无监督学习算法](https://github.com/honggzb/Study-General/blob/master/Machine-Learning%2BAI/images/Scikit-learn算法.png)
 - Scikit-learn提供了丰富的数据预处理功能，包括数据清洗、编码、标准化、特征提取和特征选择等
 - Scikit-learn提供了一套完善的模型评估和选择工具，包括交叉验证、网格搜索和多种评估指标
 - Scikit-learn以很好地与matplotlib等Python绘图库配合使用，以实现数据和模型效果的可视化
-  - ![Scikit-learn可视化](https://github.com/honggzb/Study-General/tree/master/Cloud-study/Machine-Learning/images/Scikit-learn可视化.png)
+  - ![Scikit-learn可视化](https://github.com/honggzb/Study-General/blob/master/Machine-Learning%2BAI/images/Scikit-learn可视化.png)
 
 ### 安装必要的依赖库
 
