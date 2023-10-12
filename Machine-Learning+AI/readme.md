@@ -1,5 +1,5 @@
 ```
-│   ├── Machine-Learning/
+│   ├── Machine-Learning+AI/
 │   │   ├── machine-learning/
 │   │   │   ├── Batch Normaliztion(BN批标准化).md
 │   │   │   ├── KFold交叉验证.md
@@ -9,7 +9,9 @@
 │   │   │   └── 机器学习基础.md
 │   │   ├── python-library/
 │   │   │   ├── scikit-learn全解.md
-│   │   │   └── 
+│   │   │   └──
+│   │   ├── 统计学图学习
+│   │   └── 
 ```
 
 - [Microsoft Azure Machine Learning vs Google Cloud AI Platform](https://www.projectpro.io/compare/microsoft-azure-machine-learning-vs-google-cloud-ai-platform)
