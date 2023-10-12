@@ -264,5 +264,8 @@ estimator = SKLearn(source_directory=project_folder,
 
 [back to top](#top)
 
-> [scikit-learn全解：掌握Python最强大的机器学习库](https://techlead.blog.csdn.net/article/details/131959380)
-[Feature Scaling with scikit-learn](http://benalexkeen.com/feature-scaling-with-scikit-learn/)
+> References
+- [scikit-learn全解：掌握Python最强大的机器学习库](https://techlead.blog.csdn.net/article/details/131959380)
+- [Feature Scaling with scikit-learn](http://benalexkeen.com/feature-scaling-with-scikit-learn/)
+- [Python数据分析基础技术之scikit-learn（史上最全面）](https://blog.csdn.net/qq_42415326/article/details/89739212)
+- [八十四、【机器学习】Scikit-learn](https://blog.csdn.net/m0_54925305/article/details/123665899)
