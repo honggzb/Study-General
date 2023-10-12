@@ -50,8 +50,6 @@
     - strategy：均值（mean）、中位数（median）、最频繁值（most_frequent）三种填充策略
     - axis：0 按列填充方式, 1 按行填充方式
 
-******axis=1：按行填充方式
-
 ```python
 from sklearn.impute import SimpleImputer
 # 假设我们的数据集中有缺失值NaN
