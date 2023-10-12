@@ -28,6 +28,11 @@
 - [函数式编程Functional Programming](#函数式编程functional-programming)
   - [高阶函数Higher-order function](#高阶函数higher-order-function)
 
+---------------------------------------------------------------------
+- 日志包  logging文件夹
+- 异步包  concurrent文件夹
+- 所有的第三方包 site-packages文件夹
+----------------------------------------------------------------------------------
 ### Basic
 
 #### 数据类型和变量
