@@ -42,7 +42,15 @@
 
 #### 数据清洗
 
-数据清洗主要包括处理缺失值和异常值。Scikit-learn提供了**Imputer类**，用于处理缺失值。以下是使用Imputer的一个简单示例
+- 数据清洗主要包括处理缺失值和异常值
+- Scikit-learn提供了**Imputer类**，用于处理缺失值， 缺失值处理可以按行和按列填充
+  - 按行或者按列均值填充策略，就是对某行或者某列中的所有缺失值用该行或者该列中非缺失部分的值的平均值来表示
+  - 中位数填充策略和最频繁值填充策略类似，即取某行或某列中非缺失部分的值的中位数和出现频次最多的值来代替其缺失值
+  - `Imputer(missing_values=‘NaN’, strategy=‘mean’, axis=0) `
+    - strategy：均值（mean）、中位数（median）、最频繁值（most_frequent）三种填充策略
+    - axis：0 按列填充方式, 1 按行填充方式
+
+******axis=1：按行填充方式
 
 ```python
 from sklearn.impute import SimpleImputer
@@ -50,19 +58,26 @@ from sklearn.impute import SimpleImputer
 import numpy as np
 X = [[1, 2], [np.nan, 3], [7, 6]]
 imp = SimpleImputer(missing_values=np.nan, strategy='mean')
-print(imp.fit_transform(X))
+print(imp.fit_transform(X))         # 调用填充对象imp中的fit()拟合方法，对待填充数据进行拟合训练
+                                    # 调用填充对象imp中的transform()方法，返回填充后的数据集
 ```
 
 #### 数据转换
 
-数据转换主要包括标准化、归一化、二值化等步骤。Scikit-learn提供了**preprocessing**模块，用于完成这些任务
+- 数据转换主要包括标准化(数据的规范化)、归一化、二值化等步骤。Scikit-learn提供了**preprocessing**模块，用于完成这些任务
+- 数据的规范化
+  - 均值-方差规范化模块StandardScaler()
+  - 0-1规范化模块MinMaxScaler()
 
 ```python
 from sklearn import preprocessing
 # 数据标准化示例
 X = [[1., -1., 2.], [2., 0., 0.], [0., 1., -1.]]
 scaler = preprocessing.StandardScaler().fit(X)
+# StandardScaler()均值-方差规范化
+# fit()拟合方法，对待处理的数据X进行拟合训练
 print(scaler.transform(X))
+# transform()方法，返回规范化后的数据集X（覆盖原未规范化的X）
 # 数据归一化示例
 X_normalized = preprocessing.normalize(X, norm='l2')
 print(X_normalized)
