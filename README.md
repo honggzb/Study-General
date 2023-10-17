@@ -23,7 +23,7 @@
 - [NodeJS 学习](#nodejs-%E5%AD%A6%E4%B9%A0)
 - [Regular Expression - 正则表达式](#regular-expression---%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
 - [Performance 性能分析](#performance-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90)
-- [Python](#Python)
+- [Python+R](#Python+R)
 - [React](#React)
 - [SVG](#svg)
 - [Salesforce](#Salesforce)
@@ -874,7 +874,7 @@
 ### Regular Expression - 正则表达式
 ### RxJS
 ### Performance 性能分析
-### Python
+### Python+R
 ### React
 ### SVG
 ### Salesforce
