@@ -7,6 +7,7 @@
   - [二级指标](#二级指标)
   - [三级指标（F-score）](#三级指标f-score)
   - [F1-score](#f1-score)
+- [使用sklearn完成逻辑回归](#使用sklearn完成逻辑回归)
 
 ## 概念
 
@@ -65,6 +66,67 @@
 ### F1-score
 
 $$F1 Score = \frac{2Precision \times Recall}{Precision + Recall}$$
+
+[go to top](#top)
+
+## 使用sklearn完成逻辑回归
+
+```python
+import pandas as pd
+import numpy as np
+import math,copy
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import f1_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
+ 
+data = pd.read_excel(r'.\Pumpkin_Seeds_Dataset\Pumpkin_Seeds_Dataset.xlsx', 0)
+df = pd.DataFrame(data)
+label = []
+for i in df['Class']:
+    if i == 'Çerçevelik':
+        label.append(0)
+    elif i == 'Ürgüp Sivrisi':
+        label.append(1)
+ 
+X_features_bk = np.array(df)
+X_features = X_features_bk[:,:-1]
+X_features = np.float32(X_features)
+Y_target = np.array(label)
+ 
+# 拆分训练集和测试集
+X_train,X_test,y_train,y_test = train_test_split(X_features,Y_target,train_size=0.5,random_state=45)
+ 
+# 使用sklearn进行Z-score标准化
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)  # 标准化训练集X
+ 
+# 绘制训练集
+color = []
+for i in y_train:
+    if i == 1:
+        color.append("blue")
+    else:
+        color.append("orange")
+plt.scatter(X_train[:, 2], X_train[:, 3], color=color)
+plt.xlabel('Major_Axis_Length')
+plt.ylabel('Minor_Axis_Length')
+plt.show()
+ 
+# 训练逻辑回归模型
+lr_model = LogisticRegression()
+lr_model.fit(X_train,y_train)
+ 
+# 标准化测试集x
+# 只有训练集才fit_transform，测试集是transform，原因上面自己写代码的时候说过了
+X_test = scaler.transform(X_test)
+# 预测
+y_pred = lr_model.predict(X_test)
+# F1-Score评估
+f1_score = f1_score(y_test,y_pred,average='binary')
+print(f"F1分数为:{round(f1_score,2)}")
+```
 
 [go to top](#top)
 
