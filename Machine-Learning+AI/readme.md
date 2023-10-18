@@ -10,6 +10,7 @@
 │   │   ├── python-library/
 │   │   │   ├── scikit-learn全解.md
 │   │   │   └──
+│   │   ├── Azure OpenAI 服务
 │   │   ├── 统计学图学习.md
 │   │   └── 
 ```
