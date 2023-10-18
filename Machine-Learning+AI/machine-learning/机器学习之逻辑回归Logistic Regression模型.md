@@ -61,7 +61,7 @@
   - $F Score = (1 + \beta^2)\frac{Precision \times Recall}{\beta^2 + Recall}$
   - 当我们认为精确度更重要，调整$\beta< 1$
   - 当我们认为召回率更重要，调整$\beta> 1$
-  - 当$\beta = 1$时，精确度和召回率权重相同。此时称为F1-Score或F1-Measure
+  - 当$\beta = 1$时，精确度和召回率权重相同。**此时称为F1-Score或F1-Measure**
 
 ### F1-score
 
