@@ -14,6 +14,16 @@
 │   │   ├── 统计学图学习.md
 │   │   └── 
 ```
+---------------------------------------
+**AI**
+
+- **Machine learning** - This is often the foundation for an AI system, and is the way we "teach" a computer model to make predictions and draw conclusions from data
+- **Anomaly detection** - The capability to automatically detect errors or unusual activity in a system
+- **Computer vision** - The capability of software to interpret the world visually through cameras, video, and images
+- **Natural language processing** - The capability for a computer to interpret written or spoken language, and respond in kind
+- **Knowledge mining** - The capability to extract information from large volumes of often unstructured data to create a searchable knowledge store
+
+-----------------------------------------
 
 - [Microsoft Azure Machine Learning vs Google Cloud AI Platform](https://www.projectpro.io/compare/microsoft-azure-machine-learning-vs-google-cloud-ai-platform)
 - [Vertex AI-Google managed ML tools](https://cloud.google.com/vertex-ai?utm_source=google&utm_medium=cpc&utm_campaign=na-CA-all-en-dr-bkws-all-all-trial-e-dr-1605212&utm_content=text-ad-none-any-DEV_c-CRE_665641361976-ADGP_Hybrid%20%7C%20BKWS%20-%20MIX%20%7C%20Txt_AI%20and%20ML%20General-KWID_43700077212830867-kwd-553582750299&utm_term=KW_vertex%20ai-ST_vertex%20ai&gclid=Cj0KCQjwz8emBhDrARIsANNJjS6jxtnMYjqEhtOkzeYsVZ9JoVUCN8Ok0Aq4T8fk4VISaUOdtR2xP3EaApA7EALw_wcB&gclsrc=aw.ds)
