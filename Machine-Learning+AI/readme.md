@@ -24,6 +24,21 @@
 - **Knowledge mining** - The capability to extract information from large volumes of often unstructured data to create a searchable knowledge store
 
 -----------------------------------------
+**[AI principles](https://learn.microsoft.com/zh-cn/azure/machine-learning/concept-responsible-ai)**
+
+- **Fairness**: AI systems shouldn't make decisions that discriminate against or support bias of a group or individual
+- **Reliability** and **Safety**: AI systems should respond safely to new situations and potential manipulation
+- **Privacy** and **Security**: AI systems should be secure and respect data privacy
+- **Inclusiveness**: AI systems should empower everyone and engage people
+- **Accountability**: People must be accountable for how AI systems operate
+- **Transparency**: AI systems should have explanations so users can understand how they're built and used
+- 公平性：AI 系统不应做出歧视群体或个人或者支持群体或个人偏见的决策
+- 可靠性和安全性：AI 系统应对新情况和潜在操作安全地作出响应
+- 隐私与安全：AI 系统应保证安全并尊重数据隐私
+- 包容：AI 系统应该支持每个人并吸引人们参与
+- 问责：人们必须对 AI 系统的运营情况负责
+- 透明度：AI 系统应具有说明，以便用户能够了解其构建和使用方式
+-------------------------------------------
 
 - [Microsoft Azure Machine Learning vs Google Cloud AI Platform](https://www.projectpro.io/compare/microsoft-azure-machine-learning-vs-google-cloud-ai-platform)
 - [Vertex AI-Google managed ML tools](https://cloud.google.com/vertex-ai?utm_source=google&utm_medium=cpc&utm_campaign=na-CA-all-en-dr-bkws-all-all-trial-e-dr-1605212&utm_content=text-ad-none-any-DEV_c-CRE_665641361976-ADGP_Hybrid%20%7C%20BKWS%20-%20MIX%20%7C%20Txt_AI%20and%20ML%20General-KWID_43700077212830867-kwd-553582750299&utm_term=KW_vertex%20ai-ST_vertex%20ai&gclid=Cj0KCQjwz8emBhDrARIsANNJjS6jxtnMYjqEhtOkzeYsVZ9JoVUCN8Ok0Aq4T8fk4VISaUOdtR2xP3EaApA7EALw_wcB&gclsrc=aw.ds)
