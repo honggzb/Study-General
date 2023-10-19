@@ -31,19 +31,23 @@
 -----------------------------------------
 **[AI principles](https://learn.microsoft.com/zh-cn/azure/machine-learning/concept-responsible-ai)**
 
-- **Fairness**: AI systems shouldn't make decisions that discriminate against or support bias of a group or individual
-- **Reliability** and **Safety**: AI systems should respond safely to new situations and potential manipulation
-- **Privacy** and **Security**: AI systems should be secure and respect data privacy
-- **Inclusiveness**: AI systems should empower everyone and engage people
-- **Accountability**: People must be accountable for how AI systems operate
-- **Transparency**: AI systems should have explanations so users can understand how they're built and used
-- 公平性：AI 系统不应做出歧视群体或个人或者支持群体或个人偏见的决策
-- 可靠性和安全性：AI 系统应对新情况和潜在操作安全地作出响应
-- 隐私与安全：AI 系统应保证安全并尊重数据隐私
-- 包容：AI 系统应该支持每个人并吸引人们参与
-- 问责：人们必须对 AI 系统的运营情况负责
-- 透明度：AI 系统应具有说明，以便用户能够了解其构建和使用方式
+|||
+|---|---|
+|Fairness|AI systems shouldn't make decisions that discriminate against or support bias of a group or individual|
+|公平性|AI 系统不应做出歧视群体或个人或者支持群体或个人偏见的决策|
+|Reliability and Safety|AI systems should respond safely to new situations and potential manipulation|
+|可靠性和安全性|AI 系统应对新情况和潜在操作安全地作出响应|
+|Privacy and Security|AI systems should be secure and respect data privacy|
+|隐私与安全|AI 系统应保证安全并尊重数据隐私|
+|Inclusiveness|AI systems should empower everyone and engage people|
+|包容|AI 系统应该支持每个人并吸引人们参与|
+|Accountability|People must be accountable for how AI systems operate|
+|问责|人们必须对 AI 系统的运营情况负责|
+|Transparency|AI systems should have explanations so users can understand how they're built and used|
+|透明度|AI 系统应具有说明，以便用户能够了解其构建和使用方式|
+
 - [Understand Responsible AI](https://learn.microsoft.com/en-ca/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai)
+
 -------------------------------------------
 
 - [Microsoft Azure Machine Learning vs Google Cloud AI Platform](https://www.projectpro.io/compare/microsoft-azure-machine-learning-vs-google-cloud-ai-platform)
