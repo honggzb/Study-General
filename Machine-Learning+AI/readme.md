@@ -43,6 +43,7 @@
 - 包容：AI 系统应该支持每个人并吸引人们参与
 - 问责：人们必须对 AI 系统的运营情况负责
 - 透明度：AI 系统应具有说明，以便用户能够了解其构建和使用方式
+- [Understand Responsible AI](https://learn.microsoft.com/en-ca/training/modules/get-started-ai-fundamentals/8-understand-responsible-ai)
 -------------------------------------------
 
 - [Microsoft Azure Machine Learning vs Google Cloud AI Platform](https://www.projectpro.io/compare/microsoft-azure-machine-learning-vs-google-cloud-ai-platform)
