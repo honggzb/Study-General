@@ -35,6 +35,8 @@ This question can help the interviewer understand how you interact with your tea
 
 I’m also comfortable leading a team when necessary. I enjoy taking on the responsibility of guiding a project from start to finish, ensuring that all tasks are completed efficiently and effectively. My experience has taught me how to delegate tasks appropriately and motivate others to reach their full potential. I’m confident that I can bring this same level of leadership to your organization.”
 
+[back to top](#top)
+
 ### What are some of the most important skills for a front end developer to have?
 
 **Example:** “As a Lead Front End Developer, I believe that the most important skills to have are **strong problem-solving abilities**, **excellent communication and collaboration skills**, and an **understanding of web development principles**.
@@ -60,6 +62,8 @@ JavaScript is a programming language that allows developers to create interactiv
 Example: “I have extensive experience with JavaScript, having used it for over five years in a variety of roles. I am very familiar with the language and its various frameworks, libraries, and tools. In my current role as Lead Front End Developer, I use JavaScript to create interactive user interfaces and web applications. I’m also experienced in using popular libraries such as React, Angular, and Vue.js.
 
 In addition, I have worked on projects that involve integrating third-party APIs into existing websites and applications. This has enabled me to gain an understanding of how different systems interact and communicate with each other. Furthermore, I have developed custom components and plugins to enhance the functionality of websites and applications.”
+
+[back to top](#top)
 
 ### Provide an example of a time when you had to solve a problem with code
 
