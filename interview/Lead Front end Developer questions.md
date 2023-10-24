@@ -35,7 +35,7 @@ This question can help the interviewer understand how you interact with your tea
 
 I’m also comfortable leading a team when necessary. I enjoy taking on the responsibility of guiding a project from start to finish, ensuring that all tasks are completed efficiently and effectively. My experience has taught me how to delegate tasks appropriately and motivate others to reach their full potential. I’m confident that I can bring this same level of leadership to your organization.”
 
-[back to top](#top)
+[⬆ back to top](#top)
 
 ### What are some of the most important skills for a front end developer to have?
 
@@ -53,7 +53,7 @@ This question can help the interviewer understand how you learn new things and a
 
 Example: “I stay up-to-date with the latest trends in front end development by actively reading industry blogs, attending conferences and workshops, and participating in online forums. I also keep an eye on new technologies that are being released so I can assess how they might be used to improve my current projects or create new ones. Finally, I make sure to network with other developers who have a similar interest in front end development so we can share ideas and best practices. By staying informed of the latest trends and technologies, I am able to bring fresh ideas to the table when it comes to developing user interfaces for web applications.”
 
-[back to top](#top)
+[⬆ back to top](#top)
 
 ### What is your experience with using JavaScript?
 
@@ -73,7 +73,7 @@ Example: “I recently had to solve a problem with code when I was developing an
 
 To solve this issue, I first identified all of the areas in the codebase where currency and language were used. Then, I created a system for dynamically switching between different currencies and languages based on user preferences. This included creating functions to convert prices into different currencies, as well as displaying text in different languages. Finally, I tested the new system thoroughly to ensure it worked correctly.”
 
-[back to top](#top)
+[⬆ back to top](#top)
 
 ### If we asked a front end developer from five years in the future to review your code, what would they think of your style?
 
@@ -83,7 +83,7 @@ Example: “If a front end developer from five years in the future were to revie
 
 I also take pride in writing clean, efficient code that is optimized for performance. I pay attention to details such as browser compatibility and accessibility standards. As a result, my code is reliable and works across different browsers and devices. Finally, I am always open to feedback and willing to learn new things to improve my skills.”
 
-[back to top](#top)
+[⬆ back to top](#top)
 
 ### What would you do if you were working on a project and you realized that the design required features that weren’t possible using front end development?
 
