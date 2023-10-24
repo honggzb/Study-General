@@ -9,8 +9,8 @@
 │   └── Lead Front end Developer questions.md
 ```
 
-- Create a new project out of Wealth360  cgi-amazo-angular-boilerplate code 
-- This project provides standard user interface and  functionality for all Weath360 Family applications and application infrastructure, including unit and e2e testing functionality
+- Create a new project out of xxx-angular-boilerplate code 
+- This project provides standard user interface and  functionality for all xxx Family applications and application infrastructure, including unit and e2e testing functionality
 - understandable, flexible, and maintainable
 
 ### web development principles
