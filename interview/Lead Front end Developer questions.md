@@ -1,4 +1,4 @@
-[Lead Fornt end Developer questions](#top)
+[Lead Front end Developer questions](#top)
 - [Are you comfortable working with a team of developers to create a single product?](#are-you-comfortable-working-with-a-team-of-developers-to-create-a-single-product)
 - [What are some of the most important skills for a front end developer to have?](#what-are-some-of-the-most-important-skills-for-a-front-end-developer-to-have)
 - [How do you stay up-to-date with the latest trends in front end development?](#how-do-you-stay-up-to-date-with-the-latest-trends-in-front-end-development)
