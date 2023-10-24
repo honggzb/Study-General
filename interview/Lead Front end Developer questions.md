@@ -21,8 +21,7 @@
 - [How would you go about optimizing a website for mobile devices?](#how-would-you-go-about-optimizing-a-website-for-mobile-devices)
 - [Have you ever encountered an issue while developing a website or application that required creative problem solving?](#have-you-ever-encountered-an-issue-while-developing-a-website-or-application-that-required-creative-problem-solving)
 
-
-- Are you comfortable working with a team of developers to create a single product?
+---------------------------------------------------------------------------------------------------------
 
 The lead front end developer is responsible for the coding, design, and layout of a website. They are also responsible for working with the back end developers and web designers to ensure that all aspects of the website are working properly. In order to be a lead front end developer, you need to have a strong understanding of HTML, CSS, and JavaScript. You also need to be able to work with a variety of different web browsers and have a good understanding of user experience.
 
