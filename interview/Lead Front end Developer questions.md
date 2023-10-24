@@ -27,7 +27,7 @@
 The lead front end developer is responsible for the coding, design, and layout of a website. They are also responsible for working with the back end developers and web designers to ensure that all aspects of the website are working properly. In order to be a lead front end developer, you need to have a strong understanding of HTML, CSS, and JavaScript. You also need to be able to work with a variety of different web browsers and have a good understanding of user experience.
 
 
-### 1. Are you comfortable working with a team of developers to create a single product?
+### Are you comfortable working with a team of developers to create a single product?
 
 This question can help the interviewer understand how you interact with your team and whether you’re willing to collaborate. Your answer should show that you value teamwork and enjoy working with others to achieve a common goal.
 
