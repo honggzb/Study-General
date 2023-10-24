@@ -37,13 +37,11 @@ I’m also comfortable leading a team when necessary. I enjoy taking on the resp
 
 ### What are some of the most important skills for a front end developer to have?
 
-**Example:** “As a Lead Front End Developer, I believe that the most important skills to have are strong problem-solving abilities, excellent communication and collaboration skills, and an understanding of web development principles.
+**Example:** “As a Lead Front End Developer, I believe that the most important skills to have are **strong problem-solving abilities**, **excellent communication and collaboration skills**, and an **understanding of web development principles**.
 
-Problem-solving is essential for any developer, as it allows them to quickly identify issues and come up with creative solutions. As a Lead Front End Developer, I am able to use my problem-solving skills to develop efficient code and debug complex problems.
-
-Communication and collaboration skills are also key for a successful front end developer. Working in teams requires effective communication, so being able to clearly explain ideas and concepts to other developers is critical. I have experience leading projects and working on cross-functional teams, which has enabled me to hone my communication and collaboration skills.
-
-Lastly, having an understanding of web development principles is essential for a front end developer. I have extensive knowledge of HTML, CSS, JavaScript, and other web technologies, which enables me to create robust user interfaces that meet customer requirements. My experience developing responsive websites and applications ensures that users can access content from any device.”
+- problem-solving is essential for any developer, as it allows them to quickly identify issues and come up with creative solutions. As a Lead Front End Developer, I am able to use my problem-solving skills to develop efficient code and debug complex problems.
+- Communication and collaboration skills are also key for a successful front end developer. Working in teams requires effective communication, so being able to clearly explain ideas and concepts to other developers is critical. I have experience leading projects and working on cross-functional teams, which has enabled me to hone my communication and collaboration skills.
+- Lastly, having an understanding of web development principles is essential for a front end developer. I have extensive knowledge of HTML, CSS, JavaScript, and other web technologies, which enables me to create robust user interfaces that meet customer requirements. My experience developing responsive websites and applications ensures that users can access content from any device.”
 
 ### How do you stay up-to-date with the latest trends in front end development?
 
