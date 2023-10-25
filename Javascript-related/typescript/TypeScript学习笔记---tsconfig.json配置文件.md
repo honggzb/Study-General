@@ -171,9 +171,9 @@
 ## 在vscode上直接运行typescript
 
 1. 全局上安装ts-node包 `npm install typescript ts-node @types/node@* -g`
-2. 在vscode上安装Code Runner插件
-3. 点击右上角的运行按钮即可在输出面板看到运行结果
-
+	- [ts-node官网](https://www.npmjs.com/package/ts-node#installation) 
+3. 在vscode上安装Code Runner插件
+4. 点击右上角的运行按钮即可在输出面板看到运行结果
 
 [⬆ back to top](#top)
 
