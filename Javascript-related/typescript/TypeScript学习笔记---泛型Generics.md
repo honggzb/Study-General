@@ -7,7 +7,7 @@
   - [在类中使用-泛型类](#在类中使用-泛型类)
   - [在泛型里使用类类型](#在泛型里使用类类型)
 - [泛型约束](#泛型约束)
-- [泛型工具类](#泛型工具类)
+- [泛型工具类Utility Type](#泛型工具类Utility-Type)
 - [Using in Angular](#using-in-angular)
   - [Using as parameters](#using-as-parameters)
   - [Using in type/class/interface](#using-in-typeclassinterface)
@@ -186,7 +186,7 @@ getValue(a,'1');
 
 [⬆ back to top](#top)
 
-## 泛型工具类
+## 泛型工具类Utility Type
 
 - 为了方便开发，TS内置了一些常用的工具类型，比如 Partial、Required等
 - 基础特性:
