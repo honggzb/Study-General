@@ -8,6 +8,9 @@
   - [在泛型里使用类类型](#在泛型里使用类类型)
 - [泛型约束](#泛型约束)
 - [泛型工具类](#泛型工具类)
+- [Using in Angular](#using-in-angular)
+  - [Using as parameters](#using-as-parameters)
+  - [Using in type/class/interface](#using-in-typeclassinterface)
 
 ------------------------------------------------------------------
 
@@ -310,7 +313,148 @@ interface Person1 {
 
 [⬆ back to top](#top)
 
-## 
+## Using in Angular
+
+### Using as parameters
+
+```javascript
+export class APIService {
+  /** Constructor for the generic resource service */
+  constructor(
+    protected http: HttpClient,
+    @Inject(ENV_TOKEN) protected environment: IEnvironment,
+  ) {}
+  private getHttpHeader(prms: Params = {}): HttpHeaders {
+    return new HttpHeaders(prms)
+      .set('Content-type', 'application/json')
+      .set('Accept', 'application/json, text/plain, */*');
+  }
+  private getHttpParams(prms: Params = {}): HttpParams | undefined {
+    if (Object.keys(prms ).length === 0) {
+      return undefined;
+    }
+    return new HttpParams({fromObject: mapValues(prms, (v) => {
+      return String(v);
+    })});
+  }
+  /** Getting a resource URL */
+  private buildUrl(...params: PrimitiveType[]): string {
+    return coerceArray(params)
+      .filter(it => !!it)
+      .map(it => it.toString())
+      .join('/');
+  }
+  /** To send data to a server to create a resource.  */
+  create<T>(endpoint: string, item: T, options?: Partial<IRequestParams>): Observable<T> {
+    return this.fetch<T>('POST', endpoint, item, options);
+  }
+  /**  An API to send data to a server to get a resource by id */
+  get<T>(endpoint: string | PrimitiveType[], options?: Partial<IRequestParams>): Observable<T> {
+    return this.fetch<T>('GET', endpoint, undefined, options);
+  }
+  /** To send data to a server to update a resource by id */
+  update<T>(endpoint: string | PrimitiveType[], item: T, options?: Partial<IRequestParams>): Observable<T> {
+    return this.fetch<T>('PUT', endpoint, item, options);
+  }
+  /** To send data to a server to delete a resource by id */
+  delete<T>(endpoint: string, id: number | string, options?: Partial<IRequestParams>): Observable<T> {
+    return this.fetch<T>('DELETE', [endpoint, id], undefined, options);
+  }
+  /** To send data to a server to get a list of resources using passed in parameters */
+  load<T>(endpoint: string | PrimitiveType[], payload: unknown, options?: Partial<IRequestParams>): Observable<T> {
+    return this.fetch<T>('POST', endpoint, payload, options);
+  }
+  fetch<T>(
+    method: HttpMethod,
+    endpoint: PrimitiveType | PrimitiveType[],
+    payload: unknown = null,
+    params: Partial<IRequestParams> = {}
+  ): Observable<T> {                   // NOTE: request.ResponseType depends on underlying type
+    const _params = {
+      responseType: 'json',
+      ...params
+    };
+    const url = this.buildUrl(...coerceArray(endpoint));
+    const options: Partial<IRequestOptions> = {
+      headers: this.getHttpHeader(_params.headers),
+      params: this.getHttpParams(_params.params),
+      body: payload ? JSON.stringify(payload) : undefined, // Ensure that the payload is text
+      responseType: _params.responseType,
+      reportProgress: _params.reportProgress,
+      observe: _params.observe
+    };
+    options.body = payload ? JSON.stringify(payload) : undefined;
+    return this.http.request<T>( method, url, options);
+  }
+  getJson<T>(path: string): Observable<T> {
+    return this.http.get<T>(path);
+  }
+}
+//------------------------------------------------------------------
+export class PositionAccountCriteria extends PayloadEntity<IPositionAccountCriteria> {
+  constructor(criteria: Partial<IPositionAccountFilter>, pager: IPage) {
+    super(
+      {
+        searchString: criteria.searchString ?? '',
+        sortBy: criteria.sortBy ?? '',
+        sortDirection: criteria.sortDirection ?? 'ASC',
+        securityCode: criteria.securityCode ?? '',
+        accountProgramCodes: PositionAccountCriteria.valueMapper(criteria?.accountProgramCodes),
+        repCodes: PositionAccountCriteria.valueMapper(criteria?.repCodes),
+        includeAccountStateCodes: PositionAccountCriteria.valueMapper<string>(
+          criteria?.includeAccountStateCodes,
+        ),
+        includeTradingStateCodes: PositionAccountCriteria.valueMapper<string>(
+          criteria?.includeTradingStateCodes,
+        ),
+        planTypeCodes: PositionAccountCriteria.valueMapper(criteria?.planTypeCodes),
+        accountCurrencyCodes: PositionAccountCriteria.valueMapper(criteria?.accountCurrencyCodes),
+      },
+      pager,
+    );
+  }
+  private static valueMapper<T>(collection: IItem<T>[]): T[] {
+    return size(collection) > 0 ? collection.map((it) => it.value).filter((it) => !!it) : null;
+  }
+}
+```
+
+### Using in type/class/interface
+
+```javascript
+export interface IDataViewSource<T> {
+  source?: T[];
+  pager?: IPage;
+  sorter?: ISort;
+  selected?: T[];
+} 
+//RequestsService<T> 和 AdhocSellRequestsService（AdhocSellRequestsService extends RequestsService<AdhocSellEntity>）
+export abstract class RequestsService<T> extends AbstractFilterService<IRequestsFilter> {
+  private readonly REQUEST_SEARCH_URL = 'workflows/search';
+  protected readonly totalRecordCountSubject$ = new BehaviorSubject<number>(undefined);
+  abstract get INITIAL_FILTER(): Partial<IRequestsFilter>;
+  protected abstract mapToDataSource(response: IDataResponse<T>, pager: IPage, sorter: ISort): IDataViewSource<T>;
+  protected abstract get EMPTY_FILTER(): Partial<IRequestsFilter>;
+  protected abstract createFilterByAttributeValues(criteria: Partial<IRequestsFilter>): FilterBaseType[];
+  get totalRecordCount$(): Observable<number> {
+    return this.totalRecordCountSubject$.pipe();
+  }
+  constructor(
+    protected readonly http: HttpClient,
+    @Inject(ENV_TOKEN) protected environment: IEnvironment,
+    protected readonly storageService: StorageService,
+    protected readonly dialogService: DialogService,
+    protected readonly messageService: MessageService,
+  ) {
+    super(http, environment, storageService);
+  }
+  //...
+}
+//
+export class AdhocSellRequestsService extends RequestsService<AdhocSellEntity> {
+  //...
+}
+```
 
 [⬆ back to top](#top)
 > references
