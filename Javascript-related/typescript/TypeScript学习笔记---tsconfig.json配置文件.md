@@ -16,7 +16,7 @@
 
 ## tsconfig.json重要字段
 
-```json
+```javascript
 {
 	"include": [ "./src/**/*" ],
 	"exclude": [ "./src/hello/**/*" ],
@@ -43,7 +43,7 @@
 
 ## compilerOptions编译选项
 
-```json
+```javascript
 { 
   "compilerOptions": {      
     /* 基本选项 */   
@@ -115,7 +115,7 @@
 
 ## 案例
 
-```json
+```javascript
 {
   "compileOnSave": false,
   "buildOnSave": false,
