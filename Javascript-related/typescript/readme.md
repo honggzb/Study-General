@@ -8,3 +8,4 @@
 ```
 
 - [typescript学习导航](https://blog.csdn.net/weixin_44828005/article/details/119336338)
+- [野兽的cnblog](https://www.cnblogs.com/ys-ys/)
