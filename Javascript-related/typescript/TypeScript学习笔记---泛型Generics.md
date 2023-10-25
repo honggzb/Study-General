@@ -18,7 +18,7 @@
 
 - Generics是一种创建可复用代码的方式，类似于代码组件的概念。具体来说，就是在定义接口、函数或类的时候，不预先指定参数、返回值的类型，而是在使用时，根据具体情况来指定相应的类型
 - T，表示Type，是一个抽象类型，只有在调用函数时，才会确认具体的类型，这样就能适用于不同类型的数据。调用函数时，先把类型传递给 <T>中的T，然后再链式传递给参数类型和返回值类型。
-- ![Generics](Generics.png)
+- ![Generics](/images/Generics.png)
 
 ```typescript
 function identity<T>(arg: T): T {
