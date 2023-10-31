@@ -1,10 +1,10 @@
 ```
 ├── typescript/
-|    ├── TypeScript学习笔记---tsconfig.json配置文件.md
+|    ├── TypeScript学习笔记---1数据类型和函数.md
 |    ├── TypeScript学习笔记---2泛型Generics.md
 |    ├── TypeScript学习笔记---3内置高阶泛型工具类型Utility Type.md
+|    ├── TypeScript学习笔记---tsconfig.json配置文件.md
 |    ├── 六个typescript高级技巧.md
-|    ├── 
 │    └── 
 ```
 
