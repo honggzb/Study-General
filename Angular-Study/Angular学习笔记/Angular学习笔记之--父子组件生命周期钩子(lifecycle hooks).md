@@ -14,6 +14,8 @@
 8. `ngAfterViewChecked()`--当Angular做完组件视图和子视图的变更检测之后调用；在ngAfterViewInit()和每次ngAfterContentChecked()之后调用，会调用多次
 9. `ngOnDestroy()`--当Angular每次销毁组件或指令之前调用并清扫。在这里取消订阅可观察对象和分离事件处理器，以防内存泄漏
 
+[⬆ back to top](#top)
+
 ## angular父子组件生命周期钩子过程
 
 ![angular父子组件生命周期钩子过程](../images/angular父子组件生命周期钩子过程.png)
@@ -23,3 +25,5 @@
 3. 子组件的ngAfterContentChecked()钩子执行完之后，会在调用子组件的子组件的生命周期钩子(如果有的话)。
 4. 子组件执行ngAfterViewChecked()钩子后，父组件继续执行其余的生命周期钩子。
 5. 当发生变更检测时，父组件先触发ngDoCheck() => ngAfterContentChecked()，然后子组件触发 ngOnChanges() => ngDoCheck() => ngAfterContentChecked() => ngAfterViewChecked(),最后父组件调用ngAfterViewChecked()。
+
+[⬆ back to top](#top)
