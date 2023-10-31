@@ -81,7 +81,23 @@ const a = {
 
 ### 在接口中使用-泛型接口
 
+- 接口的类型变量，对接口中所有其他成员可见，也就是接口中所有成员都可以使用类型变量。
+- 使用泛型接口时，需要显式指定具体的类型（比如，IdFunc< <<number> >>)
+
 ```typescript
+interface IdFunc<T> {
+    id: (value: T) => T
+    ids: () => T[]
+}
+let obj: IdFunc<number> = {
+    id(value) {
+        return value
+    },
+    ids() {
+        return [1,3,5]
+    }
+}
+//————————————————
 interface Person<T> {
     <T, Y>(name: T, age: Y): T
 }
@@ -109,6 +125,21 @@ class Friends<T, Y> {
     }
 }
 let wife = new Friends("黄雨萌", 18) // 实例对象 Friends{name: '黄雨萌', age: 18}
+//------------------------------------------
+class GenericNumber<NumType> {
+    defaultValue: NumType
+    add: (x: NumType, y: NumType) => NumType
+
+    constructor(value: NumType) {  
+        //可以省略<number>是因为这里有一个参数，参数的类型就是NumType，
+        //当你在传入一个具体的值时，class可以根据你传入的这个值来推断出NumType的类型。
+        this.defaultValue = value
+    }
+}
+// 可以省略<number>不写
+// const myNum = new GenericNumber<number>(100)
+const myNum = new GenericNumber(100)
+myNum.defaultValue = 10
 //------------------------------------------
 class Stack<T> {
     private arr: T[] = []
