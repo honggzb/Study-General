@@ -138,7 +138,8 @@ export class AppComponent implements OnInit {
 | |任何应用了::ng-deep的样式都会成为全局样式|此样式将应用于app-root内所有h3元素 |
 | |为了将指定样式限定在当前组件以及后代，确保在::ng-deep之前包含:host选择器||
 | |如果在没有:host伪类选择器的情况下使用::ng-deep选择器，样式可能会渗入其他组件||
-当**angular引用第三方组件库无法改变其组件样式**时候，可加入`:host ::ng-deep`
+
+- 当**angular引用第三方组件库无法改变其组件样式**时候，可加入`:host ::ng-deep`
 
 ```css
 :host /deep/ .ant-input-affix-wrapper .ant-input:not(:first-child){
