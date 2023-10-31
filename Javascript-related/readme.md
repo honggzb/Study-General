@@ -1,5 +1,5 @@
 ```
-├── Javascript-related
+├── Javascript+JQuery+Typescript
 │     ├── Javascript                         --javascript学习过程中的小tip
 │     │     ├──Advanced-JavaScript-Study
 │     │     │     ├── JavaScript Simplified - Advanced/
