@@ -82,6 +82,25 @@ interface C { x: F; }
 type ABC = A & B & C;
 let abc: ABC= {x: {d: true,e: 'semlinker',f: 666  }};
 console.log('abc:', abc);  // abc: { x: { d: true, e: 'semlinker', f: 666 } }
+// 同名的那个属性是复杂数据类型，那么交叉的结果，就是将对象成员进行合并，合并规则与类型合并相同
+interface A {
+  x:{d:true},
+}
+interface B { 
+  x:{e:string},
+}
+interface C {  
+  x:{f:number},
+}
+// 合并之后 类型变为 {x: {d: true,e: string,f: number}}
+type ABC = A & B & C
+let abc:ABC = { 
+  x:{  
+    d:true,  
+    e:'',   
+    f:666  
+  }
+}
 ```
 
 ## 联合类型和交叉类型在angular中应用
