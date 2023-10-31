@@ -7,11 +7,9 @@
 │   │   ├── Angular学习笔记之--Dynamic components.md
 │   │   ├── Angular学习笔记之--HttpInterceptor拦截器.md
 │   │   ├── Angular学习笔记之--Nested Component
-│   │   ├── Angular学习笔记之--elements1.md
-│   │   ├── Angular学习笔记之--elements2.md
 │   │   ├── Angular学习笔记之--Pipe.md
 │   │   ├── Angular学习笔记之--directive指令.md
-│   │   ├──Angular学习笔记之--lazy loading-angular15.md          #useful
+│   │   ├── Angular学习笔记之--lazy loading-angular15.md          #useful
 │   │   ├── Angular学习笔记之--lazy loading-使用angular-cli.md   #old version
 │   │   ├── Angular学习笔记之--ngClass例子.md
 │   │   ├── Angular学习笔记之--数据绑定、响应式编程.md
