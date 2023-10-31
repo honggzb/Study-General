@@ -2,7 +2,7 @@
 
 ## angular组件生命周期钩子执行过程
 
-![angular组件生命周期钩子执行过程](angular组件生命周期钩子执行过程.png)
+![angular组件生命周期钩子执行过程](../images/angular组件生命周期钩子执行过程.png)
 
 1. `constructor()`构造函数,初始化class，(constructor不属于Angular生命周期钩子的范畴，这里只是说明组件组件初始化会先调用构造函数)
 2. `ngOnChanges()`--如果组件没有输入属性(@Input()),或者使用时没有提供任何输入属性，那么angular不会调用它；会调用多次
@@ -16,7 +16,7 @@
 
 ## angular父子组件生命周期钩子过程
 
-![angular父子组件生命周期钩子过程](angular父子组件生命周期钩子过程.png)
+![angular父子组件生命周期钩子过程](../images/angular父子组件生命周期钩子过程.png)
 
 1. 首先调用父组件的构造函数，然后调用子组件的构造函数。
 2. 当调用父组件的ngAfterContentChecked()钩子之后，会调用子组件的生命周期函数。
