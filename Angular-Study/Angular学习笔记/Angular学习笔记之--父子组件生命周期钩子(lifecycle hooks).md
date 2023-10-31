@@ -27,3 +27,5 @@
 5. 当发生变更检测时，父组件先触发ngDoCheck() => ngAfterContentChecked()，然后子组件触发 ngOnChanges() => ngDoCheck() => ngAfterContentChecked() => ngAfterViewChecked(),最后父组件调用ngAfterViewChecked()。
 
 [⬆ back to top](#top)
+
+> https://www.cnblogs.com/sparkler/p/16864656.html
