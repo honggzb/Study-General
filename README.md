@@ -17,7 +17,7 @@
 - [Hybrid Web](#hybrid-web)
 - [IDE](#ide)
 - [JAVA-Study](#java-study)
-- [Javascript-related-javascript学习过程中的小tip](#javascript-related-javascript%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%B0%8Ftip)
+- [Javascript+Typescript+Jquery](https://github.com/honggzb/Study-General/tree/master/Javascript-related)
 - [Machine-Learning+AI](#Machine-Learning%2BAI)
 - [Miscellaneous杂项](#miscellaneous%E6%9D%82%E9%A1%B9)
 - [NodeJS 学习](#nodejs-%E5%AD%A6%E4%B9%A0)
