@@ -33,6 +33,20 @@
 </ng-template>
 ```
 
+### 借助其他结构型指令如ngFor，来显示ng-template的内容
+
+```html
+<ng-container *ngIf="lessons">
+    <div class="lesson" *ngFor="let lesson of lessons">
+        <div class="lesson-detail">
+            {{lesson | json}}
+        </div>
+    </div>
+</ng-conainer>
+```
+
+- ng-container的一种用途是，给我们提供一个附加指令的元素而不会创建一个额外的元素
+
 ### 通过`TemplateRef`、`ViewContainerRef`把`ng-template`对应的元素显示出来
 
 - TemplateRef对应ng-template的引用，
