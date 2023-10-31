@@ -110,6 +110,7 @@ Selector|说明|sample
 ---|---|---
 `:host`|选择组件宿主元素中的元素（相对于组件模板内部的元素）|`:host{border-width: 3px;}`,`:host(.active){border-width: 3px;}`
 `:host-context`|当前组件宿主元素的祖先节点中查找CSS类， 直到文档的根节点为止(all the way up the tree)|`:host-contex(.theme-light) h2 {background-color: #eef;}`, 只有当某个祖先元素有 CSS 类theme-light时，才会把background-color样式应用到组件内部的所有`<h2>`元素
+ | 注：只有宿主元素及其后代会受到样式影响，而不是祖先元素| 
 `/deep/`,`>>>`, `::ng-deep`|强制一个样式对各级子组件的视图也生效|`:host /deep/ h3 {font-style: italic;}`, **只能被用在仿真 (emulated) 模式下**
 
 当**angular引用第三方组件库无法改变其组件样式**时候，可加入`:host ::ng-deep`
