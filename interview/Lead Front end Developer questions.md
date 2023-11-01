@@ -23,6 +23,7 @@
 |[What do you think are the most important aspects of UI/UX design for web applications?](#what-do-you-think-are-the-most-important-aspects-of-uiux-design-for-web-applications)
 |[How would you go about optimizing a website for mobile devices?](#how-would-you-go-about-optimizing-a-website-for-mobile-devices)|
 |[Have you ever encountered an issue while developing a website or application that required creative problem solving?](#have-you-ever-encountered-an-issue-while-developing-a-website-or-application-that-required-creative-problem-solving)|
+|[Additional Questions](Additional-Questions)|
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -234,5 +235,125 @@ This question can help interviewers understand your problem-solving skills and h
 **Example**: “Yes, I have encountered many issues while developing websites and applications that required creative problem solving. One example of this was when I was working on a website for a client who wanted to create an interactive user experience. The challenge was finding the right balance between making the site look visually appealing and ensuring it ran smoothly without any lag time.
 
 To solve this issue, I used my knowledge of HTML, CSS, JavaScript, and jQuery to create custom animations and transitions that would give the user a smooth experience while still keeping the design aesthetically pleasing. I also incorporated AJAX requests to reduce page load times and ensure the site ran quickly. Finally, I tested the site extensively to make sure all the features worked properly before launching it live. Thanks to my creative problem-solving skills, the project was completed successfully and the client was very happy with the end result.”
+
+[⬆ back to top](#top)
+
+### Additional Questions
+
+|question|
+|---|
+| [1. What is the most important thing you can do at work?](#1-what-is-the-most-important-thing-you-can-do-at-work)|
+| [2. What is the single most important characteristic for a manager?](#2-what-is-the-single-most-important-characteristic-for-a-manager)|
+| [3. angular/design patterns/micro front end/Code review session with the existing code](#3-angulardesign-patternsmicro-front-endcode-review-session-with-the-existing-code)|
+| [4. Can you explain your last best work?](#4-can-you-explain-your-last-best-work)|
+|[5. They asked how I would cope in a role where I was doing less coding](#5-they-asked-how-i-would-cope-in-a-role-where-i-was-doing-less-coding)|
+| [6. Tell me about a time when you had to solve an issue that you had never come across before and you had to figure all of it out on your own?](#6-tell-me-about-a-time-when-you-had-to-solve-an-issue-that-you-had-never-come-across-before-and-you-had-to-figure-all-of-it-out-on-your-own)|
+| [7. A peer submits code EOD that is not up to standard, but you have a demo in the morning, how do you respond?](#7-a-peer-submits-code-eod-that-is-not-up-to-standard-but-you-have-a-demo-in-the-morning-how-do-you-respond)|
+|[8. Questions have too many meanings that is impossible to list them, but at the end, it can be about your personality what they evaluate more, remember they want to know who fits in their environment since they are well know to keep a very high vibe.](#8-questions-have-too-many-meanings-that-is-impossible-to-list-them-but-at-the-end-it-can-be-about-your-personality-what-they-evaluate-more-remember-they-want-to-know-who-fits-in-their-environment-since-they-are-well-know-to-keep-a-very-high-vibe)|
+| [9. How do you manage stress - How do you manage projects to deliver with tight deadlines or if timelines change how do you deliver then (their answer was to overwork) - Technical questions related to the Front-End (HTML, CSS, React, NextJS, GraphQL) - Lots of behavioral and collaboration questions](#9-how-do-you-manage-stress---how-do-you-manage-projects-to-deliver-with-tight-deadlines-or-if-timelines-change-how-do-you-deliver-then-their-answer-was-to-overwork---technical-questions-related-to-the-front-end-html-css-react-nextjs-graphql---lots-of-behavioral-and-collaboration-questions)|
+| [10. Name 2 strength and 2 weakness about your self. Or about your last job.](#10-name-2-strength-and-2-weakness-about-your-self-or-about-your-last-job)|
+| [11. Many character fit questions like how to deal with stressful situations and conflict resolution](#11-many-character-fit-questions-like-how-to-deal-with-stressful-situations-and-conflict-resolution)|
+| [12. What schedule can you work?](#12-what-schedule-can-you-work)|
+| [13. How do you define excellent customer service?](#13-how-do-you-define-excellent-customer-service)|
+| [14. What was the one thing you went beyond in customer service for based on past experience.](#14-what-was-the-one-thing-you-went-beyond-in-customer-service-for-based-on-past-experience)|
+| [15. Round](#15-round)|
+| [questions with no answer](#questions-with-no-answer)|
+
+### 1. What is the most important thing you can do at work?
+
+Time Management and Productivity
+
+### 2. What is the single most important characteristic for a manager?
+
+Effective communication is a staple that all the best managers have. This not only means communicating job responsibilities and expectations, it means listening to your team and working with them to produce results within their position.
+
+### 3. angular/design patterns/micro front end/Code review session with the existing code
+
+### 4. Can you explain your last best work?
+
+I took two examples of my previous work situations and went throught the process and learnings in those situations.
+
+I've been lucky to have such great experiences at all of my past jobs, but the one that sticks out to me the most is definitely when a campaign modeled after my proposal ended up earning record-breaking profits for our client. During my time at Frontend Advertising, I worked on multiple ad campaigns for clients ranging from the cosmetic industry, to sports equipment, to animal welfare organizations, but the one that succeeded the most was our campaign for Simple Water.
+
+I pitched a proposal that involved hanging up billboards and posters of the recognizable Simple Water bottle with a sole line of text reading "Keep it Simple." After just one month, the release of the campaign directly correlated with an increase in profits for the client by nearly 30%. Corporate rewarded my team and I with a bonus and recognition from our CEO, which was so special.
+
+### 5. They asked how I would cope in a role where I was doing less coding
+
+I said that mentoring people and building them up was more important to me than putting on my headphones and blocking out the rest of the team. 
+
+### 6. Tell me about a time when you had to solve an issue that you had never come across before and you had to figure all of it out on your own?
+
+Make sure it is an issue that you took care of all on your own. Whether you had to ask questions from some one else is fine, but the end goal is that you took are of it
+
+### 7. A peer submits code EOD that is not up to standard, but you have a demo in the morning, how do you respond?
+
+I would explain that its still a work in progress but also explain what the code is trying to accomplish
+
+### 8. Questions have too many meanings that is impossible to list them, but at the end, it can be about your personality what they evaluate more, remember they want to know who fits in their environment since they are well know to keep a very high vibe.
+
+Can you tell us more specifics around the peer programming aspect of the interview ? Were you building a component ? Or fixing a bug ? Were you working within any special parameters or frameworks ? Also, what sort of questions were asked during the problem solving stage ? 
+As I could, I think I succeed my 4 stages, I was able to impress people, I was able to solve problems, to be friendly, since I didn't get an offer, I still don't know what went wrong.
+
+### 9. How do you manage stress - How do you manage projects to deliver with tight deadlines or if timelines change how do you deliver then (their answer was to overwork) - Technical questions related to the Front-End (HTML, CSS, React, NextJS, GraphQL) - Lots of behavioral and collaboration questions
+
+I answered the questions honestly however they expect you to be someone who's working a lot, although the hiring manager was great about the work boundaries but everyone else expected you to work 24/7 and basically had a lot of questions around managing the stress because of the overworked culture and yes every single person mentioned tons of meetings. I was only going to accept because of the good hiring manager but the huge discrepancy between the initial comp numbers discussed &amp; advertised vs the offer just threw me off completely and that was a huge red flag along with all the other things I heard during the process. 
+
+### 10. Name 2 strength and 2 weakness about your self. Or about your last job.
+
+Lack of communication dislike The atmosphere like. Both of my last job
+
+Creativity
+Versatility
+Flexibility
+Focused
+Taking Initiative
+Honesty
+Dedication
+Integrity
+Continuous Learning
+Teamwork
+
+Weakness
+Self-criticism
+Insecurity
+Extremely Introverted
+Extremely Extroverted
+Creative Writing
+Too detail-oriented
+Financial Literacy
+A Particular Software
+Too sensitive
+Presentation Skills
+
+
+### 11. Many character fit questions like how to deal with stressful situations and conflict resolution
+
+Approach the situation with a calm unbiased point of view and try to envision both sides of the conflict before helping resolve. 
+
+### 12. What schedule can you work?
+
+I told them I was open to anything as of right now.
+
+### 13. How do you define excellent customer service?
+
+### 14. What was the one thing you went beyond in customer service for based on past experience.
+
+Super simple then the rest is basically just you asking questions to seem interested. 
+
+### 15. Round
+
+Round 1 : Regarding performance, accessibility, state management, CSR, SSR , SSG, security 
+Round 2: The Lead engineer wanted mean to open a create a new react project. He expected that I knew all the commands and shouldn't take any help from google. It was the most absurd interview I have ever attended. The interviewer was Sunil something and was very rude. He was asking questions you wont even ask freshers. It was like he was showing off his knowledge in React.
+I asked the HR person if I will be working with this Sunil guy who interviewed me. When she said yes, I said no thank you for the offer. They should invest in training employees to take better interviews. There interview process left a very bad impression on me
+
+### questions with no answer
+
+1.  tell me something about framework you designed
+2.  What makes you qualified for this position?
+3.  General career related questions, and soft skills, e.g. how do you lead 1:1's', conflict solving situations etc.
+4.  Lots of questions regarding managing stress and overworking which were a huge red flag and reflect the environment. I was told multiple times that there are meetings all day and have to work with offshore as well. Some coding problems and Front-End related project. Hiring manager was cool but the higher ups were not so friendly and totally unpleasant
+5.  How would you attempt to solve inter-personal issues?
+6.  What front-end technologies would you choose for a brand new project? Would you be willing to work 60 hours a week? Why is Angular better than React? Rate your Angular skills 1 – 10.
+7.  How does a successful day look like to you
 
 [⬆ back to top](#top)
