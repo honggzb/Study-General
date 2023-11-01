@@ -1,10 +1,12 @@
 [Angular学习笔记之集成三方UI框架](#top)
 
-- [1. Angular Material](#material)
-- [2. NG-ZORRO](#ng-zorro)
-- [3. Ag-grid](#ag-grid)
+- [1. Angular Material](#1-angular-material)
+- [2. NG-ZORRO](#2-ng-zorro)
+- [3. Ag-grid](#3-ag-grid)
 
-<h2 id="Material">1. Angular Material</h2>
+----------------------
+
+## 1. Angular Material
 
 https://material.angular.io/
 
@@ -43,7 +45,7 @@ import 'hammerjs';
 
 [back to top](#top)
 
- <h2 id="NG-ZORRO">2. NG-ZORRO</h2>
+## 2. NG-ZORRO
  
 - [ZORRO 官网](https://ng.ant.design/)
 - [NG4+NG-ZORRO搭建项目](https://blog.csdn.net/gaiery/article/details/79195041)
@@ -69,7 +71,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
  
 [back to top](#top)
 
- <h2 id="Ag-grid">3. Ag-grid</h2>
+## 3. Ag-grid
  
 [Ag-grid 官网](https://www.ag-grid.com/)
 
