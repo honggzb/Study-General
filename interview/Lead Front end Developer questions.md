@@ -302,29 +302,18 @@ I answered the questions honestly however they expect you to be someone who's wo
 
 Lack of communication dislike The atmosphere like. Both of my last job
 
-Creativity
-Versatility
-Flexibility
-Focused
-Taking Initiative
-Honesty
-Dedication
-Integrity
-Continuous Learning
-Teamwork
-
-Weakness
-Self-criticism
-Insecurity
-Extremely Introverted
-Extremely Extroverted
-Creative Writing
-Too detail-oriented
-Financial Literacy
-A Particular Software
-Too sensitive
-Presentation Skills
-
+|Strength|Weakness|
+|---|---|
+|Creativity|Self-criticism|
+|Versatility|Insecurity|
+|Flexibility|Extremely Introverted|
+|Focused|Extremely Extroverted|
+|Taking Initiative|Creative Writing|
+|Honesty|Too detail-oriented|
+|Dedication|Financial Literacy|
+|Integrity|A Particular Software|
+|Continuous Learning|Too sensitive|
+|Teamwork|Presentation Skills|
 
 ### 11. Many character fit questions like how to deal with stressful situations and conflict resolution
 
@@ -348,12 +337,12 @@ I asked the HR person if I will be working with this Sunil guy who interviewed m
 
 ### questions with no answer
 
-1.  tell me something about framework you designed
-2.  What makes you qualified for this position?
-3.  General career related questions, and soft skills, e.g. how do you lead 1:1's', conflict solving situations etc.
-4.  Lots of questions regarding managing stress and overworking which were a huge red flag and reflect the environment. I was told multiple times that there are meetings all day and have to work with offshore as well. Some coding problems and Front-End related project. Hiring manager was cool but the higher ups were not so friendly and totally unpleasant
-5.  How would you attempt to solve inter-personal issues?
-6.  What front-end technologies would you choose for a brand new project? Would you be willing to work 60 hours a week? Why is Angular better than React? Rate your Angular skills 1 – 10.
-7.  How does a successful day look like to you
+1. tell me something about framework you designed
+2. What makes you qualified for this position?
+3. General career related questions, and soft skills, e.g. how do you lead 1:1's', conflict solving situations etc.
+4. Lots of questions regarding managing stress and overworking which were a huge red flag and reflect the environment. I was told multiple times that there are meetings all day and have to work with offshore as well. Some coding problems and Front-End related project. Hiring manager was cool but the higher ups were not so friendly and totally unpleasant
+5. How would you attempt to solve inter-personal issues?
+6. What front-end technologies would you choose for a brand new project? Would you be willing to work 60 hours a week? Why is Angular better than React? Rate your Angular skills 1 – 10.
+7. How does a successful day look like to you
 
 [⬆ back to top](#top)
