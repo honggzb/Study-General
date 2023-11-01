@@ -3,17 +3,19 @@
 │   │   ├── Angular学习笔记之--Animation.md
 │   │   ├── Angular学习笔记之--DI decorators.md
 │   │   ├── Angular学习笔记之--DI依赖注入.md
-│   │   ├── Angular学习笔记之--Dynamic Importing Large Libraries
+│   │   ├── Angular学习笔记之--Dynamic Importing Large Libraries.md
 │   │   ├── Angular学习笔记之--Dynamic components.md
 │   │   ├── Angular学习笔记之--HttpInterceptor拦截器.md
-│   │   ├── Angular学习笔记之--Nested Component
+│   │   ├── Angular学习笔记之--Nested Component.md
 │   │   ├── Angular学习笔记之--Pipe.md
 │   │   ├── Angular学习笔记之--directive指令.md
 │   │   ├── Angular学习笔记之--lazy loading-angular15.md          #useful
 │   │   ├── Angular学习笔记之--lazy loading-使用angular-cli.md   #old version
 │   │   ├── Angular学习笔记之--ngClass例子.md
+│   │   ├── Angular学习笔记之--styling in Angular.md
+│   │   ├── Angular学习笔记之--two-way binding.md
+│   │   ├── Angular学习笔记之--变化检测.md
 │   │   ├── Angular学习笔记之--数据绑定、响应式编程.md
-│   │   ├── Create Angular学习笔记之styling in Angular.md
 │   │   ├── Angular学习笔记之--模板ng-template, ng-content, ng-container and ngTemplateOutlet.md
 │   │   ├── Angular学习笔记之--父子组件生命周期钩子(lifecycle hooks).md
 │   │   └── Angular学习笔记之--集成三方UI框架.md
