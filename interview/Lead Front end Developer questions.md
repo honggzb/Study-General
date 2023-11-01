@@ -23,7 +23,7 @@
 |[What do you think are the most important aspects of UI/UX design for web applications?](#what-do-you-think-are-the-most-important-aspects-of-uiux-design-for-web-applications)
 |[How would you go about optimizing a website for mobile devices?](#how-would-you-go-about-optimizing-a-website-for-mobile-devices)|
 |[Have you ever encountered an issue while developing a website or application that required creative problem solving?](#have-you-ever-encountered-an-issue-while-developing-a-website-or-application-that-required-creative-problem-solving)|
-|[Additional Questions](Additional-Questions)|
+|[Additional Questions](additional-questions)|
 
 ---------------------------------------------------------------------------------------------------------
 
