@@ -65,7 +65,7 @@ export class AppModule { }
 
 ### Line Chart
 
-- ![Alt text](Line-Chart.png)
+- ![Alt text](./images/Line-Chart.png)
 - line-chart.component.ts
 
 ```javascript
@@ -159,7 +159,7 @@ export class PieChartComponent {
 
 ### Bar Chart
 
-- ![Bar Chart](Bar-Chart.png)
+- ![Bar Chart](./images/Bar-Chart.png)
 - bar-chart.component.ts
 
 ```javascript
@@ -236,7 +236,7 @@ export class DoughnutChartComponent {
 
 ### Radar Chart 
 
-- ![Radar Chart](./images/Radar-Chart .png)
+- ![Radar Chart](./images/Radar-Chart.png)
 - radar-chart.component.ts
 
 ```javascript
