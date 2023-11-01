@@ -1,8 +1,8 @@
 [Angular学习笔记之集成三方UI框架](#top)
 
-- [1. Angular Material](#Material)
-- [2. NG-ZORRO](#NG-ZORRO)
-- [3. Ag-grid](#Ag-grid)
+- [1. Angular Material](#material)
+- [2. NG-ZORRO](#ng-zorro)
+- [3. Ag-grid](#ag-grid)
 
 <h2 id="Material">1. Angular Material</h2>
 
