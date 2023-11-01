@@ -331,9 +331,9 @@ Super simple then the rest is basically just you asking questions to seem intere
 
 ### 15. Round
 
-Round 1 : Regarding performance, accessibility, state management, CSR, SSR , SSG, security 
-Round 2: The Lead engineer wanted mean to open a create a new react project. He expected that I knew all the commands and shouldn't take any help from google. It was the most absurd interview I have ever attended. The interviewer was Sunil something and was very rude. He was asking questions you wont even ask freshers. It was like he was showing off his knowledge in React.
-I asked the HR person if I will be working with this Sunil guy who interviewed me. When she said yes, I said no thank you for the offer. They should invest in training employees to take better interviews. There interview process left a very bad impression on me
+- Round 1 : Regarding performance, accessibility, state management, CSR, SSR , SSG, security 
+- Round 2: The Lead engineer wanted mean to open a create a new react project. He expected that I knew all the commands and shouldn't take any help from google. It was the most absurd interview I have ever attended. The interviewer was Sunil something and was very rude. He was asking questions you wont even ask freshers. It was like he was showing off his knowledge in React.
+- I asked the HR person if I will be working with this Sunil guy who interviewed me. When she said yes, I said no thank you for the offer. They should invest in training employees to take better interviews. There interview process left a very bad impression on me
 
 ### questions with no answer
 
