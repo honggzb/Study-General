@@ -15,7 +15,7 @@
 | [Describe your process for debugging code](#describe-your-process-for-debugging-code)|
 |[What makes you a good fit for this role as a front end developer?](#what-makes-you-a-good-fit-for-this-role-as-a-front-end-developer)|
 |[Which programming languages do you know how to use?](#which-programming-languages-do-you-know-how-to-use)|
-|[What do you think is the most challenging part of front end development?](#what-do-you-think-is-the-most-challenging-part-of-front-end-development|
+|[What do you think is the most challenging part of front end development?](#what-do-you-think-is-the-most-challenging-part-of-front-end-development)|
 |[There is a bug in the code and the deadline is tomorrow. What would you do?](#there-is-a-bug-in-the-code-and-the-deadline-is-tomorrow-what-would-you-do)
 |[How do you handle feedback from stakeholders or clients on projects?](#how-do-you-handle-feedback-from-stakeholders-or-clients-on-projects)|
 |[What strategies do you use to make sure your code is as efficient and optimized as possible?](#what-strategies-do-you-use-to-make-sure-your-code-is-as-efficient-and-optimized-as-possible)|
