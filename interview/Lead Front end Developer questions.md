@@ -1,5 +1,6 @@
 [Lead Front end Developer questions](#top)
 
+|question|
 |---|
 |[Are you comfortable working with a team of developers to create a single product?](#are-you-comfortable-working-with-a-team-of-developers-to-create-a-single-product)|
 |[What are some of the most important skills for a front end developer to have?](#what-are-some-of-the-most-important-skills-for-a-front-end-developer-to-have)|
