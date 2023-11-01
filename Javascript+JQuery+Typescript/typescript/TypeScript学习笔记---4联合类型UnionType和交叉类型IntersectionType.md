@@ -1,12 +1,12 @@
 [TypeScript学习笔记---4联合类型和交叉类型](#top)
 
-- [联合类型Union types](#联合类型union-types)
-- [交叉类型Intersection types](#交叉类型intersection-types)
+- [联合类型Union type](#联合类型union-type)
+- [交叉类型Intersection type](#交叉类型intersection-type)
 - [联合类型和交叉类型在angular中应用](#联合类型和交叉类型在angular中应用)
 
 ------------------------------------------------
 
-## 联合类型Union types
+## 联合类型Union type
 
 - 让变量具有多种数据类型
 - 使用 `|` 来声明一个新的联合类型
@@ -38,7 +38,7 @@ type C = Class.A | Class;   //Class类型
 
 [⬆ back to top](#top)
 
-## 交叉类型Intersection types
+## 交叉类型Intersection type
 
 - 交叉类型是将多个类型合并为一个类型。 这让我们可以把现有的多种类型叠加到一起成为一种类型，它包含了所需的所有类型的特性
 - 使用`type`来声明一个新的交叉类型
