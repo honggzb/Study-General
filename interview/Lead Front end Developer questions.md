@@ -1,6 +1,8 @@
 [Lead Front end Developer questions](#top)
-- [Are you comfortable working with a team of developers to create a single product?](#are-you-comfortable-working-with-a-team-of-developers-to-create-a-single-product)
-- [What are some of the most important skills for a front end developer to have?](#what-are-some-of-the-most-important-skills-for-a-front-end-developer-to-have)
+
+|---|
+|[Are you comfortable working with a team of developers to create a single product?](#are-you-comfortable-working-with-a-team-of-developers-to-create-a-single-product)|
+|[What are some of the most important skills for a front end developer to have?](#what-are-some-of-the-most-important-skills-for-a-front-end-developer-to-have)|
 - [How do you stay up-to-date with the latest trends in front end development?](#how-do-you-stay-up-to-date-with-the-latest-trends-in-front-end-development)
 - [What is your experience with using JavaScript?](#what-is-your-experience-with-using-javascript)
 - [Provide an example of a time when you had to solve a problem with code](#provide-an-example-of-a-time-when-you-had-to-solve-a-problem-with-code)
