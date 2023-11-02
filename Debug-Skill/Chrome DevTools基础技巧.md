@@ -1,17 +1,24 @@
-[Chrome DevTools new features](#top)
+[Chrome DevTools features](#top)
 
-- [常用快捷键](#快捷键)
-- [1. 在控制台(Console)中获取DOM元素- $0 in console](#在控制台)
-- [2. Selector selecting](#Selector)
-- [3. Edit any text on the page](#Edit)
-- [4. Filmstrip mode on the Network tab - capture screenshots during a page load](#Filmstrip)
-- [5. Snippet code](#Snippet)
-- [6. 利用Chrome的工作空间，编辑本地文件-在console保存文件，设置断点](#利用Chrome的工作空间)
-- [7. Search, Find and Edit with Chrome DevTools](#Search)
-- [8. 截图: 节点截图/截全屏](#截图)
-- [9. 其他](#其他)
+- [常用快捷键](#常用快捷键)
+- [1. 在控制台(Console)中获取DOM元素- $0 in console(command line API)](#1-在控制台console中获取dom元素--0-in-consolecommand-line-api)
+- [2. Selector selecting](#2-selector-selecting)
+- [3. Edit any text on the page](#3-edit-any-text-on-the-page)
+- [4. Filmstrip mode on the Network tab - capture screenshots during a page load](#4-filmstrip-mode-on-the-network-tab---capture-screenshots-during-a-page-load)
+- [5. Snippet code](#5-snippet-code)
+- [6. 6. 利用Chrome的工作空间，编辑本地文件-在console保存文件，设置断点](#6-6-利用chrome的工作空间编辑本地文件-在console保存文件设置断点)
+- [7. Search, Find and Edit with Chrome DevTools](#7-search-find-and-edit-with-chrome-devtools)
+- [8. 截图: 节点截图/截全屏](#8-截图-节点截图截全屏)
+- [9. 其他](#9-其他)
+- [获取资源加载列表方法window.performance.getEntries()](#获取资源加载列表方法windowperformancegetentries)
+- [Network面板](#network面板)
+  - [过滤条件](#过滤条件)
+  - [时间轴](#时间轴)
+- [Performance面板](#performance面板)
+  
+----------------------------------------------
 
-<h3 id="快捷键">常用快捷键</h3>
+## 常用快捷键
 
 快捷键|功能|面板
 ---|---|---
@@ -20,14 +27,14 @@ Ctrl+P/ctrl+O|快速查找文件|Developer tools
 Ctrl+Shift+O(或Ctrl+P -> 键入@)|查找函数定义<br>![](https://i.imgur.com/CELwvy3.png)|Source panel
 Ctrl+Shift+F|全局查找： 在源代码中搜索(该搜索也支持正则表达式)，在通过js钩子查找代码位置时很有用|Developer tools
 ---|---|---
-Ctrl+G -> :num|跳到指定行|Sources编辑框
+Ctrl+G -> :num|跳到指定行|Sources编辑框**Example**:
 Ctrl+D|**多列内容选择&匹配相同选项**<br>多列内容选择：按住Alt键，当鼠标箭头变为“+”号后，点击鼠标<br>匹配相同选项：选中需要匹配的元素，快捷键Ctrl+D（Cmd + D for mac）|Sources编辑框
 Shift+鼠标点击|在颜色预览中，可在rgba,hsl和hexadecimal三种格式中，来回切换|样式区
 在Sources编辑框中,CTRL+鼠标点击|多行插入符编辑内容|Sources编辑框
 在Sources编辑框中,按下Ctrl+U|撤销编辑，快速输入，快速删除|Sources编辑框
 Ctrl+F, 在filter中输入GC|在Timeline的Summary中，查看Garbage collection|Developer tools
 
-<h3 id="在控制台">1. 在控制台(Console)中获取DOM元素- $0 in console(command line API)</h3>
+## 1. 在控制台(Console)中获取DOM元素- $0 in console(command line API)
 
 gives you a reference to the currently selected DOM node in the Elements panel - DOM-style representation of the object
 
@@ -39,20 +46,20 @@ gives you a reference to the currently selected DOM node in the Elements panel -
 
 [back to top](#top)
 
-<h3 id="Selector">2. Selector selecting</h3>
+## 2. Selector selecting
 
 - `.section-inner p:nth-of-type(2)`
 
-<h3 id="Edit">3. Edit any text on the page</h3>
+## 3. Edit any text on the page
 
 - type `document.designMode = "on"` in console to turn on design mode, then click and type any text on the page
 
-<h3 id="Filmstrip">4. Filmstrip mode on the Network tab - capture screenshots during a page load</h3>
+## 4. Filmstrip mode on the Network tab - capture screenshots during a page load
 
 - Click on the camera icon to enable the Filmstrip
 - Reload the page to capture the screenshots. The screenshots are displayed above the Overview
 
-<h3 id="Snippet">5. Snippet code</h3>
+## 5. Snippet code
 
 - [Run snippets of code from any page
 ](https://developers.google.com/web/tools/chrome-devtools/debug/snippets/?hl=en) - `Source -> Snippets`
@@ -60,7 +67,7 @@ gives you a reference to the currently selected DOM node in the Elements panel -
 
 [back to top](#top)
 
-<h3 id="利用Chrome的工作空间">6. 6. 利用Chrome的工作空间，编辑本地文件-在console保存文件，设置断点</h3>
+## 6. 6. 利用Chrome的工作空间，编辑本地文件-在console保存文件，设置断点
 
 Chrome的工作空间，也是非常强大的，它可以直接编辑和保存你的本地文件，无需额外的操作，例如复制、粘贴。怎么配置它呢？
 
@@ -71,7 +78,7 @@ Chrome的工作空间，也是非常强大的，它可以直接编辑和保存�
 
 [back to top](#top)
 
-<h3 id="Search">7. Search, Find and Edit with Chrome DevTools</h3>
+## 7. Search, Find and Edit with Chrome DevTools
 
 Search, Find and Edit|From Panel|keyboard shortcut
 ---|---|---
@@ -89,7 +96,7 @@ http://developer.telerik.com/featured/16-ways-to-search-find-and-edit-with-chrom
 
 [back to top](#top)
 
-<h3 id="截图">8. 截图: 节点截图/截全屏</h3>
+## 8. 截图: 节点截图/截全屏
 
 **8.1 节点截屏**
 
@@ -107,13 +114,76 @@ http://developer.telerik.com/featured/16-ways-to-search-find-and-edit-with-chrom
 
 [back to top](#top)
 
-<h3 id="其他">9. 其他</h3>
+## 9. 其他
 
 new console
 - quick source
 
 Lighthouse is integrated directly into the Chrome Developer Tools, under the "Audits" panel.
 https://github.com/GoogleChrome/lighthouse
+
+[back to top](#top)
+
+## 获取资源加载列表方法window.performance.getEntries()
+
+- connectEnd：浏览器与服务器完成建立用以检索资源的网络连接的时间戳
+- connectStart：浏览器与服务器开始建立用以检索资源的网络连接的时间戳
+- damainLookupEnd：浏览器完成资源的域名解析的时间戳
+- damainLookupStart：浏览器开始进行资源的域名解析的时间戳
+- duration：资源请求从开始到结束的时间差
+- entryType：PerformanceEntry对象的类型，该对象封装一个单一的性能指标作为性能表的一部分，此类型值
+  - 是"frame","mark","measure","navigation","resource","server"的其中一个。
+- fetchStart：浏览器开始获取资源的时间戳
+- initiatorType：资源文件的类型
+- name：资源的url
+- redirectEnd：接收到重定向资源的最后一个响应字节的时间戳
+- redirectStart：启动重定向以获取资源的开始时间戳
+- requestStart：浏览器从服务器请求资源的开始时间戳
+- responseEnd：浏览器接收到资源最后一个字节的时间戳，或者关闭传输连接的时间戳
+- responseStart：浏览器接收到服务器的响应的第一个字节的时间戳
+- secureConnectionStart：浏览器开始握手协议，以保护当前连接的安全性，握手开始的时间
+- startTime：浏览器开始获取资源前的时间戳(整个过程的开始时间)
+- workerStart：如果当前上下文是"worker"，返回开始获取资源的时间戳，否则返回0(应该是应用于双工通信的)
+
+[back to top](#top)
+
+## Network面板
+
+![Network面板](./images/Network面板.png)
+
+### 过滤条件
+
+- domain：资源所在的域，即url中的域名部分。如 domain:api.github.com
+- has-response-header：资源是否存在响应头，无论其值是什么。如 has-response-header：Access-Control-Allow-Origin
+- is：当前时间点在执行的请求。当前可用值：running
+- larger-than：显示大于指定值大小规格的资源。单位是字节(B),但是K(kB)和M(MB)也是可以的~ 如larger-than:150K
+- method：使用何种HTTP请求方式。如 GET
+- mime-type：也写作content-type，是资源类型的标识符。如 text/html
+- scheme：协议规定。如 HTTPS
+- set-cookie-name：服务器设置的cookies名称
+- set-cookie-value：服务器设置的cookies的值
+- set-cookie-domain：服务器设置的cookies的域
+- status-code：HTTP响应头的状态码
+
+### 时间轴
+
+- ![Network面板时间轴](./images/Network面板时间轴.png)
+- 蓝色线代表DOM已加载完成，橙色线表示页面加载完(包括资源引用), 也可以用代码对这两个事件进行监听，在这两个事件完成的时间点做对应的操作
+
+```javascript
+  window.addEventListener('DOMContentLoaded',function(e){
+      e.cancelBubble = true;
+      console.log(window.performance.now());
+    },true);
+    window.addEventListener('load',function(e){
+      e.cancelBubble = true;
+      console.log(window.performance.now());
+    },true);
+```
+
+## Performance面板
+
+![Performance面板](./images/Performance面板.png)
 
 [back to top](#top)
 
