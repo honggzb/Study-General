@@ -3,19 +3,18 @@
 
 
 ```
-│   ├──  Bootstrap
+│   ├──  Bootstrap/
 │   │     ├── BootstrapCarouse-WithAnimation.html
 │   │     ├── bootstrap使用小tip.md
 │   │     └── Responsive Design with Bootstrap 4.md
-│   ├──  CSS-Pure
+│   ├──  CSS-Pure/
 │   │     ├── 7个CSS单位.md
-│   │     ├── CSS选择器中的正则表达式.md
-│   │     ├── 自动聚焦输入框纯CSS实现SimulateInputFocus.md - focus输入框的时候，外面容器的灰色边框要高亮(不使用JavaScript,纯CSS实现)
-│   │     ├── 中文或英文两端对齐.md
-│   │     ├── 纯CSS实现垂直居中总结.md
 │   │     ├── CSS3利用伪元素与伪类自定义滚动条样式.md
-│   │     └── 常用css技巧
-│   ├──  CSS3-New-Feature新功能
+│   │     ├── CSS选择器中的正则表达式.md
+│   │     ├── 常用css技巧
+│   │     ├── 纯CSS实现垂直居中总结.md
+│   │     └── 自动聚焦输入框纯CSS实现SimulateInputFocus.md - focus输入框的时候，外面容器的灰色边框要高亮(不使用JavaScript,纯CSS实现)
+│   ├──  CSS3-New-Feature新功能/
 │   │     ├── CSS3-Column分栏.md
 │   │     ├── CSS3-flex布局.docx
 │   │     ├── CSS3-flex布局.md
@@ -31,20 +30,29 @@
 │   │     ├── 全景.rar
 │   │     ├── 实现CSS3 3D全景.md
 │   │     └── 移动鼠标改变图片的旋转角度值.html
-│   ├──  HTML5+CSS
+│   ├──  HTML5+CSS/
 │   │     ├── HTML5和css3超实用的新属性集合.md
+│   │     └──
+│   ├──  Layout-Template/
+│   │     ├── css-table-fixed-header/
+│   │     ├── table-fixed-header-scrolled.md
+│   │     ├── 图片垂直水平居中.html
+│   │     ├── 垂直水平居中小结.md
+│   │     └── 粘连布局.html
+│   ├──  Mobile/
+│   │     ├── some-tip.md
 │   │     └── 
-│   ├──  SCSS
+│   ├──  SCSS/
 │   │     ├── SCSS小结.md
 │   │     └── 
-│   ├──  Theory
+│   ├──  Theory/
 │   │     ├── reflow-repaint.md
 │   │     └──
-│   ├──  CSS-Grid 新布局
+│   ├──  CSS-Grid 新布局/
 │   │     ├── CSS-Grid-layout.md
 │   │     └── grid-layout***.html
-│   ├──  goodSample
-│   │     ├── counter
+│   ├──  goodSample/
+│   │     ├── counter/
 │   │     │   ├── 1.jpg
 │   │     │   ├── Figure-counter.html
 │   │     │   └── counter-sample.html
@@ -55,10 +63,10 @@
 │   │     ├── base64-sample.md
 │   │     ├──responsiveTable.md
 │   │     └── useful CSS tricks.md
-│   ├──  hacks
+│   ├──  hacks/
 │   │     ├── css-Hacks合集.md
 │   │     └── IE hacks.md
-│   ├── tips
+│   ├── tips/
 │   │     ├── CSS SlideDown-slideUp Transitions on the Display and Height Properties.md
 │   │     ├── Equal Columns With Flexbox:.md
 │   │     ├── Placeholder style.md
