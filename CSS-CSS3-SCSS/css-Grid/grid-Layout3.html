@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid Layout Demo-合并单元格</title>
+  <style>
+  body {  padding: 50px;}
+  .wrapper {
+    display: grid;
+    grid-template-columns: 100px 10px 100px 10px 100px 10px 100px; 
+    grid-template-rows: auto 10px auto 10px auto 10px auto 10px auto;
+  }
+  .box {
+    background-color: #444;
+    color: #fff;
+    font-size: 150%;
+    padding: 20px;
+    text-align: center;
+  }
+  /*.a{ grid-column: 1 / 6; grid-row: 1 / 2; } 
+  .b { grid-column: 7 / 8; grid-row: 1 / 10; background: orange; } 
+  .b { grid-column: 7 / 8; grid-row: 1 / span 9; background: orange; }
+  .c { grid-column: 1 / 2; grid-row: 3 / 4; } 
+  .d { grid-column: 3 / 4; grid-row: 3 / 4; } 
+  .e { grid-column: 5 / 6; grid-row: 3 / 4; } 
+  .f { grid-column: 1 / 4; grid-row: 5 / 6; } 
+  .g { grid-column: 5 / 6; grid-row: 5 / 6; } 
+  .h { grid-column: 1 / 2; grid-row: 7 / 8; } 
+  .i { grid-column: 3 / 6; grid-row: 7 / 8; } 
+  .j { grid-column: 1 / 6; grid-row: 9 / 10; } */
+  .a{ grid-area: 1 / 1 / 2 / 6; } 
+  .b { grid-area: 1 / 7 / 10 / 8; background: orange; height: 100%; box-sizing:border-box; } 
+  .c { grid-area: 3 / 1 / 4 / 2; } 
+  .d { grid-area: 3 / 3 / 4 / 4; } 
+  .e { grid-area: 3 / 5 / 4 / 6; } 
+  .f { grid-area: 5 / 1 / 6 / 4; } 
+  .g { grid-area: 5 / 5 / 6 / 6; } 
+  .h { grid-area: 7 / 1 / 8 / 2; } 
+  .i { grid-area: 7 / 3 / 8 / 6; } 
+  .j { grid-area: 10 / 1 / 9 / 6; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="box a">A</div>
+    <div class="box b">B</div>
+    <div class="box c">C</div>
+    <div class="box d">D</div>
+    <div class="box e">E</div>
+    <div class="box f">F</div>
+    <div class="box g">G</div>
+    <div class="box h">H</div>
+    <div class="box i">I</div>
+    <div class="box j">J</div>
+  </div>
+</body>
+</html>

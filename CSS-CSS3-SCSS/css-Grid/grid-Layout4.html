@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid Layout Demo-自定义网格线配合关键词span合并单元格</title>
+  <style>
+  body {  padding: 50px;}
+  .wrapper {
+    display: grid;
+    /*grid-template-columns: (col) 100px (gutter) 50px (col) 100px (gutter) 50px (col) 100px (gutter) 50px (col) 100px (gutter) 50px (col) 100px (gutter) 50px (col) 100px (gutter); 
+    grid-template-rows: (row) auto (gutter) 50px (row) auto (gutter) 50px (row) auto (gutter) 50px (row) auto;*/
+    /* 使用repeat关键词 */
+    grid-template-columns:repeat(6, (col) 100px (gutter) 10px); 
+    grid-template-rows: repeat(4, (row) auto (gutter) 10px );
+  }
+  .box {
+    background-color: #444;
+    color: #fff;
+    font-size: 150%;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+  }
+  .a { grid-column: col / span gutter 2; grid-row: row; } 
+  .b { grid-column: col 3 / span gutter 2; grid-row: row; } 
+  .c { grid-column: col 5 / span gutter 2; grid-row: row; } 
+  .d { grid-column: col / span gutter 3; grid-row: row 2; } 
+  .e { grid-column: col 4 / span gutter 3; grid-row: row 2; } 
+  .f { grid-column: col / span gutter 2; grid-row: row 3; } 
+  .g { grid-column: col 3 / span gutter 1; grid-row: row 3; } 
+  .h { grid-column: col 4 / span gutter 2; grid-row: row 3; } 
+  .i { grid-column: col 6 / span gutter 1; grid-row: row 3; } 
+  .j { grid-column: col / span gutter 6; grid-row: row 4; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="box a">A</div>
+    <div class="box b">B</div>
+    <div class="box c">C</div>
+    <div class="box d">D</div>
+    <div class="box e">E</div>
+    <div class="box f">F</div>
+    <div class="box g">G</div>
+    <div class="box h">H</div>
+    <div class="box i">I</div>
+    <div class="box j">J</div>
+  </div>
+</body>
+</html>
