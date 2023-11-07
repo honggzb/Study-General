@@ -12,7 +12,7 @@
 
 |function|css|
 |---|---|
-|1个|`:only-child`, `:not(only-child)`, :only-of-type, :not(:only-of-type)|
+|1个|`:only-child`, `:not(only-child)`, `:only-of-type`, `:not(:only-of-type)`|
 |N个|`li:nth-last-child(6):first-child, li:nth-last-child(6):first-child ~ li`|
 |大于或等于N个|`li:nth-last-child(n + 6), li:nth-last-child(n + 6) ~ li`|
 |小于或等于N|`li:nth-last-child(-n + 6), li:nth-last-child(-n + 6) ~ li`|
