@@ -124,7 +124,7 @@
    - 在新n的版本上对原代码进行编译和测试，有助于升级后的问题发现和解决
 5. 遇到的数个问题：
    - 执行ng test遇到如下错误：
-   - ![upgradeProblem1](../../images/upgradeProblem1.png)
+   - ![upgradeProblem1](../images/upgradeProblem1.png)
    - 解决方案：重新安装node的types。`npm i -D @types/node@latest`
 
 [⬆ back to top](#top)
