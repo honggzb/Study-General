@@ -1,6 +1,6 @@
 [Angular Update](#top)
 
-- [Angular版本升级策略和注意事项](#angular版本升级策略和注意事项)
+- [Angular version重大更改](#angular-version重大更改)
 - [Angular版本升级策略](#angular版本升级策略)
 - [Angular 版本升级周期](#angular-版本升级周期)
 - [Angular版本升级注意事项](#angular版本升级注意事项)
@@ -13,7 +13,9 @@
 
 -----------------------------------------------------------------------------
 
-## Angular版本升级策略和注意事项
+## Angular version重大更改
+
+- **Angular 9**默认采用 ivy 引擎， 所以应用项目 (web) 的 build 选项需要打开aot编译
 
 ## Angular版本升级策略
 
