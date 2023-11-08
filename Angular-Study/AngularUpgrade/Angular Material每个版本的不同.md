@@ -9,3 +9,5 @@
 |Angular Material 8|这个版本带来了一些重要的改进，包括更好的主题定制选项、新增的组件如日期范围选择器 `<mat-date-range-picker>` 和文件上传 `<mat-file-upload>`，以及一些样式和布局改进|
 |Angular Material 9|这个版本引入了一些新的组件和功能，如可拖动的导航栏 `<mat-drawer>`、`<mat-tab-group>` 的动态标签页和针对无障碍性的改进|
 |Angular Material 10|这个版本带来了一些重要的更新和改进，包括新的自动完成功能、对话框的新动画和更好的色彩选择器|
+
+> [Angular Material 每个版本的不同](https://blog.csdn.net/xinshenghu/article/details/131327203)
