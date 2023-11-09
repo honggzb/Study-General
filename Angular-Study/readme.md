@@ -1,6 +1,6 @@
 ```
 ├── Angular-Study
-│   ├── Angular Architecture
+│   ├── Angular Architecture/
 │   │   ├── Angular Architecture- Dan Wahlin
 │   │   │   ├── Angular-JumpStart-master/
 │   │   │   ├── creating-an-observable-service/
@@ -12,6 +12,10 @@
 │   │   │   └── readme.md
 │   │   ├── Angular Scalable Architecture-The PRPL Pattern.md
 │   │   └──
+│   ├── Angular-Upgrade/
+│   │   ├── Angular 8 to Angular 9.md
+│   │   ├── Angular Material每个版本的不同.md
+│   │   └── Angular Update Note.md
 │   ├── Angular-material/
 │   │   ├── dialog/
 │   │   │    ├── AngularMaterial-dialog.md 
