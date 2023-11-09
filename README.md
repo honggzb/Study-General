@@ -81,24 +81,26 @@
 │   │   ├── angular-material-datepicker-format.zip
 │   │   └──  
 │   ├── Angular学习笔记/
-│   │   ├── Angular学习笔记之Animation.md
-│   │   ├── Angular学习笔记之DI decorators.md
-│   │   ├── Angular学习笔记之DI依赖注入.md
-│   │   ├── Angular学习笔记之Dynamic Importing Large Libraries.jd
-│   │   ├── Angular学习笔记之Dynamic components.md
-│   │   ├── Angular学习笔记之HttpInterceptor拦截器.md
-│   │   ├── Angular学习笔记之Nested Component
-│   │   ├── Angular学习笔记之elements1.md
-│   │   ├── Angular学习笔记之elements2.md
-│   │   ├── Angular学习笔记之Pipe.md
-│   │   ├── Angular学习笔记之directive指令.md
-│   │   ├──Angular学习笔记之lazy loading-angular15.md          #useful
-│   │   ├── Angular学习笔记之lazy loading-使用angular-cli.md   #old version
-│   │   ├── Angular学习笔记之ngClass例子.md
-│   │   ├── Angular学习笔记之数据绑定、响应式编程.md
-│   │   ├── Create Angular学习笔记之styling in Angular.md
-│   │   ├── Angular学习笔记之模板ng-template, ng-content, ng-container and ngTemplateOutlet
-│   │   ├── Angular学习笔记之集成三方UI框架.md
+│   │   ├── Angular学习笔记之--Animation.md
+│   │   ├── Angular学习笔记之--DI decorators.md
+│   │   ├── Angular学习笔记之--DI依赖注入.md
+│   │   ├── Angular学习笔记之--Dynamic Importing Large Libraries.md
+│   │   ├── Angular学习笔记之--Dynamic components.md
+│   │   ├── Angular学习笔记之--HttpInterceptor拦截器.md
+│   │   ├── Angular学习笔记之--Nested Component.md
+│   │   ├── Angular学习笔记之--Pipe.md
+│   │   ├── Angular学习笔记之--directive指令.md
+│   │   ├── Angular学习笔记之--lazy loading-angular15.md          #useful
+│   │   ├── Angular学习笔记之--lazy loading-使用angular-cli.md   #old version
+│   │   ├── Angular学习笔记之--ngClass例子.md
+│   │   ├── Angular学习笔记之--styling in Angular.md
+│   │   ├── Angular学习笔记之--two-way binding.md
+│   │   ├── Angular学习笔记之--使用ng2-file-upload文件上传.md
+│   │   ├── Angular学习笔记之--变化检测.md
+│   │   ├── Angular学习笔记之--数据绑定、响应式编程.md
+│   │   ├── Angular学习笔记之--模板ng-template, ng-content, ng-container and ngTemplateOutlet.md
+│   │   ├── Angular学习笔记之--父子组件生命周期钩子(lifecycle hooks).md
+│   │   └── Angular学习笔记之--集成三方UI框架.md
 │   │   └──
 │   ├── Build Angular library/
 │   │   ├── au-input/                                        ##带有图标的输入框input
