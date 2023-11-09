@@ -64,7 +64,7 @@
 
 - @types/node 升级为 ^12.11.1 ， 所以建议将本机的 nodejs 也升级为 v12 版本
 
-```json
+```
   "dependencies": {
     "@angular/animations": "~9.0.0",
     "@angular/common": "~9.0.0",
