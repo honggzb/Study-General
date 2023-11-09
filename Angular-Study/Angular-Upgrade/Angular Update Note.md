@@ -8,8 +8,6 @@
   - [示例 1：从 Angular 9 升级到 Angular 10](#示例-1从-angular-9-升级到-angular-10)
   - [示例 2：从 Angular 10.2 升级到 Angular 10.3](#示例-2从-angular-102-升级到-angular-103)
   - [示例 3：应对补丁版本升级 10.2.5 升级到 10.2.6](#示例-3应对补丁版本升级-1025-升级到-1026)
-- [Angular 13 to Angular 14](#angular-13-to-angular-14)
-- [Angular 14 to Angular 15](#angular-14-to-angular-15)
 
 -----------------------------------------------------------------------------
 
