@@ -10,7 +10,13 @@
     - [projects/web/src/polyfills.ts and projects/web/src/main.ts](#projectswebsrcpolyfillsts-and-projectswebsrcmaints)
     - [projects/app-shared/package.json](#projectsapp-sharedpackagejson)
     - [projects/app-shared/tsconfig.lib.prod.json](#projectsapp-sharedtsconfiglibprodjson)
-
+- [升级问题记录](#升级问题记录)
+  - [库不干净](#库不干净)
+  - [多次注入](#多次注入)
+  - [执行完毕后，启动时出错 interFace IteratorResult{}](#执行完毕后启动时出错-interface-iteratorresult)
+  - [启动成功，但是页面报错ReferenceError：\_\_importDefault，](#启动成功但是页面报错referenceerror__importdefault)
+  - [重新启动成功，页面报错，此时到此卡住](#重新启动成功页面报错此时到此卡住)
+  - [全球化翻译报错](#全球化翻译报错)
 ------------------------------------------------------------------------
 
 ## General by using command
@@ -105,7 +111,7 @@
 - Angular 9 默认采用 **ivy 引擎**， 所以应用项目 (web) 的 build 选项**需要打开 aot 编译**
 - 类库项目 (app-shared) 也增加了 production 配置
 
-```json
+```
 {
   "$schema":"./node_modules/@angular/cli/lib/config/schema.json",
   "projects":{
@@ -152,7 +158,7 @@
 
 - 简化了 include 以及 exclude 配置
 
-```json
+```
 {
 "include": [
 - "src/**/*.ts"+ "src/**/*.d.ts"- ],
@@ -168,7 +174,7 @@
 
 - 对 require 进行了精确的定义
 
-```json
+```
 - declare const require: any;+ declare const require: {
 + context(path: string, deep?: boolean, filter?: RegExp): {
 + keys(): string[];
@@ -199,7 +205,7 @@ if (environment.production) { enableProdMode();
 
 - 对等依赖项 peerDependencies 升级至 ^9.0.0 ， 增加了对 tslib:^1.10.0 的对等依赖
 
-```json
+```
 {
 "name": "app-shared",
 "version": "0.0.1",
@@ -214,12 +220,11 @@ if (environment.production) { enableProdMode();
 
 [⬆ back to top](#top)
 
-
 #### projects/app-shared/tsconfig.lib.prod.json
 
 - 这个文件是新增加的， 也就是意味着可以使用 --prod 选项来编译 Angular 类库项目
 
-```json
+```
 + {
 + "extends": "./tsconfig.lib.json",
 + "angularCompilerOptions": {
@@ -230,6 +235,70 @@ if (environment.production) { enableProdMode();
 
 [⬆ back to top](#top)
 
+## 升级问题记录
+
+### 库不干净
+
+- 在执行ng update --all --force可以会遇到下方错误
+- Repository is not clean.  Please commit or stash any changes before updating. 
+- 解决方式: `ng update --all  --force --allow-dirty`
+
+### 多次注入
+
+- 报错内容
+- A platform with a different configuration has been created. Please destroy it first.
+platformBrowserDynamic
+- 解决方式: platformBrowserDynamic被多次注入（一般为main.ts和app.module.ts），删除多余的，保留一个，可以删App.module.ts
+
+[⬆ back to top](#top)
+
+### 执行完毕后，启动时出错 interFace IteratorResult<T>{}
+
+- ![upgradeProblem9-1](../images/upgradeProblem9-1.png)
+- `tsconfig.json`添加俩个配置项解决
+
+```json
+"skipLibCheck": true,       // 忽略所有的声明文件（*.d.ts）的类型检查
+"skipDefaultLibCheck":true, // 忽略库的默认声明文件的类型检查
+```
+
+[⬆ back to top](#top)
+
+### 启动成功，但是页面报错ReferenceError：__importDefault，
+
+- 更新着俩个插件解决
+
+```json
+"@angular-devkit/build-angular": "~0.900.1",
+"@angular-devkit/build-ng-packagr": "~0.900.1",
+```
+
+[⬆ back to top](#top)
+
+### 重新启动成功，页面报错，此时到此卡住
+
+- 错误信息： Unhandled Promise rejection: Directives cannot inherit Components ; Zone: <root> ; Task: Promise.then ; Value: Error: Directives cannot inherit Components
+- 解决: 重新将版本回退，重新升级
+  - 1）从新执行ng update @angular/cli --migrate-only --from 8 --to 9 升级脚手架
+  - 2）执行ng update @angular/core @angular/cli --force升级依赖
+  - 3）启动报错 An unhandled exception occurred: NGCC failed. 
+    - ng-json-view这个插件报错，尝试升级解决。启动成功
+    - ![upgradeProblem9-2](../images/upgradeProblem9-2.png)
+  - 4）内部使用new创建外部插件报错 The name item is already defined in scope to be [object Object]
+    - 手动添加typings.d.ts里面的变量
+    - ![upgradeProblem9-3](../images/upgradeProblem9-3.png)
+
+[⬆ back to top](#top)
+
+### 全球化翻译报错
+
+- 报错如下: It looks like your application or one of its dependencies is using i18n.
+- 解决: angualr9更新了翻译组件，需要安装新的包, 执行下方代码即可
+- `ng add @angular/localize`
+
+[⬆ back to top](#top)
+
 > References
 - [Angular8升级到Angular9以及报错解决](https://blog.csdn.net/m0_37729058/article/details/104441230)
 - [9 angular 更新_手工将项目升级至 Angular 9 记录](https://blog.csdn.net/weixin_26997697/article/details/112942166)
+- [angualr8升级9问题记录](https://blog.csdn.net/ligaoming_123/article/details/105149401)
