@@ -186,3 +186,4 @@ export default {
 > References
 - [官方教程](https://angular.io/guide/creating-libraries)
 - [Angular 创建库](https://www.w3cschool.cn/angular13/angular13-pvc13p71.html)
+- [如何创建 Angular library 并在生产环境中消费](http://www.hzhcontrols.com/new-30284.html)
