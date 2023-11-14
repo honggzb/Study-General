@@ -15,6 +15,7 @@
 │   │   ├── Angular学习笔记之--styling in Angular.md
 │   │   ├── Angular学习笔记之--two-way binding.md
 │   │   ├── Angular学习笔记之--使用ng2-file-upload文件上传.md
+│   │   ├── Angular学习笔记之--包格式.md
 │   │   ├── Angular学习笔记之--变化检测.md
 │   │   ├── Angular学习笔记之--数据绑定、响应式编程.md
 │   │   ├── Angular学习笔记之--模板ng-template, ng-content, ng-container and ngTemplateOutlet.md
