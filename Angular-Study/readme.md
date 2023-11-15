@@ -173,7 +173,9 @@
 │   │   │   └── 
 │   │   ├── Unit test-Karma performance improve.md
 │   │   ├── principle of unit testing.md
-│   │   └── 
+│   │   └──
+│   ├── redux/
+│   │   └──
 │   ├── some-tip/
 │   │   ├── AutomumericSetting for Currency.md                                             ## Automumeric librery
 │   │   ├── Create Prevent closing of modal Dialog in Angular Dialog component.md
