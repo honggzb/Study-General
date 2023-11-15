@@ -175,7 +175,9 @@
 │   │   ├── principle of unit testing.md
 │   │   └──
 │   ├── redux/
-│   │   └──
+│   │   ├── redux-angular.gif
+│   │   ├── redux.png
+│   │   └── redux.doc
 │   ├── some-tip/
 │   │   ├── AutomumericSetting for Currency.md                                             ## Automumeric librery
 │   │   ├── Create Prevent closing of modal Dialog in Angular Dialog component.md
@@ -193,9 +195,6 @@
 │   ├── Dynamically add version number to application based on grunt
 │   ├── change-detection-default.gif
 │   ├── change-detection-onpush.gif
-│   ├── redux-angular.gif
-│   ├── redux.png
-│   ├── redux.doc
 │   └── 大漠的Angular Workshop.md
 ```
 
