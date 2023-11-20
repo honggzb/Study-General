@@ -65,7 +65,7 @@ PRPL suggest producing two builds:
 
 ## Sandbox Principle
 
-- [Sandbox principle]http://www.slideshare.net/nzakas/scalable-javascript-application-architecture)-[Nicholas Zakas](https://twitter.com/slicknet) acts like a dispatcher between different modules where a module is like a smart component
+- [Sandbox principle](http://www.slideshare.net/nzakas/scalable-javascript-application-architecture)-[Nicholas Zakas](https://twitter.com/slicknet) acts like a dispatcher between different modules where a module is like a smart component
 - a sandbox is a way to decouple the **presentation layer from the application logic**
 
 ### abstract to difference layers
