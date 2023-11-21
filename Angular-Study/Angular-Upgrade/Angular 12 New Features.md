@@ -82,3 +82,4 @@ Webpack 5 现在包括对 Web Worker 的支持
 
 
 - [全新改进的 Angular 12：七个基本变化](https://www.linglei.com.cn/blog/%E8%BD%AF%E4%BB%B6%E7%A8%8B%E5%BA%8F%E5%91%98/%E5%85%A8%E6%96%B0%E6%94%B9%E8%BF%9B%E7%9A%84-angular-12%EF%BC%9A%E4%B8%83%E4%B8%AA%E5%9F%BA%E6%9C%AC%E5%8F%98%E5%8C%96)
+- [Angular 学习笔记Angular 12 get started](https://www.cnblogs.com/keatkeat/p/14821676.html)
