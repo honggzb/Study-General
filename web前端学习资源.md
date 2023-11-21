@@ -248,7 +248,19 @@
 
 ### 大牛博客
 
-<a href="https://link.juejin.im?target=https%3A%2F%2Fwww.h5jun.com%2Farchives%2F" target="_blank" rel="nofollow noopener noreferrer">十年踪迹</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.zhangxinxu.com%2F" target="_blank" rel="nofollow noopener noreferrer">张鑫旭</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.ruanyifeng.com%2Fhome.html" target="_blank" rel="nofollow noopener noreferrer">阮一峰</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Fyexiaochai%2F" target="_blank" rel="nofollow noopener noreferrer">叶小钗</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Frubylouvre%2F" target="_blank" rel="nofollow noopener noreferrer">司徒正美博客</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2FTomXu%2F" target="_blank" rel="nofollow noopener noreferrer">汤姆大叔</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fwww.liaoxuefeng.com%2F" target="_blank" rel="nofollow noopener noreferrer">廖雪峰</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fjiongks.name%2F" target="_blank" rel="nofollow noopener noreferrer">勾三股四</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Fcoco1s%2F" target="_blank" rel="nofollow noopener noreferrer">chokCoCo</a><br><a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fchokcoco" target="_blank" rel="nofollow noopener noreferrer">chokCoCo-github</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Fcherryblog.site%2F" target="_blank" rel="nofollow noopener noreferrer">Cherry's Blog</a><br><a href="https://link.juejin.im?target=http%3A%2F%2Frefined-x.com%2F" target="_blank" rel="nofollow noopener noreferrer">雅X共赏的前端技术博客-前端路上</a>
+- [十年踪迹](https://link.juejin.im?target=https%3A%2F%2Fwww.h5jun.com%2Farchives%2F)
+- [张鑫旭](https://link.juejin.im?target=http%3A%2F%2Fwww.zhangxinxu.com%2F)
+- [阮一峰](https://link.juejin.im?target=http%3A%2F%2Fwww.ruanyifeng.com%2Fhome.html)
+- [叶小钗](https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Fyexiaochai%2F)
+- [司徒正美博客](https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Frubylouvre%2F)
+- [汤姆大叔](https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2FTomXu%2F)
+- [廖雪峰](https://link.juejin.im?target=https%3A%2F%2Fwww.liaoxuefeng.com%2F)
+- [勾三股四](https://link.juejin.im?target=http%3A%2F%2Fjiongks.name%2F)
+- [chokCoCo](https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Fcoco1s%2F)
+- [chokCoCo-github](https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fchokcoco)
+- [Cherry's Blog](https://link.juejin.im?target=http%3A%2F%2Fcherryblog.site%2F)
+- [雅X共赏的前端技术博客-前端路上](https://link.juejin.im?target=http%3A%2F%2Frefined-x.com%2F)
+- [程序猿小卡的博客](https://github.com/chyingp/blog)
 
 ### 团队博客
 
