@@ -17,8 +17,8 @@
   1. `ts ng add @angular/pwa` - convert this app into a PWA(chapter13/start_here/angular-pwa-app)
      - 在项目中安装了'@angular/service-worker'包
      - 注册了一个名为'ngsw-worker.js'的新服务人员文件。此文件使用'ngsw-config.json'文件中的配置来决定要缓存哪些资源以及使用哪些策略
-     - ![pwa1](pwa1.png)
-     - ![pwa2](pwa2.png)
+     - ![pwa1](./images/pwa1.png)
+     - ![pwa2](./images/pwa2.png)
      - manifest.webmanifest： 定义PWA的清单，并包含应用程序的名称、短名称、主题颜色以及不同设备的不同图标的配置
   2. `ng build --configuration production`  再次构建应用程序
   3. `http-server dist/angular-pwa-app -p 4200`
