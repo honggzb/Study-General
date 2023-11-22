@@ -18,11 +18,8 @@
   - 可以把这些库集中到一个 js 文件中，而且不会每次打包都变更这个 js 文件，这样打包时只打包业务代码，缩小打包时间，用户除了第一次访问时要拉取 dll ，以后再访问会直接从缓存里拉取，减少页面加载时间，提升用户体验
 - 使用 service 配合 rxjs 做状态管理及状态共享
 - 按需加载模块和组件
-
-```javascript
-
-```
-
+- https://github.com/Vibing?tab=repositories
+- https://github.com/Vibing/angular-webpack
 - [Angular的14种优化策略](https://juejin.cn/post/7213307113111994427)
 
 ## Angular优化策略
