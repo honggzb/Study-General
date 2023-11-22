@@ -9,6 +9,7 @@
 │   │   │   ├── shared-library-example/
 │   │   │   ├── state-management/
 │   │   │   └── readme.md
+│   │   ├── Angular PWA架构
 │   │   ├── Angular Scalable Architecture-The PRPL Pattern.md
 │   │   ├── Angular优化策略.md
 │   │   ├── metholody for project management.md
