@@ -42,6 +42,17 @@
 - 取消订阅 observables
 - web workers
 
+## 十二、Angular 性能优化
+
+- 使用OnPush变化检测修剪组件子树
+- 从组件上拆下更改检测器
+- 与runOutsideAngular一起运行async事件
+- 对于带有*ngFor的列表，使用trackBy
+- 将繁重的计算转移到纯管道
+- 使用 web workers 进行繁重的计算
+- 使用绩效预算进行审计
+- [十二、Angular 性能优化](https://www.moonapi.com/news/30083.html)
+
 ## 性能分析工具webpack-bundle-analyzer
 
 - [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)
