@@ -315,3 +315,5 @@ Angular14更新的一个有趣之处在于，它允许CLI部署小代码，而�
 - [Angular 14有什么新特性?](https://blog.csdn.net/sumeiff/article/details/125679020)
 - [翻译文章--Angular 14 新特性介绍](https://cn.community.intersystems.com/post/%E7%BF%BB%E8%AF%91%E6%96%87%E7%AB%A0-angular-14-%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D)
 - [Angular v14 现已推出](https://juejin.cn/post/7104925075211550756)
+- [即将到来的 Angular 14 的 7 大变化](https://juejin.cn/post/7102426233551454221?from=search-suggest)
+- [翻译文章--Angular 14 新特性介绍](https://cn.community.intersystems.com/post/%E7%BF%BB%E8%AF%91%E6%96%87%E7%AB%A0-angular-14-%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D)
