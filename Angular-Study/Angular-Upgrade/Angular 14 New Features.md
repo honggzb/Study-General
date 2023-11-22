@@ -23,10 +23,9 @@
 ## 1. 独立组件(Stand-alone Components)
 
 - 允许定义组件、指令和管道，而不把它们包含在任何模块中
+  - 对于独立组件、指令和管道，可以直接在 `@Component()` 中添加 `standalone: true` 标志，而无需 `@NgModule()`
 - 为了让Ng模块在独立组件中是可选的，Angular发布了RFC (Request for Comments)。这些模块不会在Angular 14的更新中被淘汰，而是会成为临时模块，以保持与现有Angular库和应用的兼容性
 - 值得注意的是，在Angular 14之前，每个组件都需要与一个模块相关联。如果父模块的declarations数组没有链接到每个组件，则应用程序将失败
-
-[⬆ back to top](#top)
 
 ### defination/create
 
@@ -34,12 +33,45 @@
 - add standalone in component
 
 ```javascript
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; // includes NgIf and TitleCasePipe
+import { bootstrapApplication } from '@angular/platform-browser';
+import { MatCardModule } from '@angular/material/card';
+import { ImageComponent } from './app/image.component';
+import { HighlightDirective } from './app/highlight.directive';
 @Component({
-  selector: 'app-table',
-  standalone: true,         // 装饰器中新的standalone属性:
-  templateUrl: './table.component.html'
+  selector: 'app-root',
+  standalone: true,      // 装饰器中新的standalone属性
+  imports: [
+    ImageComponent, HighlightDirective, // import standalone Components, Directives and Pipes
+    CommonModule, MatCardModule // and NgModules
+  ],
+  template: `
+    <mat-card *ngIf="url">
+      <app-image-component [url]="url"></app-image-component>
+      <h2 app-highlight>{{name | titlecase}}</h2>
+    </mat-card>
+  `
 })
-export class TableComponent { }
+export class ExampleStandaloneComponent {
+  name = "emma";
+  url = "www.emma.org/image";
+}
+// Bootstrap a new Angular application using our `ExampleStandaloneComponent` as a root component.
+bootstrapApplication(ExampleStandaloneComponent);
+//2. standalone directive
+import { Directive } from '@angular/core';
+
+@Directive({
+  selector: '[app-highlight]',
+  standalone: true,
+  host: {
+    '[style.background-color]': "'#ff44cc'",
+    '[style.padding]': "'0.1em 0.2em'",
+    '[style.margin-top]': "'0.1em'",
+  },
+})
+export class HighlightDirective {}
 ```
 
 [⬆ back to top](#top)
@@ -97,6 +129,8 @@ export class AppModule {}
 }
 ```
 
+- https://stackblitz.com/edit/angular-standalone
+
 [⬆ back to top](#top)
 
 ## 2. 严格类型化的表单
@@ -108,6 +142,34 @@ export class AppModule {}
   - 任何返回`FormControl` / `FormGroup`值的属性和方法现在都是严格类型的。例如：`value`，`getRawValue()``，valueChanges`
   - 任何改变表单控件值的方法现在都是类型安全的:`setValue()`, `patchValue()`, `updateValue()`
   - 表单控件现在是严格类型化的。它也适用于表单组的`.get()`方法。这也将防止在编译时发生访问不存在的情况
+
+```javascript
+const cat = new FormGroup({
+   name: new FormGroup({
+      first: new FormControl('Barb'),
+      last: new FormControl('Smith'),
+   }),
+   lives: new FormControl(9),
+});
+// Type-checking for forms values!
+// TS Error: Property 'substring' does not exist on type 'number'.
+let remainingLives = cat.value.lives.substring(1);
+// Optional and required controls are enforced!
+// TS Error: No overload matches this call.
+cat.removeControl('lives');
+// FormGroups are aware of their child controls.
+// name.middle is never on cat
+let catMiddleName = cat.get('name.middle');
+
+// v14 partial typed form, migrating `UntypedFormGroup` -> `FormGroup`
+const cat = new FormGroup({
+   name: new FormGroup(
+      first: new UntypedFormControl('Barb'),
+      last: new UntypedFormControl('Smith'),
+   ),
+   lives: new UntypedFormControl(9)
+});
+```
 
 [⬆ back to top](#top)
 
@@ -223,7 +285,28 @@ Angular14更新的一个有趣之处在于，它允许CLI部署小代码，而�
 
 ## 10. 扩展开发者诊断(Extended Developer Diagnostics)
 
-扩展的开发者诊断是Angular14的一个特性，它提供了一个可扩展的框架，帮助更好地理解模板，并显示了促进潜在提升的建议。
+- 扩展的开发者诊断是Angular14的一个特性，它提供了一个可扩展的框架，帮助更好地理解模板，并显示了促进潜在提升的建议。
+- [Angular 模板中无用的无效合并运算符??的错误](https://link.juejin.cn/?target=https%3A%2F%2Fangular.io%2Fextended-diagnostics%2FNG8102)
+  - 扩展诊断在 ng build、ng serve、 和 Angular 语言服务中实时显示为警告。诊断可在 tsconfig.json 中配置，可以在其中指定诊断应该是 warning、error 还是 suppress
+
+```
+{
+  "angularCompilerOptions": {
+    "extendedDiagnostics": {
+      // The categories to use for specific diagnostics.
+      "checks": {
+        // Maps check name to its category.
+        "invalidBananaInBox": "error"
+        "nullishCoalescingNotNullable": "warning"
+      },
+      // The category to use for any diagnostics not listed in `checks` above.
+      "defaultCategory": "suppress"
+    },
+    ...
+  },
+  ...
+}
+```
 
 [⬆ back to top](#top)
 
@@ -231,10 +314,4 @@ Angular14更新的一个有趣之处在于，它允许CLI部署小代码，而�
 - [官方升级文档](https://update.angular.io/)
 - [Angular 14有什么新特性?](https://blog.csdn.net/sumeiff/article/details/125679020)
 - [翻译文章--Angular 14 新特性介绍](https://cn.community.intersystems.com/post/%E7%BF%BB%E8%AF%91%E6%96%87%E7%AB%A0-angular-14-%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D)
-
--------------------------------------------------------------
-
-
-
-
-
+- [Angular v14 现已推出](https://juejin.cn/post/7104925075211550756)
