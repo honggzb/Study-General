@@ -5,6 +5,7 @@
   - [Http错误处理 (Http Error)](#http错误处理-http-error)
   - [配置注入](#配置注入)
   - [自动刷新Token](#自动刷新token)
+  - [HttpInterceptor 101](#httpinterceptor-101)
 
 -----------------------------------------------------
 
@@ -12,7 +13,7 @@
 - 拦截器在实战中的作用有很多，比如：统一配置网关地址，设置Http请求头，处理Http请求返回数据，统一错误处理等都是常见的需求
 - ![httpclient拦截流程](httpclient拦截流程.png)
 
-### 处理Http请求头 (Http Request Headers)
+## 处理Http请求头 (Http Request Headers)
 
 ```javascript
 import { Injectable } from '@angular/core';
@@ -36,7 +37,9 @@ constructor(private httpClient: HttpClient) {
     }
 ```
 
-### 处理Http响应 (Http Response)
+[⬆ back to top](#top)
+
+## 处理Http响应 (Http Response)
 
 ```javascript
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
@@ -55,7 +58,9 @@ export class ResponseHandlerInterceptor implements HttpInterceptor {
 }
 ```
 
-### Http错误处理 (Http Error)
+[⬆ back to top](#top)
+
+## Http错误处理 (Http Error)
 
 ```javascript
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
@@ -85,7 +90,9 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
 }
 ```
 
-### 配置注入
+[⬆ back to top](#top)
+
+## 配置注入
 
 ```
 providers: [
@@ -107,9 +114,9 @@ providers: [
     ]
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
-### 自动刷新Token
+## 自动刷新Token
 
 ![JWT token流程](token流程.png)
 
@@ -184,7 +191,14 @@ export RefreshTokenInterceptor implements HttpIntercetpor {
 
 - 利用 `refreshTokenSubject.next(null)` 来阻止后面的其他http请求被真正发出（其他的API 会进入下面的 else 条件中，进而被 ` fileter(result => result !== null)` 过滤掉，不执行 `next.handle()`方法）， 而当前的这次请求会先请求刷新token的API， 当拿到新的token 存入storage并跟新获得token的时间戳，在token更新之后  执行  `this.refreshTokenSubject.next(resp.token)`，可以告知其他的API token已经刷新 ，其他的API 就会使用新token 继续之前的请求。最终，当前的请求会通过  `return next.handle(this.injectTOken(req))`带上新token真正发送Http请求。
 
-[back to top](#top)
+[⬆ back to top](#top)
+
+## HttpInterceptor 101
+
+- [HttpInterceptor 101](https://juejin.cn/post/6911614350067236871)
+- [GitHub 示例代码 10.x版本](https://github.com/llccing-demo/ng-interceptors)
+
+[⬆ back to top](#top)
 
 > references
 - [Angular HttpInterceptor拦截器 多情景应用](https://www.jianshu.com/p/8b080a2587c2)
@@ -192,3 +206,4 @@ export RefreshTokenInterceptor implements HttpIntercetpor {
 - [基于Angular Http Interceptor(拦截器)实现自动刷新Token](https://www.jianshu.com/p/1db9c9f294a3)
 - [【Angular中的HTTP请求】- 拦截器 HttpInterceptor 详解](https://blog.csdn.net/evanyanglibo/article/details/122368884)
 - [Angular使用Interceptor(拦截器)请求添加token并统一处理API错误](https://blog.csdn.net/donjan/article/details/103592341)
+- [HttpInterceptor 101](https://juejin.cn/post/6911614350067236871)
