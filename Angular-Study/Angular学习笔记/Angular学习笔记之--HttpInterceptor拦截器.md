@@ -1,17 +1,17 @@
 [Angular学习笔记HttpInterceptor拦截器](#top)
 
-  - [处理Http请求头 (Http Request Headers)](#处理http请求头-http-request-headers)
-  - [处理Http响应 (Http Response)](#处理http响应-http-response)
-  - [Http错误处理 (Http Error)](#http错误处理-http-error)
-  - [配置注入](#配置注入)
-  - [自动刷新Token](#自动刷新token)
-  - [HttpInterceptor 101](#httpinterceptor-101)
+- [处理Http请求头 (Http Request Headers)](#处理http请求头-http-request-headers)
+- [处理Http响应 (Http Response)](#处理http响应-http-response)
+- [Http错误处理 (Http Error)](#http错误处理-http-error)
+- [配置注入](#配置注入)
+- [自动刷新Token](#自动刷新token)
+- [HttpInterceptor 101](#httpinterceptor-101)
 
 -----------------------------------------------------
 
 - HttpInterceptor是Angular提供用于在全局应用程序级别处理HTTP请求的内置工具，拦截并处理HttpRequest或HttpResponse
 - 拦截器在实战中的作用有很多，比如：统一配置网关地址，设置Http请求头，处理Http请求返回数据，统一错误处理等都是常见的需求
-- ![httpclient拦截流程](httpclient拦截流程.png)
+- ![httpclient拦截流程](./images/httpclient拦截流程.png)
 
 ## 处理Http请求头 (Http Request Headers)
 
@@ -118,7 +118,7 @@ providers: [
 
 ## 自动刷新Token
 
-![JWT token流程](token流程.png)
+![JWT token流程](./images/token流程.png)
 
 ```javascript
 // 1. Token解析与存储
