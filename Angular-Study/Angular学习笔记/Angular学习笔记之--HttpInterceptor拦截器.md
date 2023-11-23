@@ -87,7 +87,7 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
 
 ### 配置注入
 
-```json
+```
 providers: [
         {
             provide: HTTP_INTERCEPTORS,
