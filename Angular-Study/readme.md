@@ -1,6 +1,6 @@
 ```
 ├── Angular-Study
-│   ├── Angular Architecture/
+│   ├── Angular Architecture
 │   │   ├── Angular Architecture- Dan Wahlin
 │   │   │   ├── Angular-JumpStart-master/
 │   │   │   ├── creating-an-observable-service/
@@ -10,8 +10,11 @@
 │   │   │   ├── shared-library-example/
 │   │   │   ├── state-management/
 │   │   │   └── readme.md
+│   │   ├── Angular PWA架构
 │   │   ├── Angular Scalable Architecture-The PRPL Pattern.md
-│   │   └──
+│   │   ├── Angular优化策略.md
+│   │   ├── metholody for project management.md
+│   │   └── 从应用程序的角度探讨Angular的性能优化.md
 │   ├── Angular-Upgrade/
 │   │   ├── Angular 13 to Angular 14.md
 │   │   ├── Angular 14 to Angular 15.md
