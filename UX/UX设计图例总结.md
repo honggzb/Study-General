@@ -142,7 +142,7 @@
 ## 产品/功能路线图（Product/Feature Roadmap）
 
 - 产品/功能路线图是具有优先级排序的产品迭代计划，它可以是电子表格、图表、完整记录的待办事项或一系列简单的事务便签，有助于在团队内分享产品策略以及实现产品目标所需的道路
-- ![Roadmap](./images/Roadmap.png)
+- ![Roadmap](./images/Roadma.png)
 
 [⬆ back to top](#top)
 
