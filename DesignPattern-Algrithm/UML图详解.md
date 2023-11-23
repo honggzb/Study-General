@@ -15,11 +15,15 @@
 ---------------------------------------------
 
 - UML（Unified Modeling Language）是一种统一建模语言，为面向对象开发系统的产品进行说明、可视化、和编制文档的一种标准语言。下面将对UML的九种图+包图的基本概念进行介绍以及各个图的使用场景
-- ![UML图](./images/UML图.png)
+- UML图分类
   - 静态图分为：用例图，类图，对象图，包图，构件图，部署图
   - 动态图分为：状态图，活动图，协作图，序列图
-- 软件的各个开发阶段需要的UML图: ![UML图1](./images/UML图1.png)
-- UML使用人员图: ![UML使用人员图](./images/UML使用人员图.png)
+
+| UML |说明 |
+|---|---|
+|UML图分类|![UML图](./images/UML图.png)|
+|软件的各个开发阶段需要的UML图|![UML图1](./images/UML图1.png)|
+|UML使用人员图|![UML使用人员图](./images/UML使用人员图.png)|
 
 ## 用例图 UseCase Diagrams
 
