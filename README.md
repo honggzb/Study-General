@@ -10,7 +10,7 @@
 - [D3](#d3)
 - [Database学习](#database%E5%AD%A6%E4%B9%A0)
 - [Debug-Skill调试技巧](#debug-skill%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7)
-- [Design Pattern](#design-pattern)
+- [DesignPattern-Algrithm](#designpattern-algrithm)
 - [Git Study](#git-study)
 - [GraphQL](#graphql)
 - [HTML5](#html5)
@@ -650,7 +650,7 @@
 
 ### Database学习
 ### Debug-Skill调试技巧
-### Design Pattern
+### DesignPattern-Algrithm
 ### Git Study
 ### GraphQL
 ### HTML5
@@ -673,10 +673,11 @@
 │   ├── 性能调试之memory分析.md
 │   └── 
 │
-├── Design Pattern
-│   ├── 依赖注入模式.md
-│   ├── 
-│   └── 
+├── DesignPattern-Algrithm/
+|    ├── UML图详解.md
+|    ├── 依赖注入模式.md
+|    ├── 背包问题-javascript动态规划.md
+|    └── 
 │
 ├── Git Study
 │   ├── name-contest/   # test案例
