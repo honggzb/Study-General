@@ -163,7 +163,7 @@
 ## 定量调查（Quantitative Surveys）
 
 - 提供确切的定量数字，定量调查是收集用户满意度和产品的相关反馈的快速方法
-- ![Quantitative Surveys](QuantitativeSurveys.png)
+- ![Quantitative Surveys](./images/QuantitativeSurveys.png)
 
 [⬆ back to top](#top)
 
@@ -189,7 +189,7 @@
 ## 可访问性分析（Accessibility Analysis）
 
 - 旨在衡量网站是否可以被所有人使用的研究——包括有视力、听力、运动、认知和其他类型残疾的人
-- ![Accessibility Analysis](AccessibilityAnalysis.png)
+- ![Accessibility Analysis](./images/AccessibilityAnalysis.png)
 
 [⬆ back to top](#top)
 
