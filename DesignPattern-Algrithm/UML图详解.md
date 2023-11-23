@@ -1,6 +1,5 @@
 [UML图详解](#top)
 
-- [泳道图Swim Lane-Microsoft Visio](#泳道图swim-lane-microsoft-visio)
 - [用例图 UseCase Diagrams](#用例图-usecase-diagrams)
 - [类图 Class Diagrams](#类图-class-diagrams)
 - [对象图 Object Diagrams](#对象图-object-diagrams)
