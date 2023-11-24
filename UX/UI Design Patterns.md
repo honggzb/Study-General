@@ -42,7 +42,7 @@ AIGC|Midjourney、stable diffuion
 - **Steps Left**: Designers typically combine this with a wizard pattern. It shows how many steps a user has to take to complete a task. You can use gamification (an incentivizing design pattern) here to enhance engagement.
 - **Subscription Plans**: Offer users an options menu (including “Sign-up” buttons) for joining at certain rates.
 - **Leaderboard**: You can boost engagement if you use this social media pattern
-  - ![Leaderboard](Leaderboard.png)
+  - ![Leaderboard](./images/Leaderboard.png)
 - **Dark Patterns**: Some designers use these to lead or trick users into performing certain actions, typically in e-commerce, so they spend more or surrender personal information. Dark patterns range in harmfulness. Some designers leave an unchecked opt-out box as a default to secure customer information. Others slip items into shopping carts. To use dark patterns responsibly, you must be ethical and have empathy with your users. Dark patterns are risky because user mistrust and feedback can destroy a brand’s reputation overnight
 
 [⬆ back to top](#top)
