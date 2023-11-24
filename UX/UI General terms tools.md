@@ -3,8 +3,6 @@
 - [UX tools](#ux-tools)
 - [UX AI tools](#ux-ai-tools)
 - [STAR Principle：](#star-principle)
-- [Common UI Design Patterns](#common-ui-design-patterns)
-- [Mobile UX Design Patterns](#mobile-ux-design-patterns)
 - [Some Research Terms](#some-research-terms)
 - [产品开发生命周期：](#产品开发生命周期)
 - [the list of some popular libraries:](#the-list-of-some-popular-libraries)
@@ -28,33 +26,6 @@ Free UX Designer Tools| Figma, Justinmind, GIMP (GNU Image Manipulation Program)
 素材收集|eagle、花瓣
 在线协同|飞书、腾讯文档、稿定设计
 AIGC|Midjourney、stable diffuion
-
-## Common UI Design Patterns
-
-- **Breadcrumbs**: Use linked labels to provide secondary navigation that shows the path from the front to the current site page in the hierarchy.
-- **Lazy Registration**: Forms can put users off registration. So, use this sign-up pattern to let users sample what your site/app offers for free or familiarize themselves with it. Then, you show them a sign-up form. For example, Amazon allows unrestricted navigation and cart-loading before it prompts users to register for an account. Note:
-  - When content is accessible only to registered users or users must keep entering details, offer them **simplified/low-effort sign-up forms**.
-  - Minimize/Avoid optional information fields. Use the Required Field Markers pattern to guide users to enter needed data.
-- **Forgiving Format**: Let users enter data in various formats (e.g., city/town/village or zip code).
-- **Clear Primary Actions**: Make buttons stand out with color so users know what to do (e.g., “Submit”). You may have to decide which actions take priority.
-- **Progressive Disclosure**: Show users only features relevant for the task at hand, one per screen. If you break input demands into sections, you’ll reduce cognitive load (e.g., “Show More”)
-- **Hover Controls**: Hide nonessential information on detailed pages to let users find relevant information more easily
-- **Steps Left**: Designers typically combine this with a wizard pattern. It shows how many steps a user has to take to complete a task. You can use gamification (an incentivizing design pattern) here to enhance engagement.
-- **Subscription Plans**: Offer users an options menu (including “Sign-up” buttons) for joining at certain rates.
-- **Leaderboard**: You can boost engagement if you use this social media pattern
-  - ![Leaderboard](./images/Leaderboard.png)
-- **Dark Patterns**: Some designers use these to lead or trick users into performing certain actions, typically in e-commerce, so they spend more or surrender personal information. Dark patterns range in harmfulness. Some designers leave an unchecked opt-out box as a default to secure customer information. Others slip items into shopping carts. To use dark patterns responsibly, you must be ethical and have empathy with your users. Dark patterns are risky because user mistrust and feedback can destroy a brand’s reputation overnight
-
-[⬆ back to top](#top)
-
-## Mobile UX Design Patterns
-
-- Gesture
-- Integration
-- Navigation: such as should come back
-- Search
-
-[⬆ back to top](#top)
 
 ## Some Research Terms
 
