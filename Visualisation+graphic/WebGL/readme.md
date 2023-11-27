@@ -16,3 +16,4 @@ WebGL 是一种基于 JavaScript 的 API，用于创建交互式 3D 图形和动
 - [慕课网](https://www.imooc.com/search/?words=webgl)：该网站提供了多个有关 WebGL 的视频课程和实战项目，适合初学者和进阶者。
 - [Three.js](https://threejs.org/)
 - [WebGL Academy](https://www.webglacademy.com/)
+- [WebGL Samples](https://github.com/WebGLSamples)
