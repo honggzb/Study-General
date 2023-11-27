@@ -203,6 +203,7 @@
 
 ## resource
 
+- [angular style guide](https://angular.io/guide/styleguide)
 - https://blog.angular.io/
 - [Angular in depth by ag-grid](https://blog.angularindepth.com/)
 - https://github.com/PatrickJS/awesome-angular
@@ -214,7 +215,7 @@
 - [Angular中文社区](http://angular-china.org)
 - [Angular中文社区](http://www.iphone3d.cn/)
 - [sitepoint angular文章](https://www.sitepoint.com/?s=angular)
--  http://angular2-first-look.azurewebsites.net/
+- http://angular2-first-look.azurewebsites.net/
 
 ## third library
 - [Angular Material](https://material.angular.io/)
