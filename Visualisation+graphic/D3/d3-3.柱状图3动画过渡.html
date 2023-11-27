@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2. 画柱状图之使用动画过渡 </title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+  </div>
+  <script>
+  var dataset = [10, 20, 30, 40, 33, 24, 12, 5];
+  let temprange = d3.range(dataset.length);
+  
+  var w = 500, h = 500, padding = 60,
+    margin = {top: 20, right: 30, bottom: 20, left: 30};
+  var svg = d3.select('div.container')
+          .append('svg')
+          .attr("width", w)
+          .attr("height", h);
+  var g = svg.append("g");
+    //Create scale functions
+  var xScale = d3.scaleLinear()
+                 .domain([0, temprange.length-1])
+                 .range([0, w-margin.left-margin.right]);
+  var yScale = d3.scaleLinear()
+                 .domain([0, d3.max(dataset)])
+                 .range([h-margin.top-margin.bottom,0]);
+  var xAxis = d3.axisBottom(xScale);
+  var yAxis = d3.axisLeft(yScale);
+  
+  svg.selectAll('rect')
+            .data(dataset)
+            .enter()
+            .append('rect')
+            .attr('class', 'MyRect')  
+            .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')  
+            .attr('x', function(d, i){
+              return xScale(i)+padding/2;
+              ///return xScale(i);  
+              // return scaleBand(i); 
+            })
+            .attr('y',function(d){
+              //return yScale(d); 
+              var min = yScale.domain()[0];
+              return yScale(min);     
+            })
+            .attr('fill', 'steelblue')
+            .attr('width', 20)  
+            .attr("height", function (d) {  
+                return 0;  
+            })  
+            .transition()  
+            .delay(function (d, i) {  
+                return i * 200;  
+            })  
+            .duration(2000)  
+            .ease(d3.easeCubicInOut)  
+            .attr("y", function (d) {  
+                return yScale(d);  
+            })  
+            .attr("height", function (d) {  
+                return h - margin.top - margin.bottom - yScale(d);  
+            });
+  //文本标记（数值）
+  var texts = svg.selectAll('.MyText')
+       .data(dataset)
+       .enter()
+       .append('text')
+       .attr("class", "MyText")  
+       .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')  
+       .attr("x", function(d, i){
+         return xScale(i) + padding / 2;
+       })
+       .attr("dx", function (d, i) {  
+          return 0;
+        })
+       .attr("dy", function (d) {  
+           return 20;  
+       }) 
+       .text(function(d) { return d; })
+       .attr("y", function(d){
+         var min = yScale.domain()[0];  
+         return yScale(min);
+       })
+        .transition()  
+        /*.ease('bounce')*/  
+        .delay(function (d, i) {  
+                return i * 200;  
+        })  
+        .duration([2000])  
+        .ease(d3.easeLinear)  
+        .attr("y", function (d) {  
+            return yScale(d);  
+        });  ;
+
+    //Create an SVG group Element for the Axis elements and call the xAxis function
+  g.append("g")
+      .attr("class","axis")
+       .attr("transform", "translate("+margin.left+"," + (h-margin.bottom) + ")")
+       .call(xAxis);
+  g.append("g")
+        .attr("class","axis")
+        .attr("transform", "translate("+margin.left+","+margin.top+")")
+        .call(yAxis);
+  
+  let svgDom = svg.node(); 
+  
+  d3.select('svg')
+    .selectAll('.MyText')
+    // .on('mouseover', function(d,i){
+    //   d3.select(this)
+    //     .attr("fill","yellow")
+    // })
+    // .on('mouseout',function(d){
+    //   d3.select(this)
+    //     .transition()
+    //     .duration(500)
+    //     .attr('fill', 'steelblue')
+    // })
+    .on('mouseover',function(d,i){ 
+      let x = d3.mouse(svgDom)[0]+20; 
+      let y = d3.mouse(svgDom)[1]; 
+      d3.select('.popup') 
+        .style('left',x+'px') 
+        .style('top',y+'px') 
+        .style('display','block') 
+        .select('.no') 
+        .text(d) 
+    }) 
+    .on('mouseout',function (d,i) { 
+        d3.select('.popup') 
+          .style('display','none') 
+    });
+  </script>
+</body>
+</html>

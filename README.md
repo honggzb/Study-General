@@ -1,39 +1,43 @@
 [Content](#top)
 
-- [Accessiblity](#Accessiblity)
-- [Angular-Study](#angular-study)
-- [AngularJS-study](#angularjs-study)
-- [CI-CD](#CI-CD)
-- [CSS+CSS3+SCSS](https://github.com/honggzb/Study-General/tree/master/CSS-CSS3-SCSS)
-- [Cloud-study](#Cloud-study)
-- [Configuration Study - Build tools](#configuration-study---build-tools)
-- [D3](#d3)
-- [Database学习](#database%E5%AD%A6%E4%B9%A0)
-- [Debug-Skill调试技巧](#debug-skill%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7)
-- [Design Pattern](#design-pattern)
-- [Git Study](#git-study)
-- [GraphQL](#graphql)
-- [HTML5](#html5)
-- [Hybrid Web](#hybrid-web)
-- [IDE](#ide)
-- [JAVA-Study](#java-study)
-- [Javascript+Typescript+JQuery](https://github.com/honggzb/Study-General/tree/master/Javascript%2BJQuery%2BTypescript)
-- [Machine-Learning+AI](#Machine-Learning%2BAI)
-- [Miscellaneous杂项](#miscellaneous%E6%9D%82%E9%A1%B9)
-- [NodeJS 学习](#nodejs-%E5%AD%A6%E4%B9%A0)
-- [Regular Expression - 正则表达式](#regular-expression---%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
-- [Performance 性能分析](#performance-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90)
-- [Python+R](#Python+R)
-- [React](#React)
-- [SVG](#svg)
-- [Salesforce](#Salesforce)
-- [Security](#security---%E5%AE%89%E5%85%A8)
-- [Theory 理论和源码](#theory-%E7%90%86%E8%AE%BA%E5%92%8C%E6%BA%90%E7%A0%81)
-- [VirtualReality -虚拟现实](#virtualreality-%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E)
-- [Vue](#vue)
-- [interview](#interview)
-- [qita](#qita)
-- [thirdParty-lib](#thirdparty-lib)
+- [resource](#resource)
+- [third library](#third-library)
+- [resource](#resource-1)
+- [third library](#third-library-1)
+  - [AngularJS-study](#angularjs-study)
+  - [CI-CD](#ci-cd)
+  - [CSS+CSS3+SCSS](#csscss3scss)
+  - [Configuration Study - Build tools](#configuration-study---build-tools)
+  - [Cloud-study](#cloud-study)
+  - [Database学习](#database学习)
+  - [Debug-Skill调试技巧](#debug-skill调试技巧)
+  - [Design Pattern](#design-pattern)
+  - [Git Study](#git-study)
+  - [GraphQL](#graphql)
+  - [HTML5](#html5)
+  - [Hybrid Web](#hybrid-web)
+  - [IDE](#ide)
+  - [JAVA-Study](#java-study)
+  - [Javascript-related-javascript学习过程中的小tip](#javascript-related-javascript学习过程中的小tip)
+  - [Machine-Learning+AI](#machine-learningai)
+  - [Miscellaneous杂项](#miscellaneous杂项)
+  - [NodeJS 学习](#nodejs-学习)
+  - [Regular Expression - 正则表达式](#regular-expression---正则表达式)
+  - [RxJS](#rxjs)
+  - [Performance 性能分析](#performance-性能分析)
+  - [Python+R](#pythonr)
+  - [React](#react)
+  - [Salesforce](#salesforce)
+  - [Security   --安全](#security----安全)
+  - [Theory 理论和源码](#theory-理论和源码)
+  - [VirtualReality   #虚拟现实](#virtualreality--虚拟现实)
+  - [Visualisation+graphic](#visualisationgraphic)
+    - [D3](#d3)
+    - [SVG](#svg)
+  - [Vue](#vue)
+  - [interview](#interview)
+  - [qita](#qita)
+  - [thirdParty-lib](#thirdparty-lib)
   
 ### Accessiblity
 
@@ -549,88 +553,6 @@
 
 [back to top](#top)
 
-### D3
-
-```
-├── D3
-│   ├── 00.prepare	Add files
-│   │   └── mockServer代码和说明
-│   ├── 2. basic-axis-scale
-│   │   ├── d3-2.中文坐标轴.html
-│   │   ├── d3-2.带网格的坐标轴1.html
-│   │   ├── d3-2.带网格的坐标轴2.html
-│   │   ├── d3-2.散点图.html
-│   │   ├── d3-2.散点图之使用坐标轴.html
-│   │   └── 
-│   ├── 3.barGraph
-│   │   ├── d3-1.条形图.html	Rename D3/barGraph/d3-1.条形图.html
-│   │   ├── d3-3.dragEvents.html
-│   │   ├── d3-3.events.html
-│   │   ├── d3-3.柱状图1水平柱状图.html
-│   │   ├── d3-3.柱状图2垂直柱状图.htm
-│   │   ├── d3-3.柱状图2垂直柱状图1.html
-│   │   ├── d3-3.柱状图3动画过渡.html
-│   │   ├── d3-3.柱状图4Wrapping Long Labels.html
-│   │   ├── d3-3.柱状图4sortable.html
-│   │   ├── d3-3.柱状图4使用字母刻度.html
-│   │   └── 
-│   ├── 4.line-areaGraph
-│   │   ├── 		
-│   │   ├── d3-4.线性图表-curve interpolation comparison.html	Update d3-4.线性图表-curve interpolation comparison.html
-│   │   ├── d3-4.线性图表.html
-│   │   ├── d3-4.线性图表2-Segmented Lines.html
-│   │   ├── d3-4.线性图表2-Thershold Lines.html
-│   │   ├── d3-4.线性图表2-折线+图表.html	Create d3-4.线性图表2-折线+图表.html
-│   │   ├── d3-4.线性图表2-时间轴.html	Add files
-│   │   ├── d3-4.线性图表3-多行折线+线内标注.html
-│   │   ├── d3-4.线性图表3-多行折线.htm
-│   │   ├── d3-4.线性图表3-多行折线1-circle+tooltip.html	Update d3-4.线性图表3-多行折线1-circle+tooltip.htm
-│   │   ├── d3-4.面积图表.html
-│   │   ├── d3-4.面积图表之二元面积图.html
-│   │   ├── d3-4.饼图圆环图1.html
-│   │   ├── d3-4.饼图圆环图2.html
-│   │   └── 
-│   ├── 5.others
-│   │   ├── d3-5.Stack.html
-│   │   ├── d3-5.Tree+可收缩思维导图.html
-│   │   ├── d3-5.Tree-collasible.html
-│   │   ├── d3-5.Tree-horizontal-collasible-rect-node.html	Create d3-5.Tree-horizontal-collasible-rect-node.html
-│   │   ├── d3-5.Tree-use-flat-data.html	Rename d3-5.Tree-use-fla-data.html to d3-5.Tree-use-flat-data.html
-│   │   ├── d3-5.Tree-vertical tree.html	Create d3-5.Tree-vertical tree.html
-│   │   ├── d3-5.Tree-with-different-nodes.html	Create d3-5.Tree-with-different-nodes.html
-│   │   ├── d3-5.chord.html	Update d3-5.chord.html
-│   │   ├── d3-5.horizontal stack bar chart.html
-│   │   ├── d3-5.horizontal stack bar chart.html	
-│   │   ├── d3-5.力矩散点图+图例.html
-│   │   ├── d3-5.散点图+toggleButton.html
-│   │   ├── d3-航线数据可视化.html
-│   │   └── 
-│   ├── 6.animation
-│   │   ├── Transition Easing Comparison in v4.html	Create Transition Easing Comparison in v4.html
-│   │   ├── d3-6.动画之条形图排序+删除增加bar-function.html	Update d3-6.动画之条形图排序+删除增加bar-function.html
-│   │   ├── d3-6.动画之条形图排序+删除增加bar.html	Create d3-6.动画之条形图排序+删除增加bar.html
-│   │   ├── d3-6.动画之条形图排序切换.html
-│   │   └── 
-│   ├── 7.D3-angular-2
-│   │   ├── readme.md
-│   │   └── 代码
-│   ├── book
-│   │   ├── 2017-VegaLite-InfoVis(斯坦福的数据可视化论文).pdf
-│   │   ├── D3.js tips and tricks-v4.pdf
-│   │   ├── D3.js+By+Example[ww.java1234.com].pdf
-│   │   ├── D3.js_in_action.pdf	Add files
-│   │   ├── Practical_D3.js-Apress_2016(Tarek_Amr_Rayna_Stamboliyska).pdf
-│   │   ├── react+d3js[www.java1234.com].pdf
-│   │   ├── readme.md	Create readme.md
-│   │   ├── 《D3.js数据可视化实战手册 》迷你书.pdf
-│   │   ├── 数据可视化实战(使用D3设计交互式图表).pdf
-│   │   ├── 数据可视化实战-d3db.pdf
-│   │   └── 
-│   ├── readme.md
-│   ├── todo-list.md
-│   └── file-list.md
-```
-
 ### Cloud-study
 
 ```
@@ -896,15 +818,10 @@
 ### Performance 性能分析
 ### Python+R
 ### React
-### SVG
 ### Salesforce
 ### Security   --安全
 ### Theory 理论和源码
 ### VirtualReality   #虚拟现实
-### Vue
-### interview
-### qita
-### thirdParty-lib
 
 ```
 ├── Miscellaneous杂项/
@@ -970,12 +887,7 @@
 │   ├── React学习-大众点评.md
 │   ├── React学习资源汇总.md
 │   └── react-official-document-study.md
-│
-├── SVG
-│   ├── AngularJS-SVG/
-│   ├── SVG displacement filter.html
-│   └──
-│
+|
 ├── Salesforce/
 │
 ├── Security   --安全
@@ -994,7 +906,104 @@
 ├── VirtualReality   #虚拟现实
 │   ├── resource.md
 │   └── Detect WebVR Support with JavaScript.md
-│
+```
+
+### Visualisation+graphic
+
+#### D3
+#### SVG
+
+```
+├── Visualisation+graphic/
+│   ├── D3/
+│   │   ├── 00.prepare	Add files
+│   │   │   └── mockServer代码和说明
+│   │   ├── 2. basic-axis-scale
+│   │   │   ├── d3-2.中文坐标轴.html
+│   │   │   ├── d3-2.带网格的坐标轴1.html
+│   │   │   ├── d3-2.带网格的坐标轴2.html
+│   │   │   ├── d3-2.散点图.html
+│   │   │   ├── d3-2.散点图之使用坐标轴.html
+│   │   │   └── 
+│   │   ├── 3.barGraph
+│   │   │   ├── d3-1.条形图.html	Rename D3/barGraph/d3-1.条形图.html
+│   │   │   ├── d3-3.dragEvents.html
+│   │   │   ├── d3-3.events.html
+│   │   │   ├── d3-3.柱状图1水平柱状图.html
+│   │   │   ├── d3-3.柱状图2垂直柱状图.htm
+│   │   │   ├── d3-3.柱状图2垂直柱状图1.html
+│   │   │   ├── d3-3.柱状图3动画过渡.html
+│   │   │   ├── d3-3.柱状图4Wrapping Long Labels.html
+│   │   │   ├── d3-3.柱状图4sortable.html
+│   │   │   ├── d3-3.柱状图4使用字母刻度.html
+│   │   │   └── 
+│   │   ├── 4.line-areaGraph
+│   │   │   ├── 		
+│   │   │   ├── d3-4.线性图表-curve interpolation comparison.html	Update d3-4.线性图表-curve interpolation comparison.html
+│   │   │   ├── d3-4.线性图表.html
+│   │   │   ├── d3-4.线性图表2-Segmented Lines.html
+│   │   │   ├── d3-4.线性图表2-Thershold Lines.html
+│   │   │   ├── d3-4.线性图表2-折线+图表.html	Create d3-4.线性图表2-折线+图表.html
+│   │   │   ├── d3-4.线性图表2-时间轴.html	Add files
+│   │   │   ├── d3-4.线性图表3-多行折线+线内标注.html
+│   │   │   ├── d3-4.线性图表3-多行折线.htm
+│   │   │   ├── d3-4.线性图表3-多行折线1-circle+tooltip.html	Update d3-4.线性图表3-多行折线1-circle+tooltip.htm
+│   │   │   ├── d3-4.面积图表.html
+│   │   │   ├── d3-4.面积图表之二元面积图.html
+│   │   │   ├── d3-4.饼图圆环图1.html
+│   │   │   ├── d3-4.饼图圆环图2.html
+│   │   │   └── 
+│   │   ├── 5.others
+│   │   │   ├── d3-5.Stack.html
+│   │   │   ├── d3-5.Tree+可收缩思维导图.html
+│   │   │   ├── d3-5.Tree-collasible.html
+│   │   │   ├── d3-5.Tree-horizontal-collasible-rect-node.html	Create d3-5.Tree-horizontal-collasible-rect-node.html
+│   │   │   ├── d3-5.Tree-use-flat-data.html	Rename d3-5.Tree-use-fla-data.html to d3-5.Tree-use-flat-data.html
+│   │   │   ├── d3-5.Tree-vertical tree.html	Create d3-5.Tree-vertical tree.html
+│   │   │   ├── d3-5.Tree-with-different-nodes.html	Create d3-5.Tree-with-different-nodes.html
+│   │   │   ├── d3-5.chord.html	Update d3-5.chord.html
+│   │   │   ├── d3-5.horizontal stack bar chart.html
+│   │   │   ├── d3-5.horizontal stack bar chart.html	
+│   │   │   ├── d3-5.力矩散点图+图例.html
+│   │   │   ├── d3-5.散点图+toggleButton.html
+│   │   │   ├── d3-航线数据可视化.html
+│   │   │   └── 
+│   │   ├── 6.animation
+│   │   │   ├── Transition Easing Comparison in v4.html	Create Transition Easing Comparison in v4.html
+│   │   │   ├── d3-6.动画之条形图排序+删除增加bar-function.html	Update d3-6.动画之条形图排序+删除增加bar-function.html
+│   │   │   ├── d3-6.动画之条形图排序+删除增加bar.html	Create d3-6.动画之条形图排序+删除增加bar.html
+│   │   │   ├── d3-6.动画之条形图排序切换.html
+│   │   │   └── 
+│   │   ├── 7.D3-angular-2
+│   │   │   ├── readme.md
+│   │   │   └── 代码
+│   │   ├── book
+│   │   │   ├── 2017-VegaLite-InfoVis(斯坦福的数据可视化论文).pdf
+│   │   │   ├── D3.js tips and tricks-v4.pdf
+│   │   │   ├── D3.js+By+Example[ww.java1234.com].pdf
+│   │   │   ├── D3.js_in_action.pdf	Add files
+│   │   │   ├── Practical_D3.js-Apress_2016(Tarek_Amr_Rayna_Stamboliyska).pdf
+│   │   │   ├── react+d3js[www.java1234.com].pdf
+│   │   │   ├── readme.md	Create readme.md
+│   │   │   ├── 《D3.js数据可视化实战手册 》迷你书.pdf
+│   │   │   ├── 数据可视化实战(使用D3设计交互式图表).pdf
+│   │   │   ├── 数据可视化实战-d3db.pdf
+│   │   │   └── 
+│   │   ├── todo-list.md
+│   │   └── file-list.md
+│   |
+│   ├── SVG/
+│   │   ├── AngularJS-SVG/
+│   │   ├── SVG displacement filter.html
+│   │   └──
+```
+
+### Vue
+### interview
+### qita
+### thirdParty-lib
+
+```
 ├── Vue
 │   ├── samples/
 │   │     ├── tab-switch.html        -tab切换例子（动态组件） 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3. 画柱状图之4Wrapping Long Labels</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+  .bar {fill: steelblue;}
+  .bar:hover {
+    fill: brown;
+  }
+  .title {
+    font: bold 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .axis {
+    font: 10px sans-serif;
+  }
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  .x.axis path {
+    display: none;
+  }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="https://bl.ocks.org/mbostock/7555321">Reference to: Mike Bostock’s blog: Wrapping Long Labels</a></li>
+  </ul>
+  <svg width="500" height="500"></svg>
+  <script>
+  var svg = d3.select("svg"),
+      bar_width=30, bar_padding = 10,
+      margin = {top: 20, right: 30, bottom: 100, left: 30},
+      svg_width = +svg.attr("width") - margin.left - margin.right, //(bar_width+bar_padding)*dataset.length,  // 宽度
+      svg_height = +svg.attr("height") - margin.top - margin.bottom,
+      g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  
+  var scale_y = d3.scaleLinear().range([svg_height, 0]);
+
+  var scale_x = d3.scaleBand()  //use band scale
+                  .rangeRound([0, svg_width])
+                  .padding(0.1);
+      
+  d3.tsv("data4.tsv", type, function(error, data) {
+    
+    scale_x.domain(data.map(function(d) { return d.name; }));
+    scale_y.domain([0, d3.max(data, function(d) { return d.value; })]);
+  
+    //标题
+    svg.append("text")
+      .attr("class", "title")
+      .attr("x", svg_width/3)
+      .attr("y", 30)
+      .text("Why Are We Leaving Facebook?");
+    //坐标轴
+    var g = svg.append("g")
+               .attr("transform","translate("+margin.left+","+margin.top+")");
+    g.append("g")
+        //.attr("class", "axis axis--x")
+        .attr("transform", "translate(0," + svg_height + ")")
+        .call(d3.axisBottom(scale_x))
+        .selectAll(".tick text")
+        .call(wrap, scale_x.bandwidth());
+    g.append("g")
+        //.attr("class", "axis axis--y")
+        .call(
+          d3.axisLeft(scale_y)
+            .ticks(8, "%"))
+        
+    var bar = svg.selectAll("rect")
+       .data(data)
+       .enter()
+       .append("rect")
+       .attr('transform', 'translate(0, ' + margin.top + ')') 
+       .attr("x", function(d) { return scale_x(d.name) + margin.left; })
+       .attr("y", function(d){ return scale_y(d.value); })
+       .attr("height",function(d){return svg_height-scale_y(d.value);})
+       .attr("width",scale_x.bandwidth())
+       .attr("class", "bar");
+   
+    });
+    
+    function wrap(text, width) {
+      text.each(function() {
+        var text = d3.select(this),
+            words = text.text().split(/\s+/).reverse(),
+            word,
+            line = [],
+            lineNumber = 0,
+            lineHeight = 1.1, // ems
+            y = text.attr("y"),
+            dy = parseFloat(text.attr("dy")),
+            tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+        while (word = words.pop()) {
+          line.push(word);
+          tspan.text(line.join(" "));
+          if (tspan.node().getComputedTextLength() > width) {
+            line.pop();
+            tspan.text(line.join(" "));
+            line = [word];
+            tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+          }
+        }
+      });
+    }
+    
+    function type(d) {
+      d.value = +d.value;
+      return d;
+    }
+  </script>
+</body>
+</html>
