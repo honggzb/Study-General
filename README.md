@@ -1,44 +1,43 @@
 [Content](#top)
 
-- [resource](#resource)
-- [third library](#third-library)
-- [resource](#resource-1)
-- [third library](#third-library-1)
-  - [AngularJS-study](#angularjs-study)
-  - [CI-CD](#ci-cd)
-  - [CSS+CSS3+SCSS](#csscss3scss)
-  - [Configuration Study - Build tools](#configuration-study---build-tools)
-  - [Cloud-study](#cloud-study)
-  - [Database学习](#database学习)
-  - [Debug-Skill调试技巧](#debug-skill调试技巧)
-  - [Design Pattern](#design-pattern)
-  - [Git Study](#git-study)
-  - [GraphQL](#graphql)
-  - [HTML5](#html5)
-  - [Hybrid Web](#hybrid-web)
-  - [IDE](#ide)
-  - [JAVA-Study](#java-study)
-  - [Javascript-related-javascript学习过程中的小tip](#javascript-related-javascript学习过程中的小tip)
-  - [Machine-Learning+AI](#machine-learningai)
-  - [Miscellaneous杂项](#miscellaneous杂项)
-  - [NodeJS 学习](#nodejs-学习)
-  - [Regular Expression - 正则表达式](#regular-expression---正则表达式)
-  - [RxJS](#rxjs)
-  - [Performance 性能分析](#performance-性能分析)
-  - [Python+R](#pythonr)
-  - [React](#react)
-  - [Salesforce](#salesforce)
-  - [Security   --安全](#security----安全)
-  - [Theory 理论和源码](#theory-理论和源码)
-  - [VirtualReality   #虚拟现实](#virtualreality--虚拟现实)
-  - [Visualisation+graphic](#visualisationgraphic)
-    - [D3](#d3)
-    - [SVG](#svg)
-  - [Vue](#vue)
-  - [interview](#interview)
-  - [qita](#qita)
-  - [thirdParty-lib](#thirdparty-lib)
-  
+- [Accessiblity](#accessiblity)
+- [AngularJS-study](#angularjs-study)
+- [Angular-Study](#angular-study)
+- [CI-CD](#ci-cd)
+- [CSS+CSS3+SCSS](#csscss3scss)
+- [Cloud-study](#cloud-study)
+- [Configuration Study - Build tools](#configuration-study---build-tools)
+- [CSS-CSS3-SCSS](#css-css3-scss)
+- [Database学习](#database学习)
+- [Debug-Skill调试技巧](#debug-skill调试技巧)
+- [DesignPattern-Algrithm](#designpattern-algrithm)
+- [Git Study](#git-study)
+- [GraphQL](#graphql)
+- [HTML5](#html5)
+- [Hybrid Web](#hybrid-web)
+- [IDE](#ide)
+- [JAVA-Study](#java-study)
+- [Javascript-related-javascript学习过程中的小tip](#javascript-related-javascript学习过程中的小tip)
+- [Machine-Learning+AI](#machine-learningai)
+- [Miscellaneous杂项](#miscellaneous杂项)
+- [NodeJS 学习](#nodejs-学习)
+- [Regular Expression - 正则表达式](#regular-expression---正则表达式)
+- [Performance 性能分析](#performance-性能分析)
+- [PPT](#ppt)
+- [Python+R](#pythonr)
+- [React](#react)
+- [Salesforce](#salesforce)
+- [Security   --安全](#security----安全)
+- [Theory 理论和源码](#theory-理论和源码)
+- [VirtualReality   #虚拟现实](#virtualreality--虚拟现实)
+- [Visualisation+graphic](#visualisationgraphic)
+  - [D3](#d3)
+  - [SVG](#svg)
+- [Vue](#vue)
+- [interview](#interview)
+- [qita](#qita)
+- [thirdParty-lib](#thirdparty-lib)
+
 ### Accessiblity
 
 ```
@@ -52,6 +51,130 @@
 |    ├── 创建无障碍的对话框.md
 |    ├── 响应式设计(responsive design)中的Assesibility.md
 │    └──  resources.md
+```
+
+[⬆ back to top](#top)
+
+### AngularJS-study
+
+```
+├── AngularJS-study
+│   ├──  AngularJS入门和企业级项目 6天(邵山欢)/
+│   │    ├── 02_引入控制器.html
+│   │    ├── 04_双向数据绑定小案例1-调色板.html
+│   │    ├── 06_双向数据绑定小案例3-模拟表格.html
+│   │    ├── 08_双向数据绑定小案例4-表单联动.html
+│   │    └── city.json
+│   ├──  angular-translate-study/
+│   │    ├── simple-sample /
+│   │    └── readme.md
+│   ├──  angular-material-study /
+│   │    ├── mdSwitch.md
+│   │    ├── mdToast-study.md
+│   │    └── 
+│   ├──  lib /
+│   │    ├── angular /
+│   │    └── bootstraps3 /
+│   ├──  plugin /
+│   │    ├── agGrid /
+│   │    │     ├──  Group-rowGroup-sample.html
+│   │    │     ├──  Group-sample.html
+│   │    │     ├──  Simple-sample.html
+│   │    │     ├──  column-fixed-sample.html
+│   │    │     ├──  column-type+group-sample.html
+│   │    │     ├──  external-filter-sample.html
+│   │    │     ├──  filter-sample.html
+│   │    │     ├──  header-Template-sample.html
+│   │    │     ├──  sorting-sample.html
+│   │    │     ├──  style-cell-sample.html
+│   │    │     └──  style-row-sample.html
+│   │    ├── ngInfiniteScroll的使用方法- 滚动触底加载.md
+│   │    └── 
+│   ├──  public /    #学习案例
+│   │    ├── 001-controller.html 
+│   │    ├── 002-controller-multi.html 
+│   │    ├── 003-ng-bind.html 
+│   │    ├── 004-$scope中的$apply.html 
+│   │    ├── 005-$scope中的$watch.html 
+│   │    ├── 006-cart.html 
+│   │    ├── 007-module.html 
+│   │    ├── 008-provide.provide.html 
+│   │    ├── 009-provide.factory.html 
+│   │    ├── 010-provide.shareDate.in.multi.controller.html 
+│   │    ├── 011-filter.html 
+│   │    ├── 012-filter-usr-defined.html 
+│   │    ├── 013-controller.DI.html 
+│   │    ├── 014-build-in.directive.html 
+│   │    ├── 015-self-defined.directive-restrict.html 
+│   │    ├── 016-self-defined.directive-transclude-priority-terminal.html 
+│   │    ├── 017-self-defined.directive-compile-link.html 
+│   │    ├── 018-self-defined.directive-controller.html 
+│   │    ├── 019-self-defined.directive-scope.html 
+│   │    ├── 020-self-defined.directive-accordion.html 
+│   │    ├── 021-module-constant-value-run.html 
+│   │    ├── 022-form.html 
+│   │    ├── 023-form-user-defined.html 
+│   │    ├── kittercupCollapse.html 
+│   │    └── other.html
+│   ├──  Sample /
+│   │    ├── SVG /
+│   │    │    ├── barGraphdirective.md
+│   │    │    ├── gaugeWidgetDirective.md
+│   │    │    └── peiChartDirective.md
+│   │    ├── directive /
+│   │    │    ├── 滚屏加载.html
+│   │    │    ├── AngularJS内置服务总览.md
+│   │    │    ├── angular之ng-model-options指令.md
+│   │    │    ├── angular之ng-options用法详解.md
+│   │    │    ├── ng-class in AngularJS.md
+│   │    │    ├── ng-repeat in AngularJS.md
+│   │    │    ├── 自定义一个表格.js
+│   │    │    └── 
+│   │    ├── filter /
+│   │    │    ├── currency-differentDollerSymbol.md
+│   │    │    └── currency-大写中文数字.md
+│   │    ├── service /
+│   │    │    ├── AngularJs中$http再次封装.md
+│   │    │    └── http-error处理.md
+│   │    ├── 页面加载时遮罩过渡.md
+│   │    └── 
+│   ├──  ui-bootstrap-study
+│   │    ├── typeahead /
+│   │    └── ui-Bootstrap之Typeahead.md
+│   ├──  unit-test
+│   │    ├── Controllers test-Directive test.md
+│   │    ├── promise-test.md
+│   │    └── ervice-test.md
+│   │ 
+│   ├── $timeout和$interval的用法.md
+│   ├── $watch详解.md
+│   ├── Angular+AngularJS Material Textarea.md
+│   ├── AngularJS+angularjs作用域的生命周期.md
+│   ├── AngularJS内置服务总览.md
+│   ├── AngularJS学习之Cache-缓存.md
+│   ├── AngularJS学习之Factory vs Service vs Provider.md
+│   ├── AngularJS学习之alert和Excetion设计-debug和diagnostics.md
+│   ├── AngularJS学习之directive详解.md
+│   ├── AngularJS学习之ngAnimate动画.md
+│   ├── AngularJS学习之全局变量constant-value.md
+│   ├── AngularJS学习之表单验证.md
+│   ├── AngularJS给动态生成的元素绑定事件.md
+│   ├── AngularJs中promise-$q.md
+│   ├── Angularjs Controller间通信机制.md
+│   ├── Angularjs directive通信案例.md
+│   ├── Angularjs使用jQuery-jqLite.md
+│   ├── Angularjs工具方法.md
+│   ├── Angularjs的前端拦截器-interceptor.md
+│   ├── Angular声明注入依赖的方法和自动化插件.md
+│   ├── Smooth transition for scrolled view amd Modal.md
+│   ├── UI-Router for AngularJS 1.x.md 
+│   ├── angularJS-debug-skill.md 
+│   ├── angularjs的directive和component的参数传递问题.md
+│   ├── ng-class in AngularJS.md
+│   ├── ng-repeat in AngularJS.md
+│   ├── resources.md
+│   ├── tip.md
+│   └── 常见问题和技巧.md
 ```
 
 [⬆ back to top](#top)
@@ -251,176 +374,7 @@
 │   └── 大漠的Angular Workshop.md
 ```
 
-## resource
-
-- [Angular in depth by ag-grid](https://blog.angularindepth.com/)
-- https://github.com/PatrickJS/awesome-angular
-- [angular style guide](https://angular.io/guide/styleguide)
-- [Angular中文文档](https://angular.cn/)
-- [Angular 4.x 修仙之路](https://segmentfault.com/a/1190000008754631)
-- [Angular4快速入门](https://blog.csdn.net/column/details/17833.html)
-- [仿简书nodejs+express+mongodb+vue2+angular4+爬虫](https://github.com/jiayisheji/jianshu)
-- [Angular中文社区](http://angular-china.org)
-- [Angular中文社区](http://www.iphone3d.cn/)
-- [sitepoint angular文章](https://www.sitepoint.com/?s=angular)
--  http://angular2-first-look.azurewebsites.net/
-
-## third library
-- [Angular Material](https://material.angular.io/)
-- [阿里的Angular组件库（ng-zorro-antd）](https://github.com/NG-ZORRO/ng-zorro-antd):  Angular的优秀国内UI组件库
-- [Angular 4入门教程系列：15：NG-ZORRO的使用方式](https://blog.csdn.net/liumiaocn/article/details/78526421)
-  - 组件和指令都是以nz-打头，比如按钮的nz-button
-  - 组件和指令的属性都是nz打头其后驼峰命名，比如nzSize
-  - 栅格划为24等分
-
-[back to top](#top)
-
-## resource
-
-- https://github.com/PatrickJS/awesome-angular
-- [angular style guide](https://angular.io/guide/styleguide)
-- [Angular中文文档](https://angular.cn/)
-- [Angular 4.x 修仙之路](https://segmentfault.com/a/1190000008754631)
-- [Angular4快速入门](https://blog.csdn.net/column/details/17833.html)
-- [仿简书nodejs+express+mongodb+vue2+angular4+爬虫](https://github.com/jiayisheji/jianshu)
-- [Angular中文社区](http://angular-china.org)
-- [Angular中文社区](http://www.iphone3d.cn/)
-- [sitepoint angular文章](https://www.sitepoint.com/?s=angular)
--  http://angular2-first-look.azurewebsites.net/
-
-## third library
-- [Angular Material](https://material.angular.io/)
-- [阿里的Angular组件库（ng-zorro-antd）](https://github.com/NG-ZORRO/ng-zorro-antd):  Angular的优秀国内UI组件库
-- [Angular 4入门教程系列：15：NG-ZORRO的使用方式](https://blog.csdn.net/liumiaocn/article/details/78526421)
-  - 组件和指令都是以nz-打头，比如按钮的nz-button
-  - 组件和指令的属性都是nz打头其后驼峰命名，比如nzSize
-  - 栅格划为24等分
-
-[back to top](#top)
-
-### AngularJS-study
-
-```
-├── AngularJS-study
-│   ├──  AngularJS入门和企业级项目 6天(邵山欢)/
-│   │    ├── 02_引入控制器.html
-│   │    ├── 04_双向数据绑定小案例1-调色板.html
-│   │    ├── 06_双向数据绑定小案例3-模拟表格.html
-│   │    ├── 08_双向数据绑定小案例4-表单联动.html
-│   │    └── city.json
-│   ├──  angular-translate-study/
-│   │    ├── simple-sample /
-│   │    └── readme.md
-│   ├──  angular-material-study /
-│   │    ├── mdSwitch.md
-│   │    ├── mdToast-study.md
-│   │    └── 
-│   ├──  lib /
-│   │    ├── angular /
-│   │    └── bootstraps3 /
-│   ├──  plugin /
-│   │    ├── agGrid /
-│   │    │     ├──  Group-rowGroup-sample.html
-│   │    │     ├──  Group-sample.html
-│   │    │     ├──  Simple-sample.html
-│   │    │     ├──  column-fixed-sample.html
-│   │    │     ├──  column-type+group-sample.html
-│   │    │     ├──  external-filter-sample.html
-│   │    │     ├──  filter-sample.html
-│   │    │     ├──  header-Template-sample.html
-│   │    │     ├──  sorting-sample.html
-│   │    │     ├──  style-cell-sample.html
-│   │    │     └──  style-row-sample.html
-│   │    ├── ngInfiniteScroll的使用方法- 滚动触底加载.md
-│   │    └── 
-│   ├──  public /    #学习案例
-│   │    ├── 001-controller.html 
-│   │    ├── 002-controller-multi.html 
-│   │    ├── 003-ng-bind.html 
-│   │    ├── 004-$scope中的$apply.html 
-│   │    ├── 005-$scope中的$watch.html 
-│   │    ├── 006-cart.html 
-│   │    ├── 007-module.html 
-│   │    ├── 008-provide.provide.html 
-│   │    ├── 009-provide.factory.html 
-│   │    ├── 010-provide.shareDate.in.multi.controller.html 
-│   │    ├── 011-filter.html 
-│   │    ├── 012-filter-usr-defined.html 
-│   │    ├── 013-controller.DI.html 
-│   │    ├── 014-build-in.directive.html 
-│   │    ├── 015-self-defined.directive-restrict.html 
-│   │    ├── 016-self-defined.directive-transclude-priority-terminal.html 
-│   │    ├── 017-self-defined.directive-compile-link.html 
-│   │    ├── 018-self-defined.directive-controller.html 
-│   │    ├── 019-self-defined.directive-scope.html 
-│   │    ├── 020-self-defined.directive-accordion.html 
-│   │    ├── 021-module-constant-value-run.html 
-│   │    ├── 022-form.html 
-│   │    ├── 023-form-user-defined.html 
-│   │    ├── kittercupCollapse.html 
-│   │    └── other.html
-│   ├──  Sample /
-│   │    ├── SVG /
-│   │    │    ├── barGraphdirective.md
-│   │    │    ├── gaugeWidgetDirective.md
-│   │    │    └── peiChartDirective.md
-│   │    ├── directive /
-│   │    │    ├── 滚屏加载.html
-│   │    │    ├── AngularJS内置服务总览.md
-│   │    │    ├── angular之ng-model-options指令.md
-│   │    │    ├── angular之ng-options用法详解.md
-│   │    │    ├── ng-class in AngularJS.md
-│   │    │    ├── ng-repeat in AngularJS.md
-│   │    │    ├── 自定义一个表格.js
-│   │    │    └── 
-│   │    ├── filter /
-│   │    │    ├── currency-differentDollerSymbol.md
-│   │    │    └── currency-大写中文数字.md
-│   │    ├── service /
-│   │    │    ├── AngularJs中$http再次封装.md
-│   │    │    └── http-error处理.md
-│   │    ├── 页面加载时遮罩过渡.md
-│   │    └── 
-│   ├──  ui-bootstrap-study
-│   │    ├── typeahead /
-│   │    └── ui-Bootstrap之Typeahead.md
-│   ├──  unit-test
-│   │    ├── Controllers test-Directive test.md
-│   │    ├── promise-test.md
-│   │    └── ervice-test.md
-│   │ 
-│   ├── $timeout和$interval的用法.md
-│   ├── $watch详解.md
-│   ├── Angular+AngularJS Material Textarea.md
-│   ├── AngularJS+angularjs作用域的生命周期.md
-│   ├── AngularJS内置服务总览.md
-│   ├── AngularJS学习之Cache-缓存.md
-│   ├── AngularJS学习之Factory vs Service vs Provider.md
-│   ├── AngularJS学习之alert和Excetion设计-debug和diagnostics.md
-│   ├── AngularJS学习之directive详解.md
-│   ├── AngularJS学习之ngAnimate动画.md
-│   ├── AngularJS学习之全局变量constant-value.md
-│   ├── AngularJS学习之表单验证.md
-│   ├── AngularJS给动态生成的元素绑定事件.md
-│   ├── AngularJs中promise-$q.md
-│   ├── Angularjs Controller间通信机制.md
-│   ├── Angularjs directive通信案例.md
-│   ├── Angularjs使用jQuery-jqLite.md
-│   ├── Angularjs工具方法.md
-│   ├── Angularjs的前端拦截器-interceptor.md
-│   ├── Angular声明注入依赖的方法和自动化插件.md
-│   ├── Smooth transition for scrolled view amd Modal.md
-│   ├── UI-Router for AngularJS 1.x.md 
-│   ├── angularJS-debug-skill.md 
-│   ├── angularjs的directive和component的参数传递问题.md
-│   ├── ng-class in AngularJS.md
-│   ├── ng-repeat in AngularJS.md
-│   ├── resources.md
-│   ├── tip.md
-│   └── 常见问题和技巧.md
-```
-
-[back to top](#top)
+[⬆ back to top](#top)
 
 ### CI-CD
 
@@ -517,7 +471,23 @@
 │   └── 现代CSS代码的建议.md
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
+
+### Cloud-study
+
+```
+├── Cloud-study
+│   ├── AWS/
+│   │   ├── basic of aws.md
+│   │   └── Cloud computing focusing on AWS - DevOps - June 14.pdf
+│   ├── Azure/
+│   │   ├── azure-path.jpg
+│   │   ├── AZ-900.md
+│   │   ├── DP-900.md
+│   │   └── az-90.md
+```
+
+[⬆ back to top](#top)
 
 ### Configuration Study - Build tools 
 
@@ -551,28 +521,106 @@
 │        └── ant学习.md
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
-### Cloud-study
+### CSS-CSS3-SCSS
 
 ```
-├── Cloud-study
-│   ├── AWS/
-│   │   ├── basic of aws.md
-│   │   └── Cloud computing focusing on AWS - DevOps - June 14.pdf
-│   ├── Azure/
-│   │   ├── azure-path.jpg
-│   │   ├── AZ-900.md
-│   │   ├── DP-900.md
-│   │   └── az-90.md
+│   ├──  Bootstrap/
+│   │     ├── BootstrapCarouselWithAnimation.html               #使用bootstrap和animation.css制作带动画的幻灯片
+│   │     ├── Responsive Design with Bootstrap 4.md
+│   │     └── bootstrap使用小tip.md
+│   ├──  CSS-Pure/
+│   │     ├── 7个CSS单位.md
+│   │     ├── CSS3利用伪元素与伪类自定义滚动条样式.md
+│   │     ├── CSS选择器中的正则表达式.md
+│   │     ├── 常用css技巧
+│   │     ├── 纯CSS实现垂直居中总结.md
+│   │     └── 自动聚焦输入框纯CSS实现SimulateInputFocus.md - focus输入框的时候，外面容器的灰色边框要高亮(不使用JavaScript,纯CSS实现)
+│   ├──  CSS3-New-Feature新功能/
+│   │     ├── CSS3-Column分栏.md
+│   │     ├── CSS3-flex布局.docx
+│   │     ├── CSS3-flex布局.md
+│   │     ├── CSS3-transition+animation+background_clip.md
+│   │     ├── CSS3-will-change的使用(提高页面滚动、动画等渲染性能).md
+│   │     ├── CSS3超高校级好用CSS变量-currentColor.md	Update CSS3超高校级好用CSS变量-currentColor.md
+│   │     ├── CSS变量.md	Update CSS变量.md
+│   │     ├── css3新增属性.md
+│   │     ├── cssVariableProperty.html
+│   │     ├── grid-layout.html
+│   │     ├── grid-layout.md
+│   │     ├── mustache.html
+│   │     ├── 你可能不知道的5个CSS属性.md
+│   │     ├── 全景.rar
+│   │     ├── 实现CSS3 3D全景.md
+│   │     └── 移动鼠标改变图片的旋转角度值.html
+│   ├──  HTML5+CSS/
+│   │     ├── HTML5和css3超实用的新属性集合.md
+│   │     └──
+│   ├──  Layout-Template/
+│   │     ├── css-table-fixed-header/
+│   │     ├── table-fixed-header-scrolled.md
+│   │     ├── 图片垂直水平居中.html
+│   │     ├── 垂直水平居中小结.md
+│   │     └── 粘连布局.html
+│   ├──  Mobile/
+│   │     ├── some-tip.md
+│   │     └── 
+│   ├──  SCSS/
+│   │     ├── Less vs SASS.md
+│   │     ├── PostCSS学习.md
+│   │     ├── SCSS小结.md
+│   │     └── 值得参考的 10 个LESS CSS实例.md
+│   ├──  Theory/
+│   │     ├── reflow-repaint.md
+│   │     └──
+│   ├──  CSS-Grid 新布局/
+│   │     ├── CSS-Grid-layout.md
+│   │     └── grid-layout***.html
+│   ├──  goodSample/
+│   │     ├── counter/
+│   │     │   ├── 1.jpg
+│   │     │   ├── Figure-counter.html
+│   │     │   └── counter-sample.html
+│   │     ├── CSS-30 seconds of code.md
+│   │     ├── CSS3奇思妙想.html
+│   │     ├── Double Click Link with Pure CSS.html
+│   │     ├── SVG奇思妙想.html
+│   │     ├── base64-sample.md
+│   │     ├──responsiveTable.md
+│   │     └── useful CSS tricks.md
+│   ├──  hacks/
+│   │     ├── css-Hacks合集.md
+│   │     └── IE hacks.md
+│   ├── tips/
+│   │     ├── CSS SlideDown-slideUp Transitions on the Display and Height Properties.md
+│   │     ├── Equal Columns With Flexbox:.md
+│   │     ├── Placeholder style.md
+│   │     ├── Scrollbar+自定义滚动条样式.md
+│   │     ├── css3技巧收集.md
+│   │     ├── css强制换行,超出隐藏和超出显示省略号.md
+│   │     ├── disable all event on page.md
+│   │     ├── js控制css伪元素内容（before，after）.md
+│   │     ├── textarea输入框限制字数.md
+│   │     ├──【CSS进阶】伪元素的妙用.md
+│   │     ├── 中文或英文两端对齐.md
+│   │     ├── 常用css代码.md
+│   │     └── 自适应正方形.md
+│   ├── BEM-规范.md
+│   ├── CSS中的数量查询Quantity Queries-CSS中的计数.md
+│   ├── CSS属性选择器驱动的过滤搜索技术(autocomplete).md
+│   ├── CSS选择器小结.md
+│   ├── scrollTop、offsetHeight和offsetTop等属性.gif
+│   ├── 前端基础知识.md
+│   ├── 基础CSS.md
+│   └── 现代CSS代码的建议.md
 ```
 
-
-[back to top](#top)
+[⬆ back to top](#top)
 
 ### Database学习
 ### Debug-Skill调试技巧
-### Design Pattern
+### DesignPattern-Algrithm
 ### Git Study
 ### GraphQL
 ### HTML5
@@ -595,10 +643,11 @@
 │   ├── 性能调试之memory分析.md
 │   └── 
 │
-├── Design Pattern
-│   ├── 依赖注入模式.md
-│   ├── 
-│   └── 
+├── DesignPattern-Algrithm/
+|    ├── UML图详解.md
+|    ├── 依赖注入模式.md
+|    ├── 背包问题-javascript动态规划.md
+|    └── 
 │
 ├── Git Study
 │   ├── name-contest/   # test案例
@@ -814,8 +863,8 @@
 ### Miscellaneous杂项
 ### NodeJS 学习
 ### Regular Expression - 正则表达式
-### RxJS
 ### Performance 性能分析
+### PPT
 ### Python+R
 ### React
 ### Salesforce

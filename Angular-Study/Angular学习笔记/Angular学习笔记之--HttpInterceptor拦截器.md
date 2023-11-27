@@ -5,7 +5,7 @@
 - [Http错误处理 (Http Error)](#http错误处理-http-error)
 - [配置注入](#配置注入)
 - [自动刷新Token](#自动刷新token)
-- [HttpInterceptor 101](#httpinterceptor-101)
+- [在Angular中使用拦截器的方式Top 10](#在Angular中使用拦截器的方式top-10)
 
 -----------------------------------------------------
 
@@ -193,9 +193,9 @@ export RefreshTokenInterceptor implements HttpIntercetpor {
 
 [⬆ back to top](#top)
 
-## HttpInterceptor 101
+## 在Angular中使用拦截器的方式 Top 10
 
-- [HttpInterceptor 101](https://juejin.cn/post/6911614350067236871)
+- [在 Angular 中使用拦截器的方式 Top 10](https://juejin.cn/post/6911614350067236871)
 - [GitHub 示例代码 10.x版本](https://github.com/llccing-demo/ng-interceptors)
 
 [⬆ back to top](#top)
