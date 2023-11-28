@@ -43,7 +43,7 @@
 │   ├──  Mobile/
 │   │     ├── some-tip.md
 │   │     └── 
-│   ├──  SCSS/
+│   ├──  SCSS+LESS/
 │   │     ├── Less vs SASS.md
 │   │     ├── PostCSS学习.md
 │   │     ├── SCSS小结.md
