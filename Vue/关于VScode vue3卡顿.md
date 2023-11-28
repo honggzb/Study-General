@@ -10,6 +10,6 @@
   5. 重新加载工作空间。Takeover 模式将会在打开一个 Vue 或者 TS 文件时自动启用
 
 
-![Volar Takeover](Volar-Takeover.png)
+![Volar Takeover](./images/Volar-Takeover.png)
 
 > https://www.cnblogs.com/Nicander/p/17097402.html
