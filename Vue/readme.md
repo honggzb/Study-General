@@ -5,7 +5,7 @@
 │   │     └── 
 │   ├── Vue官网学习小结.md
 │   ├── Vue官网学习小结之组件.md
-│   └── lifecycle.png
+│   └── 关于VScode vue3卡顿.md
 ```
 
 ### Vue学习资源
