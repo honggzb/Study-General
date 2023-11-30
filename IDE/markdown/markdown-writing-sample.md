@@ -13,7 +13,8 @@
 ### Using GFM table
 
 -  http://docs.tables.apiary.io
-
+- 表格中文本对齐
+- 实现表格内容换行: Markdown本身不提供单元格合并语法，但是，Markdown是兼容HTML的，因此，我们可以通过HTML的方式实现单元格合并
 ```
 # Tables API 
 Note: Tables can be handcrafted or generated at <http://www.tablesgenerator.com/markdown_tables>.
@@ -43,6 +44,19 @@ Note: Tables can be handcrafted or generated at <http://www.tablesgenerator.com/
 | ---      | ---       |
 | Backtick | `         |
 | Pipe     | \|        |
+
+```
+|排名|姓名|
+|:--|:--|
+|第一名|隔壁老王|
+|第二名|隔壁小王 <br> 隔壁小小王|
+```
+
+|排名|姓名|
+|:--|:--|
+|第一名|隔壁老王|
+|第二名|隔壁小王 <br> 隔壁小小王|
+
 
 ### using HTML table
 
