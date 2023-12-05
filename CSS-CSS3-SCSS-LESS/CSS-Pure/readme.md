@@ -11,3 +11,4 @@
 ## Resources
 
 - [css loaders animation](https://css-loaders.com/)
+- [css animation library](https://animxyz.com/)
