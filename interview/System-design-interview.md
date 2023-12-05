@@ -10,4 +10,13 @@
 - 2️⃣Task: 
   - 项目时间： 如一周内必须完成demo
 - 3️⃣Action: 
-- 4️⃣Result: 
+- 4️⃣Result:
+
+## The PRPL Pattern
+
+PRPL is a pattern for structuring and serving Progressive Web Apps (PWAs), with an emphasis on the performance of app delivery and launch
+
+- Push critical resources for the initial URL route
+- Render initial route
+- Pre-cache remaining routes
+- Lazy-load and create remaining routes on demand
