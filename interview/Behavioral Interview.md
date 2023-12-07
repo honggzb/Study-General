@@ -40,3 +40,20 @@
 |Tell me how you would handle the stress and pressure of being a Software Engineer? |![Alt text](./images/image-32.png)|
 |What are the skills and qualities needed to be a software Engineer?|![Alt text](./images/image-30.png)|
 |ask questions|![Alt text](./images/image-35.png)|
+|Questions to ask at the End of an Interview|![Alt text](./images/image-21.png)<br>
+- What is your favorite part about working here in this organization.
+- What make people stay in this organization
+- What is biggest challenges or opportuntie of this organization or department is facing in the next six months to a year
+- how did u describe the work environment here
+- Role-based
+  - Could u tell me a typical day or week looks like in this position 
+  - what u want a person in this position to accomplish in their first 30, 60 and 90 days
+  - What challenges or opportunties do u foresee thsi position taking on in next six months
+  - How my performance be measured in this position
+  - What are the next steps in the interview process
+- Hesitation question
+  - Based on what we've talked about today, is there anything that is causing you hesitation about my fit for this position
+  - How do I compare to other candidates you've interviewed for this role
+  - do you have any hesitations about my qualifications
+  - Is there anything I can clarify for you
+  - Have I answered all of the questions that you have for me|
