@@ -14,6 +14,7 @@
 ## Angular version重大更改
 
 - **Angular 9**默认采用 ivy 引擎， 所以应用项目 (web) 的 build 选项需要打开aot编译
+- **Angular 14**: 独立组件(Stand-alone Components)
 
 ## Angular版本升级策略
 
