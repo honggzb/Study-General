@@ -15,15 +15,12 @@
 |How would you explain something technical to a non-technical person? |![Alt text](./images/image-41.png)|
 | When you encounter bugs and issues during software engineering projects, what problem-solving process do you use?||
 |How would you respond to a team member who disagreed with the work you’ve carried out as a Software Engineer?|
-|How many streetlights are there in this country?||
 |Tell me a time when you worked as part of a team to solve a complex task.||
-|Why are manhole covers round?||
-| Where do you see yourself in 5 years?||
+| Where do you see yourself in 5 years?|"In five years, I see myself as a more experienced and skilled front-end developer who has made significant contributions to successful projects. <br>I aim to take on more complex challenges and assume a leadership role within the team, mentoring junior developers and helping to shape the direction of our projects. <br>I’m particularly interested in specializing in advanced JavaScript frameworks and exploring the integration of emerging technologies like AI and VR into web development to create innovative user experiences.<br>I also see myself continuing to learn and grow with the company, adapting to new trends and technologies that emerge in the industry. <br>My goal is to be a valuable asset to the team, not just in terms of my technical abilities, but also through my collaborative spirit and commitment to excellence. <br>Ultimately, I want to contribute to the company’s success and be part of its long-term vision."|
 |How you would handle the stress and pressure of being a Software Engineer? ||
 |Why do you want to leave your current job?||
 |What are your strengths? ||
 |What are your salary expectations as a Software Engineer?||
-|That’s the end of your Software Engineer interview, do you have any questions for the panel?||
 |Tell me about a time when you had to manage competing deadlines|![Alt text](./images/image-24.png)|
 |Tell me about yourself and why you wnat to become a software Engineer| ![Alt text](./images/image-27.png)|
 |What skills and qualities are needed to be a software engineer?|![Alt text](./images/image-28.png)|
