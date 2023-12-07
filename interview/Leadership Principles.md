@@ -45,9 +45,9 @@
 |I had some spare time one afternoon and so I decided to go through the office expenditure list to see if I could find the company ways of saving money||
 |Tell me about a time when you helped a team to save money||
 |------------------------------|---------------------------------------------|
-|**11. Earn Trust 赢得信任|answers**|
+|**11. Earn Trust 赢得信任**|answers|
 |------------------------------|---------------------------------------------|
-|**12. Dive Deep 刨根问底|answers**|
+|**12. Dive Deep 刨根问底**|answers|
 |------------------------------|---------------------------------------------|
 |**13. Have Backbone; Disagree and Commit 敢于谏言，服从大局**|answers|
 |1) Tell me a time when you had disagreement with someone at work|**SITUATION**: I was working in an office and a customer emailed the team to complain about the errors that they had found in one of our company newsletters.<br>The newsletter was created periodically by another department within the organization and it's purpose was to generate new business for the company. <br>I took a look at the newsletter and I was shocked at the number of errors that were contained within it.<br>**TASK**: I felt it was my responsibility to raise the issue with the department responsible for the creation of the newsletter, so we could explore ways in which it could be improved. <br>It was my view that the newsletter, in its current format, was letting the business down.<br>**ACTION**: I spoke to the manager of the department and I was met with an immediate defensive attitude. I was basicaly told to mind my own business and he disagreed with my suggestion the newsletter should be improved.<br>However, I persevered and I outlined the benefits of what a strong newsletter could bring to our company. I also offered to proofread the newsletter before it went out, <br>as this would then enable me to suggest different ways in which we could improve the newsletter and use it to leverage new business.<br>**RESULT**: After some perseverance and tactful relationship building skills, the manager agreed for me to work with them to improve the newsletter. Six months after I initially made contact, <br>the newsletter was seen as an integral part of the business and it was responsible for helping to promote new products and also offer incentives and discounts for our loyal customer base. |
