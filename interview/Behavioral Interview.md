@@ -39,8 +39,11 @@
 |Tell me a time when you worked as part of a team to solve a complex task?|![Alt text](./images/image-31.png)|
 |Tell me how you would handle the stress and pressure of being a Software Engineer? |![Alt text](./images/image-32.png)|
 |What are the skills and qualities needed to be a software Engineer?|![Alt text](./images/image-30.png)|
-|ask questions|![Alt text](./images/image-35.png)|
-|Questions to ask at the End of an Interview|![Alt text](./images/image-21.png)<br>
+|ask questions|![Alt text](./images/image-35.png)<br>![Alt text](./images/image-17.png)|
+
+
+## Questions to ask at the End of an Interview
+- ![Alt text](./images/image-21.png)
 - What is your favorite part about working here in this organization.
 - What make people stay in this organization
 - What is biggest challenges or opportuntie of this organization or department is facing in the next six months to a year
