@@ -46,6 +46,7 @@
 |Tell me about a time when you helped a team to save money||
 |------------------------------|---------------------------------------------|
 |**11. Earn Trust 赢得信任**|answers|
+||In my previous role as a front-end developer, I was assigned to a project with a colleague who was new to the team (Situation). <br>My task was to collaborate with them on implementing a complex feature within a two-week sprint (Task). <br>To earn their trust, I made sure to be transparent about my work process, shared regular updates, and offered help whenever they faced any challenges (Action). <br>As a result, we successfully completed the feature ahead of schedule, and my colleague expressed appreciation for my support and mentorship, which helped them settle into the team quickly (Result).”|
 |------------------------------|---------------------------------------------|
 |**12. Dive Deep 刨根问底**|answers|
 |------------------------------|---------------------------------------------|
