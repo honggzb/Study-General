@@ -1,7 +1,17 @@
 |Question|Answer|
 |---|---|
 |Tell me about yourself|![Alt text](./images/image-36.png)|
-|Why did you decide to become a Software Engineer? |![Alt text](./images/image-37.png)|
+|Why do you want to work at Amazon?|![Awhy amazon](./images/whyAmazon.png)<br>![Alt text](./images/image-4.png)|
+|Tell me about a time when you improved a process?|![Alt text](./images/image-5.png)|
+|What are your strengths?|![Alt text](./images/image-6.png)|
+|Tell me about a time when you did something that was outside of your responsibility at work|![Alt text](./images/image-8.png)|
+|How would you react if the people in your team do not agree with your opinions or ideas?|![Alt text](./images/image-7.png)|
+|Tell me about a time you had to deal with a difficult customer or client.|![Alt text](./images/image-9.png)|
+|Tell me about a time when you took a risk at work.|![Alt text](./images/image-10.png)|
+|What’s your biggest weakness?|![Alt text](./images/image-11.png)|
+|Tell me about the time when you showed initiative at work. |![Alt text](./images/image-12.png)|
+|where do you see yourself in five years|![Alt text](./images/image-13.png)|
+|Why did you decide to become a Software Engineer? |![Alt text](./images/image-37.png)<br>![yourself](./images/yourself.png)<br>![Alt text](./images/image-3.png)|
 |Tell me about a project you completed successfully|![Alt text](./images/image-38.png)|
 |What are the most important skills and qualities needed to become a great Software Engineer? ||![Alt text](./images/image-39.png)|
 |What’s your biggest weakness? |![Alt text](./images/image-42.png)|
@@ -36,6 +46,7 @@
 |Tell me a time when you worked as part of a team to solve a complex task?|![Alt text](./images/image-31.png)|
 |Tell me how you would handle the stress and pressure of being a Software Engineer? |![Alt text](./images/image-32.png)|
 |What are the skills and qualities needed to be a software Engineer?|![Alt text](./images/image-30.png)|
+|Tell me about a time that you had to make a decision at work, but you did not have all the data available|**Situation**: “In my previous role as a front-end developer, we were working on a major redesign of our company’s e-commerce website. The project was on a strict deadline due to the upcoming holiday season.”<br>**Problem**: “Two weeks before the launch, we encountered an issue where the user analytics data was incomplete due to a tracking bug. This data was crucial for optimizing the checkout flow, and we didn’t have time to wait for a full data set.”<br>**Action**: “I convened a meeting with the development team and stakeholders to discuss potential solutions. We decided to use the partial data we had, combined with industry best practices and our team’s expertise, to make an educated guess on the checkout design. <br>I also proposed setting up A/B testing to quickly gather real-time user feedback post-launch.”<br>**Result**: “The decision paid off. We launched the website on time, and the initial A/B testing showed a significant improvement in the checkout process. We continued to refine the design as more data became available, which ultimately increased our conversion rate by 15%.”<br>Reflection: “This experience taught me the importance of adaptability and making informed decisions in the face of uncertainty. It also highlighted the value of having a flexible and proactive team that can collaborate effectively under pressure.”|
 |ask questions|![Alt text](./images/image-35.png)<br>![Alt text](./images/image-17.png)|
 
 
