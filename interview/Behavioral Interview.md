@@ -1,17 +1,18 @@
 |Question|Answer|
 |---|---|
-|Tell me about yourself|![Alt text](image-36.png)|
+|Tell me about yourself|![Alt text](./images/image-36.png)|
 |Why did you decide to become a Software Engineer? |![Alt text](./images/image-37.png)|
 |Tell me about a project you completed successfully|![Alt text](./images/image-38.png)|
 |What are the most important skills and qualities needed to become a great Software Engineer? ||![Alt text](./images/image-39.png)|
 |What’s your biggest weakness? |![Alt text](./images/image-42.png)|
 |Why should we hire you as a Software Engineer? |![Alt text](./images/image-40.png)|
-|Why do you want to work for our company as a Software Engineer?|
-|What do you like and dislike the most about being a Software Engineer?|
-|What can you bring to our company?|
-|How would you deal with a situation where a manager insisted on a project specification that you knew was not workable?|
-|What steps do you take to keep your technical knowledge as a Software Engineer relevant and up-to-date?|
-|How did your previous company benefit from your technical knowledge and expertise?|
+|Why do you want to work for our company as a Software Engineer?||
+|What do you like and dislike the most about being a Software Engineer?||
+|What can you bring to our company?|"I believe I can bring a combination of technical expertise and creative problem-solving to your company.<br>
+Additionally, I have a track record of working effectively in team environments, collaborating closely with designers and back-end developers to deliver high-quality projects on time. <br>My proactive approach to staying updated with the latest industry trends and technologies means I can contribute innovative solutions that keep the company at the forefront of digital experiences.<br>Moreover, I’m passionate about user experience and always strive to create interfaces that are not only visually appealing but also intuitive and accessible. <br>I’m confident that my skill set and dedication to continuous learning and improvement will be valuable assets to your team."|
+|How would you deal with a situation where a manager insisted on a project specification that you knew was not workable?||
+|What steps do you take to keep your technical knowledge as a Software Engineer relevant and up-to-date?||
+|How did your previous company benefit from your technical knowledge and expertise?||
 |How would you explain something technical to a non-technical person? |![Alt text](./images/image-41.png)|
 | When you encounter bugs and issues during software engineering projects, what problem-solving process do you use?||
 |How would you respond to a team member who disagreed with the work you’ve carried out as a Software Engineer?|
