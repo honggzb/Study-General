@@ -18,7 +18,7 @@
 3. 写入index.ts
 4. 在package.json需要添加如下配置项
 
-```json
+```
    "main": "index.js",
 +  "type": "module",
    "scripts": {
@@ -43,7 +43,7 @@
 3. 将编译后的文件路径添加到 package.json，并在 scripts 中添加编译命令
    1. `types` 配置项是指定编译生成的类型文件，如果 compilerOptions.declarationDir 指定的是dist，也就是源码和 .d.ts 同级，那么types可以省略
 
-```json
+```
 //tsconfig.json
 {
   "compilerOptions": {
@@ -215,7 +215,7 @@ module.exports = {
 ## Husky
 
 - Husky主要用于在 Git 提交钩子（Git Hooks）中运行脚本。Git 提交钩子是在 Git 版本控制系统的特定事件发生时执行的自定义脚本，例如在代码提交前执行一些检查或验证(不能保证每个人在提交代码之前执行一遍lint校验，所以需要git hooks 来自动化校验的过程，否则禁止提交)
-- ![Husky](Husky.png)
+- ![Husky](./images/Husky.png)
 - Husky 的主要用途是帮助开发团队在代码提交前执行一些预定义的操作，以确保代码的质量和一致性。常见的用例包括：
   - 代码风格检查： 在提交代码之前运行 ESLint、Prettier 或其他代码风格检查工具，以确保代码遵循一致的编码风格
   - 单元测试： 在提交前运行单元测试，以确保代码没有破坏现有功能
