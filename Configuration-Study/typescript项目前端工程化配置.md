@@ -169,7 +169,7 @@ module.exports = {
    1. 安装 prettier 并初始化配置文件, `npm i prettier -D`,  `echo {}> .prettierrc.json`
    2. 在.prettierrc.json添加配置，这里只需要添加和所选规范冲突的部分
 
-```json
+```
 {
   "semi": false,           // 是否使用分号
   "singleQuote": true,     // 使用单引号代替双引号
@@ -183,7 +183,7 @@ module.exports = {
 4. 再添加修改 .eslintrc.cjs
 5. 验证配置是否生效，修改index.ts, 在控制台执行`lint`,这里prettier和eslint的行为已保持一致，如果没有报错，那就成功了
 
-```json
+```
 // .eslintrc.cjs
   module.exports = {
 - extends: ['standard', 'eslint-config-standard-with-typescript'],
