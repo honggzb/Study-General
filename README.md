@@ -399,9 +399,20 @@
 ## Configuration Study - Build tools 
 
 ```
-├── Configuration Study - Build tools 
-│   ├──  Webpack
-│   │    ├── samples
+├── Configuration Study - Build tools
+│   ├──  CI/
+│   │    └── 快速搭建基于gitbook文档平台.md
+│   ├──  Grunt/
+│   │    ├── samples/
+│   │    ├── grunt.initConfig说明.md
+│   │    └── gruntStudy.md
+│   ├──  Gulp/
+│   │    ├── samples/
+│   │    └── GulpStudy.md
+│   ├──  ant/
+│   │    └── ant学习.md
+│   ├──  Webpack/
+│   │    ├── samples/
 │   │    │   ├── webpack-multiple-bundles.rar
 │   │    │   ├── webpack-production.rar
 │   │    │   ├── webpack-seperate-css.rar
@@ -419,13 +430,8 @@
 │   │    ├── webpack优化.md
 │   │    ├── webpack问题汇总.md
 │   │    └── 
-│   ├──  Gulp
-│   │    └── GulpStudy.md
-│   └──  Grunt
-│   │    ├── grunt.initConfig说明.md
-│   │    └── gruntStudy.md
-│   └──  Ant
-│        └── ant学习.md
+│   ├──  Typescript项目前端工程化配置.md
+│   └──  使用Source Map.md
 ```
 
 ## CSS+CSS3+SCSS
