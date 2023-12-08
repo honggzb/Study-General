@@ -1,7 +1,7 @@
 ```
 ├── Configuration Study - Build tools 
-│   ├──  Webpack
-│   │    ├── samples
+│   ├──  Webpack/
+│   │    ├── samples/
 │   │    │   ├── webpack-multiple-bundles.rar
 │   │    │   ├── webpack-production.rar
 │   │    │   ├── webpack-seperate-css.rar
@@ -19,11 +19,13 @@
 │   │    ├── webpack优化.md
 │   │    ├── webpack问题汇总.md
 │   │    └── 
-│   ├──  Gulp
+│   ├──  Gulp/
 │   │    └── GulpStudy.md
-│   └──  Grunt
+│   ├──  Grunt/
 │   │    ├── grunt.initConfig说明.md
 │   │    └── gruntStudy.md
-│   └──  Ant
-│        └── ant学习.md
+│   ├──  Ant/
+│   │    └── ant学习.md
+│   ├──  Typescript项目前端工程化配置.md
+│   └──  
 ```
