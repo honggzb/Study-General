@@ -874,42 +874,44 @@ Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与�
 <h2 id="bottom">Reference && Resource</h2>
 
 > resources
-> - [NVD3](http://nvd3.org) Re-usable charts for d3.js
-> - [好奇猫]https://haoqicat.com/
-> - [镜心的小树屋](https://github.com/JXtreehouse/D3_lessions/tree/master/03-barchart_horizontal)
+- [NVD3](http://nvd3.org) Re-usable charts for d3.js
+- [好奇猫](https://haoqicat.com/)
+- [镜心的小树屋](https://github.com/JXtreehouse/D3_lessions/tree/master/03-barchart_horizontal)
 
 ------------------------------
 
 > Reference
-> - [D3.js (v4) Essentials](http://rajapradhan.com/blogs/d3-js-v4-essentials/)
-> - [D3 的学习资料](http://www.ourd3js.com/wordpress/865/#more-865)
-> - [D3 Sample Gallery](https://bl.ocks.org/)
-> - [Mike Bostock’s Blocks- D3 Sample Gallery](https://bl.ocks.org/mbostock)-- useful
-> - [d3noob’s Blocks- D3 Sample Gallery](https://bl.ocks.org/d3noob)-- useful（入门级）
-> - [Tutorials- official recommend](https://github.com/d3/d3/wiki/Tutorials)
-> - [D3 in Depth](http://d3indepth.com/)
-> - [D3数据可视化系列教程](https://blog.csdn.net/column/details/zhangtianxu.html)
-> - [D3 Tutorial](https://www.dashingd3js.com/table-of-contents)
-> - [作者mbostock的博客](http://bl.ocks.org/mbostock)
-> - [D3 中文手册v4](https://github.com/xswei/d3js_doc)
-> - [官网案例](https://github.com/d3/d3/wiki/Gallery)
-> - [D3中常用的比例尺](https://segmentfault.com/a/1190000011006780)
-> - [如何用D3绘制各种样式的x坐标轴](https://segmentfault.com/a/1190000010910308)
-> - [D3 And Angular](https://www.dashingd3js.com/d3-resources/d3-and-angular)
-> - [The Full List In One Page](https://www.dashingd3js.com/d3-resources/the-big-list-of-d3-resources)
+- [D3.js (v4) Essentials](http://rajapradhan.com/blogs/d3-js-v4-essentials/)
+- [D3 的学习资料](http://www.ourd3js.com/wordpress/865/#more-865)
+- [D3 Sample Gallery](https://bl.ocks.org/)
+- [Mike Bostock’s Blocks- D3 Sample Gallery](https://bl.ocks.org/mbostock)-- useful
+- [d3noob’s Blocks- D3 Sample Gallery](https://bl.ocks.org/d3noob)-- useful（入门级）
+- [Tutorials- official recommend](https://github.com/d3/d3/wiki/Tutorials)
+- [D3 in Depth](http://d3indepth.com/)
+- [D3数据可视化系列教程](https://blog.csdn.net/column/details/zhangtianxu.html)
+- [D3 Tutorial](https://www.dashingd3js.com/table-of-contents)
+- [作者mbostock的博客](http://bl.ocks.org/mbostock)
+- [D3 中文手册v4](https://github.com/xswei/d3js_doc)
+- [官网案例](https://github.com/d3/d3/wiki/Gallery)
+- [D3中常用的比例尺](https://segmentfault.com/a/1190000011006780)
+- [如何用D3绘制各种样式的x坐标轴](https://segmentfault.com/a/1190000010910308)
+- [D3 And Angular](https://www.dashingd3js.com/d3-resources/d3-and-angular)
+- [The Full List In One Page](https://www.dashingd3js.com/d3-resources/the-big-list-of-d3-resources)
 
 -----------------------
 
 > vue+d3.js
-> - [vs文档](https://github.com/GopherJ/Vs)Vs 是一个基于 d3.js 和 vue.js 的数据可视化分析包，适用于图表，dashboard 制作
-> - [vs预览](https://gopherj.github.io/Vs/#/)
-> - [使用Vue与d3.js制作的一款弹框插件](https://segmentfault.com/a/1190000009888380)
+- [Shen Shuntian's github](https://github.com/ssthouse)
+- [Shen Shuntian's Github Repository 可视化 (D3.js & Three.js)](https://juejin.cn/post/6844903694614413325)
+- [vs文档](https://github.com/GopherJ/Vs)Vs 是一个基于 d3.js 和 vue.js 的数据可视化分析包，适用于图表，dashboard 制作
+- [vs预览](https://gopherj.github.io/Vs/#/)
+- [使用Vue与d3.js制作的一款弹框插件](https://segmentfault.com/a/1190000009888380)
 
 -----------------------------------
 
 > sample
-> - [Bubble chart](http://usabilityetc.github.io/demos/d3-country-bubble-chart/)
-> - [Pie && stack bar graph](http://otc2ysde8.bkt.clouddn.com/dimple/index.html)
-> - [Across U.S. Companies, Tax Rates Vary Greatly](https://archive.nytimes.com/www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html)
-> - [Dissecting a Trailer: The Parts of the Film That Make the Cut](https://archive.nytimes.com/www.nytimes.com/interactive/2013/02/19/movies/awardsseason/oscar-trailers.html)
-> - [Zoomable Treemap Bar Chart - with link of other complex sample](https://bl.ocks.org/tejaser/2d5045a7e90ac3fd250180d86bc16f99)
+- [Bubble chart](http://usabilityetc.github.io/demos/d3-country-bubble-chart/)
+- [Pie && stack bar graph](http://otc2ysde8.bkt.clouddn.com/dimple/index.html)
+- [Across U.S. Companies, Tax Rates Vary Greatly](https://archive.nytimes.com/www.nytimes.com/interactive/2013/05/25/sunday-review/corporate-taxes.html)
+- [Dissecting a Trailer: The Parts of the Film That Make the Cut](https://archive.nytimes.com/www.nytimes.com/interactive/2013/02/19/movies/awardsseason/oscar-trailers.html)
+- [Zoomable Treemap Bar Chart - with link of other complex sample](https://bl.ocks.org/tejaser/2d5045a7e90ac3fd250180d86bc16f99)
