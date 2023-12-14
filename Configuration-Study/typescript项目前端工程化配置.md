@@ -6,6 +6,8 @@
   - [Eslint \& Prettier](#eslint--prettier)
 - [Husky](#husky)
 - [Commitlint](#commitlint)
+- [Jest](#jest)
+- [Github Actions](#github-actions)
 
 --------------------------------------------------------------------------------------
 
@@ -183,7 +185,7 @@ module.exports = {
 4. 再添加修改 .eslintrc.cjs
 5. 验证配置是否生效，修改index.ts, 在控制台执行`lint`,这里prettier和eslint的行为已保持一致，如果没有报错，那就成功了
 
-```
+```typescript
 // .eslintrc.cjs
   module.exports = {
 - extends: ['standard', 'eslint-config-standard-with-typescript'],
@@ -228,7 +230,104 @@ module.exports = {
 ## Commitlint
 
 - 用于检查 Git 提交消息是否符合指定的规范的命令行工具。它通常与 Husky 和 Commitizen 等工具一起使用，以确保团队在提交代码时遵循一致的提交消息规范
-- 
+1. 安装 Commitlint: `npm i @commitlint/config-conventional @commitlint/cli -D`
+2. 将Commitlint添加到钩子: `npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'`
+3. 创建'.commitlintrc'，并写入配置
+   - 注意，这里配置文件名使用的是.commitlintrc而不是默认的.commitlintrc.js
+4. 测试钩子是否生效，修改index.ts，让代码正确
+   - 此时，提交一条不符合规范的commit，提交将会失败， 如： 
+     - `git add .`
+     - `git commit -m 'add eslint and commitlint'`
+   - 修改为正确的commit，提交成功！: ` git commit -m 'ci: add eslint and commitlint'`
+
+```typescript
+// 3. 创建'.commitlintrc'，并写入配置
+{
+  "extends": [
+    "@commitlint/config-conventional"
+  ]
+}
+// 4. 测试钩子是否生效，修改index.ts，让代码正确
+  const calc = (a: number, b: number): void => {
+    console.log(a - b)
+  }
+- // calc(1024, 28)
++ calc(1024, 28)
+```
+
+[⬆ back to top](#top)
+
+## Jest
+
+1. 安装jest，和类型声明@types/jest，它执行需要ts-node和ts-jest： `npm i jest @types/jest ts-node@9.1.1 ts-jest -D`
+   - 这里暂时固定了ts-node的版本为 v9.1.1，新版的ts-node@v10.0.0会导致jest报错，等待官方修复，详见：[issues](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Ffacebook%2Fjest%2Fissues%2F11453)
+2. 初始化配置文件： `npx jest --init`
+3. 修改jest.config.ts文件
+4. 将测试命令添加到package.json中
+5. 创建测试文件夹__tests__和测试文件__tests__/calc.spec.ts
+6. 修改index.ts
+7. 在calc.spec.ts中写入测试代码
+8. 验证配置是否生效:  在控制台执行test，`npm run test`, 将会看到测试覆盖率 100% 的结果
+9. 最后给__tests__目录也加上lint校验, 修改package.json
+   - 这里如果直接执行npm run lint将会报错，提示__tests__文件夹没有包含在tsconfig.json的include中，当添加到include之后，输出的dist中就会包含测试相关的文件, 使用typescript-eslint官方给出的解决方案
+10. 新建一个tsconfig.eslint.json文件，写入以下内容：
+11. 在.eslintrc.cjs中修改
+12. 然后验证配置是否生效，直接提交我们添加的测试文件,能正确提交说明配置成功:  
+    - `git add .`
+    - `git commit -m 'test: add unit test'`
+
+```typescript
+//3. 修改jest.config.ts文件
+   // A preset that is used as a base for Jest's configuration
+-  // preset: undefined,
++  preset: 'ts-jest'
+// 4. 将测试命令添加到package.json中
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "npm run clean && tsc",
+    "lint": "eslint src --ext .js,.ts --cache --fix",
+    "clean": "rm -rf dist",
+    "prepare": "husky install",
++   "test": "jest"
+  },
+// 6. 修改index.ts
+  const calc = (a: number, b: number): number => {
+    return a - b
+  }
+- // console.log(calc(1024, 28))
++ export default calc
+// 7. 在calc.spec.ts中写入测试代码
+import calc from '../src'
+test('The calculation result should be 996.', () => {
+  expect(calc(1024, 28)).toBe(996)
+})
+// 9. 最后给__tests__目录也加上lint校验, 修改package.json
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "npm run clean && tsc",
+-   "lint": "eslint src --ext .js,.ts --cache --fix",
++   "lint": "eslint src __tests__ --ext .js,.ts --cache --fix",
+    "clean": "rm -rf dist",
+    "prepare": "husky install",
+    "test": "jest"
+  },
+// 新建一个tsconfig.eslint.json文件，写入以下内容：
+{
+  "extends": "./tsconfig.json",
+  "include": ["**/*.ts", "**/*.js"]
+}
+//在.eslintrc.cjs中修改
+  parserOptions: {
+    ecmaVersion: 12,
+    sourceType: 'module',
+-   project: './tsconfig.json'
++   project: './tsconfig.eslint.json'
+  },
+```
+
+[⬆ back to top](#top)
+
+## Github Actions
 
 [⬆ back to top](#top)
 
@@ -236,4 +335,3 @@ module.exports = {
 - https://www.typescriptlang.org/tsconfig
 - https://prettier.io/docs/en/
 - [前端工程化 - Husky的使用](https://blog.csdn.net/LETEfly/article/details/132908523)
-- 
