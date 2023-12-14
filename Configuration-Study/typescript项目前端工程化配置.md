@@ -335,3 +335,4 @@ test('The calculation result should be 996.', () => {
 - https://www.typescriptlang.org/tsconfig
 - https://prettier.io/docs/en/
 - [前端工程化 - Husky的使用](https://blog.csdn.net/LETEfly/article/details/132908523)
+- [前端规范(四)之husky+lint-staged+commitizen+commitlint](https://blog.csdn.net/weixin_42424283/article/details/128820986)
