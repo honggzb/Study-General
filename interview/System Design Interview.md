@@ -1,6 +1,6 @@
 [System Design Interview Preparation](#top)
 
-- [Front End system design](#front-end-system-design)
+- [Front End system design - Autocomplete or Typeahead](#front-end-system-design-autocomplete-or-typeahead)
 - [Design Parking Garage](#design-parking-garage)
 - [Design Amazon Prime Video](#design-amazon-prime-video)
 - [Design a Hotel Booking Service](#design-a-hotel-booking-service)
@@ -17,37 +17,37 @@
 ||How many video views are processed per second|||
 ||Can there spikes in traffic|||
 
-## Front End system design
+![Front End system design](./images/FrontEndsystemdesign.png)
 
-- ![Front End system design](./images/FrontEndsystemdesign.png)
-- Autocomplete or Typeahead
-  - Clarify the question
-    - what is the goal of this feature?
-    - Do I need to build just he autocomplete feature or the entire search bar with filters?
-    - Should we consider typing errors while search
-  - General Plan
-    - Functional requirements
-    - Non functional requirements
-    - component architecture
-    - Props & events
-    - performance
-    - Accessiblity
+## Front End system design - Autocomplete or Typeahead
+
+- Clarify the question
+  - what is the goal of this feature?
+  - Do I need to build just he autocomplete feature or the entire search bar with filters?
+  - Should we consider typing errors while search
+- General Plan
   - Functional requirements
-    - show suggestions on user input
-    - debounce when user stops typing
-    - search results should be customisable
-    - supports both static data and data coming from an API
   - Non functional requirements
-    - Network efficient
-    - should be configurable
-      - cache size
-      - minumum search query length
-      - search results
-    - performance
-    - Generic enough to support different platforms
-    - Accessibility
-    - browser support
-    - cross devices)desktop, mobile, tablet)
+  - component architecture
+  - Props & events
+  - performance
+  - Accessiblity
+- Functional requirements
+  - show suggestions on user input
+  - debounce when user stops typing
+  - search results should be customisable
+  - supports both static data and data coming from an API
+- Non functional requirements
+  - Network efficient
+  - should be configurable
+    - cache size
+    - minumum search query length
+    - search results
+  - performance
+  - Generic enough to support different platforms
+  - Accessibility
+  - browser support
+  - cross devices)desktop, mobile, tablet)
 ![Aautocompletesample](./images/autocompletesample.png)
 
 [⬆ back to top](top)
