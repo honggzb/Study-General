@@ -48,7 +48,7 @@
     - Accessibility
     - browser support
     - cross devices)desktop, mobile, tablet)
-  - ![Aautocompletesample](./images/autocompletesample.png)
+![Aautocompletesample](./images/autocompletesample.png)
 
 [⬆ back to top](top)
 
