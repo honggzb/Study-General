@@ -897,7 +897,7 @@ Z(z)|none |不能|闭合路径。会有一条线连接路径最后一个点与�
 - [如何用D3绘制各种样式的x坐标轴](https://segmentfault.com/a/1190000010910308)
 - [D3 And Angular](https://www.dashingd3js.com/d3-resources/d3-and-angular)
 - [The Full List In One Page](https://www.dashingd3js.com/d3-resources/the-big-list-of-d3-resources)
-
+- [D3.js + Canvas 绘制组织结构图](https://juejin.cn/post/6844903615425937416)
 -----------------------
 
 > vue+d3.js
