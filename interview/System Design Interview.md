@@ -1,6 +1,6 @@
 [System Design Interview Preparation](#top)
 
-- [Front End system design - Autocomplete or Typeahead](#front-end-system-design-autocomplete-or-typeahead)
+- [Front End system design - Autocomplete or Typeahead](#front-end-system-design---autocomplete-or-typeahead)
 - [Design Parking Garage](#design-parking-garage)
 - [Design Amazon Prime Video](#design-amazon-prime-video)
 - [Design a Hotel Booking Service](#design-a-hotel-booking-service)
@@ -18,6 +18,8 @@
 ||Can there spikes in traffic|||
 
 ![Front End system design](./images/FrontEndsystemdesign.png)
+
+[⬆ back to top](top)
 
 ## Front End system design - Autocomplete or Typeahead
 
