@@ -85,7 +85,7 @@
 │   │   │   └── 
 │   │   ├── todo-list.md
 │   │   └── file-list.md
-│   ├── Highcharts-study/
+│   ├── Highcharts/
 │   │   ├── Highcharts-study.md
 │   │   └──
 │   ├── SVG/
