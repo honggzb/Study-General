@@ -19,6 +19,11 @@
 - [Reference && Resource](#bottom)
 
 -----------------------
+|操作|方法|
+|--|--|
+|用D3操作DOM元素|`d3.select(selector)` 返回匹配选择器的第一个元素<br>`d3.selectAll(selector)` 返回匹配选择器所有元素<br>`selection.append(type)` 创建新元素并返回该元素<br>`selection.remove()` 从DOM中移除当前元素<br>`selection.attr(name[,value])` 取得或设置属性的值<br>`selection.style(name[,value[,priority]])` 取得或设置元素的样式|
+|在DOM元素中绑定数据|`selection.datum([value])` 为每个元素绑定值value<br>`selection.data([data[,key]])` 为每个元素分别绑定对应data中数据值<br>`selection.enter()` 为缺失的元素返回占位符<br>`selection.exit()` 返回没有被绑定数据的元素|
+|交互与动画|`selection.transition([name])`|
 
 - 选择元素语法: 
   - `d3.select('body').append('p').text('some text');`
