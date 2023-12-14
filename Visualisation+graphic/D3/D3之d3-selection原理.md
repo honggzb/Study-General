@@ -9,7 +9,7 @@
 
 -------------------------------------------------
 
-![d3-selection1](./images/d3-selection1.png)
+![d3-selection1](./images/d3-selection.png)
 
 ## Selection
 
