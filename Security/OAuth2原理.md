@@ -19,12 +19,12 @@
 
 ## OAuth Roles
 
-|Role|说明|
-|---|---|
-|**Resource Owner资源拥有者**|The resource owner is the user who authorizes an application to access their account. The application’s access to the user’s account is limited to the scope of the authorization granted (e.g. read or write access)|
-|**Client客户端**|The client is the application that wants to access the user’s account. Before it may do so, it must be authorized by the user, and the authorization must be validated by the API|
-|**Resource Server资源服务器**| The resource server hosts the protected user accounts|
-| **Authorization Server授权服务器**|The authorization server verifies the identity of the user then issues access tokens to the application|
+|Role|角色|说明|
+|---|---|---|
+|**Resource Owner**|**资源拥有者**|The resource owner is the user who authorizes an application to access their account. The application’s access to the user’s account is limited to the scope of the authorization granted (e.g. read or write access)|
+|**Client**|**客户端**|The client is the application that wants to access the user’s account. Before it may do so, it must be authorized by the user, and the authorization must be validated by the API|
+|**Resource Server**|**资源服务器**| The resource server hosts the protected user accounts|
+| **Authorization Server**|**授权服务器**|The authorization server verifies the identity of the user then issues access tokens to the application|
 
 [⬆ back to top](#top)
 
