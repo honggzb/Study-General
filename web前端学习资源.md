@@ -1,7 +1,5 @@
-- 在线文档
-  - [印记中文-各种在线文档](https://docschina.org/)
-  - [javascipt代码规范](https://standardjs.com/)
-  - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+
+- [在线文档](#在线文档)
 - [web前端技术](#web前端技术)
   - [html5](#html5)
   - [CSS3](#CSS3)
@@ -26,6 +24,14 @@
   - [团队博客](#团队博客)
 - [推荐社区](#推荐社区)
 - [国外博客-教程](#国外博客-教程)
+
+## 在线文档
+
+- [印记中文-各种在线文档](https://docschina.org/)
+- [javascipt代码规范](https://standardjs.com/)
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- https://github.com/justjavac/free-programming-books-zh_CN
+- https://github.com/EbookFoundation/free-programming-books
 
 ## web前端技术
 
