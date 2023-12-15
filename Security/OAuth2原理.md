@@ -19,10 +19,12 @@
 
 ## OAuth Roles
 
-- **Resource Owner资源拥有者**: The resource owner is the user who authorizes an application to access their account. The application’s access to the user’s account is limited to the scope of the authorization granted (e.g. read or write access)
-- **Client客户端**: The client is the application that wants to access the user’s account. Before it may do so, it must be authorized by the user, and the authorization must be validated by the API
-- **Resource Server资源服务器**: The resource server hosts the protected user accounts
-- **Authorization Server授权服务器**: The authorization server verifies the identity of the user then issues access tokens to the application
+|Role|说明|
+|---|---|
+|**Resource Owner资源拥有者**|The resource owner is the user who authorizes an application to access their account. The application’s access to the user’s account is limited to the scope of the authorization granted (e.g. read or write access)|
+|**Client客户端**|The client is the application that wants to access the user’s account. Before it may do so, it must be authorized by the user, and the authorization must be validated by the API|
+|**Resource Server资源服务器**| The resource server hosts the protected user accounts|
+| **Authorization Server授权服务器**|The authorization server verifies the identity of the user then issues access tokens to the application|
 
 [⬆ back to top](#top)
 
@@ -30,12 +32,14 @@
 
 ![OAuth22](./images/OAuth2-2.png)
 
-1. The application requests authorization to access service resources from the user 用户点击客户端提供的授权请求
-2. If the user authorized the request, the application receives an authorization grant 客户端请求服务的授权页面呈现给用户，用户点击确认授权后服务端返回授权许可凭证给客户端
-3. The application requests an access token from the authorization server (API) by presenting authentication of its own identity, and the authorization grant 客户端通过步骤二接收到的授权许可凭证及在服务端注册的应用信息请求服务端
-4. If the application identity is authenticated and the authorization grant is valid, the authorization server (API) issues an access token to the application. Authorization is complete. 如果步骤三验证通过服务端则返回 access token 给客户端
-5. The application requests the resource from the resource server (API) and presents the access token for authentication 客户端通过第四步获取的 access token 请求服务端获取资源
-6. If the access token is valid, the resource server (API) serves the resource to the application 如果服务端校验 access token 成功，则返回指定资源给客户端
+|Step|说明|
+|---|---|
+|1. The application requests authorization to access service resources from the user |用户点击客户端提供的授权请求|
+|2. If the user authorized the request, the application receives an authorization grant| 客户端请求服务的授权页面呈现给用户，用户点击确认授权后服务端返回授权许可凭证给客户端|
+|3. The application requests an access token from the authorization server (API) by presenting authentication of its own identity, and the authorization grant |客户端通过步骤二接收到的授权许可凭证及在服务端注册的应用信息请求服务端|
+|4. If the application identity is authenticated and the authorization grant is valid, the authorization server (API) issues an access token to the application. Authorization is complete. |如果步骤三验证通过服务端则返回 access token 给客户端|
+|5. The application requests the resource from the resource server (API) and presents the access token for authentication |客户端通过第四步获取的 access token 请求服务端获取资源|
+|6. If the access token is valid, the resource server (API) serves the resource to the application| 如果服务端校验 access token 成功，则返回指定资源给客户端|
 
 [⬆ back to top](#top)
 
