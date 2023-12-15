@@ -85,9 +85,11 @@
 │   │   │   └── 
 │   │   ├── todo-list.md
 │   │   └── file-list.md
-│   ├── Highcharts/
-│   │   ├── Highcharts-study.md
-│   │   └──
+│   ├── Highcharts/
+│   │   ├── Highcharts-study.md
+│   │   ├── angular-highcharts-project.md
+│   │   ├── angular-highcharts.zip
+│   │   └──
 │   ├── SVG/
 │   │   ├── AngularJS-SVG/
 │   │   ├── SVG displacement filter.html
