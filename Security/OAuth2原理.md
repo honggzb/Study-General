@@ -28,7 +28,7 @@
 
 ## Abstract Protocol Flow
 
-![OAuth22](OAuth2-2.png)
+![OAuth22](./images/OAuth2-2.png)
 
 1. The application requests authorization to access service resources from the user 用户点击客户端提供的授权请求
 2. If the user authorized the request, the application receives an authorization grant 客户端请求服务的授权页面呈现给用户，用户点击确认授权后服务端返回授权许可凭证给客户端
@@ -62,7 +62,7 @@
 
 ## Authorization Code授权码
 
-![授权码](授权码.png)
+![授权码](./images/授权码.png)
 
 ### Step 1 — Authorization Code Link 构建获取授权码请求链接
 
@@ -75,7 +75,7 @@
 ### Step 2 — User Authorizes Application 用户授权给第三方应用
 
 当用户点击第一步构建的链接之后，在用户已经登录服务端之后才能点击确认授权（譬如想通过微信登录某个第三方网址，你必须首先已经登录微博）。这是平台会给用户提供一个页面给用户确认是否授权。
-![用户授权给第三方应用](用户授权给第三方应用.png)
+![用户授权给第三方应用](./images/用户授权给第三方应用.png)
 
 ### Step 3 — Application Receives Authorization Code 服务端给客户端返回授权码
 
@@ -113,7 +113,5 @@
 > References
 - [An Introduction to OAuth 2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)
 - [OAuth 2 详解](https://zhuanlan.zhihu.com/p/30720675)
-- [Keycloak Oauth2.0流程 --- Angular前端 + Django后端 + Keycloak 实现SSO功能](https://blog.csdn.net/wdquan19851029/article/details/112307459)
-- https://github.com/wdquan1985/Angular-Django-Keycloak
 - [【IT老齐211】说人话讲明白OAuth2经典授权码模式](https://www.bilibili.com/video/BV1ja411379W/?spm_id_from=333.788&vd_source=bad1d35f8fbfa2b52a4d43328c042500)
 - [angular-oauth2-oidc](https://github.com/manfredsteyer/angular-oauth2-oidc)
