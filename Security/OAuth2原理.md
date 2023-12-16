@@ -112,6 +112,8 @@
 }
 ```
 
+![OAuth2A](./images/OAuth2A.png)
+
 [⬆ back to top](#top)
 
 > References
