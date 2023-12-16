@@ -998,10 +998,16 @@
 │   │   ├── todo-list.md
 │   │   └── file-list.md
 │   ├── Highcharts/
+│   │   ├── Demo/
+│   │   │   ├── bar-graph/
+│   │   │   │     ├── basic-bar.component.ts
+│   │   │   │     └──  stack-bar.component.ts
+│   │   │   └── treemap/
+│   │   │         ├── app.component-Tree map with levels.ts
+│   │   │         └── basic-treemap.component.ts
 │   │   ├── Highcharts-study.md
 │   │   ├── angular-highcharts-project.md
-│   │   ├── angular-highcharts.zip
-│   │   └──
+│   │   └── angular-highcharts.zip
 │   ├── SVG/
 │   │   ├── AngularJS-SVG/
 │   │   ├── SVG displacement filter.html
