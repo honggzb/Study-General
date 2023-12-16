@@ -46,6 +46,9 @@ export class AppComponent {
 > References
 - [highcharts official](https://www.highcharts.com/)
 - [Highcharts中文官网](https://www.hcharts.cn/)
+- [Angular Highcharts Tutorial+Sample](https://www.tutorialspoint.com/angular_highcharts/index.htm)
+- [highcharts official Demo](https://www.highcharts.com/demo/highcharts/bar-basic)
 - https://www.npmjs.com/package/highcharts-angular
 - [Highcharts with Angular V14](https://www.highcharts.com/blog/tutorials/highcharts-with-angular-v14/)
 - [Highcharts创建具有交互式报表功能的Angular应用程序](https://blog.51cto.com/u_14874181/5721479)
+- https://stackblitz.com/edit/angular-highcharts-bar-chart?file=src%2Fapp%2Fapp.component.ts
