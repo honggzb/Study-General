@@ -10,16 +10,16 @@
 ```
 ├── Visualisation+graphic/
 │   ├── D3/
-│   │   ├── 00.prepare	Add files
+│   │   ├── 00.prepare/
 │   │   │   └── mockServer代码和说明
-│   │   ├── 2. basic-axis-scale
+│   │   ├── 2. basic-axis-scale/
 │   │   │   ├── d3-2.中文坐标轴.html
 │   │   │   ├── d3-2.带网格的坐标轴1.html
 │   │   │   ├── d3-2.带网格的坐标轴2.html
 │   │   │   ├── d3-2.散点图.html
 │   │   │   ├── d3-2.散点图之使用坐标轴.html
 │   │   │   └── 
-│   │   ├── 3.barGraph
+│   │   ├── 3.barGraph/
 │   │   │   ├── d3-1.条形图.html	Rename D3/barGraph/d3-1.条形图.html
 │   │   │   ├── d3-3.dragEvents.html
 │   │   │   ├── d3-3.events.html
@@ -31,9 +31,8 @@
 │   │   │   ├── d3-3.柱状图4sortable.html
 │   │   │   ├── d3-3.柱状图4使用字母刻度.html
 │   │   │   └── 
-│   │   ├── 4.line-areaGraph
-│   │   │   ├── 		
-│   │   │   ├── d3-4.线性图表-curve interpolation comparison.html	Update d3-4.线性图表-curve interpolation comparison.html
+│   │   ├── 4.line-areaGraph/
+│   │   │   ├── d3-4.线性图表-curve interpolation comparison.htm
 │   │   │   ├── d3-4.线性图表.html
 │   │   │   ├── d3-4.线性图表2-Segmented Lines.html
 │   │   │   ├── d3-4.线性图表2-Thershold Lines.html
@@ -47,7 +46,7 @@
 │   │   │   ├── d3-4.饼图圆环图1.html
 │   │   │   ├── d3-4.饼图圆环图2.html
 │   │   │   └── 
-│   │   ├── 5.others
+│   │   ├── 5.others/
 │   │   │   ├── d3-5.Stack.html
 │   │   │   ├── d3-5.Tree+可收缩思维导图.html
 │   │   │   ├── d3-5.Tree-collasible.html
@@ -62,16 +61,16 @@
 │   │   │   ├── d3-5.散点图+toggleButton.html
 │   │   │   ├── d3-航线数据可视化.html
 │   │   │   └── 
-│   │   ├── 6.animation
+│   │   ├── 6.animation/
 │   │   │   ├── Transition Easing Comparison in v4.html	Create Transition Easing Comparison in v4.html
 │   │   │   ├── d3-6.动画之条形图排序+删除增加bar-function.html	Update d3-6.动画之条形图排序+删除增加bar-function.html
 │   │   │   ├── d3-6.动画之条形图排序+删除增加bar.html	Create d3-6.动画之条形图排序+删除增加bar.html
 │   │   │   ├── d3-6.动画之条形图排序切换.html
 │   │   │   └── 
-│   │   ├── 7.D3-angular-2
-│   │   │   ├── readme.md
-│   │   │   └── 代码
-│   │   ├── book
+│   │   ├── 7.D3-angular-2/
+│   │   ├── 8.Map/
+│   │   ├── 9.D3-react/
+│   │   ├── book/
 │   │   │   ├── 2017-VegaLite-InfoVis(斯坦福的数据可视化论文).pdf
 │   │   │   ├── D3.js tips and tricks-v4.pdf
 │   │   │   ├── D3.js+By+Example[ww.java1234.com].pdf
