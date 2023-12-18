@@ -15,7 +15,7 @@
 
 ## react-d3-components
 
-- [react-d3-components](https://github.com/codesuki/react-d3-components/tree/master
+- [react-d3-components](https://github.com/codesuki/react-d3-components/tree/master)
 
 > references
  - https://github.com/muratkemaldar/using-react-hooks-with-d3/tree/01-the-basics
