@@ -22,11 +22,12 @@
 
 ## installation
 
-- Next.js 全栈式的 React 框架: `npx create-next-app@latest`
+1. create typescript project:  `npx create-react-app myproject --template typescript`
+2. Next.js 全栈式的 React 框架: `npx create-next-app@latest`
   - Next.js 的 App Router 是对 Next.js API 的重新设计，旨在实现 React 团队的全栈架构愿景。它让你在异步组件中获取数据，这些组件甚至能在服务端构建过程中运行
-- Remix 具有嵌套路由的全栈式 React 框架: `npx create-remix`
-- Gatsby 快速的支持 CMS 的网站的 React 框架: `npx create-gatsby`
-- Expo 具有真正原生 UI 的应用，包括 Android、iOS，以及 Web 应用: `npx create-expo-app`
+3. Remix 具有嵌套路由的全栈式 React 框架: `npx create-remix`
+4. Gatsby 快速的支持 CMS 的网站的 React 框架: `npx create-gatsby`
+5. Expo 具有真正原生 UI 的应用，包括 Android、iOS，以及 Web 应用: `npx create-expo-app`
 
 [⬆ back to top](#top)
 
