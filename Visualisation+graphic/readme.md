@@ -85,16 +85,19 @@
 │   │   ├── todo-list.md
 │   │   └── file-list.md
 │   ├── Highcharts/
-│   │   ├── Demo/
-│   │   │   ├── bar-graph/
-│   │   │   │     ├── basic-bar.component.ts
-│   │   │   │     └──  stack-bar.component.ts
-│   │   │   └── treemap/
-│   │   │         ├── app.component-Tree map with levels.ts
-│   │   │         └── basic-treemap.component.ts
-│   │   ├── Highcharts-study.md
-│   │   ├── angular-highcharts-project.md
-│   │   └── angular-highcharts.zip
+│   │   ├── highcharts + angular/
+│   │   │   ├── Demo/
+│   │   │   │    ├──  bar-graph/
+│   │   │   │    │      ├── basic-bar.component.ts
+│   │   │   │    │      └──  stack-bar.component.ts
+│   │   │   │    └──  treemap/
+│   │   │   │           ├── app.component-Tree map with levels.ts
+│   │   │   │           └── basic-treemap.component.ts
+│   │   │   └── angular-highcharts.zip
+│   │   ├── highcharts + react/
+│   │   │   ├──
+│   │   │   └── 
+│   │   └── Highcharts-study.md
 │   ├── SVG/
 │   │   ├── AngularJS-SVG/
 │   │   ├── SVG displacement filter.html
