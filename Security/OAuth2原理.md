@@ -121,3 +121,5 @@
 - [OAuth 2 详解](https://zhuanlan.zhihu.com/p/30720675)
 - [【IT老齐211】说人话讲明白OAuth2经典授权码模式](https://www.bilibili.com/video/BV1ja411379W/?spm_id_from=333.788&vd_source=bad1d35f8fbfa2b52a4d43328c042500)
 - [angular-oauth2-oidc](https://github.com/manfredsteyer/angular-oauth2-oidc)
+- [sample-auth0-angular-oauth2-oidc](https://github.com/jeroenheijmans/sample-auth0-angular-oauth2-oidc)
+- [angular - 如何在 Angular 8 中使用 angular-oauth2-oidc 实现身份验证代码流](https://www.coder.work/article/7953159)
