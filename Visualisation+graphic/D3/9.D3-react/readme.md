@@ -1,6 +1,6 @@
 ## Setup
 
-- `npx create-react-app my-app`
+- `npx create-react-app my-app`   -react 18.2.0
 - `npm i d3`
 - `npm i resize-observer-polyfill`
 
