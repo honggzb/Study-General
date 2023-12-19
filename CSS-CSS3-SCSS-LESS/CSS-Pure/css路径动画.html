@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css路径动画</title>
+    <style>
+        /*路径生成工具： https://editor.method.ac/ , ctrl+U, 拷贝d内容到path*/
+        body{padding: 100px;}
+        #dot { 
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #FF9966;
+            offset-path: path("m89,320c102,-107 45,-88 102,-107c57,-19 269,116 274,116c5,0 85,138 181,-3c96,-141 132,-29 132,-29");
+            animation: 3s move infinite linear;
+        }
+        @keyframes move {
+            100% { offset-distance: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div id="dot"></div>
+</body>
+</html>
