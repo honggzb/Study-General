@@ -568,14 +568,23 @@ let _material = new THREE.MeshNomalMaterial({
 
 ### 三维几何体 
 
-|三维几何体|代码|属性|
-|---|---|---|
-|BoxGeometry|`new THREE.BoxGeometry(10 ,10,10);`|![BoxGeometry](./images/BoxGeometry.png)|
-|SphereGeometry|`new THREE.SphereGeometry(10,10,10)`|![SphereGeometry](./images/SphereGeometry.png)|
-|CylinderGeometry|`new THREE.CylinderGeometry(radiusTop,radiusBottom,height,segmentsX,segmentsY)`|![CylinderGeometry](./images/CylinderGeometry.png)|
-|TorusGeometry|`new TorusGeometry(radius,tube,radialSegments,tubularSegments,arc )`|![TorusGeometry](./images/TorusGeometry.png)|
-|TorusKnotGeometry|`new TorusKnotGeometry(radius,tube,radialSegments,tubularSegments,p,q,heightScale)`|![TorusKnotGeometry](./images/TorusKnotGeometry.png)|
-|PolyhedronGemotry|多面体是只有平面和直边的几何体<br>要创建一个PolyhedronGemotry对象，<br>需要传入vertices（定点）、face（面）、radius（半径）和detail参数|![PolyhedronGemotry](./images/PolyhedronGemotry.png)|
+|三维几何体|编码|
+|---|---|
+|BoxGeometry|`new THREE.BoxGeometry(10 ,10,10);`|
+|SphereGeometry|`new THREE.SphereGeometry(10,10,10)`|
+|CylinderGeometry|`new THREE.CylinderGeometry(radiusTop,radiusBottom,height,segmentsX,segmentsY)`|
+|TorusGeometry|`new TorusGeometry(radius,tube,radialSegments,tubularSegments,arc )`|
+|TorusKnotGeometry|`new TorusKnotGeometry(radius,tube,radialSegments,tubularSegments,p,q,heightScale)`|
+|PolyhedronGemotry|多面体是只有平面和直边的几何体<br>要创建一个PolyhedronGemotry对象，<br>需要传入vertices（定点）、face（面）、radius（半径）和detail参数|
+
+|三维几何体|属性|
+|---|---|
+|BoxGeometry|![BoxGeometry](./images/BoxGeometry.png)|
+|SphereGeometry|![SphereGeometry](./images/SphereGeometry.png)|
+|CylinderGeometry|![CylinderGeometry](./images/CylinderGeometry.png)|
+|TorusGeometry|![TorusGeometry](./images/TorusGeometry.png)|
+|TorusKnotGeometry|![TorusKnotGeometry](./images/TorusKnotGeometry.png)|
+|PolyhedronGemotry|![PolyhedronGemotry](./images/PolyhedronGemotry.png)|
 
 ```javascript
 // 圆环没有放在three的默认导出中，如果使用需要额外引入
