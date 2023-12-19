@@ -30,7 +30,7 @@
 3. OpenGL OpenGL是开放式图形标准，跨编程语言、跨平台，Javascript、Java 、C、C++ 、 python 等都能支持OpenGL，OpenGL的Javascript实现就是WebGL，另外很多CAD制图软件都采用这种标准。OpenGL ES 2.0是OpenGL的子集，针对手机、游戏主机等嵌入式设备而设计
 4. Canvas Canvas是HTML5的画布元素，在使用Canvas时，需要用到Canvas的上下文，可以用2D上下文绘制二维的图像，也可以使用3D上下文绘制三维的图像，其中3D上下文就是指WebGL
 
-![Threejs](Threejs.png)
+![Threejs](./images/Threejs.png)
 
 [⬆ back to top](#top)
 
@@ -92,7 +92,7 @@ camera.up.set(0, 0, 1)
 #### 4）相机视野范围：视椎体
 
 - 透视投影相机的四个参数**fov, aspect, near, far**构成一个四棱台3D空间，被称为视锥体，只有视锥体之内的物体，才会渲染出来，视锥体范围之外的物体不会显示在Canvas画布上
-- ![视椎体](视椎体.png)
+- ![视椎体](./images/视椎体.png)
 
 ```typescript
 // width和height用来设置Three.js输出的Canvas画布尺寸(像素px)
@@ -136,12 +136,12 @@ renderer.antialias = true,  //抗锯齿，平滑
   - 基础网格材质[MeshBasicMaterial](https://threejs.org/docs/index.html?q=MeshBasicMaterial#api/zh/materials/MeshBasicMaterial)不会受到光照影响(有光源和没有光源，它都会显示颜色和材质)。
   - 漫反射网格材质[MeshLambertMaterial](https://threejs.org/docs/index.html?q=MeshLambertMaterial#api/zh/materials/MeshLambertMaterial)会受到光照影响(如果没有光源，它就是暗的，不会显示颜色和材质)，该材质也可以称为Lambert网格材质，音译为兰伯特网格材质。不同面和光线夹角不同，立方体不同面就会呈现出来不同的明暗效果。
   - 高光(镜面)网格材质[MeshPhongMaterial]()可以提供一个高光反射效果。在太阳下面观察一辆车，你会发现在特定角度和位置，你可以看到车表面某个局部区域非常高亮。（高光亮度属性.shininess，高光颜色属性.specular）
-  - ![网格材质](网格材质.png)
+  - ![网格材质](./images/网格材质.png)
 - 光源对象
   - 环境光：没有特定的方向，只有颜色。不会产生阴影，可以理解为全局的背景色
   - 点光源：由一个点散发的光，类似于蜡烛，可以设置阴影
   - 平行光：从一个方向平行照射的光，类似于阳光，可以设置阴影
-- ![光源](光源.png)
+- ![光源](./images/光源.png)
 
 #### 1）环境光AmbientLight
 
@@ -268,7 +268,7 @@ var cube = new THREE.Mesh(geometry, material);
 ### 纹理贴图
 
 - 贴图是通过将图像应用到对象的一个或多个面，来为3D对象添加细节的一种方法, 而无需将这些细节建模到我们的3D对象中，从而大大精简3D模型的多边形边数，提高模型渲染性能
-- ![纹理贴图](纹理贴图.png)
+- ![纹理贴图](./images/纹理贴图.png)
 - 应用场景：
   - 全景贴图，比如：3D地球贴图，天空盒子贴图
   - 添加文字，视频 比如：在大楼上加横幅，地板上加文字之类的，通过canvas绘制好图，通过uv映射原理贴到几何体上面。
