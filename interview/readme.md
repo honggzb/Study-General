@@ -9,6 +9,7 @@
 │   └── Lead Front end Developer questions.md
 ```
 
+-[干爆前端](https://github.com/193Eric/fucking-frontend/tree/main)
 - https://bigfrontend.dev/
 - Create a new project out of xxx-angular-boilerplate code 
 - This project provides standard user interface and  functionality for all xxx Family applications and application infrastructure, including unit and e2e testing functionality
