@@ -49,7 +49,7 @@ demo-elementary-r73-2018-10
   - Windows mobile：从8.1版本后开始支持
 - 渲染器（render）, 场景（scene）, 照相机（camera）, 光源（light）, 物体（object）
 
-![3D场景逻辑结构](3D场景逻辑结构.png)
+![3D场景逻辑结构](./images/3D场景逻辑结构.png)
 
 ### 场景（scene）
 
