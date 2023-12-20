@@ -35,8 +35,6 @@
 - [UX](#ux)
 - [VirtualReality](#virtualreality)
 - [Visualisation+graphic](#visualisationgraphic)
-  - [D3](#d3)
-  - [SVG](#svg)
 - [Vue](#vue)
 
 --------------------------------------
@@ -920,8 +918,6 @@
 ```
 
 ## Visualisation+graphic
-### D3
-### SVG
 
 ```
 ├── Visualisation+graphic/
