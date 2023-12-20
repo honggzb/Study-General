@@ -18,7 +18,7 @@ WebGL 是一种基于 JavaScript 的 API，用于创建交互式 3D 图形和动
 
 > Resources
 - [Migration Guide](https://github.com/mrdoob/three.js/wiki/Migration-Guide)
-- [threejs 官方文档](https://threejs.org/docs/#manual/zh/introduction/Creating-a-scene
+- [threejs 官方文档](https://threejs.org/docs/#manual/zh/introduction/Creating-a-scene)
 - [WebGL中文网](http://www.hewebgl.com/)：是国内领先的 WebGL 学习网站，提供了 WebGL 入门教程、实战案例、书籍推荐等资源。
 - [Three.js中文教程](https://techbrood.com/threejs/docs/)
 - [webgl3d.cn](http://www.webgl3d.cn/)：该网站提供了丰富的 WebGL 教程和案例，包括基础知识、渲染器、模型、动画等方面。
