@@ -16,6 +16,7 @@ WebGL 是一种基于 JavaScript 的 API，用于创建交互式 3D 图形和动
 6. 熟悉浏览器的调试工具，能够查看和调试 WebGL 应用程序的运行状态和性能问题。
 
 > Resources
+- [Migration Guide](https://github.com/mrdoob/three.js/wiki/Migration-Guide)
 - [WebGL中文网](http://www.hewebgl.com/)：是国内领先的 WebGL 学习网站，提供了 WebGL 入门教程、实战案例、书籍推荐等资源。
 - [webgl3d.cn](http://www.webgl3d.cn/)：该网站提供了丰富的 WebGL 教程和案例，包括基础知识、渲染器、模型、动画等方面。
 - [前端乱炖](https://www.html5rocks.com/zh/tutorials/webgl/webgl_fundamentals/)：是一个前端开发者社区，提供了有关 WebGL 的基础知识和实践经验。
