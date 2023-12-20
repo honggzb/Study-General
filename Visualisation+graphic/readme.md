@@ -1,12 +1,3 @@
-- D3.js是一个JavaScript库（是一个**被数据驱动**的文档），用于在浏览器中创建交互式可视化. D3.js库允许我们在数据集的上下文中操作网页的元素.这些元素可以是HTML，SVG，或画布元素，可以根据数据集的内容进行引入，删除或编辑.它是一个用于**操作DOM对象**的库. D3.js可以成为数据探索的宝贵帮助，它可以控制数据的表示，并允许添加交互性.
-- Highcharts 是一个用纯JavaScript编写的一个图表库， 能够很简单便捷的在web网站或是web应用程序添加有交互性的图表,HighCharts支持的图表类型有曲线图、区域图、柱状图、饼状图、散状点图和综合图表
-
-|libs|是否免费/开源|难度|兼容性|
-|---|---|---|---|
-|Highcharts|非商业免费，商业需授权，代码开源|基于SVG，方便自己定制，但图表类型有限|兼容IE6及以上的所有主流浏览器，完美支持移动端缩放、手势操作|
-|D3|完全免费，代码开源|基于SVG，方便自己定制；D3.v4支持Canvas+SVG，如果计算比较密集，也可以选择用Canvas。<br>除此之外，D3图表类型非常丰富，几乎可以满足所有开发需求，但代码相对于以上两个插件来说，会稍微难一点|兼容IE9 及以上的所有主流浏览器，对于移动端的兼容性也同上|
-|Echarts|完全免费，代码开源|基于Canvas，适用于数据量比较大的情况|兼容 IE6 及以上的所有主流浏览器，同样支持移动端的缩放和手势操作|
-
 ```
 ├── Visualisation+graphic/
 │   ├── D3/
@@ -106,3 +97,48 @@
 │   │   ├── demo-elementary-r73-2018-10/
 │   │   └── webGL学习-2023版.md
 ```
+
+[⬆ back to top](#top)
+
+### Tools, IDEs
+
+- [Sketchfab- 3D & AR on the web](https://sketchfab.com/)
+- [Claro- Model,Animate,Render online](https://clara.io/)
+- [replit-template project for various languages](https://replit.com/)
+- https://codesandbox.io/p/sandbox/threejs-playground-gorrl
+- Visual Studio Code extension
+  - ThreeJs Snippets
+  - 3D Viewer for VSCode
+  - JavaScript (ES6) code snippets
+
+## ThreeJS
+
+- [Three.js](https://threejs.org/)
+- [threejs 官方文档](https://threejs.org/docs/#manual/zh/introduction/Creating-a-scene)
+- [Three.js中文教程](https://techbrood.com/threejs/docs/)
+- [Three.js and TypeScript Tutorials](https://sbcode.net/threejs/)
+- [Migration Guide](https://github.com/mrdoob/three.js/wiki/Migration-Guide)
+- [threejs+angular 实现面积测量](https://blog.csdn.net/u013172864/article/details/89704868)
+- [使用React+Three.js 封装一个三维地球](https://blog.csdn.net/future_todo/article/details/78072615)
+- [Three.js 快速上手以及在 React 中运用[转]](https://www.cnblogs.com/mazhenyu/p/11834700.html)- https://github.com/zrysmt/react-threejs-app
+- [Hello React And Three.js](https://zhuanlan.zhihu.com/p/450900050)
+
+## WebGL
+
+- [WebGL by example in MDN](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/By_example)
+- [WebGL中文网](http://www.hewebgl.com/)：是国内领先的 WebGL 学习网站，提供了 WebGL 入门教程、实战案例、书籍推荐等资源。
+- [webgl3d.cn](http://www.webgl3d.cn/)：该网站提供了丰富的 WebGL 教程和案例，包括基础知识、渲染器、模型、动画等方面。
+- [前端乱炖](https://www.html5rocks.com/zh/tutorials/webgl/webgl_fundamentals/)：是一个前端开发者社区，提供了有关 WebGL 的基础知识和实践经验。
+- [网易云课堂](https://study.163.com/courses-search?keyword=webgl)：提供了多个有关 WebGL 的视频课程，适合初学者和进阶者。
+- [慕课网](https://www.imooc.com/search/?words=webgl)：该网站提供了多个有关 WebGL 的视频课程和实战项目，适合初学者和进阶者。
+- [WebGL Academy](https://www.webglacademy.com/)
+
+## github
+
+- [WebGL Samples](https://github.com/WebGLSamples)
+- https://github.com/mrdoob/three.js/tree/dev/examples
+- [mdn-webgl-examples](https://github.com/idofilin/webgl-by-example/tree/master)
+- https://github.com/Sean-Bradley
+- https://github.com/pmndrs/react-three-fiber
+
+[⬆ back to top](#top)
