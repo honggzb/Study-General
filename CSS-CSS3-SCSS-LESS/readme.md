@@ -1,8 +1,3 @@
-- [CSS参考手册](https://css.doyoe.com/)
-- [在线自适应布局案例](https://mediaqueri.es/)
-- https://www.sitepoint.com/html-css/
-- https://www.w3cplus.com/
-
 ```
 │   ├──  Bootstrap/
 │   │     ├── BootstrapCarouselWithAnimation.html               #使用bootstrap和animation.css制作带动画的幻灯片
@@ -95,7 +90,20 @@
 │   └── 现代CSS代码的建议.md
 ```
 
-> references & tools && useful website
-- [coco's blog](https://chokcoco.github.io/#blog)
+## official references
+
+- [CSS参考手册](https://css.doyoe.com/)
+- [在线自适应布局案例](https://mediaqueri.es/)
+- https://www.sitepoint.com/html-css/
+- https://www.w3cplus.com/
+
+## resources
+
+- https://github.com/chokcoco/iCSS  - 各种css特效+详细讲解
 - [Soft-UI CSS code](https://neumorphism.io/#e0e0e0)
-- [codepen](https://codepen.io/pen/tour/welcome/start)
+- [codepen](https://codepen.io/pen/tour/welcome/start)  
+
+## useful website
+
+- [coco's blog](https://chokcoco.github.io/#blog)
+
