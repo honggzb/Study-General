@@ -995,8 +995,12 @@
 │   │   │   ├── 数据可视化实战(使用D3设计交互式图表).pdf
 │   │   │   ├── 数据可视化实战-d3db.pdf
 │   │   │   └── 
-│   │   ├── todo-list.md
-│   │   └── file-list.md
+│   │   ├── D3 的学习- version 45.md
+│   │   ├── D3之d3-selection原理.md
+│   │   ├── d3-3.events.html
+│   │   ├── d3-3.柱状图3动画过渡.html
+│   │   ├── todo-list.md
+│   │   └── file-list.md
 │   ├── Highcharts/
 │   │   ├── Demo/
 │   │   │   ├── bar-graph/
