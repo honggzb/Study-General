@@ -35,6 +35,10 @@
   - [材质对象](#材质对象)
 - [模型对象](#模型对象)
 - [纹理贴图](#纹理贴图)
+- [其他](#其他)
+  - [精灵模型、粒子系统](#精灵模型粒子系统)
+  - [模型文件导出\&导入](#模型文件导出导入)
+  - [后期处理](#后期处理)
 
 -----------------------------------------------------------
 
@@ -658,6 +662,55 @@ var cube = new THREE.Mesh(geometry, material);
   - 全景贴图，比如：3D地球贴图，天空盒子贴图
   - 添加文字，视频 比如：在大楼上加横幅，地板上加文字之类的，通过canvas绘制好图，通过uv映射原理贴到几何体上面。
   - 3D美术贴图，流程：3D美术创建好模型和纹理贴图--->程序员解析3D美术导出的资源-→纹理映射到几何体上面（一般美术导出的模型都会解析好，程序员只用解析显示就好了）
+
+[⬆ back to top](#top)
+
+## 其他
+
+### 精灵模型、粒子系统
+
+- 精灵模型对象Sprite
+  - 效果：无论相机如何变化，始终平行于桌面的矩形区域，等价于一个PlaneGeometry创建的矩形网格模型，正面永远朝着屏幕
+  - 模型对比：不包含几何体geometry参数
+  - 应用：大数据可视化，通过大量的精灵对象近似模拟下雨，下雪等特效。
+  - 粒子系统：足够多精灵对象构成一个粒子系统
+  - 缩放：和网格模型受正投影、透视投影相机的影响一样
+
+### 模型文件导出&导入
+
+- 可导出模型：几何体、网格模型、材质、光源、相机...
+- 导出方法：toJSON()
+- 导出一个json的过程：threejs对象-->从threejs对象提取数据-->执行toJSON方法得到一个对象-->将JSON对象转为字符串→HTML5的文件保存模块
+- 几种可导入模型类型：
+  - JSON文件，和上面的json导出模型对应。
+  - stl文件 ，3d美术导出文件，适用于几何体、材质、贴图
+  - obj文件，3d美术导出文件，适用于几何体、材质、贴图
+  - FBX并解析骨骼动画，3d美术导出文件，主要适用于骨骼动画这块。
+
+### 后期处理
+
+- THREEJS 中的后期处理通道（ShaderPass）以及特效合成器（effectComposer）
+  - 后期处理通道（Pass），每个通道都是一个ShaderPass，也就是一个Shader，熟悉 GLSL 的 learner 都可以自定义ShaderPass，每个通道就类似于美图秀秀的滤镜的功能，能给你的画面一些特效，比如发光、褐色、清新之类的
+  - 特效合成器（effectComposer）就会把叠加在这个画面上的所有通道（一个画面可以叠加多个通道，类似于一个图片用多个滤镜）的结果计算并渲染出来，所以特效合成器也算是一个render
+
+```javascript
+//案例：让场景模型点击发光。
+this.composer = new EffectComposer(this.renderer)
+var renderPass = new RenderPass(this.scene, this.camera)
+this.composer.addPass(renderPass)
+this.outlinePass = new OutlinePass(
+    new THREE.Vector2(window.innerWidth, window.innerHeight),
+    this.scene,
+    this.camera
+)
+this.outlinePass.edgeStrength = 5 //包围线浓度
+this.outlinePass.edgeGlow = 0.5 //边缘线范围
+this.outlinePass.edgeThickness = 2 //边缘线浓度
+this.outlinePass.pulsePeriod = 2 //包围线闪烁频率
+this.outlinePass.visibleEdgeColor.set('#ffffff') //包围线颜色
+this.outlinePass.hiddenEdgeColor.set('#190a05') //被遮挡的边界线颜色
+this.composer.addPass(this.outlinePass)
+```
 
 [⬆ back to top](#top)
 
