@@ -120,7 +120,7 @@ gl.useProgram();
 
 ## 顶点着色器
 
-![顶点着色器](顶点着色器.png)
+![顶点着色器](./images/顶点着色器.png)
 - 顶点着色器代码就是在GPU上的顶点着色器功能单元执行
 
 ```javascript
@@ -137,7 +137,7 @@ const vertexShaderSource = `
 
 ## 片元着色器
 
-![片元着色器](片元着色器.png)
+![片元着色器](./images/片元着色器.png)
 - 片元着色器代码在GPU上的片元着色器功能单元执行
   
 ```javascript
