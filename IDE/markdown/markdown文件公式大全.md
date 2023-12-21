@@ -408,6 +408,17 @@ $$
 \end{matrix} \right]\tag{2}
 $$
 
+```
+$$
+\left[
+\begin{matrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 
+\end{matrix} \right]\tag{2}
+$$
+```
+
 $$
 \left[
 \begin{pmatrix}
@@ -416,6 +427,17 @@ $$
 7 & 8 & 9 
 \end{pmatrix} \right]\tag{3}
 $$
+
+```
+$$
+\left[
+\begin{pmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9 
+\end{pmatrix} \right]\tag{3}
+$$
+```
 
 $$
 \left[
