@@ -320,7 +320,7 @@ function Button({ onClick, children }) {
 ### State
 
 - 在 React 中，useState 以及任何其他以“use”开头的函数都被称为 **Hook**, Hook是特殊的函数，只在React渲染时有效
-  - **陷阱**: **以use开头的函数(Hooks)——只能在组件或自定义Hook的最顶层调用**。 不能在条件语句、循环语句或其他嵌套函数内调用Hook。Hook是函数，但将它们视为关于组件需求的无条件声明会很有帮助。在组件顶部 “use” React 特性，类似于在文件顶部“导入”模块
+  - **陷阱: 以use开头的函数(Hooks)——只能在组件或自定义Hook的最顶层调用**。 不能在条件语句、循环语句或其他嵌套函数内调用Hook。Hook是函数，但将它们视为关于组件需求的无条件声明会很有帮助。在组件顶部 “use” React 特性，类似于在文件顶部“导入”模块
 - [useState](https://react.dev/reference/react/useState) Hook: add state to a component
   - declare a state variable. It takes the initial state and returns a pair of values: the current state, and a state setter function that lets you update it
   - useState Hook 提供了这两个功能：
@@ -408,7 +408,7 @@ export default function Gallery() {
 - React 会再次调用你的函数
 - 函数会返回新的 JSX 快照
 - React 会更新界面以匹配返回的快照
-- 注意： **State是隔离且私有的**， **React会使state的值始终”固定“在一次渲染的各个事件处理函数内部**，即每一次渲染的state值都是固定的
+- 注意： **State是隔离且私有的，React会使state的值始终”固定“在一次渲染的各个事件处理函数内部**，即每一次渲染的state值都是固定的
 
 [⬆ back to top](#top)
 
