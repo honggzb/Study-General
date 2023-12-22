@@ -230,8 +230,8 @@ export default function Profile() {
 - if语句
   - 选择性地将 JSX 赋值给变量: `if (isPacked) { itemContent = name + " ✔"; }`
   - `<li className="item"> {itemContent} </li>`
-- 三目运算符?: `{cond ? <A /> : <B />}` 表示 当 cond 为真值时, 渲染 <A />，否则 <B />
-- 与运算符&&: `{cond && <A />}` 表示 当 cond 为真值时, 渲染 <A />，否则不进行渲染
+- 三目运算符`?`: `{cond ? <A /> : <B />}` 表示 当 cond 为真值时, 渲染 <A />，否则 <B />
+- 与运算符`&&`: `{cond && <A />}` 表示 当 cond 为真值时, 渲染 <A />，否则不进行渲染
 
 [⬆ back to top](#top)
 
