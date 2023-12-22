@@ -17,8 +17,6 @@ WebGL 是一种基于 JavaScript 的 API，用于创建交互式 3D 图形和动
 5. 掌握 WebGL 编程中常用的库和框架，如 Three.js、Babylon.js 等。
 6. 熟悉浏览器的调试工具，能够查看和调试 WebGL 应用程序的运行状态和性能问题。
 
-![threejs-structure.jpg](./images/threejss-structure.jpg)
-
 ## ThreeJS
 
 - [Three.js](https://threejs.org/)
