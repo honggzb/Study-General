@@ -30,7 +30,5 @@ WebGL 是一种基于 JavaScript 的 API，用于创建交互式 3D 图形和动
 ## github
 
 - [WebGL Samples](https://github.com/WebGLSamples)
-- https://github.com/mrdoob/three.js/tree/dev/examples
 - [mdn-webgl-examples](https://github.com/idofilin/webgl-by-example/tree/master)
 - https://github.com/Sean-Bradley
-- https://github.com/pmndrs/react-three-fiber
