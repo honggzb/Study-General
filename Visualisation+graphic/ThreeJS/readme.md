@@ -7,7 +7,15 @@
 
 ![threejs-structure.jpg](./images/threejss-structure.jpg)
 
-> References
+## tools
+
+- Element-Plus:https://element-plus.gitee.io/zh-CN/
+- 模型下载网站 https://sketchfab.com/feed
+- 贴图素材网站 https://polyhaven.com/
+- 图片格式转换网站 https://onlineconvertfree.com/zh/convert/hdr/
+
+## References
+
 - [Three.js中文网]([http://www.webgl3d.cn/](http://www.webgl3d.cn/pages/aac9ab/)http://www.webgl3d.cn/pages/aac9ab/)
 - [Three.js](https://threejs.org/)
 - [threejs 官方文档](https://threejs.org/docs/#manual/zh/introduction/Creating-a-scene)
