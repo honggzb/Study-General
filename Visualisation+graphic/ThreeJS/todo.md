@@ -2,3 +2,5 @@
   - [Three.js给场景添加背景颜色，背景图，全景图](https://zhuanlan.zhihu.com/p/652383219)
   - [Three.js加载外部glb,fbx,gltf,obj 模型文件](https://zhuanlan.zhihu.com/p/644016123)
   - https://gitee.com/ZHANG_6666/Three.js3D/
+  - [基于ThreeJS框架React-Three-Fiber实现3D看房](https://zhuanlan.zhihu.com/p/664394819)
+    - https://github.com/hzzou/hzzou.github.io
