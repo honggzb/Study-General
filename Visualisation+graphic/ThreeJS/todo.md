@@ -4,3 +4,5 @@
   - https://gitee.com/ZHANG_6666/Three.js3D/
   - [基于ThreeJS框架React-Three-Fiber实现3D看房](https://zhuanlan.zhihu.com/p/664394819)
     - https://github.com/hzzou/hzzou.github.io
+  - [threejs 3d模型可视化编辑器](https://gitee.com/ZHANG_6666/Three.js3D/)  --> vue+three.js
+  - [浏览器中的三维空间「Three.js场景搭建」](https://zhuanlan.zhihu.com/p/24660471)
