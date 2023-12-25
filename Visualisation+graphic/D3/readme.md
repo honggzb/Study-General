@@ -90,3 +90,9 @@
 │   │   ├── todo-list.md
 │   │   └── file-list.md
 ```
+
+## D3 thirdparty libraries
+
+- [ag-charts](https://charts.ag-grid.com/) - react, angular, vue
+  - [ag-charts-react](https://charts.ag-grid.com/react/quick-start/)
+  - [ag-charts-angular](https://charts.ag-grid.com/angular/quick-start/)
