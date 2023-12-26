@@ -31,3 +31,13 @@
 ├── 
 └── 
 ```
+
+### VSCode settings
+
+1. plugin
+   1. ES7 React/Redux/GraphQL/React-Native snippets
+   2. Highlight Matching Tag
+   3. Prettier - Code formatter
+2. open settings.json, add `"editor.formatOnSave": true,`
+
+[⬆ back to top](#top)
