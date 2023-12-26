@@ -1,6 +1,11 @@
 [React Basic](#top)
 
 - [installation](#installation)
+- [React core concepts](#react-core-concepts)
+  - [Visual DOM vs DOM](#visual-dom-vs-dom)
+  - [props and state](#props-and-state)
+  - [css modules](#css-modules)
+  - [callback functions](#callback-functions)
 - [Components](#components)
   - [定义组件, 组件的导入与导出](#定义组件-组件的导入与导出)
   - [JSX 规则](#jsx-规则)
@@ -29,6 +34,66 @@
 |Remix 具有嵌套路由的全栈式 React 框架|`npx create-remix`|
 |Gatsby 快速的支持 CMS 的网站的 React 框架|`npx create-gatsby`|
 |Expo 具有真正原生 UI 的应用，包括 Android、iOS，以及 Web 应用| `npx create-expo-app`|
+
+[⬆ back to top](#top)
+
+## React core concepts
+
+### Visual DOM vs DOM
+
+- DOM: will update body tag and children(all page)**(repaint)** when there is change
+- Visual DOM update elements in page that choosing by react
+  - Visual DOM is basically a lighter replica of the DOM
+  - most performance
+  - faster
+  - smarter
+
+### props and state
+
+- props: data send to parent component
+  - never change props directly
+- state: 
+  - every time state changed, component will be re-rendered
+
+### css modules
+
+- rename css file as 'xxx.module.css'
+- when using
+  - `import myStyle from './xxx.module.css';`
+  - `<div className={myStyle.someClass}`></div>`
+
+
+```typescript
+import s from './xxx.module.css';   //
+export default function Greeting(props) {
+    return (<p className={ `${s.box} box ${s.box2}` }>Hello</p>);
+    // or return (<p className={ s.box + " box" + " " + s.box2 }>Hello</p>);
+}
+```
+
+### callback functions
+
+```typescript
+export function App() {
+    function hello(value ) { alert("hello from <App/>" + value);}
+    return (
+        <div>
+            <p onClick= {hello}>I am the {"<App/>"}></p>
+            <Car onCarClick={hello} />
+        </div>
+    )
+}
+export function Car(props) {
+    // return (<p onClick= {props.onCarClick(2)}>I am the {"<Car/>"}></p>)
+    // or
+    function onClick() {
+        props.onCarClick(2);
+    }
+    return (<p onClick= {onClick}>I am the {"<Car/>"}></p>)
+    // or
+     return (<p onClick= {() => props.onCarClick(2)}>I am the {"<Car/>"}></p>)
+}
+```
 
 [⬆ back to top](#top)
 
