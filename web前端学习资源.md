@@ -27,6 +27,7 @@
 
 ## 在线文档
 
+- [free-programming-books](https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-zh.md)
 - [印记中文-各种在线文档](https://docschina.org/)
 - [javascipt代码规范](https://standardjs.com/)
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
