@@ -41,12 +41,17 @@
 
 ### Visual DOM vs DOM
 
-- DOM: will update body tag and children(all page)**(repaint)** when there is change
+- DOM: will update body tag and children(all page, DOM tree)**(repaint)** when there is change
 - Visual DOM update elements in page that choosing by react
   - Visual DOM is basically a lighter replica of the DOM
-  - most performance
+  - most performance, more efficient 
   - faster
   - smarter
+ - Optimizing React Performance with Virtual DOM: Tips and Best Practices
+  - **Minimize State Changes**: To optimize performance, it’s important to minimize unnecessary state changes as every change will trigger React to create a new Virtual DOM tree and compare it with the previous tree to determine changes in the actual DOM.
+  - **Use Key Props**: Providing a unique key prop for each item when rendering lists of items in React can improve performance by helping React identify which items have changed and need to be re-rendered. It’s essential to avoid direct manipulation of the DOM when working with React. Instead, use React’s declarative API to update the state of components, which will trigger React to update the Virtual DOM and make necessary changes to the actual DOM.
+  - **Use PureComponent or shouldComponentUpdate**: PureComponent and shouldComponentUpdate are built-in methods in React that can optimize component rendering by preventing unnecessary re-renders. PureComponent automatically performs a shallow comparison of props and state to determine if a re-render is necessary, while shouldComponentUpdate allows for more fine-grained control over when a component should re-render.
+  - **Use React.memo for Functional Components**: React.memo is a higher-order component that can optimize functional components by preventing unnecessary re-renders. It works by caching the result of the component’s rendering and reusing it if the props haven’t changed.
 
 ### props and state
 
