@@ -1,0 +1,221 @@
+a<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="Tree Layout Demo" />
+    <title>treemap-diagram Demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-scale-chromatic@3.0.0/dist/d3-scale-chromatic.min.js"></script>
+    <style>
+        html,
+        body {
+        padding: 0;
+        margin: 0;
+        }
+
+        body {
+        display: flex;
+        justify-content: center;
+        font-family: 'Arial';
+        }
+
+        #main {
+        width: 1000px;
+        display: flex;
+        padding-top: 1rem;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .counties {
+        fill: none;
+        }
+
+        .states {
+        fill: none;
+        stroke: #fff;
+        stroke-linejoin: round;
+        }
+
+        div.tooltip {
+        position: absolute;
+        padding: 10px;
+        font: 12px Arial;
+        background: rgba(255, 255, 204, 0.9);
+        box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.6);
+        border: 0px;
+        border-radius: 2px;
+        pointer-events: none;
+        }
+
+        #title {
+        font-size: 3.5rem;
+        }
+
+        #description {
+        text-align: center;
+        }
+
+        #source {
+        align-self: flex-end;
+        margin-top: 1rem;
+        }
+
+        a {
+        text-decoration: none;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="main">
+        <h1 id="title">United States Educational Attainment</h1>
+        <div id="description">
+            Percentage of adults age 25 and older with a bachelor's degree or higher
+            (2010-2014)
+        </div>
+        <svg width="960" height="600"></svg>
+        <div id="source">
+            Source:
+            <a href="https://www.ers.usda.gov/data-products/county-level-data-sets/download-data.aspx">USDA Economic Research Service</a>
+        </div>
+        <a href="https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map">Reference</a>
+        <a href="https://choropleth-map.freecodecamp.rocks/">Reference-code</a>
+    </div>
+    <script>
+     /* global d3, topojson */
+    /* eslint-disable max-len */
+    // eslint-disable-next-line no-unused-vars
+    const projectName = 'choropleth';
+    // coded by @paycoguy & @ChristianPaul (github)
+    // Define body
+    var body = d3.select('body');
+    var svg = d3.select('svg');
+    // Define the div for the tooltip
+    var tooltip = body
+                    .append('div')
+                    .attr('class', 'tooltip')
+                    .attr('id', 'tooltip')
+                    .style('opacity', 0);
+
+    var path = d3.geoPath();
+    var x = d3.scaleLinear().domain([2.6, 75.1]).rangeRound([600, 860]);
+    var color = d3
+        .scaleThreshold()
+        .domain(d3.range(2.6, 75.1, (75.1 - 2.6) / 8))
+        .range(d3.schemeGreens[9]);
+        
+    var g = svg
+        .append('g')
+        .attr('class', 'key')
+        .attr('id', 'legend')
+        .attr('transform', 'translate(0,40)');
+
+    g.selectAll('rect')
+        .data(
+            color.range().map((d) => {
+                d = color.invertExtent(d);
+                if (d[0] === null) {
+                    d[0] = x.domain()[0];
+                }
+                if (d[1] === null) {
+                    d[1] = x.domain()[1];
+                }
+                return d;
+            })
+        )
+        .enter()
+        .append('rect')
+        .attr('height', 8)
+        .attr('x', (d) => x(d[0]))
+        .attr('width', (d) => d[0] && d[1] ? x(d[1]) - x(d[0]) : x(null) )
+        .attr('fill', (d) => color(d[0]) );
+
+    g.append('text')
+        .attr('class', 'caption')
+        .attr('x', x.range()[0])
+        .attr('y', -6)
+        .attr('fill', '#000')
+        .attr('text-anchor', 'start')
+        .attr('font-weight', 'bold');
+
+    g.call(
+        d3.axisBottom(x)
+          .tickSize(13)
+          .tickFormat((x) => Math.round(x) + '%' )
+          .tickValues(color.domain())
+    )
+    .select('.domain')
+    .remove();
+
+    const EDUCATION_FILE =
+        'https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json';
+    const COUNTY_FILE =
+        'https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json';
+
+    Promise.all([d3.json(COUNTY_FILE), d3.json(EDUCATION_FILE)])
+        .then(data => ready(data[0], data[1]))
+        .catch(err => console.log(err));
+
+    function ready(us, education) {
+        svg.append('g')
+            .attr('class', 'counties')
+            .selectAll('path')
+            .data(topojson.feature(us, us.objects.counties).features)
+            .enter()
+            .append('path')
+            .attr('class', 'county')
+            .attr('data-fips', (d) => d.id )
+            .attr('data-education', (d) => {
+                var result = education.filter((obj) => obj.fips === d.id );
+                if (result[0]) {
+                    return result[0].bachelorsOrHigher;
+                }
+                // could not find a matching fips id in the data
+                console.log('could find data for: ', d.id);
+                return 0;
+            })
+            .attr('fill', function (d) {
+                var result = education.filter((obj)=> obj.fips === d.id );
+                if (result[0]) {
+                    return color(result[0].bachelorsOrHigher);
+                }
+                // could not find a matching fips id in the data
+                return color(0);
+            })
+            .attr('d', path)
+            .on('mouseover', function (event, d) {
+                tooltip.style('opacity', 0.9);
+                tooltip
+                    .html(function () {
+                        var result = education.filter((obj)=> obj.fips === d.id );
+                        if (result[0]) {
+                            return ( result[0]['area_name'] + ', ' +
+                                result[0]['state'] + ': ' +
+                                result[0].bachelorsOrHigher + '%'
+                            );
+                        }
+                        // could not find a matching fips id in the data
+                        return 0;
+                    })
+                    .attr('data-education', function () {
+                        var result = education.filter((obj)=> obj.fips === d.id );
+                        if (result[0]) {
+                            return result[0].bachelorsOrHigher;
+                        }
+                        // could not find a matching fips id in the data
+                        return 0;
+                    })
+                    .style('left', event.pageX + 10 + 'px')
+                    .style('top', event.pageY - 28 + 'px');
+            })
+            .on('mouseout', () => tooltip.style('opacity', 0));
+
+        svg.append('path')
+            .datum( topojson.mesh(us, us.objects.states, (a, b) => a !== b ))
+            .attr('class', 'states')
+            .attr('d', path);
+    }
+    </script>
+  </body>
+</html>
