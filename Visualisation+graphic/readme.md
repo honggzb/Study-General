@@ -10,7 +10,7 @@
 │   │   │   ├── d3-2.散点图之使用坐标轴.html
 │   │   │   └── 
 │   │   ├── 3.barGraph/
-│   │   │   ├── d3-1.条形图.html	Rename D3/barGraph/d3-1.条形图.html
+│   │   │   ├── d3-1.条形图.html
 │   │   │   ├── d3-3.dragEvents.html
 │   │   │   ├── d3-3.events.html
 │   │   │   ├── d3-3.柱状图1水平柱状图.html
@@ -26,11 +26,11 @@
 │   │   │   ├── d3-4.线性图表.html
 │   │   │   ├── d3-4.线性图表2-Segmented Lines.html
 │   │   │   ├── d3-4.线性图表2-Thershold Lines.html
-│   │   │   ├── d3-4.线性图表2-折线+图表.html	Create d3-4.线性图表2-折线+图表.html
+│   │   │   ├── d3-4.线性图表2-折线+图表.html
 │   │   │   ├── d3-4.线性图表2-时间轴.html	Add files
 │   │   │   ├── d3-4.线性图表3-多行折线+线内标注.html
 │   │   │   ├── d3-4.线性图表3-多行折线.htm
-│   │   │   ├── d3-4.线性图表3-多行折线1-circle+tooltip.html	Update d3-4.线性图表3-多行折线1-circle+tooltip.htm
+│   │   │   ├── d3-4.线性图表3-多行折线1-circle+tooltip.html
 │   │   │   ├── d3-4.面积图表.html
 │   │   │   ├── d3-4.面积图表之二元面积图.html
 │   │   │   ├── d3-4.饼图圆环图1.html
@@ -40,10 +40,10 @@
 │   │   │   ├── d3-5.Stack.html
 │   │   │   ├── d3-5.Tree+可收缩思维导图.html
 │   │   │   ├── d3-5.Tree-collasible.html
-│   │   │   ├── d3-5.Tree-horizontal-collasible-rect-node.html	Create d3-5.Tree-horizontal-collasible-rect-node.html
-│   │   │   ├── d3-5.Tree-use-flat-data.html	Rename d3-5.Tree-use-fla-data.html to d3-5.Tree-use-flat-data.html
-│   │   │   ├── d3-5.Tree-vertical tree.html	Create d3-5.Tree-vertical tree.html
-│   │   │   ├── d3-5.Tree-with-different-nodes.html	Create d3-5.Tree-with-different-nodes.html
+│   │   │   ├── d3-5.Tree-horizontal-collasible-rect-node.html
+│   │   │   ├── d3-5.Tree-use-flat-data.html
+│   │   │   ├── d3-5.Tree-vertical tree.html
+│   │   │   ├── d3-5.Tree-with-different-nodes.html
 │   │   │   ├── d3-5.chord.html	Update d3-5.chord.html
 │   │   │   ├── d3-5.horizontal stack bar chart.html
 │   │   │   ├── d3-5.horizontal stack bar chart.html	
@@ -53,9 +53,9 @@
 │   │   │   ├── d3-6.treemap+tooltip.html   #2023year
 │   │   │   └── d3-7.heatmap+tooltip.html   #2023year
 │   │   ├── 6.animation/
-│   │   │   ├── Transition Easing Comparison in v4.html	Create Transition Easing Comparison in v4.html
-│   │   │   ├── d3-6.动画之条形图排序+删除增加bar-function.html	Update d3-6.动画之条形图排序+删除增加bar-function.html
-│   │   │   ├── d3-6.动画之条形图排序+删除增加bar.html	Create d3-6.动画之条形图排序+删除增加bar.html
+│   │   │   ├── Transition Easing Comparison in v4.html
+│   │   │   ├── d3-6.动画之条形图排序+删除增加bar-function.html
+│   │   │   ├── d3-6.动画之条形图排序+删除增加bar.html
 │   │   │   ├── d3-6.动画之条形图排序切换.html
 │   │   │   └── 
 │   │   ├── 7.D3-angular-2/
