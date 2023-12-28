@@ -6,3 +6,6 @@
     - https://github.com/hzzou/hzzou.github.io
   - [threejs 3d模型可视化编辑器](https://gitee.com/ZHANG_6666/Three.js3D/)  --> vue+three.js
   - [浏览器中的三维空间「Three.js场景搭建」](https://zhuanlan.zhihu.com/p/24660471)
+- [three.js 汽车行驶动画效果](https://www.cnblogs.com/s0611163/p/17879849.html)
+- [VUE使用Three.js实现小车模型沿固定路线行驶](https://blog.csdn.net/weixin_43721856/article/details/128313461)
+  - https://gitee.com/halsixsixsix/car-move/tree/master
