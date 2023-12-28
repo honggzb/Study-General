@@ -1,4 +1,4 @@
-###  1
+### 黑白小球交替的loading效果
 
 - div.dot*36
 - Live Sass Compiler - Click to Watch Sass from the status bar to turn on the live compilation and then click to Stop Watching Sass from the status bar to turn off 
