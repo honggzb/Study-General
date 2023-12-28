@@ -11,7 +11,8 @@ $containerSize: 150px;  //size of container
 $n: 36;                //number of ball
 $pDeg: 360deg / $n;     // angle of rotation for each ball
 $d: 2s;                 // time of animation
-.loading { 
+
+.loading {
     width: $containerSize;
     height: $containerSize;
     //border: 1px solid #fff;
@@ -27,13 +28,15 @@ $d: 2s;                 // time of animation
         margin-left: -$ballsize / 2;
         margin-top: -$ballsize / 2;
         transform-origin: center $containerSize / 2 + $ballsize / 2;   // seting up rotate center
-        background: #f40;
+        //background: #f40;
+        perspective: 70px;
+        transform-style: preserve-3d;
         @for $i from 1 through $n {
             &:nth-child(#{$i}) {
                 transform: rotate($pDeg * ($i - 1));
-            }
-            &::before. &::after {
-                animation-delay: -$d / $n * (Si -1) * 6;
+                &::before, &::after {
+                    animation-delay: -$d / $n * ($i - 1) * 6;
+                }
             }
         }
         &::before, &::after {
@@ -56,7 +59,7 @@ $d: 2s;                 // time of animation
                     animation-timing-function: ease-out;
                 }
                 50% { 
-                    transform: translate3d(0, 200%, $ballsize);
+                    transform: translate3d(0, 200%, 0);
                     animation-timing-function: ease-in;
                 }
                 75% {
@@ -78,7 +81,7 @@ $d: 2s;                 // time of animation
                     animation-timing-function: ease-out;
                 }
                 50% { 
-                    transform: translate3d(0, 200%, $ballsize);
+                    transform: translate3d(0, 200%, 0);
                     animation-timing-function: ease-in;
                 }
                 75% {
@@ -87,4 +90,5 @@ $d: 2s;                 // time of animation
                 }
         }
     }
+  }
 }
