@@ -3,3 +3,4 @@
 - Better Comments
 - Javascript Debugger
 - Regex Previewer
+- Thunder Client for VS code: same like postman in VS code
