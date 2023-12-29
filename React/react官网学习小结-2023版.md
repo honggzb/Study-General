@@ -1,6 +1,6 @@
 [React Basic](#top)
 
-- [installation](#installation)
+- [create a react project](#create-a-react-project)
 - [React core concepts](#react-core-concepts)
   - [Visual DOM vs DOM](#visual-dom-vs-dom)
   - [props and state](#props-and-state)
@@ -25,7 +25,7 @@
 
 ---------------------------------------------------------------------------------------------
 
-## installation
+## create a react project
 
 |project type|CLI|
 |---|---|
