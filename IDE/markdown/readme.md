@@ -1,4 +1,4 @@
-- [⬆ back to top](#top)
+- ⬆ back to top
 - 🤖 Introduction
 - ⚙️ Tech Stack
 - 🔋 Features
