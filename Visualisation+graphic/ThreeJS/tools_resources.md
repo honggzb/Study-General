@@ -7,7 +7,7 @@
 |fonts|https://poly.pizza/|
 |draw spline online and turn to SVG|https://app.spline.design/home|
 
-|function|web site|
+|Library|web site|
 |---|---|
 |React three fiber中文手册|https://fiber.framer.wiki/|
 |react-three-drei-spring office document|https://docs.pmnd.rs/|
