@@ -4,7 +4,7 @@
 - [react-three/postprocessing](#react-threepostprocessing)
 - [UI(HTML) and css over model](#uihtml-and-css-over-model)
 - [远模糊近清晰的动画效果](#远模糊近清晰的动画效果)
-- [reflection plane](#reflection-plane)
+- [reflection plane反射地面(平面)](#reflection-plane反射地面平面)
 
 -------------------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ export function Camping1({html, ...props}) {
 
 - `<fog attach="fog" args={["#171720", 10, 30]} />` in 'app.jsx'
 
-## reflection plane
+## reflection plane反射地面(平面)
 
 - refer to 'Experience.jsx in 'r3f-vite-starter-main' project
 
