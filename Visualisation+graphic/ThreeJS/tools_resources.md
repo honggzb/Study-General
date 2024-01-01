@@ -11,7 +11,6 @@
 |---|---|
 |React three fiber中文手册|https://fiber.framer.wiki/|
 |react-three-drei-spring office document|https://docs.pmnd.rs/|
-|react-three-drei-spring office document|https://docs.pmnd.rs/|
 |react-three-fiber office document|https://docs.pmnd.rs/react-three-fiber/getting-started/introduction|
 |react-three-drei office document|https://github.com/pmndrs/drei#readme|
 |react-three-spring office document|https://github.com/pmndrs/react-spring|
