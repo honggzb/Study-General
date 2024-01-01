@@ -1,5 +1,20 @@
 [React学习-cypress](#top)
 
+- [install and setup cypress](#install-and-setup-cypress)
+- [Folder structure](#folder-structure)
+- [Cypress Core Concepts](#cypress-core-concepts)
+  - [Querying Elements](#querying-elements)
+  - [Subject Management](#subject-management)
+  - [Interacting With Elements](#interacting-with-elements)
+  - [Assertions](#assertions)
+- [Cypress component testing](#cypress-component-testing)
+  - [Input component testing](#input-component-testing)
+  - [Button component testing](#button-component-testing)
+  - [Form component testing](#form-component-testing)
+- [Custom Mount Commands](#custom-mount-commands)
+  - [React Router testing](#react-router-testing)
+  - [Redux testing](#redux-testing)
+
 -----------------------------------------------------------
 
 ## install and setup cypress
@@ -9,7 +24,7 @@
 - `npm install cypress`
 - Open Cypress at first time, need configuration
   - `npx cypress open`: Open Cypress, following instruction in opening dialog
-  - ![cypress](cypress.png)
+  - ![cypress](./images/cypress.png)
   - Test file such as 'xxx.cy.tsx' will be generated automatically
 - Open Cypress in graph GUI
   - adding following in package.json
@@ -22,13 +37,49 @@
 
 [⬆ back to top](#top)
 
+## Folder structure
+
+- for typescript
+
+```
+E2E:
+/cypress.config.ts
+/cypress/fixtures/example.json
+/cypress/support/commands.ts
+/cypress/support/e2e.ts
+
+Component:
+/cypress.config.ts
+/cypress/fixtures/example.json
+/cypress/support/commands.ts
+/cypress/support/component.ts
+/cypress/support/component-index.html
+
+Both:
+/cypress.config.ts
+/cypress/fixtures/example.json
+/cypress/support/commands.ts
+/cypress/support/e2e.ts
+/cypress/support/component.ts
+/cypress/support/component-index.html
+```
+
+[⬆ back to top](#top)
+
 ## Cypress Core Concepts
+
+- https://docs.cypress.io/guides/core-concepts/introduction-to-cypress
 
 ### Querying Elements
 
-- Cypress is Like jQuery and Chains of Commands
+- Cypress is Like jQuery and can use chains of commands
   - `cy.get('.my-selector')`
   - `cy.get('#main-content').find('.article').children('img[src^="/static"]').first()`
+- Querying by Text Content: `cy.get('.main').contains('New Post')`
+- When Elements Are Missing: `cy.get('.my-slow-selector', { timeout: 10000 })`
+- ![different](./images/different.png)
+  - jQuery是同步访问机制
+  - Cypress是异步操作，导致待读取的元素真正可用时，其结果才会被作为参数，传入回调函数
 - how is cypress work
 
 ```javascript
@@ -50,6 +101,89 @@ cy.get('#element-does-not-exist')
   })
 ```
 
+**Cypress also bundles the following tools on the cypress object**
+
+|Querying commands|bundles|
+|---|---|
+|`Cypriss._`|lodash|
+|`Cypriss.$`|jquery|
+|`Cypriss.minimatch`|minimatch.js|
+|`Cypriss.Blob`|Blob utils|
+|`Cypriss.Promise`|Bluebird|
+
+- **Aliasing自定义变量**：将元素引用保存下来，以备将来之用
+  - `cy.get('.my-selector').as('myElement').click()`- `as` 命令将`get`返回的元素存储到自定义变量 myElement 中
+  - `cy.get('@myElement').click()` - 通过`@`引用自定义变量
+- 可使用`then`来对前一个命令`yield`的目标进行操作
+
+```javascript
+cy.get('#some-link')
+  .then(($myElement) => {
+    const href = $myElement.prop('href')
+    return href.replace(/(#.*)/, '')
+  })
+  .then((href) => {
+    // href is now the new subject
+  })
+```
+
+### Subject Management
+
+A new Cypress chain always starts with `cy.[command]`, where what is yielded by the command establishes what other commands can be called next (chained)
+- `cy.clearCookies()` yields `null`
+- `cy.contains()` yields 'a DOM element'
+- `.click()` yields the same subject it was originally given
+
+```javascript
+cy.clearCookies() // Yields null
+  .visit('/fixtures/dom.html') // Does not care about the previous subject.
+cy.get('.main-container') // Yields an array of matching DOM elements
+  .contains('Headlines') // Yields the first DOM element containing content
+  .click() // Yields same DOM element from previous command.
+```
+
+### Cypress的异步执行特性
+
+- Cypress不同于其他前端自动测试框架的特别之处：直到测试函数退出，Cypress才会触发浏览器的自动执行逻辑
+- 另一个例子是类似`while`的loop语句
+
+```javascript
+it('does not work as we expect', () => {
+  cy.visit('/my/resource/path') // Nothing happens yet
+  cy.get('.awesome-selector') // Still nothing happening
+    .click() // Nope, nothing, so it need to place code inside the .then() ensures
+    .then(() => {
+      let el = Cypress.$('.new-el')  // it runs after the cypress commands 'execute'
+      if (el.length) {
+        cy.get('.another-selector')
+      } else {
+        cy.get('.optional-selector')
+      }
+    )}
+})
+// 网页显示随机数，当随机数跳到数字 7 时，让测试停下来。 如果随机数不是数字 7，重新加载页面，继续测试
+const checkAndReload = () => {
+  // get the element's text, convert into a number
+  cy.get('#result')
+    .should('not.be.empty')
+    .invoke('text')
+    .then(parseInt)
+    .then((number) => {
+      if (number === 7)   // if the expected number is found,  stop adding any more commands
+        cy.log('lucky **7**')
+        return
+      }
+      cy.wait(500, { log: false })   //insert more Cypress commands by calling the function after reload
+      cy.reload()
+      checkAndReload()
+    })
+}
+cy.visit('public/index.html')
+checkAndReload()
+```
+
+[⬆ back to top](#top)
+
 ### Interacting With Elements
 
 |action commands|function|
@@ -70,6 +204,8 @@ it('when button is clicked, should call onClick', () => {
     cy.get('@onClick').should('have.been.called');
   });
 ```
+
+[⬆ back to top](#top)
 
 ### Assertions
 
@@ -187,13 +323,7 @@ Cypress.Commands.add('mount', (component, options = {}) => {
   return mount(wrapped, mountOptions)
 })
 // xxx.component.cy.tsx
-it('User profile should display user name', () => {
-  const user = { name: 'test person' }
-  // getStore is a factory method that creates a new store
-  const store = getStore()
-  // setUser is an action exported from the user slice
-  store.dispatch(setUser(user))
-  cy.mount(<UserProfile />, { reduxStore: store })
-  cy.get('div.name').should('have.text', user.name)
-})
+
 ```
+
+> [cypress-example-recipes](https://github.com/cypress-io/cypress-example-recipes)
