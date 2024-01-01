@@ -67,7 +67,7 @@ export function Camping1({html, ...props}) {
 
 ## reflection plane反射地面(平面)
 
-- refer to 'Experience.jsx in 'r3f-vite-starter-main' project
+- refer to 'Experience.jsx in 'react-three-fiber-vite-boilerplate' project
 
 ```javascript
 <mesh>
