@@ -10,9 +10,8 @@
 
 ## transform and load glb model
 
-1. `npx gltfjsx public/models/Camping.glb -o src/components/Camping1.jsx -k -K -r public`
-   1. need install `gltfjsx@6.2.16`
-   2. `npx gltfjsx public/models/Camping.glb --transform`
+1. `npx gltfjsx public/models/Camping.glb -o src/components/Camping1.jsx -k -K -r public` ： need install `gltfjsx@6.2.16`
+   2. `npx gltfjsx public/models/Camping.glb --transform`  ： no need install gltfjsx@6.2.16
 2. or transform on line https://gltf.pmnd.rs/
 3. not solve - [GLB export doesn’t include mesh names](https://discourse.threejs.org/t/glb-export-doesnt-include-mesh-names/41680)
 
