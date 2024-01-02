@@ -109,7 +109,7 @@ export function Camping1({html, ...props}) {
 
 - create `mesh` as a position object（参照目标）, it need `CameraControls`
 - create two refs
-- ![fitposition](fitposition.png) 
+- ![fitposition](,/images/fitposition.png) 
 
 ```javascript
 const controls = useRef();  // CameraControls'ref
