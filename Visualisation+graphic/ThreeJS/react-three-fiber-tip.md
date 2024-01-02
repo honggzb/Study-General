@@ -2,7 +2,7 @@
 
 - [transform and load glb model](#transform-and-load-glb-model)
 - [reflection plane反射地面(平面)](#reflection-plane反射地面平面)
-- [物体reflection plane反射效果](#物体reflection plane反射效果)
+- [物体reflection plane反射效果](#物体reflection-plane反射效果)
 - [Bloom亮闪闪效果](#bloom亮闪闪效果)
 - [UI(HTML) and css over model](#uihtml-and-css-over-model)
 - [远模糊近清晰的动画效果](#远模糊近清晰的动画效果)
