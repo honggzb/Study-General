@@ -1,8 +1,14 @@
 ```
 ├── Accessiblity/
+|    ├── Angular/
+|    |     ├── AngularJS and Accessibility-General.md
+|    |     └── guide+Strategies in Angular.md
+|    ├── react/
+|    |     ├── react aria.md
+|    |     └── 
 |    ├── Accessibility of hiding content.md
 |    ├── Accessibility应用之focus篇.md
-|    ├── AngularJS and Accessibility-General.md
+|    ├── Bypass Blocks.md
 |    ├── Principles of Interactive elements accessible on mobile devices
 |    ├── HTML+CSS+Javascript in accessibility.md
 |    ├── a11y-css-reset.css
