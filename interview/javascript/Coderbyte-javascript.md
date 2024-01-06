@@ -44,6 +44,16 @@
 - [45. Longest Word -easy](#45-longest-word--easy)
 - [46. Product Digits -medium](#46-product-digits--medium)
 - [47. Moving Median -medium](#47-moving-median--medium)
+- [48. Longest Matrix Path -medium](#48-longest-matrix-path--medium)
+- [49. Palindromic Substring -medium](#49-palindromic-substring--medium)
+- [50. Preorder Traversal -medium](#50-preorder-traversal--medium)
+- [51. Symmetric Tree -medium](#51-symmetric-tree--medium)
+- [52. Tree Constructor -medium](#52-tree-constructor--medium)
+- [53. String Periods - medium](#53-string-periods---medium)
+- [54. Max Subarray -medium](#54-max-subarray--medium)
+- [55. meanMode](#55-meanmode)
+- [56. Array Challenge](#56-array-challenge)
+- [57. Palindrome Creator](#57-palindrome-creator)
 - [tip](#tip)
 
 -------------------------------------------------------
@@ -1457,7 +1467,7 @@ function FirstReverse(str) {
 
 ```javascript
 function LongestWord(str) {
-    let arr = str.match(/[a-z]+/gi);
+    let arr = str.match(/[a-zA-Z]+/gi);
     let sorted = arr.sort(function(a, b) {
         return b.length -a.length;
     });
@@ -1546,6 +1556,396 @@ function findMedian(arr){
 
 [⬆ back to top](#top)
 
+## 48. Longest Matrix Path -medium
+
+```
+Input: ["12256", "56219", "43215"]
+Output: 5
+Input: ["67", "21", "45"]
+Output: 3
+```
+
+```javascript
+function findLongestPath(i, j, mat, dp) {
+  if (i < 0 || i >= dp.length || j < 0 || j >= dp[i].length) {
+    return 0;
+  }
+  if (dp[i][j] !== -1) {
+    return dp[i][j];
+  }
+  let x = -1;
+  let y = -1;
+  let z = -1;
+  let w = -1;
+  if (j < dp[i].length - 1 && mat[i][j] < mat[i][j + 1]) {
+    x = 1 + findLongestPath(i, j + 1, mat, dp);
+  }
+  if (j > 0 && mat[i][j] < mat[i][j - 1]) {
+    y = 1 + findLongestPath(i, j - 1, mat, dp);
+  }
+  if (i > 0 && mat[i][j] < mat[i - 1][j]) {
+    z = 1 + findLongestPath(i - 1, j, mat, dp);
+  }
+  if (i < dp.length - 1 && mat[i][j] < mat[i + 1][j]) {
+    w = 1 + findLongestPath(i + 1, j, mat, dp);
+  }
+  dp[i][j] = Math.max(x, y, z, w, 1);
+  return dp[i][j];
+}
+function LongestMatrixPath(strArr) { 
+  const mat = strArr.map((el) => el.split(''));
+  const dp = Array.from(Array(mat.length), () => new Array(mat[0].length).fill(-1));
+  let result = 1;
+  for (let i = 0; i < dp.length; i ++) {
+    for (let j = 0; j < dp[i].length; j ++) {
+      if (dp[i][j] === - 1) {
+        findLongestPath(i, j, mat, dp);
+      }
+      result = Math.max(result, dp[i][j]);
+    }
+  }
+  return result - 1;
+}
+```
+
+- https://www.geeksforgeeks.org/longest-increasing-path-matrix/
+- https://github.com/alphadev2018/coderbyte-js/blob/main/LongestMatrixPath/index.js
+
+[⬆ back to top](#top)
+
+## 49. Palindromic Substring -medium
+
+- Have the function PalindromicSubstring(str) take the str parameter being passed and find the longest palindromic substring, which means the longest substring which is read the same forwards as it is backwards. For example: if str is "abracecars" then your program should return the string racecar because it is the longest palindrome within the input string.
+- The input will only contain lowercase alphabetic characters. The longest palindromic substring will always be unique, but if there is none that is longer than 2 characters, return the string none.
+
+```
+Input: "hellosannasmith"
+Output: sannas
+Input: "abcdefgg"
+Output: none
+```
+
+```javascript
+function PalindromicSubstring(str) { 
+  const n = str.length;
+  const table = Array.from(Array(n), () => new Array(n).fill(false));
+  let maxLength = 1;
+  let start = 0;
+  for (let i = 0; i < n; i ++) {
+    table[i][i] = true;
+    if (i < n - 1) {
+      if (str[i] === str[i + 1]) {
+        table[i][i + 1] = true;
+        start = i;
+        maxLength = 2;
+      }
+    }
+  }
+
+  for (let k = 3; k <= n; k ++) {
+    for (let i = 0; i < n - k + 1; i ++) {
+      let j = i + k - 1;
+
+      if (table[i + 1][j - 1] && str[i] === str[j]) {
+        table[i][j] = true;
+
+        if (k > maxLength) {
+          start = i;
+          maxLength = k;
+        }
+      }
+    }
+  }
+  if (maxLength > 2) {
+    return str.substring(start, start + maxLength);
+  }
+  return "none";
+}
+```
+
+[⬆ back to top](#top)
+
+## 50. Preorder Traversal -medium
+
+```javascript
+function PreorderTraversal(root) {
+    /**
+    * Algorithm:
+    * 1. Create an empty stack [];
+    * 2. Do while stack is not empty:
+    * 2.1. Pop an item from stack and add it to the 'result' array.
+    * 2.2. Push 'right child' of popped item to stack.
+    * 2.3. Push 'left child' of popped item to stack.
+   */
+   if (root == null) {
+     return [];
+   }
+   const stack = [];
+   const result = [];
+   stack.push(root);
+   while(stack.length > 0) {
+     let current = stack.pop();
+     result.push(current.val);
+     if (current.right) stack.push(current.right);
+     if (current.left) stack.push(current.left);
+   }
+   return result;
+}
+```
+
+[⬆ back to top](#top)
+
+## 51. Symmetric Tree -medium
+
+```javascript
+function SymmetricTree(root) {
+  if (!root) return true;
+  return helper(root.left, root.right);
+};
+var helper = function (p, q) {
+  if ((!p && q) || (p && !q) || (p && q && p.val !== q.val)) return false;
+  if (p && q) return helper(p.left, q.right) && helper(p.right, q.left);
+  return true;
+};
+//
+function SymmetricTree(root) {
+    if (!root) return true;
+
+  var p = [root.left];
+  var q = [root.right];
+  var ll = null;
+  var rr = null;
+
+  while (p.length && q.length) {
+    ll = p.pop();
+    rr = q.pop();
+
+    if (!ll && !rr) continue;
+    if (!ll || !rr) return false;
+    if (ll.val !== rr.val) return false;
+
+    p.push(ll.left);
+    p.push(ll.right);
+    q.push(rr.right);
+    q.push(rr.left);
+  }
+  return true;
+}
+```
+
+[⬆ back to top](#top)
+
+## 52. Tree Constructor -medium
+
+```javascript
+function TreeConstructor(strArr) { 
+ let parents={};
+ let children={};
+
+for(let i=0; i<strArr.length; i++){
+    let pair = strArr[i].replace(/[()]/g,"").split(",");
+    let child = pair[0];
+    let parent = pair[1];
+    
+    if(parents[parent]){
+       parents[parent].push(child);
+    }else{
+     parents[parent]=[child];
+    }
+    
+    if(parents[parent].length > 2){
+      return false;
+    }
+    
+    if(children[child]){
+     return false;
+    } else {
+       children[child]=parent;
+    }
+ }
+ return true;
+}
+TreeConstructor(["(1,2)", "(2,4)", "(5,7)", "(7,2)", "(9,5)"]);
+```
+
+[⬆ back to top](#top)
+
+## 53. String Periods - medium
+
+```javascript
+const stringPeriods = str => {
+  const { length } = str
+  if (length > 1) {
+    for (let i = Math.ceil(length/2); i > 1; i--) { {
+      const substring = str.slice(0, i)
+      const repeated = substring.repeat(length/i)
+
+      if (repeated === str) {
+        return substring
+      }
+    }
+  }
+  return '-1'
+}
+```
+
+[⬆ back to top](#top)
+
+## 54. Max Subarray -medium
+
+```javascript
+//
+// input arr = [1, 4, 20, 3, 10, 5]
+//  value = 33
+// result = [3, 5]
+// input arr = [1, 2, 3, 4, 5, 0, 0, 0, 0, 6, 7, 8, 9, 10]
+//  value = 15
+// result = [1, 8]
+const arr = [1, 4, 20, 3, 10, 5]
+const subArray = (arr, value) => {
+  let sum = 0
+  let right = 0
+  let left = 0
+  let result = [0, 0]
+
+  while (right < arr.length) {
+    sum += arr[right]
+    while (left < right && sum > value) {
+      sum -= arr[left++]
+    }
+
+    console.log(result.length, result[1], result[0], right, left)
+    if (sum === value && (result.length === 1 || ((result[1] - result[0]) < (right - left)))) {
+      result = [ left + 1, right + 1 ]
+    }
+    right++
+  }
+  console.log('largest sub array', result)
+}
+subArray(arr, 33)
+//
+const MaxSubarray = (nums) => {
+  let maxSum = Number.MIN_SAFE_INTEGER;
+  for (let i = 0; i < nums.length; i++) {
+    let currentSubArraySum = 0;
+    for (let j = i; j < nums.length; j++) {
+      currentSubArraySum += nums[j];
+      maxSum = Math.max(maxSum, currentSubArraySum);
+    }
+  }
+  return maxSum;
+};
+```
+
+[⬆ back to top](#top)
+
+## 55. meanMode
+
+```javascript
+/* https://coderbyte.com/question/mean-mode
+
+*  Have the function MeanMode(arr) take the array of numbers stored in arr and         *
+*  return 1 if the mode equals the mean, 0 if they don't equal each other              *
+*  (ie. [5, 3, 3, 3, 1] should return 1 because the mode (3) equals the mean (3)).     *
+*  The array will not be empty, will only contain positive integers, and will not      *
+* contain more than one mode.                                                          *
+*                                                                                      *
+*  SOLUTION                                                                            *
+*  Since it is possible that I will want a function that will calculate the mean or    *
+*  mode in the future, I decided to create separate functions for each. The mean is    *
+*  calculated by the average of all values in the array. The mode is the number that   *
+*  exists the most in the array. My solution is to call my two functions and then      *
+*  compare to see if they are equal and if so return 1 else return 0.                  *
+*                                                                                      *
+*  Steps for solution                                                                  *
+*    1) Create separate functions for getMean and getMode                              *
+*    2) Compare the values returned from the two functions                             *
+*    3) If values are equal return 1 else return 0
+*/
+
+mean = arr => (arr.reduce((a, b) => a + b))/(arr.length);
+
+// mode is just the problem of finding the element with greatest no of occurrence
+mode = arr => {
+
+    let obj = {}, max = 1, mode;
+
+    for (let i of arr) {
+        obj[i] = obj[i] || 0;
+        obj[i]++
+    }
+
+    for (let i in obj) {
+        if (obj.hasOwnProperty(i)) {
+            if ( obj[i] > max ) {
+                max = obj[i]
+                mode = i;
+            }
+        }
+    }
+    return mode;
+}
+meanMode = arr => mean(arr) == mode(arr)
+let myArr = [5, 3, 3, 3, 1]
+console.log(mean(myArr))
+console.log(mode(myArr))
+console.log(meanMode(myArr))
+```
+
+[⬆ back to top](#top)
+
+## 56. Array Challenge
+
+```javascript
+function ArrayChallenge(strArr) {
+    let result = '';
+    for (let index = 0; index < strArr[0].length; index++) {
+        if (strArr[0][index] === '1' && strArr[0][index] === strArr[1][index]) return result += '1'
+        else return result += '0'
+    }
+    return result;
+}
+```
+
+[⬆ back to top](#top)
+
+## 57. Palindrome Creator
+
+```
+Using the JavaScript language, have the function PalindromeCreator(str) take the str parameter being passed and determine if it is possible to create a palindromic string of at least 3 characters by removing 1 or 2 characters. For example: if str is "abjchba" then you can remove the characters jc to produce "abhba" which is a palindrome. For this example your program should return the two characters that were removed with no delimiter and in the order they appear in the string, so jc. If 1 or 2 characters cannot be removed to produce a palindrome, then return the string not possible. If the input string is already a palindrome, your program should return the string palindrome.
+
+The input will only contain lowercase alphabetic characters. Your program should always attempt to create the longest palindromic substring by removing 1 or 2 characters (see second sample test case as an example). The 2 characters you remove do not have to be adjacent in the string.
+
+Input:"mmop"
+Output:"not possible"
+
+Input:"kjjjhjjj"
+Output:"k"
+Hint
+Try looping through the string and removing every character to see if it produces a palindrome. Then you can also try and remove different pairs of letters within the string as well.
+```
+
+```javascript
+const isPalindrome = (str) => str === str.split('').reverse().join('')
+function PalindromeCreator (str) {
+  for (var i = 0; i < str.length; i++) {
+    // str minus 1 char:
+    let temp1 = str.slice(0, i)
+    let temp2 = str.slice(i + 1)
+    // let removedLetter = str[i]
+    // console.log(removedLetter + '\n' + 'part 1:  ' + temp1, '\npart 2:  ' + temp2 + '\n')
+    let tempStr = temp1 + temp2
+
+    console.log(temp1, temp2, tempStr)
+    if (isPalindrome(tempStr)) {
+      return str[i]
+    }
+  }
+}
+```
+
+[⬆ back to top](#top)
+
 ## tip
 
 |tip|说明|
@@ -1560,3 +1960,8 @@ function findMedian(arr){
 - [coderbyte-Beginner](https://github.com/ratracegrad/coderbyte-Beginner/tree/master)
 - [CoderByte-Medium-Problems](https://github.com/jackmcd4/CoderByte-Medium-Problems/tree/master)
 - [CoderByte-Easy-Problems](https://github.com/jackmcd4/CoderByte-Easy-Problems)
+- https://appdev4tech.com/
+- https://coderbyte.com/video/step-walking-solution
+- https://github.com/KaylaKremer/CoderbyteReact/tree/main
+- https://javascript.plainenglish.io/javascript-algorithms-maximum-subarray-leetcode-15812b95bc4
+- https://coderbyte.com/interview-kit/algorithms
