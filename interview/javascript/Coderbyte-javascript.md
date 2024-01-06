@@ -1559,3 +1559,4 @@ function findMedian(arr){
 > reference
 - [coderbyte-Beginner](https://github.com/ratracegrad/coderbyte-Beginner/tree/master)
 - [CoderByte-Medium-Problems](https://github.com/jackmcd4/CoderByte-Medium-Problems/tree/master)
+- [CoderByte-Easy-Problems](https://github.com/jackmcd4/CoderByte-Easy-Problems)
