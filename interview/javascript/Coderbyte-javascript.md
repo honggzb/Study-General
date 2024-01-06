@@ -39,12 +39,17 @@
 - [39. Wildcards - hard](#39-wildcards---hard)
 - [40. SudokuQuadrantChecker - hard](#40-sudokuquadrantchecker---hard)
 - [41. Arith Geo -easy](#41-arith-geo--easy)
+- [43. Min Window Substring -hard](#43-min-window-substring--hard)
+- [44. First Reverse -easy](#44-first-reverse--easy)
+- [45. Longest Word -easy](#45-longest-word--easy)
+- [46. Product Digits -medium](#46-product-digits--medium)
+- [47. Moving Median -medium](#47-moving-median--medium)
 - [tip](#tip)
 
 -------------------------------------------------------
 
 ## 1. BracketMatcher - medium
-~~~~
+
 - "(coder)(byte)"   -> output 0
 - "(c(oder))(b(yte)" -> output 1
 - if str contains no brackets -> output 1
@@ -1384,6 +1389,163 @@ function ArithGeo(arr) {
 
 [⬆ back to top](#top)
 
+## 43. Min Window Substring -hard
+
+```javascript
+function MinWindowSubstring(s, t) {
+    let map = new Map();
+    for(let letter of t) {
+        if(!map.has(letter)) {
+            map.set(letter, 1);
+        } else {
+            map.set(letter, map.get(letter) + 1);
+        }
+    }
+    let left = 0;
+    let right = 0;
+    let len = Infinity;
+    let count = map.size;
+    while(right < s.length) {
+        let rLetter = s[right];
+        if(map.has[rLetter])) {
+            map.set(rLetter, map.get(rLetter) - 1);
+            if(map.get(rLetter) === 0) count--;
+        }
+        right++;
+        while(count === 0) {
+            if(right-left < len) {
+                len = right - left;
+                minWIndow = s.slice(left, right);
+            }
+            let lLetter = s[left];
+            if(map.has(lLetter)) {
+                map.set(lLetter, map.get(lLetter) + 1);
+                if(map.get(lLetter) > 0) count++;
+            }
+            left++;
+        }
+    }
+    return minWindow;
+}
+```
+
+- https://www.youtube.com/watch?v=z9e-tGD7Z8g
+
+[⬆ back to top](#top)
+
+## 44. First Reverse -easy
+
+- "hello, world"   --> "dlrow, olleh"
+
+```javascript
+function FirstReverse(str) {
+    var backwardStr = "";
+    var splitString = str.split("");
+    for(let i=splitString -1;i>= 0;i--) {
+        backwardStr += splitString[i]
+    }
+    return backwardStr;
+}
+```
+
+[⬆ back to top](#top)
+
+## 45. Longest Word -easy
+
+- "fun&!! time"   --> time
+- "I love dogs"   --> love
+
+```javascript
+function LongestWord(str) {
+    let arr = str.match(/[a-z]+/gi);
+    let sorted = arr.sort(function(a, b) {
+        return b.length -a.length;
+    });
+    str = sorted[0];
+    return str;
+}
+```
+
+[⬆ back to top](#top)
+
+## 46. Product Digits -medium
+
+- 234  --> 15, because: productDigit 2*3*4 = 24, sum 2+3+4 = 9, result 24-9 = 15
+
+```javascript
+function ProductDigits(n) {
+    //turn digit into string
+    let num = n.toString();
+    let product = 1;
+    let sum = 0;
+    for (let i = 0; i < num.length; i++) {
+         //grab digit, turn it back into number
+         let number = parseInt(num[i]);
+         product *= number;
+         sum += number;
+      }
+     return product - sum;
+}
+```
+
+[⬆ back to top](#top)
+
+## 47. Moving Median -medium
+
+- [3,1,3,5,10,6,4,3,1]  -> 1,2,3,5,6,6,4,3
+- [5,2,4,6]      ->   2,3,4
+- [3,0,0,-2,0,2,0,-2]  ->  0,0,0,0,0,0,0
+- []
+
+```javascript
+function findMovingMovingMedian(arr){
+  //check edge cases
+  let median = ''
+  if(arr.length==0) return median;
+  if(arr.length ==1) return arr[0];
+  if(arr[0] < 0) return median;
+  let n = arr[0]
+  let newArr = arr.slice(1,arr.length)
+  let j = 0;
+  for(let i = 1;i<arr.length;i++){
+    if(i<n){
+      let window = newArr.slice(j,i)
+      window = window.sort();
+      median+= `${findMedian(window)},`
+    }else {
+      if(j + n < arr.length){
+        let window = newArr.slice(j,j+n)
+        window.sort(function(a, b) {
+          return a - b;
+        });
+        median+= `${findMedian(window)},`
+        j+=1
+      }
+    }
+  }
+  return median.slice(0,median.length-1)
+}
+
+function findMedian(arr){
+  let median = ''
+  if(arr.length == 1){
+    median =  `${arr[0]}`
+    return median
+  }
+  if(arr.length % 2 == 0){
+    let mid = arr.length /2
+    median  = `${ (arr[mid] + arr[mid-1] ) /2}`
+  }
+  if(arr.length % 2 != 0){
+    let mid = (arr.length - 1) / 2 
+    median  = `${arr[mid]}`
+  }
+  return median;
+}
+```
+
+[⬆ back to top](#top)
+
 ## tip
 
 |tip|说明|
@@ -1396,3 +1558,4 @@ function ArithGeo(arr) {
 
 > reference
 - [coderbyte-Beginner](https://github.com/ratracegrad/coderbyte-Beginner/tree/master)
+- [CoderByte-Medium-Problems](https://github.com/jackmcd4/CoderByte-Medium-Problems/tree/master)
