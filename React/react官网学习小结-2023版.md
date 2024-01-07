@@ -36,6 +36,12 @@
 |Gatsby 快速的支持 CMS 的网站的 React 框架|`npx create-gatsby`|
 |Expo 具有真正原生 UI 的应用，包括 Android、iOS，以及 Web 应用| `npx create-expo-app`|
 
+VSCode shotword
+
+|shotword|CLI|
+|---|---|
+|rafce   | component|
+
 [⬆ back to top](#top)
 
 ## React core concepts
