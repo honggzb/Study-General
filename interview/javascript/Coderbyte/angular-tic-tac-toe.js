@@ -5,24 +5,24 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-area',
   template: `
     <div class="container">
-    <div class="leftArea">
-      <div id="statusArea" className="status">Next player: <span class="color-{{currentPlayer}}">{{currentPlayer}}</span></div>
-      <div id="winnerArea" className="winner">Winner: <span class="winner-name color-{{winnerPlayer}}">{{winnerPlayer}}</span></div>
-    </div>
-    <section class="gridArea">
-      <div class="row" *ngFor="let row of matrix; let i = index;" >
-        <button *ngFor="let symbol of matrix[i]; let j = index;" class="square" (click)="select(i,j)">
-        <ng-container *ngIf="symbol === 1"><span class="color-x">X</span></ng-container>
-        <ng-container *ngIf="symbol === 2"><span class="color-o">O</span></ng-container>
-        </button>
-      </div>
-      <div class="winner-overlay color-{{winnerPlayer}}" *ngIf="winnerPlayer !== 'none'">{{winnerPlayer}} wins!!</div>
-    </section>
-    <button class="btn" (click)="reset()">Reset</button>
+        <div class="leftArea">
+            <div id="statusArea" className="status">Next player: <span class="color-{{currentPlayer}}">{{currentPlayer}}</span></div>
+            <div id="winnerArea" className="winner">Winner: <span class="winner-name color-{{winnerPlayer}}">{{winnerPlayer}}</span></div>
+            <button class="btn" (click)="reset()">Reset</button>
+        </div>
+        <section class="gridArea">
+            <div class="row" *ngFor="let row of matrix; let i = index;" >
+                <button *ngFor="let symbol of matrix[i]; let j = index;" class="square" (click)="select(i,j)">
+                    <div *ngIf="symbol === 1"><span class="color-x">X</span></div>
+                    <div *ngIf="symbol === 2"><span class="color-o">O</span></div>
+                </button>
+            </div>
+            <div class="winner-overlay color-{{winnerPlayer}}" *ngIf="winnerPlayer !== 'none'">{{winnerPlayer}} wins!!</div>
+        </section>
     </div>
   `,
   styles: [`
-  .row{ width:120px;display:flex }
+    .row{ width:120px;display:flex }
     .container{ font-family:sans-serif; }
     .square{
       width:40px;
@@ -94,7 +94,7 @@ import { Component, OnInit } from '@angular/core';
       letter-spacing:1px;
     }
     .btn:hover{ background:#000; }
-    `]
+ `]
 })
 
 export class MainAppComponent implements OnInit {
@@ -187,6 +187,7 @@ export class MainAppComponent implements OnInit {
           // Check Inverse Diagonal
           let jInv = 2;
           const inverseDiag = this.matrix.map((row,i)=>{
+            console.log(i,jInv);
             const el = row[jInv];
             jInv--;
             return el;
@@ -199,5 +200,5 @@ export class MainAppComponent implements OnInit {
       }
     }
   }
-  
+
  }
