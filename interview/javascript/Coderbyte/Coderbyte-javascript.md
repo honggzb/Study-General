@@ -975,7 +975,7 @@ function HTMLElements(str) {
 
 ## 27. GasStation - hard
 
--[n, g:c]  --> n: number of gas station, g: amount of gas, c: amount of gallons of gas needed to following gas station
+- [n, g:c]  --> n: number of gas station, g: amount of gas, c: amount of gallons of gas needed to following gas station
 - return index of starting gas station that allow u to travel around the whole route once
 - ["4", "1:1", "2:2", "1:2", "0:1"]  --> impossible
 - ["4", "0:1", "2:2", "1:2", "3:1"]  --> 4
