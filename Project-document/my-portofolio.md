@@ -1,4 +1,4 @@
-ro##  Portofolio React + TypeScript + Vite
+##  Portofolio React + TypeScript + Vite
 
 - [Portofolio React + TypeScript + Vite](#portofolio-react--typescript--vite)
 - [using Chakra UI](#using-chakra-ui)
@@ -51,6 +51,18 @@ function App() {
       <Text>Text</Text>
     </>
   )
+}
+//
+function Landing() {
+    const badgeList = (
+        <Wrap mt={14} maxW={600}>
+            {SKILLS.map(skill => (
+                <WrapItem key={skill.label}>
+                    <Badge bg={skill.label}>{skill.label}</Badge>
+                </WrapItem>
+            ))}
+        </Wrap>
+    );
 }
 ```
 
