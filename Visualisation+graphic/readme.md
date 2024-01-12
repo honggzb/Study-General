@@ -1,4 +1,7 @@
 ```
+│   ├── Canvas/
+│   │   ├── char-raining-effect.html
+│   │   └──   
 │   ├── D3/
 │   │   ├── 00.prepare/
 │   │   │   └── mockServer代码和说明
