@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Sample - char raining</title>
+</head>
+<body>
+    <canvas id="bg" style="background-color: black;"></canvas>
+<script>
+    const cvs = document.getElementById('bg');
+    const width = window.innerWidth * devicePixelRatio, height = window.innerHeight * devicePixelRatio;
+    cvs.width = width;
+    cvs.height = height;
+    const ctx = cvs.getContext('2d');
+    const fontsize = 20 * devicePixelRatio;
+    const columnWidth = fontsize;
+    const columnCount = Math.floor(width / columnWidth);
+    //每一列下一个字符是第几个字符
+    const nextChars = new Array(columnCount).fill(0);
+    //画一排文字
+    function drawCharInALine() {
+        // 填充半透明遮盖层
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+        ctx.fillRect(0, 0,width, height);
+
+        for(let i=0;i<columnCount; i++) {
+            //画第i列字符
+            const char = getRandomChar();
+            ctx.fillStyle = getRandomColor();
+            ctx.font = `${fontsize}px "Roboto Mono"`;
+            const x = columnWidth * i;
+            const index = nextChars[i];
+            const y = (index + 1) * fontsize;
+            ctx.fillText(char, x, y);
+            //更改下一个字符位置
+            if(y > height && Math.random() > 0.99) {
+                nextChars[i] = 0
+            } else {
+                nextChars[i]++;
+            }
+        }
+    }
+
+    function getRandomColor() {
+        const fontColors = [
+            '#33B5E5',
+            '#0099CC',
+            '#AA66CC',
+            '#9933CC',
+            '#669988',
+            '#FFBB33',
+            '#FF8890',
+            '#FF4444',
+            '#CC7000',
+            '#DDEE99',
+        ];
+        return fontColors[Math.floor(Math.random() * fontColors.length)];
+    }
+
+    function getRandomChar() {
+        const str = "console.log('hello, world')";
+        return str[Math.floor(Math.random() * str.length)];
+    }
+
+    //drawCharInALine();
+    setInterval(drawCharInALine, 40);
+</script>
+</body>
+</html>
