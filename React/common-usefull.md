@@ -1,3 +1,14 @@
+[Common useful](#top)
+
+- [create a react project](#create-a-react-project)
+- [React router](#react-router)
+- [React redux](#react-redux)
+- [using bootstrap](#using-bootstrap)
+- [install and setup tailwindcss](#install-and-setup-tailwindcss)
+- [install and setup msw](#install-and-setup-msw)
+
+--------------------------------------------------------------------------------
+
 ## create a react project
 
 |project type|CLI|
@@ -14,6 +25,77 @@ VSCode shotword
 |shotword|CLI|
 |---|---|
 |rafce   | component|
+
+[⬆ back to top](#top)
+
+## React router
+
+```javascript
+//1. npm i react-router-dom
+//2.
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+//3. 
+<BrowserRouter>
+   <nav>
+      <ul>
+         <li> <Link to="/">Home</Link> </li>
+         <li> <Link to="/basic">Basic</Link> </li>
+      </ul>
+   </nav>
+   <Routes>
+      <Route path="/basic" element={<Basic />}></Route>
+      <Route path="/" element={<Home />}></Route>
+   </Routes>
+</BrowserRouter>
+```
+
+[⬆ back to top](#top)
+
+## React redux
+
+1. `npx create-next-app --example with-redux my-app`
+  - https://github.com/rahsheen/react-native-template-redux-typescript
+  - https://github.com/rahsheen/expo-template-redux-typescript
+2. `npm i @reduxjs/toolkit react-redux`
+3. `npm i --save-dev @types/node` - for using require in store
+4.  chrome extension
+   - React Developer Tools
+   - redux Devtools
+5. create store folder under src
+6. create a new file 'store.tsx' under store folder
+7. modify 'main.tsx'
+
+```typescript
+//store.tsx
+import { configureStore } from "@reduxjs/toolkit";
+const store = configureStore({
+    reducer: { }
+});
+export { store }
+//main.tsx
+import { Provider } from'react-redux'
+import { store } from './store/index';
+<React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+)
+// 
+```
+
+[⬆ back to top](#top)
+
+## using bootstrap
+
+```html
+<link href="https://fonts.cdnfonts.com/css/maximum-impact" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"/>
+```
+
+[⬆ back to top](#top)
 
 ## install and setup tailwindcss
 
@@ -37,3 +119,10 @@ content: ["./src/**/*.{html,tsx}"],
 @tailwind components;
 @tailwind utilities;
 ```
+
+[⬆ back to top](#top)
+
+## install and setup msw
+
+- [msw](https://mswjs.io/docs): Mock Service Worker (MSW) is an API mocking library for browser and Node.js. With MSW, you can intercept outgoing requests, observe them, and respond to them using mocked responses.
+- `npm install msw --save-dev`
