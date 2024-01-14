@@ -16,12 +16,16 @@
 │     └──  react官网学习小结-2023版.md
 ```
 
-### VSCode settings
+## VSCode settings
 
 1. plugin
    1. ES7 React/Redux/GraphQL/React-Native snippets
    2. Highlight Matching Tag
    3. Prettier - Code formatter
 2. open settings.json, add `"editor.formatOnSave": true,`
+
+## Browser extension/plugin
+
+- Pesticide
 
 [⬆ back to top](#top)
