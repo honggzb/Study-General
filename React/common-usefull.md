@@ -5,6 +5,7 @@
 - [React redux](#react-redux)
 - [using bootstrap](#using-bootstrap)
 - [install and setup tailwindcss](#install-and-setup-tailwindcss)
+- [using context](#using-context)
 - [install and setup msw](#install-and-setup-msw)
 
 --------------------------------------------------------------------------------
@@ -118,6 +119,33 @@ content: ["./src/**/*.{html,tsx}"],
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+```
+
+[⬆ back to top](#top)
+
+## using context
+
+```typescript
+//themeContext.js
+export const ThemeModeContext = createContext('light');
+export const THEME ={
+   light: {},
+   dark: {}
+}
+//App.jsx
+const initialThemeMode = useContext(ThemeModeContext);
+const [themeMode,setThememode] = useState(initialThemeMode);
+<ThemeModeContext.provider value={{themeMode, setThememode}}>
+   <div style={{ color: THEME[themeMode].textcolor}}></div>
+</ThemeModeContext.provider>
+// level5.jsx
+const [themeMode,setThememode] = useContext(ThemeModeContext);
+function toggleThemeMode() {
+   setThememode(themeMode  === 'light' ? 'dark' : 'light');
+}
+<ThemeModeContext.Consumer>
+   <button onClick={toggleThemeMode}></button>
+</ThemeModeContext.Consumer>
 ```
 
 [⬆ back to top](#top)
