@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> 交错的环</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    background-color: #171616;
+}
+
+.content {
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.circle{
+    width: 200px;
+    height: 200px;
+    border: 20px solid #FFF;
+    border-radius: 50%;
+    margin-left: -60px;
+    position: relative;
+}
+.circle1{
+    --color:#FFF
+}
+.circle2{
+    border-color: #fc0909;
+    --color:#fc0909
+}
+.circle3{
+    border-color: aqua;
+}
+.circle1::after,.circle2::after{
+    content: "";
+    position: absolute;
+    top:-20px;
+    left:-20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 20px solid transparent;
+    border-right-color: var(--color);
+    box-sizing: border-box;
+    z-index: 10;
+    transform: rotate(45deg);
+}
+
+</style>
+</head>
+<body>
+    <div class="content">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+    </div>
+</body>
+</html>
