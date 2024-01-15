@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>渐变按钮效果</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    background-color: #fefbfb;
+    display: flex;
+    height: 100vh;
+}
+.button{
+    width: 250px;
+    height: 80px;
+    background: linear-gradient(to right bottom,#8888f1,#0dfe0d);
+    margin:auto;
+    text-align: center;
+    line-height: 80px;
+    font-size: 20px;
+    color:#FFF;
+    position: relative;
+    z-index: 1;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.button::before,.button::after{
+    content:"";
+    width:0;
+    height:50%;
+    position: absolute;
+    z-index:-1;
+    transition: all 0.2s ease-in-out;
+}
+.button::before{
+    top:0;
+    left:0;
+    background: #fb1008;
+}
+
+.button::after{
+    bottom:0;
+    right:0;
+    background: #10c8fb;
+}
+.button:hover::before,.button:hover::after{
+    width:100%;
+}
+        </style>
+    </head>
+<body>
+    <div class="button">HOVER</div>
+</body>
+</html>
