@@ -4,6 +4,8 @@
 - [Loading 3D model as Canvas](#loading-3d-model-as-canvas)
 - [Media Query for Mobile](#media-query-for-mobile)
 - [scrolling to component - framer-motion+#](#scrolling-to-component---framer-motion)
+- [Higher-Order Components(HOC)](#higher-order-componentshoc)
+  - [Higher-Order Component Structure](#higher-order-component-structure)
 - [React tilt](#react-tilt)
 - [react-vertical-timeline-component](#react-vertical-timeline-component)
 
@@ -179,6 +181,58 @@ export default SectionWrapper;
       },
     };
   };
+```
+
+[⬆ back to top](#top)
+
+## Higher-Order Components(HOC)
+
+- Higher-order components (HOCs) are a powerful feature of the React library. They allow you to reuse component logic across multiple components
+- [How to Use Higher-Order Components in React](https://www.freecodecamp.org/news/higher-order-components-in-react/)
+- [](https://blog.logrocket.com/understanding-react-higher-order-components/)
+- When to Use HOCs
+  - Authentication
+  - Logging
+  - Styling and Theming
+  - 
+  
+### Higher-Order Component Structure
+
+```javascript
+const hoc = (WrappedComponent) => 
+  // HOC logic using hooks
+  function HOC(props){
+    // HOC-specific logic using hooks
+    const [count, setCount] = useState(0);
+    useEffect(() => {
+      // Perform side effects here
+    }, [count]);
+    return <WrappedComponent {props} enhancedProp="someValue" />
+}
+//Using the enhanced component
+function App() {
+ return (
+    <EnhancedComponent prop1="value1" prop2="value2" />
+ );
+}
+// HOC is fuction that accepts a component and return a new component
+const SectionWrapper = (Component, idName) => 
+    function HOC(){
+        return (
+            <motion.section 
+                variants={staggerContainer()}
+                initia
+                whileInView="show"
+                viewport={{once: true, amount: 0.25}}
+                className={`${styles.padding} max-w-7xl mx-auto relative z-0`}>
+                 <span className='hash-span' id={idName}>&nbsp;</span>
+                <Component />
+            </motion.section>
+        ) 
+};
+export default SectionWrapper;
+//  Using SectionWrapper
+export default SectionWrapper(About, "about");
 ```
 
 [⬆ back to top](#top)
