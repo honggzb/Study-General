@@ -1,0 +1,17 @@
+- [React Three Fiber in practice](https://www.youtube.com/playlist?list=PLWP0narTpO8n9YwsTLVO7-vbIzLELrwwS)
+  - https://github.com/Domenicobrz/R3F-in-practice
+- [React-3-fiber Tutorial](https://www.youtube.com/playlist?list=PLkQj0oVF_lCyCnVRYZMvjhoMSHSre6Dge)
+- [image Gallery ](https://codesandbox.io/p/sandbox/image-gallery-lx2h8)
+- [Three js, React Three Fiber, React Three Drei Tutorial 2022](https://www.youtube.com/watch?v=y5CAuAZ7kKM&list=PLIRTsuB0iPJvxaYyg8MOrjffPPcYnccL0)
+- [Three.js / React Three Fiber Tutorials](https://www.youtube.com/watch?v=pXpckHDDNYo&list=PLpepLKamtPjiUF6PvVUbIFhx9HaS0qJs_)
+- [Building the Metaverse](https://www.youtube.com/watch?v=SV0W_B8iOzc&list=PLvfQp12V0hS3EbCBw7kDNOJ1l412tzcrM)
+- [Step-by-Step Guide to Mesmerizing 3D Text with React Three Fiber](https://www.youtube.com/watch?v=jIkn9dLBfNc)
+  - [Wawa Sensei channel](https://www.youtube.com/@WawaSensei/playlists)
+  - https://github.com/wass08/r3f-3d-text-effect
+- [Three.js, React-Three-Fiber, React-Three-Drei Tutorial 2022](https://www.youtube.com/playlist?list=PLIRTsuB0iPJvxaYyg8MOrjffPPcYnccL0)
+- [How to import a 3D model into React application using React Three Fiber](https://www.youtube.com/watch?v=M5nt1GamB_g)
+- [Webxr with Three.js and React (React Three Fiber)](https://www.youtube.com/playlist?list=PLpM_sf_d5YTPXeVp4cmgN_cNBj9pNTEmZ)
+- [R3F Tutorials - React Three Fiber](https://www.youtube.com/playlist?list=PLpsu0uTIiRBep6bh2vlUiFlK0Y7ujBggh)
+- [React three fiber](https://www.youtube.com/playlist?list=PL97gVybCBAFq4UScmX7VSA96DWx_jJDr6)
+- [Develop your own 3D website](https://www.youtube.com/playlist?list=PL1YJW01TGCGmnZ9LQ18lQvhhiypWgPIeX)
+- **studing now** - [Mix - Wawa Sensei](https://www.youtube.com/watch?v=jIkn9dLBfNc&list=RDCMUCBH-5ctALmmOrm4kczL3urQ&index=2)
