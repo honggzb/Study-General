@@ -13,7 +13,7 @@
 - ✍️ A passionate Self-taught Front-end developer
 - 💡 I like to explore new technologies and develop software solutions and quick hacks.
 - 🌱 In my free time, I pursue Graphic Design and Blog Writing as hobbies/side hustles.
-- 📫 Personal website [link]()
+- 📫 Personal website [link](https://my-portofolio-visualization.vercel.app/)
 - ✉️ You can shoot me an email at xxx@umass.edu! I'll try to respond as soon as I can.
 
 <br><br>
