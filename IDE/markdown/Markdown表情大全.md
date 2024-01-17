@@ -328,3 +328,4 @@
 | :small_blue_diamond: `:small_blue_diamond:` | :small_orange_diamond: `:small_orange_diamond:` | :small_red_triangle: `:small_red_triangle:` |
 | :small_red_triangle_down: `:small_red_triangle_down:` | :shipit: `:shipit:` |
 
+[⬆ back to top](#top)
