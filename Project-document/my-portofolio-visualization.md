@@ -1,6 +1,7 @@
 [React + Vite + three + react-three/fiber, drei + framer-motion](#top)
 
 - [set up](#set-up)
+- [Global style setup](#global-style-setup)
 - [Loading 3D model as Canvas](#loading-3d-model-as-canvas)
 - [Media Query for Mobile](#media-query-for-mobile)
 - [scrolling to component - framer-motion+#](#scrolling-to-component---framer-motion)
@@ -70,6 +71,53 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+```
+
+[⬆ back to top](#top)
+
+## Global style setup
+
+- 'tailwind.config.js'
+- 'src\styles.js'
+
+```javascript
+//tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./src/**/*.{html,tsx,jsx,js}"],
+  mode: "jit",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#050816",
+        secondary: "#aaa6c3",
+        tertiary: "#151030",
+        "black-100": "#100d25",
+        "black-200": "#090325",
+        "white-100": "#f3f3f3",
+      },
+      boxShadow: {
+        card: "0px 35px 120px -15px #211e35",
+      },
+      screens: {
+        xs: "450px",
+      },
+      backgroundImage: {
+        "hero-pattern": "url('/src/assets/herobg.png')",
+      },
+    },
+  },
+  plugins: [],
+}
+//src\styles.js
+const styles = {
+    paddingX: "sm:px-16 px-6",
+    paddingY: "sm:py-16 py-6",
+    padding: "sm:px-16 px-6 sm:py-16 py-10",
+    sectionHeadText: "text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
+    sectionSubText: "sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider",
+  };
+export { styles };
 ```
 
 [⬆ back to top](#top)
@@ -279,3 +327,6 @@ const defaultOptions = {
 - https://www.hostinger.com/
 
 [⬆ back to top](#top)
+
+
+
