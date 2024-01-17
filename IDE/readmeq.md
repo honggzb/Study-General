@@ -10,11 +10,11 @@
 
 ## <picture><img src = "https://github.com/0xAbdulKhalid/0xAbdulKhalid/raw/main/assets/mdImages/about_me.gif" width = 50px></picture> **About me**
 
-- ✍️ A passionate Self-taught Front-end developer
+- ✍️ A Self-taught Front-end developer
 - 💡 I like to explore new technologies and develop software solutions and quick hacks.
-- 🌱 In my free time, I pursue Graphic Design and Blog Writing as hobbies/side hustles.
+- 🌱 In my free time, I pursue cutting-edge technologies as hobbies/side hustles.
 - 📫 Personal website [link](https://my-portofolio-visualization.vercel.app/)
-- ✉️ You can shoot me an email at xxx@umass.edu! I'll try to respond as soon as I can.
+- ✉️ You can shoot me an email at honggzb@gmail.com! I'll try to respond as soon as I can.
 
 <br><br>
 
