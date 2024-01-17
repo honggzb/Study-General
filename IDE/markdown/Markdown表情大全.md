@@ -77,7 +77,7 @@
 | :rage2: `:rage2:` | :rage3: `:rage3:` | :rage4: `:rage4:` |
 | :suspect: `:suspect:` | :trollface: `:trollface:` | 
 
-[⬆ back to top(#top)]
+[⬆ back to top](#top)
 
 ## Nature
 
@@ -122,7 +122,7 @@
 | :milky_way: `:milky_way:` | :partly_sunny: `:partly_sunny:` | :octocat: `:octocat:` |
 | :squirrel: `:squirrel:` |
 
-[⬆ back to top(#top)]
+[⬆ back to top](#top)
 
 ## Objects
 
@@ -215,7 +215,7 @@
 | :sweet_potato: `:sweet_potato:` | :eggplant: `:eggplant:` | :tomato: `:tomato:` |
 | :corn: `:corn:` |
 
-[⬆ back to top(#top)]
+[⬆ back to top](#top)
 
 ## Places
 
@@ -257,7 +257,7 @@
 | :ru: `:ru:` | :gb: `:gb:` | :uk: `:uk:` |
 | :de: `:de:` |
 
-[⬆ back to top(#top)]
+[⬆ back to top](#top)
 
 ## Symbols
 
