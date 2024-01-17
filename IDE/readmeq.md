@@ -55,7 +55,8 @@
 ![JIRA](https://img.shields.io/badge/-JIRA-blue?style=flat&logo=JIRA)
 ![WCAG2.x](https://img.shields.io/badge/-WCAG2.x%20-bf61ff?style=flat&logo=WCAG%202.x)
 ![JAVA](https://img.shields.io/badge/-JAVA-white?style=flat&logo=JAVA)
-
+![React Three Fiber](https://img.shields.io/badge/-React%20Three%20Fiber-gray?style=flat&logo=react-three%2Ffiber)
+![framer motion](https://img.shields.io/badge/-framer%20motion-yellow?style=flat&logo=framer%20motion)
 
 ## Contact me
 
