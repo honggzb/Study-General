@@ -43,7 +43,7 @@
 ![i18n](https://img.shields.io/badge/-i18n-fc6767?style=flat&logo=i18n)
 ![ThreeJS](https://img.shields.io/badge/-ThreeJS-blue?style=flat&logo=Threejs)
 ![WebGL](https://img.shields.io/badge/-WebGL-red?logo=WebGL)
-![Node.js](https://img.shields.io/badge/-c.js-green?style=flat&logo=Node.js)
+![Node.js](https://img.shields.io/badge/-Node.js-green?style=flat&logo=Node.js)
 ![RESTful](https://img.shields.io/badge/-RESTful-2f80ed?style=flat&logo=RESTful)
 ![GraphQL](https://img.shields.io/badge/-GraphQL-ec008c?style=flat&logo=GraphQL)
 ![Docker](https://img.shields.io/badge/-Docker-black?style=flat&logo=docker)
