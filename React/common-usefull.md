@@ -5,7 +5,7 @@
 - [React redux](#react-redux)
 - [using bootstrap](#using-bootstrap)
 - [install and setup tailwindcss](#install-and-setup-tailwindcss)
-- [updating whole packages to latest version](#updating-whole-packages-to-latest-version)]
+- [updating whole packages to latest version](#updating-whole-packages-to-latest-version)
 - [using context](#using-context)
 - [using SCSS](#using-scss)
 - [install and setup msw](#install-and-setup-msw)
