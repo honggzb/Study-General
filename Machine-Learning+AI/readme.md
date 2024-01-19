@@ -11,6 +11,7 @@
 │   │   │   ├── scikit-learn全解.md
 │   │   │   └──
 │   │   ├── Azure OpenAI 服务
+│   │   ├── Use Midjourney for Web Design.md
 │   │   ├── 统计学图学习.md
 │   │   └── 
 ```
