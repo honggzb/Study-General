@@ -29,7 +29,7 @@
 ## using style
 
 |style|Style descriptors|prompt|
-|---|---|
+|---|---|---|
 |Minimalist|Clean|`/imagine a portfolio website for a graphic designer, minimalist, clean --ar 9:16`|
 |3D & Abstract||`/imagine web design for an artist, ux ui, 3d objects, gradients --ar 9:16`|
 |Retro|Vintage|`/imagine a blog website for a vintage fashion magazine, retro, vibrant --ar 9:16`|
