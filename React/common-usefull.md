@@ -5,6 +5,7 @@
 - [React redux](#react-redux)
 - [using bootstrap](#using-bootstrap)
 - [install and setup tailwindcss](#install-and-setup-tailwindcss)
+- [updating whole packages to latest version](#updating-whole-packages-to-latest-version)]
 - [using context](#using-context)
 - [using SCSS](#using-scss)
 - [install and setup msw](#install-and-setup-msw)
@@ -96,6 +97,15 @@ import { store } from './store/index';
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"/>
 ```
+
+[⬆ back to top](#top)
+
+## updating whole packages to latest version
+
+- remove yarn.lock: `rm -rf yarn.lock`
+- update all dependencies: `npm update -D`
+- `npm audit fix`
+- `npm i`
 
 [⬆ back to top](#top)
 
