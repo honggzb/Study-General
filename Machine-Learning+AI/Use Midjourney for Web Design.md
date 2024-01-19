@@ -5,10 +5,12 @@
 - [using image prompt](#using-image-prompt)
 - [other prompt hint](#other-prompt-hint)
 
+-----------------------------------------------------------------------------------
+- search `how to use midjourney for web design` in google
 
 ## good prompt
 
-- ![prompt](prompt.png)
+- ![prompt](./images/prompt.png)
 - `/imagine an eCommerce website for a motorcycle store —ar 9:16`
 - `/imagine a blog website for a tech magazine, modern, vibrant --ar 9:16`
 - Note: 
