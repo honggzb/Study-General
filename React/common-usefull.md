@@ -6,6 +6,7 @@
 - [using bootstrap](#using-bootstrap)
 - [install and setup tailwindcss](#install-and-setup-tailwindcss)
 - [using context](#using-context)
+- [using SCSS](#using-scss)
 - [install and setup msw](#install-and-setup-msw)
 
 --------------------------------------------------------------------------------
@@ -146,6 +147,23 @@ function toggleThemeMode() {
 <ThemeModeContext.Consumer>
    <button onClick={toggleThemeMode}></button>
 </ThemeModeContext.Consumer>
+```
+
+[⬆ back to top](#top)
+
+## using SCSS 
+
+- `npm install --save-dev postcss postcss-scss`
+- modify `postcss.config.js`
+
+```javsscript
+// postcss.config.js
+module.exports = {
+  syntax: 'postcss-scss',
+  plugins: {
+    …
+  }
+}
 ```
 
 [⬆ back to top](#top)
