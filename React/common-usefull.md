@@ -62,8 +62,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 2. `npm i @reduxjs/toolkit react-redux`
 3. `npm i --save-dev @types/node` - for using require in store
 4.  chrome extension
-   - React Developer Tools
-   - redux Devtools
+      - React Developer Tools
+      - redux Devtools
 5. create store folder under src
 6. create a new file 'store.tsx' under store folder
 7. modify 'main.tsx'
