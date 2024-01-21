@@ -73,8 +73,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { configureStore } from "@reduxjs/toolkit";
 const store = configureStore({
     reducer: {
-      user: userReducer,
-      note: noteReducer }
+      userSlice: userReducer,
+      noteSlice: noteReducer }
     });
 export { store }
 //main.tsx
