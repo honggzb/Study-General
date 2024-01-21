@@ -71,12 +71,13 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 ```typescript
 //store.tsx
 import { configureStore } from "@reduxjs/toolkit";
-const store = configureStore({
+export const store = configureStore({
     reducer: {
       userSlice: userReducer,
       noteSlice: noteReducer }
     });
-export { store }
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 //main.tsx
 import { Provider } from'react-redux'
 import { store } from './store/index';
@@ -88,11 +89,16 @@ import { store } from './store/index';
 )
 //note-slice.tsx
 import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from '@reduxjs/toolkit'
+export interface NotesState {
+  noteList: string[]
+}
+const initialState: NotesState = {
+  value: 0,
+}
 export const noteSlice = createSlice({
     name: "noteSlice",
-    initialState: {
-        noteList: [],
-    },
+    initialState,
     reducers: {
         setNoteList: (currentSlice, action) => {
             currentSlice.noteList = action.payload;
@@ -103,15 +109,16 @@ export const noteSlice = createSlice({
         //...
     },
 });
-export const { setNoteList, addNote, updateNote, deleteNote } = noteSlice.actions;
+export const { setNoteList, addNote } = noteSlice.actions;
 export const noteReducer = noteSlice.reducer;
 // note.tsx
 // useSelector   -->  read data from the store
 // useDispatch   ---> dispatch actions
 import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from '../../app/store'
 import { updateNote, deleteNote } from "../../store/note-slice";
 export function Note() {
-   const note = useSelector(store => 
+   const note = useSelector(state: RootState} => 
       store.noteSlice.noteList.find(note => note.id === id)
    );
     const dispatch = useDispatch();
