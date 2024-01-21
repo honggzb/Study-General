@@ -72,7 +72,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 //store.tsx
 import { configureStore } from "@reduxjs/toolkit";
 const store = configureStore({
-    reducer: { }
+    reducer: {userReducer, noteReducer }
 });
 export { store }
 //main.tsx
@@ -103,6 +103,33 @@ export const noteSlice = createSlice({
 });
 export const { setNoteList, addNote, updateNote, deleteNote } = noteSlice.actions;
 export const noteReducer = noteSlice.reducer;
+// note.tsx
+import { useDispatch, useSelector } from "react-redux";
+import { updateNote, deleteNote } from "../../store/note-slice";
+export function Note() {
+   const note = useSelector(store => 
+      store.noteSlice.noteList.find(note => note.id === id)
+   );
+    const dispatch = useDispatch();
+    const submit = async (formValues) => {
+        const updatedNote = await NoteAPI.updateById(note.id, formValues);
+        dispatch(updateNote(updatedNote));
+        setIsEditable(false);
+         //...
+     }
+   return (
+        <>{ note && (
+            <NoteForm 
+                isEditable={isEditable}
+                title={note.title}
+                note={note}
+                onClickDelete={deleteNote_} 
+                onClickEdit={() => setIsEditable(!isEditable)}
+                onSubmit={isEditable && submit}/>
+            )}
+        </>
+    )
+}
 ```
 
 [⬆ back to top](#top)
