@@ -59,6 +59,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 1. `npx create-next-app --example with-redux my-app`
   - https://github.com/rahsheen/react-native-template-redux-typescript
   - https://github.com/rahsheen/expo-template-redux-typescript
+  - [Redux Toolkit](https://redux-toolkit.js.org/tutorials/quick-start)
 2. `npm i @reduxjs/toolkit react-redux`
 3. `npm i --save-dev @types/node` - for using require in store
 4.  chrome extension
@@ -100,7 +101,7 @@ export const noteSlice = createSlice({
     name: "noteSlice",
     initialState,
     reducers: {
-        setNoteList: (currentSlice, action) => {
+        setNoteList: (currentSlice, action: PayloadAction<string>) => {
             currentSlice.noteList = action.payload;
         },
         addNote: (currentSlice, action) => {
