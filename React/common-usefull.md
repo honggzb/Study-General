@@ -2,7 +2,7 @@
 
 - [create a react project](#create-a-react-project)
 - [React router](#react-router)
-- [React redux](#react-redux)
+- [React redux using Redux Toolkit](#react-redux-using-redux-toolkit)
 - [using bootstrap](#using-bootstrap)
 - [install and setup tailwindcss](#install-and-setup-tailwindcss)
 - [updating whole packages to latest version](#updating-whole-packages-to-latest-version)
@@ -54,7 +54,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 [⬆ back to top](#top)
 
-## React redux
+## React redux using Redux Toolkit
 
 1. `npx create-next-app --example with-redux my-app`
   - https://github.com/rahsheen/react-native-template-redux-typescript
