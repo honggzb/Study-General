@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>文字扫描滑动效果</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.avatar {
+    font-size: 100px;
+    letter-spacing: 5px;
+    color: transparent;
+    -webkit-text-stroke: 4px rgb(46, 44, 44);
+    position: relative;
+    width: 320px;
+}
+.avatar::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: dodgerblue;
+    -webkit-text-stroke: 4px dodgerblue;
+    width: 1px;
+    overflow: hidden;
+    border-right: 2px solid dodgerblue;
+    animation: light 5s linear infinite;
+}
+@keyframes light {
+    50% { width: 100% }
+}
+</style>
+</head>
+<body>
+<h1 class="avatar" data-text="HTML">HTML</h1>
+</body>
+</html> 
