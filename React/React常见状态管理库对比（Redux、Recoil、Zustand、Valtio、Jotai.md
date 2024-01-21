@@ -1,0 +1,4 @@
+- [React常见状态管理库对比（Redux、Recoil、Zustand、Valtio、Jotai）](https://juejin.cn/post/7299799127624859659)
+- [zustand实践与源码阅读](https://blog.csdn.net/qq_36154157/article/details/132780093)
+- [zustand状态管理器与观察者模式](https://juejin.cn/post/6970951346816188430)
+- []()
