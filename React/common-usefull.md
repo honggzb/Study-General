@@ -106,6 +106,8 @@ export const noteSlice = createSlice({
 export const { setNoteList, addNote, updateNote, deleteNote } = noteSlice.actions;
 export const noteReducer = noteSlice.reducer;
 // note.tsx
+// useSelector   -->  read data from the store
+// useDispatch   ---> dispatch actions
 import { useDispatch, useSelector } from "react-redux";
 import { updateNote, deleteNote } from "../../store/note-slice";
 export function Note() {
