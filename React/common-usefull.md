@@ -119,7 +119,7 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from '../../app/store'
 import { updateNote, deleteNote } from "../../store/note-slice";
 export function Note() {
-   const note = useSelector(state: RootState} => 
+   const note = useSelector(state: RootState => 
       store.noteSlice.noteList.find(note => note.id === id)
    );
     const dispatch = useDispatch();
