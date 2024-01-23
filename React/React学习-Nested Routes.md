@@ -2,7 +2,9 @@
   
 - [static Nested Routes](#static-nested-routes)
 - [dynamic Nested Routes](#dynamic-nested-routes)
-
+  - [sample 1](#sample-1)
+  - [sample 2: useParams](#sample-2-useparams)
+  - [sample 3](#sample-3)
 ---------------------------------------------------------------------------------------------
 
 ## static Nested Routes
@@ -53,9 +55,7 @@ const User = () => {
 
 ## dynamic Nested Routes
 
-- sample 2: useParams
-- sample 3:
-  - ![dynamicNestedRouter](./images/dynamicNestedRouter.gif)
+### sample 1
 
 ```javascript
 // sample 1
@@ -98,37 +98,44 @@ const Users = ({ users }) => {
     </>
   );
 };
-// sample 2- pass url params
-const App = () => {
-  const users = [
-    { id: '1', fullName: 'Robin Wieruch' },
-    { id: '2', fullName: 'Sarah Finnley' },
-  ];
-  return (
-    <h1>React Router</h1>
-    <nav>...</nav>
-    <Routes>
-      <Route element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="home" element={<Home />} />
-        <Route path="/users/:userId" element={<User />} />
-        <Route path="*" element={<NoMatch />} />
-      </Route>
-    </Routes>
-  );
-};
-//
-import {useParams} from 'react-router-dom';
-const User = () => {
-  const { userId } = useParams();
-  return (
-    <>
-      <h2>User: {userId}</h2>
-      <Link to="`/users/${userId}`">Back to Users</Link>
-    </>
-  );
-};
+```
 
+[⬆ back to top](#top)
+
+### sample 2: useParams
+
+```javascript
+// sample 2- pass url params
+<Routes>
+        <Route path="/" Component={ Home } />
+        <Route path="service/*" Component={ Service }>
+               <Route index Component={ ServicesDesc } />
+               <Route path="development" Component={ Development } />
+               <Route path="consult" Component={ Consult } />      
+               <Route path="team/:teamId" Component={ Team }/> {/*dynamic route*/}      
+        </Route>
+        <Route path="about" Component={ About } />  
+</Routes>
+//
+import { useParams  } from 'react-router-dom'
+export default function Team() {
+    const { teamId } = useParams();//teamId is the params passing with the URL
+  return (
+    <div>
+      <h2>Team</h2>
+       Your project is assiged to a {  teamId } team
+    </div>
+  )
+}
+```
+
+[⬆ back to top](#top)
+
+### sample 3
+
+![dynamicNestedRouter](./images/dynamicNestedRouter.gif)
+
+```javascript
 // sample 3
 const App = () => {
   const transactions = [
