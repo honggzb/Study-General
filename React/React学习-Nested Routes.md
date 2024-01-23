@@ -181,8 +181,8 @@ const Transactions = ({ transactions }) => {
 }
 ```
 
-> [How to implement nested Routes in React Router V6](https://www.tecforfun.com/frameworks/how-to-implement-nested-routes-in-react-router-v6/)
-> [React Router 6: Nested Routes](https://www.robinwieruch.de/react-router-nested-routes/)
-> [How to create nested dynamic routes using React Router v6](https://jnpiyush.medium.com/how-to-create-nested-dynamic-routes-using-react-router-v6-96edc4daa061)
+- [How to implement nested Routes in React Router V6](https://www.tecforfun.com/frameworks/how-to-implement-nested-routes-in-react-router-v6/)
+- [React Router 6: Nested Routes](https://www.robinwieruch.de/react-router-nested-routes/)
+- [How to create nested dynamic routes using React Router v6](https://jnpiyush.medium.com/how-to-create-nested-dynamic-routes-using-react-router-v6-96edc4daa061)
 
 [⬆ back to top](#top)
