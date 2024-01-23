@@ -57,47 +57,46 @@ const User = () => {
 
 ### sample 1
 
+- star segment here is used for matching URLs to routes
+- It are called path patterns. Because of this path pattern, for example, you can have any number of segments in the child URL.
+  - `localhost:3000/service/development/teams`, `localhost:3000/service/development/teams/projects`
+- `<Outlet>` is to render the child route element within the parent route element.
+
 ```javascript
 // sample 1
 const App = () => {
-  const users = [
-    { id: '1', fullName: 'Robin Wieruch' },
-    { id: '2', fullName: 'Sarah Finnley' },
-  ];
   return (
     <>
-      <h1>React Router</h1>
       <nav>
-        <Link to="/home">Home</Link>
-        <Link to="/users">Users</Link>
+       //...
       </nav>
       <Routes>
-        <Route element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="home" element={<Home />} />
-          <Route path="users" element={<Users users={users} />} />
-          <Route path="*" element={<NoMatch />} />
+        <Route index  path="/" Component={ Home } />
+        <Route path="service/*" Component={ Service }>
+               <Route path="development" Component={ Development } />
+               <Route path="consult" Component={ Consult } />              
         </Route>
+        <Route path="about" Component={ About } />         
       </Routes>
     </>
   );
 };
-// user.tsx
-const Users = ({ users }) => {
+// 
+import { Outlet } from 'react-router-dom'
+export default function Service() {
   return (
-    <>
-      <h2>Users</h2>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>
-            <Link to={user.id}> {user.fullName}</Link>
-          </li>
-        ))}
-      </ul>
-      <Outlet />
-    </>
-  );
-};
+    <div>
+        <h2>Our Services</h2>       
+     	 <div>
+              <ul>
+                 <li>Software developement</li>
+                 <li>Consulting</li>
+            </ul>
+            <Outlet/>
+         </div>
+    </div>
+  )
+}
 ```
 
 [⬆ back to top](#top)
@@ -182,6 +181,7 @@ const Transactions = ({ transactions }) => {
 }
 ```
 
+> [How to implement nested Routes in React Router V6](https://www.tecforfun.com/frameworks/how-to-implement-nested-routes-in-react-router-v6/)
 > [React Router 6: Nested Routes](https://www.robinwieruch.de/react-router-nested-routes/)
 > [How to create nested dynamic routes using React Router v6](https://jnpiyush.medium.com/how-to-create-nested-dynamic-routes-using-react-router-v6-96edc4daa061)
 
