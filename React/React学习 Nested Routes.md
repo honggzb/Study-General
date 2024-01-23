@@ -7,7 +7,7 @@
 
 ## static Nested Routes
 
-![Nested Routes](NestedRoutes.png)
+![Nested Routes](./images/NestedRoutes.png)
 
 ```javascript
 const App = () => {
