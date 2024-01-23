@@ -111,9 +111,7 @@ const App = () => {
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="home" element={<Home />} />
-        <Route path="users" element={<Users users={users} />}>
-          <Route path=":userId" element={<User />} />
-        </Route>
+        <Route path="/users/:userId" element={<User />} />
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
@@ -126,7 +124,7 @@ const User = () => {
   return (
     <>
       <h2>User: {userId}</h2>
-      <Link to="/users">Back to Users</Link>
+      <Link to="`/users/${userId}`">Back to Users</Link>
     </>
   );
 };
