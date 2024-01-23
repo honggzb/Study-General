@@ -53,6 +53,10 @@ const User = () => {
 
 ## dynamic Nested Routes
 
+- sample 2: useParams
+- sample 3:
+  - ![dynamicNestedRouter](./images/dynamicNestedRouter.gif)
+
 ```javascript
 // sample 1
 const App = () => {
@@ -95,6 +99,39 @@ const Users = ({ users }) => {
   );
 };
 // sample 2- pass url params
+const App = () => {
+  const users = [
+    { id: '1', fullName: 'Robin Wieruch' },
+    { id: '2', fullName: 'Sarah Finnley' },
+  ];
+  return (
+    <h1>React Router</h1>
+    <nav>...</nav>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="users" element={<Users users={users} />}>
+          <Route path=":userId" element={<User />} />
+        </Route>
+        <Route path="*" element={<NoMatch />} />
+      </Route>
+    </Routes>
+  );
+};
+//
+import {useParams} from 'react-router-dom';
+const User = () => {
+  const { userId } = useParams();
+  return (
+    <>
+      <h2>User: {userId}</h2>
+      <Link to="/users">Back to Users</Link>
+    </>
+  );
+};
+
+// sample 3
 const App = () => {
   const transactions = [
     { id: '1', details: 'Transaction 1' },
