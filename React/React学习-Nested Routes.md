@@ -96,41 +96,48 @@ const Users = ({ users }) => {
 };
 // sample 2- pass url params
 const App = () => {
-  const users = [
-    { id: '1', fullName: 'Robin Wieruch' },
-    { id: '2', fullName: 'Sarah Finnley' },
+  const transactions = [
+    { id: '1', details: 'Transaction 1' },
+    { id: '2', details: 'Transactions 2' },
   ];
-  return (
-    <>
+return (
+    <Router>
       <h1>React Router</h1>
       <nav>
         <Link to="/home">Home</Link>
-        <Link to="/users">Users</Link>
+        <Link to="/user">User</Link>
       </nav>
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
-          <Route path="users" element={<Users users={users} />} >
-              <Route path=":userId" element={<User />} />
+          <Route path="user" element={<User />}>
+            <Route index element={<Profile />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="transactions" element={<Transactions transactions={transactions} />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="*" element={<NoMatch />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </>
+    </Router>
   );
-};
-// user.tsx
-import { useParams } from 'react-router-dom';
-const Users = () => {
-  const { userId } = useParams();
-  return (
-    <>
-      <h2>User: {userId}</h2>
-      <Link to="/users">Back to Users</Link>
-    </>
-  );
-};
+}
+// 
+const Transactions = ({ transactions }) => {
+ return (
+  <>
+   <h2>Transactions</h2>
+      <ul>
+        {transactions.map((transaction) => (
+          <li key={transaction.id}>
+            <Link to={transaction.id}> {transaction.details} </Link>
+          </li>
+        ))}
+      </ul>
+  </>
+ )
+}
 ```
 
 > [React Router 6: Nested Routes](https://www.robinwieruch.de/react-router-nested-routes/)
