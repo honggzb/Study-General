@@ -1,1 +1,0 @@
-- [Persist state with Redux Persist](https://blog.logrocket.com/persist-state-redux-persist-redux-toolkit-react/)
