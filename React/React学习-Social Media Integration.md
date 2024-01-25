@@ -2,7 +2,7 @@
 
 - [ekaruz/react-social-auth](https://classic.yarnpkg.com/en/package/@ekaruz/react-social-auth)
 - [reactjs-social-login(TS)](https://www.npmjs.com/package/reactjs-social-login)
-  - ![reactjs-social-login](reactjs-social-login.png)
+  - ![reactjs-social-login](./images/reactjs-social-login.png)
   - https://github.com/cuongdevjs/reactjs-social-login/tree/master/example
 - How get client_id, client_secret_id
 
