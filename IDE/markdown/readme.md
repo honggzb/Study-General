@@ -8,3 +8,6 @@
 - 🚀 More
 - 🚨 Tutorial
 - 👉 goto
+- 📦
+- 📂
+- 📄
