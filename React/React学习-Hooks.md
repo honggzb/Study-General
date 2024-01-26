@@ -5,7 +5,7 @@
   - [pattern 1- there is no state or props dependency of function](#pattern-1--there-is-no-state-or-props-dependency-of-function)
   - [pattern 2- there is dependency of function](#pattern-2--there-is-dependency-of-function)
 - [useMemo](#usememo)
-- [useMLayoutEffect](#usemlayouteffect)
+- [useLayoutEffect](#uselayouteffect)
 - [Custom Hooks](#custom-hooks)
 - [useContext](#usecontext)
   - [Use case: global user name](#use-case-global-user-name)
@@ -140,7 +140,7 @@ export const UseEffectExample = () => {
 
 [⬆ back to top](#top)
 
-## useMLayoutEffect
+## useLayoutEffect
 
 - `useLayoutEffect` run before `useEffect`
 
