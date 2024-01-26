@@ -81,3 +81,5 @@ const App = () => {
 };
 export default App;
 ```
+
+> [How to show and hide Password in ReactJS?](https://www.geeksforgeeks.org/how-to-show-and-hide-password-in-reactjs/#approach-2-using-mui-inputs)
