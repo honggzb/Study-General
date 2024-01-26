@@ -42,11 +42,11 @@
 ## Accessiblity
 
 ```
-├── Accessiblity/
-|    ├── Angular/
+├── 📂Accessiblity/
+|    ├── 📂Angular/
 |    |     ├── AngularJS and Accessibility-General.md
 |    |     └── guide+Strategies in Angular.md
-|    ├── react/
+|    ├── 📂react/
 |    |     ├── react aria.md
 |    |     └── 
 |    ├── Accessibility of hiding content.md
@@ -66,25 +66,25 @@
 ## AngularJS-study
 
 ```
-├── AngularJS-study
-│   ├──  AngularJS入门和企业级项目 6天(邵山欢)/
+├── 📂AngularJS-study
+│   ├──  📂AngularJS入门和企业级项目 6天(邵山欢)/
 │   │    ├── 02_引入控制器.html
 │   │    ├── 04_双向数据绑定小案例1-调色板.html
 │   │    ├── 06_双向数据绑定小案例3-模拟表格.html
 │   │    ├── 08_双向数据绑定小案例4-表单联动.html
 │   │    └── city.json
-│   ├──  angular-translate-study/
+│   ├──  📂angular-translate-study/
 │   │    ├── simple-sample /
 │   │    └── readme.md
-│   ├──  angular-material-study /
+│   ├──  📂angular-material-study /
 │   │    ├── mdSwitch.md
 │   │    ├── mdToast-study.md
 │   │    └── 
-│   ├──  lib /
+│   ├──  📂lib /
 │   │    ├── angular /
 │   │    └── bootstraps3 /
-│   ├──  plugin /
-│   │    ├── agGrid /
+│   ├──  📂plugin /
+│   │    ├── 📂agGrid /
 │   │    │     ├──  Group-rowGroup-sample.html
 │   │    │     ├──  Group-sample.html
 │   │    │     ├──  Simple-sample.html
@@ -98,7 +98,7 @@
 │   │    │     └──  style-row-sample.html
 │   │    ├── ngInfiniteScroll的使用方法- 滚动触底加载.md
 │   │    └── 
-│   ├──  public /    #学习案例
+│   ├──  📂public /    #学习案例
 │   │    ├── 001-controller.html 
 │   │    ├── 002-controller-multi.html 
 │   │    ├── 003-ng-bind.html 
@@ -124,12 +124,12 @@
 │   │    ├── 023-form-user-defined.html 
 │   │    ├── kittercupCollapse.html 
 │   │    └── other.html
-│   ├──  Sample /
-│   │    ├── SVG /
+│   ├──  📂Sample /
+│   │    ├── 📂SVG /
 │   │    │    ├── barGraphdirective.md
 │   │    │    ├── gaugeWidgetDirective.md
 │   │    │    └── peiChartDirective.md
-│   │    ├── directive /
+│   │    ├── 📂directive /
 │   │    │    ├── 滚屏加载.html
 │   │    │    ├── AngularJS内置服务总览.md
 │   │    │    ├── angular之ng-model-options指令.md
@@ -138,18 +138,18 @@
 │   │    │    ├── ng-repeat in AngularJS.md
 │   │    │    ├── 自定义一个表格.js
 │   │    │    └── 
-│   │    ├── filter /
+│   │    ├── 📂filter /
 │   │    │    ├── currency-differentDollerSymbol.md
 │   │    │    └── currency-大写中文数字.md
-│   │    ├── service /
+│   │    ├── 📂ervice /
 │   │    │    ├── AngularJs中$http再次封装.md
 │   │    │    └── http-error处理.md
 │   │    ├── 页面加载时遮罩过渡.md
 │   │    └── 
-│   ├──  ui-bootstrap-study
+│   ├──  📂ui-bootstrap-study
 │   │    ├── typeahead /
 │   │    └── ui-Bootstrap之Typeahead.md
-│   ├──  unit-test
+│   ├──  📂unit-test
 │   │    ├── Controllers test-Directive test.md
 │   │    ├── promise-test.md
 │   │    └── ervice-test.md
@@ -190,9 +190,9 @@
 ## Angular-Study
 
 ```
-├── Angular-Study
-│   ├── Angular Architecture
-│   │   ├── Angular Architecture- Dan Wahlin
+├── 📂Angular-Study
+│   ├── 📂Angular Architecture
+│   │   ├──📂 Angular Architecture- Dan Wahlin
 │   │   │   ├── Angular-JumpStart-master/
 │   │   │   ├── creating-an-observable-service/
 │   │   │   ├── demos/
@@ -203,11 +203,11 @@
 │   │   │   └── readme.md
 │   │   ├── Angular Scalable Architecture-The PRPL Pattern.md
 │   │   └──
-│   ├── Angular-material/
-│   │   ├── dialog/
+│   ├── 📂Angular-material/
+│   │   ├── 📂dialog/
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar 
-│   │   ├──material++flexLayout+ngrx
+│   │   ├──📂material++flexLayout+ngrx
 │   │   │    ├── 01-optimizations/ 
 │   │   │    ├── 02-ngrx/ 
 │   │   │    └── 
@@ -215,7 +215,7 @@
 │   │   ├── angular-material-datepicker-format-1.jpg
 │   │   ├── angular-material-datepicker-format.zip
 │   │   └──  
-│   ├── Angular学习笔记/
+│   ├── 📂Angular学习笔记/
 │   │   ├── Angular学习笔记之--Animation.md
 │   │   ├── Angular学习笔记之--DI decorators.md
 │   │   ├── Angular学习笔记之--DI依赖注入.md
@@ -237,17 +237,17 @@
 │   │   ├── Angular学习笔记之--父子组件生命周期钩子(lifecycle hooks).md
 │   │   └── Angular学习笔记之--集成三方UI框架.md
 │   │   └──
-│   ├── Build Angular library/
+│   ├── 📂Build Angular library/
 │   │   ├── au-input/                                        ##带有图标的输入框input
 │   │   └──
-│   ├── Configuration/
-│   │   ├── angular-itself-multi-config/
+│   ├── 📂Configuration/
+│   │   ├── 📂angular-itself-multi-config/
 │   │   │    ├── AngularMaterial-dialog.md 
 │   │   │    └── dialog.rar   
 │   │   ├── aot-config.md
 │   │   ├── jit-vs-aot.jpeg
 │   │   └──
-│   ├── Migration/
+│   ├── 📂Migration/
 │   │   ├── Migration from AngularJS 1.x to Angular 2+- Joe Eames/
 │   │   │   │   ├── codeFinished/
 │   │   │   ├── codeInit/
@@ -257,25 +257,25 @@
 │   │   │   └── prepare.md
 │   │   ├── using Angular in AngularJS.md
 │   │   └── Upgrade AngularJS to Angular-Dual Booting.md
-│   ├── Mockup-server/
+│   ├── 📂Mockup-server/
 │   │   ├── angular-in-memory-web-api.md
 │   │   ├── liverload-mockup+gulp.md
 │   │   ├── mocking-backend -API.md
 │   │   └── node+express创建服务器.md
-│   ├── NgRx
-│   │   ├── Angular NgRx Getting started/
+│   ├── 📂NgRx
+│   │   ├── 📂Angular NgRx Getting started/
 │   │   │     ├── Demo-1/
 │   │   │     ├── Demo-2/
 │   │   │     ├── Demo-3/
 │   │   │     ├── Demo-initial/
 │   │   │     └── project.md
-│   │   ├── angular2-redux-Hendrik Swanepoel/
+│   │   ├── 📂angular2-redux-Hendrik Swanepoel/
 │   │   │   ├── projectSample/
 │   │   │   └── readme.md
 │   │   ├── Tips-use-rxjs-in-Angular.md
 │   │   └──
-│   ├── RxJs
-│   │   ├── RxJS in Angular-Reactive Development-Deborah Kurata/
+│   ├── 📂RxJs
+│   │   ├── 📂RxJS in Angular-Reactive Development-Deborah Kurata/
 │   │   │   └── readme.md
 │   │   ├── Observable之Subject.md
 │   │   ├── RxJS笔记-Reactive Extensions for JavaScript (RxJS).md
@@ -284,21 +284,21 @@
 │   │   ├── SwitchMap之call another observable with parameter
 │   │   ├── 避免多次调用之Rxjs subject to avoid multiple calling.md
 │   │   └── 避免多次调用之share+shareReplay.md
-│   ├── Sample-Project+course/
-│   │   ├── Angular Fundamentals- Jim Cooper/
+│   ├── 📂Sample-Project+course/
+│   │   ├── 📂Angular Fundamentals- Jim Cooper/
 │   │   │   ├── myEventFundamentals/ 
 │   │   │   ├── Angular_Content_Projection_Guide.pdf
 │   │   │   └── ng-fundamentals.zip
 │   │   ├── Angular Http Communication- Brice Wilson/
-│   │   ├── Angular Reactive Forms-Deborah Kurata/
+│   │   ├── 📂Angular Reactive Forms-Deborah Kurata/
 │   │   │   ├── Demo0/ 
 │   │   │   ├── Demo1/
 │   │   │   └── summary.pdf
-│   │   ├── Angular Routing- Deborah Kurata/
+│   │   ├── 📂Angular Routing- Deborah Kurata/
 │   │   │   └── Angular component commnication- Deborah Kurata/
 │   │   ├── Building Your First App with Spring Boot and Angular- Dan Bunker/
 │   │   ├── DaMo-Angular Workshop/
-│   │   ├── communication/
+│   │   ├── 📂communication/
 │   │   │   ├── brother/ 
 │   │   │   ├── local-storage/
 │   │   │   ├── parent-and-child/
@@ -308,21 +308,21 @@
 │   │   ├── 可复用的全局设置- Paul D. Sheriff.md
 │   │   ├── 大漠的Angular Workshop.md
 │   │   └── 
-│   ├── Sample-general/
-│   │   ├── Drag-Drop-Dashboard/
+│   ├── 📂Sample-general/
+│   │   ├── 📂Drag-Drop-Dashboard/
 │   │   │    ├── dashboard-sample1/
 │   │   │    ├── dashboard-sample2/
 │   │   │    └── dashboard-sample3/
-│   │   ├── angular-bootstrap/
+│   │   ├── 📂angular-bootstrap/
 │   │   │    ├── use user-defined directive in Tooltips.md
 │   │   │    └── 
-│   │   ├── directive/
+│   │   ├── 📂directive/
 │   │   │    ├── input-radio.md
 │   │   │    └── 
-│   │   ├── elements/
+│   │   ├── 📂elements/
 │   │   │    ├── project/
 │   │   │    └── Angular学习笔记之elements.md
-│   │   ├── ngTemplete+ng-content/
+│   │   ├── 📂ngTemplete+ng-content/
 │   │   │    ├── modal/
 │   │   │    └── tabs/
 │   │   ├──  Angular 4学习- Angular 4.0从入门到实战 打造股票管理网站.md
@@ -335,8 +335,8 @@
 │   │   ├──  todo-app.rar
 │   │   ├──  案例之星级评价.md
 │   │   └──  
-│   ├── Testing/
-│   │   ├── E2E Test/ 
+│   ├── 📂Testing/
+│   │   ├── 📂E2E Test/ 
 │   │   │   ├── Cucumber+AngularCLI project/                                         ## angular8 CLI project
 │   │   │   ├── Learn Protractor(Angular Testing) from scratch+Framework - Udemy/    ## General non-angularCLI8 project
 │   │   │   ├── Angular 2_WithScreenshot.zip                                         ## General non-angularCLI2 project
@@ -347,7 +347,7 @@
 │   │   │   ├── protractor-jasmine.conf.js
 │   │   │   ├── tsconfig.sample.js
 │   │   │   └── 
-│   │   ├── Unit-Test/
+│   │   ├── 📂Unit-Test/
 │   │   │   ├── Unit Testing in Angular Course -Joe Eames/
 │   │   │   ├── NgRx-test-sample.md
 │   │   │   ├── ng-mocks学习笔记.md
@@ -359,7 +359,7 @@
 │   │   ├── Unit test-Karma performance improve.md
 │   │   ├── principle of unit testing.md
 │   │   └── 
-│   ├── some-tip/
+│   ├── 📂some-tip/
 │   │   ├── AutomumericSetting for Currency.md                                             ## Automumeric librery
 │   │   ├── Create Prevent closing of modal Dialog in Angular Dialog component.md
 │   │   └──
@@ -388,11 +388,11 @@
 ## Cloud-study
 
 ```
-├── Cloud-study
-│   ├── AWS/
+├── 📂Cloud-study
+│   ├── 📂AWS/
 │   │   ├── basic of aws.md
 │   │   └── Cloud computing focusing on AWS - DevOps - June 14.pdf
-│   ├── Azure/
+│   ├── 📂Azure/
 │   │   ├── azure-path.jpg
 │   │   ├── AZ-900.md
 │   │   ├── DP-900.md
@@ -404,20 +404,20 @@
 ## Configuration Study - Build tools 
 
 ```
-├── Configuration Study - Build tools
-│   ├──  CI/
+├── 📂Configuration Study - Build tools
+│   ├──  📂CI/
 │   │    └── 快速搭建基于gitbook文档平台.md
-│   ├──  Grunt/
+│   ├──  📂Grunt/
 │   │    ├── samples/
 │   │    ├── grunt.initConfig说明.md
 │   │    └── gruntStudy.md
-│   ├──  Gulp/
+│   ├──  📂Gulp/
 │   │    ├── samples/
 │   │    └── GulpStudy.md
-│   ├──  ant/
+│   ├──  📂ant/
 │   │    └── ant学习.md
-│   ├──  Webpack/
-│   │    ├── samples/
+│   ├──  📂Webpack/
+│   │    ├── 📂samples/
 │   │    │   ├── webpack-multiple-bundles.rar
 │   │    │   ├── webpack-production.rar
 │   │    │   ├── webpack-seperate-css.rar
@@ -442,11 +442,11 @@
 ## CSS+CSS3+SCSS
 
 ```
-│   ├──  Bootstrap/
+│   ├──  📂Bootstrap/
 │   │     ├── BootstrapCarouselWithAnimation.html               #使用bootstrap和animation.css制作带动画的幻灯片
 │   │     ├── Responsive Design with Bootstrap 4.md
 │   │     └── bootstrap使用小tip.md
-│   ├──  CSS-Pure/
+│   ├──  📂CSS-Pure/
 │   │     ├── 7个CSS单位.md
 │   │     ├── CSS3利用伪元素与伪类自定义滚动条样式.md
 │   │     ├── CSS选择器中的正则表达式.md
@@ -454,7 +454,7 @@
 │   │     ├── 常用css技巧
 │   │     ├── 纯CSS实现垂直居中总结.md
 │   │     └── 自动聚焦输入框纯CSS实现SimulateInputFocus.md - focus输入框的时候，外面容器的灰色边框要高亮(不使用JavaScript,纯CSS实现)
-│   ├──  CSS3-New-Feature新功能/
+│   ├──  📂CSS3-New-Feature新功能/
 │   │     ├── CSS3-Column分栏.md
 │   │     ├── CSS3-flex布局.docx
 │   │     ├── CSS3-flex布局.md
@@ -471,16 +471,16 @@
 │   │     ├── 全景.rar
 │   │     ├── 实现CSS3 3D全景.md
 │   │     └── 移动鼠标改变图片的旋转角度值.html
-│   ├──  HTML5+CSS/
+│   ├──  📂HTML5+CSS/
 │   │     ├── HTML5和css3超实用的新属性集合.md
 │   │     └──
-│   ├──  Layout-Template/
+│   ├──  📂Layout-Template/
 │   │     ├── css-table-fixed-header/
 │   │     ├── table-fixed-header-scrolled.md
 │   │     ├── 图片垂直水平居中.html
 │   │     ├── 垂直水平居中小结.md
 │   │     └── 粘连布局.html
-│   ├──  Mobile/
+│   ├──  📂Mobile/
 │   │     ├── some-tip.md
 │   │     └── 
 │   ├──  SCSS/
@@ -488,14 +488,14 @@
 │   │     ├── PostCSS学习.md
 │   │     ├── SCSS小结.md
 │   │     └── 值得参考的 10 个LESS CSS实例.md
-│   ├──  Theory/
+│   ├──  📂Theory/
 │   │     ├── reflow-repaint.md
 │   │     └──
-│   ├──  CSS-Grid 新布局/
+│   ├──  📂CSS-Grid 新布局/
 │   │     ├── CSS-Grid-layout.md
 │   │     └── grid-layout***.html
-│   ├──  goodSample/
-│   │     ├── counter/
+│   ├──  📂goodSample/
+│   │     ├── 📂counter/
 │   │     │   ├── 1.jpg
 │   │     │   ├── Figure-counter.html
 │   │     │   └── counter-sample.html
@@ -506,13 +506,13 @@
 │   │     ├── base64-sample.md
 │   │     ├──responsiveTable.md
 │   │     └── useful CSS tricks.md
-│   ├──  hacks/
+│   ├──  📂hacks/
 │   │     ├── css-Hacks合集.md
 │   │     └── IE hacks.md
-│   ├──  tailwindcss/
+│   ├──  📂tailwindcss/
 │   │     ├── tailwindcss学习.md
 │   │     └── 
-│   ├── tips/
+│   ├── 📂tips/
 │   │     ├── CSS SlideDown-slideUp Transitions on the Display and Height Properties.md
 │   │     ├── Equal Columns With Flexbox:.md
 │   │     ├── Placeholder style.md
@@ -546,13 +546,13 @@
 ## HTML5
 
 ```
-├── Database学习
+├── 📂Database学习
 │   ├──MySql的安装和设置.md
 │   ├──Redis安装、配置和使用.md
 │   ├──MongoDB的使用.md
 │   └──
 │
-├── Debug-Skill调试技巧
+├── 📂Debug-Skill调试技巧
 │   ├── Chrome DevTools基础技巧.md
 │   ├── Chrome中设置可以CROS.md
 │   ├── Remote-Debugging-IOS.md
@@ -563,23 +563,23 @@
 │   ├── 性能调试之memory分析.md
 │   └── 
 │
-├── DesignPattern-Algrithm/
+├── 📂DesignPattern-Algrithm/
 |    ├── UML图详解.md
 |    ├── 依赖注入模式.md
 |    ├── 背包问题-javascript动态规划.md
 |    └── 
 │
-├── Git Study
+├── 📂Git Study
 │   ├── name-contest/   # test案例
 │   ├──readme.md
 │   └──
 │
-├── GraphQL/
+├── 📂GraphQL/
 │    ├── name-contests/      ---create scalable GraphQL API project
 │    ├── concepts.md
 │    └── 
 │
-├── HTML5
+├── 📂HTML5
 │   ├── getUserMedia-使用HTML5技术控制电脑或手机上的摄像头.md
 │   ├── Web Worker- JS多线程编程.md
 │   │   ├── Web Worker- JS多线程编程源码
@@ -595,7 +595,7 @@
 ## Hybrid Web
 
 ```
-├── Hybrid Web
+├── 📂Hybrid Web
 │   ├──HTML5 Input Types in Mobile.docx
 │   ├──HTML5-各种Tag.md
 │   ├──Media Queries for Standard Devices.md
@@ -621,21 +621,21 @@
 ## JAVA-Study
 
 ```
-├── IDE/
-|    ├── Atom/
-|    ├── Eclipse/
-|    ├── VSCode/
+├── 📂IDE/
+|    ├── 📂Atom/
+|    ├── 📂Eclipse/
+|    ├── 📂VSCode/
 |    |     ├── VSCode快捷键,插件,主题集锦.md	Update VSCode快捷键,插件,主题集锦.md
 |    |     ├── my-vsCode.md	Update my-vsCode.md
 |    |     └── vsCodeOpenFolder.reg
-|    ├── markdown/
+|    ├── 📂markdown/
 |    ├── Cygwin及Git的mintty终端配色配置.md
 │    └── notepad++-plugin.zip                  # JSONFormat, Markdown view 
-├── JAVA-Study/
-│   ├── configuration-study/
+├── 📂JAVA-Study/
+│   ├── 📂configuration-study/
 │   │   ├── ant学习.md
 │   │   └──
-│   ├── spring-boot/
+│   ├── 📂spring-boot/
 │   │   ├── starter-sample-dan Bunker/
 │   │   └── starter-sample-dan Bunker.md
 │   ├── eclipse设置.md
@@ -648,14 +648,14 @@
 ## Javascript-related-javascript学习过程中的小tip
 
 ```
-├── Javascript-related
-│     ├── Javascript                         --javascript学习过程中的小tip
-│     │     ├──Advanced-JavaScript-Study
-│     │     │     ├── JavaScript Simplified - Advanced/
+├── 📂Javascript-related
+│     ├── 📂Javascript                         --javascript学习过程中的小tip
+│     │     ├──📂Advanced-JavaScript-Study
+│     │     │     ├── 📂JavaScript Simplified - Advanced/
 │     │     │     │     ├── Minesweeper Project/
 │     │     │     │     ├── MathSolver Project/
 │     │     │     │     └── JavaScript Simplified.md
-│     │     │     ├──sample/
+│     │     │     ├──📂sample/
 │     │     │     │      ├── 01构造函数和实例对象的关系.html
 │     │     │     │      ├── 02面向过程和面向对象编程思想不同.html
 │     │     │     │      ├── 03原型.html	Update 03原型.html
@@ -665,12 +665,12 @@
 │     │     │     │      └── common.js
 │     │     │     ├── 01-JavaScript基础复习.md
 │     │     │     └── 02-JavaScript面向对象编程.md
-│     │     ├── FileSaveJS
+│     │     ├── 📂FileSaveJS
 │     │     │      └── fileSaveJs- Saving generated files on the client-side.md
-│     │     ├── GoogleMapAPI
+│     │     ├── 📂GoogleMapAPI
 │     │     │     ├── 谷歌地图地理编码.md
 │     │     │     └──
-│     │     ├── JavaScript专题        --常见的技巧                
+│     │     ├── 📂JavaScript专题        --常见的技巧                
 │     │     │     ├── JavaScript专题之Call,apply,bind详解.md
 │     │     │     ├── JavaScript专题之Clone Objects in JavaScript.md
 │     │     │     ├── JavaScript专题之Lazy Loading Images and Video.md
@@ -687,7 +687,7 @@
 │     │     │     ├── JavaScript专题之数据类型转换.md
 │     │     │     ├── JavaScript专题之文件上传下载.md
 │     │     │     └── JavaScript专题之遍历操作.md
-│     │     ├── JavaScript数组专题
+│     │     ├── 📂JavaScript数组专题
 │     │     │     ├── JavaScript专题之es6数组处理.md
 │     │     │     ├── JavaScript专题之数组中删除某一项或几项.md
 │     │     │     ├── JavaScript专题之判断数组中是否包含指定元素.md
@@ -695,18 +695,18 @@
 │     │     │     ├── JavaScript专题之复制数组.md
 │     │     │     ├── JavaScript专题之数组中插入元素的几个方法-性能比较.md
 │     │     │     └── JavaScript专题之数组合并方法和对象合并方法.md
-│     │     ├── javascript+css
+│     │     ├── 📂javascript+css
 │     │     │     └── javascript关于页面坐标api.md
-│     │     ├── javascriptDesignPattern
+│     │     ├── 📂javascriptDesignPattern
 │     │     │     └── jsDesignPattern1.md
-│     │     ├── TableToExcel                  #将table tag转换为excel输出
+│     │     ├── 📂TableToExcel                  #将table tag转换为excel输出
 │     │     │     ├── Javascript操作excel.md
 │     │     │     ├── TableToCsv-jquery.html    #jquery
 │     │     │     └── tableToExcel.html         #javascript
-│     │     ├── javascript+PDF                 #javascript的PDF相关
+│     │     ├── 📂javascript+PDF                 #javascript的PDF相关
 │     │     │     ├──Javascript将html转成pdf并下载分页.md
 │     │     │     └──
-│     │     ├── sort                  --算法图示
+│     │     ├── 📂sort                  --算法图示
 │     │     │     ├── 冒泡排序.gi
 │     │     │     ├── 基数排序.gif
 │     │     │     ├── 堆排序.gif
@@ -717,7 +717,7 @@
 │     │     │     ├── 桶排序.gif
 │     │     │     ├── 计数排序.gif
 │     │     │     └── 选择排序.gif 
-│     │     ├── tips                  --常见的技巧
+│     │     ├── 📂tips                  --常见的技巧
 │     │     │     ├── 19 个JavaScript常用的简写技术.md
 │     │     │     ├── Check if a string contains another string as a substring in JavaScript.md
 │     │     │     ├── functional-programing-with-js-cheatsheet---progress-whitepaper.pdf
@@ -741,14 +741,14 @@
 │     │     ├──js标准对象之Date.md
 │     │     └──
 │     │
-│     ├──JQuery
+│     ├──📂JQuery
 │     │   ├── Jquery判断checked 是否选中.md
 │     │   ├── jquery利用attr、prop方法判断input是否checked的区别+jQuery设置和获取select、checkbox、radio的选中值.md
 │     │   ├── jQuery中的text()、html()和val()以及innerText、innerHTML和value.md
 │     │   ├── jquery判断一个元素下面是否有内容或者有某个标签.md
 │     │   └── jquery选择器总结.md
 │     │
-│     └── typescript/
+│     └── 📂typescript/
 │          ├── TypeScript学习笔记---1数据类型和函数.md
 │          ├── TypeScript学习笔记---2泛型Generics.md
 │          ├── TypeScript学习笔记---3.1日常开发中使用频率较高的泛型工具.md
@@ -764,15 +764,15 @@
 ## Machine-Learning+AI
 
 ```
-│   ├── Machine-Learning+AI/
-│   │   ├── machine-learning/
+│   ├── 📂Machine-Learning+AI/
+│   │   ├── 📂machine-learning/
 │   │   │   ├── Batch Normaliztion(BN批标准化).md
 │   │   │   ├── KFold交叉验证.md
 │   │   │   ├── 机器学习之神经网络模型分类总结
 │   │   │   ├── 机器学习之逻辑回归Logistic Regression模型.md
 │   │   │   ├── 机器学习之降维算法.md
 │   │   │   └── 机器学习基础.md
-│   │   ├── python-library/
+│   │   ├── 📂python-library/
 │   │   │   ├── scikit-learn全解.md
 │   │   │   └──
 │   │   ├── Azure OpenAI 服务.md
@@ -793,13 +793,13 @@
 ## VirtualReality   #虚拟现实
 
 ```
-├── Miscellaneous杂项/
+├── 📂Miscellaneous杂项/
 |    ├── Regular_Expression/
 |    |    ├── 常用正则表达式.md
 │    │    └── 正则表达式规则.md
-|    ├── Samples/             --常用&经典样例
-|    |    ├── InputSamples/   --输入框样例集
-│    │    ├── TableSample/    --表格样例集
+|    ├── 📂Samples/             --常用&经典样例
+|    |    ├── 📂InputSamples/   --输入框样例集
+│    │    ├── 📂TableSample/    --表格样例集
 │    │    │    ├──CSS&JS_Table_Examples.md
 │    │    │    ├──table1-accordion-table.html
 │    │    │    ├───table2-responsive-table1.html
@@ -815,24 +815,24 @@
 |    ├── 前端埋点方式小结.md
 │    └── 
 │
-├── NodeJS 学习/
-│   ├── 设置
+├── 📂NodeJS 学习/
+│   ├── 📂设置
 │   │    ├──  nodeModule汇总.md
 │   │    └──  npm常用命令.md
-│   ├── 调试
+│   ├── 📂调试
 │   │    ├── nodeJS调试.md
 │   │    └──  
-│   ├── basic
+│   ├── 📂basic
 │   │    ├──  streamAPI.md
 │   │    └──  express 获取url参数，post参数的三种方式.md 
-│   ├── express
+│   ├── 📂express
 │   │    ├── node+express创建服务器.md
 │   │    └──  
-│   ├──  sample: node.js 学习代码
+│   ├──  📂sample: node.js 学习代码
 │   │    └── /
 │   └──  resources.md
 │
-├── Performance 性能分析
+├── 📂Performance 性能分析
 │   ├── Front End performance案例分析.md
 │   ├── MobileSite-performance.png
 │   ├── browser-render-optimization.md
@@ -841,46 +841,50 @@
 │   ├── resources.md
 │   └──
 │
-├── Python+R/
-│   ├── R/
+├── 📂Python+R/
+│   ├── 📂R/
 │   │   ├── R语言基础.md
 │   │   └── 
-│   ├── Python/
+│   ├── 📂Python/
 │   │   ├── Anaconda安装教程.md
 │   │   └── python-basic.md
 │
-├── React
-│     ├──  The Complete React Developer Course -w Hooks and Redux- Andrew Mead/
-│     ├──  sample
-│     │    ├── DazhongDianPint-React/docs/
-│     │    ├── Tic-Tac-Toe/
+├── 📂React
+│     ├──  📂The Complete React Developer Course -w Hooks and Redux- Andrew Mead/
+│     ├──  📂sample
+│     │    ├── 📂DazhongDianPint-React/docs/
+│     │    ├── 📂Tic-Tac-Toe/
 │     │    └── reactSampleBasic-04062016.rar
-│     ├── React学习-Reduce-2023年.md
-│     ├── React学习-cypress-2023年.md
-│     ├── React学习-jest-2023年.md
-│     ├── React学习-router.md
-│     ├── React学习-大众点评.md
-│     ├── React学习资源汇总.md
-│     ├── React常见问题讨论.md
-│     ├── react-official-document-study.md
-│     └──  react官网学习小结-2023版.md
+│     ├── 📔React学习-Hooks.md
+│     ├── 📔React学习-Nested Routes.md
+│     ├── 📔React学习-Reduce-2023年.md
+│     ├── 📔React学习-Social Media Integration.md
+│     ├── 📔React学习-cypress-2023年.md
+│     ├── 📔React学习-jest-2023年.md
+│     ├── 📔React学习-router.md
+│     ├── 📔React学习-show and hide Password.md
+│     ├── 📔React学习-大众点评.md
+│     ├── 📔React学习资源汇总.md
+│     ├── 📔React常见问题讨论.md
+│     ├── 📔react-official-document-study.md
+│     └── 📔react官网学习小结-2023版.md
 |
-├── Salesforce/
+├── 📂Salesforce/
 │
-├── Security   --安全
+├── 📂Security   --安全
 │   ├── 腾讯大牛教你web前后端漏洞分析与防御note.md
 │   ├── 腾讯大牛教你web前后端漏洞分析与防御-project.zip       #原始的工程代码
 │   ├── 腾讯大牛教你web前后端漏洞分析与防御-project-me.zip    #修过的工程代码，无法运行
 │   └──
 │
-├── Theory 理论和源码
+├── 📂Theory 理论和源码
 │   ├── Progressive Web App设计.md
 │   │     ├── your-first-offline-app.rar
 │   │     ├── your-first-pwapp-master
 │   │     └── you-first-push-notifications-master.rar
 │   └── 图解Http缓存控制之max-age=0、no-cache、no-store区别.pdf
 │
-├── VirtualReality   #虚拟现实
+├── 📂VirtualReality   #虚拟现实
 │   ├── resource.md
 │   └── Detect WebVR Support with JavaScript.md
 ```
