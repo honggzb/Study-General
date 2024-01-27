@@ -116,6 +116,8 @@ export const UseEffectExample = () => {
 ## useMemo
 
 - same as `useCallback`
+- - function component always re-render when state change
+- [useMemo](https://react.dev/reference/react/memo): lets you skip re-rendering a component when its props are unchanged
 
 ```javascript
 export const UseEffectExample = () => {
