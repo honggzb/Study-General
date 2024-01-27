@@ -4,7 +4,6 @@
 │   │   │     ├── 📄ng-interceptors-main.zip    -Angular学习笔记之--HttpInterceptor拦截器.md
 │   │   │     └── 
 │   │   ├── 📄Angular学习笔记之--Animation.md
-│   │   ├── 📄Angular学习笔记之--Compression.md
 │   │   ├── 📄Angular学习笔记之--DI decorators.md
 │   │   ├── 📄Angular学习笔记之--DI依赖注入.md
 │   │   ├── 📄Angular学习笔记之--Dynamic Importing Large Libraries.md
@@ -21,6 +20,7 @@
 │   │   ├── 📄Angular学习笔记之--使用ng2-file-upload文件上传.md
 │   │   ├── 📄Angular学习笔记之--包格式.md
 │   │   ├── 📄Angular学习笔记之--变化检测.md
+│   │   ├── 📄Angular学习笔记之--性能优化之Compression.md
 │   │   ├── 📄Angular学习笔记之--数据绑定、响应式编程.md
 │   │   ├── 📄Angular学习笔记之--模板ng-template, ng-content, ng-container and ngTemplateOutlet.md
 │   │   ├── 📄ngular学习笔记之--父子组件生命周期钩子(lifecycle hooks).md
