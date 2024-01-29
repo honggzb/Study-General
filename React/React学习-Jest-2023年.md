@@ -142,3 +142,4 @@ const MOKE_USER_RESPONSE = {...}
 [⬆ back to top](#top)
 
 > [Jest + React 单元测试最佳实践](https://www.cnblogs.com/dtux/p/17119560.html)
+> [react-tests -github](https://github.com/codiku/react-tests)
