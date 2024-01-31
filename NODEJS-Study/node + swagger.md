@@ -2,7 +2,7 @@
 
 - [Swagger Tools](#swagger-tools)
 - [Node Swagger setup](#node-swagger-setup)
-- [Add Swagger To NodeJS REST API](#add-swagger-to-nodejs-rest-api)
+  - [AutoGen Document](#autogen-document)
 
 ---------------------------------------------------------
 
@@ -17,140 +17,80 @@
 
 ## Node Swagger setup
 
+## Swagger setup
+
+- `npm i swagger-jsdoc swagger-ui-express body-parser`
+  - `swaggerOptions` contains the API definition and a reference to the API routes, which are stored in the routes directory
+  - `swaggerJsDoc` package generates the swagger.json file based on these annotations
+  - `swagger-ui-express` package is used to create a Swagger UI
+
+```ts
+const express = require('express')
+const bodyParser = require("body-parser")
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsDoc = require('swagger-jsdoc');
+
+const app = express();
+const swaggerOptions = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'My API',
+      version: '1.0.0',
+      description: 'A sample API for learning Swagger',
+    },
+    servers: [ { url: 'http://localhost:3000' }],
+  },
+  apis: ['./routes/*.js'],
+};
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+// Your API routes go here
+```
+
 - [official document](https://github.com/swagger-api/swagger-node/blob/fc777a61ccaf54076d0a3ffcfafedc347abc15ba/docs/quick-start.md)
-- `npm i swagger -g`
-- `swagger project create mySwagger`
-- `npm i yamljs swagger-ui-express`
 
 [⬆ back to top](#top)
 
-## Add Swagger To NodeJS REST API
+### AutoGen Document
 
-1. `npm i swagger-autogen swagger-ui-express`
-2. create 'docs' folder in root directory
-3. create a 'swagger.js' file inside the 'docs' folder
+1. `npm install --save-dev swagger-autogen`: [swagger-autogen](https://swagger-autogen.github.io/docs/)
+2. Create 'docs' folder in root directory
+3. create a `swagger.js` file inside the 'docs' folder
+4. modify package.json, add `"start-gendoc": "node ./docs/swagger.js"`
+5. execute `npm run start-gendoc`  -> will generate the `swagger.json` file 
+6. execute `npm run start` and input `http://localhost:3000/api-docs/` in browser
 
-```javascript
-/* Swagger configuration */
-const options = {
-    openapi: 'OpenAPI 3',   // Enable/Disable OpenAPI. By default is null
-    language: 'en-US',      // Change response language. By default is 'en-US'
-    disableLogs: false,     // Enable/Disable logs. By default is false
-    autoHeaders: false,     // Enable/Disable automatic headers capture. By default is true
-    autoQuery: false,       // Enable/Disable automatic query capture. By default is true
-    autoBody: false         // Enable/Disable automatic body capture. By default is true
-}
-
-const config = require('../config/cloud');
+```ts
+// swagger.js
 const swaggerAutogen = require('swagger-autogen')();
-const msg = require('../utils/lang/messages');
-
 const doc = {
   info: {
-    version: '2.0.0',      // by default: '1.0.0'
-    title: 'CloudAgent Apis',        // by default: 'REST API'
-    description: 'API for Managing queue calls',  // by default: ''
-    contact: {
-        'name': 'API Support',
-        'email': 'rajputankit22@gmail.com'
-    },
+    title: 'API documents',
+    description: 'API Swagger documents'
   },
-  host: config.swagger.host,      // by default: 'localhost:3000'
-  basePath: '/',  // by default: '/'
-  schemes: ['http'],   // by default: ['http']
-  consumes: ['application/json'],  // by default: ['application/json']
-  produces: ['application/json'],  // by default: ['application/json']
-  tags: [        // by default: empty Array
-    {
-      name: 'Queue CRUD',         // Tag name
-      description: 'Queue related apis',  // Tag description
-    },
-    {
-        name: 'Health',
-        description: 'Health Check'
-    }
-  ],
-  securityDefinitions: {},  // by default: empty object
-  definitions: {
-    helathResponse: {
-      code: msg.response.CAG001.code,
-      message: msg.response.CAG001.message,
-    },
-    'errorResponse.400': {
-      code: msg.response.CAGE002.code,
-      message: msg.response.CAGE002.message,
-    },
-    'errorResponse.403': {
-      code: msg.response.CAGE001.code,
-      message: msg.response.CAGE001.message,
-    },
-    'errorResponse.404': {
-      "code": "404",
-      "message": "Not found",
-    },
-    'errorResponse.500': {
-      code: msg.response.CAGE003.code,
-      message: msg.response.CAGE003.message,
-    }
-  },          // by default: empty object (Swagger 2.0)
+  host: 'localhost:3000'
 };
 
-const outputFile = './docs/swagger.json';
-const endpointsFiles = ['./app.js', './controllers/*.js'];
+const outputFile = './swagger-output.json';
+const routes = ['./routes/users.route.js'];
 
-/* NOTE: if you use the express Router, you must pass in the 
-   'endpointsFiles' only the root file where the route starts,
-   such as: index.js, app.js, routes.js, ... */
-swaggerAutogen(outputFile, endpointsFiles, doc);
-
-// swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
-//     require('./index.js'); // Your project's root file
-//   });
+swaggerAutogen(outputFile, routes, doc);
 ```
 
-4. add command to 'package.json' file
-   - `"swagger-autogen": "node ./docs/swagger.js",  // Add this line inside the scripts object`
-5. `npm run swagger-autogen` to generate the `swagger.json` in 'docs' folder
-6. this is the sample for the health controller
+- [Simple Example](https://github.com/davibaltar/example-swagger-autogen)
+- [Advanced Example](https://github.com/davibaltar/example-swagger-autogen-with-router)
+- [How To Add Swagger To NodeJS REST API](https://rajputankit22.medium.com/how-to-add-swagger-to-nodejs-rest-api-7caa870741be)
 
-```javascript
-//api for health checkup
-exports.health = async (req, res) => {
- /* 
- #swagger.tags = ['Health']
- #swagger.summary = 'This is the health API.'
- #swagger.description = 'This API response tells us service is up or down.'
- #swagger.consumes = ['application/json']
- #swagger.produces = ['application/json']
- #swagger.responses[200] = {
-  description: 'Service is',
-  schema: { $ref: '#/definitions/helathResponse' }
- }
- #swagger.responses[500] = {
-  description: 'Server Issue',
-  schema: { $ref: '#/definitions/errorResponse.500' }
- }
- #swagger.responses[404] = {
-  description: 'Not found',
-  schema: { $ref: '#/definitions/errorResponse.404' }
- }
-  */
- res.send({
-  code: msg.response.CAG001.code,
-  message: msg.response.CAG001.message,
- });
-}
-```
+[⬆ back to top](#top)
 
-7. re-run `npm run swagger-autogen` to re-generate the `swagger.json`
-8. add following in 'app.js'
-9. run your app and hit the `HTTP:localhost:3001/api-docs/`
+-------------------------------------------------------------
 
-```javascript
- const swaggerUi = require('swagger-ui-express');
- const swaggerDocument = require('./docs/swagger.json');
- app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-```
-
-> [How To Add Swagger To NodeJS REST API](https://rajputankit22.medium.com/how-to-add-swagger-to-nodejs-rest-api-7caa870741be)
-> [Documenting your Express API with Swagger](https://blog.logrocket.com/documenting-express-js-api-swagger/)
+> References
+- [HTTP Status Codes With Explanations](https://devqa.io/http-status-codes/)
+- [Documenting Node.js REST API using Swagger](https://www.linkedin.com/pulse/documenting-nodejs-rest-api-using-swagger-avyavesh-technologies/)
+- [OpenAPI (Swagger) module for Nest](https://github.com/nestjs/swagger?tab=readme-ov-file)
+- [How To Add Swagger To NodeJS REST API](https://rajputankit22.medium.com/how-to-add-swagger-to-nodejs-rest-api-7caa870741be)
+- [Build a REST API with Node.js, Express, and MySQL](https://blog.logrocket.com/build-rest-api-node-express-mysql/)
+- [How To Add Swagger To NodeJS REST API](https://rajputankit22.medium.com/how-to-add-swagger-to-nodejs-rest-api-7caa870741be)
+- [Documenting your Express API with Swagger](https://blog.logrocket.com/documenting-express-js-api-swagger/)
