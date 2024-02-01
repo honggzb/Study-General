@@ -55,8 +55,9 @@
 |---|---|
 |show suggestions on user input |network efficient|
 |debounce when user stop typing|should be configurable- cache size, minumum search query length, search results|
-|search results should be customisable|performance|generic to support different platforms<br>browser support<br>cross devices(desktop, mobile, tablet)|
-|supports both static data and data coming from api|accessibility|
+|search results should be customisable|performance|
+|supports both static data and data coming from api|generic to support different platforms<br>browser support<br>cross devices(desktop, mobile, tablet)|
+||accessibility|
 
 ![Aautocompletesample](./images/autocompletesample.png)
 
