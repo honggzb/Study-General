@@ -2,7 +2,14 @@
 
 - [create a react project](#create-a-react-project)
 - [React router](#react-router)
-- [React redux using Redux Toolkit](#react-redux-using-redux-toolkit)
+- [Redux using Redux Toolkit-ts](#redux-using-redux-toolkit-ts)
+  - [Create a Redux Store](#create-a-redux-store)
+  - [Provide the Redux Store to React](#provide-the-redux-store-to-react)
+  - [Create a Redux State Slice](#create-a-redux-state-slice)
+  - [using redux in component](#using-redux-in-component)
+- [Redux Persist + Redux Toolkit](#redux-persist--redux-toolkit)
+  - [adding persistReducer and persistStore to store](#adding-persistreducer-and-persiststore-to-store)
+  - [wrap root component with PersistGate](#wrap-root-component-with-persistgate)
 - [using bootstrap](#using-bootstrap)
 - [install and setup tailwindcss](#install-and-setup-tailwindcss)
 - [updating whole packages to latest version](#updating-whole-packages-to-latest-version)
@@ -54,40 +61,60 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 [⬆ back to top](#top)
 
-## React redux using Redux Toolkit
+## Redux using Redux Toolkit-ts
 
-1. `npx create-next-app --example with-redux my-app`
-  - https://github.com/rahsheen/react-native-template-redux-typescript
-  - https://github.com/rahsheen/expo-template-redux-typescript
-  - [Redux Toolkit](https://redux-toolkit.js.org/tutorials/quick-start)
-2. `npm i @reduxjs/toolkit react-redux`
-3. `npm i --save-dev @types/node` - for using require in store
-4.  chrome extension
-      - React Developer Tools
-      - redux Devtools
-5. create store folder under src
-6. create a new file 'store.tsx' under store folder
-7. modify 'main.tsx'
+- principles of redux state
+  - Single source of truth
+  - state is read only
+  - Changes using pure function
+- ![reduxFlow](./images/reduxFlow.png)
+- design state of project
+  - ![reduxProject](./images/reduxProject.png)
+- [Redux Toolkit](https://redux-toolkit.js.org/tutorials/quick-start)
+- chrome extension
+  - React Developer Tools
+  - redux Devtools
+- Create project with redux:  `npx create-next-app --example with-redux my-app`
+- `npm i @reduxjs/toolkit react-redux`
+- `npm i --save-dev @types/node` - for using require in store
 
-```typescript
+### Create a Redux Store
+
+```javascript
 //store.tsx
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit'
 export const store = configureStore({
-    reducer: {
-      userSlice: userReducer,
-      noteSlice: noteReducer }
-    });
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
-//main.tsx
-import { Provider } from'react-redux'
-import { store } from './store/index';
-<React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  reducer: { 
+    counter: counterReducer,
+    noteSlice: noteReducer
+  },
+})
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch
+```
+
+[⬆ back to top](#top)
+
+### Provide the Redux Store to React
+
+```javascript
+import { store } from './app/store'
+import { Provider } from 'react-redux'
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
 )
+```
+
+[⬆ back to top](#top)
+
+### Create a Redux State Slice
+
+```javascript
 //note-slice.tsx
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from '@reduxjs/toolkit'
@@ -100,6 +127,10 @@ const initialState: NotesState = {
 export const noteSlice = createSlice({
     name: "noteSlice",
     initialState,
+    // Redux Toolkit allows us to write "mutating" logic in reducers. It
+    // doesn't actually mutate the state because it uses the Immer library,
+    // which detects changes to a "draft state" and produces a brand new
+    // immutable state based off those changes
     reducers: {
         setNoteList: (currentSlice, action: PayloadAction<string>) => {
             currentSlice.noteList = action.payload;
@@ -112,9 +143,18 @@ export const noteSlice = createSlice({
 });
 export const { setNoteList, addNote } = noteSlice.actions;
 export const noteReducer = noteSlice.reducer;
+// Action creators are generated for each case reducer function
+```
+
+[⬆ back to top](#top)
+
+### using redux in component
+
+- `useSelector`: read data from the store
+- `useDispatch`: dispatch actions
+
+```javascript
 // note.tsx
-// useSelector   -->  read data from the store
-// useDispatch   ---> dispatch actions
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from '../../app/store'
 import { updateNote, deleteNote } from "../../store/note-slice";
@@ -144,6 +184,65 @@ export function Note() {
 }
 ```
 
+[⬆ back to top](#top)
+
+## Redux Persist + Redux Toolkit
+
+- `npm install redux-persist`
+
+### adding persistReducer and persistStore to store
+
+```javascript
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import storage from 'redux-persist/lib/storage';
+//import storageSession from 'redux-persist/lib/storage/session';  //sessionStorage
+import { persistReducer, persistStore } from 'redux-persist';
+// Nested persists using Redux Persist
+const rootReducer = combineReducers({
+    userSlice: userReducer, 
+    cartSlice: cartReducer 
+});
+const persistConfig = {
+    key: 'root',
+    storage,      //using localStorage
+    whitelist: ["cartSlice"],
+}
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+export const store = configureStore({
+    reducer: persistedReducer, 
+    // middleware to prevent some serialize error
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: {
+          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        },
+    }),
+});
+export const persistor = persistStore(store);
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+```
+
+[⬆ back to top](#top)
+
+### wrap root component with PersistGate
+
+```javascript
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistor, store } from './store/store';
+
+<React.StrictMode>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <App />
+      </PersistGate>
+    </Provider>
+</React.StrictMode>,
+```
+
+- [Redux Persist official](https://github.com/rt2zz/redux-persist)
+- [Persist state with Redux Persist using Redux Toolkit in React](https://blog.logrocket.com/persist-state-redux-persist-redux-toolkit-react/)
+  
 [⬆ back to top](#top)
 
 ## using bootstrap
