@@ -1,5 +1,5 @@
-## 1. remove item from array
-## 2. move item to end of array
+## 1. remove item from array using spread
+## 2. move item to end of array using spread
 
 ```ts
 const tt = [
