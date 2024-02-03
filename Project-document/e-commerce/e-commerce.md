@@ -76,13 +76,13 @@ import firebase from "firebase/compat/app";
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 const firebaseConfig = {
-    apiKey: "AIzaSyAdFeZ7dR2OWlZcJv_hGtIzAOp4o-SVFkE",
-    authDomain: "e-commerce-fa75d.firebaseapp.com",
-    projectId: "e-commerce-fa75d",
-    storageBucket: "e-commerce-fa75d.appspot.com",
+    apiKey: "xxxxxxxx",
+    authDomain: "xxxxxxxx",
+    projectId: "xxxxxxxxx",
+    storageBucket: "xxxxxxxxx",
     messagingSenderId: "2540590327",
-    appId: "1:2540590327:web:a0eb3ac8db7cb7cf776ff2",
-    measurementId: "G-155YWF9S93"
+    appId: "1:xxxxxxxx:web:xxxxxxxxxxx",
+    measurementId: "G-xxxxxxxxxxxxxxx"
 };
 firebase.initializeApp(firebaseConfig);
 ```
