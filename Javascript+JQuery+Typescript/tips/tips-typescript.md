@@ -1,4 +1,4 @@
-## 1. remove item from array using spread
+## 1. remove item from array using filter
 ## 2. move item to end of array using spread
 
 ```ts
