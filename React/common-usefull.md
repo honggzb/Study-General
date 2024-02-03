@@ -15,6 +15,10 @@
 - [updating whole packages to latest version](#updating-whole-packages-to-latest-version)
 - [using context](#using-context)
 - [using SCSS](#using-scss)
+- [OAuth using firebase](#oauth-using-firebase)
+  - [Add Firebase to project](#add-firebase-to-project)
+  - [using google email authentication 1](#using-google-email-authentication-1)
+  - [using google email authentication 2](#using-google-email-authentication-2)
 - [install and setup msw](#install-and-setup-msw)
 
 --------------------------------------------------------------------------------
@@ -329,6 +333,92 @@ module.exports = {
   plugins: {
     …
   }
+}
+```
+
+[⬆ back to top](#top)
+
+## OAuth using firebase
+
+### Add Firebase to project
+
+- `npm install firebase`
+- create 'e-commerce' project in [firebase console](https://console.firebase.google.com/)
+  - [Add Firebase to your JavaScript project](https://firebase.google.com/docs/web/setup)
+- create 'src\firebase\firebase.utils.tsx'
+
+```javascript
+//firebase.utils.tsx
+//Before: version 8
+// import firebase from 'firebase/app';
+// import 'firebase/auth';
+// import 'firebase/firestore';
+// v9 compat packages are API compatible with v8 code
+import firebase from "firebase/compat/app";
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+const firebaseConfig = {
+    apiKey: "xxxxxxxx",
+    authDomain: "xxxxxxxx",
+    projectId: "xxxxxxxxx",
+    storageBucket: "xxxxxxxxx",
+    messagingSenderId: "2540590327",
+    appId: "1:xxxxxxxx:web:xxxxxxxxxxx",
+    measurementId: "G-xxxxxxxxxxxxxxx"
+};
+firebase.initializeApp(firebaseConfig);
+```
+
+[⬆ back to top](#top)
+
+### using google email authentication 1
+
+- enable google email sign-in in firebase console
+- ![firebase](./images/firebase.png)
+- add codes in 'src\firebase\firebase.utils.tsx' and component.tsx
+
+```javascript
+//1. src\firebase\firebase.utils.tsx
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export default firebase;
+//2. src\components\sign-in\Signin.tsx
+<CustomButton onClick={signInWithGoogle}> Sign in with Google</CustomButton> 
+```
+
+-  **Cross-Origin-Opener-Policy policy** would block the window closed call error while using google auth
+-  changed the method from `signInWithPopup` to `signInWithRedirect`. But with this method, need to handle this redirect with "useEffect" hook
+- https://stackoverflow.com/questions/76446840/cross-origin-opener-policy-policy-would-block-the-window-closed-call-error-while
+
+[⬆ back to top](#top)
+
+### using google email authentication 2
+
+```ts
+//firebase.js
+import { initializeApp } from 'firebase/app';
+const firebaseConfig = {
+    apiKey: "xxxxxxxx",
+    authDomain: "xxxxxxxx",
+    projectId: "xxxxxxxxx",
+    storageBucket: "xxxxxxxxx",
+    messagingSenderId: "2540590327",
+    appId: "1:xxxxxxxx:web:xxxxxxxxxxx",
+    measurementId: "G-xxxxxxxxxxxxxxx"
+};
+export const app = initializeApp(firebaseConfig);
+// OAuth.tsx  -using provider
+import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth';
+
+const auth = getAuth(app);
+const handleGoogleClick = async () => {
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' });
+  const resultsFromGoogle = await signInWithPopup(auth, provider);
+  //...
 }
 ```
 
