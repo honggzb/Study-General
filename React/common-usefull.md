@@ -20,6 +20,7 @@
   - [using google email authentication 1](#using-google-email-authentication-1)
   - [using google email authentication 2](#using-google-email-authentication-2)
 - [Theme toggle - using user-defined Provider + tailwindcss](#theme-toggle---using-user-defined-provider--tailwindcss)
+- [i18n](#i18n)
 - [install and setup msw](#install-and-setup-msw)
 
 --------------------------------------------------------------------------------
@@ -450,6 +451,65 @@ export default ThemeProvider;
 <Button className="w-12 h-10 sm:inline" color='grey' pill onClick={() => dispatch(toggleTheme())}>
   {theme === 'light' ?  <FaSun /> : <FaMoon />}
 </Button>
+```
+
+[⬆ back to top](#top)
+
+## i18n
+
+- `npm install react-i18next i18next --save`
+  - https://react.i18next.com/guides/quick-start
+- create folder 'locales' 'locales\en\' and 'locales\fr\'
+- create file 'locales\i18n-config.ts'
+- create file 'locales\en\home.json' and 'locales\fr\home.json'
+- using in components: `{t("greetings")}`
+- `npm install i18next-browser-languagedetector`- 检查浏览器的语言并设置转换为该语言
+  - [i18next-browser-languagedetector](https://github.com/i18next/i18next-browser-languageDetector)
+- 'my-portofolio'
+
+```ts
+//src/locales/i18n-config.tsx
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from 'i18next-browser-languagedetector';
+import homeEN from "./en/home.json";
+import homeFR from "./fr/home.json";
+
+const resources = {
+  en: { home: homeEN },
+  fr: { home: homeFR }
+};
+i18n
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .use(LanguageDetector)
+  .init({ resources, lng: "en", 
+    interpolation: {
+      escapeValue: false // react already safes from xss
+    },
+});
+//header.tsx- toggle language
+import { useTranslation } from "react-i18next";
+function Header() {
+  const { t, i18n } = useTranslation("home");
+  const switchLanguage = () => {
+    i18n.changeLanguage(i18n.language === "en" ? "fr" : "en"); 
+  }
+ return (
+  <Link href="mailto: xxx?subject=Contacting you from your portfolio" 
+        fontSize="large" fontWeight="bold">
+          {t("hireme")}
+  </Link>
+  <Image pl={20} h={8} cursor="pointer"
+    src={i18n.language === "en" ? flagENImg : flagFRImg} 
+    onClick={switchLanguage} />
+}
+//landing page
+import { useTranslation } from "react-i18next";
+function Landing() {
+  const { t } = useTranslation("home");
+  //...
+  {t("greetings")}
+}
 ```
 
 [⬆ back to top](#top)
