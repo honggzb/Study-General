@@ -90,7 +90,7 @@ firebase.initializeApp(firebaseConfig);
 ### using google email authentication
 
 - enable google email sign-in in firebase console
-- ![firebase](firebase.png)
+- ![firebase](./images/firebase.png)
 - add codes in 'src\firebase\firebase.utils.tsx' and component.tsx
 
 ```javascript
@@ -172,9 +172,9 @@ const onClick = () =>
   - Single source of truth
   - state is read only
   - Changes using pure function
-- ![reduxFlow](reduxFlow.png)
+- ![reduxFlow](./images/reduxFlow.png)
 - design state of project
-  - ![reduxProject](reduxProject.png)
+  - ![reduxProject](./images/reduxProject.png)
 - [Redux Toolkit](https://redux-toolkit.js.org/tutorials/quick-start)
 
 ### Create a Redux Store
