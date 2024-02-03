@@ -19,6 +19,7 @@
   - [Add Firebase to project](#add-firebase-to-project)
   - [using google email authentication 1](#using-google-email-authentication-1)
   - [using google email authentication 2](#using-google-email-authentication-2)
+- [Theme toggle - using user-defined Provider + tailwindcss](#theme-toggle---using-user-defined-provider--tailwindcss)
 - [install and setup msw](#install-and-setup-msw)
 
 --------------------------------------------------------------------------------
@@ -420,6 +421,35 @@ const handleGoogleClick = async () => {
   const resultsFromGoogle = await signInWithPopup(auth, provider);
   //...
 }
+```
+
+[⬆ back to top](#top)
+
+## Theme toggle - using user-defined Provider + tailwindcss
+
+```ts
+//1. define a Provider: ThemeProvider.tsx
+import { useSelector } from 'react-redux'
+import { RootState } from '../redux/store';
+export function ThemeProvider({ children }: { children: React.ReactElement }) {
+  const { theme } = useSelector((state: RootState) => state.themeSlice);
+  return (
+    <div className={theme}>
+      <div className='bg-white text-gray-700 dark:text-gray-200 dark:bg-[rgb(16,23,52)] min-h-screen'>
+        { children }
+      </div>
+    </div>
+  )
+}
+export default ThemeProvider;
+// main.tsx
+<ThemeProvider>
+  <App />
+</ThemeProvider>
+// using in Header.tsx
+<Button className="w-12 h-10 sm:inline" color='grey' pill onClick={() => dispatch(toggleTheme())}>
+  {theme === 'light' ?  <FaSun /> : <FaMoon />}
+</Button>
 ```
 
 [⬆ back to top](#top)
