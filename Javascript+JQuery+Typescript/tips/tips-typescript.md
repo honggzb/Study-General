@@ -1,3 +1,5 @@
+## Array常用操作
+
 - [remove item from array using filter](#remove-item-from-array-using-filter)
 - [move item to end of array using spread](#move-item-to-end-of-array-using-spread)
 
@@ -40,6 +42,15 @@ for(let i=0; i<arr.length; i++){
 console.log(urlParams.toString()); //name=Jack&age=18&name=Peter&age=20
 //注意，如果数组元素中存在重复的属性名，通过URLSearchParams对象转换的参数字符串也会重复，需要根据实际需求进行处理
 ```
+
+[⬆ back to top](#top)
+
+## 对象,字符串相互转化
+
+|数组对象|operator|code|
+|---|---|---|
+|json对象转字符串|`JSON.stringify()`|`JSON.stringify({name: "Jack", age: 18})`<br>`//'{"name":"Jack","age":18}'`|
+|json字符串转对象|`JSON.parse()`|`JSON.parse('{"id":0,"name":"张三","age":12}')`|
 
 [⬆ back to top](#top)
 
