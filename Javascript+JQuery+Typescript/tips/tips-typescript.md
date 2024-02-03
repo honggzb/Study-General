@@ -1,5 +1,5 @@
-## 1. remove item from array using filter
-## 2. move item to end of array using spread
+- [1. remove item from array using filter](#1-remove-item-from-array-using-filter)
+- [2. move item to end of array using spread](#2-move-item-to-end-of-array-using-spread)
 
 ```ts
 const tt = [
@@ -12,5 +12,8 @@ const tt = [
 
 |function|operator|code|
 |---|---|---|
-|remove item from array|filter|`tt.filter(t => t.id !== 4)`|
-|move item to end of array|filter, spread|`const aa = tt.filter(t => t.id === 4);`<br>`const bb =[...tt.filter(t => t.id !== 4), ...aa]`|
+|[1. remove item from array]((#1-remove-item-from-array-using-filter))|filter|`tt.filter(t => t.id !== 4)`|
+|[2. move item to end of array](#2-move-item-to-end-of-array-using-spread)|filter, spread|`const aa = tt.filter(t => t.id === 4);`<br>`const bb =[...tt.filter(t => t.id !== 4), ...aa]`|
+
+
+[⬆ back to top](#top)
