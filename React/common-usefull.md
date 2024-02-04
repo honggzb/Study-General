@@ -20,6 +20,7 @@
   - [using google email authentication 1](#using-google-email-authentication-1)
   - [using google email authentication 2](#using-google-email-authentication-2)
 - [Theme toggle - using user-defined Provider + tailwindcss](#theme-toggle---using-user-defined-provider--tailwindcss)
+- [Display page as requirement- Admin dashboard](#display-page-as-requirement--admin-dashboard)
 - [i18n](#i18n)
 - [install and setup msw](#install-and-setup-msw)
 
@@ -451,6 +452,36 @@ export default ThemeProvider;
 <Button className="w-12 h-10 sm:inline" color='grey' pill onClick={() => dispatch(toggleTheme())}>
   {theme === 'light' ?  <FaSun /> : <FaMoon />}
 </Button>
+```
+
+[⬆ back to top](#top)
+
+## Display page as requirement- Admin dashboard
+
+- create `PrivateRoute.tsx` and `OnlyAdminPrivateRoute.tsx`
+- add `PrivateRoute` and `OnlyAdminPrivateRoute` in `App.tsx`
+
+```ts
+// src/components/PrivateRoute.tsx
+function PrivateRoute() {
+  const { currentUser } = useSelector((state: RootState) => state.userSlice);
+  return currentUser.email !== '' ? <Outlet /> : <Navigate to='/sign-in' />
+}
+export default PrivateRoute
+// src/components/OnlyAdminPrivateRoute.tsx
+function OnlyAdminPrivateRoute() {
+  const { currentUser } = useSelector((state: RootState) => state.userSlice);
+  return (currentUser.email !== '' && currentUser.isAdmin) ? <Outlet /> : <Navigate to='/sign-in' />
+}
+export default OnlyAdminPrivateRoute
+// App.tsx
+<Route element={<PrivateRoute />}>
+  <Route path='/dashboard' element={<Dashboard />} />
+</Route>
+<Route element={<OnlyAdminPrivateRoute />}>
+  <Route path='/create-note' element={<CreateNote />} />
+  <Route path='/update-note/:noteId' element={<UpdateNote />} />
+</Route>
 ```
 
 [⬆ back to top](#top)
