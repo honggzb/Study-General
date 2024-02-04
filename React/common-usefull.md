@@ -22,6 +22,7 @@
 - [Theme toggle - using user-defined Provider + tailwindcss](#theme-toggle---using-user-defined-provider--tailwindcss)
 - [Display page as requirement- Admin dashboard](#display-page-as-requirement--admin-dashboard)
 - [i18n](#i18n)
+- [Tab effect using urlParams](#tab-effect-using-urlparams)
 - [install and setup msw](#install-and-setup-msw)
 
 --------------------------------------------------------------------------------
@@ -540,6 +541,42 @@ function Landing() {
   const { t } = useTranslation("home");
   //...
   {t("greetings")}
+}
+```
+
+[⬆ back to top](#top)
+
+## Tab effect using urlParams
+
+- `useLocation.search()`
+- `URLSearchParams`
+- `useEffect`
+
+```ts
+const Dashboard = () => {
+  const location = useLocation();
+  const [tab, setTab] = useState('');
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const tabFromUrl = urlParams.get('tab');
+    console.log(tabFromUrl)
+    if(tabFromUrl) {
+      setTab(tabFromUrl);
+    }
+  }, [location.search]);
+  return (
+    <div className='min-h-screen flex flex-col md:flex-row'>
+      <div className='md:w-56'>
+        <DashSidebar />
+      </div>
+      {/* profile... */}
+      { tab === 'profile' && <DashProfile /> }
+      {/* posts... */}
+      { tab === 'notes' && <DashNotes /> }
+      {/* users */}
+      { tab === 'users' && <DashUsers /> }
+    </div>
+  )
 }
 ```
 
