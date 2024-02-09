@@ -44,6 +44,7 @@ const swaggerOptions = {
   apis: ['./routes/*.js'],
 };
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use(bodyParser.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 // Your API routes go here
 ```
