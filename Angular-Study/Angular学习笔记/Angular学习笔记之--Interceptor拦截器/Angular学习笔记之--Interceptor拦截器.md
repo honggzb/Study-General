@@ -11,7 +11,7 @@
 
 - HttpInterceptor是Angular提供用于在全局应用程序级别处理HTTP请求的内置工具，拦截并处理HttpRequest或HttpResponse
 - 拦截器在实战中的作用有很多，比如：统一配置网关地址，设置Http请求头，处理Http请求返回数据，统一错误处理等都是常见的需求
-- ![httpclient拦截流程](./images/httpclient拦截流程.png)
+- ![httpclient拦截流程](../images/httpclient拦截流程.png)
 
 ## 处理Http请求头 (Http Request Headers)
 
