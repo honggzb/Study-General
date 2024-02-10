@@ -8,6 +8,7 @@
 │   │   ├── Angular 8 to Angular 9.md
 │   │   ├── Angular 9 to Angular 10.md
 │   │   ├── Angular Material每个版本的不同.md
+│   │   ├── angular-downgrade.md
 │   │   └── Angular Update Note.md
 ```
 
