@@ -1,8 +1,8 @@
 ```
 │   ├── 📂Angular学习笔记/
 │   │   ├── 📂Angular学习笔记之--Interceptor拦截器
-│   │   │     ├── 📂Angular 8 samples
-│   │   │     ├── 📂Angular 10 samples
+│   │   │     ├── 📂Angular 8 Interceptor samples
+│   │   │     ├── 📂Angular 10 Interceptor samples
 │   │   │     └── 📄Angular学习笔记之--Interceptor拦截器.md
 │   │   ├── 📂sample-project/
 │   │   │     ├── 📄ng-interceptors-main.zip    -Angular学习笔记之--HttpInterceptor拦截器.md
