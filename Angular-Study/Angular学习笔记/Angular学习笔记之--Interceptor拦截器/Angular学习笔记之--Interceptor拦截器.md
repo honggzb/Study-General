@@ -31,7 +31,16 @@
   - Refresh Token
   - Redirect to the login page
 
-```ts
+```javascript
+//sample 1 - add token to request
+intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    const token = localStorage.getItem('token');
+    const newCloneRequest = request.clone({
+      setHeaders: { Authorization: `Bearer ${token}` }
+    });
+    return next.handle(newCloneRequest);
+  }
+//sample 2
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   private AUTH_HEADER = "Authorization";
