@@ -12,6 +12,7 @@
 │   │   ├── 📄Angular学习笔记之--DI依赖注入.md
 │   │   ├── 📄Angular学习笔记之--Dynamic Importing Large Libraries.md
 │   │   ├── 📄Angular学习笔记之--Dynamic components.md
+│   │   ├── 📄Angular学习笔记之--Loading Interceptor + ngx-spinner.md
 │   │   ├── 📄Angular学习笔记之--HttpInterceptor拦截器.md
 │   │   ├── 📄Angular学习笔记之--Nested Component.md
 │   │   ├── 📄Angular学习笔记之--Pipe.md
