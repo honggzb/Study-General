@@ -5,6 +5,7 @@
 - [处理Http请求头](#处理http请求头)
 - [处理Http响应 (Http Response)](#处理http响应-http-response)
 - [Http错误处理 (Http Error)](#http错误处理-http-error)
+- [Converting](#converting)
 - [使用HttpIntercetpor](#使用httpintercetpor)
 
 -----------------------------------------------------
@@ -19,9 +20,9 @@
   - XSRF protection
 - Notifications
 - Errors: check the status of the exception
-- Profiling
+- Profiling: such as log the outcome with the elapsed time
 - Fake backend: A mock or fake backend can be used in development when you do not have a backend yet
-- Caching
+- Caching:  **increases performance**
 
 ## Authentication
 
@@ -182,6 +183,7 @@ export RefreshTokenInterceptor implements HttpIntercetpor {
 - ![httpclient拦截流程](../images/httpclient拦截流程.png)
 
 ```javascript
+// sample 1 - addToken
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -216,6 +218,11 @@ intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEven
     })
     return next.handle(request);
   }
+// sample 2 - add XSRF protection
+const modified = req.clone({ 
+  setHeaders: { "X-Man": "Wolverine" } 
+});
+return next.handle(modified);
 ```
 
 [⬆ back to top](#top)
@@ -308,6 +315,26 @@ export class ErrorInterceptor implements HttpInterceptor {
 
 [⬆ back to top](#top)
 
+## Converting
+
+- converting from XML to JSON
+- converting from PascalCase to camelCase
+
+```ts
+return next.handle(req).pipe(
+  map((event: HttpEvent<any>) => {
+    if (event instanceof HttpResponse) {
+      let camelCaseObject = mapKeys(event.body, (v, k) => camelCase(k));
+      const modEvent = event.clone({ body: camelCaseObject });
+      
+      return modEvent;
+    }
+  })
+);
+```
+
+[⬆ back to top](#top)
+
 ## 使用HttpIntercetpor
 
 ```ts
@@ -323,6 +350,7 @@ providers: [
 
 - [在 Angular 中使用拦截器的方式 Top 10](https://juejin.cn/post/6911614350067236871)
 - [GitHub 示例代码 10.x版本](https://github.com/llccing-demo/ng-interceptors)
+- [GitHub 示例代码 8.x版本](https://github.com/melcor76)
 
 > references
 - [Angular HttpInterceptor拦截器 多情景应用](https://www.jianshu.com/p/8b080a2587c2)
@@ -332,3 +360,5 @@ providers: [
 - [Angular使用Interceptor(拦截器)请求添加token并统一处理API错误](https://blog.csdn.net/donjan/article/details/103592341)
 - [HttpInterceptor 101](https://juejin.cn/post/6911614350067236871)
 - [Angular — Interceptors for Errors and Headers](https://medium.com/nerd-for-tech/angular-interceptors-for-errors-and-headers-a35372f4304b)
+- [Top 10 ways to use Interceptors in Angular](https://medium.com/angular-in-depth/top-10-ways-to-use-interceptors-in-angular-db450f8a62d6)
+- [Advanced caching with RxJS](https://blog.thoughtram.io/angular/2018/03/05/advanced-caching-with-rxjs.html)
