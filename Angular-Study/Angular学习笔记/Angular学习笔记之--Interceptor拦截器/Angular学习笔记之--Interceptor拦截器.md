@@ -1,124 +1,107 @@
-[Angular学习笔记HttpInterceptor拦截器](#top)
+[Angular中使用HttpInterceptor拦截器的方式](#top)
 
-- [处理Http请求头 (Http Request Headers)](#处理http请求头-http-request-headers)
+- [Authentication](#authentication)
+- [自动刷新Token](#自动刷新token)
+- [处理Http请求头](#处理http请求头)
 - [处理Http响应 (Http Response)](#处理http响应-http-response)
 - [Http错误处理 (Http Error)](#http错误处理-http-error)
-- [配置注入](#配置注入)
-- [自动刷新Token](#自动刷新token)
-- [在Angular中使用拦截器的方式Top 10](#在Angular中使用拦截器的方式top-10)
+- [使用HttpIntercetpor](#使用httpintercetpor)
 
 -----------------------------------------------------
 
-- HttpInterceptor是Angular提供用于在全局应用程序级别处理HTTP请求的内置工具，拦截并处理HttpRequest或HttpResponse
+- ![Angular interceptors](../images/Angular-interceptors.png)
 - 拦截器在实战中的作用有很多，比如：统一配置网关地址，设置Http请求头，处理Http请求返回数据，统一错误处理等都是常见的需求
-- ![httpclient拦截流程](../images/httpclient拦截流程.png)
+- Loader
+- Converting
+- Headers
+  - Authentication/authorization
+  - Caching behavior; for example, If-Modified-Since
+  - XSRF protection
+- Notifications
+- Errors: check the status of the exception
+- Profiling
+- Fake backend: A mock or fake backend can be used in development when you do not have a backend yet
+- Caching
 
-## 处理Http请求头 (Http Request Headers)
+## Authentication
 
-```javascript
-import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
-import { Observable } from 'rxjs';
+- Authentication
+  - Add bearer token
+  - Refresh Token
+  - Redirect to the login page
+
+```ts
 @Injectable()
-export class HeaderInterceptor implements HttpInterceptor {
-    public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        return next.handle(this.addToken(req, 'bearer my token'));
+export class AuthInterceptor implements HttpInterceptor {
+  private AUTH_HEADER = "Authorization";
+  private token = "secrettoken";
+  private refreshTokenInProgress = false;
+  private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    if (!req.headers.has('Content-Type')) {
+      req = req.clone({
+        headers: req.headers.set('Content-Type', 'application/json')
+      });
     }
-    //为所有的请求加上token信息
-    private addToken(req: HttpRequest<any>, token: string): HttpRequest<any> {
-        return req.clone({ setHeaders: { Authorization: token } });
-    }
-}
-// 应用在其他component, service
-constructor(private httpClient: HttpClient) {
-        this.httpClient.get('/assets/json/data.json').subscribe(ret => {
-            // TODO:
-        });
-    }
-```
-
-[⬆ back to top](#top)
-
-## 处理Http响应 (Http Response)
-
-```javascript
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
-@Injectable()
-export class ResponseHandlerInterceptor implements HttpInterceptor {
-    public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        return next.handle(req).pipe(
-           //当返回的数据状态是200的时候，只返回body中需要的data数
-            filter(event => event instanceof HttpResponse && event.status === 200),
-            map((event: HttpResponse<any>) => event.clone({ body: event.body.data }))
-        );
-    }
-}
-```
-
-[⬆ back to top](#top)
-
-## Http错误处理 (Http Error)
-
-```javascript
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-@Injectable()
-export class ErrorHandlerInterceptor implements HttpInterceptor {
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        return next.handle(req).pipe(
-            catchError(error => {
-                switch (error.status) {
-                    case 401: // Unauthorized
-                        // todo
-                        break;
-                    case 403: // Forbidden
-                        // todo
-                        break;
-                    default:
-                        // todo
-                        return throwError(error);
-                }
-            }),
-            retry(3)
-        );
-    }
-}
-```
-
-[⬆ back to top](#top)
-
-## 配置注入
-
-```
-providers: [
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: HeaderInterceptor,
-            multi: true
-        },
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: ResponseHandlerInterceptor,
-            multi: true
-        },
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: ErrorHandlerInterceptor,
-            multi: true
+    req = this.addAuthenticationToken(req);
+    return next.handle(req).pipe(
+      catchError((error: HttpErrorResponse) => {
+        if (error && error.status === 401) {
+          // 401 errors are most likely going to be because we have an expired token that we need to refresh.
+          if (this.refreshTokenInProgress) {
+            // If refreshTokenInProgress is true, we will wait until refreshTokenSubject has a non-null value
+            // which means the new token is ready and we can retry the request again
+            return this.refreshTokenSubject.pipe(
+              filter(result => result !== null),
+              take(1),
+              switchMap(() => next.handle(this.addAuthenticationToken(req)))
+            );
+          } else {
+            this.refreshTokenInProgress = true;
+            // Set the refreshTokenSubject to null so that subsequent API calls will wait until the new token has been retrieved
+            this.refreshTokenSubject.next(null);
+            return this.refreshAccessToken().pipe(
+              switchMap((success: boolean) => {               
+                this.refreshTokenSubject.next(success);
+                return next.handle(this.addAuthenticationToken(req));
+              }),
+              // When the call to refreshToken completes we reset the refreshTokenInProgress to false
+              // for the next time the token needs to be refreshed
+              finalize(() => this.refreshTokenInProgress = false)
+            );
+          }
+        } else {
+          return throwError(error);
         }
-    ]
+      })
+    );
+  }
+  private refreshAccessToken(): Observable<any> {
+    return of("secret token");
+  }
+  private addAuthenticationToken(request: HttpRequest<any>): HttpRequest<any> {
+    // If we do not have a token yet then we should not set the header.
+    // Here we could first retrieve the token from where we store it.
+    if (!this.token) {
+      return request;
+    }
+    // If you are calling an outside domain then do not add the token.
+    if (!request.url.match(/www.mydomain.com\//)) {
+      return request;
+    }
+    return request.clone({
+      headers: request.headers.set(this.AUTH_HEADER, "Bearer " + this.token)
+    });
+  }
+}
 ```
 
 [⬆ back to top](#top)
 
 ## 自动刷新Token
 
-![JWT token流程](./images/token流程.png)
+![JWT token流程](../images/token流程.png)
 
 ```javascript
 // 1. Token解析与存储
@@ -193,12 +176,153 @@ export RefreshTokenInterceptor implements HttpIntercetpor {
 
 [⬆ back to top](#top)
 
-## 在Angular中使用拦截器的方式 Top 10
+## 处理Http请求头
+
+- HttpInterceptor是Angular提供用于在全局应用程序级别处理HTTP请求的内置工具，拦截并处理HttpRequest或HttpResponse
+- ![httpclient拦截流程](../images/httpclient拦截流程.png)
+
+```javascript
+import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
+import { Observable } from 'rxjs';
+@Injectable()
+export class HeaderInterceptor implements HttpInterceptor {
+    public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        return next.handle(this.addToken(req, 'bearer my token'));
+    }
+    //为所有的请求加上token信息
+    private addToken(req: HttpRequest<any>, token: string): HttpRequest<any> {
+        return req.clone({ setHeaders: { Authorization: token } });
+    }
+}
+// 应用在其他component, service
+constructor(private httpClient: HttpClient) {
+        this.httpClient.get('/assets/json/data.json').subscribe(ret => {
+            // TODO:
+        });
+    }
+//
+// Headers.interceptor.ts
+intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {    
+    this.accountService.currentUser$.pipe(take(1)).subscribe({
+      next: user => {
+        if (user) {
+          request = request.clone({
+            setHeaders: {
+            Authorization: `Bearer ${user.token}`
+            }})
+        }
+      }
+    })
+    return next.handle(request);
+  }
+```
+
+[⬆ back to top](#top)
+
+## 处理Http响应 (Http Response)
+
+```javascript
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+@Injectable()
+export class ResponseHandlerInterceptor implements HttpInterceptor {
+    public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        return next.handle(req).pipe(
+           //当返回的数据状态是200的时候，只返回body中需要的data数
+            filter(event => event instanceof HttpResponse && event.status === 200),
+            map((event: HttpResponse<any>) => event.clone({ body: event.body.data }))
+        );
+    }
+}
+```
+
+[⬆ back to top](#top)
+
+## Http错误处理 (Http Error)
+
+```javascript
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+@Injectable()
+export class ErrorHandlerInterceptor implements HttpInterceptor {
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        return next.handle(req).pipe(
+            catchError(error => {
+                switch (error.status) {
+                    case 401: // Unauthorized
+                        // todo
+                        break;
+                    case 403: // Forbidden
+                        // todo
+                        break;
+                    default:
+                        // todo
+                        return throwError(error);
+                }
+            }),
+            retry(3)
+        );
+    }
+}
+//error.interceptor.ts
+import { Injectable } from '@angular/core';
+import {
+  HttpRequest,
+  HttpHandler,
+  HttpEvent,
+  HttpInterceptor,
+} from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
+import { Router } from '@angular/router';
+
+@Injectable()
+export class ErrorInterceptor implements HttpInterceptor {
+  constructor(private router: Router) {}
+  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    return next.handle(request).pipe(
+      catchError((error) => {
+        if(error) {
+          if(error.status === 404) {
+            this.router.navigateByUrl('/not-found');
+          }
+          if(error.status === 401) {
+            this.router.navigateByUrl('/not-authenticated');
+          }
+          if(error.status === 500) {
+            //this.toastr.error(“unauthorized”, error.status.toString())
+            const navigationExtras: NavigationExtras = { state: { error: err.error } };
+            this.router.navigateByUrl('/server-error', navigationExtras);
+          }
+        }
+        return throwError(() => new Error(error));
+      })
+    );
+  }
+}
+```
+
+[⬆ back to top](#top)
+
+## 使用HttpIntercetpor
+
+```ts
+// app.module.ts
+providers: [
+  { provide: HTTP_INTERCEPTORS,useClass: HeaderInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: ResponseHandlerInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: ErrorHandlerInterceptor, multi: true }
+]
+```
+
+[⬆ back to top](#top)
 
 - [在 Angular 中使用拦截器的方式 Top 10](https://juejin.cn/post/6911614350067236871)
 - [GitHub 示例代码 10.x版本](https://github.com/llccing-demo/ng-interceptors)
-
-[⬆ back to top](#top)
 
 > references
 - [Angular HttpInterceptor拦截器 多情景应用](https://www.jianshu.com/p/8b080a2587c2)
@@ -207,3 +331,4 @@ export RefreshTokenInterceptor implements HttpIntercetpor {
 - [【Angular中的HTTP请求】- 拦截器 HttpInterceptor 详解](https://blog.csdn.net/evanyanglibo/article/details/122368884)
 - [Angular使用Interceptor(拦截器)请求添加token并统一处理API错误](https://blog.csdn.net/donjan/article/details/103592341)
 - [HttpInterceptor 101](https://juejin.cn/post/6911614350067236871)
+- [Angular — Interceptors for Errors and Headers](https://medium.com/nerd-for-tech/angular-interceptors-for-errors-and-headers-a35372f4304b)
