@@ -6,7 +6,7 @@
   
 ```json
 "scripts": {
-    "ng": "ng",`
+    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "postbuild": "for i in $(find dist/my-application/ -type f -print); do brotli $i; done",
