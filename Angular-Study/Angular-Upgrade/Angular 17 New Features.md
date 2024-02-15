@@ -1,6 +1,5 @@
 [Angular 17 New Features](#top)
 
-- [leva](#leva)
 - [Deferrable views 可推迟视图](#deferrable-views-可推迟视图)
   - [Which dependencies are defer-loadable](#which-dependencies-are-defer-loadable)
   - [blocks](#blocks)
