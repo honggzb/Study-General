@@ -222,5 +222,6 @@ export class MyChartCmp {
 
 [⬆ back to top](#top)
 
-> [Angular 17 已经到来，这次更新带来了显著的的性能提升！](https://www.nurmai.com/new/159.html)
-> [Introducing Angular v17](https://blog.angular.io/introducing-angular-v17-4d7033312e4b)
+> References
+- [Angular 17 已经到来，这次更新带来了显著的的性能提升！](https://www.nurmai.com/new/159.html)
+- [Introducing Angular v17](https://blog.angular.io/introducing-angular-v17-4d7033312e4b)
