@@ -28,7 +28,7 @@
 |Angular 7|	18 October 2018|	Updates regarding Application Performance, Angular Material & CDK, Virtual Scrolling, Improved Accessibility of Selects. <br>Support for Content Projection using web standard for custom elements, and dependency updates regarding Typescript 3.1, RxJS 6.3 and Node 10|
 |Angular 6|	4 May 2018|		
 |Angular 5|	1 November 2017|Support for progressive web apps, a build optimizer and improvements related to Material Design|	
-|Angular 4.3|		New router life cycle events for Guards and Resolvers.<br>Minor release, meaning that it contains no breaking changes and that it is a drop-in replacement for Angular 4.x.x.|
+|Angular 4.3|	|	New router life cycle events for Guards and Resolvers.<br>Minor release, meaning that it contains no breaking changes and that it is a drop-in replacement for Angular 4.x.x.|
 |Angular 4|	23 March 2017|Backward compatible with Angular 2|
 Angular 2|	14 September 2016	|
 
