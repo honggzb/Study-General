@@ -15,7 +15,7 @@
 
 |Version|Release date|New features|
 |---|---|---|
-| 17|	November 8 2023|Application builder, a new syntax for control flow, and a re-worked learning and documentation website|
+| 17|	November 8 2023|Application builder, a new syntax for control flow(defering view), and a re-worked learning and documentation website|
 |16|	03 May 2023|	Partial hydration for Angular Universal's Server-side rendering, experimental Jest support, and Esbuild-based build system for development servers.	|
 |15|	November 16, 2022|	|	
 |14|	2 June 2022|	Typed forms, standalone components, and new primitives in the Angular CDK (component dev kit).	|
