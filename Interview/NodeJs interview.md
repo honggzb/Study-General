@@ -30,7 +30,7 @@
 |[28. How do you create a simple Express.js application?](#28-how-do-you-create-a-simple-expressjs-application)|
 |[29. What are streams in Node.js?](#29-what-are-streams-in-nodejs)|
 |[30. How do you install, update, and delete a dependency?](#30-how-do-you-install-update-and-delete-a-dependency)|
-|[31. How do you create a simple server in Node.js that returns Hello World|](#31-how-do-you-create-a-simple-server-in-nodejs-that-returns-hello-world)|
+|[31. How do you create a simple server in Node.js that returns Hello World](#31-how-do-you-create-a-simple-server-in-nodejs-that-returns-hello-world)|
 |[32. Explain asynchronous and non-blocking APIs in Node.js.](#32-explain-asynchronous-and-non-blocking-apis-in-nodejs)|
 |[33. How do we implement async in Node.js?](#33-how-do-we-implement-async-in-nodejs)|
 |[34. What is a callback function in Node.js?](#34-what-is-a-callback-function-in-nodejs)|
