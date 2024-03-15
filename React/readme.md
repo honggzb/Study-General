@@ -7,7 +7,7 @@
 │     │    └── reactSampleBasic-04062016.rar
 │     ├── 📄React学习-Handle errors in React.md
 │     ├── 📄React学习-Hooks.md
-│     ├── 📄React学习-Jest+Vite+ts设置.md
+
 │     ├── 📄React学习-Jest-2023年.md
 │     ├── 📄React学习-Nested Routes.md
 │     ├── 📄React学习-Reduce-2023年.md
@@ -17,7 +17,8 @@
 │     ├── 📄React学习-router.md
 │     ├── 📄React学习-show and hide Password.md
 │     ├── 📄React学习-upload files上传文件.md
-│     ├── 📄React学习-vite分块打包.md
+│     ├── 📄React学习-配置-Jest+Vite+ts设置.md
+│     ├── 📄React学习-配置-vite分块打包.md
 │     ├── 📄React学习-大众点评.md
 │     ├── 📄React学习资源汇总.md
 │     ├── 📄React常见问题讨论.md
