@@ -1,4 +1,4 @@
-## React学习-vite分块打包
+## React学习-配置-vite分块打包
 
 ```js
 export default defineConfig({
