@@ -25,3 +25,16 @@ export default defineConfig({
 ```
 
 - https://rollupjs.org/configuration-options/#output-entryfilenames
+
+```
+├── 📂dist
+│     ├──  📂The Complete React Developer Course -w Hooks and Redux- Andrew Mead/
+│     ├──  📂css
+│     │    └── 📄index-fc45fjds.css
+│     ├──  📂imgs
+│     │    └── 📄react-4sdf000a.svg
+│     ├──  📂js
+│     │    ├── 📄about-fc45sdffjds.css
+│     │    └── 📄index-fc45fjds.css
+│     ├── 📄index.html
+```
