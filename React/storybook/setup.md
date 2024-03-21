@@ -5,6 +5,21 @@
 - In a project with Storybook: `npx storybook@latest upgrade`
 - https://storybook.js.org/docs/get-started/react-vite
 
+## add tailwindcss
+
+- `npm i --dev tailwindcss`
+- `npx tailwindcss init -p`
+  - modify 'tailwind.config.js'
+  - `content: ['./src/**/*.{html,js,ts,jsx,tsx}'],`
+- create 'tailwind.css' in src directory
+
+```
+//tailwind.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
 ## TSDX+rollup setup
 
 - using [TSDX](https://tsdx.io/)
