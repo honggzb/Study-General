@@ -11,7 +11,7 @@
 │   │   └── 📄避免多次调用之share+shareReplay.md
 ```
 
-|Obseevable|Promise|
+|Observable|Promise|
 |---|---|
 |Emit multiple values over a period of time|Emit a single value at a time|
 |Are Lazy<br>they're not executed until using subscribe()|Are not lazy<br>execute immediately after creation|
