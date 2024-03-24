@@ -10,16 +10,16 @@
 ## Storybook for React & Vite
 
 - create React by vite: `npm create vite@latest`
-- method 1:
+- add storybook - method 1:
   - In a project without Storybook: `npx storybook@latest init`
   - In a project with Storybook: `npx storybook@latest upgrade`
   - https://storybook.js.org/docs/get-started/react-vite
-- method 2: `npx sb init --builder @storybook/builder-vite`
+- add storybook - method 2: `npx sb init --builder @storybook/builder-vite`
   - https://storybook.js.org/blog/storybook-for-vite/
 
 [⬆ back to top](#top)
 
-## add tailwindcss
+## add tailwindcss to react
 
 - `npm i -d tailwindcss postcss autoprefixer @storybook/addon-postcss rollup-plugin-postcss`
 - `npx tailwindcss init -p`
@@ -32,6 +32,9 @@
 @tailwind components;
 @tailwind utilities;
 ```
+
+- add `import './index.css';` to 'src\App.tsx'
+- add `import '../src/index.css';` to '.storybook\preview.ts'
 
 [⬆ back to top](#top)
 
