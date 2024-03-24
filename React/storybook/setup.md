@@ -1,3 +1,12 @@
+[StoryBook setup](#top)
+
+- [Storybook for React \& Vite](#storybook-for-react--vite)
+- [add tailwindcss](#add-tailwindcss)
+- [TSDX+rollup setup](#tsdxrollup-setup)
+- [Bundling component](#bundling-component)
+
+--------------------------------
+
 ## Storybook for React & Vite
 
 - create React by vite: `npm create vite@latest`
@@ -8,20 +17,23 @@
 - method 2: `npx sb init --builder @storybook/builder-vite`
   - https://storybook.js.org/blog/storybook-for-vite/
 
+[⬆ back to top](#top)
+
 ## add tailwindcss
 
 - `npm i -d tailwindcss postcss autoprefixer @storybook/addon-postcss rollup-plugin-postcss`
 - `npx tailwindcss init -p`
   - modify 'tailwind.config.js'
   - `content: ['./src/**/*.{html,js,ts,jsx,tsx}'],`
-- create 'tailwind.css' in src directory
+- add following code at top of 'src/index.css' directory
 
 ```
-//tailwind.css
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 ```
+
+[⬆ back to top](#top)
 
 ## TSDX+rollup setup
 
@@ -80,6 +92,8 @@ addons: [
     - `"storybook": "sb dev",`
     - `"build-storybook": "sb build"`
 
+[⬆ back to top](#top)
+
 ## Bundling component
 
 - `npm i --save-dev rollup @rollup/plugin-node-resolve @rollup/plugin-babel rollup-plugin-uglify rollup-plugin-postcss rollup-plugin-typescript2 rollup-plugin-peer-deps-external`
@@ -92,3 +106,5 @@ addons: [
 |rollup-plugin-postcss | Includes the CSS that we created as separate files in our bundle. It does this by generating minified CSS from the *.css files and includes them via the <head> tag wherever used in our components.|
 |rollup-plugin-typescript2 | This plugin compiles the TypeScript code to JavaScript for our final bundle and generates the type declarations for the types key in package.json.|
 |rollup-plugin-peer-deps-external | This plugin will externalize our peerDependencies (react and react-dom in our case) in the final bundle as these will be provided by the consumer application.|
+
+[⬆ back to top](#top)
