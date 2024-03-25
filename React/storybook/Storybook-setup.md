@@ -2,6 +2,9 @@
 
 - [Storybook for React \& Vite](#storybook-for-react--vite)
 - [add tailwindcss](#add-tailwindcss)
+- [Testing](#testing)
+  - [Interaction tests of React](#interaction-tests-of-react)
+  - [Execute tests with the test-runner](#execute-tests-with-the-test-runner)
 - [TSDX+rollup setup](#tsdxrollup-setup)
 - [Bundling component](#bundling-component)
 
@@ -35,6 +38,31 @@
 
 - add `import './index.css';` to 'src\App.tsx'
 - add `import '../src/index.css';` to '.storybook\preview.ts'
+
+[⬆ back to top](#top)
+
+## Testing
+
+### Interaction tests of React
+
+- `npm install @storybook/test @storybook/addon-interactions --save-dev`
+- make sure following code existed in '.storybook/main.ts'
+  - `'@storybook/addon-interactions', // 👈 Register the addon`
+- Write an interaction test
+  - `npm install @radix-ui/themes`
+  - https://www.radix-ui.com/primitives/docs/components/form
+  - refer to 'src\components\Form\FormD.stories.tsx'
+  
+### Execute tests with the test-runner
+
+- `npm install @storybook/test-runner --save-dev`
+- add `"test-storybook": "test-storybook"` to package.json
+- `npx playwright install chromium`
+- Start your Storybook: `npm run storybook`
+- open a new terminal window and run the test-runner: `npm run test-storybook`
+- [Set up CI to run tests](https://storybook.js.org/docs/writing-tests/test-runner)
+  - Run against deployed Storybooks
+  - Run against non-deployed Storybooks
 
 [⬆ back to top](#top)
 
