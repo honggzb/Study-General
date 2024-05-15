@@ -27,6 +27,8 @@
   - [Sample: Generating a Logger library and adding to angular](#sample-generating-a-logger-library-and-adding-to-angular)
   - [Angular Console](#angular-console)
 - [other command](#other-command)
+- [issues](#issues)
+  - [Unable to execute Angular CLI commands in Visual Studio Code terminal](#unable-to-execute-angular-cli-commands-in-visual-studio-code-terminal)
 
 ```shell
 node -v  # 8.x or higher
@@ -464,6 +466,15 @@ ng serve
 npm update
 ng serve
 ````
+
+[back to top](#top)
+
+## issues
+
+### Unable to execute Angular CLI commands in Visual Studio Code terminal
+
+- open power shell as administrator
+- `set-executionpolicy remotesigned` or `set-executionpolicy remotesigned -Scope CurrentUse`
 
 [back to top](#top)
 
