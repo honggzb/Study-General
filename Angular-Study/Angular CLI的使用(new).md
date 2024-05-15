@@ -68,7 +68,7 @@ ng new ngtest --skip-git         |ng new ngtest -g     | don't add the project t
 - `ng generate component --standalone false`
 - Angular.json
 
-```json
+```
  "projects": {
     "my-angular17-project": {
       "projectType": "application",
