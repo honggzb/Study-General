@@ -1,6 +1,7 @@
 [Angular CLI- in pluralsight by John Papa](#top)
 
 - [ng new](#ng-new)
+- [not standalone](#not-standalone)
 - [Angular CLI configuration](#angular-cli-configuration)
 - [Linting -checking and fixing code](#linting--checking-and-fixing-code)
 - [Generating code from blueprints](#generating-code-from-blueprints)
@@ -60,6 +61,25 @@ ng new ngtest --prefix qh        |ng new ngtest -p qh  |默认为 'app', 用于�
 ng new ngtest --skip-tests       |ng new ngtest -S     |
 ng new ngtest --skip-git         |ng new ngtest -g     | don't add the project to git
 ```
+
+## not standalone
+
+- `ng new myapp --standalone false`
+- `ng generate component --standalone false`
+- Angular.json
+
+```json
+ "projects": {
+    "my-angular17-project": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "standalone": false
+        }
+      },
+    }
+}
 
 [back to top](#top)
 
