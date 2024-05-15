@@ -80,6 +80,7 @@ ng new ngtest --skip-git         |ng new ngtest -g     | don't add the project t
       },
     }
 }
+```
 
 [back to top](#top)
 
