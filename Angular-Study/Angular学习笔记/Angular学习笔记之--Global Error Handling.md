@@ -7,7 +7,7 @@
 
 ## Global Error Handling
 
-- create a service implements ErrorHandler(global-error-handler.ts)
+- create a service implements `ErrorHandler`(global-error-handler.ts)
 - Triggler an error when using `throw Error()`
 
 ```ts
