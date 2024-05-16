@@ -3,15 +3,29 @@
 - https://github.com/sateesh2020/coding-interview-university/blob/main/translations/README-cn.md
 
 ```
-├── interview
-│   ├── javascript/
-│   │   ├──Coderbyte-javascript.md
-│   │   ├──Javascript面试之数组的几个不low操作.md
-│   │   └── 前端面试基本知识点—javascript.md
-│   ├── 1. 一次性加载几万条数据，要求不卡住界面.md
-│   ├── 2. 10 个 Ajax 同时发起请求.md
-│   ├── Soft-skill.md
-│   └── Lead Front end Developer questions.md
+├── 📂interview
+│   ├── 📂Javascript-code/
+│   │   ├──📂Coderbyte/
+│   │   │   ├──📂angular/
+│   │   │   ├──📂easy/
+│   │   │   ├──📂hard/
+│   │   │   ├──📂medium/
+│   │   │   ├──📄angular-tic-tac-toe.js
+│   │   │   ├──📄coderbyte- solutions -javascript .pdf
+│   │   │   └──📄javascript-tt.js
+│   │   ├──📄Javascript面试之数组的几个不low操作.md
+│   │   └── 📄前端面试基本知识点—javascript.md
+│   ├── 📄1. 一次性加载几万条数据，要求不卡住界面.md
+│   ├── 📄2. 10 个 Ajax 同时发起请求.md
+│   ├── 📄Behavioral Interview.md
+│   ├── 📄Lead Front end Developer questions.md
+│   ├── 📄Leadership Principles.md
+│   ├── 📄NodeJs interview.md
+│   ├── 📄Soft-skill.md
+│   ├── 📄System Design Interview.md
+│   ├── 📄angular vs angularJS.md
+│   ├── 📄angular-interview.md
+│   └── 📄react interview.md
 ```
 
 - [干爆前端](https://github.com/193Eric/fucking-frontend/tree/main)
