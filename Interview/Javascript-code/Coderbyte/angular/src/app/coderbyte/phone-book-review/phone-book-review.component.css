@@ -1,0 +1,8 @@
+.phoneBook {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=phone-book-review.component.css.map */

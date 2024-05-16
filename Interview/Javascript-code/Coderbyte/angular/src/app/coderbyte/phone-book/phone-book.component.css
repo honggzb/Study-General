@@ -1,0 +1,8 @@
+.phonebook {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=phone-book.component.css.map */

@@ -1,0 +1,21 @@
+<div>
+  <form class="form" action="" [formGroup]="form" (ngSubmit)="processForm()">
+    <input type="text" formControlName="firstname">
+    <input type="number" formControlName="age">
+    <input type="text" formControlName="lastname">
+    <input type="text" formControlName="twitter">
+    <button type="submit">Update Form</button>
+  </form>
+
+  <pre>{{ form.value | json }}</pre>
+
+  <div>
+    <ul *ngFor="let formDetail of personProps">
+      <li>{{formDetail.firstname}}</li>
+      <li>{{formDetail.age}}</li>
+      <li>{{formDetail.lastname}}</li>
+      <li>{{formDetail.twitter}}</li>
+    </ul>
+  </div>
+
+</div>

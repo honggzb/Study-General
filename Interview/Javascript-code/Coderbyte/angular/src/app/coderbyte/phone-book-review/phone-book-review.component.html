@@ -1,0 +1,29 @@
+<div>
+  <form class="phoneBook" [formGroup]="phoneBookForm" (ngSubmit)="updatePhone()" >
+    <label for="firstName">First name:
+    <input type="text" id="firstName" formControlName="firstName">
+    </label>
+
+    <label for="lastName">Last name:
+      <input type="text" id="lastName" formControlName="lastName">
+    </label>
+
+    <label for="phone">Phone:
+      <input type="number" id="phone" formControlName="phone">
+    </label>
+
+
+    <button style="margin-top: 20px" type="submit">Update PhoneBook</button>
+  </form>
+
+  <div>
+    <ul style="list-style-type: none" *ngFor="let phoneBookList of phoneBookList"  >
+      <li>Last name: {{phoneBookList.lastName}}</li>
+      <li>First name: {{phoneBookList.firstName}}</li>
+      <li>phone: {{phoneBookList.phone}}</li>
+    </ul>
+  </div>
+
+
+
+</div>
