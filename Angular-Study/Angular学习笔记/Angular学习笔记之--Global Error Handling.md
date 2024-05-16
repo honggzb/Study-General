@@ -39,7 +39,7 @@ localError() {
 }
 ```
 
-][back to top](#top)
+[back to top](#top)
 
 ## HTTP Global Error Handling
 
@@ -69,7 +69,7 @@ export class HttpLoadingInterceptor implements HttpInterceptor {
   ]
 ```
 
-][back to top](#top)
+[back to top](#top)
 
 > references
 - [Global Error Handling in Angular]](https://pkief.medium.com/global-error-handling-in-angular-ea395ce174b1)
