@@ -2,6 +2,7 @@
 ├── Accessiblity/
 |    ├── Angular/
 |    |     ├── AngularJS and Accessibility-General.md
+|    |     ├── accessible for Angular.md
 |    |     └── guide+Strategies in Angular.md
 |    ├── react/
 |    |     ├── react aria.md
