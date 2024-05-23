@@ -4,6 +4,9 @@
   - [defination/create](#definationcreate)
   - [Using Stand-alone components](#using-stand-alone-components)
   - [独立组件Bootstrap无模块的应用](#独立组件bootstrap无模块的应用)
+  - [General](#general)
+  - [routing](#routing)
+  - [management standalone Components](#management-standalone-components)
 - [2. 严格类型化的表单](#2-严格类型化的表单)
   - [新的 FormRecord 类](#新的-formrecord-类)
   - [problem](#problem)
@@ -106,6 +109,77 @@ export class PhotoGalleryComponent { }
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+```
+
+[⬆ back to top](#top)
+
+-------------------------------------------------
+
+### General
+
+- 14 --> developer preview, 15 --> stable
+- 在@Component, @Directive, @Pipe加入`standalone: true`
+- ![alt text](image.png)
+- ![alt text](image-1.png)
+- Angular CLI:  `ng g c mycomponent --standalone`
+- transfor to standalone: `ng g @angular/core:standalone` by using Angular CLI
+  - Convert all components,directives and pipes to standalone
+  - remove unnecessary NgModule classes
+  - Bootstrap the application using standalone APIs
+
+```js
+@Component({
+  selector: 'app-todo-list',
+  standalone: true,
+  imports: [NgFor, AsyncPipe],
+  template: `
+    <ul>
+      <li *ngFor=`let item of todoList$ | async`>{{ item.title}}</li>
+    </ul>
+  `,
+  styles: []
+})
+export class TodoListComponent {
+  httpClient = inject(HttpClient);  // new inject in version 14
+  todoList$ = this.httpClient.get<Array<any>>('https://...');
+//   ngOninit(): void {
+//     this.httpClient
+//         .get<Array<any>>('https://...')
+//         .subscribe((data) => {
+//           //...
+//         })
+//   }
+// }
+}
+```
+
+### routing
+
+```js
+// if 'export class TodoListComponent'
+{ path: 'todo/:id', loadComponent: () => import('./todo-list.component').then(m => m.todoListComponent) }
+// if 'export default class TodoListComponent'
+{ path: 'todo/:id', loadComponent: () => import('./todo-list.component') }
+//lazy-loaded child routes
+{ path: 'todo/create', loadChildren: () => import('./todos.routes').then(m => m.routes) }
+```
+
+### management standalone Components
+
+- no need `ngModule`
+- create a file 'todos.ts'
+
+```js
+//todos.ts
+export const todos = [
+  todoListComponent, todoItemComponent,
+];
+// use in component
+@Component({
+  selector: 'app-todo-list',
+  standalone: true,
+  imports: [RouterOutlet, ...todos],
+//...
 ```
 
 [⬆ back to top](#top)
