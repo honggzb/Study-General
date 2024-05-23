@@ -671,7 +671,12 @@
 |    |     ├── 📄markdown文件公式大全.md
 |    |     └── 📄typora.md
 |    ├── 📄ygwin及Git的mintty终端配色配置.md
-│    └── 📦notepad++-plugin.zip                  # JSONFormat, Markdown view   
+|    ├── 📄Create Cygwin及Git的mintty终端配色配置.md
+|    ├── 📄GitHub美化主页设计.md
+|    ├── 📄IntelliJ IDEA配置.md
+|    ├── 📄Source Map应用技巧.md
+|    ├── 📄node+npm_update.md
+│    └── 📦notepad++-plugin.zip                  # JSONFormat, Markdown view 
 ├── 📂JAVA-Study/
 │   ├── 📂configuration-study/
 │   │   ├── 📄ant学习.md
