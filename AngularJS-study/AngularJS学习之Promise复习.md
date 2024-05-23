@@ -15,7 +15,7 @@
 - 待定(pending)：初始状态，既没有被兑现，也没有被拒绝。
 - 已兑现(fullfilled)：操作成功完成。
 - 已拒绝(rejected)：操作失败
-- ![promise状态转换](promise状态转换.png)
+- ![promise状态转换](./images/promise状态转换.png)
 
 ## promise状态转换
 
