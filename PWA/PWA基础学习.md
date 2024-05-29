@@ -235,8 +235,8 @@ browser|A standard browser experience
 
 ### Service workers生命周期
 
-- ![sw生命周期](sw生命周期.png)
-- ![sw生命周期2](sw生命周期2.png)
+- ![sw生命周期](./images/sw生命周期.png)
+- ![sw生命周期2](./images/sw生命周期2.png)
   - **Parsed** 解析成功： 首次注册 SW 时，浏览器解决脚本并获得入口点，如果解析成功，就可以访问到 SW 注册对象，在这一点中我们需要在 HTML 页面中添加一个判断，判断该浏览器是否支持 SW 。
   - **Installing** 正在安装：SW 脚本解析完成之后，浏览器会尝试进行安装，`installing` 中 `install` 事件被执行，如果其中有 event. - `waitUntil()` 方法，则 `installing` 事件会一直等到该方法中的 `Promise` 完成之后才会成功，如果 `Promise` 被拒绝，则安装失败，SW会进入 `Redundant（废弃）`状态。
   - **Installed / Waiting** 安装成功/等待中：如果安装成功，SW 将会进入这个状态。
@@ -244,7 +244,7 @@ browser|A standard browser experience
     - 当前已无激活状态的 worker 、 SW脚本中的 self.skipWaiting（）方法被调用 （ ps： self 是 SW 中作用于全局的对象，这个方法根据英文翻译过来也能明白什么意思啦，跳过等待状态 ）、用户已关闭 SW 作用域下的所有页面，从而释放了当前处于激活状态的 worker、超出指定时间，从而释放当前处于激活状态的 worker
   - **Activated** 激活成功：该状态，其成功接收了 document 全面控制的激活态 worker 。
   - **Redundant** 废弃 ：这个状态的出现时有原因的，如果 installing 事件失败或者 activating 事件失败或者新的 SW 替换其成为激活态 worker 。installing 事件失败和 activating 事件失败的信息我们可以在 Chrome 浏览器的 DevTools 中查看
-- ![sw生命周期1](sw生命周期1.png)
+- ![sw生命周期1](./images/sw生命周期1.png)
 - 把sw的生命周期看成红绿灯
   - **register** (需要下载和解析，红灯)
   - **install** (执行，黄灯)
@@ -254,13 +254,19 @@ browser|A standard browser experience
   2. 在注册过程中，浏览器会下载、解析并执行 Service Worker ()。如果在此步骤中出现任何错误，register() 返回的 promise 都会执行 reject 操作，并且 Service Worker 会被废弃。
   3. 一旦 Service Worker 成功执行了，install 事件就会激活
   4. 安装完成，Service Worker 便会激活，并控制在其范围内的一切。如果生命周期中的所有事件都成功了，Service Worker 便已准备就绪，随时可以使用了
+- ![sw生命周期3](./images/sw生命周期3.png)
 
 ### View installed Service workers
 
-- `chrome://serviceworker-internals/`
+- 查看所有的:   `chrome://serviceworker-internals/`
+- chrome DevTools下查看service-worker和cache
+  - ![chrome下查看](./images/chrome下查看sw.png)
 - type `this` will show `ServiceWorkerGlobalScope` in console
 
 ### Create a service workers
+
+- service worker可使用的event
+- ![sw可使用的event](sw可使用的event.png)
 
 ```js
 // 注册 service worker
@@ -438,6 +444,19 @@ document.addEventListener("DOMContentLoaded", event => {
     display: none;
   }
 }
+```
+
+- manifest file for install button in Android
+
+```json
+"description": "This app lets you add notes while you are coding",
+"screenshots": [
+    {
+      "src": "icons/screenshot.png",
+      "sizes": "1170x2532",
+      "type": "image/png"
+    }
+]
 ```
 
 [⬆ back to top](#top)
