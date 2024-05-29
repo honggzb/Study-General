@@ -266,7 +266,7 @@ browser|A standard browser experience
 ### Create a service workers
 
 - service worker可使用的event
-- ![sw可使用的event](sw可使用的event.png)
+- ![sw可使用的event](./images/sw可使用的event.png)
 
 ```js
 // 注册 service worker
