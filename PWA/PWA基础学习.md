@@ -17,6 +17,7 @@
   - [2. Serving Resources](#2-serving-resources)
   - [3. Cache Serving Strategies](#3-cache-serving-strategies)
   - [4. Updating Resources](#4-updating-resources)
+- [开源的sw库](#开源的sw库)
 - [Distribution Buttons-share/install btn](#distribution-buttons-shareinstall-btn)
 - [Launch/Publish PWA app](#launchpublish-pwa-app)
 - [消息推送](#消息推送)
@@ -35,9 +36,9 @@
   - Streamlined Marketing
   - Higher Customer Lifetime Values
 - PWA的三个关键词
-  - Reliable(可靠的)：当用户从手机屏幕启动时，无需考虑网络状态，可以立刻加载出PWA
-  - Fast(快速的)：加载速度快
-  - Engaging(可参与的)：PWA可以添加在用户的主屏幕上，无需从应用商店里下载，他们通过网络应用程序Manifest file提供类似于APP的使用体验（android上可设置全屏显示，由于Safari支持度的问题ios不可以），可以进行“推送通知”
+  - **Reliable(可靠的)**：当用户从手机屏幕启动时，无需考虑网络状态，可以立刻加载出PWA
+  - **Fast(快速的)**：加载速度快
+  - **Engaging(可参与的)**：PWA可以添加在用户的主屏幕上，无需从应用商店里下载，他们通过网络应用程序Manifest file提供类似于APP的使用体验（android上可设置全屏显示，由于Safari支持度的问题ios不可以），可以进行“推送通知”
 - 小小总结：
   - 解决的问题：
     - 可添加至主屏幕
@@ -45,6 +46,16 @@
     - 实现消息推送
   - 优势：几乎瞬间加载，但安全且富有弹性
   - 核心：manifest文件清单、Service Workers
+- Service Worker具有以下特点：
+  - 一旦被install，就永远存在，除非被手动unregister
+  - 拥有自己独立的worker线程，独立于当前网页进程，有自己独立的worker上下文(context)
+  - 用到的时候就可以直接唤醒，不用的时候自动睡眠
+  - 可拦截代理fetch请求和响应，不支持xmlHttpRequest请求
+  - 可操作缓存文件，且缓存文件可以被网页进程取到（包括网路离线状态）
+  - 能向客户推送消息
+  - 不能直接操作DOM、window、parent等 。（但是它有自己的**self**对象来代替window）
+  - 必须在HTTPS环境下才能工作。(本地调试可以用localhost)
+  - 异步实现，内部大都是通过Promise实现，以防止浏览器卡顿。所以Service Worker的各类操作都被设计为异步，在调用的时候要使用Promise语法
 
 ## Components of a PWA
 
@@ -256,6 +267,12 @@ browser|A standard browser experience
   4. 安装完成，Service Worker 便会激活，并控制在其范围内的一切。如果生命周期中的所有事件都成功了，Service Worker 便已准备就绪，随时可以使用了
 - ![sw生命周期3](./images/sw生命周期3.png)
 
+```js
+self.addEventListener('install', function(event) { /* 安装后... */ });    //缓存文件
+self.addEventListener('activate', function(event) { /* 激活后... */ });   //缓存更新
+self.addEventListener('fetch', function(event) { /* 请求后... */ });    //拦截请求直接返回缓存数据, 响应和拦截各种请求
+```
+
 ### View installed Service workers
 
 - 查看所有的:   `chrome://serviceworker-internals/`
@@ -267,33 +284,52 @@ browser|A standard browser experience
 
 - service worker可使用的event
 - ![sw可使用的event](./images/sw可使用的event.png)
+- `navigator.serviceWorker.register(url, options);`
+  - `url`:service worker文件的路径，路径是相对于 Origin ，而不是当前文件的目录的
+    -  默认值是基于当前的location（./），并以此来解析传入的路径
+    -  假设你的sw文件放在根目录下位于/src/sw.js路径的话，那么你的sw就只能监听/src/*下面的请求
+  - `options`: 
+  - `scope`: 表示定义service worker注册范围的URL
+  - 如果想要监听所有请求有两个办法，一个是将sw.js放在根目录下，或者是在注册是时候设置scope
 
 ```js
 // 注册 service worker
       if ('serviceWorker' in navigator) {           
         navigator.serviceWorker.register('/service-worker.js', {scope: '/'}).then(function (registration) {
+          //scope是自定义sw的作用域范围为根目录，默认作用域为当前sw.js所在目录的页面
           console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }).catch(function (err) {                   
-
+        })
+        .then(registration => {
+          // 注册成功后会返回registration对象，指代当前服务线程实例
+          document.getElementById("register").innerHTML = "成功!";
+        })
+        .catch( (err) => {                   
           console.log('ServiceWorker registration failed: ', err);
+          //document.getElementById("register").innerHTML = "失败!";
         });
+      } else {
+        console.log("当前浏览器不支持service worker");
       }
 //service-worker.js
-var cacheName = 'helloWorld';     // 缓存的名称  
-// install 事件，它发生在浏览器安装并注册 Service Worker 时        
-self.addEventListener('install', event => { 
+//1. 缓存静态资源
+var cacheName = 'helloWorld';     // 缓存的名称, 修改此值可以强制更新缓存  
+// install 事件，它发生在浏览器安装并注册Service Worker时        
+self.addEventListener('install', event => {                 // 监听install事件，回调中缓存所需文件
 /* event.waitUtil 用于在安装成功之前执行一些预装逻辑
  但是建议只做一些轻量级和非常重要资源的缓存，减少安装失败的概率
  安装成功后 ServiceWorker 状态会从 installing 变为 installed */
   event.waitUntil(
+    // cacheStorage API 可直接用caches来替代
+    // open方法创建/打开缓存空间，并会返回promise实例
+    // then来接收返回的cache对象索引
     caches.open(cacheName)                  
-    .then(cache => cache.addAll([    // 如果所有的文件都成功缓存了，便会安装完成。如果任何文件下载失败了，那么安装过程也会随之失败。        
+          .then(cache => cache.addAll([    // 如果所有的文件都成功缓存了，便会安装完成。如果任何文件下载失败了，那么安装过程也会随之失败。        
       '/js/script.js',
       '/images/hello.png'
     ]))
   );
 });
-  
+//2. 使用缓存的静态资源
 /**
 为 fetch 事件添加一个事件监听器。接下来，使用 caches.match() 函数来检查传入的请求 URL 是否匹配当前缓存中存在的任何内容。如果存在的话，返回缓存的资源。
 如果资源并不存在于缓存当中，通过网络来获取资源，并将获取到的资源添加到缓存中。
@@ -320,6 +356,36 @@ self.addEventListener('fetch', function (event) {
     })
   );
 });
+//3. 更新静态缓存资源
+const CACHE_NAME = "tuland-2"; //修改此值可以强制更新缓存
+...
+this.addEventListener("install", (event) => { 
+  this.skipWaiting();// 强制更新sw.js
+  ...
+})
+// 监听active事件
+self.addEventListener("activate", (event) => {
+  // 获取所有的缓存key值，将需要被缓存的路径加载放到缓存空间下
+  const cacheDeletePromise = caches.keys().then((keyList) => {
+    console.log("keyList:", keyList);
+    Promise.all(
+      keyList.map((key) => {
+        if (key !== CACHE_NAME) {
+          const deletePromise = caches.delete(key);
+          return deletePromise;
+        } else {
+          Promise.resolve();
+        }
+      })
+    );
+  });
+  // 等待所有的缓存都被清除后，直接启动新的缓存机制
+  event.waitUntil(
+    Promise.all([cacheDeletePromise]).then((res) => {
+      this.clients.claim();
+    })
+  );
+});
 ```
 
 - 注：Service Worker 的注册路径决定了其 scope 默认作用页面的范围。
@@ -328,6 +394,7 @@ self.addEventListener('fetch', function (event) {
   - 如果希望改变它的作用域，可在第二个参数设置 scope 范围。示例中将其改为了根目录，即对整个站点生效
 - 注：为什么用request.clone()和response.clone()
   - 因为request和response是一个流，它只能消耗一次。因为我们已经通过缓存消耗了一次，然后发起 HTTP 请求还要再消耗一次，所以需要在此时克隆请求Clone the request—a request is a stream and can only be consumed once
+- [CacheStorage MDN文档](https://link.juejin.cn/?target=https%3A%2F%2Fdeveloper.mozilla.org%2Fzh-CN%2Fdocs%2FWeb%2FAPI%2FCacheStorage%2Fkeys)
 
 [⬆ back to top](#top)
 
@@ -369,7 +436,7 @@ self.addEventListener('fetch', function (event) {
 
 ```js
 // 1. add save() function in app.js
-// updating cache resources
+// updating cache resources 更新静态缓存资源
     if (localStorage.getItem("notes")) {
         notes = JSON.parse(localStorage.getItem("notes"));
     }
@@ -399,6 +466,11 @@ event.respondWith(
 ```
 
 [⬆ back to top](#top)
+
+## 开源的sw库
+
+- [offline-plugin](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FNekR%2Foffline-plugin)
+- [workbox](https://link.juejin.cn/?target=https%3A%2F%2Fdevelopers.google.com%2Fweb%2Ftools%2Fworkbox%2Fguides%2Fmigrations%2Fmigrate-from-sw)
 
 ## Distribution Buttons-share/install btn
 
@@ -608,6 +680,9 @@ samsung iTest  -> ios
 - [H5 PWA技术以及小demo](https://www.cnblogs.com/yangyangxxb/p/9964959.html)
   - [离线缓存网页demo](https://github.com/yangTwo100/PWA_search_demo)
 - [Transform a React App into a Progressive Web App (PWA)](https://www.linkedin.com/pulse/transform-react-app-progressive-web-pwa-shankhadeep-bhadra/)
+- [从0开始使用Service Worker实现离线缓存 含Demo](https://juejin.cn/post/7342533452757221391)
+  - https://github.com/232295311/learn-sw
+- [Service Worker实现音乐播放离线缓存](https://juejin.cn/post/7075912278251405348)
 
 > Resources
 - [在 React 中使用 Service Worker](https://juejin.cn/post/6881616183158636552)
