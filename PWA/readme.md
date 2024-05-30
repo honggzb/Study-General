@@ -5,6 +5,10 @@
 |    └── 📄给Nextjs应用加入PWA支持.md
 ```
 
+## Resource
+
+- [Service Worker API-official-cn](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API)
+
 ## todoList
 
 - [PWA学习手册](https://pwa.alienzhou.com/)
