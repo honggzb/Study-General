@@ -2,8 +2,8 @@
 ├── 📂PWA/
 |    ├── 📄PWA基础学习.md
 |    ├── 📄PWA系列之Cache API.md
-|    ├── 📄PWA系列之IndexedDB-windows IndexedDB_API.md
 |    ├── 📄PWA系列之IndexedDB-idb library.md
+|    ├── 📄PWA系列之IndexedDB-windows IndexedDB_API.md
 |    ├── 📄Service Worker Updating Resources-version篇.md
 |    └── 📄给Nextjs应用加入PWA支持.md
 ```
