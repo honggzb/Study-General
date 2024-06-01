@@ -352,3 +352,4 @@ index.openCursor(boundKeyRange).onsuccess = (event) => {
 - [IndexedDB API 参考](https://developer.mozilla.org/zh-CN/docs/Web/API/IndexedDB_API)
 - [Indexed Database API 规范](https://www.w3.org/TR/IndexedDB/)
 - [本地数据库IndexedDB - 学员管理系统之登录（一）](https://blog.csdn.net/jiciqiang/article/details/127401531)
+- [IndexedDB的正确打开方式](https://juejin.cn/post/6882999502342406157)
