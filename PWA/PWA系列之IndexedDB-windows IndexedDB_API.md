@@ -351,7 +351,4 @@ index.openCursor(boundKeyRange).onsuccess = (event) => {
 - [Work with IndexedDB](https://web.dev/articles/indexeddb)
 - [IndexedDB API 参考](https://developer.mozilla.org/zh-CN/docs/Web/API/IndexedDB_API)
 - [Indexed Database API 规范](https://www.w3.org/TR/IndexedDB/)
-
-
-- [PWA](https://www.cnblogs.com/Answer1215/category/829293.html?page=3)
-- [Learn PWA](https://web.dev/learn/pwa)
+- [本地数据库IndexedDB - 学员管理系统之登录（一）](https://blog.csdn.net/jiciqiang/article/details/127401531)
