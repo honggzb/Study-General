@@ -338,6 +338,7 @@ browser|A standard browser experience
   3. 一旦 Service Worker 成功执行了，install 事件就会激活
   4. 安装完成，Service Worker 便会激活，并控制在其范围内的一切。如果生命周期中的所有事件都成功了，Service Worker 便已准备就绪，随时可以使用了
 - ![sw生命周期3](./images/sw生命周期3.png)
+- ![sw更新机制](./images/sw更新机制.png)
 
 ```js
 self.addEventListener('install', function(event) { /* 安装后... */ });    //缓存文件
