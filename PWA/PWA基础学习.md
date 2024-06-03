@@ -57,6 +57,77 @@
   - 必须在HTTPS环境下才能工作。(本地调试可以用localhost)
   - 异步实现，内部大都是通过Promise实现，以防止浏览器卡顿。所以Service Worker的各类操作都被设计为异步，在调用的时候要使用Promise语法
 
+<table id="ennVJ" class="ne-table">
+<tbody>
+<tr>
+<td width="150">&nbsp;</td>
+<td width="150">
+<p id="uf8599377" class="ne-p"><strong><span class="ne-text">是否可安装</span></strong></p>
+</td>
+<td width="150">
+<p id="u15164fac" class="ne-p"><strong><span class="ne-text">是否可链接访问</span></strong></p>
+</td>
+<td width="150">
+<p id="uab61d94c" class="ne-p"><strong><span class="ne-text">用户体验</span></strong></p>
+</td>
+<td width="150">
+<p id="ucfd4dbac" class="ne-p"><strong><span class="ne-text">用户黏性</span></strong></p>
+</td>
+</tr>
+<tr>
+<td width="150">
+<p id="u63f019d5" class="ne-p"><span class="ne-text">传统 Web</span></p>
+</td>
+<td width="150">
+<p id="u8e52170c" class="ne-p"><span class="ne-text">无法安装</span></p>
+</td>
+<td width="150">
+<p id="u6d003c02" class="ne-p"><span class="ne-text">可链接访问</span></p>
+</td>
+<td width="150">
+<p id="u0be5cfda" class="ne-p"><span class="ne-text">体验一般</span></p>
+</td>
+<td width="150">
+<p id="u3b8e37ff" class="ne-p"><span class="ne-text">黏性差</span></p>
+</td>
+</tr>
+<tr>
+<td width="150">
+<p id="u02a99ade" class="ne-p"><span class="ne-text">Native App</span></p>
+</td>
+<td width="150">
+<p id="u50ef0683" class="ne-p"><span class="ne-text">可安装</span></p>
+</td>
+<td width="150">
+<p id="u29561a89" class="ne-p"><span class="ne-text">不可链接访问</span></p>
+</td>
+<td width="150">
+<p id="u86c883c1" class="ne-p"><span class="ne-text">体验好</span></p>
+</td>
+<td width="150">
+<p id="ue1c83528" class="ne-p"><span class="ne-text">黏性强</span></p>
+</td>
+</tr>
+<tr>
+<td width="150">
+<p id="u17468302" class="ne-p"><span class="ne-text">PWA</span></p>
+</td>
+<td width="150">
+<p id="u065f0d5c" class="ne-p"><span class="ne-text">可安装</span></p>
+</td>
+<td width="150">
+<p id="ua5ada29e" class="ne-p"><span class="ne-text">可链接访问</span></p>
+</td>
+<td width="150">
+<p id="ua31fe50a" class="ne-p"><span class="ne-text">体验好</span></p>
+</td>
+<td width="150">
+<p id="u354dae8a" class="ne-p"><span class="ne-text">黏性强</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+
 ## Components of a PWA
 
 1. Web App
@@ -210,6 +281,7 @@ browser|A standard browser experience
 
 - A JavaScript file running in its own thread that will act as a middleware offering a local installed web server or web proxy for your PWA, including resources and API calls, 
 - Developer is in full control of how to cache and **serve the resources of the PWA**, and how to **manage API calls**
+- ![SW](./images/SW.png)
 - 基本特点
   - 运行在它自己的全局脚本上下文中, 这意味着不能直接访问页面中的 DOM 元素。因此，需要一个间接的方式来让 Service Worker 与它控制的页面进行通信。这个可以通过使用[postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage)接口来实现
   - 不绑定到具体的网页
