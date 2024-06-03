@@ -279,9 +279,9 @@ browser|A standard browser experience
 
 ## Service worker
 
-- A JavaScript file running in its own thread that will act as a middleware offering a local installed web server or web proxy for your PWA, including resources and API calls, 
+- A JavaScript file running in its own thread that will act as a **middleware** offering a local installed web server or web proxy for your PWA, including resources and API calls, 
 - Developer is in full control of how to cache and **serve the resources of the PWA**, and how to **manage API calls**
-- ![SW](./images/SW.png)
+- ![SW](./images/sw.png)
 - 基本特点
   - 运行在它自己的全局脚本上下文中, 这意味着不能直接访问页面中的 DOM 元素。因此，需要一个间接的方式来让 Service Worker 与它控制的页面进行通信。这个可以通过使用[postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage)接口来实现
   - 不绑定到具体的网页
