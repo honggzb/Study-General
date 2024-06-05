@@ -68,7 +68,7 @@
 - Routing and navigation:  `<Link />`
 - Next.js 的智能文件路由指的是，页面写在**app**目录的js文件都会被认为是页面，也会当成页面来打包，路由定义了一套动态路由的规则
 - Top-level folders
-  - ![Top-level folders](Top-level-folders.png)
+  - ![Top-level folders](./images/Top-level-folders.png)
 - app 模式主要从以下三个方面来扩展和调整文件路由系统
   - 约定页面相关内容
   - 平行路由和插槽功能
@@ -211,17 +211,17 @@
 
 ### Terminology
 
-- ![Routing-Terminology1](Routing-Terminology.png)
+- ![Routing-Terminology1](./images/Routing-Terminology.png)
 
 ### Component Hierarchy
 
 - React components defined in special files of a route segment are rendered in a specific hierarchy
-- ![React-Component-Hierarchy](React-Component-Hierarchy.png)
+- ![React-Component-Hierarchy](./images/React-Component-Hierarchy.png)
 
 ### Colocation
 
 - special files, you have the option to colocate your **own** files (e.g. components, styles, tests, etc) inside folders in the app directory
-- ![Colocation](Colocation.png)
+- ![Colocation](./images/Colocation.png)
 
 ### Advanced Routing Patterns
 
