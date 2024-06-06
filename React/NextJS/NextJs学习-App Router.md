@@ -53,14 +53,14 @@ module.exports = nextConfig
 
 ## Terminology
 
-- ![Routing-Terminology1](Routing-Terminology.png)
+- ![Routing-Terminology1](./images/Routing-Terminology.png)
 
 ## Component Hierarchy
 
 - React components defined in special files of a route segment are rendered in a specific hierarchy
-- ![React-Component-Hierarchy](React-Component-Hierarchy.png)
-- ![React-Component-Hierarchy1](React-Component-Hierarchy1.png)
-- ![nested-Layouts](nested-Layouts.png)
+- ![React-Component-Hierarchy](./images/React-Component-Hierarchy.png)
+- ![React-Component-Hierarchy1](./images/React-Component-Hierarchy1.png)
+- ![nested-Layouts](./images/nested-Layouts.png)
 
 ## Advanced Routing Patterns
 
@@ -151,7 +151,7 @@ export async function POST(req: NextRequest, { params }: { params: Record<string
 
 - The special files `layout.js`, `page.js`, and `template.js` allow you to create UI for a route
 - A layout is UI that is shared between multiple routes
-- ![Pages-Layouts](Pages-Layouts.png)
+- ![Pages-Layouts](./images/Pages-Layouts.png)
 - `page.js`: defaultly exporting page
 - `layout.js`:  defaultly layout, the component should accept a `children prop` that will be populated with a child layout (if it exists) or a page during rendering
   - Layouts are Server Components by default but can be set to a Client Component
