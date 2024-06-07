@@ -11,9 +11,9 @@
 
 ## API 风格
 
-- 选项式 API (Options API)： 用包含多个选项的对象来描述组件的逻辑
+- 选项式 API (Options API)： 用包含多个选项的对象来描述组件的逻辑(Vue2)
   - API,数据、方法、计算属性等，是分散在data、methods、computed中的，如想新增或修改一个需求，就需要分别修改data、methods、computed，不便于维护和复用
-- 组合式 API（Composition API）：使用导入的 API 函数来描述组件逻辑
+- 组合式 API（Composition API）：使用导入的 API 函数来描述组件逻辑(Vue3)
 
 
 ## 选项式API - Options API
