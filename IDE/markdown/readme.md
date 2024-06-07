@@ -32,4 +32,4 @@
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
 | Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
+| Paragraph And more   | Text        | And more  And more    |
