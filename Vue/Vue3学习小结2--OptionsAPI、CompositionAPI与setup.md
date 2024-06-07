@@ -118,5 +118,6 @@ export default defineConfig({
 [⬆ back to top](#top)
 
 > References
+- https://cn.vuejs.org/api/composition-api-setup.html
 - [做了一夜动画，就为让大家更好的理解Vue3的Composition Api](https://juejin.cn/post/6890545920883032071)
 -  https://www.cnblogs.com/Itstars/tag/vue.js/
