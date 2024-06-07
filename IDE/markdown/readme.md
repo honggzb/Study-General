@@ -12,3 +12,8 @@
 - 📂
 - 📄
 - [⬆ back to top](#top)
+
+## Highlight
+
+- `I need to highlight these <mark>very important words</mark>`
+- I need to highlight these <mark>very important words</mark>
