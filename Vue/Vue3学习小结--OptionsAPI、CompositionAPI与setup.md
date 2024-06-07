@@ -19,6 +19,7 @@
 ## 选项式API - Options API
 
 - ![Options API](./images/Options API.gif)
+- <img src="./images/Options API.gif" />
 
 ```ts
 //1) Options API
