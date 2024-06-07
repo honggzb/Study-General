@@ -82,7 +82,7 @@ export default {
 
 ### setup的返回值
 
-- ![setup](setup.png)
+- ![setup](./images/setup.png)
 - setup中可以读取选项式API中data的数据，但反之则不可读
 
 ### setup的语法糖
