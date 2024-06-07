@@ -12,12 +12,13 @@
 - 📦
 - 📂
 - 📄
-- [⬆ back to top](#top)
 
-## Highlight
+## Highlight && 
 
 - `I need to highlight these <mark>very important words</mark>`
 - I need to highlight these <mark>very important words</mark>
+- `~~The world is flat.~~ We now know that the world is round`
+- ~~The world is flat.~~ We now know that the world is round
 
 ## Table
 
