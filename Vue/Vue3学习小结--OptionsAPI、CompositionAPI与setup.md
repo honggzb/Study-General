@@ -47,8 +47,8 @@ export default {
 
 ## 组合式API - Composition API
 
-- ![Composition API](./images/Composition API.gif)
-- ![Composition API1](./images/Composition API1.gif)
+- <img src="./images/Composition API.gif" />
+- <img src="./images/Composition API1.gif" />
 
 ```ts
 <script setup>       //setup的语法糖
