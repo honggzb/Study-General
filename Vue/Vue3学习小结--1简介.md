@@ -51,7 +51,7 @@
 └── 📄vite.config.ts
 ```
 
-![使用Vite](使用Vite.png)
+![使用Vite](./images/使用Vite.png)
 
 [⬆ back to top](#top)
 
@@ -86,7 +86,5 @@
 - `git clone https://github.com/vuejs/vue-devtools.git`
   - `npm run build`
   - 游览器输入地址“chrome://extensions/”进入扩展程序页面，点击“加载已解压的扩展程序...”按钮，选择vue-devtools>shells下的chrome文
-
-[⬆ back to top](#top)
 
 > https://www.cnblogs.com/Itstars/tag/vue.js/
