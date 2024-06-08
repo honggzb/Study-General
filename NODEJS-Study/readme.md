@@ -26,3 +26,9 @@
 ├── 服务器端log，server side log    -- sample\4.webServer\server.js
 └──
 ```
+
+## resources
+
+- [Book - Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices/tree/master)
+- [一篇文章构建你的 NodeJS 知识体系}(https://juejin.cn/post/6844903767926636558)
+  - https://github.com/ringcrl/node-point
