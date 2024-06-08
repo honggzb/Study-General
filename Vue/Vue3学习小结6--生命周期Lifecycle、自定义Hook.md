@@ -18,7 +18,7 @@
 |更新阶段|beforeUpdate、updated|onBeforeUpdate、onUpdated|
 |销毁阶段|beforeDestroy、destroyed|onBeforeUnmount、onMounted|
 
-![Lifecycle](Lifecycle.png)
+![Lifecycle](./images/Lifecycle.png)
 
 ```ts
 //App.vue
@@ -71,7 +71,7 @@
 </script> 
 ```
 
-![Unmounted](Unmounted.png)
+![Unmounted](./images/Unmounted.png)
 
 [⬆ back to top](#top)
 
@@ -84,7 +84,7 @@
   - 副作用处理: 使用watch或watchEffect来监听响应式数据的变化，并执行相应的副作用（如定时器、事件监听等）
 - 在src中创建一个hooks文件夹，用来存放hook文件
   - hooks文件夹中，每一个功能的hook文件期望是usexxx命名的
-  - ![hooks文件](hooks文件.png)
+  - ![hooks文件](./images/hooks文件.png)
 
 ```ts
 // hooks/useDog.ts
