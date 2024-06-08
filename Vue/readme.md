@@ -19,6 +19,7 @@
 - [vuejs源码](https://github.com/vuejs/vue)
 - [vuejs官方工具](https://github.com/vuejs)
 - [vuejs官方论坛](https://forum.vuejs.org/c/chinese)
+- [vue3官方推荐社区项目：VueUse](https://www.vueusejs.com/)
 - [Vue.js 教程](http://www.runoob.com/vue2/vue-tutorial.html)
 - https://www.cnblogs.com/Itstars/tag/vue.js/
 - https://github.com/learncodeacademy/react-js-tutorials
