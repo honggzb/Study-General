@@ -33,4 +33,9 @@
 - https://github.com/learncodeacademy/react-js-tutorials
 - [Vue基础知识汇总(含webpack打包工具的使用)](https://juejin.im/post/5db25275f265da4d3c071cfa?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
 - [vue3最新学习资料集合，不断更新](https://learnku.com/articles/48928)
+
+## Github resource
+
+- [Sample - vite+vue3+vue-router4+pinia](https://github.com/mutoe/vue3-realworld-example-app)
+- [Sample - Vue3, Vite, Pinia (Vuex 5), Vue Router 4, Quasar,](https://github.com/CharlieDigital/vue3-pinia-quasar-ts)
 📦
