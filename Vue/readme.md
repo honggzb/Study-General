@@ -23,7 +23,7 @@
 - setup的语法糖:  把name和setup放在一个script中, `<script lang="ts" setup name="News">`   --> `npm i vite-plugin-vue-setup-extend`
 - bootstrap:
   - `npm install bootstrap`
-  - add 'import 'bootstrap/dist/css/bootstrap.css' to main.ts
+  - add `import 'bootstrap/dist/css/bootstrap.css` to main.ts
 
 ## Vue学习资源
 
