@@ -9,6 +9,8 @@
 │   ├── 📄Vue3学习小结4--computed计算属性、watch监听、watchEffect函数.md
 │   ├── 📄Vue3学习小结5--标签的ref属性、props父子通信.md
 │   ├── 📄Vue3学习小结6--生命周期Lifecycle、自定义Hook.md
+│   ├── 📄Vue3学习小结7--路由.md
+│   ├── 📄Vue3学习小结8--pinia状态管理.
 │   ├── 📄Vue3学习笔记-Vue3特性-2023.md
 │   ├── 📄Vue官网学习小结.md
 │   ├── 📄Vue官网学习小结之组件.md
