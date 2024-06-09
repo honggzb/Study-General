@@ -15,6 +15,10 @@
 │   └── 📄关于VScode vue3卡顿.md
 ```
 
+## General
+
+- `npm create vite@latest`
+
 ## Vue学习资源
 
 - [vuejs官网](https://vuejs.org/)
