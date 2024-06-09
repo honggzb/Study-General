@@ -159,6 +159,8 @@ export const useTalkStore = defineStore('talk', () => { // 1）写成函数形�
 })
 ```
 
+[⬆ back to top](#top)
+
 > References
 - [pinia-cn-official](https://pinia.vuejs.org/zh/)
 - https://www.cnblogs.com/Itstars/tag/vue.js/
