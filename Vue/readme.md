@@ -18,6 +18,7 @@
 ## General
 
 - `npm create vite@latest`
+- setup的语法糖:  把name和setup放在一个script中, `<script lang="ts" setup name="News">`   --> `npm i vite-plugin-vue-setup-extend`
 
 ## Vue学习资源
 
