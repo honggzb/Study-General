@@ -10,7 +10,7 @@
   - [多次使用v-model](#多次使用v-model)
 - [`$attrs`](#attrs)
 - [`$refs` and `$parent`](#refs-and-parent)
-- [provide、inject](#provideinject)
+- [依赖注入provide、inject](#依赖注入provideinject)
 
 -------------------------------------
 
@@ -256,9 +256,10 @@ const emits = defineEmits(['update:modelValue', 'update:abc'])
 
 [⬆ back to top](#top)
 
-## provide、inject
+## 依赖注入provide、inject
 
 - 实现**祖 <==> 孙**组件**直接**通信, 不用中间组件
+- ![依赖注入](./images/依赖注入.png)
 - 具体使用：
   - 在祖先组件中通过provide配置向后代组件提供数据
   - 在后代组件中通过inject配置来声明接收数据
