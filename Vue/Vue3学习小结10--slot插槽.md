@@ -3,7 +3,6 @@
 - [默认插槽](#默认插槽)
 - [具名插槽](#具名插槽)
 - [作用域插槽](#作用域插槽)
-- [https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big\_Buck\_Bunny\_360\_10s\_1MB.mp4](#httpstest-videoscoukvidsbigbuckbunnymp4h264360big_buck_bunny_360_10s_1mbmp4)
 
 -------------------------------------
 
