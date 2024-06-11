@@ -54,6 +54,10 @@
 - Vue2
   - [尚硅谷VUE项目实战，前端项目-尚品汇(大型\重磅)](https://www.bilibili.com/video/BV1Vf4y1T7bw)
 
+## Book
+
+- [Vue3 入门指南与实战案例](https://vue3.chengpeiquan.com/)
+
 ## Github resource
 
 - [Sample - vite+vue3+vue-router4+pinia](https://github.com/mutoe/vue3-realworld-example-app)
