@@ -1,0 +1,21 @@
+import {ref, onMounted, onUnmounted, Ref } from 'vue'
+
+interface MousePosition {
+  x: Ref<number>,
+  y: Ref<number>,
+}
+
+function useScrollPostion(): MousePosition {
+  const scrollX = ref(0)
+  const scrollY = ref(0)
+  
+  window.addEventListener('scroll', () => {
+    scrollX.value = window.scrollX.toFixed(0)
+    scrollY.value = window.scrollY.toFixed(0)
+  })
+
+  //向外提供东西
+  return {scrollX, scrollY}
+}
+
+export default useScrollPostion
