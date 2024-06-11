@@ -1,3 +1,4 @@
+- [uomg-免费的API接口服务](https://api.uomg.com/)
 - [GitHub中文排行榜](https://github.com/GrowingGit/GitHub-Chinese-Top-Charts)
 - [GitHub英文排行榜 GitHub-English-Top-Charts](https://github.com/GrowingGit/GitHub-English-Top-Charts)
 - [在线摸鱼减压](https://github.com/online-books/moyu?tab=readme-ov-file)
