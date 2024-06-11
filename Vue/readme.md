@@ -44,6 +44,16 @@
 - [Vue基础知识汇总(含webpack打包工具的使用)](https://juejin.im/post/5db25275f265da4d3c071cfa?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
 - [vue3最新学习资料集合，不断更新](https://learnku.com/articles/48928)
 
+## Bilibili学习资源
+
+- Vue3
+  - [尚硅谷Vue3入门到实战，最新版vue3+TypeScript前端开发教程](https://www.bilibili.com/video/BV1Za4y1r7KE)
+  - [Vue3 + vite + Ts + pinia + 实战 + 源码 + electron](https://www.bilibili.com/video/BV1dS4y1y7vd)
+  - [尚硅谷Vue项目实战硅谷甄选，vue3项目+TypeScript前端项目一套通关](https://www.bilibili.com/video/BV1Xh411V7b5)
+  - [尚硅谷Vue2.0+Vue3.0全套教程丨vuejs从入门到精通](https://www.bilibili.com/video/BV1Zy4y1K7SH)
+- Vue2
+  - [尚硅谷VUE项目实战，前端项目-尚品汇(大型\重磅)](https://www.bilibili.com/video/BV1Vf4y1T7bw)
+
 ## Github resource
 
 - [Sample - vite+vue3+vue-router4+pinia](https://github.com/mutoe/vue3-realworld-example-app)
