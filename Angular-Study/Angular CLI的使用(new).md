@@ -39,7 +39,7 @@ ng new my-first-project
 ng new ngtest --skip-install # generate but skip npm install
 ng new ngtest --prefix=qh
 cd my-first-project
-ng serve
+ng serve --open
 ng serve -o  # ng serve –open后，ng会找到.angular-cli.json文件中的main所指的main.ts文件，而main.ts文件加载了根模块
 ng build my-app -c production
 ```
