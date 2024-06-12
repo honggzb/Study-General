@@ -24,7 +24,8 @@
 
 ## General
 
-- `npm create vite@latest`
+- 使用vue-cli： `npm create vue@latest`
+- 使用Vite: `npm create vite@latest`
 - setup的语法糖:  把name和setup放在一个script中, `<script lang="ts" setup name="News">`   --> `npm i vite-plugin-vue-setup-extend`
 - bootstrap:
   - `npm install bootstrap`
