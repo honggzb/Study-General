@@ -8,6 +8,30 @@
 |自动换行 |`word-wrap: break-word; word-break: normal;`|
 |强制换行 |`word-break: break-all;`|
 
+```css
+/* 单行文本溢出的省略*/
+p {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+/* 多行文本溢出的省略*/
+p{
+  position: relative;
+  line-height: 1.5em;
+  /* 高度为需要显示的行数*行高，比如显示两行，高度为3 */
+  height: 3em;
+  overflow: hidden;
+}
+p:after {
+  content: '...';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+}
+```
+
 **相关的css**
 
 `white-space: normal|pre|nowrap|pre-wrap|pre-line|inherit;`
