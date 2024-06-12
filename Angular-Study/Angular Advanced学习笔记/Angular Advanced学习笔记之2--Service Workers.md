@@ -20,7 +20,7 @@
   - includes a link to add the 'manifest.webmanifest' file: `<link rel="manifest" href="manifest.webmanifest">`
   - Adds a meta tag for 'theme-color': `<meta name="theme-color" content="#1976d2">`
 - update 'angular.json' in root directory
-  - ![pwangular](pwangular.png)
+  - ![pwangular](./images/pwangular.png)
 - Update 'app.module.ts', add 'ServiceWorkerModule'
 
 ```ts
@@ -44,9 +44,9 @@ imports: [
 ## Push notification
 
 - update notification
-  - ![pushU](pushU.png)
+  - ![pushU](./images/pushU.png)
 - push notification
-  - ![pushN](pushN.png)
+  - ![pushN](./images/pushN.png)
 
 ```ts
 import {Component} from '@angular/core';
