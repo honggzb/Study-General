@@ -1,4 +1,4 @@
-[Angular Advanced学习笔记之2--Service Workers](#top)
+[Angular Advanced学习笔记之--Service Workers](#top)
 
 - [Change Detection Strategy](#change-detection-strategy)
 - [setup PWA](#setup-pwa)
