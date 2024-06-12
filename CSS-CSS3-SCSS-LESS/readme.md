@@ -98,9 +98,12 @@
 - https://www.sitepoint.com/html-css/
 - https://www.w3cplus.com/
 
-## resources
+## CSS的灵感网站
 
-- [css inspiration- css开源库](https://chokcoco.github.io/CSS-Inspiration/#/) - 各种css特效+详细讲解
+- [You-need-to-know-css](https://lhammer.cn/You-need-to-know-css) - 各种css特效+详细讲解
+- [css_tricks](https://qishaoxuan.github.io/css_tricks/) - 各种css特效+详细讲解
+- [animist](https://animista.net/play/exits) - 各种css特效+详细讲解
+- [css inspiration- css开源库](https://chokcoco.github.io/CSS-Inspiration/) - 各种css特效+详细讲解
 - https://github.com/chokcoco/iCSS  - 各种css特效+详细讲解
 - [Soft-UI CSS code](https://neumorphism.io/#e0e0e0)
 - [codepen](https://codepen.io/pen/tour/welcome/start)  
