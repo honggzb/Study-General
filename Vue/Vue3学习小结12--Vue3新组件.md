@@ -57,6 +57,8 @@ let isShow = ref(false)
 ## Suspense异步组件
 
 - 等待异步组件时渲染一些额外内容，让应用有更好的用户体验
+- 在大型应用中，可能需要将应用分割成小一些的代码块 并且减少主包的体积, 这时候就可以使用异步组件
+- [Element plus Skeleton 骨架屏](https://element-plus.org/zh-CN/component/skeleton.html#%E5%8A%A0%E8%BD%BD%E7%8A%B6%E6%80%81)
 - 使用步骤:
   - 引入异步组件
   - 使用Suspense包裹组件，并配置好default与fallback
@@ -91,7 +93,6 @@ let isShow = ref(false)
     <h2>数字是{{ num }}</h2>
   </div>
 </template>
-
 <script setup lang="ts">
 import axios from 'axios';
 import { ref } from 'vue';
