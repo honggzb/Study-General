@@ -1,0 +1,21 @@
+{
+  "name": "v-resize-xm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/v-resize-xm.umd.js",
+  "module": "v-resize-xm.mjs/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "author": "honggzb",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.3.1",
+    "vue": "^3.4.29"
+  }
+}
