@@ -114,7 +114,7 @@ export default function() {
 
 ### 常用的第三方Hooks推荐
 
-- Vueuse：Vueuse是一个基于Vue3 Composition API的实用函数集合，包含了大量有用的自定义Hooks，如useMouse、useKeyboardJs、useLocalStorage等。它是Vue3生态中最受欢迎的第三方Hooks库之一。
+- [Vueuse](https://vueuse.org/)：Vueuse是一个基于Vue3 Composition API的实用函数集合，包含了大量有用的自定义Hooks，如useMouse、useKeyboardJs、useLocalStorage等。它是Vue3生态中最受欢迎的第三方Hooks库之一。
 - @vue/reactivity：这是Vue官方提供的响应式库，虽然它不是一个Hooks库，但其中的函数和工具可以与Composition API结合使用，帮助我们创建自定义的Hooks来处理响应式数据和副作用。例如，我们可以使用reactive、ref、computed等函数来创建响应式数据和计算属性
 
 ### vue3 hooks的网站以及文章
