@@ -1,5 +1,6 @@
 ```
 ├── 📂Vue/
+│   ├── 📂Vue3学习小结-codes-自定义Vue3工程库/
 │   ├── 📂Vue3学习小结-codes/
 │   ├── 📂samples/
 │   │     ├── 📄tab-switch.html        -tab切换例子（动态组件） 
@@ -16,6 +17,9 @@
 │   ├── 📄Vue3学习小结10--slot插槽.md
 │   ├── 📄Vue3学习小结11--其它响应式API.md
 │   ├── 📄Vue3学习小结12--Vue3新组件.md
+│   ├── 📄Vue3学习小结13--内置指令+内置组件.md
+│   ├── 📄Vue3学习小结14--自定义指令directive.md
+│   ├── 📄Vue3学习小结15-自定义Vue3工程库.md
 │   ├── 📄Vue3学习笔记-Vue3特性-2023.md
 │   ├── 📄Vue官网学习小结.md
 │   ├── 📄Vue官网学习小结之组件.md
