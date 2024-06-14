@@ -9,6 +9,7 @@
 ----------------------------------------------------------------
 - Scalable, reliable, cost optimal, performance
 - Requirements clarification
+- ![5WH分析法](./images/5WH分析法.png)
 
 |Users/Customers|Scale(read and write)|performance|cost|
 |---|---|---|---|
