@@ -1,4 +1,4 @@
-  -- [HTML5-各种Tag](#top)
+-- [HTML5-各种Tag](#top)
   
   - [Touch Keyboard Types Cheat Sheet](#sheet)
   - [Remove inner controls in input field: `<input type="number">`](#remove)
@@ -9,7 +9,7 @@
   - [5. ios不支持fixed属性解决](#ios不支持fixed属性解决)
   - [6. input输入手机号之间间隔  例如：xxx--xxxx--xxxx](#input输入手机号之间间隔)
   - [7. 邮件含文本、图片、链接](#邮件含文本)
-
+  - [取消输入英文时候默认字母大写](#取消输入英文时候默认字母大写)
 ------
 
 ## HTML5-各种Tag
@@ -94,7 +94,7 @@ input[type="number"]:focus {
 > - [E-Commerce Checkout Usability](https://baymard.com/checkout-usability)
 > - [M-Commerce Usability](https://baymard.com/mcommerce-usability)
 
-[back to top](#top)
+[⬆ back to top](#top)
 
 <h2 id="html5调用手机摄像头">1. html5调用手机摄像头</h2>
 
@@ -107,7 +107,7 @@ input[type="number"]:focus {
 - capture: 可以捕获到系统默认的设备，比如：camera--照相机；camcorder--摄像机；microphone--录音
 - accept: 直接打开系统文件目录
 
-[back to top](#top)
+[⬆ back to top](#top)
 
 <h3 id="input只能输入数字或小数点后几位">2. input只能输入数字或小数点后几位</h3>
 
@@ -219,7 +219,7 @@ $(function(){
 })
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
 <h3 id="文本框不许输入数字以外的字符">3. 文本框不许输入数字以外的字符</h3>
 
@@ -249,7 +249,7 @@ $('input[type=number]').keypress(function(event){
 })
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
 <h3 id="html5背景音乐不自动播放解密">4. html5背景音乐不自动播放解密(bug)</h3>
 
@@ -278,7 +278,7 @@ $('input[type=number]').keypress(function(event){
             }
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
 <h3 id="input输入手机号之间间隔">6. input输入手机号之间间隔  例如：xxx--xxxx--xxxx</h3>
 
@@ -358,7 +358,11 @@ sendBtn.addEventListener("click",function(e){
     })
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
+
+## 取消输入英文时候默认字母大写
+
+`<input autocapitalize='off' autocorrect='off />`
 
 > Reference
 
