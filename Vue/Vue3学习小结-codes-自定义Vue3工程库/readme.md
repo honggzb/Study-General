@@ -2,7 +2,7 @@
 
 - [Project setup](#project-setup)
 - [codes in project](#codes-in-project)
-- [Project package and publish](#project-package-and-publish)
+- [Project publish](#project-publish)
 - [use package](#use-package)
 
 ---------------------------
@@ -101,7 +101,7 @@ export default useResize
 
 [⬆ back to top](#top)
 
-## Project package and publish
+## Project publish
 
 1. `npm adduser`
 2. `npm login`
