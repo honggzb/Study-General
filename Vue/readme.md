@@ -30,6 +30,7 @@
 - bootstrap:
   - `npm install bootstrap`
   - add `import 'bootstrap/dist/css/bootstrap.css` to main.ts
+- `npm i less -d`  -->   `<style scoped lang="less">`
 
 ## Vue学习资源
 
