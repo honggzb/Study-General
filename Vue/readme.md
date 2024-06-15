@@ -31,21 +31,22 @@
 
 ## General
 
-- 使用vue-cli： `npm create vue@latest`
-- 使用Vite: `npm create vite@latest`
-- setup的语法糖:  把name和setup放在一个script中, `<script lang="ts" setup name="News">`
+- **create project**
+  - 使用vue-cli： `npm create vue@latest`
+  - 使用Vite: `npm create vite@latest`
+- **setup的语法糖**:  把name和setup放在一个script中, `<script lang="ts" setup name="News">`
   - `npm i vite-plugin-vue-setup-extend`  -->
   - add `"compilerOptions": {  "types": ["element-plus/global"]` to 'tsconfig.json' -->
   - add following in vite.config.ts
     1. `import VueSetupExtend from 'vite-plugin-vue-setup-extend'`
     2. `plugins: [ vue(), VueSetupExtend()]`
-- bootstrap:
+- **bootstrap**:
   - `npm install bootstrap`
   - add `import 'bootstrap/dist/css/bootstrap.css` to main.ts
-- `npm i less -d`  -->   `<style scoped lang="less">`
-- animate.css --> npm i animate -D --> import 'animate.css' in component
-- gsap --> npm i gsap -D --> import gsap from 'gsap' in component
-- TailwindCSS
+- **LESS**: `npm i less -d`  -->   `<style scoped lang="less">`
+- **animate.css** --> npm i animate -D --> import 'animate.css' in component
+- **gsap** --> npm i gsap -D --> import gsap from 'gsap' in component
+- **TailwindCSS**
   1. 安装 Tailwind 以及其它依赖项: `npm install -D tailwindcss@latest postcss@latest autoprefixer@latest`
   2. 生成配置文件: `npx tailwindcss init -p`
   3. 修改配置文件 'tailwind.config.js'   -->   `content: ["./src/**/*.{html,ts,js,vue}"],`
