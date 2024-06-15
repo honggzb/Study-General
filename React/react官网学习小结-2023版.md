@@ -1,6 +1,7 @@
 [React Basic](#top)
 
 - [create a react project](#create-a-react-project)
+- [Tailwind](#Tailwind)
 - [React core concepts](#react-core-concepts)
   - [Visual DOM vs DOM](#visual-dom-vs-dom)
   - [props and state](#props-and-state)
@@ -41,6 +42,18 @@ VSCode shotword
 |shotword|CLI|
 |---|---|
 |rafce   | component|
+
+[⬆ back to top](#top)
+
+## Tailwind
+
+1. 安装 Tailwind 以及其它依赖项: `npm install -D tailwindcss@latest postcss@latest autoprefixer@latest`
+2. 生成配置文件: `npx tailwindcss init -p`
+3. 修改配置文件 'tailwind.config.js'   -->   `content: ["./src/**/*.{html,tsx,jsx,js}"],`
+4. Add the Tailwind directives to your CSS: 
+   1. `@tailwind base;`
+   2. `@tailwind components;`
+   3. `@tailwind utilities;`
 
 [⬆ back to top](#top)
 
