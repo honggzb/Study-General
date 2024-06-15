@@ -50,9 +50,9 @@
   2. 生成配置文件: `npx tailwindcss init -p`
   3. 修改配置文件 'tailwind.config.js'   -->   `content: ["./src/**/*.{html,ts,js,vue}"],`
   4. Add the Tailwind directives to your CSS: 
-    1. `@tailwind base;`
-    2. `@tailwind components;`
-    3. `@tailwind utilities;`
+      1. `@tailwind base;`
+      2. `@tailwind components;`
+      3. `@tailwind utilities;`
 
 ## Vue学习资源
 
