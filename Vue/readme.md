@@ -45,6 +45,14 @@
 - `npm i less -d`  -->   `<style scoped lang="less">`
 - animate.css --> npm i animate -D --> import 'animate.css' in component
 - gsap --> npm i gsap -D --> import gsap from 'gsap' in component
+- TailwindCSS
+  1. 安装 Tailwind 以及其它依赖项: `npm install -D tailwindcss@latest postcss@latest autoprefixer@latest`
+  2. 生成配置文件: `npx tailwindcss init -p`
+  3. 修改配置文件 'tailwind.config.js'   -->   `content: ["./src/**/*.{html,ts,js,vue}"],`
+  4. Add the Tailwind directives to your CSS: 
+    1. `@tailwind base;`
+    2. `@tailwind components;`
+    3. `@tailwind utilities;`
 
 ## Vue学习资源
 
