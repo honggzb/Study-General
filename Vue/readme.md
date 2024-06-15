@@ -35,7 +35,10 @@
 - 使用Vite: `npm create vite@latest`
 - setup的语法糖:  把name和setup放在一个script中, `<script lang="ts" setup name="News">`
   - `npm i vite-plugin-vue-setup-extend`  -->
-  - add `"compilerOptions": {  "types": ["element-plus/global"]` to 'tsconfig.json'
+  - add `"compilerOptions": {  "types": ["element-plus/global"]` to 'tsconfig.json' -->
+  - add following in vite.config.ts
+    1. `import VueSetupExtend from 'vite-plugin-vue-setup-extend'`
+    2. `plugins: [ vue(), VueSetupExtend()]`
 - bootstrap:
   - `npm install bootstrap`
   - add `import 'bootstrap/dist/css/bootstrap.css` to main.ts
