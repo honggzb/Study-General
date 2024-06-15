@@ -138,5 +138,6 @@
 [⬆ back to top](#top)
 
 > References
+- [单文件组件 CSS 功能-official](https://cn.vuejs.org/api/sfc-css-features.html#scoped-css)
 - [小满zs-csdn博客](https://blog.csdn.net/qq1195566313/category_11618172.html)
 - [学习Vue3 第三十三章（css Style完整新特性））](https://xiaoman.blog.csdn.net/article/details/124754590)
