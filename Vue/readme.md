@@ -33,7 +33,9 @@
 
 - 使用vue-cli： `npm create vue@latest`
 - 使用Vite: `npm create vite@latest`
-- setup的语法糖:  把name和setup放在一个script中, `<script lang="ts" setup name="News">`   --> `npm i vite-plugin-vue-setup-extend`
+- setup的语法糖:  把name和setup放在一个script中, `<script lang="ts" setup name="News">`
+  - `npm i vite-plugin-vue-setup-extend`  -->
+  - add `"compilerOptions": {  "types": ["element-plus/global"]` to 'tsconfig.json'
 - bootstrap:
   - `npm install bootstrap`
   - add `import 'bootstrap/dist/css/bootstrap.css` to main.ts
