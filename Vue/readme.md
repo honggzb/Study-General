@@ -35,6 +35,8 @@
   - `npm install bootstrap`
   - add `import 'bootstrap/dist/css/bootstrap.css` to main.ts
 - `npm i less -d`  -->   `<style scoped lang="less">`
+- animate.css --> npm i animate -D --> import 'animate.css' in component
+- gsap --> npm i gsap -D --> import gsap from 'gsap' in component
 
 ## Vue学习资源
 
