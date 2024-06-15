@@ -16,7 +16,7 @@
     1. 宏任务:  `script`(整体代码)、`setTimeout`、`setInterval`、`UI交互事件`、`postMessage`、`Ajax`
     2. 微任务: `Promise.then catch finally`、`MutaionObserver`、`process.nextTick`(Node.js 环境)
 - 异步运行机制：所有的同步任务都是在主进程执行的形成一个执行栈，主线程之外，还存在一个"任务队列"，异步任务执行队列中**先执行宏任务**，然后清空当次宏任务中的所有微任务，然后进行下一个tick如此形成循环
-  - ![异步运行机制](异步运行机制.png)
+  - ![异步运行机制](./images/异步运行机制.png)
 
 ```js
 async function Prom() {    // 异步function  宏任务1
