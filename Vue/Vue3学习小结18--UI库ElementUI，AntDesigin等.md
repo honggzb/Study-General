@@ -1,6 +1,8 @@
 [Vue3学习小结18--UI库ElementUI，AntDesigin](#top)
 
 -------------------------------------
+- `animate.css`  --> `npm i animate -D`  -->  `import 'animate.css'` in component
+- `gsap`  --> `npm i gsap -D`  -->  `import gsap from 'gsap'` in component
 
 ## UI库ElementUI
 
