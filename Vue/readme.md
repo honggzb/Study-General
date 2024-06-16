@@ -68,6 +68,7 @@
 - https://github.com/learncodeacademy/react-js-tutorials
 - [Vue基础知识汇总(含webpack打包工具的使用)](https://juejin.im/post/5db25275f265da4d3c071cfa?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
 - [vue3最新学习资料集合，不断更新](https://learnku.com/articles/48928)
+- [web前端面试 - 面试官系列](https://vue3js.cn/interview/vue/vue.html#%E4%B8%80%E3%80%81%E4%BB%8E%E5%8E%86%E5%8F%B2%E8%AF%B4%E8%B5%B7)
 
 ## Bilibili学习资源
 
