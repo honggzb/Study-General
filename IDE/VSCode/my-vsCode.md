@@ -1,3 +1,4 @@
+- [自定义代码片段](自定义代码片段)
 - [Plugin](#plugin)
 - [功能性](#功能性)
 - [代码片段插件](#代码片段插件)
@@ -6,6 +7,33 @@
 - [自定义设置参考](#自定义设置参考)
   - [Auto Close Tag设置- settings.json](#auto-close-tag设置--settingsjson)
 - [Theme](#theme)
+
+## 自定义代码片段
+
+- 左下角 “齿轮”图标  --> 选择“User Snippets”   -->  在顶部输入框， 输入vue， 打开vue.json
+
+```
+{
+  "Print to console": {
+		"prefix": "vue3",
+		"body": [
+			"<template>",
+			"  <div></div>",
+			"</template>",
+			"",
+			"<script lang='ts' setup name='A'>",
+			"import { reactive, ref } from 'vue'",
+			"",	
+			"</script>",
+			"",	
+			"<style scoped>",
+			"",
+			"</style>",
+		],
+		"description": "Log output to console"
+	}
+}
+```
 
 ## Plugin
 

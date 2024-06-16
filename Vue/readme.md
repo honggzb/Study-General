@@ -20,6 +20,9 @@
 │   ├── 📄Vue3学习小结13--内置指令+内置组件.md
 │   ├── 📄Vue3学习小结14--自定义指令directive.md
 │   ├── 📄Vue3学习小结15-自定义Vue3工程库.md
+│   ├── 📄Vue3学习小结16--Vue3定义全局函数和变量.md
+│   ├── 📄Vue3学习小结17--编写Vue3自定义插件.md
+│   ├── 📄Vue3学习小结18--UI库ElementUI，AntDesigin等.md
 │   ├── 📄Vue3学习笔记-Vue3特性-2023.md
 │   ├── 📄Vue官网学习小结.md
 │   ├── 📄Vue官网学习小结之组件.md
@@ -28,13 +31,29 @@
 
 ## General
 
-- 使用vue-cli： `npm create vue@latest`
-- 使用Vite: `npm create vite@latest`
-- setup的语法糖:  把name和setup放在一个script中, `<script lang="ts" setup name="News">`   --> `npm i vite-plugin-vue-setup-extend`
-- bootstrap:
+- **create project**
+  - 使用vue-cli： `npm create vue@latest`
+  - 使用Vite: `npm create vite@latest`
+- **setup的语法糖**:  把name和setup放在一个script中, `<script lang="ts" setup name="News">`
+  - `npm i vite-plugin-vue-setup-extend`  -->
+  - add `"compilerOptions": {  "types": ["element-plus/global"]` to 'tsconfig.json' -->
+  - add following in vite.config.ts
+    1. `import VueSetupExtend from 'vite-plugin-vue-setup-extend'`
+    2. `plugins: [ vue(), VueSetupExtend()]`
+- **bootstrap**:
   - `npm install bootstrap`
   - add `import 'bootstrap/dist/css/bootstrap.css` to main.ts
-- `npm i less -d`  -->   `<style scoped lang="less">`
+- **LESS**: `npm i less -d`  -->   `<style scoped lang="less">`
+- **animate.css** --> npm i animate -D --> import 'animate.css' in component
+- **gsap** --> npm i gsap -D --> import gsap from 'gsap' in component
+- **TailwindCSS**
+  1. 安装 Tailwind 以及其它依赖项: `npm install -D tailwindcss@latest postcss@latest autoprefixer@latest`
+  2. 生成配置文件: `npx tailwindcss init -p`
+  3. 修改配置文件 'tailwind.config.js'   -->   `content: ["./src/**/*.{html,ts,js,vue}"],`
+  4. Add the Tailwind directives to your CSS: 
+      1. `@tailwind base;`
+      2. `@tailwind components;`
+      3. `@tailwind utilities;`
 
 ## Vue学习资源
 
@@ -49,6 +68,7 @@
 - https://github.com/learncodeacademy/react-js-tutorials
 - [Vue基础知识汇总(含webpack打包工具的使用)](https://juejin.im/post/5db25275f265da4d3c071cfa?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
 - [vue3最新学习资料集合，不断更新](https://learnku.com/articles/48928)
+- [web前端面试 - 面试官系列](https://vue3js.cn/interview/vue/vue.html#%E4%B8%80%E3%80%81%E4%BB%8E%E5%8E%86%E5%8F%B2%E8%AF%B4%E8%B5%B7)
 
 ## Bilibili学习资源
 
