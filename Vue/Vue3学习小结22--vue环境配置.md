@@ -12,7 +12,7 @@
 ## 配置步骤
 
 1. 在项目根目录下(与package.json同级)新建三个".env"文件
-   - ![alt text](image.png)
+   - ![vue环境配置](./images/vue环境配置.png)
 2. 配置package.json文件
 
 ```
