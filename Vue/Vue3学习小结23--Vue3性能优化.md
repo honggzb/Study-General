@@ -1,15 +1,15 @@
 [Vue3学习小结23--Vue3性能优化](#top)
 
 - [Web性能优化](#web性能优化)
-- [LightHouse参数](#lighthouse参数)
-- [打包代码分析](#打包代码分析)
+- [性能数据分析工具](#性能数据分析工具)
+- [vue3+vite项目打包优化](#vue3vite项目打包优化)
 - [Vite配置优化](#vite配置优化)
 - [PWA离线存储技术](#pwa离线存储技术)
 - [其他性能优化](#其他性能优化)
   - [图片懒加载](#图片懒加载)
   - [虚拟列表](#虚拟列表)
   - [多线程- Web Worker](#多线程--web-worker)
-- [防抖节流](#防抖节流)
+  - [防抖节流](#防抖节流)
 
 -------------------------------------
 
@@ -23,7 +23,11 @@ Web 性能优化主要有两个方面：
 2. 更新性能
    - 应用响应用户输入更新的速度。比如当用户在搜索框中输入时结果列表的更新速度，或者用户在一个单页面应用 (SPA) 中点击链接跳转页面时的切换速度
 
-## LightHouse参数
+## 性能数据分析工具
+
+- WebPageTest
+- rollup-plugin-visualizer
+- Chrome DevTools LightHouse参数
 
 |||
 |---|---|
@@ -36,7 +40,7 @@ Web 性能优化主要有两个方面：
 
 [⬆ back to top](#top)
 
-## 打包代码分析
+## vue3+vite项目打包优化
 
 - vite打包是基于rollup 的,可以使用 rollup 的插件
 - `npm install rollup-plugin-visualizer`
@@ -44,6 +48,29 @@ Web 性能优化主要有两个方面：
   - `plugins: [vue(), vueJsx(), visualizer({open: true})]`
 - `npm run build`
 - 成功后会生成'stats.html'
+
+```ts
+import { visualizer } from 'rollup-plugin-visualizer';
+export default defineConfig({
+  plugins: [vue(), visualizer({
+    emitFile: false,
+    file: "stats.html",   //optional, 分析图生成的文件名
+    open:true             //如果存在本地服务端口，将在打包后自动展示
+  })],
+})
+```
+
+|参数|类型|解释|
+|---|---|---|
+|filename/file |string | 生成分析的文件名|
+|title | string | html标签页标题|
+|open | boolean | 以默认服务器代理打开文件|
+|template | string | 可选择的图表类型|
+|template | string | 可选择的图表类型|
+|BrotliSize | boolean | 搜集brotli压缩包的大小到图表|
+|emitFile | boolean | 使用emitFile生成文件，简单说，这个属性为true,<br>打包后的分析文件会出现在打包好的文件包下，<br>否则就会在项目目录下|
+|sourcemap | boolean |使用sourcemap计算大小|
+|projectRoot | string， RegExp|文件的根目录，默认在打包好的目录下|
 
 [⬆ back to top](#top)
 
@@ -129,13 +156,32 @@ self.onmessage = function (e) {
 worker.terminate();    
 ```
 
-## 防抖节流
+### 防抖节流
 
 - VueUse 库已经集成了[useDebounceFn](https://vueuse.org/shared/useDebounceFn/#usedebouncefn)
+
+
+|||
+|---|---|
+|使用静态属性|可以使用**h函数**来创建静态的节点，这些节点在更新时不会重新渲染，从而提高性能|
+|避免不必要的响应式数据| |
+|路由懒加载|页面的组件在需要时再进行加载|
+|懒加载组件|可以使用`defineAsyncComponent`来实现组件的懒加载，当组件需要时再进行加载，提高页面加载速度|
+|使用Memoize|可以使用watchEffect和computed进行依赖数据的监听，<br>但是有些计算量较大的操作可以使用Memoize缓存计算结果，避免重复计算，提高性能|
+|预加载||
+|第三方库CDN引入|cdn管理插件 -> vite-plugin-cdn-import|
+|设置合适的缓存策略|`keep-alive`、本地存储（如localStorage、sessionStorage）以及cookie|
+|gzip压缩文件|`vite-plugin-compression`<br>gzip不只是需要在打包的时候生成，也需要在web服务里开启功能|
+
 
 [⬆ back to top](#top)
 
 > References
 - [小满zs-csdn博客](https://blog.csdn.net/qq1195566313/category_11618172.html)
 - [小满Vue3第四十四章（Vue3 性能优化）](https://xiaoman.blog.csdn.net/article/details/126811832)
+- [性能优化-official](https://cn.vuejs.org/guide/best-practices/performance)
 - [【 Vue3 性能优化】页面加载性能 与 更新性能](https://developer.aliyun.com/article/1262596#slide-0)
+- [Vue3中如何进行性能优化？](https://blog.csdn.net/yuanlong12178/article/details/138022322)
+- [vite + vue3 关于项目性能优化](https://juejin.cn/post/7306329426282348582)
+- [关于vite4+vue3+ts项目搭建到后面项目打包优化和性能优化的过程](https://juejin.cn/post/7234763686476021819)
+- [vue3 + vite项目打包优化](https://juejin.cn/post/7293887184921264154)
