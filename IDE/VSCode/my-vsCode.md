@@ -74,6 +74,14 @@ indent-rainbow               | 缩进层次以不同颜色高亮显示
 Power Mode                   | 键盘输入时候的宫廷效果
 ```
 
+```js
+//settings.json -- Power Mode  
+"powermode.enabled": true,
+"powermode.presets": "flames",
+"powermode.combo.timeout": 5,
+"powermode.shake.enabled": false,
+```
+
 ## 功能性
 
 - HTML CSS Support : 这个也是必备插件之一
