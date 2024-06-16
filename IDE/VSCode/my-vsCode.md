@@ -1,5 +1,8 @@
+[My VSCode settings](#top)
+
 - [自定义代码片段](自定义代码片段)
 - [Plugin](#plugin)
+- [useful Tool plugin](#useful-tool-plugin)
 - [功能性](#功能性)
 - [代码片段插件](#代码片段插件)
   - [语法校验](#语法校验)
@@ -34,6 +37,8 @@
 	}
 }
 ```
+
+[⬆ back to top](#top)
 
 ## Plugin
 
@@ -72,6 +77,7 @@ Docs View                    | displays hover documentation in the sidebar or pa
 Prettier(optional)           | 代码格式化工具
 indent-rainbow               | 缩进层次以不同颜色高亮显示
 Power Mode                   | 键盘输入时候的宫廷效果
+*json2ts                      | converts a JSON to TypeScript interfaces
 ```
 
 ```js
@@ -81,6 +87,16 @@ Power Mode                   | 键盘输入时候的宫廷效果
 "powermode.combo.timeout": 5,
 "powermode.shake.enabled": false,
 ```
+
+[⬆ back to top](#top)
+
+## useful Tool plugin
+
+- json2ts: converts a JSON to TypeScript interfaces
+  - create a json file
+  - press ctrl+Alt+V at end of json file
+
+[⬆ back to top](#top)
 
 ## 功能性
 
@@ -103,6 +119,8 @@ Power Mode                   | 键盘输入时候的宫廷效果
 
 - View → Open View... → Outline
 - 命令行： `Explorer: Focus on Outline view`
+
+[⬆ back to top](#top)
 
 ## 自定义设置参考
 
