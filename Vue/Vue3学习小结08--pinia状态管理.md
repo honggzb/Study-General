@@ -40,11 +40,12 @@ app.mount('#app')
 import { defineStore } from "pinia";
 //定义并暴露一个store --- useCountStore
 export const useCountStore = defineStore('count', {
-  actions: {},
-  state(){
-    return { sum: 6 }
+  state() {
+    return { sum: 6, nickName: 'zhangsan' }
   },
-  getters: {}
+  getters: {
+  },
+  actions: {},
 })
 // 组件中使用state中的数据   src/components/Count.vue
 <template>
