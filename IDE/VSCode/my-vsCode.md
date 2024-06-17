@@ -60,6 +60,7 @@
 *npm intellisense            |   
 *open in browser             |
 *Path Autocomplete           | 路径智能补全
+Code Runner                  | 在vscode上直接运行TypeScript文件
  bracket pair colorizer      |
  auto import                 |
  Color Picker                |
