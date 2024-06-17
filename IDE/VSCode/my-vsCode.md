@@ -1,5 +1,6 @@
 [My VSCode settings](#top)
 
+- [在vscode上直接运行TypeScript文件](#在vscode上直接运行typescript文件)
 - [自定义代码片段](自定义代码片段)
 - [Plugin](#plugin)
 - [useful Tool plugin](#useful-tool-plugin)
@@ -10,6 +11,12 @@
 - [自定义设置参考](#自定义设置参考)
   - [Auto Close Tag设置- settings.json](#auto-close-tag设置--settingsjson)
 - [Theme](#theme)
+
+--------------------------------------------------------------------
+## 在vscode上直接运行TypeScript文件
+
+1. install `Code Runner` extension
+2. 点击右上角的'运行(三角箭头)'按钮直接运行TypeScript文件
 
 ## 自定义代码片段
 
