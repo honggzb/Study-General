@@ -7,6 +7,7 @@
 - [getters](#getters)
 - [$subscribe](#subscribe)
 - [store组合式写法](#store组合式写法)
+- [Pinia持久化存储](#Pinia持久化存储)
 
 -------------------------------------
 
@@ -157,6 +158,47 @@ export const useTalkStore = defineStore('talk', () => { // 1）写成函数形�
   }
   // 4）最后需要return出去
   return { talkList, getATalk }
+})
+```
+
+[⬆ back to top](#top)
+
+## Pinia持久化存储
+
+1. `npm i pinia-plugin-persist`
+2. modify 'main.ts'
+3. add following codes in state files
+4. [pinia-plugin-persist](https://seb-l.github.io/pinia-plugin-persist/)
+
+```ts
+//main.ts
+/* 引入createPinia，用于创建pinia */
+import { createPinia } from 'pinia'
+import piniaPersist from 'pinia-plugin-persist'
+import App from './App.vue'
+/* 创建pinia */
+const pinia = createPinia()
+pinia.use(piniaPersist)
+const app = createApp(App)  // 创建一个应用
+app.use(pinia)     /* 使用插件 */
+app.mount('#app')
+
+// store/count.ts
+import { defineStore } from "pinia";
+export const useCountStore = defineStore('count', {
+  actions: {},
+  state(){
+    return { sum: 6, school: 'atug', address: 'honghu' }
+  },
+  getters: {},
+  persist: {
+    enabled: true,
+    strategies: [
+      //{ storage: sessionStorage, paths: ['firstName', 'lastName'] },
+      { storage: localStorage, key: 'user' },    // the whole state will be stored in the localStorage under the key user
+      { storage: localStorage, paths: ['school'] },  // only pessit school in localstorage
+    ],
+  }
 })
 ```
 
