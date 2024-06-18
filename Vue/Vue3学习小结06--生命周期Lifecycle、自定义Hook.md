@@ -18,7 +18,7 @@
 |创建阶段|beforeCreate、created|setup|
 |挂载阶段|beforeMount、mounted|onBeforeMount、onMounted|
 |更新阶段|beforeUpdate、updated|onBeforeUpdate、onUpdated|
-|销毁阶段|beforeDestroy、destroyed|onBeforeUnmount、onMounted|
+|销毁阶段|beforeDestroy、destroyed|onBeforeUnmount、onUnMounted|
 
 ![Lifecycle](./images/Lifecycle.png)
 
