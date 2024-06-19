@@ -1,3 +1,12 @@
+```js
+// sort for Object Array
+xxx.sort((a, b) => b.balance - a.balance)
+// filter for Object Array
+xxx = xxx.filter((a) => a.type === type)
+// delete for Object Array
+xxx = xxx.filter((a) => a.type !== type)
+```
+
 ```
 ├── 📂Javascript+JQuery+Typescript
 │     ├── 📂Javascript                         --javascript学习过程中的小tip
