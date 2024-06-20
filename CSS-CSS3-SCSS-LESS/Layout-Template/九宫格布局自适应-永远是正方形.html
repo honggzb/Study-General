@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>九宫格</title>
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+        <style type="text/css">
+           *{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                text-decoration: none;
+                list-style-type: none;
+            }
+            .list-c>li{
+                float: left;
+                width: 32%;
+                text-align: center;
+                border: 1px solid #ccc;
+                padding-top: 31%;
+                margin-left: 1%;
+                margin-top: 1%;
+                position: relative;
+            }
+            .list-c>li>div{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #09BE07;
+            }
+            .list-c>li>div>span{
+                display: inline-block;
+                margin-top: 50%;
+                transform: translateY(-50%);
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="list-c">
+            <li><div><span>1</span></div></li>                    
+            <li><div><span>2</span></div></li>                    
+            <li><div><span>3</span></div></li>                    
+            <li><div><span>4</span></div></li>                    
+            <li><div><span>5</span></div></li>                    
+            <li><div><span>6</span></div></li>                    
+            <li><div><span>7</span></div></li>                    
+            <li><div><span>8</span></div></li>                    
+            <li><div><span>9</span></div></li>                    
+        </ul>    
+    </body>
+</html>
