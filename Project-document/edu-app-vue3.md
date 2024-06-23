@@ -379,7 +379,7 @@ app.listen(app.get('port'), function() {
 ## 支付(支付宝+微信)
 
 - 短轮询查订单状态
-- ![支付api](支付api.png)
+- ![支付api](./images/支付api.png)
 
 ```ts
 // src\views\ConfirmOrder.vue
