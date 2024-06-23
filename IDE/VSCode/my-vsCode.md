@@ -1,7 +1,7 @@
 [My VSCode settings](#top)
 
 - [在vscode上直接运行TypeScript文件](#在vscode上直接运行typescript文件)
-- [自定义代码片段](自定义代码片段)
+- [自定义代码片段snippets](自定义代码片段snippets)
 - [Plugin](#plugin)
 - [useful Tool plugin](#useful-tool-plugin)
 - [功能性](#功能性)
@@ -18,8 +18,9 @@
 1. install `Code Runner` extension
 2. 点击右上角的'运行(三角箭头)'按钮直接运行TypeScript文件
 
-## 自定义代码片段
+## 自定义代码片段snippets
 
+- snippets appear in IntelliSense ->  **Ctrl+Space**
 - 左下角 “齿轮”图标  --> 选择“User Snippets”   -->  在顶部输入框， 输入vue， 打开vue.json
 
 ```
