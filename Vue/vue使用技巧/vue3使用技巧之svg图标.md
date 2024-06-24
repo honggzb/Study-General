@@ -1,3 +1,5 @@
+## Method 1
+
 1. create a vue file which contain svg source code, such as 'IconXxx.vue'
 2. using in other vue file
 
@@ -18,3 +20,7 @@ import IconXxx from './icons/IconXxx.vue'
   </div>
 <template>   
 ```
+
+## Method 2
+
+- `<img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />`
