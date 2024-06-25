@@ -5,7 +5,7 @@
 - [Vite and Module Federation](#vite-and-module-federation)
   - [host Project](#host-project)
   - [remote Project](#remote-project)
-
+- [Intergate with Webpack](#intergate-with-webpack)
 ------------------------------------------------------
 
 ## 概述
@@ -29,6 +29,8 @@
 - 需要2个以上的工程:
   - 一个作为Host端，
   - 一个作为Remote端
+
+[⬆ back to top](#top)
 
 ### host Project
 
@@ -87,6 +89,8 @@ function App() {
 }
 export default App
 ```
+
+[⬆ back to top](#top)
 
 ### remote Project
 
@@ -173,6 +177,57 @@ function App() {
   )
 }
 ```
+
+[⬆ back to top](#top)
+
+## intergate with Webpack
+
+- 'wp-host' folder
+1. modify 'webpack.config.js'
+2. create new file in root --> 'index.ejs'
+
+```ts
+//webpack.config.js
+plugins: [
+    new ModuleFederationPlugin({
+      name: "wp_host",
+      library: { type: "module" },
+      filename: "remoteEntry.js",
+      remotes: {
+        remote: "http://localhost:5001/assets/remoteEntry.js",
+      },
+      exposes: {},
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: deps["react-dom"],
+        },
+      },
+    }),
+    new HtmlWebPackPlugin({
+      template: "./index.ejs",     // new ejs file 
+      inject: false,
+    }),
+  ],
+//index.ejs
+<html>
+<head>
+    <% for (key in htmlWebpackPlugin.files.js) { %>
+    <script type="module" src="<%= htmlWebpackPlugin.files.js[key] %>"></script>
+    <% } %>
+</head>
+<body>
+<div id="app"></div>
+</body>
+</html>
+```
+
+[⬆ back to top](#top)
 
 > References
 
