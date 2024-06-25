@@ -1,0 +1,4 @@
+- Github copilot
+- Amazon Q  -> free
+- Tabnine   -> free
+- codeGeex  -> free
