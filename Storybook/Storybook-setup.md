@@ -14,11 +14,18 @@
 
 - create React by vite: `npm create vite@latest`
 - add storybook - method 1:
-  - In a project without Storybook: `npx storybook@latest init`
-  - In a project with Storybook: `npx storybook@latest upgrade`
+  - In a project **without** Storybook: `npx storybook@latest init`
+    - `npx storybook@latest sandbox` if
+  - In a project **with** Storybook: `npx storybook@latest upgrade`
   - https://storybook.js.org/docs/get-started/react-vite
 - add storybook - method 2: `npx sb init --builder @storybook/builder-vite`
   - https://storybook.js.org/blog/storybook-for-vite/
+- useful document
+  - https://storybook.js.org/docs/writing-stories#default-export
+  - https://storybook.js.org/docs/writing-docs/autodocs
+  - https://storybook.js.org/docs/api/argtypes
+  - https://storybook.js.org/docs/essentials/actions#action-args
+  - https://storybook.js.org/docs/writing-stories/args
 
 [⬆ back to top](#top)
 
