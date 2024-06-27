@@ -7,7 +7,7 @@
 
 -------------------------------------------------------
 
-![流程模型](流程模型.png)
+![流程模型](./images/流程模型.png)
 
 ## Setup
 
@@ -123,7 +123,7 @@ contextBridge.exposeInMainWorld("myAPI", {
 
 - `npm i electron-builder -D`
 - modify 'package.json'
-- ![build](build.png)
+- ![build](./images/build.png)
 - `npm run build`
 - ![打包后](打包后.png)
 - [electron builder打包时，出现errorOut=ERROR: Cannot create symbolic link-CSDN博客](https://blog.csdn.net/vifaceeeeee/article/details/134693524)
