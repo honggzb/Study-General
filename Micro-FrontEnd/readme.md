@@ -232,14 +232,14 @@ plugins: [
 [⬆ back to top](#top)
 
 > References
-
 - [webpack-Module Federation](https://webpack.js.org/concepts/module-federation/)
 - [vite-plugin-federation](https://github.com/originjs/vite-plugin-federation)
 - [Vite guide-official](https://vitejs.dev/guide/)
+- [React Micro Frontend Application With Module Federation: A Step-By-Step Guide](https://medium.com/@r.sipchenko/react-micro-frontend-application-with-module-federation-a-step-by-step-guide-6b432343d20)
+> YouTube and Bilibili
 - [Vite and Module Federation Makes Micro-Frontends EASY!](https://www.youtube.com/watch?v=t-nchkL9yIg)
   - https://github.com/jherr/vite-mod-fed
 - [Mastering Micro-Frontends With RSpack and Module Federation](https://www.youtube.com/watch?v=32_EikGKESk)
-- [Angular Module Federation Micro-FE Speed Run](https://www.bilibili.com/video/BV1ag41177Ky/)
 - [Angular Microfrontends with NX and Module Federation](https://www.youtube.com/watch?v=xL4hhZ6wKV8&t=626s)
 - [Micro frontend introduction using Module Federation of Webpack 5 and Angular framework | Amar](https://www.youtube.com/watch?v=1FWAGSVsmrI&list=PL1UWPWOy5UlfLWfSstHBW-iVu6RWJtrG-)
-- [React Micro Frontend Application With Module Federation: A Step-By-Step Guide](https://medium.com/@r.sipchenko/react-micro-frontend-application-with-module-federation-a-step-by-step-guide-6b432343d20)
+- [Angular Module Federation Micro-FE Speed Run](https://www.bilibili.com/video/BV1ag41177Ky/)
