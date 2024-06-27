@@ -76,7 +76,7 @@ app.on('window-all-closed', () => {
 
 ## preload预加载
 
-- ![预加载](预加载.png)
+- ![预加载](./images/预加载.png)
 - 功能：将主进程的数据传递到渲染进程，引入了渲染进程
   - 预加载是在渲染进程运行，但可以读取部分主进程Node api
 - 执行过程： 主进程  -->  预加载进程  -->  渲染进程
@@ -125,7 +125,7 @@ contextBridge.exposeInMainWorld("myAPI", {
 - modify 'package.json'
 - ![build](./images/build.png)
 - `npm run build`
-- ![打包后](打包后.png)
+- ![打包后](./images/打包后.png)
 - [electron builder打包时，出现errorOut=ERROR: Cannot create symbolic link-CSDN博客](https://blog.csdn.net/vifaceeeeee/article/details/134693524)
 - [electron-vite](https://cn.electron-vite.org/)
 
