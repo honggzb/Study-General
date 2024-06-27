@@ -3,16 +3,17 @@
 - [简述](#简述)
 - [路由器工作模式](#路由器工作模式)
 - [命名路由](#命名路由)
-- [编程式导航](#编程式导航)
 - [嵌套路由](#嵌套路由)
 - [路由传参](#路由传参)
   - [路由\_query参数](#路由_query参数)
   - [路由\_params参数](#路由_params参数)
   - [路由的props配置](#路由的props配置)
-- [replace属性](#replace属性)
+- [历史记录](#历史记录)
+  - [replace属性](#replace属性)
+  - [横跨历史](#横跨历史)
 - [重定向redirect](#重定向redirect)
 - [编程式导航](#编程式导航)
-
+- [命名视图](#命名视图)
 -------------------------------------
 
 ## 简述
@@ -124,23 +125,6 @@ const routes:Array<RouteRecordRaw> = [
 - router-link跳转方式需要改变 变为对象并且有对应name:
   - `<router-link :to="{name:'Login'}">Login</router-link>`
   - `<router-link style="margin-left:10px" :to="{name:'Reg'}">Reg</router-link>`
-
-[⬆ back to top](#top)
-
-## 编程式导航
-
-可以借助 router 的实例方法，通过编写代码来实现导航
-
-```js
-// 1) 字符串模式
-const router = useRouter()
-const toPage = () => { router.push('/reg') }
-// 2) 对象模式
-const router = useRouter()
-const toPage = () => {
-  router.push({ path: '/reg'})
-}
-```
 
 [⬆ back to top](#top)
 
@@ -296,10 +280,39 @@ const { params } = toRefs(route)
 
 [⬆ back to top](#top)
 
-## replace属性
+## 历史记录
+
+### replace属性
 
 - 作用：控制路由跳转时操作浏览器历史记录的模式
+- 采用replace进行页面的跳转会同样也会创建渲染新的Vue组件，但是在history中其不会重复保存记录，而是替换原有的vue组件
 - 开启replace模式: `<RouterLink replace ... >News</RouterLink>`
+
+```js
+// 1)router-link 使用方法
+<router-link replace style="margin-left:10px" to="/reg">Reg</router-link>
+// 2)编程式导航
+<button @click="toPage('/')">Login</button>
+<button @click="toPage('/reg')">Reg</button>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const toPage = (url: string) => {
+  router.replace(url)
+}
+```
+
+### 横跨历史
+
+```js
+<button @click="next">前进</button>
+<button @click="prev">后退</button>
+const next = () => {
+  router.go(1)    //前进 数量不限于1
+}
+const prev = () => {
+  router.back()   //后退
+}
+```
 
 ## 重定向redirect
 
@@ -311,6 +324,19 @@ const { params } = toRefs(route)
 ```
 
 ## 编程式导航
+
+- 可以借助 router 的实例方法，通过编写代码来实现导航
+
+```js
+// 1) 字符串模式
+const router = useRouter()
+const toPage = () => { router.push('/reg') }
+// 2) 对象模式
+const router = useRouter()
+const toPage = () => {
+  router.push({ path: '/reg'})
+}
+```
 
 - useRoute: `route.query`, `route.params`
 - useRouter: `router.push`, `router.replace`
@@ -339,6 +365,34 @@ onMounted(() => {
 
 [⬆ back to top](#top)
 
+## 命名视图
+
+命名视图可以在同一级（同一个组件）中展示更多的路由视图，而不是嵌套显示。 命名视图可以让一个组件中具有多个路由渲染出口，这对于一些特定的布局组件非常有用。 命名视图的概念非常类似于“具名插槽”，并且视图的默认名称也是 default。
+
+```js
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+const routes: Array<RouteRecordRaw> = [
+    {
+        path: "/",
+        components: {      // note: components, not component
+            default: () => import('../components/layout/menu.vue'),
+            header: () => import('../components/layout/header.vue'),
+            content: () => import('../components/layout/content.vue'),
+        }
+    },
+]
+const router = createRouter({
+    history: createWebHistory(),
+    routes
+})
+export default router
+//
+<div>
+        <router-view></router-view>
+        <router-view name="header"></router-view>
+        <router-view name="content"></router-view>
+</div>
+```
 
 [⬆ back to top](#top)
 
