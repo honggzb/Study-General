@@ -4,6 +4,7 @@
 - [自动重启](#自动重启)
 - [preload预加载](#preload预加载)
 - [打包工具](#打包工具)
+- [electron-vite-react](#electron-vite-react)
 
 -------------------------------------------------------
 
@@ -138,3 +139,38 @@ contextBridge.exposeInMainWorld("myAPI", {
   - [github](https://github.com/sui5yue6/my-electron-app)
 - [Electron-cn-official](https://www.electronjs.org/zh/)
 - [[electron] vscode添加electron代码补全](https://blog.csdn.net/qq_47500842/article/details/136277345)
+
+[⬆ back to top](#top)
+
+## electron-vite-react
+
+- by using [electron-vite](https://electron-vite.org/)
+- `npm create @quick-start/electron@latest`
+- [electron-vite-boilerplate](https://github.com/alex8088/electron-vite-boilerplate)
+```js
+// electron.vite.config.js
+export default {
+  main: {
+    // vite config options
+  },
+  preload: {
+    // vite config options
+  },
+  renderer: {
+    // vite config options
+  }
+}
+```
+
+- Electron entry point: 'src\main\index.ts'
+- [Config Reference](https://electron-vite.org/config/)
+
+```bash
+# For windows
+$ npm run build:win
+# For macOS
+$ npm run build:mac
+# For Linux
+$ npm run build:linux
+```
+[⬆ back to top](#top)
