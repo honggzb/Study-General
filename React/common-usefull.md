@@ -289,7 +289,8 @@ import { persistor, store } from './store/store';
     autoprefixer: {},
   },
 //tailwind.config.js
-content: ["./src/**/*.{html,tsx}"],
+prefix: "ui-",
+content: ["./src/**/*.{html,tsx,ts}"],
 //index.css
 @tailwind base;
 @tailwind components;
