@@ -242,4 +242,5 @@ plugins: [
 - [Mastering Micro-Frontends With RSpack and Module Federation](https://www.youtube.com/watch?v=32_EikGKESk)
 - [Angular Microfrontends with NX and Module Federation](https://www.youtube.com/watch?v=xL4hhZ6wKV8&t=626s)
 - [Micro frontend introduction using Module Federation of Webpack 5 and Angular framework | Amar](https://www.youtube.com/watch?v=1FWAGSVsmrI&list=PL1UWPWOy5UlfLWfSstHBW-iVu6RWJtrG-)
+- [Angular, Micro Frontends (Module Federation), and NX Monorepos - Shared Data, Libraries, and Builds](https://www.youtube.com/watch?v=edTA7amdvzI)
 - [Angular Module Federation Micro-FE Speed Run](https://www.bilibili.com/video/BV1ag41177Ky/)
