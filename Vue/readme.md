@@ -104,4 +104,5 @@
 
 - [Sample - vite+vue3+vue-router4+pinia](https://github.com/mutoe/vue3-realworld-example-app)
 - [Sample - Vue3, Vite, Pinia (Vuex 5), Vue Router 4, Quasar,](https://github.com/CharlieDigital/vue3-pinia-quasar-ts)
+- [Vue vben admin免费开源的中后台模版vue3,vite5](https://github.com/vbenjs/vue-vben-admin/blob/main/README.zh-CN.md)
 📦
