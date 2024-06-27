@@ -14,6 +14,15 @@
 - [重定向redirect](#重定向redirect)
 - [编程式导航](#编程式导航)
 - [命名视图](#命名视图)
+- [导航守卫](#导航守卫)
+  - [全局前置守卫router.beforeEach](#全局前置守卫routerbeforeeach)
+  - [全局后置守卫router.afterEach](#全局后置守卫routeraftereach)
+- [路由元信息- meta属性](#路由元信息--meta属性)
+- [路由过渡动效 + transition组件](#路由过渡动效--transition组件)
+- [滚动行为-scrollBehavior方法](#滚动行为-scrollbehavior方法)
+- [动态路由](#动态路由)
+  - [添加路由](#添加路由)
+  - [删除路由](#删除路由)
 -------------------------------------
 
 路由设计
@@ -400,6 +409,236 @@ export default router
         <router-view name="content"></router-view>
 </div>
 ```
+
+[⬆ back to top](#top)
+
+## 导航守卫
+
+### 全局前置守卫router.beforeEach
+
+- 每个守卫方法接收三个参数：
+  - to: Route， 即将要进入的目标 路由对象
+  - from: Route，当前导航正要离开的路由
+  - next(): 进行管道中的下一个钩子。如果全部钩子执行完了，则导航的状态就是 confirmed (确认的)
+    - next(false): 中断当前的导航。如果浏览器的 URL 改变了 (可能是用户手动或者浏览器后退按钮)，那么 URL 地址会重置到 from 路由对应的地址
+    - next('/') 或者 next({ path: '/' }): 跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航
+- 案例: 权限判断
+
+ ```js
+const whileList = ['/']   //白名单 有值 或者登陆过存储了token信息可以跳转 否则就去登录页面
+router.beforeEach((to, from, next) => {
+    let token = localStorage.getItem('token')
+    if (whileList.includes(to.path) || token) {
+        next()
+    } else {
+        next({ path:'/' })
+    }
+})
+ ```
+
+ ### 全局后置守卫router.afterEach
+
+- 全局后置钩子，然而和守卫不同的是，这些钩子不会接受 next 函数也不会改变导航本身
+- 使用场景: 一般可以用来做loadingBar
+
+```js
+<template>
+    <div class="wraps"><div ref="bar" class="bar"></div></div>
+</template>
+<script setup lang='ts'>
+import { ref, onMounted } from 'vue'
+let speed = ref<number>(1)
+let bar = ref<HTMLElement>()
+let timer = ref<number>(0)
+const startLoading = () => {
+    let dom = bar.value as HTMLElement;
+    speed.value = 1
+    timer.value = window.requestAnimationFrame(function fn() {
+        if (speed.value < 90) {
+            speed.value += 1;
+            dom.style.width = speed.value + '%'
+            timer.value = window.requestAnimationFrame(fn)
+        } else {
+            speed.value = 1;
+            window.cancelAnimationFrame(timer.value)
+        }
+    })
+
+}
+const endLoading = () => {
+    let dom = bar.value as HTMLElement;
+    setTimeout(() => {
+        window.requestAnimationFrame(() => {
+            speed.value = 100;
+            dom.style.width = speed.value + '%'
+        })
+    }, 500)
+
+}
+defineExpose({
+    startLoading,
+    endLoading
+})
+</script>
+<style scoped lang="less">
+.wraps {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    .bar {
+        height: inherit;
+        width: 0;
+        background: blue;
+    }
+}
+</style>
+//main.ts
+import loadingBar from './components/loadingBar.vue'
+const Vnode = createVNode(loadingBar)
+render(Vnode, document.body)
+
+router.beforeEach((to, from, next) => {
+    Vnode.component?.exposed?.startLoading()
+})
+router.afterEach((to, from) => {
+    Vnode.component?.exposed?.endLoading()
+})
+```
+
+[⬆ back to top](#top)
+
+## 路由元信息- meta属性
+
+通过路由记录的 meta 属性可以定义路由的元信息。使用路由元信息可以在路由中附加自定义的数据，例如：
+- 权限校验标识
+- 路由组件的过渡名称
+- 路由组件持久化缓存 (keep-alive) 的相关配置
+- 标题名称
+
+```js
+declare module 'vue-router' {
+  interface RouteMeta {
+    title?: string
+  }
+}
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      component: () => import('@/views/Login.vue'),
+      meta: { title: "登录" }
+    },
+    {
+      path: '/index',
+      component: () => import('@/views/Index.vue'),
+      meta: { title: "首页", }
+    }
+  ]
+})
+```
+
+[⬆ back to top](#top)
+
+## 路由过渡动效 + transition组件
+
+- 使用`<transition>`结合css动画库'animate css'对导航进行动画处理
+- 每个路由的组件有不同的过渡，你可以将元信息和动态的 name 结合在一起，放在`<transition>`
+
+```html
+<router-view #default="{route,Component}">
+  <transition  :enter-active-class="`animate__animated ${route.meta.transition}`">
+  <component :is="Component"></component>
+  </transition>
+</router-view>
+```
+
+```js
+declare module 'vue-router'{
+     interface RouteMeta {
+        title:string,
+        transition:string,
+     }
+}
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      component: () => import('@/views/Login.vue'),
+      meta:{ title: "登录页面", transition: "animate__fadeInUp"}
+    },
+    {
+      path: '/index',
+      component: () => import('@/views/Index.vue'),
+      meta:{ title: "首页！！！", transition: "animate__bounceIn"}
+    }
+  ]
+})
+```
+
+[⬆ back to top](#top)
+
+## 滚动行为-scrollBehavior方法
+
+- 当切换到新路由时，想要页面滚到顶部，或者是保持原先的滚动位置，就像重新加载页面那样
+- `scrollBehavior` 方法
+  - `to`: 要进入的目标路由对象，到哪里去
+  - `from`: 离开的路由对象，从哪儿来
+  - `savedPosition`: 会记录滚动条的坐标，点击"后退/前进" 时的记录值`(x:?,y:?)`
+    -  `{ x: number, y: number }`
+    -  `{ selector: string, offset? : { x: number, y: number }}` (offset 只在 2.6.0+ 支持)
+  - `savedPosition` 当且仅当 `popstate` 导航 (通过浏览器的 前进/后退 按钮触发) 时才可用
+- `scrollBehavior` 返回滚动位置的对象信息: `{ left: number, top: number }`
+
+```js
+// 1)
+const router = createRouter({
+  history: createWebHistory(),
+  scrollBehavior: (to, from, savePosition) => {
+    return { top:200 }
+  },
+})
+//2) 滚动到元素位置- 始终在元素 #main 上方滚动 10px
+crollBehavior(to, from, savedPosition) {
+    return {
+      el: '#main',      // el: document.getElementById('main'),
+      top: -10,
+    }
+  },
+//3) 滚动到锚点位置,
+scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return { el: to.hash }
+    }
+//4) 滚动到之前的位置, 在按下浏览器 后退/前进 按钮，或者调用 router.go() 方法时，页面会回到之前的滚动位置
+scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition    //不会发生滚动
+    } else {
+      return { top: 0, behavior: 'smooth' }
+    }
+}
+```
+
+- [关于vue的scrollBehavior（滚动行为）、缓存之前的位置](https://blog.csdn.net/muzidigbig/article/details/131709194)
+
+[⬆ back to top](#top)
+
+## 动态路由
+
+- 动态路由都是后台会返回一个路由表前端通过调接口拿到后处理(后端处理路由)
+- 主要使用的方法就是`router.addRoute()` 和 `router.removeRoute()`
+
+### 添加路由
+
+- `router.addRoute({ path: '/about', component: About })`
+- 如果新增加的路由与当前位置相匹配，就需要你用 `router.push()` 或 `router.replace()` 来手动导航，才能显示该新路由
+
+### 删除路由
+
+- [小满Router（第十二章-动态路由）](https://xiaoman.blog.csdn.net/article/details/123783173)
 
 [⬆ back to top](#top)
 
