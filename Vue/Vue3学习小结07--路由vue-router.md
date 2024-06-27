@@ -2,6 +2,8 @@
 
 - [简述](#简述)
 - [路由器工作模式](#路由器工作模式)
+- [命名路由](#命名路由)
+- [编程式导航](#编程式导航)
 - [嵌套路由](#嵌套路由)
 - [路由传参](#路由传参)
   - [路由\_query参数](#路由_query参数)
@@ -104,6 +106,41 @@ app.mount('#app')
   - `history: createWebHashHistory(), // hash模式`
   - 优点：兼容性更好，因为不需要服务端处理路径
   - 确定：URL带有#不美观，且在SEO优化方面相对较差
+
+[⬆ back to top](#top)
+
+## 命名路由
+
+```js
+const routes:Array<RouteRecordRaw> = [
+    {
+        path:"/",
+        name:"Login",
+        component:()=> import('../components/login.vue')
+    },
+]
+```
+
+- router-link跳转方式需要改变 变为对象并且有对应name:
+  - `<router-link :to="{name:'Login'}">Login</router-link>`
+  - `<router-link style="margin-left:10px" :to="{name:'Reg'}">Reg</router-link>`
+
+[⬆ back to top](#top)
+
+## 编程式导航
+
+可以借助 router 的实例方法，通过编写代码来实现导航
+
+```js
+// 1) 字符串模式
+const router = useRouter()
+const toPage = () => { router.push('/reg') }
+// 2) 对象模式
+const router = useRouter()
+const toPage = () => {
+  router.push({ path: '/reg'})
+}
+```
 
 [⬆ back to top](#top)
 
