@@ -16,6 +16,13 @@
 - [命名视图](#命名视图)
 -------------------------------------
 
+路由设计
+
+|path|file|function|component|level|
+|---|---|---|---|---|
+|/login|views/login/loginPage.vue|logn/register|LoginPage|1|
+
+--------------------------------------
 ## 简述
 
 - Vue3中要使用vue-router:  `npm i vue-router`
