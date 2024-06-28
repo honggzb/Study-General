@@ -2,3 +2,8 @@
 - Amazon Q  -> free
 - Tabnine   -> free
 - codeGeex  -> free
+- Blackbox AI
+- ChatGPT
+- Denigma AI
+- Mintlify Doc Write
+- IntelliCode
