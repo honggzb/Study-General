@@ -1,4 +1,4 @@
-[Vue3基础01--Components](#top)
+[Vue3基础02--Components](#top)
 
 - [Passing Props: father -\> child](#passing-props-father---child)
 - [Listening to Events: child -\> father](#listening-to-events-child---father)
