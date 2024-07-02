@@ -1,24 +1,13 @@
-<script>
+<script lang="ts" setup>
 import { watch } from "vue";
 import { useI18n } from "vue-i18n";
-export default {
-  name: "App",
-  setup() {
-    const { t, locale } = useI18n();
-
-    watch(locale, (newlocale) => {
-      localStorage.setItem("locale", newlocale);
-    });
-
-    return {
-      t,
-      locale,
-    };
-  },
-};
+const { t, locale } = useI18n();
+watch(locale, (newlocale) => {
+  localStorage.setItem("locale", newlocale);
+});
 </script>
-
 <template>
+<div class="app">
   <img alt="Vue logo" src="./assets/logo.png" />
   <nav>
     <select v-model="locale">
@@ -33,10 +22,11 @@ export default {
   <p>{{ t("subject") }}</p>
   <p>{{ t("message") }}</p>
   <p>{{ t("upload") }}</p>
+</div>
 </template>
 
 <style>
-#app {
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
