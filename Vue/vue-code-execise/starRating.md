@@ -15,9 +15,16 @@ const props = defineProps<{
   rating: number;
   totalRating: number;
 }>();
-//const props = defineProps(['rating', 'totalRating'])    //--js
+// 第二种写法
+// const props = defineProps({
+//   rating: Number,
+//   totalRating: Number
+// })
+// 第三种写法
+//const props = defineProps(['rating', 'totalRating']) 
 const emit = defineEmits<(event: "update-rating", rating: number) => void>();
-//const emit = defineEmits("update-rating", rating);      //--js
+// 第二种写法
+//const emit = defineEmits("update-rating", rating); 
 const setRating = (star) => {
   emit("update-rating", star);
 }
