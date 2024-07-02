@@ -15,8 +15,9 @@ const props = defineProps<{
   rating: number;
   totalRating: number;
 }>();
-//const props = defineProps(['rating', 'totalRating'])
+//const props = defineProps(['rating', 'totalRating'])    //--js
 const emit = defineEmits<(event: "update-rating", rating: number) => void>();
+//const emit = defineEmits("update-rating", rating);      //--js
 const setRating = (star) => {
   emit("update-rating", star);
 }
