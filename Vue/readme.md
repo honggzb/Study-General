@@ -73,6 +73,7 @@
       1. `@tailwind base;`
       2. `@tailwind components;`
       3. `@tailwind utilities;`
+  5. `@apply .xxx { flex }` in class
 
 ## Vue学习资源
 
