@@ -1,10 +1,10 @@
 ||||
 |---|---|---|
 |利用解构2赋值交换变量的值|`[a, b] = [b,a]`||
-|sort|including Object Array<br>`xxx.sort((a, b) => b.balance - a.balance)`|return Array|
-|filter|including Object Array<br>`xxx = xxx.filter((a) => a.type === type)`|return Array|
-|deltete|including Object Array<br>`xxx = xxx.filter((a) => a.type !== type)`|return Array|
-|find|including Object Array<br>`pet = pets.find(pet => pet.type ==='Dog' && pet.name === 'Tommy')`|return Object|
+|sort|for Object Array<br>`xxx.sort((a, b) => b.balance - a.balance)`<br>return Array||
+|filter|for Object Array<br>`xxx = xxx.filter((a) => a.type === type)`<br>return Array||
+|deltete|for Object Array<br>`xxx = xxx.filter((a) => a.type !== type)`<br>return Array|`str.splice(i,1)` for string|
+|find|for Object Array<br>`pet = pets.find(pet => pet.type ==='Dog' && pet.name === 'Tommy')`<br>return Object||
 
 ## JavaScript 单行代码
 
