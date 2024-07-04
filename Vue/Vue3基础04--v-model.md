@@ -17,7 +17,7 @@ v-model 可以在组件上使用以实现双向绑定
 - `defineModel(`) 返回的值是一个 `ref`
   - 它的 `.value` 和父组件的 `v-model` 的值同步；
   - 当它被子组件变更了，会触发父组件绑定的值一起更新
-- ![v-model 基本用法](v-model1.png)
+- ![v-model 基本用法](./images/v-model1.png)
 
 ```vue
 <!-- 底层机制 -->
