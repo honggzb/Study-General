@@ -73,7 +73,20 @@
       1. `@tailwind base;`
       2. `@tailwind components;`
       3. `@tailwind utilities;`
-  5. `@apply .xxx { flex }` in class
+- postcss+TailwindCSS
+  1. `npm i postcss -D`
+  2. create a 'postcss.config.js'
+  3. then using `@apply .xxx { flex }` in class
+
+```js
+// postcss.config.js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
 
 ## Vue学习资源
 
