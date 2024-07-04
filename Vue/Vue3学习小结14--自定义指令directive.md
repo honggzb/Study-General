@@ -12,7 +12,7 @@
 2. 通过directives选项注册: 必要引用后使用
 3. 将一个自定义指令全局注册到应用层级： 可全局使用
 
-```ts   
+```vue
 //1)同组件结构
 <script setup>
 const vFocus = {  
@@ -37,7 +37,7 @@ app.directive('focus', {    // 使 v-focus 在所有组件中都可用
 
 4. 简化形式: 对于自定义指令来说，一个很常见的情况是仅仅需要在 mounted 和 updated 上实现相同的行为，除此之外并不需要其他钩子。这种情况下我们可以直接用一个函数来定义指令
 
-```ts
+```vue
 app.directive('color', (el, binding) => {
   el.style.color = binding.value   // 这会在 `mounted` 和 `updated` 时都调用
 })
@@ -61,7 +61,7 @@ app.directive('color', (el, binding) => {
 - 和内置指令类似，自定义指令的参数也可以是动态的
   - `<div v-example:[arg]="value"></div>`
 
-```ts
+```vue
 const myDirective = {
   created(el, binding, vnode, prevVnode) {   //元素初始化的时候, 在绑定元素的 attribute 前 或事件监听器应用前调用
     // 下面会介绍各个参数的细节
