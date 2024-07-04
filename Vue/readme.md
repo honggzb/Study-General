@@ -77,7 +77,6 @@
   1. `npm i postcss -D`
   2. create a 'postcss.config.js'
   3. then using `@apply .xxx { flex }` in class
-
 ```js
 // postcss.config.js
 module.exports = {
