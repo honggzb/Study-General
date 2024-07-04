@@ -14,8 +14,7 @@
 |标题大小写为字符串|`sentence.replace(/\b\w/g, char => char.toUpperCase());`|
 |变量之间交换值|`[a, b] = [b, a];`|
 |将数字转换为布尔值|`const isTruthy = num => !!num;`|
-|截断字符串|const truncateString = (str, maxLength) => (str.length > maxLength) ? `${str.slice(0, maxLength)}...` : str;`<br>
-`truncateString("Hello World", 8); // Hello Wo...`|
+|截断字符串|const truncateString = (str, maxLength) => (str.length > maxLength) ? `${str.slice(0, maxLength)}...` : str;`<br>`truncateString("Hello World", 8); // Hello Wo...`|
 |计算字符串中的元音数|`const countVowels = str => (str.match(/[aeiou]/gi) || []).length;`|
 |删除字符串中的空格|`const removeWhitespace = str => str.replace(/\s/g, '');`|
 |------------------------|------------------------------|
