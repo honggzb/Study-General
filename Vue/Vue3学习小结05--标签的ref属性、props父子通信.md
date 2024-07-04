@@ -15,7 +15,7 @@
 
 ### 普通DOM标签
 
-```ts
+```vue
 <h3 ref="test">呵呵呵呵</h3>
 //...
 let test = ref();
@@ -26,7 +26,7 @@ let test = ref();
 
 ### 组件标签
 
-```ts
+```vue
 // 父组件内 App.vue
 <template>
   <button @click="showChild">显示组件ref</button>
@@ -77,7 +77,7 @@ import { ref } from 'vue'
   - `defineProps`可以直接使用泛型
 - 使用`withDefaults`函数将`defineProps`接收的`props`参数作为第一个参数包裹起来，并第二个参数里设置默认值
 
-```ts
+```vue
 // 父组件
 <template>
   <div class="app">
