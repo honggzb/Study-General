@@ -1,22 +1,29 @@
 [JavaScript专题之去掉数组中的重复项](#top)
 
-- [方式一: 常规模式(双重循环)](#方式一)
-  - [常规模式补充1(双重循环)](#常规模式补充1)
-- [方式二: 使用了默认Js数组sort默认排序，是按ASCII进行排序](#方式二)
-- [方式三: 利用json对象是否有属性值- **推荐**](#方式三)
-- [方式四: 利用indexOf以及forEach](#方式四)
-- [方式五: 对象键值对法](#方式五)
-- [方式六: 利用ES5的filter和map](#方式六)
-- 方式七: 一行代码实现数组去重: `[...new Set([1,2,2,3,1,'a',3,'a',3])]`
-- [方式八: 利用对象的属性不能相同的特点进行去重](#利用对象的属性不能相同的特点进行去重)
-- [补充：合并数组并去重的方法](#合并数组并去重的方法)
-- [补充：特殊类型比较的不同](#特殊类型比较的不同)
-- [补充：JS对以对象组成的数组去重(reduce)- **推荐**](#JS对以对象组成的数组去重)
-- [forEach在js array和angular中的定义](#forEach在js-array和angular中的定义)
+- [常规模式](#常规模式)
+  - [方式一: 常规模式(优化遍历数组法)(双重循环)](#方式一-常规模式优化遍历数组法双重循环)
+  - [常规模式补充1 (优化遍历数组法)(双重循环)](#常规模式补充1-优化遍历数组法双重循环)
+  - [方式二: 使用了默认Js数组sort默认排序，是按ASCII进行排序](#方式二-使用了默认js数组sort默认排序是按ascii进行排序)
+  - [方式三: 利用json对象是否有属性值\[推荐\]](#方式三-利用json对象是否有属性值推荐)
+  - [方式四: 利用indexOf以及forEach](#方式四-利用indexof以及foreach)
+  - [方式五: 对象键值对法](#方式五-对象键值对法)
+  - [方式六: 利用ES5的filter和map\<](#方式六-利用es5的filter和map)
+  - [方式八: 利用对象的属性不能相同的特点进行去重](#方式八-利用对象的属性不能相同的特点进行去重)
+  - [补充：合并数组并去重的方法](#补充合并数组并去重的方法)
+    - [concat()方法](#concat方法)
+    - [Array.prototype.push.apply()](#arrayprototypepushapply)
+- [补充：JS对以对象组成的数组去重](#补充js对以对象组成的数组去重)
+  - [reduce方法](#reduce方法)
+  - [Map方法](#map方法)
+- [forEach在js array和angular中的定义](#foreach在js-array和angular中的定义)
+
+---------------------------------------------------------
 
 ![](https://i.imgur.com/yDb3kLD.png)
 
-<h2 id="方式一">方式一: 常规模式(优化遍历数组法)(双重循环)</h2>
+## 常规模式 
+
+### 方式一: 常规模式(优化遍历数组法)(双重循环)
 
 1. 构建一个新的临时数组存放结果
 2. for循环中每次从原数组中取出一个元素，用这个元素循环与临时数组对比
@@ -53,7 +60,9 @@ Array.prototype.unique1 = function(){
 };
 ```
 
-<h3 id="常规模式补充1">常规模式补充1 (优化遍历数组法)(双重循环)</h3>
+[⬆ back to top](#top)
+
+### 常规模式补充1 (优化遍历数组法)(双重循环)
 
 - 双层循环，外层循环元素，内层循环时比较值
 - 如果有相同的值则跳过，不相同则push进数组
@@ -75,9 +84,9 @@ var arra = [1,2,3,4,4,1,1,2,1,1,1];
 arra.distinct();    //返回[3,4,2,1]
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
-<h2 id="方式二">方式二: 使用了默认Js数组sort默认排序，是按ASCII进行排序</h2>
+### 方式二: 使用了默认Js数组sort默认排序，是按ASCII进行排序
 
 1. 先将当前数组进行排序
 2. 检查当前中的第i个元素 与 临时数组中的最后一个元素是否相同，因为已经排序，所以重复元素会在相邻位置
@@ -96,9 +105,9 @@ Array.prototype.unique2 = function(){
 };
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
-<h2 id="方式三">方式三: 利用json对象是否有属性值[推荐]</h2>
+### 方式三: 利用json对象是否有属性值[推荐]
 
 1. 创建一个新的数组存放结果
 2. 创建一个空对象json
@@ -119,9 +128,9 @@ Array.prototype.unique3 = function(){
 };
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
-<h2 id="方式四">方式四: 利用indexOf以及forEach</h2>
+### 方式四: 利用indexOf以及forEach
 
 > indexOf 为ecmaScript5新方法 IE8以下（包括IE8， IE8只支持部分ecma5）不支持
 
@@ -170,9 +179,9 @@ var b = a.distinct();
 console.log(b.toString()); //1,23,2,3
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
-<h2 id="方式五">方式五: 对象键值对法</h2>
+### 方式五: 对象键值对法
 
 该方法执行的速度比其他任何方法都快， 就是占用的内存大一些；
 
@@ -197,9 +206,9 @@ Array.prototype.unique5 = function(){
 }
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
-<h2 id="方式六">方式六: 利用ES5的filter和map</h2>
+### 方式六: 利用ES5的filter和map<
 
 ```javascript
 //ES5提供了filter方法，我们可以用来简化外层循环
@@ -233,9 +242,9 @@ Array.prototype.unique7 = function(){
 }
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
-<h2 id="特殊类型比较的不同">方式八: 利用对象的属性不能相同的特点进行去重</h2>
+### 方式八: 利用对象的属性不能相同的特点进行去重
 
 ```javascript
 Array.prototype.distinct = function (){
@@ -253,11 +262,11 @@ var b = a.distinct();
 console.log(b.toString()); //1,2,3,4,5,6,56
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
-<h2 id="合并数组并去重的方法">补充：合并数组并去重的方法</h2>
+### 补充：合并数组并去重的方法
 
-### concat()方法 
+#### concat()方法 
 
 concat() 方法将传入的数组或非数组值与原数组合并,组成一个新的数组并返回。该方法会产生一个新的数组。
 
@@ -269,7 +278,7 @@ function concatArr(arr1, arr2){
 }
 ```
 
-### Array.prototype.push.apply()
+#### Array.prototype.push.apply()
 
 该方法优点是不会产生一个新的数组
 
@@ -286,9 +295,11 @@ function concatArray(arr1,arr2){
 }
 ```
 
-[back to top](#top)
+[⬆ back to top](#top)
 
-<h2 id="JS对以对象组成的数组去重">补充：JS对以对象组成的数组去重(reduce)</h2>
+## 补充：JS对以对象组成的数组去重
+
+### reduce方法
 
 采用数组中的reduce方法，遍历数组，也是通过对象访问属性的方法, reduce第一个参数是遍历需要执行的函数，第二个参数是item的初始值
 
@@ -328,9 +339,23 @@ arr = arr.reduce(function(item, next) {
 console.log(arr);
 ```
 
+### Map方法
+
+- `has()`:  判断Map对象中是否存在指定元素
+- `set()`:  向Map对象中添加新元素
+- `values()`:  返回Map对象值的遍历器对象
+
+```js
+const map = new Map();
+const arr = arr.filter(item => !map.has(item.name) && map.set(item.name, item));
+```
+
 https://segmentfault.com/q/1010000006954351
 
-### forEach在js array和angular中的定义
+
+[⬆ back to top](#top)
+
+## forEach在js array和angular中的定义
 
 ```javascript
 var str1 = [
