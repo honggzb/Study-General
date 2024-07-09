@@ -20,91 +20,33 @@ ES6 ships with several array methods that enable one to perform operations such 
 2. Summing up array elements (`reduce`)
 3. Performing the same operation on each element (`map`)
 
-<table>
-<th>
-      <td>方法</td>
-      <td>说明</td>
-      <td>返回值</td>
-      <td>例子</td>
-</th>
-   <tr>
-      <td colspan="4" bgcolor=#7B68EE>遍历查找</td>
-   </tr>
-   <tr>
-      <td>forEach</td>
-      <td>仅仅只是遍历数组</td>
-      <td>无返回值，不改变原数组</td>
-      <td>常用于注册组件、指令等</td>
-   </tr>
-   <tr>
-      <td>map</td>
-      <td>可简单的理解为映射</td>
-      <td>返回一个新数组，不改变原数组的值</td>
-      <td>不改变原数组</td>
-   </tr>
-   <tr>
-      <td>filter</td>
-      <td>过滤掉数组中不满足条件的值</td>
-      <td>返回一个新数组，不改变原数组的值</td>
-      <td></td>
-   </tr>
-   <tr>
-      <td>find</td>
-      <td>参数n代表数组里的每一项，然后内部通过遍历数组里的每一项，找到满足条件的项</td>
-      <td>返回第一个满足条件的元素，没有找到返回-1</td>
-      <td>[1, 4, -5, 10].find((n) => n < 0) // -5</td>
-   </tr>
-   <tr>
-      <td>findIndex</td>
-      <td>findIndex的回调函数可以接受三个参数，依次为当前的值、当前的位置和原数组</td>
-      <td>返回第一个满足条件的索引，没有找到返回-1</td>
-      <td>[1, 4, -5, 10].findIndex((value,index,arr) => value < 0) // 2</td>
-   </tr>
-   <tr>
-      <td colspan="4">上面4个方法内部机制都有一个遍历过程</td>
-   </tr>
-   <tr>
-      <td colspan="4" bgcolor=#7B68EE>查找</td>
-   </tr>
-   <tr>
-      <td>some</td>
-      <td>只要其中一个为true就会停止遍历并返回true</td>
-      <td>返回true、false，不改变原数组</td>
-      <td>一真即真</td>
-   </tr>
-   <tr>
-      <td>every</td>
-      <td>遍历数组每一项，只有所有都返回true才会返回true，哪怕有一个false，就会返回false</td>
-      <td>返回true、false，不改变原数组</td>
-      <td>一假即假</td>
-   </tr>
-   <tr>
-      <td colspan="2">every和some目的：确定数组的所有成员是否满足指定的测试</td>
-      <td colspan="2">返回true、false</td>
-   </tr>
-   </tr>
-   <tr>
-      <td>reduce</td>
-      <td>让数组的前后两项进行某种计算。然后返回其值，并继续计算</td>
-      <td>不改变原数组，返回计算的最终结果，从数组的第二项开始遍历</td>
-      <td></td>
-   </tr>
-   <tr>
-      <td colspan="4" bgcolor=#7B68EE>静态方法</td>
-   </tr>
-   <tr>
-      <td>Array.from</td>
-      <td>让类数组对象变成数组</td>
-      <td></td>
-      <td></td>
-   </tr>
-   <tr>
-      <td>Array.of</td>
-      <td>将一组值转换为数组</td>
-      <td></td>
-      <td></td>
-   </tr>
-</table>
+## 遍历查找: 方法内部机制都有一个遍历过程
+
+|方法|说明|	返回值|	例子|
+|---|---|---|---|
+|`forEach`|仅仅只是遍历数组	|无返回值，不改变原数组	|常用于注册组件、指令等|
+|`map`|可简单的理解为映射|返回一个新数组，不改变原数组的值|	不改变原数组|
+|`filter`|过滤掉数组中不满足条件的值|返回一个新数组，不改变原数组的值||]
+|`find`|参数n代表数组里的每一项，然后内部通过遍历数组里的每一项，找到满足条件的项|返回第一个满足条件的元素，没有找到返回-1|`[1, 4, -5, 10].find((n) => n < 0) // -5`|
+|`findIndex`|findIndex的回调函数可以接受三个参数，依次为当前的值、当前的位置和原数组|返回第一个满足条件的索引，没有找到返回-1	|`[1, 4, -5, 10].findIndex((value,index,arr) => value < 0) // 2`|
+
+## 查找
+
+|方法|说明|	返回值|	
+|---|---|---|
+|`some`|只要其中一个为true就会停止遍历并返回true	返回true、false|不改变原数组	|
+|`every`	|遍历数组每一项，只有所有都返回true才会返回true，哪怕有一个false，就会返回false	返回true、false|不改变原数组	|
+|`reduce`	|让数组的前后两项进行某种计算。然后返回其值，并继续计算	|不改变原数组，返回计算的最终结果，从数组的第二项开始遍历|
+
+every和some目的：确定数组的所有成员是否满足指定的测试	返回true、false
+
+## 静态方法
+|||
+|---|---|
+|Array.from	|让类数组对象变成数组|		
+|Array.of|将一组值转换为数组|	
+
+[⬆ back to top](#top)
 
 ```javascript
 /*注意拷贝的数组是浅拷贝 */
