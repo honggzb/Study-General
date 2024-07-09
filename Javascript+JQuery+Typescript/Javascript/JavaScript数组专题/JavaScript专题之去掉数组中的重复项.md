@@ -12,7 +12,7 @@
   - [补充：合并数组并去重的方法](#补充合并数组并去重的方法)
     - [concat()方法](#concat方法)
     - [Array.prototype.push.apply()](#arrayprototypepushapply)
-- [补充：JS对以对象组成的数组去重](#补充js对以对象组成的数组去重)
+- [对象组成的数组去重](#对象组成的数组去重)
   - [reduce方法](#reduce方法)
   - [Map方法](#map方法)
 - [forEach在js array和angular中的定义](#foreach在js-array和angular中的定义)
@@ -297,7 +297,7 @@ function concatArray(arr1,arr2){
 
 [⬆ back to top](#top)
 
-## 补充：JS对以对象组成的数组去重
+## 对象组成的数组去重
 
 ### reduce方法
 
