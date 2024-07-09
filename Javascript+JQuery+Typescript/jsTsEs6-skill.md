@@ -13,7 +13,7 @@
 |去重1|`[...new Set(arr)`|
 |去重2|`arr.filter((item, index) => arr.indexOf(item === index)`|
 |去重3|`arr.reduce((unique, item) => unique.name.includes(item.name) ? unique : [...unique, item], [])`|
-|对象数组1|`var hash = {};`<br>`arr = arr.reduce(function(item, next) { hash[next.name] ? '' : hash[next.name] = true && item.push(next);`<br>  `return item;`<br>`}, [])]`|
+|对象数组1|`var hash = {};`<br>`arr = arr.reduce(function(item, next) {` <br> `hash[next.name] ? '' : hash[next.name] = true && item.push(next);`<br>  `return item;`<br>`}, [])]`|
 |对象数组2|`const map = new Map();` <br> `arr = arr.filter(v => !map.has(v.name) && map.set(v.name, v))`|
 
 
