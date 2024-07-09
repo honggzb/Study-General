@@ -21,12 +21,12 @@ ES6 ships with several array methods that enable one to perform operations such 
 3. Performing the same operation on each element (`map`)
 
 <table>
-   <th>
+<th>
       <td>方法</td>
       <td>说明</td>
       <td>返回值</td>
       <td>例子</td>
-   </th>
+</th>
    <tr>
       <td colspan="4" bgcolor=#7B68EE>遍历查找</td>
    </tr>
