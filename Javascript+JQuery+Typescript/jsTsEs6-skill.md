@@ -5,9 +5,17 @@
 |filter|for Object Array<br>`xxx = xxx.filter((a) => a.type === type)`<br>return Array||
 |deltete|for Object Array<br>`xxx = xxx.filter((a) => a.type !== type)`<br>return Array|`str.splice(i,1)` for string|
 |find|for Object Array<br>`pet = pets.find(pet => pet.type ==='Dog' && pet.name === 'Tommy')`<br>return Object||
-|去重1|`[...new Set(arr)`||
-|去重2|`arr.filter((item, index) => arr.indexOf(item === index)`||
-|去重3|`arr.reduce((unique, item) => unique.name.includes(item.name) ? unique : [...unique, item], [])`||
+
+数组去重
+
+|||
+|---|---|
+|去重1|`[...new Set(arr)`|
+|去重2|`arr.filter((item, index) => arr.indexOf(item === index)`|
+|去重3|`arr.reduce((unique, item) => unique.name.includes(item.name) ? unique : [...unique, item], [])`|
+|对象数组1||
+||对象数组2|`const map = new Map();`<br>`arr = arr.filter(v => !map.has(v.name) && map.set(v.name, v))`|
+
 
 ## JavaScript 单行代码
 
