@@ -2,7 +2,7 @@
 
 - refer to 'counter.js'
 
-## Axios 2 -using in onMounted of component 
+## Axios 2 -put in onMounted of component 
 ```ts
 <script setup lang="ts">
     import { ref, onMounted, toRow } from "vue";
