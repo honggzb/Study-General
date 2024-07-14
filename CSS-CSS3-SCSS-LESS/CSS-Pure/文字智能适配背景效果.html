@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 62.5%;
+}
+div {
+  position: relative;
+  height: 500px;
+  border: 5px solid #000;
+  background: #fff;
+  line-height: 500px;
+  cursor: pointer;
+}
+div::before, div::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: block;
+  content: "";
+}
+div::before {
+  left: 0;
+  width: 40%;
+  background: #000;
+}
+div::after {
+  left: 40%;
+  width: 0;
+  height: 0;
+  border-top: 250px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 250px solid #000;
+  border-left: 100px solid #000;
+}
+h1 {
+  position: absolute;
+  left: 40%;
+  z-index: 1;
+  font-size: 9rem;
+  color: #fff;
+  transition: 0.5s;
+  mix-blend-mode: difference;
+}
+div:hover > h1 {
+  transform: translateX(-60%);
+}
+</style>
+</head>
+<body>
+<div>
+  <h1>实现文字智能适配背景</h1>
+</div>
+</body>
+</html>
