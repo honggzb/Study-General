@@ -34,3 +34,8 @@
     };
 </script>
 ```
+
+## axios封装
+
+ - utils/request.ts
+ - using request -- api/xxx.ts
