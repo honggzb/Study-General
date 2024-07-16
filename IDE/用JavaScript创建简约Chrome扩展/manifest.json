@@ -1,0 +1,9 @@
+{
+    "manifest_version": 3,
+    "name": "Minimalistic homepage",
+    "version": "1.0",
+    "description": "A Minimalistic homepage for my Chrome browser",
+    "chrome_url_overrides": {
+        "newtab": "home.html"
+    }
+  }
