@@ -1,7 +1,8 @@
 - Github copilot
 - Amazon Q  -> free
 - Tabnine   -> free
-- codeGeex  -> free
+- Codeium   -> free - AI Coding Autocomplete and Chat for Python, Javascript, Typescript
+- codeGeex  -> free cn- AI Code AutoComplete, Chat, Auto Comment
 - Blackbox AI
 - ChatGPT
 - Denigma AI
