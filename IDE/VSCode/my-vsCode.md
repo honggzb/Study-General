@@ -94,7 +94,7 @@ Draw.io                      | Diagram
 //settings.json -- Power Mode  
 "powermode.enabled": true,
 "powermode.presets": "flames",
-"powermode.combo.timeout": 5,
+"powermode.combo.timerEnabled": "hide",
 "powermode.shake.enabled": false,
 ```
 
