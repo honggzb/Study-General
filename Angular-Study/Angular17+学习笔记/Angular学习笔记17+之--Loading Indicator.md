@@ -40,6 +40,17 @@ export class LoadingService {
 ## loading indicator component
 
 ```ts
+//loading.component.html
+@if(loading$ | async) {
+    <div class="spinner-container">
+        @if(customLoadingIndicator) {
+        <ng-container *ngTemplateOutlet="customLoadingIndicator" />
+        } @else {
+            <mat-spinner />
+        }
+    </div>
+}
+//loading.component.ts
 @Component({
   selector: 'loading-indicator',
   templateUrl: './loading.component.html',
