@@ -239,6 +239,7 @@ plugins: [
 > YouTube and Bilibili
 - [Vite and Module Federation Makes Micro-Frontends EASY!](https://www.youtube.com/watch?v=t-nchkL9yIg)
   - https://github.com/jherr/vite-mod-fed
+- [Micro-Frontends Course - Beginner to Expert](https://www.youtube.com/watch?v=lKKsjpH09dU)
 - [Mastering Micro-Frontends With RSpack and Module Federation](https://www.youtube.com/watch?v=32_EikGKESk)
 - [Angular Microfrontends with NX and Module Federation](https://www.youtube.com/watch?v=xL4hhZ6wKV8&t=626s)
 - [Micro frontend introduction using Module Federation of Webpack 5 and Angular framework | Amar](https://www.youtube.com/watch?v=1FWAGSVsmrI&list=PL1UWPWOy5UlfLWfSstHBW-iVu6RWJtrG-)
