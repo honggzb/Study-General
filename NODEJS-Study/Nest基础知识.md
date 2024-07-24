@@ -17,7 +17,7 @@
 
 ## 控制器 Controllers
 
-- ![Controllers](Controllers.png)
+- ![Controllers](./images/Controllers.png)
 - `nest g controller [controllerName]`
   - [快速创建内置验证的 CRUD 控制器](https://docs.nestjs.com/techniques/validation): `nest g resource [name]`
 - 作用域: Node.js 不遵循请求/响应多线程无状态模型，其中每个请求都由单独的线程处理。因此，使用**单例实例**对我们的应用程序来说是完全安全的
@@ -96,7 +96,7 @@ export class CatsController {
 
 ## 中间件 Middleware
 
-- ![Middleware](Middleware.png)
+- ![Middleware](./images/Middleware.png)
 - 中间件函数可以执行以下任务:
   - 执行任何代码
   - 对请求和响应对象进行更改
@@ -167,7 +167,7 @@ async findAll() {
 
 ## 管道 Pipes
 
-- ![Pipes](Pipes.png)
+- ![Pipes](./images/Pipes.png)
 - 管道是一个用@Injectable()装饰器注解的类，它实现了PipeTransform接口
 - 管道有两个类型:
   - 转换：管道将输入数据转换为所需的数据输出（例如，从字符串到整数）
@@ -208,7 +208,7 @@ async findOne(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
 
 ## 守卫 Guards
 
-- ![Guards](Guards.png)
+- ![Guards](./images/Guards.png)
 - 守卫是一个使用 `@Injectable()` 装饰器的类。 它实现了`CanActivate`接口
 - 守卫根据运行时出现的某些条件（例如权限，角色，访问控制列表等）来确定给定的请求是否由路由处理程序处理
   - [在应用程序中实现身份验证机制的真实示例 Authorization](https://docs.nestjs.com/security/authorization)
@@ -264,7 +264,7 @@ export class AppModule {}
 
 ## 拦截器 Interceptors
 
-- ![Interceptors](Interceptors.png)
+- ![Interceptors](./images/Interceptors.png)
 - 在函数执行之前/之后绑定额外的逻辑
 - 转换从函数返回的结果
 - 转换从函数抛出的异常
