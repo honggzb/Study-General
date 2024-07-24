@@ -27,6 +27,11 @@
 └──
 ```
 
+## Run multiple commands concurrently
+
+- `npm i concurrently -D`
+- `"dev": "concurrently \"npm:start:dev\" \"npm:gen-ty\" \"npm:prisma:generate\""`
+
 ## resources
 
 - [Book - Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices/tree/master)
