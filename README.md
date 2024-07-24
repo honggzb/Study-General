@@ -600,13 +600,13 @@
 ## HTML5
 
 ```
-├── 📂Database学习
+├── 📂Database学习/
 │   ├──MySql的安装和设置.md
 │   ├──Redis安装、配置和使用.md
 │   ├──MongoDB的使用.md
 │   └──
 │
-├── 📂Debug-Skill调试技巧
+├── 📂Debug-Skill调试技巧/
 │   ├── Chrome DevTools基础技巧.md
 │   ├── Chrome中设置可以CROS.md
 │   ├── Remote-Debugging-IOS.md
@@ -623,17 +623,18 @@
 |    ├── 背包问题-javascript动态规划.md
 |    └── 
 │
-├── 📂Git Study
+├── 📂Git Study/
 │   ├── name-contest/   # test案例
 │   ├──readme.md
 │   └──
 │
 ├── 📂GraphQL/
-│    ├── name-contests/      ---create scalable GraphQL API project
-│    ├── concepts.md
+│    ├── 📂name-contests/                 ---create scalable GraphQL API project
+|    ├── 📂vue3-nest-graphql-prisma/      ---
+│    ├── 📄GraphQL General Concept.md
 │    └── 
 │
-├── 📂HTML5
+├── 📂HTML5/
 │   ├── getUserMedia-使用HTML5技术控制电脑或手机上的摄像头.md
 │   ├── Web Worker- JS多线程编程.md
 │   │   ├── Web Worker- JS多线程编程源码
@@ -649,7 +650,7 @@
 ## Hybrid Web
 
 ```
-├── 📂Hybrid Web
+├── 📂Hybrid Web/
 │   ├──HTML5 Input Types in Mobile.docx
 │   ├──HTML5-各种Tag.md
 │   ├──Media Queries for Standard Devices.md
