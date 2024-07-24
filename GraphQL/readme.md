@@ -5,3 +5,8 @@
 │    ├── 📄GraphQL General Concept.md
 │    └── 
 ```
+
+## Run multiple commands concurrently
+
+- `npm i concurrently -D`
+- `"dev": "concurrently \"npm:start:dev\" \"npm:gen-ty\" \"npm:prisma:generate\""`
