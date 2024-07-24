@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator nestgraphql {
+  provider               = "node node_modules/prisma-nestjs-graphql"
+  output                 = "../src/@generated/prisma-nestjs-graphql"
+  fields_Validator_from  = "class-Validator"
+  fields_Validator_input = true
+}
+
+model Book {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  /// @Validator.MinLength(1)
+  name     String  @unique
+  type     String?
+  author   Author  @relation(fields: [authorId], references: [id])
+  authorId String  @db.ObjectId
+}
+
+model Author {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  name   String
+  // 1 男性 2 女性
+  gender Int
+  /// @Validator.IsEmail()
+  email  String
+  books  Book[]
+}
