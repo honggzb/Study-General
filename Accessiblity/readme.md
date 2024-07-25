@@ -1,12 +1,12 @@
 ```
 ├── 📂Accessiblity/
+|    ├── 📂react/
+|    |     ├── 📄react aria.md
+|    |     └── 📄tips for React Accessiblity.md
 |    ├── 📂Angular/
 |    |     ├── 📄AngularJS and Accessibility-General.md
 |    |     ├── 📄accessible for Angular.md
 |    |     └── 📄guide+Strategies in Angular.md
-|    ├── 📂react/
-|    |     ├── 📄react aria.md
-|    |     └── 
 |    ├── 📄Accessibility of hiding content.md
 |    ├── 📄Accessibility应用之focus篇.md
 |    ├── 📄Bypass Blocks.md
