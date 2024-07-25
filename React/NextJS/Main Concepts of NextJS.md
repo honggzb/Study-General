@@ -48,17 +48,9 @@ export async function getServerSideProps(context) {
 
 ## 渲染后移 SSR SSG
 
-|||
-|---|---|
-|CSR：Client Side Rendering，客户端渲染|![CSR](./images/CSR.png)|
-|SSR：Server Side Rendering，服务端渲染|![SSR](./images/SSR.png)|
-|SSG：Static Site Generation，静态网站生成||
-|ISR：Incremental Site Rendering，增量式的网站渲染||
-|DPR：Distributed Persistent Rendering，分布式的持续渲染||
-
 - `getServerSideProps()`  --> SSR, 每个请求request时候生成
-- `getStaticProps()`      --> SSG，build时候生成
-- `getStaticPaths()`      --> SSG，build时候生成
+- `getStaticProps()`      --> SSG，build时候生成  --> 用于生成动态路由的路径。它确定了哪些路径在构建时应该被预先渲染
+- `getStaticPaths()`      --> SSG，build时候生成  --> 用于获取页面的静态数据。它用于预先获取页面所需的数据，并在构建时将其注入到页面中
 
 ```ts
 import _ from 'lodash'
@@ -79,3 +71,13 @@ export async function getStaticPaths() {
     };
 }
 ```
+
+
+|||
+|---|---|
+|CSR：Client Side Rendering，客户端渲染|![CSR](./images/CSR.png)|
+|SSR：Server Side Rendering，服务端渲染|![SSR](./images/SSR.png)|
+|SSG：Static Site Generation，静态网站生成||
+|ISR：Incremental Site Rendering，增量式的网站渲染||
+|DPR：Distributed Persistent Rendering，分布式的持续渲染||
+
