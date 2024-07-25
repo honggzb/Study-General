@@ -1,4 +1,4 @@
-[Key Concepts of NextJS](#top)
+[Main Concepts of NextJS](#top)
 
 - [Dynamic route](#dynamic-route)
 - [渲染后移 SSR SSG](#渲染后移-ssr-ssg)
@@ -50,8 +50,8 @@ export async function getServerSideProps(context) {
 
 |||
 |---|---|
-|CSR：Client Side Rendering，客户端渲染|![CSR](CSR.png)|
-|SSR：Server Side Rendering，服务端渲染|![SSR](SSR.png)|
+|CSR：Client Side Rendering，客户端渲染|![CSR](./images/CSR.png)|
+|SSR：Server Side Rendering，服务端渲染|![SSR](./images/SSR.png)|
 |SSG：Static Site Generation，静态网站生成||
 |ISR：Incremental Site Rendering，增量式的网站渲染||
 |DPR：Distributed Persistent Rendering，分布式的持续渲染||
