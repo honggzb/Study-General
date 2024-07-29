@@ -7,9 +7,9 @@
 ## 先测量，再优化
 
 - Dev tools -> performance
-  - ![performance1](performance1.png)
+  - ![performance1](./images/performance1.png)
 - Angular Dev tools --> Profiler
-- ![sample](sample.png)
+- ![sample](./images/sample.png)
   - using [immutable-js](https://immutable-js.com/)
 - adding new **pure pipe** and ove fibonacci to pipe
 - 缓存、 memoization
