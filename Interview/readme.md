@@ -1,6 +1,7 @@
 ## temp
 
 - https://github.com/sateesh2020/coding-interview-university/blob/main/translations/README-cn.md
+- [小墨鱼的面试笔记](https://cchroot.github.io/interview/)
 
 ```
 ├── 📂interview
