@@ -79,6 +79,8 @@ Verify that all features work as intended and edge cases are handled appropriate
 
 [🚀back to top](#top)
 
+## How do you ensure the quality and maintainability of your code
+
 1. I follow the best practices and coding standards for front end development, such as using semantic HTML, modular CSS, and ES6 syntax. 
 2. I also use tools such as ESLint, Prettier, and Stylelint to enforce consistent code formatting and linting rules. I use Git and GitHub for version control and code collaboration. 
 3. I also use code reviews and pull requests to get feedback and suggestions from other developers. 
