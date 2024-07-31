@@ -118,10 +118,14 @@ export default function App() {
 
 ## React性能优化API- useMemo, React.memo
 
-如何比较props变化
+- 减少不必要的组件更新。这类优化是在组件状态发生变更后，通过减少不必要的组件更新来实现，对应到 React 中就是：减少渲染的节点 、降低组件渲染的复杂度、充分利用缓存避免重新渲染（利用缓存可以考虑使用PureComponent、React.memo、hook函数useCallback、useMemo等方法）
+- 如何比较props变化
+  - 全等比较
+  - 浅比较： 
+    - PureComponent 是对类组件的 Props 和 State 进行浅比较
+    - React.memo 是对函数组件的 Props 进行浅比较
 
-- 全等比较
-- 浅比较
+
 
 ```js
 // before
