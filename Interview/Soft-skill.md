@@ -2,8 +2,8 @@
 
 - [I continually seek out various resources to enhance my skills and stay up-to-date with industry trends](#i-continually-seek-out-various-resources-to-enhance-my-skills-and-stay-up-to-date-with-industry-trends)
 - [Here are some key steps to determine if your code is ready for deployment:](#here-are-some-key-steps-to-determine-if-your-code-is-ready-for-deployment)
-- [Soft Skills Every Programmer or Data Scientist Should Master](#soft-skills-every-programmer-or-data-scientist-should-master)
 - [How do you ensure the quality and maintainability of your code](#how-do-you-ensure-the-quality-and-maintainability-of-your-code)
+- [Soft Skills Every Programmer or Data Scientist Should Master](#soft-skills-every-programmer-or-data-scientist-should-master)
 
 --------------------------------------------------
 
