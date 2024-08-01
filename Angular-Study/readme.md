@@ -1,3 +1,17 @@
+|Observable|Promise|
+|---|---|
+|Emit multiple values over a period of time|Emit a single value at a time|
+|Are Lazy<br>they're not executed until using subscribe()|Are not lazy<br>execute immediately after creation|
+|Have subscriptions that are cancellable using unsubscribe(),<br> which stops the listener from receiving further values|are not cancellable|
+|provide the map for `forEach`, `filter`, `reduce`, `retry`, `retryWhen` operators|don't provide any operations|
+|Deliver error to the subscribers|Push errors to the child promises|
+
+|Operations|Observable|Promise|
+|---|---|---|
+|Creation|`const obs = new Observable((observer) =>{observer.next(7)});`|`const promise = new Promise(() => { resolve(7);});`|
+|Transform|`obs.pipe(map(value) => value*7);`|`promise.then(value => value*7);`|
+|subscribe|`const sub = obs.subscribe((value) => console.log(value))`|`promise.then((value)=>console.log(value))`|
+|Unsubscribe|`sub.unsubscribe()`|can't unsubscribe|
 ```
 ├── 📂Angular-Study
 │   ├── 📂Angular Advanced学习笔记/
