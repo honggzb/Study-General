@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>纯 CSS 实现标签自动显示超出数量</title>
+  <style type="text/css">
+html,body{
+  font-family: -apple-system, "BlinkMacSystemFont", sans-serif;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  gap: 20px;
+  accent-color: #9747FF;
+}
+.wrap{
+  width: 300px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  outline: 2px solid #9747FF;
+  gap: 5px;
+  overflow: hidden;
+}
+.con{
+  position: relative;
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  overflow: hidden;
+  counter-reset: num;   /*计数器初始值，默认为0*/
+  animation: check;     /* 半透明蒙层 */
+  /* 利用CSS滚动驱动动画，可以检测容器是否可滚动，也就是是否超出。
+     所以只需要将遮罩放在滚动驱动动画里就行了 */
+  animation-timeline: scroll(x self);
+  margin-right: -46px;
+}
+@keyframes check{
+  from,to {
+    margin-right: 0;
+    -webkit-mask: linear-gradient(to right, #fff calc(100% - 30px), transparent);
+  }
+}
+.wrap::after{
+  content: "+"counter(num);
+  padding: .2em .5em;
+  background-color: #FFE8A3;
+  color: #191919;
+  border-radius: 4px;
+}
+.tag{
+  padding: .2em .5em;
+  background-color: #9747FF;
+  color: #fff;
+  border-radius: 4px;
+  counter-increment: num 1;    /*计数器增量值，默认为1*/
+  /*动画，让标签在进入到容器之内时变个颜色
+    动画是在整个视区内过渡的，可以改变动画时间线的区间animation-range
+  */
+  animation: appear;
+  animation-timeline: view(inline);
+  animation-range: contain;
+}
+@keyframes appear{
+  from,to {
+    counter-increment: num 0;
+    background-color: #4d47ff;
+  }
+}
+/*定义一个计数器，然后通过每个tag进行累计，有多个tag相当于多少次累加，最后在::after中显示出来*/
+
+  </style>
+</head>
+<body>
+  <h3>CSS 标签超出显示数量</h3>
+<div class="wrap">
+  <div class="con">
+    <a class="tag">HTML</a>
+    <a class="tag">CSS</a>
+    <a class="tag">JavaScript</a>
+    <a class="tag">Flutter</a>
+    <a class="tag">Vue</a>
+    <a class="tag">React</a>
+    <a class="tag">Svelte</a>
+  </div>
+</div>
+<input type="range" min="200" value="300" max="800" oninput="this.previousElementSibling.style.width = this.value + 'px'">
+<br><br>
+<a href="https://segmentfault.com/a/1190000044865397">纯 CSS 实现标签自动显示超出数量</a>
+</body>
+</html>
