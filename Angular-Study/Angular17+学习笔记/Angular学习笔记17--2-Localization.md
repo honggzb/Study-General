@@ -13,7 +13,7 @@
 - [work with plurals- plural clause](#work-with-plurals--plural-clause)
   - [Mark plurals](#mark-plurals)
   - [Mark alternates- select clause](#mark-alternates--select-clause)
-
+- [补充- locale of Angular](#补充--locale-of-angular)
 
 ----------------------------------------------
 
@@ -290,6 +290,33 @@ export class LocaleSwitcherComponent {
 ```
 
 - [The CLDR Language Plural Rules- plural forms for all languages](https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html)
+
+[⬆ back to top](#top)
+
+## 补充- locale of Angular
+
+```ts
+import 'zone.js/dist/zone';
+import { Component, LOCALE_ID } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
+@Component({
+  selector: 'my-app',
+  standalone: true,
+  imports: [CommonModule],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
+  template: `
+   {{ 2056.23| number }}    // show as French format ->  2056,23
+  `,
+})
+export class App {
+  name = 'Angular';
+}
+bootstrapApplication(App);
+```
 
 [⬆ back to top](#top)
 
