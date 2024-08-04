@@ -2,9 +2,9 @@
 
 ||Libraries|
 |---|---|
-|Reducer-based|Redux,Zustand|
-|Atom-based|Recoil,Jotai|
-|Mutable-based|MobX,Valtio|
+|Reducer-based|Redux, Zustand|
+|Atom-based|Recoil, Jotai|
+|Mutable-based|MobX, Valtio|
 
 ----------------------------------------
 
