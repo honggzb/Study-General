@@ -1,6 +1,6 @@
-[MongoDB Interview Questions](#top)
+[top](#top)
 
-[100 MongoDB interview questions](https://devinterview.io/questions/web-and-mobile-development/mongodb-interview-questions/)
+- [100 MongoDB interview questions](https://devinterview.io/questions/web-and-mobile-development/mongodb-interview-questions/)
 
 ||
 |---|
