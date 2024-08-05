@@ -1,3 +1,5 @@
+- `npx create-next-app@latest`
+
 ```
 ├── 📂React
 │     ├──  📂NextJS/
