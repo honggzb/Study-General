@@ -19,7 +19,7 @@
 |[16. Which database is more popularly used with Node.js?](#16-which-database-is-more-popularly-used-with-nodejs)|
 |[17. What are some of the most commonly used libraries in Node.js?](#17-what-are-some-of-the-most-commonly-used-libraries-in-nodejs)|ons-of-nodejs)|
 |[19. What is the command used to import external libraries?](#19-what-is-the-command-used-to-import-external-libraries)|
-|[Node.js Interview Questions and Answers For Intermediate Level](#nodejs-interview-questions-and-answers-for-intermediate-level)|
+|Node.js Interview Questions and Answers For Intermediate Level|
 |[20. What does event-driven programming mean?](#20-what-does-event-driven-programming-mean)
 |[21. What is an Event Loop in Node.js?](#21-what-is-an-event-loop-in-nodejs)|
 |[22. Differentiate between process.nextTick() and setImmediate()?](#22-differentiate-between-processnexttick-and-setimmediate)|
