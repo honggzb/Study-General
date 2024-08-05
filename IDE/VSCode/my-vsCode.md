@@ -96,6 +96,9 @@ Draw.io                      | Diagram
 "powermode.presets": "flames",
 "powermode.combo.timerEnabled": "hide",
 "powermode.shake.enabled": false,
+//settings.json -- fontSize
+"editor.fontSize": 16,
+"window.zoomLevel": 1,
 ```
 
 [⬆ back to top](#top)
