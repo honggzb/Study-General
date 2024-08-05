@@ -1,11 +1,10 @@
 ```ts
 const messagesRef = React.useRef<any>(null);
-const messagesRef = React.useRef<any>(null);
-  useEffect(() => {
+useEffect(() => {
     if (messagesRef.current) {
       messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
     }
-  }, [messages]);
+}, [messages]);
 //
 <div ref={messagesRef}> ... </div>
 ```
