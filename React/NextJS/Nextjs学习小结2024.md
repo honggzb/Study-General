@@ -56,7 +56,7 @@ async function getData() {
   return res.json();
 }
 const PostsPage = async () => {
-  const data = await getData();
+  const data = await getData();      //use getData() directly
   return (
     <div>{data.posts.map((post, id) => (
       <div key={post.id}>
