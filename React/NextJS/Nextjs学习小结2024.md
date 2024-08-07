@@ -5,6 +5,7 @@
   - [File Conventions](#file-conventions)
   - [Component Hierarchy](#component-hierarchy)
 - [Dynamic Route \&\& API](#dynamic-route--api)
+- [Enabling CORS in a Next.js App](#enabling-cors-in-a-next-app)
 
 ## Roles of Folders and Files
 
@@ -96,6 +97,34 @@ const SinglePostPage = () => {
   )
 }
 export default SinglePostPage
+```
+
+[⬆ back to top](#top)
+
+## Enabling CORS in a Next App
+
+- [Using CORS in Next.js to handle cross-origin requests](https://blog.logrocket.com/using-cors-next-js-handle-cross-origin-requests/)
+- modify 'next.config.js'
+
+```js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async headers() {
+    return [
+      {
+        // matching all API routes
+        source: "/api/chat/:path*",
+        headers: [
+          { key: "Access-Control-Allow-Credentials", value: "true" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
+          { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
+        ]
+      }
+    ]
+  }
+};
+export default nextConfig;
 ```
 
 [⬆ back to top](#top)
