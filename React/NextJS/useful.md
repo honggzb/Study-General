@@ -3,6 +3,7 @@
 - [shadcn for Next.js](#shadcn-for-nextjs)
 - [Prisma setup](#prisma-setup)
 - [Prisma+MongoDB CRUD](#prismamongodb-crud)
+- [using google font in nextjs](#using-google-font-in-nextjs)
 
 ## shadcn for Next.js
 
@@ -162,3 +163,26 @@ async function handleEdit() {
 ```
 
 [⬆ back to top](#top)
+
+## using google font in nextjs
+
+- find font name in [google font](https://fonts.google.com/)
+- modify 'src\app\layout.js'
+
+```ts
+//src\app\layout.js
+import { Reddit_Mono } from "next/font/google";
+const reddit = Reddit_Mono({ subsets: ["latin"] });
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={`${reddit.className}`}>
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+[⬆ back to top](#top)
+
