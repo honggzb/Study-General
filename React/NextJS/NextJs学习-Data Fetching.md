@@ -158,7 +158,6 @@ async function handleEdit() {
 - Server actions can be invoked using the action attribute in a `<form>` element
   - `<form action={actions.createTalent} >`
 - Server actions can be invoked as `event handlers` and `useEffect` in Non-form Elements
-  -
 
 ```ts
 //1) src\actions\index.js
