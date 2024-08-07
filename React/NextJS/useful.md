@@ -19,7 +19,7 @@
   3.  `npx prisma init`
       1.  creates a new directory called 'prisma' that contains a file called 'schema.prisma'
       2.  creates the '.env' file in the root directory of the project
-  4. Connecting database, modify 'prisma/schema.prisma'
+  4. modify 'prisma/schema.prisma'
   5. `npx prisma generate`
      1. Environment variables loaded from '.env'
      2. Prisma schema loaded from 'prisma\schema.prisma'
