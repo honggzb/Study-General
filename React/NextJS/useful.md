@@ -4,6 +4,7 @@
 - [Prisma setup](#prisma-setup)
 - [Data fetch-CRUD](https://github.com/honggzb/Study-General/blob/master/React/NextJS/NextJs%E5%AD%A6%E4%B9%A0-Data%20Fetching.md)
 - [using google font in nextjs](#using-google-font-in-nextjs)
+- [date-fns](#date-fns)
 
 ## shadcn for Next.js
 
@@ -56,3 +57,10 @@ export default function RootLayout({ children }) {
 
 [⬆ back to top](#top)
 
+## date-fns
+
+- `npm install date-fns -D`
+- [date-fns](https://date-fns.org/docs/Getting-Started): Modern JavaScript date utility library
+- `<p className="text-sm font-light ml-auto">{formatDistance(new Date(postData.createAt), new Date())}</p>`
+
+[⬆ back to top](#top)
