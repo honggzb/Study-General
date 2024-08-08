@@ -2,6 +2,7 @@
 
 - [ng new](#ng-new)
 - [not standalone](#not-standalone)
+- [Install Tailwind CSS with Angular](#install-tailwind-css-with-angular)
 - [Angular CLI configuration](#angular-cli-configuration)
 - [Linting -checking and fixing code](#linting--checking-and-fixing-code)
 - [Generating code from blueprints](#generating-code-from-blueprints)
@@ -85,6 +86,18 @@ ng new ngtest --skip-git         |ng new ngtest -g     | don't add the project t
 ```
 
 [back to top](#top)
+
+## Install Tailwind CSS with Angular
+
+1. `npm install -D tailwindcss postcss autoprefixer`
+2. `npx tailwindcss init`
+3. add following to 'tailwind.config.js'
+   1. `content: ["./src/**/*.{html,ts}"],`
+4. Add the Tailwind directives to 'src\styles.css'
+   - `@tailwind base;`
+   - `@tailwind components;`
+   - `@tailwind utilities;`
+- https://tailwindcss.com/docs/guides/angular
 
 ## Angular CLI configuration
 
