@@ -48,8 +48,6 @@
 ├── 📄 middleware.ts         - clerkMiddleware
 ```
 
-
-
 ## User authentication - using clerk
 
 - `npm install @clerk/nextjs`
