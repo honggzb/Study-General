@@ -21,7 +21,7 @@
 5. [Setup Authentication Methods](https://authjs.dev/getting-started/authentication/oauth)
    1. [Authentication of github](https://authjs.dev/getting-started/authentication/oauth)
    2. go to your github page --> your head icon --> setting -->  Developer settings  --> OAuth App
-   3. ![registerGithubApp](registerGithubApp.png)
+   3. ![registerGithubApp](./images/registerGithubApp.png)
    4. Setup Environment Variables: add a `Client ID` and `Client Secret` to '.env.local' file
 6. Setup github Provider:
    1. adding Provider to 'src\auth.ts' file
