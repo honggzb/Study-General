@@ -1,8 +1,16 @@
+- `npx create-next-app@latest`
+
 ```
 ├── 📂React
 │     ├──  📂NextJS/
+│     │    ├── 📄Main Concepts of NextJS
 │     │    ├── 📄NextJs学习-App Router.md
+│     │    ├── 📄NextJs学习-Data Fetching.md
+│     │    ├── 📄NextJs学习-authentication-AuthJS.md
+│     │    ├── 📄NextJs学习-authentication-clerk.md
 │     │    ├── 📄NextJs学习-概述.md
+│     │    ├── 📄Nextjs学习小结2024.md
+│     │    ├── 📄前端基础渲染模式-CSR、SSR、同构、静态化.md
 │     │    └── 
 │     ├──  📂The Complete React Developer Course -w Hooks and Redux- Andrew Mead/
 │     ├──  📂sample/
@@ -31,6 +39,10 @@
 │     ├── 📄react-official-document-study.md
 │     └── 📄react官网学习小结-2023版.md
 ```
+
+## Libraries
+
+- [SWR-用于数据请求的 React Hooks 库](https://swr.vercel.app/zh-CN)
 
 ## VSCode settings
 

@@ -50,6 +50,8 @@
 
 ## Plugin
 
+- **Million Lint**: 找出react性能优化
+
 ```
 -----------------------------|-------------------------------------------------------------------------
 *beautify                    |良好的拓展性，可以格式化JSON|JS|HTML|CSS|SCSS,比内置格式化好用
@@ -96,6 +98,9 @@ Draw.io                      | Diagram
 "powermode.presets": "flames",
 "powermode.combo.timerEnabled": "hide",
 "powermode.shake.enabled": false,
+//settings.json -- fontSize
+"editor.fontSize": 16,
+"window.zoomLevel": 1,
 ```
 
 [⬆ back to top](#top)

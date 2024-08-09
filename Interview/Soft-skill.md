@@ -3,6 +3,7 @@
 - [I continually seek out various resources to enhance my skills and stay up-to-date with industry trends](#i-continually-seek-out-various-resources-to-enhance-my-skills-and-stay-up-to-date-with-industry-trends)
 - [Here are some key steps to determine if your code is ready for deployment:](#here-are-some-key-steps-to-determine-if-your-code-is-ready-for-deployment)
 - [How do you ensure the quality and maintainability of your code](#how-do-you-ensure-the-quality-and-maintainability-of-your-code)
+- [what you expect to be doing on a daily basis as a software engineer?](#what-you-expect-to-be-doing-on-a-daily-basis-as-a-software-engineer)
 - [Soft Skills Every Programmer or Data Scientist Should Master](#soft-skills-every-programmer-or-data-scientist-should-master)
 
 --------------------------------------------------
@@ -88,6 +89,16 @@ Verify that all features work as intended and edge cases are handled appropriate
 5. I also use tools such as Webpack and Babel to transpile, bundle, and minify my code for production
    
 [🚀back to top](#top)
+
+## what you expect to be doing on a daily basis as a software engineer?	
+
+- **Coding**: Writing and optimizing front-end code in HTML, CSS, and JavaScript.
+- **Collaboration**: Working with designers and back-end developers to integrate and refine features.
+- **Testing**: Ensuring cross-browser compatibility and responsive design.
+- **Problem-Solving**: Debugging issues and improving user experience.
+- **Debugging** and **troubleshooting** any front-end issues that arise, and implementing fixes to - improve the user experience.
+- Participating in **code reviews** to maintain code quality and share knowledge with peers.
+- Staying informed about **new technologies** and industry best practices to continuously refine my-skills and apply innovative solutions.
 
 ## Soft Skills Every Programmer or Data Scientist Should Master
 
