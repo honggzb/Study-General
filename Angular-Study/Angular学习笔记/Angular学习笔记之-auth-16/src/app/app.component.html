@@ -1,0 +1,9 @@
+<div *ngIf="authService.currentUserSig() === null" class="flex flex-row gap-5 m-6">
+  <a routerLink="/login">Login</a>
+  <a routerLink="/register">Register</a>
+</div>
+<div *ngIf="authService.currentUserSig()">
+  <p>{{ authService.currentUserSig()?.username }} </p>
+  <span (click)="logout()">Logout</span>
+</div>
+<router-outlet></router-outlet>

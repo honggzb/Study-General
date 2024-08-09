@@ -1,0 +1,14 @@
+<div class="mt-20 ml-10 gap-5">
+  <h1>Login</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <input type="text" placeholder="Email" formControlName="email" class="border border-1 border-gray-700"/>
+    </div>
+    <div>
+      <input type="password" placeholder="Password" formControlName="password"  class="border border-1 border-gray-700" />
+    </div>
+    <div>
+      <button type="submit">Sign In</button>
+    </div>
+  </form>
+</div>
