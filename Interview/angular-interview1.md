@@ -15,7 +15,7 @@
 - [13. How do you handle _form submissions_ in Angular?](#13-how-do-you-handle-form-submissions-in-angular)
 - [14. What is _Angular CLI_ and what can it be used for?](#14-what-is-angular-cli-and-what-can-it-be-used-for)
 - [15. Describe how to make _HTTP requests_ in Angular using _HttpClient_.](#15-describe-how-to-make-http-requests-in-angular-using-httpclient)
-- 
+
 -----------------------------------------------------------------------
 #### You can also find all 100 answers here 👉 [Devinterview.io - Angular](https://devinterview.io/questions/web-and-mobile-development/angular-interview-questions)
 
