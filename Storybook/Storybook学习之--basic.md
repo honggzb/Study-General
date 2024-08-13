@@ -179,7 +179,7 @@ export default defineConfig({
 }
 ```
 
-4. `npm run build`,  ![lib build](libbuild.png)
+4. `npm run build`,  ![lib build](./images/libbuild.png)
 5. adding following to 'package.json'
 
 ```js
