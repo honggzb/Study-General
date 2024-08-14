@@ -3,6 +3,7 @@
 - [ng new](#ng-new)
 - [not standalone](#not-standalone)
 - [Install Tailwind CSS with Angular](#install-tailwind-css-with-angular)
+- [Install Angular Material](#install-angular-material)
 - [Angular CLI configuration](#angular-cli-configuration)
 - [Linting -checking and fixing code](#linting--checking-and-fixing-code)
 - [Generating code from blueprints](#generating-code-from-blueprints)
@@ -98,6 +99,18 @@ ng new ngtest --skip-git         |ng new ngtest -g     | don't add the project t
    - `@tailwind components;`
    - `@tailwind utilities;`
 - https://tailwindcss.com/docs/guides/angular
+
+## Install Angular Material
+
+1. `ng add @angular/material` 
+2. Add the following to 'index.html'
+   - `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
+3. Or 
+   1. `npm install material-design-icons`
+   2. add the styles to 'angular.json'
+      - `"styles": [ "node_modules/material-design-icons/iconfont/material-icons.css"]` 
+
+[back to top](#top)
 
 ## Angular CLI configuration
 
