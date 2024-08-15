@@ -227,9 +227,12 @@ class MyComp {
 
 1. create loading component: 'src\app\loading\loading.component.ts', 'src\app\loading\loading.component.html'
 2. create loading service: 'src\app\loading\loading.service.ts'
-3. add loading component to 'app.component'
-
+3. add loading component to 'app.component.html'
+ 
 ```ts
+// app.component.html
+ <app-loading/>
+// src\app\loading\loading.service.ts
 export class LoadingService {
   #loadingSignal = signal(false);
   loading = this.#loadingSignal.asReadonly();  //expose a readonly
