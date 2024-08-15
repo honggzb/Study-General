@@ -11,7 +11,7 @@
 - [Signal Inputs](#signal-inputs)
   - [Value transforms](#value-transforms)
   - [Benifit](#benifit)
-- [loading by using signal](#loading-by-using-signal)
+- [loading based on signal](#loading-based-on-signal)
   - [service implementation](#service-implementation)
   - [interceptor implementation](#interceptor-implementation)
   - [skip loading](#skip-loading)
@@ -223,7 +223,7 @@ class MyComp {
 
 [⬆ back to top](#top)
 
-## loading by using signal
+## loading based on signal
 
 1. create loading component: 'src\app\loading\loading.component.ts', 'src\app\loading\loading.component.html'
 2. create loading service: 'src\app\loading\loading.service.ts'
