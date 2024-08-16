@@ -11,6 +11,7 @@
 - [Signal Inputs](#signal-inputs)
   - [Value transforms](#value-transforms)
   - [Benifit](#benifit)
+- [Model inputs](#model-inputs)
 - [loading based on signal](#loading-based-on-signal)
   - [service implementation](#service-implementation)
   - [interceptor implementation](#interceptor-implementation)
@@ -222,6 +223,31 @@ class MyComp {
 - Easier and more local monitoring of inputs using `effect` instead of `ngOnChanges` or setters
 
 [⬆ back to top](#top)
+
+## Model inputs
+
+- Model inputs are a special type of input that enable a component to **propagate new values back to another component**
+- model inputs allow the component author to write values into the property
+
+```ts
+import {Component, model, input} from '@angular/core';
+@Component({
+  selector: 'custom-checkbox',
+  template: '<div (click)="toggle()"> ... </div>',
+})
+export class CustomCheckbox {
+  checked = model(false);
+  disabled = input(false);   // standard inputs are read-only
+  toggle() {
+    this.checked.set(!this.checked());  // can write directly to model inputs
+  }
+}
+```
+
+- create a model input in 'src\app\course-category-combobox\course-category-combobox.component'
+- pass value to its parent component(src\app\edit-course-dialog\edit-course-dialog.component)
+
+ [⬆ back to top](#top)
 
 ## loading based on signal
 
