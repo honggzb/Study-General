@@ -147,4 +147,4 @@ export class ArticleComponent implements OnInit {
 
 [⬆ back to top](#top)
 
-> []()
+> [【Angular开发】Angular 16发布：发现前7大功能](https://blog.51cto.com/jiagoushipro/8885065)
