@@ -16,7 +16,7 @@
 
 ## 依赖注入
 
-![依赖注入](依赖注入.png)
+![依赖注入](./images/依赖注入.png)
 
 ## Change Deteccion
 
@@ -43,7 +43,7 @@
 |RouterLink|	在Html中声明路由导航用的指令|
 |ActivedRoute|	当前激活的路由对象，保存着当前路由的信息，如路由地址，路由参数等|
 
-![路由](路由.png)
+![路由](./images/路由.png)
 
 ### 路由参数传递 – 参数传递的几种方式
 
@@ -103,8 +103,8 @@ rest方式传递数据  |  {path:/product/:id}      => /product/1               
 
 ## Ngrx
 
-- ![Ngrx](Ngrx.gif)
-- ![Ngrx](Ngrx.png)
+- ![Ngrx](./images/Ngrx.gif)
+- ![Ngrx](./images/Ngrx.png)
 
 |||
 |---|---|
