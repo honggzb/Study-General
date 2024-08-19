@@ -19,6 +19,7 @@
 - [Messages based on signal](#messages-based-on-signal)
 - [Authentication based on signal](#authentication-based-on-signal)
 - [Route Resolver using signal](#route-resolver-using-signal)
+- [ViewChild signal](#viewChild-signal)
 
 -------------------------------------------------
 
@@ -465,6 +466,13 @@ ngOnInit(): void {
     }
   },
 ```
+
+[⬆ back to top](#top)
+
+## ViewChild signal
+
+- ![ViewChild](./images/ViewChild.png)
+- ![viewChildren](./images/viewChildren.png)
 
 [⬆ back to top](#top)
 
