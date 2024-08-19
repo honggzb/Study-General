@@ -18,6 +18,11 @@
 
 ## Change Detection Strategy- OnPush
 
+引起状态变化(异步)：
+- Events
+- XHR
+- Times
+
 |||
 |---|---|
 |Default|OnPush|
