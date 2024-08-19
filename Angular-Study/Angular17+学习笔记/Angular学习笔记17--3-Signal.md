@@ -471,8 +471,8 @@ ngOnInit(): void {
 
 ## ViewChild signal
 
-- ![ViewChild](../../images/ViewChild.png)
-- ![viewChildren](../../images/viewChildren.png)
+- ![ViewChild](../images/ViewChild.png)
+- ![viewChildren](../images/viewChildren.png)
 
 [⬆ back to top](#top)
 
