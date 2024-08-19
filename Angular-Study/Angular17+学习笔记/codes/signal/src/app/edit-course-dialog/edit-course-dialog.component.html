@@ -1,0 +1,27 @@
+
+<div class="edit-course-form" [formGroup]="form">
+  <h3>{{data.title}}</h3>
+  <div class="form-control">
+    <label>Course title:</label>
+    <input placeholder="Enter course title" formControlName="title">
+  </div>
+  <div class="form-control">
+    <label>Course description:</label>
+    <textarea placeholder="Enter course description" formControlName="longDescription"></textarea>
+  </div>
+
+  <!-- <app-course-category-combobox label="Course category" [(value)]="category" /> -->
+  <app-course-category-combobox label="Course category" [(value)]="category">
+    <div class="title" #title>Course category (via content projection)</div>
+    <!-- <div class="title" #title>Anthor title (via content projection)</div> -->
+  </app-course-category-combobox>
+
+  <div class="form-control">
+    <label>Course image:</label>
+    <input placeholder="Enter course title" formControlName="iconUrl">
+  </div>
+  <div class="form-control">
+    <button class="btn" (click)="onSave()">Save</button>
+    <button class="btn" (click)="onClose()">Cancel</button>
+  </div>
+</div>

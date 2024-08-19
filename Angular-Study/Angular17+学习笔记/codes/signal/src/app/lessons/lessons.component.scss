@@ -1,0 +1,25 @@
+@import "../../styles/button";
+@import "../../styles/forms";
+@import "../../styles/table";
+
+@include buttonStyles();
+@include formStyles();
+
+.lessons {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.header h1 {
+  text-align: center;
+}
+
+.search-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search {
+  margin-left: 10px;
+}

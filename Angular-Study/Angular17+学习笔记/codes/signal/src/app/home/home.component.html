@@ -1,0 +1,28 @@
+<div class="courses-panel">
+  <h3>All Courses</h3>
+  <button class="btn" (click)="onAddCourse()"> Add Course</button>
+
+  <mat-tab-group>
+    <mat-tab label="Beginners">
+      <app-courses-card-list #beginnerList
+        matTooltip="These are the beginner cources"
+        (courseUpdated)="onCourseUpdated($event)"
+        (courseDeleted)="onCourseDeleted($event)"
+        [courses]="beginnerCourses()" />
+    </mat-tab>
+    <mat-tab label="Immediate">
+      <app-courses-card-list #immediateList
+        matTooltip="These are the immediate cources"
+        (courseUpdated)="onCourseUpdated($event)"
+        (courseDeleted)="onCourseDeleted($event)"
+        [courses]="immediateCourses()" />
+    </mat-tab>
+    <mat-tab label="Advanced">
+      <app-courses-card-list #advancedList
+        matTooltip="These are the advanced cources"
+        (courseUpdated)="onCourseUpdated($event)"
+        (courseDeleted)="onCourseDeleted($event)"
+        [courses]="advancedCourses()"/>
+    </mat-tab>
+  </mat-tab-group>
+</div>

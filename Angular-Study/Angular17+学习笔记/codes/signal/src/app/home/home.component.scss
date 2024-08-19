@@ -1,0 +1,12 @@
+@import "../../styles/button";
+
+@include buttonStyles();
+
+.courses-panel {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+button {
+  margin-right: 10px;
+}
