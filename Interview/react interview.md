@@ -5,10 +5,11 @@
 ## State vs props
 
 ```
-                          state                                                          |    props
-an object that holds some information that may change over the lifetime of the component | inputs to components
-used for internal communication inside a component                                       | pass data to child component
-useState()                                                                               | props.reactProp;
+                          state                           |    props
+an object that holds some information that may change     | inputs to components
+over the lifetime of the component                        | pass data to child component
+used for internal communication inside a component        | props.reactProp
+useState()                                                | 
 ```
 
 ## The Virtual DOM (VDOM) 
