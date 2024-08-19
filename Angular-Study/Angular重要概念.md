@@ -83,7 +83,7 @@ rest方式传递数据  |  {path:/product/:id}      => /product/1               
 |ViewChild| 用于获取模板视图中的元素或直接调用其组件中的方法。它支持 Type 类型或 string 类型的选择器，同时支持设置 read 查询条件，以获取不同类型的实例。比如ElementRef和ViewContainerRef|
 |ViewChildren| 用来从模板视图中获取匹配的多个元素，返回的结果是一个 `QueryList` 集合|
 
-![ViewChild](ViewChild.png)
+![ViewChild](./images/ViewChild.png)
 
 ## DOM绑定与HTML属性绑定
 
