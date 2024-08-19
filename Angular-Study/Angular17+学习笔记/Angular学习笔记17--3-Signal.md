@@ -16,6 +16,9 @@
   - [service implementation](#service-implementation)
   - [interceptor implementation](#interceptor-implementation)
   - [skip loading](#skip-loading)
+- [Messages based on signal](#messages-based-on-signal)
+- [Authentication based on signal](#authentication-based-on-signal)
+- [Route Resolver using signal](#route-resolver-using-signal)
 
 -------------------------------------------------
 
@@ -350,6 +353,117 @@ async loadAllCourses(): Promise<Course[]> {
   const response = await firstValueFrom(courses$);   // transform to Promise
   return response.courses;
 }
+```
+
+[⬆ back to top](#top)
+
+## Messages based on signal
+
+1. create message component: 'src\app\messages\messages.component'
+2. create message service: 'src\app\messages\messages.service.ts'
+3. add message componnet to 'app.component.html'
+4. using message service in related component, such as 'src\app\home\home.component.ts'
+
+```ts
+// app.component.html
+ <app-messages/>
+// src\app\home\home.component.ts
+async loadCourses() {
+    try {
+      this.loadingService.loadingOn();
+      const courses = await this.coursesService.loadAllCourses();
+      this.#courses?.set(courses);
+    } catch (error) {
+      this.messagesService.showMessage(
+        'Error loading courses!',
+        'error'
+      )
+    } finally {
+      this.loadingService.loadingOff();
+    }
+}
+```
+
+ [⬆ back to top](#top)
+
+## Authentication based on signal
+
+1. create 'src\app\services\auth.service.ts'
+   1. `#userSignal = signal<User | null>(null);`
+   2. `user = this.#userSignal.asReadonly();`
+   3. `isLoggedIn = computed(() => !!this.user());`
+2. create 'src/app/guards/auth.guard.ts'
+3. add auth guard to 'app.routes.ts'
+
+```ts
+// src\app\services\auth.service.ts
+export class AuthService {
+  #userSignal = signal<User | null>(null);
+  user = this.#userSignal.asReadonly();
+  isLoggedIn = computed(() => !!this.user());   // computed signal
+  http = inject(HttpClient);
+  router = inject(Router);
+  async login(email: string, password: string): Promise<User> {
+    const login$ = this.http.post<User>(`${environment.apiRoot}/login`, { email, password });
+    const user = await firstValueFrom(login$);
+    this.#userSignal.set(user);
+    return user;
+  }
+  async logout() {
+    this.#userSignal.set(null);
+    await this.router.navigateByUrl('/login');
+  }
+}
+
+// src/app/guards/auth.guard.ts
+export const isUserAuthenticated: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
+  if(authService.isLoggedIn()) {
+    return true;
+  } else {
+    return router.parseUrl('/login');
+  }
+}
+//app.routes.ts
+ { path: '', component: HomeComponent, canActivate: [isUserAuthenticated] },
+```
+
+[⬆ back to top](#top)
+
+## Route Resolver using signal
+
+1. create resolvers: 'src\app\course\course.resolve.ts', src\app\course\course-lessons.resolver.ts
+   - loading data in resolvers
+2. define related signal and apply route data in component: 'src\app\course\course.component.ts'
+3. add resolvers in 'app.routes.ts'
+
+```ts
+// src\app\course\course.resolve.ts'
+export const courseResolver: ResolveFn<Course | null> =
+  async (
+  route: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot) => {
+  const courseId = route.paramMap.get('courseId');
+  if(!courseId) return null;
+  const coursesService = inject(CoursesService);
+  return coursesService.getCourseById(courseId);
+}
+// src\app\course\course.component
+course = signal<Course | null>(null);
+ngOnInit(): void {
+  this.course.set(this.route.snapshot.data['course']);
+}
+// app.routes.ts
+{
+    path: 'courses/:courseId',
+    component: CourseComponent,
+    canActivate: [isUserAuthenticated],
+    resolve: {
+      course: courseResolver,
+      lessons: courseLessonsResolver
+    }
+  },
 ```
 
 [⬆ back to top](#top)
