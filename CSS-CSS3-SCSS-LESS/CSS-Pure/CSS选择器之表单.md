@@ -20,10 +20,10 @@
       transition: 0.5s;
       padding: 10px;
     }
-    .form-block:focus-within {
+    .form-block:focus-within { /* 任何form-block的子元素被选中时 */
       background-color: #eee;
     }
-    .label span:has(+input[data-required])::after {
+    .label span:has(+input[data-required])::after {  /* span的下一个有data-required属性的input */
       content: '*';
       color: #f40;
     }
