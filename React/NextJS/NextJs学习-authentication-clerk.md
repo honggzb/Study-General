@@ -68,3 +68,6 @@ export default function RootLayout({
 - Update environment variables --> `.env`
   - `NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in`
   - `NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up`
+
+
+> 'next-ssr-gpt-clerk-zustand-mongoDB' project
