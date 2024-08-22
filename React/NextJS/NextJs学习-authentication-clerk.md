@@ -71,3 +71,4 @@ export default function RootLayout({
 
 
 > 'next-ssr-gpt-clerk-zustand-mongoDB' project
+> [official-Clerk for nextjS](https://clerk.com/docs/quickstarts/nextjs)
