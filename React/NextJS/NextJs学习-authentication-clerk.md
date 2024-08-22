@@ -70,5 +70,6 @@ export default function RootLayout({
   - `NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up`
 
 
-> 'next-ssr-gpt-clerk-zustand-mongoDB' project
-> [official-Clerk for nextjS](https://clerk.com/docs/quickstarts/nextjs)
+> References
+- 'next-ssr-gpt-clerk-zustand-mongoDB' project
+- [official-Clerk for nextjS](https://clerk.com/docs/quickstarts/nextjs)
