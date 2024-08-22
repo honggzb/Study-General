@@ -19,6 +19,8 @@
 ```ts
 // src\middleware.ts
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+// Make the sign-up and sign-in routes public-
+// https://clerk.com/docs/references/nextjs/custom-signup-signin-pages
 const isPublicRoute = createRouteMatcher(['/sign-in(.*)', '/sign-up(.*)']);
 export default clerkMiddleware((auth, request) => {
   if(!isPublicRoute(request)) {
