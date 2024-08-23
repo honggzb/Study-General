@@ -11,7 +11,7 @@
   - [adding persistReducer and persistStore to store](#adding-persistreducer-and-persiststore-to-store)
   - [wrap root component with PersistGate](#wrap-root-component-with-persistgate)
 - [using bootstrap](#using-bootstrap)
-- [using shadcn](#using-shadcn)
+- [using shadcn for nextjs project](#using-shadcn-for-nextjs-project)
 - [install and setup tailwindcss](#install-and-setup-tailwindcss)
 - [updating whole packages to latest version](#updating-whole-packages-to-latest-version)
 - [using context](#using-context)
