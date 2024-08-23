@@ -269,7 +269,8 @@ import { persistor, store } from './store/store';
 
 1. `npx shadcn-ui@latest init`
 2. `npx shadcn-ui@latest add button`
-3. 
+3. `import { Button } from "@/components/ui/button"`, `<Button>Click me</Button>`
+4. https://ui.shadcn.com/
 
 [⬆ back to top](#top)
 
