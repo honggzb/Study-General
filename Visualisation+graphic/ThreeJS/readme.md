@@ -36,3 +36,7 @@
 - [mdn-webgl-examples](https://github.com/idofilin/webgl-by-example/tree/master)
 - https://github.com/Sean-Bradley
 - https://github.com/pmndrs/react-three-fiber
+
+## youtube
+
+- [Three.js 101 Crash Course: Beginner’s Guide to 3D Web Design (7 HOURS!)](https://www.youtube.com/watch?v=KM64t3pA4fs)
