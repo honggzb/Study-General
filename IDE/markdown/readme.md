@@ -12,6 +12,7 @@
 - 📦
 - 📂
 - 📄
+- ✅
 
 ## Highlight && Strikethrough
 
