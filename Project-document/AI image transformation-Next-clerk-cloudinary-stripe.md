@@ -93,7 +93,7 @@
 
 ## Clerk auth + NextJS
 
-https://github.com/honggzb/Study-General/blob/master/React/NextJS/NextJs%E5%AD%A6%E4%B9%A0-authentication-clerk.md
+- [NextJs学习之-authentication-clerk](https://github.com/honggzb/Study-General/blob/master/React/NextJS/NextJs%E5%AD%A6%E4%B9%A0-authentication-clerk.md)
 
 ## MongoDB by using mongoose
 
@@ -213,7 +213,7 @@ https://github.com/honggzb/Study-General/blob/master/React/NextJS/NextJs%E5%AD%A
 - [Build a File Storage App with Role Based Authorization (Next.js, Shadcn, Typescript)](https://www.youtube.com/watch?v=27hMNWcsa-Y)
 
 
-
+```
 00:00:00 — Intro
 00:03:49 — Project Setup
 00:12:12 — Next.js Routing & folder structure
@@ -229,5 +229,5 @@ https://github.com/honggzb/Study-General/blob/master/React/NextJS/NextJs%E5%AD%A
 03:52:10 — Image details, Update & Delete Image
 04:12:21 — Checkout & Pay with Stripe
 04:30:10 — Final Deployment & Production fixes
+```
 
-✅
