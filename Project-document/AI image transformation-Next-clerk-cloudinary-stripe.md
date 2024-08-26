@@ -76,16 +76,16 @@
 ├── 📄 middleware.ts                - clerkMiddleware
 ```
 
-![fileRoute](fileRoute.png)
+![fileRoute](./images/fileRoute.png)
 
 ## Route Group
 
 - to prevent the folder from being included in the route's URL path
 - Route groups are useful for:
   - Organizing routes into groups e.g. by site section, intent, or team
-    - ![Route Group 1](Route-Group1.png)
+    - ![Route Group 1](./images/Route-Group1.png)
   - Enabling nested layouts in the same route segment level
-    - ![Route-Group 2](Route-Group2.png)
+    - ![Route-Group 2](./images/Route-Group2.png)
     - Creating multiple nested layouts in the same segment, including multiple root layouts
     - Adding a layout to a subset of routes in a common segment
 
@@ -120,7 +120,7 @@ https://github.com/honggzb/Study-General/blob/master/React/NextJS/NextJs%E5%AD%A
 - A webhook is an event-driven method of communication between applications
 - Clerk webhooks allow to receive event notifications from Clerk, such as when a user is created or updated
 - Clerk uses [Svix](https://svix.com/) to send our webhooks
-- ![Clerk webhooks](Clerk webhooks.png)
+- ![Clerk webhooks](./images/Clerk webhooks.png)
 - Need deploy your application firstly, for example deploying at github
   1. create a new repository
   2. `npm i qs`
@@ -130,13 +130,13 @@ https://github.com/honggzb/Study-General/blob/master/React/NextJS/NextJs%E5%AD%A
   6. `git branch -M main`
   7. `git remote add origin https://github.com/xxx/imaginity.git`
   8. `git push -u origin main`
-  9. ![createReCLI](createReCLI.png)
+  9. ![createReCLI](./images/createReCLI.png)
 - deploy to Versel Console
   1. https://vercel.com/honggzbs-projects
   2. 'add New..'
 - [Sync Clerk data to your application with webhooks](https://clerk.com/docs/integrations/webhooks/sync-data)
-  - ![ClerkConsole0](ClerkConsole0.png)
-  - ![ClerkConsole](ClerkConsole.png)
+  - ![ClerkConsole0](./images/ClerkConsole0.png)
+  - ![ClerkConsole](./images/ClerkConsole.png)
   - Add your signing secret to '.env.local' file
   - Set webhook route as public in Middleware
   - Install svix: `npm install svix`
@@ -166,11 +166,11 @@ https://github.com/honggzb/Study-General/blob/master/React/NextJS/NextJs%E5%AD%A
   - click 'upload' -->
   - click 'Unsigned uploading enabled'
   - click 'Add upload preset'
-    - ![Add upload preset](Add-upload-preset.png)
+    - ![Add upload preset](./images/Add-upload-preset.png)
 - click 'Add-ons' on left menu in console  ->
   - choose 'Cloudinary AI Background Removal'  --> click 'free' plan
   - choose 'Google Auto Tagging'  --> click 'free' plan
-  - ![Cloudinary Add-ons](Cloudinary-Add-ons.png)
+  - ![Cloudinary Add-ons](./images/Cloudinary-Add-ons.png)
 - create 'src\components\shared\MediaUploader.tsx'
   - add upload field to 'src\components\shared\TransformationForm.tsx'
 - `npm install next-cloudinary`
