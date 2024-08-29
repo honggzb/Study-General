@@ -18,6 +18,7 @@
 |快捷键|说明|
 |---|---|
 |Alt + Insert |constructor|
+|Alt + Enter万通快捷键|	显示建议操作|
 
 ## 多个插入符号和范围选择
 
