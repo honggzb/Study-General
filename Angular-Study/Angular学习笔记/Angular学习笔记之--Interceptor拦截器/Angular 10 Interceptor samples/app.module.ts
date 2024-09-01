@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { httpInterceptorProviders } from './interceptors';
@@ -27,7 +26,11 @@ registerLocaleData(zh);
         NzButtonModule,
         NzMessageModule
     ],
-    providers: [httpInterceptorProviders, { provide: NZ_I18N, useValue: zh_CN }],
+    providers: [
+        httpInterceptorProviders, 
+        { provide: NZ_I18N, useValue: zh_CN },
+        { provide: HTTP_INTERCEPTORS, useClass: AuthIntercepter, multi: true }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
