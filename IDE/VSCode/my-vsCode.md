@@ -90,6 +90,8 @@ Prettier(optional)           | 代码格式化工具
 indent-rainbow               | 缩进层次以不同颜色高亮显示
 Power Mode                   | 键盘输入时候的宫廷效果
 Draw.io                      | Diagram
+'Cascadia Code'  font        | on Dracula theme
+'Fira Code'  font            | on One Dark Pro theme
 ```
 
 ```js
