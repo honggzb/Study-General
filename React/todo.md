@@ -1,0 +1,1 @@
+- [How to use SVGs in React](https://blog.logrocket.com/how-to-use-svgs-react/#using-img-tag-static-svgs)
