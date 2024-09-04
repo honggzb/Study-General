@@ -34,3 +34,4 @@
 
 - [angular项目从版本5到10的打怪升级之路](https://juejin.cn/post/6870320287884247048)
 - [Angular4升级到Angular11项目记录](https://juejin.cn/post/7017994815476334600)
+- [Upgrading from Angular 12 to 15 in Nx Workspace: A Comprehensive Guide](https://trungvose.com/experience/nx-angular-15-migration/)
