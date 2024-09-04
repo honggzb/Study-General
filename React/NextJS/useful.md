@@ -6,6 +6,10 @@
 - [using google font in nextjs](#using-google-font-in-nextjs)
 - [date-fns](#date-fns)
 
+-------------------------------------------------------------------------
+
+- `npx create-next-app@latest --typescript --eslint`
+
 ## shadcn for Next.js
 
 - [shadcn for Next.js](https://ui.shadcn.com/docs/installation/next)
