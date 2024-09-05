@@ -13,7 +13,7 @@
 ## shadcn for Next.js
 
 - [shadcn for Next.js](https://ui.shadcn.com/docs/installation/next)
-- `npx shadcn-ui@latest init`
+- `npx shadcn@latest init`
 - `npx shadcn-ui@latest add card input label dialog`
 
 ## Prisma setup
