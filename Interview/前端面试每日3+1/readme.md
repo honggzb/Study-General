@@ -1,1 +1,4 @@
 - https://github.com/haizlin/fe-interview?tab=readme-ov-file
+- https://webvueblog.github.io/WebGuideInterview/
+  - 侧重vue 
+- [LeetCodeAnimation](https://github.com/MisterBooo/LeetCodeAnimation/tree/master)
