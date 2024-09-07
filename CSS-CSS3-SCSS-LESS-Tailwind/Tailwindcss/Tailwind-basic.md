@@ -1,6 +1,5 @@
 - [Basic](#basic)
 - [Handling Hover, Focus, and Other States](#handling-hover-focus-and-other-states)
-  - [Hover, focus, and active](#hover-focus-and-active)
 - [Functions \& Directives](#functions--directives)
   - [Directives](#directives)
   - [Functions](#functions)
@@ -81,16 +80,12 @@
 |Media and feature queries |responsive breakpoints, `dark` mode, and `prefers-reduced-motion`|
 |Attribute selectors |`[dir="rtl"]` and `[open]`|
 
-### Hover, focus, and active
-
-- `<button class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 ...">
-  Save changes
-</button>`
 - [pseudo-class reference](https://tailwindcss.com/docs/hover-focus-and-other-states#pseudo-class-reference): like `:visited`, `:focus-within`, `:focus-visible`, and more
 - [offical: hover-focus-and-other-states](https://tailwindcss.com/docs/hover-focus-and-other-states)
 
-|Pseudo-classes|案例|
+|Pseudo-classes|Sample|
 |---|---|
+|Hover, focus, and active|`hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300`|
 |First,last,odd,even|`first:pt-0 last:pb-0`<br>`odd:bg-white even:bg-slate-50`|
 |Form states| `required`,`invalid`, `disabled`,`:read-only`,`:indeterminate`,`:checked`||
 |Styling based on parent|`group`,`group-hover:stroke-white`,`group-focus`,`group-active`,`group-odd`|
