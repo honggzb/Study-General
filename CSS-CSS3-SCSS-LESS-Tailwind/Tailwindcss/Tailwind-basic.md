@@ -33,7 +33,7 @@
 |width/height|w-24,h-24,w-1/2,min-w-100,max-w-full,min-w-min|
 |space|space-x-5,space-y-6|
 
-|Spaces & Size|------------------------------|
+|Spaces & Size||
 |---|---|
 |shadow|shadow-md,shadow-inner,shadow-md shadow-cyan-300/10|
 |opacity|opacity-50|
@@ -42,10 +42,12 @@
 |contrast|contrast-40 hover:contrast-100|
 |grayscale|grayscale hover:grayscale-0|
 
-|Animations|------------------------------|
+|Animations||
 |---|---|
 |transition|transition delay-500 duration-300 hover:-translate-y-1|
 |animation|animate-spin, animate-ping,animate-pulse,animate-bounce|
 |transform|scale-125,rotate-45, transition origin-top-left hover:rotate-45|
-|Customization|------------------------------|
+
+|Customization||
+|---|---|
 |theme,extend|theme('colors.slate.950'), fonSize|
