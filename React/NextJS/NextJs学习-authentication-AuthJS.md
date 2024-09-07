@@ -28,7 +28,8 @@
   6. If the access token is valid, the resource server (API) serves the resource to the application
 
 <img src="./images/authJS-OAuth.svg">
-![authjs-oauth-swim-lane](./images/authjs-oauth-swim-lane.png)
+
+- ![authjs-oauth-swim-lane](./images/authjs-oauth-swim-lane.png)
 
 ### Session strategies
 
