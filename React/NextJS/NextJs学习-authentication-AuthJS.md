@@ -107,16 +107,16 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
 1. go to `https://console.cloud.google.com/`
 2. create new prject
-   - ![googleSetup1](googleSetup1.png)
+   - ![googleSetup1](./images/googleSetup1.png)
 3. search 'apis & services'
-   - ![googleSetup2](googleSetup2.png)
+   - ![googleSetup2](./images/googleSetup2.png)
 4. choose 'OAuth consent screen' from left menu -> check 'External' -> 'CREATE' button
-   1 ![googleSetup3](googleSetup3.png)
-   2. ![googleSetup4](googleSetup4.png)
+   1 ![googleSetup3](./images/googleSetup3.png)
+   2. ![googleSetup4](./images/googleSetup4.png)
    3. no need modify 'scope' and 'Test users' --> click 'SAVE AND CONTINUE' to end
 5. choose 'Credentials' from left menu -> check 'External' -> 'CREATE CREDENTIALS' button on the top --> choose 'OAuth client ID'
-   1. ![googleSetup5](googleSetup5.png)
-   2. ![googleSetup6](googleSetup6.png)
+   1. ![googleSetup5](./images/googleSetup5.png)
+   2. ![googleSetup6](./images/googleSetup6.png)
 6. copy 'client ID' and 'client secret'
 
 [⬆ back to top](#top)
