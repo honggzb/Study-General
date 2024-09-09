@@ -111,7 +111,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 3. search 'apis & services'
    - ![googleSetup2](./images/googleSetup2.png)
 4. choose 'OAuth consent screen' from left menu -> check 'External' -> 'CREATE' button
-   1 ![googleSetup3](./images/googleSetup3.png)
+   1. ![googleSetup3](./images/googleSetup3.png)
    2. ![googleSetup4](./images/googleSetup4.png)
    3. no need modify 'scope' and 'Test users' --> click 'SAVE AND CONTINUE' to end
 5. choose 'Credentials' from left menu -> check 'External' -> 'CREATE CREDENTIALS' button on the top --> choose 'OAuth client ID'
