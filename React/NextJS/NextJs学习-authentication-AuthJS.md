@@ -5,6 +5,8 @@
   - [Session strategies](#session-strategies)
 - [Database models in AuthJS](#database-models-in-authjs)
 - [Setup AuthJS for nextjs](#setup-authjs-for-nextjs)
+  - [Env of Authentication of github](#env-of-authentication-of-github)
+  - [Env of Authentication of google](#env-of-authentication-of-google)
 - [Session Management of AuthJS](#session-management-of-authjs)
   - [Signin and Signout](#signin-and-signout)
     - [Page Server Side](#page-server-side)
@@ -60,16 +62,11 @@
    1. will generate new file: '.env.local' in root directory
 3. create new file: 'src\auth.ts'
 4. Add a Route Handler under '/app/api/auth/[...nextauth]/route.ts'
-5. [Setup Authentication Methods](https://authjs.dev/getting-started/authentication/oauth)
-   1. [Authentication of github](https://authjs.dev/getting-started/authentication/oauth)
-   2. go to your github page --> your head icon --> setting -->  Developer settings  --> OAuth App
-   3. ![registerGithubApp](./images/registerGithubApp.png)
-   4. Setup Environment Variables: add a `Client ID` and `Client Secret` to '.env.local' file
-6. Setup github Provider:
+5. 2. Setup github/google Provider:
    1. adding Provider to 'src\auth.ts' file
    2. Add the handlers to 'api/auth/[...nextauth]/route.ts' file
-7. Add Signin Button
-8. [Prisma Adapter](https://authjs.dev/getting-started/adapters/prisma): connect to MongoDB
+8. Add Signin Button
+9. [Prisma Adapter](https://authjs.dev/getting-started/adapters/prisma): connect to MongoDB
    1.  `npm install @prisma/client @auth/prisma-adapter`
    2.  `npm install prisma --save-dev`
    3.  adding adapter to 'src\auth.ts' file
@@ -78,13 +75,49 @@
 //src\auth.ts
 import NextAuth from "next-auth"
 import GitHub from "next-auth/providers/github";
+import Google from "next-auth/providers/google";
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import { prisma } from "@/prisma";
 export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: PrismaAdapter(prisma),
-  providers: [GitHub],
+  providers: Google({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+    Github({
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    }),
 })
 ```
+
+[⬆ back to top](#top)
+
+### Env of Authentication of github
+
+- [Setup Authentication Methods](https://authjs.dev/getting-started/authentication/oauth)
+   1. [Authentication of github](https://authjs.dev/getting-started/authentication/oauth)
+   2. go to your github page --> your head icon --> setting -->  Developer settings  --> OAuth App
+   3. ![registerGithubApp](./images/registerGithubApp.png)
+   4. Setup Environment Variables: add a `Client ID` and `Client Secret` to '.env.local' file
+
+[⬆ back to top](#top)
+
+### Env of Authentication of google
+
+1. go to `https://console.cloud.google.com/`
+2. create new prject
+   - ![googleSetup1](./images/googleSetup1.png)
+3. search 'apis & services'
+   - ![googleSetup2](./images/googleSetup2.png)
+4. choose 'OAuth consent screen' from left menu -> check 'External' -> 'CREATE' button
+   1. ![googleSetup3](./images/googleSetup3.png)
+   2. ![googleSetup4](./images/googleSetup4.png)
+   3. no need modify 'scope' and 'Test users' --> click 'SAVE AND CONTINUE' to end
+5. choose 'Credentials' from left menu -> check 'External' -> 'CREATE CREDENTIALS' button on the top --> choose 'OAuth client ID'
+   1. ![googleSetup5](./images/googleSetup5.png)
+   2. ![googleSetup6](./images/googleSetup6.png)
+6. copy 'client ID' and 'client secret'
 
 [⬆ back to top](#top)
 

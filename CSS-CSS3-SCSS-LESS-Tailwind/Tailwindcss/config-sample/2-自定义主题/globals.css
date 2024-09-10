@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* 默认的颜色 */
+    :root {
+        --color-bg-base: #fecdd3;   /* 背景颜色 */
+        --color-bg-card: #fda4af;   /* 卡片颜色 */
+        --color-bg-btn: #fb7184;    /* 按钮颜色 */
+        --color-bg-btn-hover: #f43f4e;
+    }
+
+    .theme-blue {
+        --color-bg-base: 191, 219, 254;
+        --color-bg-card: 147, 197, 253;
+        --color-bg-btn: 96, 165, 250;
+        --color-bg-l4: 59, 130, 246;
+    }
+
+    .theme-green {
+        --color-bg-base: 187, 247, 208;
+        --color-bg-card: 134, 239, 172;
+        --color-bg-btn: 74, 222, 128;
+        --color-bg-btn-hover: 34, 197, 94;
+    }
+}
