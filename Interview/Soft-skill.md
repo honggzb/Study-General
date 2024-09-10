@@ -2,6 +2,7 @@
 
 - [I continually seek out various resources to enhance my skills and stay up-to-date with industry trends](#i-continually-seek-out-various-resources-to-enhance-my-skills-and-stay-up-to-date-with-industry-trends)
 - [Here are some key steps to determine if your code is ready for deployment:](#here-are-some-key-steps-to-determine-if-your-code-is-ready-for-deployment)
+- [Describe an experience having worked with a team to evolve a legacy system incrementally - what did you do to design and execute the evolution?]
 - [How do you ensure the quality and maintainability of your code](#how-do-you-ensure-the-quality-and-maintainability-of-your-code)
 - [what you expect to be doing on a daily basis as a software engineer?](#what-you-expect-to-be-doing-on-a-daily-basis-as-a-software-engineer)
 - [Soft Skills Every Programmer or Data Scientist Should Master](#soft-skills-every-programmer-or-data-scientist-should-master)
@@ -88,6 +89,24 @@ Verify that all features work as intended and edge cases are handled appropriate
 4. I document my code using comments and JSDoc annotations. 
 5. I also use tools such as Webpack and Babel to transpile, bundle, and minify my code for production
    
+[🚀back to top](#top)
+
+## Describe an experience having worked with a team to evolve a legacy system incrementally - what did you do to design and execute the evolution?
+
+One of the projects that I worked on as a Front End Developer was to evolve a legacy system that was used by a larg financial System. The system was a monolithic application that handled various aspects of Portfolio management, such as account, assets, workflow. However, the system was becoming difficult to maintain, scale, and update, as it was built with outdated technologies and had a lot of technical debt.
+
+My team and I decided to adopt a react MVVM architecture, where we make codes loosely coupled, maintainable and easy. This would allow us to modernize the system incrementally, without disrupting the existing functionality or user experience. We also wanted to migrate the system to the cloud, to leverage the benefits of scalability, reliability, and cost-efficiency.
+
+To design and execute the evolution, we followed these steps:
+
+1. Analyze the existing system and identify the core business domains and functionalities that can be separated into microservices or modules. Prioritize the most critical and frequently used features, and plan to migrate them first.
+2. We created a new interface for the legacy system, using Strangler Fig pattern, which allowed us to by gradually replacing specific pieces of functionality with new applications and services, without affecting the users. 
+3. Develop the main modules using React MVVM pattern gradually, following the best practices of software engineering, such as test-driven development, continuous integration, and continuous delivery. We also set up backup and rollback plan.
+4. We tested and validated the function and UI using unit testing, integration testing, performance testing, and user acceptance testing. We also collected feedback from the stakeholders and the users, and incorporated their suggestions and requirements into the next iterations of the development cycle.
+5. We repeated the process for the remaining features and functionalities, until we completely replaced the legacy system with the new UI. We also documented the design and implementation of the system, and provided training and support for the maintenance and enhancement of the system.
+
+As a result of this project, we were able to successfully evolve the legacy system into a more modern, reusable, and scalable system that improved the performance, security, and user experiences. We also reduced the cost and complexity of the system maintenance, and enabled faster and easier updates and innovations. We received positive feedback from the client and the users, and we were recognized by the management for our teamwork and achievement.
+
 [🚀back to top](#top)
 
 ## what you expect to be doing on a daily basis as a software engineer?	
