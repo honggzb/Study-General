@@ -2,7 +2,7 @@
 
 - [I continually seek out various resources to enhance my skills and stay up-to-date with industry trends](#i-continually-seek-out-various-resources-to-enhance-my-skills-and-stay-up-to-date-with-industry-trends)
 - [Here are some key steps to determine if your code is ready for deployment:](#here-are-some-key-steps-to-determine-if-your-code-is-ready-for-deployment)
-- [Describe an experience having worked with a team to evolve a legacy system incrementally - what did you do to design and execute the evolution?]
+- [Describe an experience having worked with a team to evolve a legacy system incrementally - what did you do to design and execute the evolution?](#describe-an-experience-having-worked-with-a-team-to-evolve-a-legacy-system-incrementally---what-did-you-do-to-design-and-execute-the-evolution)
 - [How do you ensure the quality and maintainability of your code](#how-do-you-ensure-the-quality-and-maintainability-of-your-code)
 - [what you expect to be doing on a daily basis as a software engineer?](#what-you-expect-to-be-doing-on-a-daily-basis-as-a-software-engineer)
 - [Soft Skills Every Programmer or Data Scientist Should Master](#soft-skills-every-programmer-or-data-scientist-should-master)
