@@ -16,6 +16,17 @@ useState()                                                |
 
 is an in-memory representation of Real DOM. The representation of a UI is kept in memory and synced with the "real" DOM. It's a step that happens between the render function being called and the displaying of elements on the screen. This entire process is called **reconciliation**.
 
+## React Component Lifecycle
+
+- ![React Component Lifecycle](React-Component-Lifecycle.png)
+- [Understanding the React Component Lifecycle: A Deep Dive into the Life of a React Component](https://medium.com/@arpitparekh54/understanding-the-react-component-lifecycle-a-deep-dive-into-the-life-of-a-react-component-74813cb8dfb5)
+
+**React Lifecycle Methods diagram**
+
+- ![React Lifecycle Methods diagram1](React-Lifecycle-diagram1.png)
+- ![React Lifecycle Methods diagram](React-Lifecycle-diagram.png)
+- https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
 ## higher-order component (HOC) 
 
 is a function that takes a component and returns a new component. Basically, it's a pattern that is derived from React's compositional nature.
