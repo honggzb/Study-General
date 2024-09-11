@@ -1,24 +1,21 @@
-function withOpacityValue(var) {
-  return ({ opacityValue }) => {
-    if(opacityValue === undefined) {
-      return `rgb(var(${var}))`
-    }
-    return `rgb(var(${var})) / ${opacityValue}`;
-  }
-  
-}
+import type { Config } from "tailwindcss";
 
-module.exports = {
-  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
-      backgroundColor: {
-        bg: withOpacityValue('--color-bg-base'),
-        card: withOpacityValue('--color-bg-card'),
-        btn: withOpacityValue('--color-bg-btn'),
-        'btn-hover': withOpacityValue('--color-bg-btn-hover')
-      }
+      colors: {
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        bgPrimary: "var(--color-bg-primary)",
+        tBase: "var(--color-text-base)",
+      },
     },
   },
   plugins: [],
-}
+};
+export default config;
