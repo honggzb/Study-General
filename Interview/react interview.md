@@ -18,13 +18,13 @@ is an in-memory representation of Real DOM. The representation of a UI is kept i
 
 ## React Component Lifecycle
 
-- ![React Component Lifecycle](React-Component-Lifecycle.png)
+- ![React Component Lifecycle](./images/React-Component-Lifecycle.png)
 - [Understanding the React Component Lifecycle: A Deep Dive into the Life of a React Component](https://medium.com/@arpitparekh54/understanding-the-react-component-lifecycle-a-deep-dive-into-the-life-of-a-react-component-74813cb8dfb5)
 
 **React Lifecycle Methods diagram**
 
-- ![React Lifecycle Methods diagram1](React-Lifecycle-diagram1.png)
-- ![React Lifecycle Methods diagram](React-Lifecycle-diagram.png)
+- ![React Lifecycle Methods diagram1](./images/React-Lifecycle-diagram1.png)
+- ![React Lifecycle Methods diagram](./images/React-Lifecycle-diagram.png)
 - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
 ## higher-order component (HOC) 
