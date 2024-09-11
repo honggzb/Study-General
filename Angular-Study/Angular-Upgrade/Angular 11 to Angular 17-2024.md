@@ -28,6 +28,13 @@
    - import this file in 'main.ts'
 6. [Migrate an existing Angular project to standalone(https://angular.dev/reference/migrations/standalone)
 
+## Migration to the inject function/lazy-loaded routes
+
+- `ng generate @angular/core:inject`
+- `ng generate @angular/core:route-lazy-loading`
+- [Migration to the inject function](https://angular.dev/reference/migrations/inject-function)
+- [Migration to lazy-loaded routes](https://angular.dev/reference/migrations/route-lazy-loading)
+
 > References
 - [Migrate An Angular 11 Project to 17: Step-by-Step Guide](https://www.youtube.com/watch?v=fbCfniJT_JA)
 - [Angular 18 Upgrade Guide: Everything You Need to Know](https://www.youtube.com/watch?v=OALcxBzNEUE)
