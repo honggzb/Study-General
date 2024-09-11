@@ -9,6 +9,7 @@
 - [Passing Data between Parent and Child Component](#passing-data-between-parent-and-child-component)
   - [using useState](#using-usestate)
   - [using callback function](#using-callback-function)
+- [When to use a Class Component over a Function Component](#When-to-use-a-class-component-over-a-function-component)
 - [higher-order component (HOC)](#higher-order-component-hoc)
 - [lazy function](#lazy-function)
 - [How to re-render the view when the browser is resized?](#how-to-re-render-the-view-when-the-browser-is-resized)
@@ -78,8 +79,8 @@ const ChildComponent = ({ sendDataToParent }) => {
 
 ### using callback function
 
-- child component -->  parent component:  using callback function
-- parent component  -->  child component: using prop
+- child component -->  parent component:  `using callback function`
+- parent component  -->  child component:   `using prop`
   
 ```js
 // Child
@@ -98,6 +99,17 @@ const App = () => {
     );
 };
 ```
+
+## When to use a Class Component over a Function Component
+
+- **Use Function Components**:
+  - If you don't need state or lifecycle methods, and your component is purely presentational.
+  - For simplicity, readability, and modern code practices, especially with the use of React Hooks for state and side effects.
+- **Use Class Components**:
+  - If you need to manage state or use lifecycle methods.
+  - In scenarios where backward compatibility or integration with older code is necessary.
+
+[⬆ back to top](#top)
 
 ## higher-order component (HOC) 
 
