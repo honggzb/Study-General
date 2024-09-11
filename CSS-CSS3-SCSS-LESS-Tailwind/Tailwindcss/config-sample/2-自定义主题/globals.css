@@ -3,25 +3,39 @@
 @tailwind utilities;
 
 @layer base {
-  /* 默认的颜色 */
-    :root {
-        --color-bg-base: #fecdd3;   /* 背景颜色 */
-        --color-bg-card: #fda4af;   /* 卡片颜色 */
-        --color-bg-btn: #fb7184;    /* 按钮颜色 */
-        --color-bg-btn-hover: #f43f4e;
-    }
+  :root {
+    --color-primary: hsl(0, 0%, 0%);
+    --color-secondary: hsl(0, 0%, 50%);
+    --color-text-base: hsl(0, 0%, 100%);
+    --color-bg-primary: hsl(0, 0%, 100%);
+  }
 
-    .theme-blue {
-        --color-bg-base: 191, 219, 254;
-        --color-bg-card: 147, 197, 253;
-        --color-bg-btn: 96, 165, 250;
-        --color-bg-l4: 59, 130, 246;
-    }
+  * {
+    @apply transition-colors duration-500 ease-in-out;
+  }
+}
 
-    .theme-green {
-        --color-bg-base: 187, 247, 208;
-        --color-bg-card: 134, 239, 172;
-        --color-bg-btn: 74, 222, 128;
-        --color-bg-btn-hover: 34, 197, 94;
-    }
+.theme-black {
+  --color-primary: hsl(0, 0%, 0%);
+  --color-secondary: hsl(0, 0%, 50%);
+}
+
+.theme-orange {
+  --color-primary: hsl(25, 100%, 50%);
+  --color-secondary: hsl(25, 100%, 65%);
+}
+
+.theme-purple {
+  --color-primary: hsl(270, 100%, 50%);
+  --color-secondary: hsl(270, 100%, 75%);
+}
+
+.theme-green {
+  --color-primary: hsl(120, 100%, 35%);
+  --color-secondary: hsl(120, 100%, 45%);
+}
+
+.theme-blue {
+  --color-primary: hsl(220, 100%, 50%);
+  --color-secondary: hsl(220, 100%, 75%);
 }
