@@ -2,6 +2,7 @@
 - [coding-exercise](https://github.com/sudheerj/reactjs-interview-questions/tree/master/coding-exercise)
 
 --------------------------------------------------------------------------
+- [top](#top)
 - [State vs props](#state-vs-props)
 - [The Virtual DOM (VDOM)](#the-virtual-dom-vdom)
 - [React Component Lifecycle](#react-component-lifecycle)
@@ -38,12 +39,11 @@ is an in-memory representation of Real DOM. The representation of a UI is kept i
 - ![React Lifecycle Methods diagram](./images/React-Lifecycle-diagram.png)
 - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
+[⬆ back to top](#top)
+
 ## Passing Data between Parent and Child Component
 
 ### using useState
-
-- data is typically passed from a child component to a parent component using callback functions
-- The parent component can pass down a function as a prop to the child component, and the child component can call this function to send data back to the parent
 
 ```jsx
 //Parent:
@@ -78,6 +78,9 @@ const ChildComponent = ({ sendDataToParent }) => {
 
 ### using callback function
 
+- child component -->  parent component:  using callback function
+- parent component  -->  child component: using prop
+  
 ```js
 // Child
 const Button = ({ text, onButtonClick }) => {
@@ -116,3 +119,5 @@ use the `useState` hook to manage the width and height state variables, and the 
 - dispatcher
 - Store
 
+
+[⬆ back to top](#top)
