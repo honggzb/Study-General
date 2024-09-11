@@ -2,6 +2,17 @@
 - [coding-exercise](https://github.com/sudheerj/reactjs-interview-questions/tree/master/coding-exercise)
 
 --------------------------------------------------------------------------
+- [State vs props](#state-vs-props)
+- [The Virtual DOM (VDOM)](#the-virtual-dom-vdom)
+- [React Component Lifecycle](#react-component-lifecycle)
+- [Passing Data between Parent and Child Component](#passing-data-between-parent-and-child-component)
+  - [using useState](#using-usestate)
+  - [using callback function](#using-callback-function)
+- [higher-order component (HOC)](#higher-order-component-hoc)
+- [lazy function](#lazy-function)
+- [How to re-render the view when the browser is resized?](#how-to-re-render-the-view-when-the-browser-is-resized)
+- [What is flux](#what-is-flux)
+--------------------------------------------------------------------------
 ## State vs props
 
 ```
@@ -26,6 +37,64 @@ is an in-memory representation of Real DOM. The representation of a UI is kept i
 - ![React Lifecycle Methods diagram1](./images/React-Lifecycle-diagram1.png)
 - ![React Lifecycle Methods diagram](./images/React-Lifecycle-diagram.png)
 - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+## Passing Data between Parent and Child Component
+
+### using useState
+
+- data is typically passed from a child component to a parent component using callback functions
+- The parent component can pass down a function as a prop to the child component, and the child component can call this function to send data back to the parent
+
+```jsx
+//Parent:
+const ParentComponent = () => {
+  const [dataFromChild, setDataFromChild] = useState(null);
+  const handleDataFromChild = (data) => {  // Callback function to receive data from the child
+    setDataFromChild(data);
+  };
+  return (
+    <div>
+      <h2>Parent Component</h2>
+      <p>Data from Child: {dataFromChild}</p>
+      <ChildComponent sendDataToParent={handleDataFromChild} />
+    </div>
+  );
+};
+//Child:
+const ChildComponent = ({ sendDataToParent }) => {
+  const dataToSend = 'Hello from Child!';
+  // Function to send data to the parent on some event (e.g., button click)
+  const sendDataToParentOnClick = () => {
+    sendDataToParent(dataToSend);
+  };
+  return (
+    <div>
+      <h3>Child Component</h3>
+      <button onClick={sendDataToParentOnClick}>Send Data to Parent</button>
+    </div>
+  );
+};
+```
+
+### using callback function
+
+```js
+// Child
+const Button = ({ text, onButtonClick }) => {
+    return <button onClick={() => onButtonClick("hello")}>{text}</button>;
+};
+// Parent
+const App = () => {
+    const onButtonClick = (value) => {
+        console.log("OnButtonClick in parent", value);
+    };
+    return (
+        <div>
+            App <Button text="Add" onButtonClick={onButtonClick} />
+        </div>
+    );
+};
+```
 
 ## higher-order component (HOC) 
 
