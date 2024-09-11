@@ -1,6 +1,7 @@
 ```
 │   ├── 📂Angular-Upgrade/
 │   │   ├── 📄Angular 10 New Features.md
+│   │   ├── 📄Angular 11 to Angular 17-2024.md
 │   │   ├── 📄Angular 12 New Features.md
 │   │   ├── 📄Angular 13 to Angular 14.md
 │   │   ├── 📄Angular 14 New Features.md       -standalone component
