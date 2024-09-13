@@ -99,6 +99,7 @@ Draw.io                      | Diagram
 "powermode.enabled": true,
 "powermode.presets": "flames",
 "powermode.combo.timerEnabled": "hide",
+"powermode.combo.counterEnabled": "hide",
 "powermode.shake.enabled": false,
 //settings.json -- fontSize
 "editor.fontSize": 16,
