@@ -1,0 +1,6 @@
+ .profile {
+    transition: filter 300ms;
+  }
+  .container:has(.profile:hover) .profile:not(:hover) {
+    filter: grayscale(100%) brightness(50%);
+  }
