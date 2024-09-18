@@ -57,7 +57,7 @@
 - <mark>ScrollView component</mark>:scroll both vertically and horizontally
   - `pagingEnabled` props that configured to allow paging through views using swiping gestures
   - **Android**: swiping horizontally between views by using the `ViewPager` component
-- **iOS**: ScrollView with a single item can be used to allow the user to zoom content
+  - **iOS**: ScrollView with a single item can be used to allow the user to zoom content
   - using`maximumZoomScale` and `minimumZoomScale` props
 - all the elements and views of a ScrollView are rendered, even if they are not currently shown on the screen
   - If you have a long list of items which cannot fit on the screen, you should use a `FlatList` instead
