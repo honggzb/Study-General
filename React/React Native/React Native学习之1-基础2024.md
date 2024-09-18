@@ -52,18 +52,18 @@
 |`<TextInput>`	|`<EditText>`	|`<UITextField>`|	`<input type="text">`	|Allows the user to enter text|
 
 - <mark>TextInput component</mark>: Handling Text Input
-- `onChangeText` prop that takes a function to be called every time the text changed
-- `onSubmitEditing` prop that takes a function to be called when the text is submitted
+  - `onChangeText` prop that takes a function to be called every time the text changed
+  - `onSubmitEditing` prop that takes a function to be called when the text is submitted
 - <mark>ScrollView component</mark>:scroll both vertically and horizontally
-- `pagingEnabled` props that configured to allow paging through views using swiping gestures
-- **Android**: swiping horizontally between views by using the `ViewPager` component
+  - `pagingEnabled` props that configured to allow paging through views using swiping gestures
+  - **Android**: swiping horizontally between views by using the `ViewPager` component
 - **iOS**: ScrollView with a single item can be used to allow the user to zoom content
   - using`maximumZoomScale` and `minimumZoomScale` props
 - all the elements and views of a ScrollView are rendered, even if they are not currently shown on the screen
   - If you have a long list of items which cannot fit on the screen, you should use a `FlatList` instead
 - <mark>List Views</mark>
-- <mark>FlatList component</mark>: displays a scrolling list of changing, but similarly structured, data
-- <mark>SectionList component</mark>: render a set of data broken into logical sections, maybe with section headers
+  - <mark>FlatList component</mark>: displays a scrolling list of changing, but similarly structured, data
+  - <mark>SectionList component</mark>: render a set of data broken into logical sections, maybe with section headers
 
 ```jsx
 const [text, setText] = useState('');
