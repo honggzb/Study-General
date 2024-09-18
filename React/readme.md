@@ -42,6 +42,12 @@
 │     └── 📄react官网学习小结-2023版.md
 ```
 
+## using typescript
+
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [React's documentation on TypeScript](https://react.dev/learn/typescript)
+- [React + TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react-typescript-cheatsheet#reacttypescript-cheatsheets)
+
 ## Libraries
 
 - [SWR-用于数据请求的 React Hooks 库](https://swr.vercel.app/zh-CN)
