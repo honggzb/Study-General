@@ -22,7 +22,7 @@
 ## The Basic
 
 - [Core Components documentary](https://reactnative.dev/docs/components-and-apis)
-- ![reactNative-Components](reactNative-Components.png)
+- ![reactNative-Components](./images/reactNative-Components.png)
 
 |category||
 |---|---|
@@ -118,7 +118,7 @@ console.log('Work around a change in behavior');
 1. In a Chrome browser window, navigate to `chrome://inspect`   -->
 2. "Configure..." button to add the dev server address (typically localhost:8081) -->
 3. "Hermes React Native" target with an "inspect" link. Click this to open the debugger
-- ![Hermes Debugger](Hermes-debugger.png)
+- ![Hermes Debugger](./images/Hermes-debugger.png)
 
 ### React DevTools
 
