@@ -115,6 +115,11 @@
 
 [⬆ back to top](#top)
 
+## resource
+
+- [Awesome D3](https://github.com/wbkd/awesome-d3): This list that track of interesting D3js libraries, plugins and utilities
+
+
 ### Tools, IDEs
 
 - [Sketchfab- 3D & AR on the web](https://sketchfab.com/)
