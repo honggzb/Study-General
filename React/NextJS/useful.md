@@ -2,7 +2,7 @@
 
 - [shadcn for Next.js](#shadcn-for-nextjs)
 - [Prisma setup](#prisma-setup)
-- [Data fetch-CRUD](https://github.com/honggzb/Study-General/blob/master/React/NextJS/NextJs%E5%AD%A6%E4%B9%A0-Data%20Fetching.md)
+- [Data fetch-CRUD](https://github.com/honggzb/Study-General/blob/master/React/NextJS/NextJs%E5%AD%A6%E4%B9%A0-Data%20Fetching-2024.md)
 - [using google font in nextjs](#using-google-font-in-nextjs)
 - [date-fns](#date-fns)
 
