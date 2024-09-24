@@ -92,6 +92,7 @@ Power Mode                   | 键盘输入时候的宫廷效果
 Draw.io                      | Diagram
 'Cascadia Code'  font        | on Dracula theme
 'Fira Code'  font            | on One Dark Pro theme
+Lorem ipsum                  | Lorem sentences
 ```
 
 ```js
