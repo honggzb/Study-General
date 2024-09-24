@@ -12,7 +12,7 @@
 
 ## Providers and Models
 
-- ![AI SDK](AI-SDK.png)
+- ![AI SDK](./images/AI-SDK.png)
   - Generative Artificial Intelligence
   - Large Language Models(LLM)
 
