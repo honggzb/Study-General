@@ -267,8 +267,8 @@ import { persistor, store } from './store/store';
 
 ## using shadcn for nextjs project
 
-1. `npx shadcn-ui@latest init`
-2. `npx shadcn-ui@latest add button`
+1. `npx shadcn@latest init`
+2. `npx shadcn@latest add button`
 3. `import { Button } from "@/components/ui/button"`, `<Button>Click me</Button>`
 4. https://ui.shadcn.com/
 
