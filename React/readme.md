@@ -42,6 +42,12 @@
 │     └── 📄react官网学习小结-2023版.md
 ```
 
+## Version
+
+- https://github.com/facebook/react/releases
+- version 18.0.0 (March 29, 2022)
+- version 17.0.0 (October 20, 2020)
+
 ## using typescript
 
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
