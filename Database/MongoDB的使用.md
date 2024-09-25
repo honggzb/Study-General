@@ -287,3 +287,5 @@ Min key	|255,	Query with -1.
 Max key	|127
 
 [⬆ back to top](#top)
+
+> reference: https://cloud.tencent.com/developer/article/2056528
