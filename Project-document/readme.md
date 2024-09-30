@@ -15,12 +15,13 @@
 ```
    project     |       Tech Stack       |     function      |  implementation
 ---------------|------------------------|-------------------|-------------------------
-               | @clerk/nextjs          | authentication    |
+               | @clerk/nextjs          | authentication    | login/logout auth
                | Shadcn ui              | ui library        | toggle theme
                | Mongoose               | database          | paginate, loadmore
 google-ai-gen  | Stripe                 | payments          |
                | @toast-ui/react-editor | richText Editor   |
-               | Google Gemini AI       | AI Integration    |
+               | @google/generative-ai  | Google Gemini AI  |
                | react-markdown         | Markdown handle/AI|
+               | react                  | useUsage,
 ---------------|------------------------|-------------------|--------------------------
 ```
