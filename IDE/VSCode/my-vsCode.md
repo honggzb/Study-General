@@ -13,6 +13,9 @@
 - [Theme](#theme)
 
 --------------------------------------------------------------------
+
+- `header>img.logo+nav>ul.menu>(li>a)*3`
+
 ## 在vscode上直接运行TypeScript文件
 
 1. install `Code Runner` extension
