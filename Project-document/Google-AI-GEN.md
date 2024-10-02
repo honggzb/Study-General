@@ -157,7 +157,7 @@ const handleClick = async (e: React.ChangeEvent<HTMLFormElement>) => {
 
 ## markdown library
 
--`npm i react-markdown`
+-`npm i react-markdown remark-gfm`
 - `<ReactMarkdown children={response} />`
   - [Understanding the components prop in react-markdown](https://www.singlehanded.dev/blog/understanding-the-components-prop-in-react-markdown)
   - [Building a Markdown-driven blog using Next.js 13 and App Router](https://www.singlehanded.dev/blog/building-markdown-blog-with-nextjs-app-router)
@@ -214,7 +214,7 @@ const handleClick = async (e: React.ChangeEvent<HTMLFormElement>) => {
 };
 <form onSubmit={handleClick}>
   <CardContent>
-    {loading ? (<div>Loading...</div>) : (<ReactMarkdown children={response} />)}
+    {loading ? (<div>Loading...</div>) : (<ReactMarkdown children={response} remarkPlugins={[remarkGfm]} className="markdown" />)}
   </CardContent>
 </form>
 ```
