@@ -1,9 +1,16 @@
 ```
 ├── 📂Project-document/
+│   ├── 📄AI image transformation-Next-clerk-cloudinary-stripe.md
+│   ├── 📄Build-Deploy Full Stack AI Quiz Platform with NextJS 13, TailwindCSS, OpenAI, Next Auth.md
+│   ├── 📄Google-AI-GEN.md
+│   ├── 📄auth-node-frontend.md
 │   ├── 📄blogManagement-front-back-admin.md
 │   ├── 📄car-show.md
+│   ├── 📄edu-app-vue3.md
+│   ├── 📄image-ai.md
 │   ├── 📄my-portofolio-visualization.md
 │   ├── 📄my-portofolio.md
+│   ├── 📄next-ssr-gpt-clerk-zustand-mongoDB.md
 │   ├── 📄react-admin-UI.md
 │   ├── 📄react-notes-manager.md
 │   ├── 📄react-ssr-boilerplate.md
