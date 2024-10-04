@@ -12,6 +12,26 @@
 2. `npm run dev`
 3. now can open up http://localhost:3000/sitemap.xml to see the sitemap
 
+```ts
+import { MetadataRoute } from 'next';
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    {
+      url: 'https://yourwebsite.com',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 1,
+    },
+    {
+      url: 'https://yourwebsite.com/ai-image-generator',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+  ];
+}
+```
+
 ## Create an RSS Feed with Route Handlers
 
 1. create a new file called 'app/feed.xml/route.ts'
