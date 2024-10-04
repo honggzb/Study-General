@@ -10,3 +10,7 @@
 
 - `npm i concurrently -D`
 - `"dev": "concurrently \"npm:start:dev\" \"npm:gen-ty\" \"npm:prisma:generate\""`
+
+## todo list
+
+- [Using Axios to set request headers](https://blog.logrocket.com/using-axios-set-request-headers/)
