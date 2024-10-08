@@ -20,21 +20,29 @@
 ## document
 
 ```
-   project     |       Tech Stack       |     function           |  implementation
----------------|------------------------|------------------------|--------------------------
-               | @clerk/nextjs          | authentication         | login/logout auth
-               | Shadcn ui              | ui library             | toggle theme
-               | Mongoose               | database               | paginate, loadmore
-google-ai-gen  | Stripe                 | payments               |
-               | @toast-ui/react-editor | richText Editor        |
-               | @google/generative-ai  | Google Gemini AI       |
-               | react-markdown         | Markdown handle/AI     |
-               | react                  | useUsage               |
----------------|------------------------|------------------------|--------------------------
-               | @clerk/nextjs          | authentication         | login/logout auth
-               | Shadcn ui              | ui library             | toggle theme
-image-ai       | OpenAI(DALL·E 3)       | AI image generator     |
-               | Sharp, pdf-lib         | image format transform |
-               | jszip, file-saver      | image zip download     | packagefiles
-               | react-dropzone         | drag/drop upload files |
+   project     |       Tech Stack            |     function           |  implementation
+---------------|-----------------------------|------------------------|--------------------------
+               | @clerk/nextjs               | authentication         | login/logout auth
+               | Shadcn ui                   | ui library             | toggle theme
+               | Mongoose                    | database               | paginate, loadmore
+google-ai-gen  | Stripe                      | payments               |
+               | @toast-ui/react-editor      | richText Editor        |
+               | @google/generative-ai       | Google Gemini AI       |
+               | react-markdown              | Markdown handle/AI     |
+               | react                       | useUsage               |
+---------------|-----------------------------|------------------------|--------------------------
+               | @clerk/nextjs               | authentication         | login/logout auth
+               | Shadcn ui                   | ui library             | toggle theme
+image-ai       | OpenAI(DALL·E 3)            | AI image generator     |
+               | Sharp, pdf-lib              | image format transform |
+               | jszip, file-saver           | image zip download     | packagefiles
+               | react-dropzone              | drag/drop upload files |
+---------------|-----------------------------|------------------------|--------------------------
+               | Binance, CMC(coinmarketcap) | Bitcoin                | Cryptocurrency Exchange
+               | Shadcn ui                   | ui library             |
+rsc-ai         | date-fns                    | format date            | date utility
+               | react-intersection-observer | Observer API           |
+               | react-hook-form,zod +       | form validation        |
+               | @hookform/resolvers         | form validation        |
+               | AI SDK RSC                  | merge LLM              |
 ```
