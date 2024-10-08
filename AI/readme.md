@@ -4,6 +4,7 @@
 │   │   ├── 📂01-basic/
 │   │   └── 📂02-stream data/
 │   ├── 📄AI SDK by Vercel.md
+│   ├── 📄AI SDK-2-RSC.md
 │   └── 📄prompt-tip.md
 ```
 
