@@ -12,5 +12,18 @@
 |sr-only, lg:not-sr-only|will hide in screen, but only for screen reader|
 |typography |such as prose|
 
+## using variables
+
+1. using `cn`
+2. using `clsx`
+
+```
+import { cn } from "@/lib/utils";
+import clsx from "clsx";
+<div className={clsx("text-3xl font-bold", delta > 0 ? "text-green-500" : "text-red-500")}></div>
+<div className={cn('group relative flex items-start md:-ml-12', className)}></div>
+<div className={cn("text-lg font-medium", volumeChangePercentage24h > 0 ? "text-green-500" : "text-red-500")}>{volumeChangePercentage24h}%</div>
+
+```
 
 -[10 Tailwind Classes I Wish I Knew Earlier](https://www.youtube.com/watch?v=x1RJ5Q09PqM)
