@@ -45,4 +45,13 @@ rsc-ai         | date-fns                    | format date            | date uti
                | react-hook-form,zod +       | form validation        |
                | @hookform/resolvers         | form validation        |
                | AI SDK RSC                  | merge LLM              |
+---------------|-----------------------------|------------------------|--------------------------
+               | Clerk                       | Authentication         | login/logout auth
+               | Orama                       |full-text vector search |
+               | Aurinko                     | Unified Mailbox API    |
+mail-ai        | Shadcn ui,Tailwind          | ui library             | toggle theme
+               | Stripe                      | payments               |
+               | PostgreSQL, neon            | DB                     |
+               | Prisma                      | DB ORM                 |
+               | OpenAI(Embeddings)          |                        |
 ```
