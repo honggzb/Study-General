@@ -35,7 +35,7 @@ google-ai-gen  | Stripe                      | payments               |
                | Shadcn ui                   | ui library             | toggle theme
 image-ai       | OpenAI(DALL·E 3)            | AI image generator     |
                | Sharp, pdf-lib              | image format transform |
-               | jszip, file-saver           | image zip download     | packagefiles
+               | jszip, file-saver           | image zip download     | package/upload files 
                | react-dropzone              | drag/drop upload files |
 ---------------|-----------------------------|------------------------|--------------------------
                | Binance, CMC(coinmarketcap) | Bitcoin                | Cryptocurrency Exchange
