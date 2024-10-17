@@ -1,6 +1,6 @@
 ## Core Angular Interview Questions
 
-- [1. What is_Angular and what are its key features?](#1-what-is-angular-and-what-are-its-key-features)
+- [1. What is Angular and what are its key features?](#1-what-is-angular-and-what-are-its-key-features)
 - [2. Explain _data-binding_ in Angular. What are the different types?](#2-explain-data-binding-in-angular-what-are-the-different-types)
 - [3. Describe the _Angular application architecture_.](#3-describe-the-angular-application-architecture)
 - [4. What is a _component_ in Angular and how is it used?](#4-what-is-a-component-in-angular-and-how-is-it-used)
