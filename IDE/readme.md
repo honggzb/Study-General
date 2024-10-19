@@ -20,28 +20,15 @@
 │    └── 📦notepad++-plugin.zip                  # JSONFormat, Markdown view       
 ```
 
-- ⬆ back to top
-- 👉 goto
-- 🤖 Introduction
-- ⚙️ Tech Stack
-- 🔋 Features
-- 🤸 Quick Start
-- 🕸️ Snippets
-- 🔗 Links
-- 🚀 More
-- 🚨 Tutorial
-- 📚 Storybook
-- ⚛️ React 
-- 💅 Emotion
-- ✨ Prettier
-- 🚥 GitHub Actions for continuous integration
-- 📐 ESLint
-- ✅ Chromatic 
-- 📦 npm 
-- 🛠 Auto for release management workflow
-- ♿ Accessibility
-- 💥 Actions to 
-- 🎛 Controls to interactively 
-- 📕 Docss
-- 🔍 Interactions
-- 🏎 Test-runner 
+|||||
+|---|---|---|---|
+|⬆ back to top|👉 goto|🤖 Introduction|⚙️ Tech Stack|
+|🔋 Features|🤸 Quick Start|🕸️ Snippets|🔗 Links|
+|🚀 More|🚨 Tutorial|📚 Storybook|⚛️ React |
+|💅 Emotion|✨ Prettier|🚥 GitHub Actions for continuous integration|📐 ESLint|
+|✅ Chromatic |📦 npm |🛠 Auto for release management workflow|♿ Accessibility|
+|other|---|---|---|
+|💥 Actions to |🎛 Controls to interactively |📕 Docss|🔍 Interactions|
+|🏎 Test-runner|☁ Cloud|🏡🐈|🌙晚安|
+|🍜|🍞zασα|☾˚‧º· 𝓖𝓸𝓸𝓭 𝓝𝓲𝓰𝓱𝓽 ☾˚‧º·|🛌🎶|
+|🌷 | ◡̈近日欣喜|🧸|( 展开||
