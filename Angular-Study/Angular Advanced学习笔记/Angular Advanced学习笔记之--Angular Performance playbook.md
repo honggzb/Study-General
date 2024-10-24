@@ -320,8 +320,8 @@ readonly logger = inject(LOGGER_TOKEN, {
 - zoneless change detection was released in v18
 - Angular monkey patches zone.js to trigger change detection
 - Zone does not know if events change application state
-- Angular lifecycle Hooks:  ![Angular-lifecycle-Hooks](Angular-lifecycle-Hooks.png)
-- Component change detection flow: ![Component change detection flow](Component-change-detection-flow.png)
+- Angular lifecycle Hooks:  ![Angular-lifecycle-Hooks](./images/Angular-lifecycle-Hooks.png)
+- Component change detection flow: ![Component change detection flow](./images/Component-change-detection-flow.png)
 - https://angularindepth.com/
 
 ### Zone pollution
