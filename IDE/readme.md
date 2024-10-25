@@ -26,12 +26,13 @@
 |🔋 Features|🤸 Quick Start|🕸️ Snippets|🔗 Links|
 |🚀 More|🚨 Tutorial|📚 Storybook|⚛️ React |
 |🪝 Hooks|⚡️ Optimized performance|⚙️ configuration|🛠 Tools|
-|🧩 ShadCN |🎨 Tailwind|📱💻 responsive|🔑 Token|
+|🧩 ShadCN |🎨 Tailwind|📱💻🖥️ responsive|🔑 Token|
 |🌳 Tree-shakeable|🧪 Ready to test|🗄️DB |🌐 API Call|
 |💅 Emotion|✨ Prettier|🚥 GitHub Actions for continuous integration|📐 ESLint|
-|✅ Chromatic |📦 npm |🛠 Auto for release management workflow|♿ Accessibility|
+|✅ Chromatic |📦 npm |💳 payments|♿ Accessibility|
 |other|---|---|---|
-|💥 Actions to |🎛 Controls to interactively |📕 Docss|🔍 Interactions|
-|🏎 Test-runner|☁ Cloud|🏡🐈|🌙晚安|
+|💥 Actions to |🎛 Controls to interactively |📂📝📕📧 Docss|🔍 Interactions|
+|🏎 Test-runner|☁ Cloud|🏡🐈|⭐🌙晚安|
 |🍜|🍞zασα|☾˚‧º· 𝓖𝓸𝓸𝓭 𝓝𝓲𝓰𝓱𝓽 ☾˚‧º·|🛌🎶|
-|🌷 | ◡̈近日欣喜|🧸|( 展开| |
+|🌷 | ◡̈近日欣喜|🧸|( 展开|💡👁️ |
+|⏳👥|💬☁️|📹 📸📺🎥|⏰ ⚡📤 🤖|
