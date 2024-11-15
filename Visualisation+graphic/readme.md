@@ -101,9 +101,14 @@
 │   │   │   └── 
 │   │   └── Highcharts-study.md
 │   ├── 📂SVG/
-│   │   ├── 📂AngularJS-SVG/
-│   │   ├── 📄SVG displacement filter.html
-│   │   └──
+│   │   ├── 📂AngularJS-SVG/
+│   │   │  ├── 📄barGraphDirective.html
+│   │   │  ├── 📄css-animation.PNG
+│   │   │  ├── 📄gauge.png	Add files
+│   │   │  ├── 📄gaugeGraphDirective.html
+│   │   │  └── 📄pieGraphDirective.html
+│   │   ├── 📄SVG displacement filter.html
+│   │   └── 📄CSS filters with SVGs.md
 │   ├── 📂ThreeJS/
 │   │   ├── 📄demo-elementary-r73-2018-10/
 │   │   ├── 📄ThreeJS-study-notebook-2023版.md
