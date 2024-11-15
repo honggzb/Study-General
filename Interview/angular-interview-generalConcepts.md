@@ -170,4 +170,4 @@ example.subscribe({
 
 ## NgRx
 
-![NgRx](./inmages/NgRx.png)
+![NgRx](./images/NgRx.png)
