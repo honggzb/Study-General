@@ -9,7 +9,7 @@
 │   │  ├── gaugeGraphDirective.html
 │   │  └──  pieGraphDirective.html
 │   ├── SVG displacement filter.html
-│   └── 
+│   └── CSS filters with SVGs.md
 ```
 
 ## Resourse
