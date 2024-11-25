@@ -21,7 +21,10 @@ Nuxt is a free and open-source framework with an intuitive and extendable way to
   - Easier caching
 - **Server engine**:
   - In development, it uses Rollup and Node.js workers for server code and context isolation. It also generates server API <mark>`server/api/`</mark> directory and server middleware <mark>`server/middleware/`</mark> directory
-- **Auto-imports**: use <mark>`components/`</mark> directory without having to import them with the benefits of tree-shaking and optimized JS bundles
+- **Auto-imports**:
+  - use <mark>`components/`</mark> directory  --> for vue components
+  - use <mark>`composables/`</mark> directory --> for vue composables
+  - use <mark>`utils/`</mark> directory       --> for helper functrions and other utilitities
 - **Data-fetching utilities**: Nuxt provides composables to handle SSR-compatible data fetching as well as different strategies.
 - **Zero-config** TypeScript support: write type-safe code without having to learn TypeScript with our auto-generated types and tsconfig.json
 - **Configured build tools**: use `Vite` by default to support hot module replacement (HMR) in development and bundling your code for production with best-practices baked-in
