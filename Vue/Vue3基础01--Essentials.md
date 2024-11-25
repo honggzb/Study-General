@@ -29,7 +29,7 @@
 |Directives|such as `v-for`, `v-on` and `v-slot`|
 |Modifiers|`<form @submit.prevent="onSubmit">...</form>`|
 
-- ![Modifiers](Modifiers.png)
+- ![Modifiers](./images/Modifiers.png)
 - [Built-in Directives](https://vuejs.org/api/built-in-directives)
 
 ### List Rendering
