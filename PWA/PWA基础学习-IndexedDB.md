@@ -206,7 +206,7 @@ indexedDBStuff();
 4. 新增数据 `IDBObjectStore.add()`、读取数据 `IDBObjectStore.get()`、更新数据 `IDBObjectStore.put()`、删除数据 `IDBObjectStore.delete()`
 5. 遍历数据 `IDBObjectStore.openCursor()`
 
-![原生写法使用效果](原生写法使用效果.gif)
+![原生写法使用效果](./images/原生写法使用效果.gif)
 
 ### 打开/连接数据库
 
@@ -577,7 +577,7 @@ class DB {
 }
 ```
 
-![Promise封装IndexedDB使用效果](Promise封装IndexedDB使用效果.gif)
+![Promise封装IndexedDB使用效果](./images/Promise封装IndexedDB使用效果.gif)
 
 ```js
 import DB from './BD';
