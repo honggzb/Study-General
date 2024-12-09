@@ -41,10 +41,10 @@
 
 ## working in an agile environment
 
-1. Active Participation in **Scrum Events**:
+- Active Participation in **Scrum Events**:
      - I actively participate in all scrum ceremonies, including <mark>daily stand-ups, sprint planning, retrospectives, and sprint reviews</mark>. For example, in daily stand-ups, I share updates on progress, address blockers, and coordinate with teammates to ensure smooth execution.
      - During sprint planning, I work with the team to break down user stories into smaller tasks, estimate effort using story points, and prioritize based on the team’s capacity and sprint goals.
-2. Collaboration and Communication:
+- Collaboration and Communication:
      - Agile emphasizes collaboration, and I regularly communicate with stakeholders, product owners, and QA teams to ensure alignment with requirements and timelines.
      - Tools like Jira, Trello, or Azure DevOps are part of my workflow to track progress, update tasks, and maintain transparency within the team.
 3. Iterative Development and Delivery:
