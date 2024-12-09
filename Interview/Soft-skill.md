@@ -1,7 +1,7 @@
 [top](#top)
 
 - [I continually seek out various resources to enhance my skills and stay up-to-date with industry trends](#i-continually-seek-out-various-resources-to-enhance-my-skills-and-stay-up-to-date-with-industry-trends)
-- [working in an agile environment](working-in-an-agile-environment)
+- [working in an agile environment](#working-in-an-agile-environment)
 - [Here are some key steps to determine if your code is ready for deployment:](#here-are-some-key-steps-to-determine-if-your-code-is-ready-for-deployment)
 - [Describe an experience having worked with a team to evolve a legacy system incrementally - what did you do to design and execute the evolution?](#describe-an-experience-having-worked-with-a-team-to-evolve-a-legacy-system-incrementally---what-did-you-do-to-design-and-execute-the-evolution)
 - [How do you ensure the quality and maintainability of your code](#how-do-you-ensure-the-quality-and-maintainability-of-your-code)
@@ -41,22 +41,22 @@
 
 ## working in an agile environment
 
-1. Active Participation in Scrum Events:
-  - I actively participate in all scrum ceremonies, including <mark>daily stand-ups, sprint planning, retrospectives, and sprint reviews</mark>. For example, in daily stand-ups, I share updates on progress, address blockers, and coordinate with teammates to ensure smooth execution.
-  - During sprint planning, I work with the team to break down user stories into smaller tasks, estimate effort using story points, and prioritize based on the team’s capacity and sprint goals.
+1. Active Participation in **Scrum Events**:
+     - I actively participate in all scrum ceremonies, including <mark>daily stand-ups, sprint planning, retrospectives, and sprint reviews</mark>. For example, in daily stand-ups, I share updates on progress, address blockers, and coordinate with teammates to ensure smooth execution.
+     - During sprint planning, I work with the team to break down user stories into smaller tasks, estimate effort using story points, and prioritize based on the team’s capacity and sprint goals.
 2. Collaboration and Communication:
-  - Agile emphasizes collaboration, and I regularly communicate with stakeholders, product owners, and QA teams to ensure alignment with requirements and timelines.
-  - Tools like Jira, Trello, or Azure DevOps are part of my workflow to track progress, update tasks, and maintain transparency within the team.
+     - Agile emphasizes collaboration, and I regularly communicate with stakeholders, product owners, and QA teams to ensure alignment with requirements and timelines.
+     - Tools like Jira, Trello, or Azure DevOps are part of my workflow to track progress, update tasks, and maintain transparency within the team.
 3. Iterative Development and Delivery:
-  - I follow a build-measure-learn approach, focusing on delivering incremental updates and gathering feedback early to adapt to changes.
-  - For instance, while working on a web application, I implemented core features first in an MVP (Minimum Viable Product) format and iteratively enhanced them based on user and stakeholder feedback.
+     - I follow a build-measure-learn approach, focusing on delivering incremental updates and gathering feedback early to adapt to changes.
+     - For instance, while working on a web application, I implemented core features first in an MVP (Minimum Viable Product) format and iteratively enhanced them based on user and stakeholder feedback.
 4. Quality Focus:
-  - I prioritize test-driven development (TDD) and collaborate with QA to incorporate automated testing pipelines for continuous integration/continuous deployment (CI/CD).
-  - Code reviews and pair programming are integral parts of my agile workflow, ensuring quality and knowledge sharing within the team.
+     - I prioritize test-driven development (TDD) and collaborate with QA to incorporate automated testing pipelines for continuous integration/continuous deployment (CI/CD).
+     - Code reviews and pair programming are integral parts of my agile workflow, ensuring quality and knowledge sharing within the team.
 5. Adaptability to Change:
-  - I embrace agile’s flexibility by responding to changes in priorities or scope during sprints. I ensure that changes are discussed, evaluated, and incorporated effectively without disrupting the team’s velocity.
+     - I embrace agile’s flexibility by responding to changes in priorities or scope during sprints. I ensure that changes are discussed, evaluated, and incorporated effectively without disrupting the team’s velocity.
 6. Continuous Improvement:
-  - In retrospectives, I actively contribute to identifying bottlenecks and proposing actionable steps to improve processes, such as optimizing task handoffs or refining the definition of done.
+     - In retrospectives, I actively contribute to identifying bottlenecks and proposing actionable steps to improve processes, such as optimizing task handoffs or refining the definition of done.
 - Overall, working in an agile environment has allowed me to remain adaptable, deliver value incrementally, and continuously refine both the product and the process for maximum efficiency
 
 [🚀back to top](#top)
