@@ -19,7 +19,7 @@
 module|use case|desired result|priority| Frond end passed| CGI passed|  comment
 ---|---|---|---|---|---|---
 
-![Alt text](./images/image.png)
+![Alt text](./images/projectE.png)
 
 ## How
 
