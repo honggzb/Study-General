@@ -1,7 +1,7 @@
 https://github.com/sudheerj/angular-interview-questions
 
 ----------------------------------------------------
-### <mark>Component Lifecycle</mark>
+## <mark>Component Lifecycle</mark>
 
 |Phase|	Method	|Summary|
 |---|---|---|
@@ -16,6 +16,32 @@ https://github.com/sudheerj/angular-interview-questions
 |Rendering|`afterNextRender`|Runs once the next time that all components have been rendered to the DOM.|
 ||`afterRender`|Runs every time all components have been rendered to the DOM.|
 |Destruction|	`ngOnDestroy`|Runs once before the component is destroyed|
+
+## AOT-vs-JIT
+
+- Ahead-of-time (AOT) compilation precompiles applications before they are loaded in the browser
+- During the AOT compilation process, the application’s templates and components are translated into optimized JavaScript code during the development phase
+- Advantages
+  - By pre-compiling templates and components, it reduces the initial load times and delivers a smoother user experience
+  - Additionally, AOT detects and reports template errors during the compilation phase
+  - leading to more reliable applications with fewer runtime issues
+
+![AOT vs JIT](./images/AOT-vs-JIT.png)
+
+|Feature	|AOT (Ahead of Time)	|JIT (Just in Time)|
+|---|---|---|
+|Compilation Timing	|Compiles the Angular application during the build process.	|Compiles the Angular application in the browser at runtime|
+|Performance|	Faster application startup since the code is already compiled|Slower startup because the app is compiled at runtime|
+|Bundle Size|	Produces smaller bundle sizes by removing unused code|Larger bundle size due to extra code required for compilation|
+|Error Detection|	Catches errors during build time, reducing runtime errors|	Errors are caught only during runtime, potentially causing issues in production|
+|Debugging Ease|	Debugging is slightly harder because the code is pre-compiled|Easier to debug during development as the code is compiled at runtime|
+|Use Case|	Best for production environments where performance is critical|Ideal for development environments for faster rebuilds and real-time testing|
+|Build Time|	Longer build time due to pre-compilation of templates|Shorter build time since templates are compiled at runtime|
+|Browser Load	|Reduces browser load as the code is already compiled.|	Higher browser load as compilation happens in the browser|
+|Supported Angular Versions	|Available from Angular 2+ and the default for production since Angular 9|Available since Angular 2+ but mainly used for development environments|
+|Security|More secure because templates are compiled ahead of time, reducing injection attacks|Less secure as templates are compiled on the client side, increasing risk of injection attacks|
+|Configuration|	Requires additional configuration in `angular.json` (set “aot”: true)|No special configuration needed, runs by default during development|
+
 ----------------------------------------------------
 
 [30道Angular经典面试题](#top)
