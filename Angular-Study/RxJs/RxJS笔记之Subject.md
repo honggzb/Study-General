@@ -11,6 +11,12 @@
 |ReplaySubject|是，存储所有数据|否|及时发布，有新数据就发布|
 |AsyncSubject|是，存储最后一条数据|是|延时发布，只有当数据源complete时候才发布|
 
+|   |||
+|---|---|---|
+|Subject|- a multicast observable that maintains a list of observers and notifies all of them when a new value is emitted using the next() method<br>- It does not have an initial value, so subscribers only receive values emitted after they subscribe|when you need a simple multicast subject without any additional features|
+|BehaviorSubject|- It has an **initial value** and will immediately emit the initial value to any subscriber as soon as they subscribe, even if no values have been emitted yet using the next() method<br>- After the initial value is emitted, it behaves like a regular Subject and notifies subscribers about new values emitted using next()|when you want to provide the last known value to new subscribers, such as the current state of an application or the latest data fetched from an API|
+|ReplaySubject|- can buffer and replay a specific number of values to new subscribers<br>- When you create a ReplaySubject, you can specify the buffer size, which determines how many previous values should be replayed to new subscribers|when you want to provide a history of values to new subscribers or when you need to cache values for later use|
+|AsyncSubject|- **only emits the last value** when it completes<br>- It will not emit any values until the subject’s complete() method is called. When completed, it will emit the last value (if any) to subscribers|when you need to wait for an operation to complete before emitting a final value, such as waiting for an HTTP request to finish and emitting the response as a single value|
 -----------------------------------------
 
 ## Subject
