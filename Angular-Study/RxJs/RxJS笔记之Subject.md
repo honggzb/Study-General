@@ -186,7 +186,7 @@ async-subjectC 400
 async-subjectD 400
 ```
 
-- ![Observable vs Subject](./images/Observable-vs-Subject.png)
+- ![Observable vs Subject](./images/Observabl-vs-Subject.png)
 - ![subject](./images/subject.png)
 
 > Reference
