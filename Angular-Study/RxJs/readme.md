@@ -12,6 +12,8 @@
 │   │   └── 📄避免多次调用之share+shareReplay.md
 ```
 
+### Observable vs Promise
+
 |Observable|Promise|
 |---|---|
 |Emit multiple values over a period of time|Emit a single value at a time|
@@ -26,6 +28,8 @@
 |Transform|`obs.pipe(map(value) => value*7);`|`promise.then(value => value*7);`|
 |subscribe|`const sub = obs.subscribe((value) => console.log(value))`|`promise.then((value)=>console.log(value))`|
 |Unsubscribe|`sub.unsubscribe()`|can't unsubscribe|
+
+### Observable vs Subject
 
 |Observable|Subject|
 |---|---|
