@@ -19,6 +19,7 @@
 │   │   ├── 📄Angular学习笔记之--directive指令.md
 │   │   ├── 📄Angular学习笔记之--lazy loading-angular15.md          #useful
 │   │   ├── 📄Angular学习笔记之--lazy loading-使用angular-cli.md   #old version
+│   │   ├── 📄Angular学习笔记之--ngZone.md
 │   │   ├── 📄Angular学习笔记之--ngClass例子.md
 │   │   ├── 📄Angular学习笔记之--styling in Angular.md
 │   │   ├── 📄Angular学习笔记之--two-way binding.md
