@@ -1,3 +1,4 @@
+
 ```
 ├── 📂IDE/
 |    ├──📂 Atom/
@@ -19,6 +20,11 @@
 |    ├── 📄node+npm_update.md
 │    └── 📦notepad++-plugin.zip                  # JSONFormat, Markdown view       
 ```
+
+## Github小技巧
+
+1. github.dev/xxx/xxx
+2. github1s.com/xxx/xxx
 
 |||||
 |---|---|---|---|
