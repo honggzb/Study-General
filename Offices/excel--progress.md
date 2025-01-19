@@ -1,4 +1,4 @@
-![progessing](/images/progessing.png)
+![progessing](./images/progessing.png)
 
 ```
 =REPT("|", C3/B3*50)&TEXT(C3/B3,"%0")
