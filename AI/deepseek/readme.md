@@ -1,1 +1,1 @@
-test
+- [DeepSeek：从入门到精通](https://www.kdocs.cn/l/clYNjy0hnxFl)
