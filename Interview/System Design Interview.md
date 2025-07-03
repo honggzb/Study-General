@@ -1,6 +1,7 @@
 [System Design Interview Preparation](#top)
 
 - [Front End system design - Autocomplete or Typeahead](#front-end-system-design---autocomplete-or-typeahead)
+- [Well-designed HTML forms](#well-designed-html-forms)
 - [Design Parking Garage](#design-parking-garage)
 - [Design Amazon Prime Video](#design-amazon-prime-video)
 - [Design a Hotel Booking Service](#design-a-hotel-booking-service)
@@ -61,6 +62,16 @@
 ||accessibility|
 
 ![Aautocompletesample](./images/autocompletesample.png)
+
+[⬆ back to top](#top)
+
+## Well-designed HTML forms
+
+1. Well-structured and semantically correct.
+2. Easy to use and navigate (keyboard).
+3. Accessible with ARIA attributes and proper labels.
+4. Has support for client and server side validation.
+6. Well-styled and consistent with the rest of the application.
 
 [⬆ back to top](#top)
 
