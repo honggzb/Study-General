@@ -74,7 +74,7 @@ export default {
 ## setup
 
 - setup是Vue3中一个新的配置项，值是一个函数，Composition API组件中所用到的：数据、方法、计算属性、监视…等等，均配置在setup中
-- 特点：
+- setup 是所有<strong style="color:#DD5145">Composition API（组合 API）</strong><i style="color:gray;font-weight:bold">“ 表演的舞台 ”</i>, 特点：
   - setup函数返回的对象中的内容，可直接在模板中使用
   - setup中访问this是undefined
   - setup函数会在beforeCreate之前调用，它是"领先"所有钩子执行的
@@ -83,6 +83,10 @@ export default {
 ### setup的返回值
 
 - ![setup](./images/setup.png)
+- setup 函数的两种返回值：
+  1. 若返回一个对象，则对象中的属性、方法, 在模板中均可以直接使用。（重点关注！）
+  2. <span style="color:#aad">若返回一个渲染函数：则可以自定义渲染内容。（了解）</span>
+- setup 不能是一个 async 函数，因为返回值不再是 return 的对象, 而是 promise, 模板看不到 return 对象中的属性。（后期也可以返回一个 Promise 实例，但需要 Suspense 和异步组件的配合）
 - setup中可以读取选项式API中data的数据，但反之则不可读
 
 ### setup的语法糖
