@@ -54,6 +54,7 @@
 - **create project**
   - 使用vue-cli： `npm create vue@latest`
   - 使用Vite: `npm create vite@latest`
+  - 使用nuxt:: `npm create nuxt <project-name>`
 - package.json:
   - `"dev": "vite --open",`
   - `"preview": "vite preview",`
