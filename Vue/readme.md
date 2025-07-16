@@ -90,13 +90,14 @@ module.exports = {
     autoprefixer: {},
   },
 }
+```
 - **daisyui+nuxt**
   - `npm install tailwindcss@latest @tailwindcss/vite@latest daisyui@latest`
   - Add Tailwind CSS to Vite config(nuxt.config.ts)
     - add `import tailwindcss from "@tailwindcss/vite";` and `vite: { plugins: [tailwindcss()] }` to 'nuxt.config.ts'
   - Put Tailwind CSS and daisyUI in your CSS file (and remove old styles)
     - create 'assets/main.css'
-```
+
 
 ## Vue学习资源
 
