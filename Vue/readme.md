@@ -54,7 +54,7 @@
 - **create project**
   - 使用vue-cli： `npm create vue@latest`
   - 使用Vite: `npm create vite@latest`
-  - 使用nuxt:: `npm create nuxt <project-name>`
+  - 使用nuxt: `npm create nuxt <project-name>`
 - package.json:
   - `"dev": "vite --open",`
   - `"preview": "vite preview",`
@@ -90,6 +90,12 @@ module.exports = {
     autoprefixer: {},
   },
 }
+- **daisyui+nuxt**
+  - `npm install tailwindcss@latest @tailwindcss/vite@latest daisyui@latest`
+  - Add Tailwind CSS to Vite config(nuxt.config.ts)
+    - add `import tailwindcss from "@tailwindcss/vite";` and `vite: { plugins: [tailwindcss()] }` to 'nuxt.config.ts'
+  - Put Tailwind CSS and daisyUI in your CSS file (and remove old styles)
+    - create 'assets/main.css'
 ```
 
 ## Vue学习资源
