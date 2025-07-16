@@ -20,7 +20,7 @@
 | :---        |    :----:   |          ---: |
 |highlight|highlight <mark>very important words</mark>|`<mark>very important words</mark>`|
 |Strikethrough|~~The world is flat.~~ We now know that the world is round|`~~The world is flat.~~ We now know that the world is round`|
-|粗体+颜色|<strong style="color:#DD5145">粗体+颜色</strong>`<strong style="color:#DD5145">粗体</strong>`|
+|粗体+颜色|<strong style="color:#DD5145">粗体+颜色</strong>|`<strong style="color:#DD5145">粗体</strong>`|
 |斜体+颜色|<i style="color:gray;font-weight:bold">斜体+颜色</i>|`<i style="color:gray;font-weight:bold">颜色</i>`|
 
 ## Table
