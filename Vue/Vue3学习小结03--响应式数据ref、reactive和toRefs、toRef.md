@@ -122,10 +122,10 @@
 
 ## ref对比reactive
 
-- ref用来定义：基本类型数据、对象类型数据
-  - ref创建的变量必须使用.value
-  - ref 定义的数据：操作数据<strong style="color:#DD5145">需要</strong>`.value`，读取数据时模板中直接读取<strong style="color:#DD5145">不需要</strong>`.value`
+- ref用来定义：基本类型数据
+  - ref 定义的数据：操作数据<strong style="color:#DD5145">必须使用</strong>`.value`，读取数据时模板中直接读取<strong style="color:#DD5145">不需要</strong>`.value`
   - ref 通过Object.defineProperty()的get与set来实现响应式（数据劫持）
+  - 备注：ref也可以用来定义<strong style="color:#DD5145">对象（或数组）类型数据</strong>, 它内部会自动通过`reactive`转为<strong style="color:#DD5145">代理对象</strong>
 - reactive用来定义：对象（或数组）类型数据
   - 修改属性： 直接使用  ->  `hobbies[0].name = 'reading'`
   - 修改整体对象：reactive重新分配一个新对象,会失去响应式（可以使用Object.assign去整体替换）
