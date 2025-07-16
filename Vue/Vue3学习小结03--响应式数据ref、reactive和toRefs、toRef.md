@@ -1,5 +1,8 @@
 [Vue3学习小结--响应式数据ref、reactive和toRefs、toRef](#top)
 
+- [Vue3中的响应式原理](#Vue3中的响应式原理)
+  - [vue2.x的响应式](#vue2.x的响应式)
+  - [vue3的响应式](#vue3的响应式)
 - [Ref基本数据类型的响应式数据](#ref基本数据类型的响应式数据)
 - [reactive对象类型的响应式数据](#reactive对象类型的响应式数据)
 - [ref对比reactive](#ref对比reactive)
@@ -7,14 +10,60 @@
 
 -------------------------------------
 
+## Vue3中的响应式原理
+
+### vue2.x的响应式
+
+- 实现原理：
+  - 对象类型：通过`Object.defineProperty()`对属性的读取、修改进行拦截（数据劫持）
+  - 数组类型：通过重写更新数组的一系列方法来实现拦截。（对数组的变更方法进行了包裹）
+    ```js
+    Object.defineProperty(data, "count", {
+      get() {},
+      set() {},
+    });
+    ```
+- 存在问题：
+  - 新增属性、删除属性, 界面不会更新
+  - 直接通过下标修改数组, 界面不会自动更新
+
+### vue3的响应式
+
+- 实现原理:
+  - 通过 Proxy（代理）: 拦截对象中任意属性的变化, 包括：属性值的读写、属性的添加、属性的删除等
+  - 通过 Reflect（反射）: 对源对象的属性进行操作
+  - MDN 文档中描述的 Proxy 与 Reflect：
+    - Proxy：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+    - Reflect：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect
+```js
+      new Proxy(data, {
+        // 拦截读取属性值
+        get(target, prop) {
+          return Reflect.get(target, prop);
+        },
+        // 拦截设置属性值或添加新属性
+        set(target, prop, value) {
+          return Reflect.set(target, prop, value);
+        },
+        // 拦截删除属性
+        deleteProperty(target, prop) {
+          return Reflect.deleteProperty(target, prop);
+        },
+      });
+      proxy.name = "tom";
+```
+
+[⬆ back to top](#top)
+
 ## Ref基本数据类型的响应式数据
 
 |||
 |---|---|
 |作用|定义响应式变量|
 |语法|let xxx = ref(初始值)|
+|操作数据|JS 中操作数据： `xxx.value`<br>模板中读取数据: 不需要.value，直接：`<div>{{xxx}}</div>`|
 |返回值|一个RefImpl的实例对象，简称ref对象或ref,ref对象的value属性是响应式的|
-|注意点|JS中操作数据需要`xxx.value`,但模板中不需要.value,直接使用即可<br>对于`let name = ref('张三'`)来说，name不是响应式的，name.value是响应式的|
+|注意点|接收的数据可以是：基本类型、也可以是对象类型<br>基本类型的数据：响应式依然是靠`Object.defineProperty()`的`get`与`set`完成的|
 
 ```ts
 <script lang="ts" setup name="Person">
@@ -44,8 +93,8 @@
 |---|---|
 |作用|只能定义对象类型|
 |语法|let xxx = reactive({xxx})|
-|返回值| 一个Proxy的实例对象，简称:响应式对象|
-|注意点|reactive定义的响应式数据是“深层次”的|
+|返回值| 一个Proxy的实例对象，简称:proxy对象|
+|注意点|reactive定义的响应式数据是“深层次”的<br>内部基于 ES6 的 Proxy 实现，通过代理对象操作源对象内部数据进行操作|
 
 ![返回值](./images/返回值.png)
 
