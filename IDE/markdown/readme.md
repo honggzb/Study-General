@@ -16,8 +16,8 @@
 
 ## Highlight && Strikethrough
 
-| Syntax      | sample |    |
-| :---        |    :----:   |          ---: |
+| Syntax      | sample | code |
+|---|----|---|
 |highlight|highlight <mark>very important words</mark>|`<mark>very important words</mark>`|
 |Strikethrough|~~The world is flat.~~ We now know that the world is round|`~~The world is flat.~~ We now know that the world is round`|
 |粗体+颜色|<strong style="color:#DD5145">粗体+颜色</strong>|`<strong style="color:#DD5145">粗体</strong>`|
