@@ -124,9 +124,13 @@
 
 - ref用来定义：基本类型数据、对象类型数据
   - ref创建的变量必须使用.value
-- reactive用来定义：对象类型数据
+  - ref 定义的数据：操作数据<strong style="color:#DD5145">需要</strong>`.value`，读取数据时模板中直接读取<strong style="color:#DD5145">不需要</strong>`.value`
+  - ref 通过Object.defineProperty()的get与set来实现响应式（数据劫持）
+- reactive用来定义：对象（或数组）类型数据
   - 修改属性： 直接使用  ->  `hobbies[0].name = 'reading'`
   - 修改整体对象：reactive重新分配一个新对象,会失去响应式（可以使用Object.assign去整体替换）
+  - reactive 定义的数据：操作数据与读取数据：<strong style="color:#DD5145">均不需要</strong>`.value`
+  - reactive 通过使用<strong style="color:#DD5145">Proxy</strong>来实现响应式（数据劫持）, 并通过<strong style="color:#DD5145">Reflect</strong>操作<strong style="color:orange">源对象</strong>内部的数据
 
 ```ts
 let obj = reactive({name: '小明'})
