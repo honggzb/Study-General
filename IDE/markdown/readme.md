@@ -16,7 +16,7 @@
 
 ## Highlight && Strikethrough
 
-- highlight `<mark>very important words</mark>`  --> `<mark>very important words</mark>`
+- highlight <mark>very important words</mark>  --> `<mark>very important words</mark>`
 - `~~The world is flat.~~ We now know that the world is round`  --> ``
 - ~~The world is flat.~~ We now know that the world is round  --> ``
 - <strong style="color:#DD5145">粗体+颜色</strong>  --> `<strong style="color:#DD5145">粗体</strong>`
