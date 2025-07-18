@@ -24,7 +24,7 @@
   - [Regular Expression - 正则表达式](#regular-expression---正则表达式)
 - [NodeJS 学习](#nodejs-学习)
 - [Offices](#Offices)
-  - [PPT](#ppt)
+  - [PPT](#PPT)
 - [Performance 性能分析](#performance-性能分析)
 - [PWA](#pwa)
 - [Python+R](#pythonr)
@@ -950,7 +950,12 @@
 |
 ├── 📂Offices
 │   ├──  📂PPT
-│   │     └──
+│   │  ├── 📄AI-ppt-tools.md
+│   │  ├── 📄中式复古工作总结.pptx
+│   │  ├── 📄微立体工作总结PPT模板.pptx
+│   │  ├── 📄活动策划.pptx
+│   │  ├── 📄精美翻书效果工作总结PPT模板2.pptx
+│   │  └──
 │   └──  📄 excel--progress.md
 |
 ├── 📂Performance/
