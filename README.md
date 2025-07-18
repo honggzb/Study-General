@@ -23,7 +23,7 @@
 - [Miscellaneous杂项](#miscellaneous杂项)
   - [Regular Expression - 正则表达式](#regular-expression---正则表达式)
 - [NodeJS 学习](#nodejs-学习)
-- [offices](#offices)
+- [Offices](#Offices)
   - [PPT](#ppt)
 - [Performance 性能分析](#performance-性能分析)
 - [PWA](#pwa)
@@ -947,6 +947,11 @@
 │   ├──  📄一篇文章构建你的 NodeJS 知识体系.md
 │   ├──  📄常用node模块.md
 │   └──  📄resources.md
+|
+├── 📂Offices
+│   ├──  📂PPT
+│   │     └──
+│   └──  📄 excel--progress.md
 |
 ├── 📂Performance/
 │   ├── 📄Front End performance案例分析.md
