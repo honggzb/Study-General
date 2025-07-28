@@ -76,7 +76,7 @@
 ### Accessibility Tree
 
 - Browsers create an **accessibility tree** based on the <mark>DOM tree</mark>, which is used by platform-specific <mark>Accessibility APIs</mark> to provide a representation that can be understood by assistive technologies, such as screen readers
-- ![Accessibility Tree](accessibility-tree.png)
+- ![Accessibility Tree](./images/accessibility-tree.png)
 - It contains information about the hierarchy of accessible nodes, roles, accessible names, states, and more
 - four properties in an accessibility tree object(**Accessibility Object Model-AOM**)
   - name
