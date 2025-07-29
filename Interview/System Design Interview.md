@@ -6,6 +6,12 @@
   - [Autocomplete Architecture](#autocomplete-architecture)
   - [Component design/API Design/Improvement](#component-designapi-designimprovement)
   - [Optimizations and deep dive](#optimizations-and-deep-dive)
+- [Application Design -News Feed Application](#application-design--news-feed-application)
+  - [Requirements exploration](#requirements-exploration)
+  - [Architecture / high-level design](#architecture--high-level-design)
+  - [Data model](#data-model)
+- [API definitions](#api-definitions)
+- [Optimizations and deep dive](#optimizations-and-deep-dive)
 - [Well-designed HTML forms](#well-designed-html-forms)
 - [Common Frontend System Design Interview Questions](#common-frontend-system-design-interview-questions)
 - [Sample Question \& Answer Outline](#sample-question--answer-outline)
@@ -110,6 +116,57 @@
 |Performance|- Loading speed<br>- Debouncing/throttling<br>- Memory usage<br>- Virtualized lists|
 |User experience|- Autofocus<br>- Handle different states<br>- Handle long strings<br>- Mobile-friendliness<br>- Keyboard interaction<br>- Typos in search<br>- Query results positioning|
 |Accessibility|- semantic HTML or use the right aria roles if using non-semantic HTML<br>- `aria-haspopup` to indicate that the element can trigger an interactive popup element<br>- `aria-expanded` to indicate whether the popup element is currently displayed<br>- Mark the results region with `aria-live` so that when new results are shown, screen reader users are notified<br>- `aria-autocomplete` type of autocompletion interaction model the combobox will dynamically help users complete text input, whether suggestions will be shown as a single value inline (`aria-autocomplete="inline"`) or in a collection of values (`aria-autocomplete="list"`<br>- Google uses `aria-autocomplete="both"` while Facebook and X use `aria-autocomplete="list"`<br>- Keyboard interaction: hit enter to perform a search, Up/down arrows to navigate the options, escape to dismiss the results popup if it is visible|
+
+[⬆ back to top](#top)
+
+## Application Design -News Feed Application
+
+- Design a news feed application that contains a list of feed posts users can interact with, e.g. Facebook
+- [System design News Feed (e.g. Facebook)](https://www.greatfrontend.com/questions/system-design/news-feed-facebook)
+  
+### Requirements exploration
+
+- What are the core features to be supported?
+  - Browse news feed containing posts by the user and their friends
+  - Liking and reacting to feed posts
+  - Creating and publishing new posts
+  - Commenting and sharing posts
+- What kind of posts are supported?
+  - types of posts, primarily text or image-based posts
+- What pagination UX should be used for the feed?
+  - **Infinite scrolling**, meaning more posts will be added when the user reaches the end of their feed
+- Will the application be used on mobile devices?
+- 
+
+### Architecture / high-level design
+
+![feed application](feed-application.png)
+
+|||
+|---|---|
+|Server|Provides HTTP APIs to fetch feed posts and to create new feed posts|
+|Controller|Controls the flow of data within the application and makes network requests to the server|
+|Client store|Stores data needed across the whole application|
+|Feed UI|Contains a list of feed posts and the UI for composing new posts<br>- **Feed posts**: Presents the data for a feed post and contains buttons to interact with the post (like/react/share)<br>-**Post composer**: WYSIWYG (what you see is what you get) editor for users to create new feed posts|
+|Rendering approach|- Server-side rendering (SSR)<br>- Client-side rendering (CSR)|
+
+### Data model
+
+|Entity|	Source	|Belongs to	|Fields|
+|---|---|---|---|
+|Feed	|Server	|Feed UI	|`posts` (list of Posts), `pagination` (pagination metadata)|
+|Post|	Server|	Feed post|	`id`, `created_time`, `content`, `author`, `reactions`, `image_url`|
+|User	|Server|	Client store|	`id`, `name`, `profile_photo_url`|
+|NewPost	|User input (Client)|Post composer UI	|`message`, `image`|
+
+[⬆ back to top](#top)
+
+### API definitions
+
+
+[⬆ back to top](#top)
+
+### Optimizations and deep dive
 
 [⬆ back to top](#top)
 
