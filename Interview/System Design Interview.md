@@ -140,7 +140,7 @@
 
 ### Architecture / high-level design
 
-![feed application](feed-application.png)
+![feed application](./images/feed-application.png)
 
 |||
 |---|---|
