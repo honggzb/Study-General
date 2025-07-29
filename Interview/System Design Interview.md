@@ -10,8 +10,8 @@
   - [Requirements exploration](#requirements-exploration)
   - [Architecture / high-level design](#architecture--high-level-design)
   - [Data model](#data-model)
-- [API definitions](#api-definitions)
-- [Optimizations and deep dive](#optimizations-and-deep-dive)
+  - [API definitions](#api-definitions)
+  - [Optimizations and deep diveA](#optimizations-and-deep-divea)
 - [Well-designed HTML forms](#well-designed-html-forms)
 - [Common Frontend System Design Interview Questions](#common-frontend-system-design-interview-questions)
 - [Sample Question \& Answer Outline](#sample-question--answer-outline)
@@ -164,9 +164,71 @@
 ### API definitions
 
 
+<mark>Interface definition (API)</mark>
+
+|Source|	Destination|	API type|	Functionality|
+|---|---|---|---|
+|Server|	Controller|	HTTP|	Fetch feed posts|
+|Controller|	Server|	HTTP	|Create new post|
+|Controller|	Feed UI|	JavaScript	|Pass feed posts data, Reactions|
+|Post composer|	Controller	|JavaScript	|Pass new post data|
+
+<mark>Offset-based pagination</mark>
+
+- Offset-based pagination involves using an offset to specify where to start retrieving data and a limit to specify the number of items to retrieve
+- `SELECT * FROM posts LIMIT 5 OFFSET 0; -- First page`
+- `SELECT * FROM posts LIMIT 5 OFFSET 5; -- Second page`
+
+|Parameter	|Type	|Description|
+|---|---|---|
+|size	|number|	Number of items per page|
+|page|	number	|Page number to fetch|
+|cursor	|string|	An identifier for the last item fetched. The database query will make use of this identifier|
+
+<mark>Cursor-based pagination<mark>
+
+- Cursor-based pagination uses a pointer (the cursor) to a specific record in a dataset
+- `SELECT * FROM table WHERE id > cursor LIMIT 5`
+- Reference: [Evolving API Pagination at Slack](https://slack.engineering/evolving-api-pagination-at-slack)
+
+<mark>Advanced: Normalized store<mark>
+
+- In a nutshell, normalized data stores:
+  - Resemble databases where each type of data is stored in its own table
+  - Each item has a unique ID
+  - References across data types use IDs (like a foreign key) instead of having nested objects
+- The benefits of having a normalized store are:
+  - **Reduced duplicated data**: Single source of truth for the same piece of data that could be presented in multiple instances on the UI. E.g. if many posts are by the same author, we're storing duplicated data for the author field in the client store
+  - **Easily update all data for the same entity**: In the scenario that the feed post contains many posts authored by the user and that user changes their name, it'd be good to be able to immediately reflect the updated author name in the UI. This will be easier to do with a normalized store than a store that just stores the server response verbatim
+- Facebook uses **Relay** (which can normalize the data by virtue of knowing the GraphQL schema) while Twitter uses **Redux** as seen from the "[Dissecting Twitter's Redux Store](https://medium.com/statuscode/dissecting-twitters-redux-store-d7280b62c6b1)" blog post
+- Further reading
+  - [Redux's documentation on normalizing state shape](https://redux.js.org/usage/structuring-reducers/normalizing-state-shape)
+  - [Making Instagram.com faster: Part 3 — cache first](https://instagram-engineering.com/making-instagram-com-faster-part-3-cache-first-6f3f130b9669)
+
+
 [⬆ back to top](#top)
 
-### Optimizations and deep dive
+### Optimizations and deep diveA
+
+- Code splitting JavaScript for faster performance
+  - **Split on the page level**: Each page will only load the JavaScript and CSS needed on that page
+  - **Lazy loading resources within a page**: Load non-critical resources only when needed or after the initial render, such as code that's only needed lower down on the page, or code that's used only when interacted with (e.g. modals, dialogs)
+  - sample: [Rebuilding our tech stack for the new Facebook.com" blog post](https://engineering.fb.com/2020/05/08/web/facebook-redesign/)
+- Accessibilty:
+  - [Making Facebook.com accessible to as many people as possible](https://engineering.fb.com/2020/07/30/web/facebook-com-accessibility/)
+- Error states:
+  - Clearly display error states if any network requests have failed, or when there's no network connectivity.
+- Feed list optimizations
+  - **Infinite scrolling**: A way to reduce or entirely eliminate the waiting time is to load the next set of feed posts before the user hits the bottom of the page so that the user never has to see any loading indicators
+    - **Listen for the scroll event**: Add a `scroll` event listener (ideally throttled) to the page or a timer (via `setInterval`) that checks whether the position of the marker element is within a certain threshold from the bottom of the page. The position of the marker element can be obtained using [Element.getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+    - **Intersection Observer API**: [Intersection Observer API | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) monitor when the marker element is entering or exiting another element or intersecting by a specified amount
+    - **Virtualized lists**: 
+    - **Loading indicators**:
+- References:
+  - [General optimizations](https://www.greatfrontend.com/questions/system-design/news-feed-facebook#general-optimizations)
+  - [Feed list optimizations](https://www.greatfrontend.com/questions/system-design/news-feed-facebook#feed-list-optimizations)
+  - [Feed post optimizations](https://www.greatfrontend.com/questions/system-design/news-feed-facebook#feed-post-optimizations)
+  - [Feed composer optimizations](https://www.greatfrontend.com/questions/system-design/news-feed-facebook#feed-composer-optimizations)
 
 [⬆ back to top](#top)
 
