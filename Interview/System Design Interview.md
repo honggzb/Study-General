@@ -5,6 +5,7 @@
   - [General](#general)
   - [Autocomplete Architecture](#autocomplete-architecture)
   - [Component design/API Design/Improvement](#component-designapi-designimprovement)
+  - [Optimizations and deep dive](#optimizations-and-deep-dive)
 - [Well-designed HTML forms](#well-designed-html-forms)
 - [Common Frontend System Design Interview Questions](#common-frontend-system-design-interview-questions)
 - [Sample Question \& Answer Outline](#sample-question--answer-outline)
@@ -99,6 +100,16 @@
 ### Component design/API Design/Improvement
 
 ![Aautocompletesample](./images/autocompletesample.png)
+
+### Optimizations and deep dive
+
+|||
+|---|---|
+|Network|- Handling concurrent requests/race conditions<br>- Failed requests and retries<br>- Offline usage|
+|Cache|- Cache structure<br>- Cache structures<br>- Caching strategy|
+|Performance|- Loading speed<br>- Debouncing/throttling<br>- Memory usage<br>- Virtualized lists|
+|User experience|- Autofocus<br>- Handle different states<br>- Handle long strings<br>- Mobile-friendliness<br>- Keyboard interaction<br>- Typos in search<br>- Query results positioning|
+|Accessibility|- semantic HTML or use the right aria roles if using non-semantic HTML<br>- `aria-haspopup` to indicate that the element can trigger an interactive popup element<br>- `aria-expanded` to indicate whether the popup element is currently displayed<br>- Mark the results region with `aria-live` so that when new results are shown, screen reader users are notified<br>- `aria-autocomplete` type of autocompletion interaction model the combobox will dynamically help users complete text input, whether suggestions will be shown as a single value inline (`aria-autocomplete="inline"`) or in a collection of values (`aria-autocomplete="list"`<br>- Google uses `aria-autocomplete="both"` while Facebook and X use `aria-autocomplete="list"`<br>- Keyboard interaction: hit enter to perform a search, Up/down arrows to navigate the options, escape to dismiss the results popup if it is visible|
 
 [⬆ back to top](#top)
 
