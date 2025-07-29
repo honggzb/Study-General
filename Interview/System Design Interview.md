@@ -1,8 +1,10 @@
 [System Design Interview Preparation](#top)
 
+- [Tips for Answering](#tips-for-answering)
 - [Front End system design - Autocomplete or Typeahead](#front-end-system-design---autocomplete-or-typeahead)
 - [Well-designed HTML forms](#well-designed-html-forms)
-- [Sample Question & Answer Outline](#sample-question-&-answer-outline)
+- [Common Frontend System Design Interview Questions](#common-frontend-system-design-interview-questions)
+- [Sample Question \& Answer Outline](#sample-question--answer-outline)
 - [Design Parking Garage](#design-parking-garage)
 - [Design Amazon Prime Video](#design-amazon-prime-video)
 - [Design a Hotel Booking Service](#design-a-hotel-booking-service)
@@ -21,6 +23,17 @@
 ||Can there spikes in traffic|||
 
 ![Front End system design](./images/FrontEndsystemdesign.png)
+
+[⬆ back to top](#top)
+
+## Tips for Answering
+
+- **Start with requirements**: Clarify functional and non-functional requirements.
+- **Draw a diagram**: Sketch the main components and their interactions.
+- **Discuss trade-offs**: Compare different libraries/tools/approaches.
+- **Address scalability, maintainability, and performance**
+- **Mention monitoring and observability**.
+- **Talk about testing and deployment**
 
 [⬆ back to top](#top)
 
@@ -73,6 +86,45 @@
 3. Accessible with ARIA attributes and proper labels.
 4. Has support for client and server side validation.
 6. Well-styled and consistent with the rest of the application.
+
+[⬆ back to top](#top)
+
+## Common Frontend System Design Interview Questions
+
+1. Design a scalable web application (e.g., Twitter feed, Instagram, or a dashboard)
+  - How would you structure the frontend codebase?
+  - How would you split components and manage state?
+  - Which frameworks/libraries would you choose and why?
+
+2. How do you handle large-scale state management in a complex single-page application (SPA)?
+  - Local vs global state
+  - Libraries: Redux, MobX, Zustand, Context API, etc.
+3. How would you design a performant, mobile-friendly web page that loads under 2 seconds?
+  - Code splitting
+  - Lazy loading
+  - Image optimization
+  - Critical CSS, performance budgets
+4. How do you architect for SEO and SSR (Server-Side Rendering)?
+  - Static Site Generation (SSG) vs SSR vs Client-side rendering
+  - Frameworks: Next.js, Nuxt, Astro, Gatsby
+5. How would you design a real-time collaborative editor (like Google Docs) from a frontend perspective?
+  - WebSockets/WebRTC vs polling
+  - Data synchronization
+  - Optimistic updates
+6. How would you handle error boundaries and logging in a large web application?
+  - Error boundaries in React
+  - Centralized logging and monitoring
+7. How would you implement authentication and authorization in your frontend?
+  - OAuth, JWT, session management
+  - Route guards, protected components
+8. How do you ensure accessibility (a11y) and internationalization (i18n)?
+  - Best practices/tools
+  - Testing strategies
+9. How would you design a component library for use across multiple products?
+  - Theming, customizability
+  - Versioning and distribution
+10. How do you ensure code quality in a large frontend codebase?
+  - Linting, formatting, testing (unit, integration, E2E), code reviews
 
 [⬆ back to top](#top)
 
