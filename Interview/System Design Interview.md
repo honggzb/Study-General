@@ -2,6 +2,9 @@
 
 - [Tips for Answering](#tips-for-answering)
 - [Front End system design - Autocomplete or Typeahead](#front-end-system-design---autocomplete-or-typeahead)
+  - [General](#general)
+  - [Autocomplete Architecture](#autocomplete-architecture)
+  - [Component design/API Design/Improvement](#component-designapi-designimprovement)
 - [Well-designed HTML forms](#well-designed-html-forms)
 - [Common Frontend System Design Interview Questions](#common-frontend-system-design-interview-questions)
 - [Sample Question \& Answer Outline](#sample-question--answer-outline)
@@ -39,10 +42,15 @@
 
 ## Front End system design - Autocomplete or Typeahead
 
+### General
+
 - Clarify the question
-  - what is the goal of this feature?
+  - what is the goal of this feature? What kind of results should be supported?
+    - **Text, image, media (image accompanied with text)**
   - Do I need to build just he autocomplete feature or the entire search bar with filters?
+  - Do we need to support fuzzy search?
   - Should we consider typing errors while search
+  - What devices will this component be used on?
 - General Plan
   - Functional requirements
   - Non functional requirements
@@ -74,6 +82,21 @@
 |search results should be customisable|performance|
 |supports both static data and data coming from api|generic to support different platforms<br>browser support<br>cross devices(desktop, mobile, tablet)|
 ||accessibility|
+
+### Autocomplete Architecture
+
+![autocomplete-architecture](./images/autocomplete-architecture.png)
+
+|||
+|---|---|
+|Input field UI|- Handles user input and passes the user input to the controller.
+|Results UI (Popup)|- Receives results from the controller and presents it to the user<br>- Handles user selection and informs the controller which input was selected|
+|Cache|- Stores the results for previous queries so that the controller can check if sending a request to the server.|
+|Controller|- Controller (MVC) pattern. All the components in the system interact with this component.<br>- Passes user input and results between components<br>- Fetches results from the server if the cache is empty for a particular query|
+
+- [System Design - Autocomplete](https://www.greatfrontend.com/questions/system-design/autocomplete)
+
+### Component design/API Design/Improvement
 
 ![Aautocompletesample](./images/autocompletesample.png)
 
