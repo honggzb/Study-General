@@ -39,3 +39,16 @@ Why Shadcn UI?
 - Serve as a role model for our high engineering standards and bring consistency to our codebases and processes
 - Build, maintain and iterate on our core product and features.**
 
+
+## A Typical Day
+
+1. Develop frontend features and make improvements to the Deliverect product in a secure, well-tested, and performant way. 
+2. Collaborate with Product Management, Product Designers, Backend Engineers and other stakeholders to maintain a high bar for quality in a fast-paced, iterative environment. 
+3. Advocate for and supervise initiatives to improve product quality, security, and performance. 
+4. Craft code that meets our internal standards for style, maintainability, and best practices for a high-scale web environment. Maintain and advocate for these standards through code review. 
+5. Recognise impediments to our efficiency as a team, and propose and implement solutions. 
+6. Ship small to medium-sized features and improvements with minimal guidance from other team members. Collaborate with the team on larger projects. 
+7. Demonstrated capacity to clearly and concisely communicate about complex technical, architectural, and organisational problems and propose thorough, iterative solutions. 
+8. Effective communication skills: Regularly achieve consensus with peers and provide clear status updates. 
+9. Aspiration toward building our culture of communication, inclusion, and visibility
+10. Experience owning a project from concept to production, including proposal, discussion, and execution. 
