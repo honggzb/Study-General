@@ -30,7 +30,7 @@
 - [Salesforce](#salesforce)
 - [Security   --安全](#security----安全)
 - [Storybook](#storybook)
-- [System-Design+Algrithm+performances](#system-design+Algrithm+performances)
+- [System-Design+Algrithm+performances](#system-designalgrithmperformances)
   - [DesignPattern-Algrithm](#designpattern-algrithm)
   - [Performance 性能分析](#performance-性能分析)
 - [Theory 理论和源码](#theory-理论和源码)
