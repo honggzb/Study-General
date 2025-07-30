@@ -268,9 +268,11 @@ import { persistor, store } from './store/store';
 ## using shadcn for nextjs project
 
 1. `npx shadcn@latest init`
-2. `npx shadcn@latest add button`
-3. `import { Button } from "@/components/ui/button"`, `<Button>Click me</Button>`
-4. https://ui.shadcn.com/
+  - ✔ Updating CSS variables in app\globals.css
+  - ✔ Created 1 file: --> lib\utils.ts 
+3. `npx shadcn@latest add button`
+4. `import { Button } from "@/components/ui/button"`, `<Button>Click me</Button>`
+5. https://ui.shadcn.com/
 
 [⬆ back to top](#top)
 

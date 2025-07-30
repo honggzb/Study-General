@@ -23,8 +23,9 @@
 - [Miscellaneous杂项](#miscellaneous杂项)
   - [Regular Expression - 正则表达式](#regular-expression---正则表达式)
 - [NodeJS 学习](#nodejs-学习)
+- [Offices](#Offices)
+  - [PPT](#PPT)
 - [Performance 性能分析](#performance-性能分析)
-- [PPT](#ppt)
 - [PWA](#pwa)
 - [Python+R](#pythonr)
 - [React](#react)
@@ -912,8 +913,8 @@
 ```
 
 ## NodeJS 学习
+## Offices
 ## Performance 性能分析
-## PPT
 ## PWA
 ## Python+R
 ## React
@@ -946,6 +947,16 @@
 │   ├──  📄一篇文章构建你的 NodeJS 知识体系.md
 │   ├──  📄常用node模块.md
 │   └──  📄resources.md
+|
+├── 📂Offices
+│   ├──  📂PPT
+│   │     ├── 📄AI-ppt-tools.md
+│   │     ├── 📄中式复古工作总结.pptx
+│   │     ├── 📄微立体工作总结PPT模板.pptx
+│   │     ├── 📄活动策划.pptx
+│   │     ├── 📄精美翻书效果工作总结PPT模板2.pptx
+│   │     └──
+│   └──  📄 excel--progress.md
 |
 ├── 📂Performance/
 │   ├── 📄Front End performance案例分析.md
