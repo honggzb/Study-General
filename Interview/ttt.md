@@ -33,6 +33,15 @@ Why Shadcn UI?
 	
 - Overall, working in an agile environment has allowed me to remain adaptable, deliver value incrementally, and continuously refine both the product and the process for maximum efficiency
 
+## How do you ensure the quality and maintainability of your code
+
+1. I follow the best practices and coding standards for front end development, such as using semantic HTML, modular CSS, and ES6 syntax. 
+2. I also use tools such as ESLint, Prettier, and Stylelint to enforce consistent code formatting and linting rules. I use Git and GitHub for version control and code collaboration. 
+3. I also use code reviews and pull requests to get feedback and suggestions from other developers. 
+4. I document my code using comments and JSDoc annotations. 
+5. I also use tools such as Webpack and Babel to transpile, bundle, and minify my code for production
+6. live and learn
+
 ## A day in the life might look like:
 
 - Collaborate with stakeholders and designers to scope, evaluate and design the technical solutions to product problems and features.
