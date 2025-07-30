@@ -6,7 +6,7 @@
 
 ## Functional Components vs. Class Components
 
-|Class Components|Functional Components||
+||Class Components|Functional Components|
 |---|---|---|
 |defination |preferred for complex components that demand precise control over state and lifecycle behavior|similar to JavaScript functions that receive properties (props) and return React elements for rendering|
 |Advantages|Performance<brInternal State Management<brPrecise Control over Behavior|Easier to reuse and compose<br>Promoting Functional Programming<br>Easier to test|
