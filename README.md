@@ -10,7 +10,6 @@
 - [CSS-CSS3-SCSS-LESS-Tailwind](#css-css3-scss-less-tailwind)
 - [Database学习](#database学习)
 - [Debug-Skill调试技巧](#debug-skill调试技巧)
-- [DesignPattern-Algrithm](#designpattern-algrithm)
 - [Electron](#electron)
 - [Git Study](#git-study)
 - [GraphQL](#graphql)
@@ -25,13 +24,15 @@
 - [NodeJS 学习](#nodejs-学习)
 - [Offices](#Offices)
   - [PPT](#PPT)
-- [Performance 性能分析](#performance-性能分析)
 - [PWA](#pwa)
 - [Python+R](#pythonr)
 - [React](#react)
 - [Salesforce](#salesforce)
 - [Security   --安全](#security----安全)
 - [Storybook](#storybook)
+- [System-Design+Algrithm+performances](#)
+  - [DesignPattern-Algrithm](#designpattern-algrithm)
+  - [Performance 性能分析](#performance-性能分析)
 - [Theory 理论和源码](#theory-理论和源码)
 - [VirtualReality   #虚拟现实](#virtualreality--虚拟现实)
 - [interview](#interview)
@@ -608,7 +609,6 @@
 ```
 
 ## Debug-Skill调试技巧
-## DesignPattern-Algrithm
 ## Electron
 
 ```
@@ -651,12 +651,6 @@
 │   ├── 性能调试之RAIL模式.md
 │   ├── 性能调试之memory分析.md
 │   └── 
-│
-├── 📂DesignPattern-Algrithm/
-|    ├── UML图详解.md
-|    ├── 依赖注入模式.md
-|    ├── 背包问题-javascript动态规划.md
-|    └── 
 │
 ├── 📂Git Study/
 │   ├── name-contest/   # test案例
@@ -914,13 +908,13 @@
 
 ## NodeJS 学习
 ## Offices
-## Performance 性能分析
 ## PWA
 ## Python+R
 ## React
 ## Salesforce
 ## Security   --安全
 ## Storybook
+## f
 ## Theory 理论和源码
 ## VirtualReality   #虚拟现实
 
@@ -957,18 +951,6 @@
 │   │     ├── 📄精美翻书效果工作总结PPT模板2.pptx
 │   │     └──
 │   └──  📄 excel--progress.md
-|
-├── 📂Performance/
-│   ├── 📄Front End performance案例分析.md
-│   ├── 📄Google Tag Manager简介.md
-│   ├── 📄Performance Sample.docx
-│   ├── 📄browser-render-optimization.md
-│   ├── 📄optimizing-Rendering-Performance.md
-│   ├── 📄performance-checklist-1.2.pdf
-│   ├── 📄requestAnimationFrame优化动画.md
-│   ├── 📄resources.md
-│   ├── 📄前端性能优化-gzip压缩.md
-│   └── 📄浏览器缓存机制.md
 |
 ├── 📂PWA/
 |    ├── 📄PWA基础学习.md
@@ -1029,6 +1011,25 @@
 ├── 📂Storybook/
 |    ├── 📄Storybook-setup.md
 |    └── 📄Storybook学习之--basic.md
+│
+├── 📂System-Design+Algrithm+performances
+|    ├── 📂DesignPattern-Algrithm/
+|    |   ├── 依赖注入模式.md
+|    |   ├── 背包问题-javascript动态规划.md
+|    |   └──
+|    ├── 📂Performance/
+|    │   ├── 📄Front End performance案例分析.md
+|    │   ├── 📄Google Tag Manager简介.md
+|    │   ├── 📄Performance Sample.docx
+|    │   ├── 📄browser-render-optimization.md
+|    │   ├── 📄optimizing-Rendering-Performance.md
+|    │   ├── 📄performance-checklist-1.2.pdf
+|    │   ├── 📄requestAnimationFrame优化动画.md
+|    │   ├── 📄resources.md
+|    │   ├── 📄前端性能优化-gzip压缩.md
+|    │   └── 📄浏览器缓存机制.md
+|    ├── Frontend System Design.md
+|    └── UML图详解.md
 │
 ├── 📂Theory 理论和源码
 │   ├── Progressive Web App设计.md
