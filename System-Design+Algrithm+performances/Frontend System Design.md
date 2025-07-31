@@ -53,25 +53,23 @@
 ```
 
 ![Client-Server Architecture](./images/client-server-arch.png)
-- **ViewModel** is designed to store user interface data. The problem with MVC/MVP is that they don't distinguish between business and UI data
-- The **View** is isolated from the **Model**. The **ViewModel** coordinates with the odal and provides dat to the **View**
-- Many **Views** can share a single **ViewModel**; a singel **View** cannot have more than one **ViewModel**
-- The **ViewModel** contains all the data ad behavior of the user interface windwo but without any of the controls used to display the user interface on the screen
 ![3 Tier Architecture](./images/3-tier-arch.png)
 
 ## MVVM (Model-View-ViewModel)
 
 - MVVM separats the view logic from business logic
-  - Business Logic
-    - Change username
-    - make a transaction
-    - remove an item from the basket
-  - View Logic
-    - Close/open modal window
-    - Disabel button
-    - Update download status
+```
+- Business Logic                     | - View Logic        
+  - Change username                  |  - Close/open modal window
+  - make a transaction               |  - Disabel button
+  - remove an item from the basket   |  - Update download status
+```
 
 ![MVVM](./images/MVVM.png)
+- **ViewModel** is designed to store user interface data. The problem with MVC/MVP is that they don't distinguish between business and UI data
+- The **View** is isolated from the **Model**. The **ViewModel** coordinates with the odal and provides dat to the **View**
+- Many **Views** can share a single **ViewModel**; a singel **View** cannot have more than one **ViewModel**
+- The **ViewModel** contains all the data ad behavior of the user interface windwo but without any of the controls used to display the user interface on the screen
 ![MVVM-k](./images/MVVM-k.png)
 
 ```
