@@ -53,6 +53,10 @@
 ```
 
 ![Client-Server Architecture](./images/client-server-arch.png)
+- **ViewModel** is designed to store user interface data. The problem with MVC/MVP is that they don't distinguish between business and UI data
+- The **View** is isolated from the **Model**. The **ViewModel** coordinates with the odal and provides dat to the **View**
+- Many **Views** can share a single **ViewModel**; a singel **View** cannot have more than one **ViewModel**
+- The **ViewModel** contains all the data ad behavior of the user interface windwo but without any of the controls used to display the user interface on the screen
 ![3 Tier Architecture](./images/3-tier-arch.png)
 
 ## MVVM (Model-View-ViewModel)
