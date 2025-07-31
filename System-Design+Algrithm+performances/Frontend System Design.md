@@ -70,7 +70,7 @@
 - The **View** is isolated from the **Model**. The **ViewModel** coordinates with the odal and provides dat to the **View**
 - Many **Views** can share a single **ViewModel**; a singel **View** cannot have more than one **ViewModel**
 - The **ViewModel** contains all the data ad behavior of the user interface windwo but without any of the controls used to display the user interface on the screen
-![MVVM-k](./images/MVVM-k.png)
+- ![MVVM-k](./images/MVVM-k.png)
 
 ```
                Pros                                      |                   Cons
