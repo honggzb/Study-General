@@ -30,40 +30,27 @@
   
 ## Frontend System Design Components
 
-- Architectural Patterns
-  - Iframe
-  - Web components
-  - Module Federation
-  - MicroApps / Route based
-- Communication Protocols
-  - REST/GraphQL/inMemory
-- Availability
-  - offline support: Sevice Worker
-- Accessibility
-- Consistency
-  - CSS propeties --> Polyfills
-- Credibility & Trust
-  - SEO
-- Logging & Monitoring
-  - Error logging, user tracking, User activity, Feature usuage, Infra/capcity monitoring
-- Databases/Caching
-  - HTTP cachings, Apollo caching, 
-  - statement management(Redux, context)
-  - local storage
-  - Session storage
-  - Cookie
-  - IndexedDB
-- Security
-  - Authentication/Authorization
-  - CORS, CSP
-- Performancy & Optimization
-  - Assets optimization
-  - Delivery option
-  - SSR
-  - Service worker
-- Testing: 
-  - unit test, Intergration testing, end to end testing
-  - Jest, Cypress
+```
+🔸Architectural Patterns Protocol |🔸Communication 
+  - Iframe                        |    - REST/GraphQL/inMemory
+  - Web components                |🔸Availability
+  - Module Federation             |    - offline support: Sevice Worker
+  - MicroApps / Route based       |🔸Accessibility
+🔸Consistency                     |🔸Credibility & Trust
+  - CSS propeties --> Polyfills   |    - SEO
+🔸Logging & Monitoring            |🔸Databases/Caching   
+  - Error logging, user tracking, |   - HTTP cachings, Apollo caching
+  User activity, Feature usuage,  |   statement management(Redux, context)
+🔸Infra/capcity monitoring        |   - local storage
+🔸Security                        |   - Session storage
+  - Authentication/Authorization  |   - Cookie
+  - CORS, CSP                     |   - IndexedDB
+🔸Performancy & Optimization      |🔸Testing
+  - Assets optimization           |   - unit test, Intergration testing, end to end testing
+  - Delivery option               |   - Jest, Cypress
+  - SSR                           |
+  - Service worker                |
+```
 
 ![Client-Server Architecture](./images/client-server-arch.png)
 ![3 Tier Architecture](./images/3-tier-arch.png)
