@@ -54,8 +54,9 @@
 - [React's documentation on TypeScript](https://react.dev/learn/typescript)
 - [React + TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react-typescript-cheatsheet#reacttypescript-cheatsheets)
 
-## Libraries
+## Resources+Libraries
 
+- [React学习资源-github](https://github.com/knowledgefxg/react-learning)
 - [SWR-用于数据请求的 React Hooks 库](https://swr.vercel.app/zh-CN)
 
 ## VSCode settings
