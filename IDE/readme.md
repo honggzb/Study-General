@@ -37,6 +37,8 @@
 |💅 Emotion|✨ Prettier|🚥 GitHub Actions|📐 ESLint|
 |✅ Chromatic |📦 npm |💳 payments|♿ Accessibility|
 |other|---|---|---|
+|💯 ✨|⚒️|🖌 画笔|🖼️ 📃 导出|
+|🎨 主题|📈 |||
 |💥 Actions to |🎛 Controls to interactively |📂📝📕📧 Docss|🔍 Interactions|
 |🏎 Test-runner|☁ Cloud|🏡🐈|⭐🌙晚安|
 |🍜|🍞zασα|☾˚‧º· 𝓖𝓸𝓸𝓭 𝓝𝓲𝓰𝓱𝓽 ☾˚‧º·|🛌🎶|
