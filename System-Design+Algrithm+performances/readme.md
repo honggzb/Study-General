@@ -15,8 +15,9 @@
 |    │   ├── 📄resources.md
 |    │   ├── 📄前端性能优化-gzip压缩.md
 |    │   └── 📄浏览器缓存机制.md
-|    ├── Frontend System Design.md
-|    └── UML图详解.md
+|    ├── 📄Frontend System Design.md
+|    ├── 📄JAMstack架构
+|    └── 📄UML图详解.md
 ```
 
 - [图解算法数据结构](https://github.com/krahets/LeetCode-Book)
