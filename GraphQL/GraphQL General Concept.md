@@ -6,6 +6,44 @@
 
 [back to top](#top)
 
+## GraphQL
+
+- is a query language for APIs that allows clients to request exactly the data they need
+- developed by Facebook in 2012, released publicly in 2015
+- to solve the over-fetching issues and user-fetching data in traditional REST APIs
+
+|Feature|REST|GraphQL|
+|---|---|---|
+|Data Fetching|multiple endpoints, fixed responses|single endpoints, flexible responses|
+|Over-fetching|common due to fixed data structures|avoided by querying only needed data|
+|Versioning|requires versioned endpoints(/v1/)|no versionig, schema evolves with types|
+|Error Handling|HTTP status codes|Custom error responses in response object|
+
+|Query|Mutation|
+|---|---|
+|a read-only operation that allows clients to request(get) specific data from server| an operation that allows clients to modify data on the server(create, update, delete)|
+|used to fetch data without modifying and existing data on the server|used to perform write operations and change the server's data|
+
+## Apollo
+
+- Apollo is an open-source GraphQL implementation that help manage data fetching in a more efficient an flexible way
+- it simplifies the integration of GraphQL in both frontend and backend development with Apollo Server & Apollo Client
+  - **Apollo Server**: 
+    - a GraphQL server a library that connects GraphQL schema to a data source and handles incoming queries and mutations
+    - it works with any backend, including REST APIs, databases, etc
+    - includes tools like Apollo Studio for monitoring and managing GraphQL API
+  - **Apollo Client**:
+    - a powerful state management libray for javascript apps that enables to interact with a GraphQL API
+    - automatically updates the UI based on the data fetched
+    - efficiently manages and synchronizes the app's data with the backend
+
+
+|Frontend(Apollo Client)|Backend(Apollo Server)|
+|---|---|
+|simplies data fetching with hooks|fexible schema defination and resolver logic|
+|automaticv UI updates with data changes|integrates with any data source|
+|state management and caching out-of-the-box|Apollo studio for managing GraphQL API|
+
 ## GraphQL Query Language
 
 ### Varibles && Directives
