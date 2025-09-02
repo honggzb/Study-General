@@ -32,7 +32,7 @@
 
 |project type|CLI|
 |---|---|
-| typescript project| `npx create-react-app myproject --template typescript`|
+| typescript project| `npx create-react-app myproject --template typescript`<br>`npx create-react-app . --template typescript`在本目录创建|
 |Next.js全栈式的 React 框架<br>Next.js的App Router是对 Next.js API的重新设计，<br>旨在实现 React 团队的全栈架构愿景。它让你在异步组件中获取数据，这些组件甚至能在服务端构建过程中运行<br>Next.js 只支持React 16+| `npx create-next-app@latest`<br>`npx create-next-app --example with-redux my-app`<br>https://redux-toolkit.js.org/usage/nextjs|
 |Vite|`npm create vite@latest`|
 |Remix 具有嵌套路由的全栈式 React 框架|`npx create-remix`|
