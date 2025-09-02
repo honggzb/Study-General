@@ -12,7 +12,7 @@
   - [wrap root component with PersistGate](#wrap-root-component-with-persistgate)
 - [using bootstrap](#using-bootstrap)
 - [using shadcn for nextjs project](#using-shadcn-for-nextjs-project)
-- [install and setup tailwindcss](#install-and-setup-tailwindcss)
+- [install and setup tailwindcss3](#install-and-setup-tailwindcss3)
 - [updating whole packages to latest version](#updating-whole-packages-to-latest-version)
 - [using context](#using-context)
 - [using SCSS](#using-scss)
@@ -285,7 +285,7 @@ import { persistor, store } from './store/store';
 
 [⬆ back to top](#top)
 
-## install and setup tailwindcss
+## install and setup tailwindcss3
 
 - [tailwindcss install-using postcss](https://tailwindcss.com/docs/installation/using-postcss)
 - `npm i tailwindcss postcss autoprefixer --save-dev`
