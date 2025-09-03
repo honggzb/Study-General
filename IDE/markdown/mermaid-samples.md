@@ -19,3 +19,6 @@ sequenceDiagram
     Note over InMemoryCache: Car: xxx is cached
     InMemoryCache->>Apollo Client: return cars
 ```
+
+> References
+- [mermaid official samples](https://docs.mermaidchart.com/mermaid-oss/syntax/examples.html#examples)
