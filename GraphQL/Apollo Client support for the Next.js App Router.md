@@ -5,15 +5,16 @@
   - [ApolloProvider](#apolloprovider)
 - [In Client Components and streaming SSR](#in-client-components-and-streaming-ssr)
 
-
-- `npm i @apollo/client @apollo/client-integration-nextjs` or `pnpm add @apollo/client @apollo/client-integration-nextjs`
-- [Apollo Client support for the Next.js App Router](https://github.com/apollographql/apollo-client-integrations/tree/main/packages/nextjs)
+--------------------------------------------------------------------------
 
 **Why do you need this?**
 - React Server Components: need a way of creating a client instance that is shared between all your server components for one request to prevent making duplicate requests.
 - React Client Components: 
   - When using the app directory, all your "client components" will not only run in the browser. They will also be rendered on the server - in an "SSR" run that will execute after React Server Components have been rendered
   - If you want to make the most of your application, you probably already want to make your GraphQL requests on the server so that the page is fully rendered when it reaches the browser
+
+- `npm i @apollo/client @apollo/client-integration-nextjs` or `pnpm add @apollo/client @apollo/client-integration-nextjs`
+- [Apollo Client support for the Next.js App Router](https://github.com/apollographql/apollo-client-integrations/tree/main/packages/nextjs)
 
 ## In Client Components and streaming SSR
 
