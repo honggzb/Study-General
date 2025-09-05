@@ -21,7 +21,7 @@
 1. create 'app/apollo/apolloClient.ts'
 2. create 'lib/ApolloProvider.tsx' for `ApolloProviderWrapper`
 3. add `ApolloProviderWrapper` to 'client/app/layout.tsx'
-4. use `useSuspenseQuery` to query data in Client component
+4. use `useQuery` or `useSuspenseQuery` to query data in Client component
 
 ```ts
 // app/apollo/apolloClient.ts
@@ -56,7 +56,7 @@ export default ApolloProviderWrapper;
 </body>
 // app/car/[id]/page.tsx
 "use client";
-import { useSuspenseQuery } from "@apollo/client/react";
+import { useQuery, useSuspenseQuery } from "@apollo/client/react";
 import { useParams } from 'next/navigation'
 import { GET_CAR_BY_ID } from "../../graphql/queries/car.queries";
 type Props = {
@@ -64,9 +64,12 @@ type Props = {
 };
 const CarDetailPage = ({ id }: Props) => {
   const params = useParams<{ tag: string; id: string }>();
-  const { data } = useSuspenseQuery(GET_CAR_BY_ID, {
+  const { data. loading, error } = useQuery(GET_CAR_BY_ID, {
     variables: { carId: params?.id },
   });
+  //const { data } = useSuspenseQuery(GET_CAR_BY_ID, {
+  //  variables: { carId: params?.id },
+  //});
   const car = data?.getCarById;
   return (
     <CarDetail car={car} />
