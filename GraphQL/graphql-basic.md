@@ -37,7 +37,7 @@
 
 ## Core concepts
 
-1. document: content of a GraphQL request string is called the GraphQL document
+1. <mark>document</mark>: content of a GraphQL request string is called the GraphQL document
 2. Anatomy of a GraphQL Document
    - <mark>Fields</mark>, <mark>Arguments</mark>, <mark>Variables</mark>, <mark>Operation Name</mark>, <mark>Aliases</mark>, <mark>Fragments</mark>
    - <mark>Directives</mark>:  identifier `@`
