@@ -39,15 +39,15 @@
 
 1. document: content of a GraphQL request string is called the GraphQL document
 2. Anatomy of a GraphQL Document
-   - Fields, Arguments, Variables, Operation Name, Aliases, Fragments
-   - Directives:  identifier `@`
+   - <mark>Fields</mark>, <mark>Arguments</mark>, <mark>Variables</mark>, <mark>Operation Name</mark>, <mark>Aliases</mark>, <mark>Fragments</mark>
+   - <mark>Directives</mark>:  identifier `@`
      - `@deprecated(reason: String)` - marks the field as deprecated
      - `@skip (if: Boolean)` - Skips GraphQL execution for this field
      - `@include (if: Boolean)` - Calls resolver for an annotated field, if true
 3. operation
-   1. query (a read-only fetch)
-   2. mutation (a write followed by fetch)
-   3. subscription (a long‐lived request that fetches data in response to source events.)
+   1. <mark>query</mark> (a read-only fetch)
+   2. <mark>mutation</mark> (a write followed by fetch)
+   3. <mark>subscription</mark> (a long‐lived request that fetches data in response to source events.)
 
 
 ```gql
