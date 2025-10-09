@@ -1,4 +1,4 @@
-[NextJs学习-debugging NextJS](#top)
+## [NextJs学习-debugging NextJS](#top)
 
 - [debugging Next.js in VSCode](#debugging-nextjs-in-vscode)
 - [Debugging with Browser DevTools](#debugging-with-browser-devtools)
