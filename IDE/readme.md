@@ -2,21 +2,30 @@
 ```
 ├── 📂IDE/
 |    ├──📂 Atom/
-|    ├── 📂Eclipse/
+|    ├── 📂Eclipse+IntelliJ/
+|    |     ├── 📄Eclipse.md
+|    |     └── 📄IntelliJ IDEA 快捷键.md
 |    ├── 📂VSCode/
+|    |     ├── 📄AI plugin.md
+|    |     ├── 📄ES7+ React Redux React-Native snippets.md
 |    |     ├── 📄VSCode快捷键,插件,主题集锦.md	Update VSCode快捷键,插件,主题集锦.md
-|    |     ├── 📄my-vsCode.md	Update my-vsCode.md
+|    |     ├── 📄Vue 3 Snippets.md
+|    |     ├── 📄my-vsCode.md
+|    |     ├── 📄vs code plugins-2023.md
 |    |     └── 📄vsCodeOpenFolder.reg
 |    ├── 📂markdown/
 |    |     ├── 📄Markdown表情大全.md
 |    |     ├── 📄markdown-writing-sample.md
 |    |     ├── 📄markdown文件公式大全.md
+|    |     ├── 📄mermaid-samples.md
 |    |     └── 📄typora.md
-|    ├── 📄ygwin及Git的mintty终端配色配置.md
+|    ├── 📂用JavaScript创建简约Chrome扩展/
+|    ├── 📄Cygwin及Git的mintty终端配色配置.md
 |    ├── 📄Create Cygwin及Git的mintty终端配色配置.md
 |    ├── 📄GitHub美化主页设计.md
 |    ├── 📄IntelliJ IDEA配置.md
 |    ├── 📄Source Map应用技巧.md
+|    ├── 📄my-chrome-extension.md
 |    ├── 📄node+npm_update.md
 │    └── 📦notepad++-plugin.zip                  # JSONFormat, Markdown view       
 ```
