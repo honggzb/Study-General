@@ -69,7 +69,7 @@ const tileLayer = new CustomTileLayer({
 });
 ```
 
-- ![tile Maps](../images/tile-maps.png)
+- ![tile Maps](./images/tile-maps.png)
 - https://act.mihoyo.com/ys/app/interactive-map/index.html?lang=zh-cn#/map/2?shown_types=&center=1846.00,-3505.00&zoom=-3.00
 
 [⬆ back to top](#top)
