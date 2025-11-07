@@ -90,6 +90,8 @@ ng new ngtest --skip-git         |ng new ngtest -g     | don't add the project t
 
 ## Install Tailwind CSS with Angular
 
+### Tailwind 3.xxx
+
 1. `npm install -D tailwindcss postcss autoprefixer`
 2. `npx tailwindcss init`
 3. add following to 'tailwind.config.js'
@@ -99,6 +101,14 @@ ng new ngtest --skip-git         |ng new ngtest -g     | don't add the project t
    - `@tailwind components;`
    - `@tailwind utilities;`
 - https://tailwindcss.com/docs/guides/angular
+- 
+### Tailwind 4.xxx
+
+1. `npm install tailwindcss @tailwindcss/postcss postcss --force`
+2. Create a '.postcssrc.json' file in the root and add the @tailwindcss/postcss plugin
+   - `{ "plugins": { "@tailwindcss/postcss": {} } }`
+4. Import Tailwind CSS: add an @import to './src/styles.css'
+   - `@import "tailwindcss";`
 
 ## Install Angular Material
 
