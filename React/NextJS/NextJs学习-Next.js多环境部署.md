@@ -85,12 +85,12 @@ C --> F[.env.production]
 
 - Github Pages 是 GitHub的静态站点托管服务
 - Settings > Pages > Source中, 将Branch分支设定在`.gh-pages` 并点击Save保存配置(通常是将服务设置在`.gh-pages`分支)
-   - ![gh-pages分支](gh-pages.png)
+   - ![gh-pages分支](./images/gh-pages.png)
 
 ### 配置GitHub Actions
 
 - GitHub Actions 是 GitHub 的持续集成服务, 允许创建自定义工作流，可使用这些工作流来自动化开发过程，例如 构建、测试和部署代码
-  - ![alt text](github-actions.png)
+  - ![alt text](./images/github-actions.png)
 - GitHub Actions的配置文件叫做workflow文件，存放在代码仓库的 `.github/workflows`目录
 - workflow文件采用**YAML**格式
 - 一个库可以有多个 workflow 文件, GitHub只要发现`.github/workflows`目录里面有 *.yml文件, 就会自动运行该文件
@@ -152,8 +152,8 @@ jobs:
   - 设置 VS Code编辑器登录 GitHub账号, 并且绑定
   - 将 remote名称 设置为上传 GitHub的 remote名称, 默认值: origin
 - 勾选 **Auto-refresh** 自动刷新, 可以实时查看 workflow工作流状态
-  - ![alt text](vscode-actions0.png)
-  - ![alt text](vscode-actions1.png)
+  - ![alt text](./images/vscode-actions0.png)
+  - ![alt text](./images/vscode-actions1.png)
 
 ### 配置 Next.js
 
