@@ -28,15 +28,15 @@
 ## A hacker rrsnews to email sample
 
 - rrs news feed setup
-  1. ![rrsread](rrsread.png)
+  1. ![rrsread](./images/rrsread.png)
   2. https://hnrss.github.io/
 - crawl tool setup
   1. create firecrawl Community nodes:
-  2. ![firecrawl](firecrawl.png)
-  3. ![alt text](firecrawl1.png)
+  2. ![firecrawl](./images/firecrawl.png)
+  3. ![alt text](./images/firecrawl1.png)
   4. 重启n8n
   5. https://www.firecrawl.dev/
 - AI Agent setup
-  - ![AI agetn](ai-agent0.png)
+  - ![AI agetn](./images/ai-agent0.png)
 - markdown setup
-  - ![markdowns](markdowns.png)
+  - ![markdowns](./images/markdowns.png)
