@@ -101,14 +101,15 @@ ng new ngtest --skip-git         |ng new ngtest -g     | don't add the project t
    - `@tailwind components;`
    - `@tailwind utilities;`
 - https://tailwindcss.com/docs/guides/angular
-- 
+ 
 ### Tailwind 4.xxx
 
 1. `npm install tailwindcss @tailwindcss/postcss postcss --force`
 2. Create a '.postcssrc.json' file in the root and add the @tailwindcss/postcss plugin
    - `{ "plugins": { "@tailwindcss/postcss": {} } }`
-4. Import Tailwind CSS: add an @import to './src/styles.css'
+3. Import Tailwind CSS: add an @import to './src/styles.css'
    - `@import "tailwindcss";`
+- https://tailwindcss.com/docs/installation/framework-guides/angular
 
 ## Install Angular Material
 
