@@ -24,4 +24,5 @@
 
 - https://diagrammingai.com/
 - https://github.com/enescingoz/awesome-n8n-templates
+- https://github.com/Zie619/n8n-workflows
 
