@@ -2,6 +2,12 @@
 |---|---|---|
 |AI 编程工具 ruler|github.com/intellectronica/ruler|统一管理各种 AI 编程工具的配置文件<br> - 通过集中式的 `.ruler/` 目录存储所有规则，然后自动分发到各个 AI 工具的配置文件中，目前已支持 GitHub Copilot、Claude Code、Cursor、Gemini CLI 等十多种主流工具<br>主要功能：<br> - 统一规则管理，用 Markdown 文件编写一套配置适用所有工具<br> - 自动分发配置到各 AI 助手的专用文件中，无需手动复制<br>- 支持 MCP 服务器配置管理，可以让 AI 获得更丰富的项目上下文<br> - 自动更新 `.gitignore` 文件，保持版本控制的整洁<br>- 灵活的 CLI 命令，可选择性地应用到特定工具<br>- 具备完整的回滚功能，安全地撤销所有配置变更|
 
+## other githubs
+
+|project|url|说明|
+|---|---|---|
+|微舆|https://github.com/666ghj/BettaFish|“微舆” 是一个从0实现的创新型 多智能体 舆情分析系统，帮助大家破除信息茧房，还原舆情原貌，预测未来走向，辅助决策。用户只需像聊天一样提出分析需求，智能体开始全自动分析 国内外30+主流社媒 与 数百万条大众评论|
+
 ```
 1. github.com/eyaltoledano/claude-task-master
 
