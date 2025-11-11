@@ -440,3 +440,4 @@ jobs:
 [⬆ back to top](#top)
 
 > [Vue 3 组件测试实战：Vitest 高效测试指南](https://juejin.cn/post/7485571704959041574)
+> [最详细的前端单元测试入门教程(Vitest)](https://juejin.cn/post/7323264134220529700)  --> for react
