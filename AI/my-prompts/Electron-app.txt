@@ -1,0 +1,138 @@
+
+
+**Goal:** Build a cross‑platform desktop **To‑Do list** app using **Electron 30**, **React + Vite**, and **Tailwind**. The app should be fast, cute, and beginner‑friendly.
+
+**Tech & Constraints**
+
+* Electron 30+, Node 20+
+* React 18 + Vite
+* TailwindCSS
+* Data persistence: `electron-store` (JSON under app data dir)
+* Secure IPC with `contextBridge` + typed channels, no `nodeIntegration` in renderer
+* ESLint + Prettier
+* Cross‑platform builds: Win (.exe), macOS (.dmg/.zip), Linux (.AppImage)
+* Package with `electron-builder`
+
+**Features (MVP)**
+
+1. Add task (title required), optional notes, due date, priority (Low/Med/High).
+2. Mark complete / uncomplete; edit; delete (with undo snackbar 5s).
+3. Search + filters: All / Active / Completed / Today / Overdue; priority filter.
+4. Reorder tasks via drag‑and‑drop.
+5. Persistent data across sessions via `electron-store`.
+6. System Tray: quick add, show/hide.
+7. Light/Dark theme toggle (auto‑detect OS on first run).
+8. Keyboard shortcuts:
+
+   * `Ctrl/Cmd+N` new task
+   * `Ctrl/Cmd+F` focus search
+   * `Ctrl/Cmd+Shift+D` toggle dark mode
+9. Friendly UI: empty state illustration, subtle animations.
+10. Safe auto‑update wiring placeholder (no server needed yet).
+
+**Project Structure**
+
+```
+friendly-todo/
+  package.json
+  electron/
+    main.ts
+    preload.ts
+    ipc.ts
+    store.ts
+    tray.ts
+  src/
+    main.tsx
+    App.tsx
+    components/
+      TaskItem.tsx
+      TaskForm.tsx
+      Toolbar.tsx
+      Filters.tsx
+      EmptyState.tsx
+    hooks/
+      useTasks.ts
+    lib/
+      types.ts
+      ipcClient.ts
+  index.html
+  tailwind.config.js
+  postcss.config.js
+  vite.config.ts
+  .eslintrc.cjs
+  .prettierrc
+  README.md
+```
+
+**IPC Contract (Type‑Safe)**
+
+* Channel names: `tasks:list`, `tasks:create`, `tasks:update`, `tasks:delete`, `tasks:reorder`, `app:theme:get`, `app:theme:set`, `tray:quickAdd`.
+* Validate payloads (zod or minimal manual checks).
+* Preload exposes `window.api` with these methods:
+
+  ```ts
+  interface Task { id:string; title:string; notes?:string; due?:string; priority:'low'|'med'|'high'; done:boolean; createdAt:string; }
+  interface Api {
+    list(): Promise<Task[]>;
+    create(partial: Omit<Task,'id'|'done'|'createdAt'>): Promise<Task>;
+    update(id:string, patch: Partial<Task>): Promise<Task>;
+    remove(id:string): Promise<void>;
+    reorder(ids:string[]): Promise<Task[]>;
+    theme: { get(): Promise<'light'|'dark'|'system'>; set(mode:'light'|'dark'|'system'): Promise<void>; }
+    quickAdd(title:string): Promise<Task>;
+  }
+  ```
+
+**UI/UX Requirements**
+
+* Top toolbar: App title + search input + filter dropdowns + “New Task” button + theme toggle.
+* Center list with drag handle per item; check circle, title, due badge (red if overdue), priority dot, edit/delete icons.
+* Bottom status bar: “X remaining • Y completed” and “Clear completed”.
+* Empty state with friendly message and a “Create your first task” button.
+* Tailwind classes: rounded‑2xl cards, soft shadow, hover states, focus rings, small motion transitions (Framer Motion optional).
+
+**Persistence**
+
+* `electron-store` schema key: `tasks` (array), `settings.theme`.
+* On first run, seed with one example task and tips.
+
+**Security**
+
+* `BrowserWindow` with `contextIsolation:true`, `nodeIntegration:false`, `sandbox:true`.
+* Only expose whitelisted IPC methods in `preload`.
+* Validate all IPC inputs.
+
+**Scripts (package.json)**
+
+* `dev`: run Vite + Electron with `concurrently` & `wait-on`.
+* `build`: typecheck + build renderer + `electron-builder`.
+* `lint`, `format`.
+
+**Acceptance Criteria**
+
+* App runs with `npm run dev` and hot reloads renderer.
+* CRUD works; data survives restart.
+* Drag‑drop reorder persists.
+* Tray menu quick add works.
+* Filters + search responsive under 500ms for 1000 tasks.
+* No renderer access to Node APIs (verify `process.versions.node` is undefined in renderer).
+
+**Tasks for you (Cursor)**
+
+1. Initialize the project with the structure above.
+2. Implement `electron/main.ts` to create window, load Vite in dev, and file URL in prod. Add single‑instance lock and deep link handler (placeholder).
+3. Implement `electron/preload.ts` exposing `window.api` with the contract above.
+4. Implement `electron/ipc.ts` and `electron/store.ts` using `electron-store`.
+5. Implement `electron/tray.ts` for tray icon + quick add.
+6. Implement React UI (components listed) with Tailwind, keyboard shortcuts, and drag‑drop (`@dnd-kit/core` or similar).
+7. Add theming and persistence via IPC `app:theme:*`.
+8. Add basic unit tests for store functions and IPC validators.
+9. Write a concise `README.md` with run/build instructions for Win/macOS/Linux.
+
+**Run & Build**
+
+* Dev: `npm i` → `npm run dev`
+* Package: `npm run build` (use electron-builder configs for all OS)
+
+Generate all files with working code now.
+
