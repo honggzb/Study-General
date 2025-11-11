@@ -5,20 +5,21 @@
 |project|类型|说明|
 |---|---|---|
 |[AI 编程工具 ruler](https://github.com/intellectronica/ruler)|编程|统一管理各种 AI 编程工具的配置文件<br> - 通过集中式的 `.ruler/` 目录存储所有规则，然后自动分发到各个 AI 工具的配置文件中，目前已支持 GitHub Copilot、Claude Code、Cursor、Gemini CLI 等十多种主流工具<br>主要功能：<br> - 统一规则管理，用 Markdown 文件编写一套配置适用所有工具<br> - 自动分发配置到各 AI 助手的专用文件中，无需手动复制<br>- 支持 MCP 服务器配置管理，可以让 AI 获得更丰富的项目上下文<br> - 自动更新 `.gitignore` 文件，保持版本控制的整洁<br>- 灵活的 CLI 命令，可选择性地应用到特定工具<br>- 具备完整的回滚功能，安全地撤销所有配置变更|
+|[微信小程序开发资源汇总](https://github.com/justjavac/awesome-wechat-weapp)|编程|收集了微信小程序开发过程中会使用到的资料、问题以及第三方组件库。本文不是一篇关于如何学习微信小程序的入门指南，也非参考手册，只是一些资料的整理|
 |[智能分析代码结构,生成全面Wiki](https://github.com/AsyncFuncAI/deepwiki-open)|智能分析|接收新项目或许阅读开源代码库, 利用AI智能分析代码结构，自动生成全面的文档和可视化图表，并将所有内容组织成一个易于导航的 Wiki，让复杂代码库变得一目了然<br> - 一键将任何GitHub或GitLab仓库转换为交互式wiki文档<br> - 支持私有仓库访问，确保项目安全性<br> - AI 驱动的智能代码分析和关系理解<br> - 自动生成 Mermaid 图表显示架构和数据流<br> - 简洁直观的界面方便探索整个项目结构|
 |[智能分析GitHub代码库](https://github.com/antarixxx/gitsummarize)|智能分析|将任何 GitHub 代码库生成可视化文档的开源工具：GitSummarize<br> - 提供清晰的项目架构图、流程图、每个目录和文件的概要，还有具体重点业务逻辑处理的介绍<br> - 基于 Gemini 模型生成，适合用来快速了解一个新的开源项目，特别是那些没有 README 文件介绍的项目|
 |[系统设计面试资源列表](https://github.com/systemdesign42/system-design)|面试|一份精心收集整理的系统设计面试资源列表：system-design<br>提供很多知名科技公司的实战案例，如实时游戏排行榜、缓存一致性、实时协作、数据库迁移策略等<br>另外，还收集了很多有关系统设计的基础知识，以助大家学习|
 |[Prompt模板mcp-prompt-server](https://github.com/joeseesun/mcp-prompt-server)|提示词模板生成|把常用的 Prompt 变成了可调用的工具，将每个 Prompt 模板注册为 MCP 工具，支持自然语言调用，还能在 Raycast、Cursor、Windsurf 等工具中通用<br> - 丰富的内置 Prompt 模板，涵盖代码、写作、产品设计等场景<br> - 所有Prompt自动注册为工具，支持参数化调用<br> - 只需添加 YAML 文件即可扩展新功能<br> - 自然语言对话即可调用，还能组合多个工具实现复杂工作流<br> - 通过 npm install 安装后配置到 MCP 客户端即可使用|
-|[微信小程序开发资源汇总](https://github.com/justjavac/awesome-wechat-weapp)|编程|收集了微信小程序开发过程中会使用到的资料、问题以及第三方组件库。本文不是一篇关于如何学习微信小程序的入门指南，也非参考手册，只是一些资料的整理|
+
 
 ### other
 
-|project|url|类型|说明|
-|---|---|---|---|
-|微舆|https://github.com/666ghj/BettaFish|commercial|“微舆” 是一个从0实现的创新型 多智能体 舆情分析系统，帮助大家破除信息茧房，还原舆情原貌，预测未来走向，辅助决策。用户只需像聊天一样提出分析需求，智能体开始全自动分析 国内外30+主流社媒 与 数百万条大众评论|
-|AI会议助手Speakr|https://github.com/murtaza-nasir/speakr|commercial|把会议录音转成文字、生成摘要，还能让我们通过聊天方式进行内容问答，所有数据都保持到本地安全隐私<br> - 支持拖放上传各种格式音频文件(MP3、WAV、M4A)进行转录<br> - 自动生成简洁标题和会议内容摘要，帮助快速理解重点<br> - 通过聊天界面提问，与会议内容进行交互式对话<br> - <br> - 内置搜索、收件箱和高亮功能，方便查找和处理关键信息<br> - 提供强大的管理员面板，可查看系统统计和管理用户<br> - 通过 Docker 一键部署，只需要几分钟即可使用，比较适合那些对数据隐私比较注重的同学使用|
-|各种Awesome-xxx的资源列表|https://github.com/sindresorhus/awesome|resource|各种Awesome-xxx的资源列表，但其实收藏这一个364K⭐的就够了↓<br>Awesome 项目是各种 Awesome 列表的集合。以后要找Awesome资源，聪这个总的出发就行了|
-|一键复制网页内容并转换为Markdown 格式|https://github.com/ysm-dev/cpdown|tools|浏览器插件：cpdown，可一键复制网页内容并转换为 Markdown 格式<br> - 一键复制任何网页内容为干净的 Markdown 格式<br> - 支持 YouTube 视频字幕提取和转换<br> - 自动去除广告、导航栏等无用 HTML 元素<br> - 显示内容的 token 数量，方便给 LLM 使用|
+|project|类型|说明|
+|---|---|---|
+|[微舆](https://github.com/666ghj/BettaFish|commercial)|“微舆” 是一个从0实现的创新型 多智能体 舆情分析系统，帮助大家破除信息茧房，还原舆情原貌，预测未来走向，辅助决策。用户只需像聊天一样提出分析需求，智能体开始全自动分析 国内外30+主流社媒 与 数百万条大众评论|
+|[AI会议助手Speakr](https://github.com/murtaza-nasir/speakr|commercial]|把会议录音转成文字、生成摘要，还能让我们通过聊天方式进行内容问答，所有数据都保持到本地安全隐私<br> - 支持拖放上传各种格式音频文件(MP3、WAV、M4A)进行转录<br> - 自动生成简洁标题和会议内容摘要，帮助快速理解重点<br> - 通过聊天界面提问，与会议内容进行交互式对话<br> - <br> - 内置搜索、收件箱和高亮功能，方便查找和处理关键信息<br> - 提供强大的管理员面板，可查看系统统计和管理用户<br> - 通过 Docker 一键部署，只需要几分钟即可使用，比较适合那些对数据隐私比较注重的同学使用|
+|[各种Awesome-xxx的资源列表](https://github.com/sindresorhus/awesome)|resource|各种Awesome-xxx的资源列表，但其实收藏这一个364K⭐的就够了↓<br>Awesome 项目是各种 Awesome 列表的集合。以后要找Awesome资源，聪这个总的出发就行了|
+|[一键复制网页内容并转换为Markdown 格式](https://github.com/ysm-dev/cpdown)|tools|浏览器插件：cpdown，可一键复制网页内容并转换为 Markdown 格式<br> - 一键复制任何网页内容为干净的 Markdown 格式<br> - 支持 YouTube 视频字幕提取和转换<br> - 自动去除广告、导航栏等无用 HTML 元素<br> - 显示内容的 token 数量，方便给 LLM 使用|
 
 ```
 1. github.com/eyaltoledano/claude-task-master
