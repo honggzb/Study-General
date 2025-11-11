@@ -1,0 +1,267 @@
+
+
+You are an expert Electron + Vite + TypeScript + Three.js engineer.
+Create a production‑ready desktop app that simulates the Solar System with real data and a friendly UI.
+
+Tech & Setup
+Electron for desktop wrapper.
+
+Vite + TypeScript for the renderer.
+
+Three.js for 3D.
+
+Tweakpane (or lil‑gui) for controls.
+
+Zustand or simple Rx store for settings (time scale, toggles).
+
+ESLint + Prettier.
+
+Project structure
+bash
+Copy
+Edit
+/app
+  /electron
+    main.ts
+    preload.ts
+  /src
+    main.ts (Three.js entry)
+    scene/SceneManager.ts
+    scene/SolarSystem.ts
+    scene/Planet.ts
+    scene/OrbitPath.ts
+    ui/pane.ts
+    data/planets.ts
+    utils/scales.ts
+    styles.css
+  index.html
+package.json
+tsconfig.json
+vite.config.ts
+Features (Acceptance Criteria)
+3D Scene
+
+PerspectiveCamera, OrbitControls, stars background.
+
+Directional + ambient light. Sun emits emissive glow (MeshBasicMaterial + bloom post‑processing optional).
+
+Realistic Motion (scaled)
+
+Each planet orbits the Sun using Keplerian approximation: circular path at semi‑major axis (ok for viz).
+
+Rotation on its axis using real sidereal rotation period (negative period = retrograde).
+
+Time scale slider (e.g., 1×, 60×, 3600×, 1 day/sec).
+
+Data‑driven
+
+Load planet metadata from data/planets.ts (see dataset below).
+
+Display labels and hover tooltip with: radius, semi‑major axis (AU & km), orbital period (days), rotation period (hours), axial tilt (deg).
+
+UI Controls
+
+Toggle: show/hide orbit paths, labels, axes helper, stars.
+
+Slider: timeScale (0.1× → 100000×).
+
+Dropdown: camera presets (Solar system, Inner planets, Earth close‑up).
+
+Scaling
+
+Use helpers in utils/scales.ts:
+
+Distance: 1 AU → 10 units (configurable).
+
+Size: log‑scaled or capped scale so small planets remain visible (e.g., sizeScale = clamp(k * log(radius), min=0.15, max=2.5)).
+
+Performance
+
+Single requestAnimationFrame loop; no per‑planet timers.
+
+Frustum culling on.
+
+Instanced or simple MeshStandardMaterial; textures optional.
+
+Electron
+
+electron/main.ts creates a single BrowserWindow, loads Vite dev server in dev, index.html in prod.
+
+IPC channel app:getVersion exposed via preload.ts and shown in a small footer.
+
+Build & Run
+
+Scripts:
+
+dev: concurrently run Vite + Electron (wait‑on).
+
+build: type‑check + Vite build + Electron builder (or simple electron‑builder config).
+
+package: make platform installers.
+
+Visual polish
+Subtle starfield (random points) + faint bloom on Sun (postprocessing pass optional).
+
+Soft shadows disabled by default (toggle in UI).
+
+Labels: small SpriteText or CSS2DRenderer.
+
+Math details (implement)
+Let t be elapsed simulation seconds = realDeltaSeconds × timeScale.
+
+Orbital angular velocity ω = 2π / (orbitalPeriodDays × 86400).
+
+Position in XY plane:
+x = a * cos(ω * t + phase0), z = a * sin(ω * t + phase0). (Keep y=0 for simplicity.)
+
+Rotation speed around its own axis: rotSpeed = 2π / (rotationPeriodHours × 3600). If rotationPeriod is negative, reverse direction.
+
+Use axial tilt: tilt the planet’s local group by tilt degrees around its X axis, then rotate the mesh around Y.
+
+Implement these files
+data/planets.ts
+Export an array with the following objects (units noted). Use these values:
+
+ts
+Copy
+Edit
+export type PlanetData = {
+  name: string;
+  radiusKm: number;
+  semiMajorAxisAu: number; // AU
+  orbitalPeriodDays: number;
+  rotationPeriodHours: number; // negative = retrograde
+  axialTiltDeg: number;
+  color?: string; // fallback if no texture
+};
+
+export const PLANETS: PlanetData[] = [
+  { name: "Mercury", radiusKm: 2439.7, semiMajorAxisAu: 0.387, orbitalPeriodDays: 87.969, rotationPeriodHours: 1407.6, axialTiltDeg: 0.034, color: "#b5b1a7" },
+  { name: "Venus",   radiusKm: 6051.8, semiMajorAxisAu: 0.723, orbitalPeriodDays: 224.701, rotationPeriodHours: -5832.5, axialTiltDeg: 177.4, color: "#e1c699" },
+  { name: "Earth",   radiusKm: 6371.0, semiMajorAxisAu: 1.0,   orbitalPeriodDays: 365.256, rotationPeriodHours: 23.934, axialTiltDeg: 23.44, color: "#6aa7ff" },
+  { name: "Mars",    radiusKm: 3389.5, semiMajorAxisAu: 1.524, orbitalPeriodDays: 686.980, rotationPeriodHours: 24.623, axialTiltDeg: 25.19, color: "#d96c4a" },
+  { name: "Jupiter", radiusKm: 69911,  semiMajorAxisAu: 5.203, orbitalPeriodDays: 4332.59, rotationPeriodHours: 9.925,  axialTiltDeg: 3.13,  color: "#d1b48c" },
+  { name: "Saturn",  radiusKm: 58232,  semiMajorAxisAu: 9.537, orbitalPeriodDays: 10759.22, rotationPeriodHours: 10.7,   axialTiltDeg: 26.73, color: "#e6d7a4" },
+  { name: "Uranus",  radiusKm: 25362,  semiMajorAxisAu: 19.191,orbitalPeriodDays: 30688.5, rotationPeriodHours: -17.24, axialTiltDeg: 97.77, color: "#9fd8ff" },
+  { name: "Neptune", radiusKm: 24622,  semiMajorAxisAu: 30.07, orbitalPeriodDays: 60182,   rotationPeriodHours: 16.11,  axialTiltDeg: 28.32, color: "#6aa6ff" }
+];
+
+// Optional: you can define the Sun separately
+export const SUN = {
+  name: "Sun",
+  radiusKm: 696340
+};
+utils/scales.ts
+
+ts
+Copy
+Edit
+export const AU_KM = 149_597_870; // km
+export const AU_TO_UNITS = 10;     // 1 AU -> 10 world units (tweakable)
+export const RADIUS_SCALE_K = 0.35;
+
+export const kmToUnits = (km: number) => (km / AU_KM) * AU_TO_UNITS;
+export const auToUnits = (au: number) => au * AU_TO_UNITS;
+
+// Make small planets visible but keep relative feel
+export const radiusToUnits = (radiusKm: number) => {
+  const s = Math.log10(radiusKm) * RADIUS_SCALE_K;
+  return Math.min(Math.max(s, 0.15), 2.5);
+};
+scene/Planet.ts
+
+Class that builds:
+
+group (Object3D) tilted by axialTiltDeg.
+
+mesh sphere sized via radiusToUnits(), basic lambert material using color.
+
+update(dtSimSeconds) to spin on Y.
+
+getWorldPosition() helper.
+
+scene/OrbitPath.ts
+
+Create a thin circular Line at radius a = auToUnits(semiMajorAxisAu). Toggle visibility via UI.
+
+scene/SolarSystem.ts
+
+Creates the Sun (emissive sphere, larger scale using radiusToUnits(SUN.radiusKm) but clamp at ~3–4).
+
+For each PLANETS item:
+
+Make an OrbitPath.
+
+Create a Planet and store angularVelocity = 2π / (orbitalPeriodDays*86400).
+
+On update, compute angle and set planet.group.position.set(a*cosθ, 0, a*sinθ).
+
+Attach SpriteText or CSS2D label per planet, toggled by UI.
+
+scene/SceneManager.ts
+
+Sets up renderer, camera, OrbitControls, starfield (Points), lights.
+
+Main update() loop converts real dt to simulation dt using timeScale from store.
+
+Handles resize, render.
+
+ui/pane.ts
+
+Tweakpane with:
+
+timeScale: number (0.1–100000).
+
+Toggles: showOrbits, showLabels, showStars, softShadows.
+
+Buttons: Camera presets.
+
+src/main.ts
+
+Bootstraps SceneManager + SolarSystem + UI.
+
+Footer element shows app version from window.api.getVersion().
+
+electron/main.ts
+
+Create a BrowserWindow (min 1280×800), security best practices (disable NodeIntegration, enable contextIsolation).
+
+In dev: load http://localhost:5173.
+
+In prod: load index.html from dist.
+
+electron/preload.ts
+
+contextBridge → api.getVersion() (app.getVersion()).
+
+Tooltips & Labels
+On raycaster hover, show a small tooltip with real values formatted:
+
+Radius (km), Semi‑major axis (AU & million km), Orbital period (days), Rotation (hours), Axial tilt (°).
+
+Commands (write scripts in package.json)
+dev: concurrently "vite" "tsc -w" "wait-on tcp:5173 && electron ."
+
+build:renderer: vite build
+
+build:electron: tsc -p app/electron
+
+build: both builds
+
+start: electron .
+
+Notes about data sources
+Values are from widely accepted astronomy references (NASA/JPL). We are not fetching at runtime; they’re embedded in code for offline desktop use.
+
+Add a short “About data” note in README explaining units and simplifications (circular orbits, same plane).
+
+Stretch goals (nice to have; implement if time permits)
+Saturn rings (flat textured disk).
+
+Simple bloom on Sun (postprocessing).
+
+Moons: Earth’s Moon (27.32 d), Jupiter’s Galilean moons.
+
+“Jump to date” that seeds initial orbital phase.
+
+Deliver fully working code with types, comments, and clean architecture.
