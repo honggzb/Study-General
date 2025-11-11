@@ -1,0 +1,118 @@
+You are refactoring this Expo React Native racing game to fix:
+
+1) Render Error: "Maximum update depth exceeded" (nested updates loop).
+2) Initialization issues: track is undefined; TypeError in init.
+3) Focus/blur double-start of the loop.
+4) Input/store causing feedback re-renders.
+
+Make the following exact changes and show FULL FILE contents for each touched file.
+
+A) Create a "headless" game core with refs (no React state).
+- The game loop MUST NOT call React setState directly or indirectly.
+- The loop mutates a plain JS object kept in a ref (gameRef.current).
+- React components only read snapshots with a throttled subscription.
+
+B) Gate the loop until the track is loaded.
+- Load the track asynchronously once in GameScreen useEffect.
+- Only when (trackRef.current && isFocused && !loop.isRunning) -> loop.start().
+- On blur/unmount -> loop.stop().
+
+C) Zustand store split:
+- /src/game/state/GameState.ts (headless state for physics; used only by loop).
+- /src/game/state/UIState.ts (tiny Zustand store for UI/HUD: speedDisplay, lapDisplay, paused, settings).
+- Game loop periodically (e.g., every 100ms) pushes a SNAPSHOT into UIState with UIState.set({ speedDisplay, lapDisplay }). This push must be inside a throttled function to avoid render storms.
+
+D) Track loader contract:
+- /src/game/world/TrackLoader.ts exports async function loadTrack(name='default'): Promise<Track>.
+- Track type includes: width, height, start{x,y,angle}, surfaces[], walls[], startLine.
+- Validate JSON; throw clear errors.
+
+E) FixedStepLoop is ref-driven and idempotent:
+- /src/game/loop/FixedStepLoop.ts exports class FixedStepLoop(update: (dt:number)=>void)
+  - start(): if running, NO-OP. stop(): if not running, NO-OP.
+  - Uses rAF with accumulator and fixed dt=1/60; max 5 updates per frame.
+
+F) GameScreen integration:
+- On mount: set a mountedRef=true; load track via TrackLoader; set trackRef.current when resolved; set ready state with setReady(true) ONCE.
+- useFocusEffect(() => { if (ready && !loop.isRunning()) loop.start(); return () => loop.stop(); }, [ready])
+- The update function (passed to loop) reads inputs from InputManager (refs) + current physics state (gameRef), advances CarModel, resolves collisions, updates lap, then calls a throttled publishToUI() to UIState.
+- Absolutely no React setState inside update().
+
+G) Input layer:
+- InputManager exposes a REF object (controlsRef.current = { steer, throttle, brake }).
+- HUD buttons/Joy/Touch zones write to controlsRef. They DO NOT trigger React state updates every frame.
+
+H) Prevent overlay swallowing touches:
+- Ensure the track view has pointerEvents="none".
+- HUD/Buttons container has pointerEvents="box-none".
+- Each button has pointerEvents="auto" and zIndex > track.
+
+I) Add a "ready" gate in UI:
+- If !ready: show centered ActivityIndicator and "Loading track...".
+- Once ready: render game.
+
+Now implement these changes with full file outputs:
+
+1) /src/game/loop/FixedStepLoop.ts
+2) /src/game/state/GameState.ts
+3) /src/game/state/UIState.ts
+4) /src/game/world/TrackLoader.ts
+5) /src/game/physics/CarModel.ts (pure update(dt, controls, surface, walls))
+6) /src/game/physics/Collision.ts (segment-circle + bounce; no React imports)
+7) /src/game/input/InputManager.ts (controlsRef pattern)
+8) /src/screens/GameScreen.tsx (complete, with refs, focus logic, loading gate, no setState in loop)
+9) /src/ui/HUD.tsx (reads from UIState via shallow selector; memoized)
+10) App.tsx updates (wrap with GestureHandlerRootView; no setState loops)
+
+Implementation details to follow:
+
+--- FixedStepLoop.ts ---
+- class FixedStepLoop { private running=false; private last=0; private acc=0; constructor(private update:(dt:number)=>void){} 
+  start(){ if(this.running) return; this.running=true; this.last=performance.now(); const tick=()=>{ if(!this.running) return; const now=performance.now(); let elapsed=(now-this.last)/1000; this.last=now; this.acc+=Math.min(elapsed,0.25); const dt=1/60; let steps=0; while(this.acc>=dt && steps<5){ this.update(dt); this.acc-=dt; steps++; } requestAnimationFrame(tick); }; requestAnimationFrame(tick); }
+  stop(){ this.running=false; }
+  isRunning(){ return this.running; } }
+
+--- GameState.ts ---
+- export type GameCore = { car: {x:number,y:number,angle:number,vx:number,vy:number}; lap:{current:number,bestMs:number,lastCrossSide:number}; track: Track|null };
+- export const makeInitialGame(): GameCore with zeros and track null.
+
+--- UIState.ts ---
+- create zustand store with { speedDisplay:number, lapDisplay:string, bestDisplay:string, paused:boolean, settings:{ mode:'touchZones'|'joystick', sfx:boolean } }
+- export setSnapshot({ speedKmh, lap, bestMs }) that sets throttled updates (no more than once per 100ms).
+- Use a simple throttle util in this file.
+
+--- TrackLoader.ts ---
+- export async function loadTrack(name='default'): fetch from require('../../assets/tracks/default.json'); validate keys; return typed Track.
+
+--- CarModel.ts ---
+- export function updateCar(car, inputs, surface, dt): integrates accel/friction/turn; returns void mutating car; uses meters/sec; clamp speed; tiny angular turnRate scaled by speed.
+
+--- Collision.ts ---
+- export function resolve(car, walls): if collision, push out and reflect velocity*= -0.4; adjust position.
+
+--- InputManager.ts ---
+- export const controlsRef = { current: { steer:0, throttle:0, brake:0 } };
+- export components TouchZones and ButtonsPad that write to controlsRef onPressIn/out and onGestureEvent; no state loops.
+
+--- GameScreen.tsx ---
+- const gameRef = useRef<GameCore>(makeInitialGame());
+- const trackRef = useRef<Track|null>(null);
+- const loopRef = useRef<FixedStepLoop|null>(null);
+- const ready [ready,setReady] = useState(false);
+- useEffect(() => { let mounted=true; (async () => { const t = await loadTrack('default'); if(!mounted) return; trackRef.current=t; gameRef.current.track=t; // place car at start; setReady(true); })().catch(e=>console.error('Track load failed', e)); return ()=>{ mounted=false; }; }, []);
+- const update = useCallback((dt:number)=>{ const g=gameRef.current; if(!g.track) return; // read controls from controlsRef.current; run physics+collision; compute speedKmh; publish UI snapshot with UIState.setSnapshot(); }, []);
+- useFocusEffect(useCallback(()=>{ if(!loopRef.current) loopRef.current=new FixedStepLoop(update); if(ready && !loopRef.current.isRunning()) loopRef.current.start(); return ()=>{ loopRef.current?.stop(); }; }, [ready, update]));
+- Render: background track view (pointerEvents="none"), HUD (reads UIState), ButtonsPad/TouchZones (pointerEvents="auto"), ActivityIndicator if !ready.
+
+--- HUD.tsx ---
+- Pure presentational; use shallow selector from UIState; React.memo; no timers.
+
+--- App.tsx ---
+- First import 'react-native-gesture-handler';
+- export default wrapped in <GestureHandlerRootView style={{flex:1}}>...</GestureHandlerRootView>
+
+Also:
+- Ensure babel.config.js has 'react-native-reanimated/plugin' last.
+- In README add "expo start -c" step after plugin change.
+
+Return the full updated files (all 10). Then list what caused the "Maximum update depth exceeded" in our old code and how these changes break the cycle (one paragraph explanation).

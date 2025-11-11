@@ -1,0 +1,167 @@
+
+
+## Prompt 1 — Continuous movement (hold & inertia)
+
+```
+Refactor input so the car moves continuously:
+
+1) In InputManager (ButtonsPad), change buttons to use onPressIn/onPressOut. 
+   - onPressIn: set controlsRef.current.throttle = 1 (↑), steer = -1 (←) or +1 (→), brake = 1 (↓).
+   - onPressOut: reset only that axis to 0 (don’t reset others).
+
+2) In CarModel.update(dt, inputs, surface):
+   - Apply acceleration when throttle>0.
+   - Apply friction every tick so the car keeps rolling when throttle=0 (no hard stop).
+   - Only set speed=0 if |speed| < 0.05 after friction.
+
+3) Ensure the fixed game loop runs regardless of input. No React state inside the loop.
+```
+
+---
+
+## Prompt 2 — Auto-accelerate toggle (default ON)
+
+```
+Add an "autoAccelerate" setting:
+
+1) In UIState.settings, add autoAccelerate:boolean = true (default).
+2) In update loop: if autoAccelerate && inputs.throttle === 0 → treat as throttle = 0.35 (gentle).
+3) Add a Settings switch to enable/disable autoAccelerate (persist with AsyncStorage).
+```
+
+---
+
+## Prompt 3 — Hold steering feels analog (smoothing)
+
+```
+Make steering smooth instead of jerky:
+
+1) In InputManager, keep internal steerTarget (-1..1). 
+   - Buttons set steerTarget to -1 or +1 on press; back to 0 on release.
+2) Each frame in update loop, ease steer toward steerTarget with: 
+   steer += (steerTarget - steer) * 8 * dt  (clamp to [-1,1]).
+3) In CarModel, scale turn rate by clamp(speed/maxSpeed, 0..1).
+```
+
+---
+
+## Prompt 4 — Touch zones (no buttons required)
+
+```
+Add optional "Touch Zones" mode:
+
+1) Create <TouchZones> overlay: left 45% of screen = steer (-1..+1) by horizontal delta; right 45% = throttle (0..1) by vertical drag up.
+2) Use PanGestureHandler; set hitSlop so zones don’t overlap HUD.
+3) Route values to controlsRef (do NOT set React state per tick).
+4) Add a quick toggle in Settings: controlMode = 'buttons' | 'touchZones'. Default = 'touchZones'.
+```
+
+---
+
+## Prompt 5 — Camera follow + world scale
+
+```
+Implement a simple camera:
+
+1) In GameScreen, add cameraRef {x,y,zoom}. 
+2) Each tick: camera moves toward car with smoothing: 
+   cam.x += (car.x - cam.x) * 6 * dt; same for y.
+3) Convert world→screen with camera and zoom; clamp camera to track bounds so edges don’t show.
+4) Make the track view pointerEvents="none"; HUD uses pointerEvents="box-none".
+```
+
+---
+
+## Prompt 6 — Replace the red rectangle with a car sprite (and shadow)
+
+```
+Upgrade visuals:
+
+1) Add /assets/images/car.png (top-down small 64x32). If not available, draw a rounded View but add a dark oval shadow under it (absolute, slight blur via opacity).
+2) Render with transform:
+   translate to world→screen(car.x, car.y) and rotate `${angle}rad`.
+3) Give the car a white border and subtle elevation/shadow for depth.
+```
+
+---
+
+## Prompt 7 — Real track surfaces + barriers
+
+```
+Improve the track:
+
+1) In assets/tracks/default.json, add:
+   - surfaces: asphalt rects (friction=0.985), grass rects (friction=0.94).
+   - walls: list of line segments for outer boundary and inner curb.
+   - startLine: {x1,y1,x2,y2,norm} (pointing forward).
+2) Track.getSurfaceAt(x,y) returns {type, friction, color}.
+3) Collision.resolve() pushes car out and reflects velocity *= -0.35 on hit.
+4) CarModel uses current surface.friction every tick.
+```
+
+---
+
+## Prompt 8 — Laps, countdown, and HUD polish
+
+```
+Game flow polish:
+
+1) Add a 3-2-1-GO overlay animation before the race starts; during countdown, inputs/brake ignored.
+2) LapSystem: detect crossing of startLine from back→front; record lap time, best lap (persist).
+3) HUD (top-left): Speed (km/h large), Lap X, Best (mm:ss.SSS). 
+4) Pause button top-right; pausing stops the loop (loop.stop()).
+```
+
+---
+
+## Prompt 9 — Engine sound + button SFX
+
+```
+Audio pass:
+
+1) Load engine.mp3 loop with expo-av. 
+2) Each UI snapshot: set engine volume = clamp(speed/maxSpeed, 0..1); optional pitch shift if supported.
+3) Play click.mp3 on button press (UI sounds off/on in Settings).
+```
+
+---
+
+## Prompt 10 — Skid marks + dust when turning fast
+
+```
+Add simple juice:
+
+1) When |steer| > 0.6 and speed > 60% max → spawn a short-lived "skid segment" behind rear wheels.
+2) Render skid marks as thin, semi-transparent lines that fade over ~2s.
+3) Emit tiny dust puffs on grass on sharp turns (opacity fades quickly).
+4) Keep a small circular buffer (max 200 marks) to avoid memory growth.
+```
+
+---
+
+## Prompt 11 — Difficulty & car presets
+
+```
+Make it feel like a game:
+
+1) Add car presets (Grip, Accel, MaxSpeed): Rookie, Sport, Pro.
+2) Add difficulty: Easy = more asphalt friction and lighter walls; Hard = slipperier asphalt and stronger bounces.
+3) Select these in Menu → “Garage” (simple modal for now). Persist choice.
+```
+
+---
+
+## Prompt 12 — Final polish & QA checklist
+
+```
+Polish and verify:
+
+1) Use React.memo + zustand shallow selectors for HUD; throttle UI snapshots to 100ms.
+2) Ensure no logs per frame in production; guard with __DEV__.
+3) README: controls, tuning table (accel, friction, turnRate), how to add tracks.
+4) QA: 60fps on emulator; car keeps rolling without input; grass slows; walls bounce; laps record; countdown blocks input; pause/resume ok.
+```
+
+---
+
+

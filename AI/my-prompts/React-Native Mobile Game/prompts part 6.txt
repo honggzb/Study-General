@@ -1,0 +1,67 @@
+Phase 1 – Core Driving (make car feel real)
+
+Add real race track map with road, grass, walls.
+
+Make car start at line and wait for countdown 3-2-1-GO.
+
+Car moves with acceleration, friction, turning like real car.
+
+Keep speed when not pressing forward, slow down slowly.
+
+Add lap counter when car crosses start line forward.
+
+Show best lap time and current lap time on HUD.
+
+Add pause button top right to stop and resume game.
+
+Add menu button to go back to main menu anytime.
+
+Phase 2 – Sound & Effects (add juice and fun)
+
+Add engine sound loop, volume changes with speed.
+
+Add click sound when pressing UI buttons.
+
+Add skid marks when turning fast at high speed.
+
+Show dust effect when car drives on grass.
+
+Phase 3 – Racing Rules (real race flow)
+
+Add AI cars that follow the track waypoints.
+
+AI cars have simple speed and turning, no circles.
+
+Show positions: player 1st, 2nd, etc. on HUD.
+
+Finish race after 3 laps and show results screen.
+
+Results screen shows winner, times, positions.
+
+Add restart button to play same track again.
+
+Add next track button to load another map.
+
+Phase 4 – Polish & Progression (professional game)
+
+Add garage screen to pick car model before race.
+
+Each car has different speed, grip, acceleration.
+
+Add difficulty easy, normal, hard for AI speed.
+
+Add settings to choose controls: buttons or touch zones.
+
+Add option auto accelerate ON/OFF in settings.
+
+Add simple background music during race.
+
+Stop music on pause and menu screens.
+
+Add crash sound when hitting walls hard.
+
+Add mini-map top corner showing track and cars.
+
+Add save system to keep best laps and unlocked tracks.
+
+Add game over screen after last track with “Play Again”.

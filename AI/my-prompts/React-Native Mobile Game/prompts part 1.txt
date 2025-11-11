@@ -1,0 +1,114 @@
+
+
+## Prompt 1 — Project Setup
+
+```
+Create a new Expo React Native project with TypeScript called "MiniRacer".
+Install dependencies: react-native-reanimated, react-native-gesture-handler, zustand, @react-navigation/native, @react-navigation/native-stack, @react-native-async-storage/async-storage, expo-av.
+Configure ESLint + Prettier + tsconfig.json.
+Create base folder structure: /src/app, /src/screens, /src/game, /src/ui, /src/assets.
+Generate App.tsx with navigation (Splash, Menu, Game, Settings).
+```
+
+---
+
+## Prompt 2 — Splash & Menu Screens
+
+```
+Implement SplashScreen (1.5s then auto-navigate).
+Create MenuScreen with buttons: Play, Settings, Quit (Quit can just console.log for now).
+Wire navigation stack between Splash → Menu → Game/Settings.
+Style with simple centered layout and buttons.
+```
+
+---
+
+## Prompt 3 — Game Loop & Store
+
+```
+Inside /src/game/loop create FixedStepLoop.ts.
+Implement a fixed timestep loop (60hz updates).
+Create GameStore using zustand to hold game state: car position, velocity, angle, lap data.
+Loop should call store.update(dt).
+```
+
+---
+
+## Prompt 4 — Car Physics Model
+
+```
+Create CarModel.ts in /src/game/physics.
+Car props: position (x,y), velocity (x,y), angle, speed.
+Params: maxSpeed, accel, brakePower, friction, turnRate.
+Method: update(dt, controls, surface) → applies physics, friction, steering.
+Export helper to reset car at starting line.
+```
+
+---
+
+## Prompt 5 — Track & Collision
+
+```
+Create Track.ts and TrackLoader.ts.
+Default track is a rectangle loop stored in /src/assets/tracks/default.json with labeled zones: asphalt, grass, barrier, startLine.
+Implement getSurfaceAt(x,y).
+Add Collision.ts with resolveBarrierCollision(car).
+```
+
+---
+
+## Prompt 6 — Input Controls
+
+```
+Implement InputManager.ts.
+Two modes: 
+1. Touch zones (left/right halves of screen steer, brake button bottom-right).
+2. Virtual joystick (drag thumbstick → steer + accel).
+Store chosen mode in GameStore.settings.
+```
+
+---
+
+## Prompt 7 — Lap & Timing System
+
+```
+Create LapSystem.ts.
+Detect car crossing startLine in forward direction.
+Track currentLap, lapTimes[], bestLap.
+Persist bestLap using AsyncStorage.
+Update HUD when lap completes.
+```
+
+---
+
+## Prompt 8 — GameScreen & HUD
+
+```
+Implement GameScreen.tsx.
+Render car (placeholder rectangle) on track (basic tiled background).
+HUD overlay: speed (km/h), lap counter, best lap time.
+Pause button top-right to navigate back to Menu.
+```
+
+---
+
+## Prompt 9 — Settings & Persistence
+
+```
+Create SettingsScreen.tsx.
+Options: control mode toggle (touch zones vs joystick), sound on/off, reset best lap.
+Save to AsyncStorage.
+Apply chosen settings in GameScreen.
+```
+
+---
+
+## Prompt 10 — Audio & Polish
+
+```
+Add expo-av sounds: engine.mp3 (loop, pitch/volume changes with speed), click.mp3 for UI.
+Optimize loop performance: avoid unnecessary re-renders.
+Ensure ESLint/Prettier clean, tsc --noEmit passes.
+Add README.md with instructions and tuning tips.
+```
+
