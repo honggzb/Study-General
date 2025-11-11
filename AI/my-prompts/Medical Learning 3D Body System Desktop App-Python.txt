@@ -1,0 +1,127 @@
+You are a senior Python developer and children’s edtech designer.
+Build a desktop app called “Mini Med Lab (Kids)” for ages 6–12 to explore the human body in a gentle, fun, and safe way.
+
+Core principles
+- Kid-safe visuals (cartoony meshes, no gore/blood, bright colors).
+- Big buttons, icon-first UI, short text + optional narration.
+- Bilingual support EN/AR with simple vocabulary (toggle in settings).
+- Runs 100% offline on Windows/Mac/Linux.
+
+Tech stack
+- UI: PySide6 (Qt) with a dark-on-pastel color theme, large touch-friendly controls.
+- 3D: PyVista (VTK) for smooth, interactive cartoons (prefer PyVista over visvis).
+- Audio: pyttsx3 for text-to-speech narration (offline).
+- Data: JSON bundles for labels, tips, and quiz items.
+- Math: NumPy for basic animations.
+
+Features
+1) Home screen with 6 big “Body Systems” cards:
+   - Heart & Blood, Lungs & Breathing, Brain & Nerves, Bones, Muscles, Digestive.
+2) 3D Play View (per system):
+   - Shows one simplified, friendly 3D organ/mesh (e.g., a beating heart sphere with valves hinted by colors; lungs that gently inflate; brain with sparkly neuron glow).
+   - Camera orbit, reset view, fullscreen button.
+   - “Tap to Learn” stickers: kids click glowing pins to reveal **short fact cards** (max 2 lines, 12–16 words).
+   - TTS Narrate button reads each fact in the selected language.
+3) Mini-Games (per system):
+   - **Label Match**: drag-and-drop labels (e.g., “Heart”, “Left Lung”) onto the 3D scene; snap with a happy sound.
+   - **Build-a-Body Puzzle**: drop cartoon organs onto a torso silhouette; success = confetti + sticker reward.
+   - **Healthy Habits**: choose the good habit (e.g., “Drink water” vs. “Skip sleep”).
+4) Rewards:
+   - Earn stickers (PNG) and keep them in a “My Lab Book” page (local JSON save).
+5) Safety & Parents:
+   - “Grown-ups” panel: learning goals, age range, offline note, accessibility, and disclaimers:
+     “Educational use only—NOT for diagnosis or treatment.”
+6) Accessibility:
+   - Colorblind-friendly palette; all buttons have icons + text; narration toggle; text size slider.
+
+Project structure
+- main.py                  # app entry, router between pages
+- ui/
+  - app_window.py          # main window, stacked views, toolbar
+  - pages/
+    - home_page.py
+    - system_page.py       # 3D view + facts + game tabs
+    - lab_book_page.py     # stickers/rewards gallery
+    - settings_page.py     # language, narration, text size
+    - grownups_page.py
+- graphics/
+  - viewer.py              # PyVista widget wrapper, camera presets
+  - meshes.py              # build/generate simple cartoon meshes in code
+  - animations.py          # heart beat, lung inflate, neuron sparkle
+  - colors.py              # kid-safe palette + colorblind variants
+- content/
+  - lang/
+    - en.json              # strings, facts, labels, quiz items
+    - ar.json
+  - systems/
+    - heart.json           # pins (xyz), labels, game items
+    - lungs.json
+    - brain.json
+    - bones.json
+    - muscles.json
+    - digestive.json
+- audio/
+  - narrate.py             # pyttsx3 wrapper, speak(text, lang)
+- games/
+  - label_match.py
+  - body_puzzle.py
+  - healthy_habits.py
+- data/
+  - save_state.json        # stickers earned, settings
+- assets/
+  - stickers/              # png rewards
+  - icons/                 # svg/png UI icons
+- tests/
+  - test_lang_load.py
+  - test_mesh_build.py
+  - test_save_state.py
+- README.md
+- requirements.txt         # PySide6, pyvista, vtk, numpy, pyttsx3
+
+3D implementation notes
+- Generate meshes programmatically so the app runs without external files:
+  - Heart: sphere + small colored “valve” caps; scale Y sinusoidally (beat).
+  - Lungs: two ellipsoids; periodic scale + subtle color shift while “breathing”.
+  - Brain: smoothed noise surface; sparkle shader effect via point sprites.
+  - Bones: cylinder + spheres (cartoon long bone).
+- Provide camera presets (front, left, top) as large buttons.
+- Pin locations come from system JSON (normalized units); show glowing Billboard markers.
+
+Mini-games details
+- Label Match:
+  - Show 3–6 draggable tokens; when dropped near a pin, auto-snap and play “ding”.
+  - Score +1 per correct; 60s timer optional.
+- Body Puzzle:
+  - 2D torso silhouette on the side; draggable organs; magnet zones; confetti on complete.
+- Healthy Habits:
+  - 5–8 multiple-choice cards; immediate feedback and a short tip.
+
+Localization (EN/AR)
+- Simple bilingual JSON; include transliteration for tricky terms.
+- UI must flip layout to RTL for Arabic (use Qt layout direction switch).
+- TTS: if AR voice unavailable, fall back to on-screen text only.
+
+Settings
+- language: "en" | "ar"
+- narration: true/false
+- text_scale: 1.0–1.6
+- difficulty: "junior" (6–8) | "senior" (9–12) → controls number of labels per game.
+
+Quality & Safety
+- No personal data; only local JSON saves.
+- Clear “Educational only” banner.
+- Graceful error dialogs (missing TTS, older GPUs).
+- Unit tests for content loading, saves, and basic mesh generation.
+
+Deliverables
+- Working app with generated meshes and sample EN/AR content so it runs immediately.
+- README with one-line install:
+  `pip install -r requirements.txt`
+  `python main.py`
+- Include 12–18 kid-friendly facts per system (short, warm, encouraging).
+
+Stretch goals (optional)
+- Simple quiz export (PDF of earned stickers).
+- Music toggle with soft loop.
+- Screenshot button for kids to save their favorite view.
+
