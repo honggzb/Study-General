@@ -1,0 +1,13 @@
+Create a responsive dashboard UI with a clean modern design. 
+Features:
+- Top navigation bar with app logo (left), search bar (center), and profile avatar with dropdown (right).
+- Left sidebar with icons and labels for: Dashboard, Analytics, Reports, Users, Settings.
+- Main content area with 4 summary cards at the top (KPI metrics: Revenue, Active Users, Conversion Rate, Support Tickets).
+- Below cards: Two sections
+    - Left: Line chart for monthly revenue trends.
+    - Right: Bar chart for user growth by month.
+- Bottom section: Full-width table showing recent transactions with columns: ID, Customer, Amount, Status, Date.
+Style:
+- Use a light theme with white card backgrounds, soft shadows, and rounded corners.
+- Use a consistent accent color (blue or teal) for highlights.
+- Responsive layout that adapts to desktop and tablet.
