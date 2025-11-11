@@ -17,7 +17,7 @@
 |project|类型|说明|
 |---|---|---|
 |[微舆](https://github.com/666ghj/BettaFish|commercial)|“微舆” 是一个从0实现的创新型 多智能体 舆情分析系统，帮助大家破除信息茧房，还原舆情原貌，预测未来走向，辅助决策。用户只需像聊天一样提出分析需求，智能体开始全自动分析 国内外30+主流社媒 与 数百万条大众评论|
-|[AI会议助手Speakr](https://github.com/murtaza-nasir/speakr|commercial]|把会议录音转成文字、生成摘要，还能让我们通过聊天方式进行内容问答，所有数据都保持到本地安全隐私<br> - 支持拖放上传各种格式音频文件(MP3、WAV、M4A)进行转录<br> - 自动生成简洁标题和会议内容摘要，帮助快速理解重点<br> - 通过聊天界面提问，与会议内容进行交互式对话<br> - <br> - 内置搜索、收件箱和高亮功能，方便查找和处理关键信息<br> - 提供强大的管理员面板，可查看系统统计和管理用户<br> - 通过 Docker 一键部署，只需要几分钟即可使用，比较适合那些对数据隐私比较注重的同学使用|
+|[AI会议助手Speakr](https://github.com/murtaza-nasir/speakr|commercial)|把会议录音转成文字、生成摘要，还能让我们通过聊天方式进行内容问答，所有数据都保持到本地安全隐私<br> - 支持拖放上传各种格式音频文件(MP3、WAV、M4A)进行转录<br> - 自动生成简洁标题和会议内容摘要，帮助快速理解重点<br> - 通过聊天界面提问，与会议内容进行交互式对话<br> - <br> - 内置搜索、收件箱和高亮功能，方便查找和处理关键信息<br> - 提供强大的管理员面板，可查看系统统计和管理用户<br> - 通过 Docker 一键部署，只需要几分钟即可使用，比较适合那些对数据隐私比较注重的同学使用|
 |[各种Awesome-xxx的资源列表](https://github.com/sindresorhus/awesome)|resource|各种Awesome-xxx的资源列表，但其实收藏这一个364K⭐的就够了↓<br>Awesome 项目是各种 Awesome 列表的集合。以后要找Awesome资源，聪这个总的出发就行了|
 |[一键复制网页内容并转换为Markdown 格式](https://github.com/ysm-dev/cpdown)|tools|浏览器插件：cpdown，可一键复制网页内容并转换为 Markdown 格式<br> - 一键复制任何网页内容为干净的 Markdown 格式<br> - 支持 YouTube 视频字幕提取和转换<br> - 自动去除广告、导航栏等无用 HTML 元素<br> - 显示内容的 token 数量，方便给 LLM 使用|
 
