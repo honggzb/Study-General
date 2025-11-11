@@ -9,6 +9,7 @@
 |智能分析GitHub代码库|https://github.com/antarixxx/gitsummarize|智能分析|将任何 GitHub 代码库生成可视化文档的开源工具：GitSummarize<br> - 提供清晰的项目架构图、流程图、每个目录和文件的概要，还有具体重点业务逻辑处理的介绍<br> - 基于 Gemini 模型生成，适合用来快速了解一个新的开源项目，特别是那些没有 README 文件介绍的项目|
 |系统设计面试资源列表|https://github.com/systemdesign42/system-design|面试|一份精心收集整理的系统设计面试资源列表：system-design<br>提供很多知名科技公司的实战案例，如实时游戏排行榜、缓存一致性、实时协作、数据库迁移策略等<br>另外，还收集了很多有关系统设计的基础知识，以助大家学习|
 |Prompt模板mcp-prompt-server|https://github.com/joeseesun/mcp-prompt-server|提示词模板生成|把常用的 Prompt 变成了可调用的工具，将每个 Prompt 模板注册为 MCP 工具，支持自然语言调用，还能在 Raycast、Cursor、Windsurf 等工具中通用<br> - 丰富的内置 Prompt 模板，涵盖代码、写作、产品设计等场景<br> - 所有Prompt自动注册为工具，支持参数化调用<br> - 只需添加 YAML 文件即可扩展新功能<br> - 自然语言对话即可调用，还能组合多个工具实现复杂工作流<br> - 通过 npm install 安装后配置到 MCP 客户端即可使用|
+|微信小程序开发资源汇总|https://github.com/justjavac/awesome-wechat-weapp|编程|收集了微信小程序开发过程中会使用到的资料、问题以及第三方组件库。本文不是一篇关于如何学习微信小程序的入门指南，也非参考手册，只是一些资料的整理|
 
 ### other
 
