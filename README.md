@@ -54,6 +54,13 @@
 │   ├── 📂deepseek/
 │   │   ├── 📄
 │   │   └── 📄
+│   ├── 📂my-prompts
+│   │   ├── 📂Native Mobile Games/
+│   │   ├── 📄Electron-app-simulates the Solar System.txt
+│   │   ├── 📄Electron-app-to do friendly.txt
+│   │   ├── 📄Medical Learning 3D Body System Desktop App-Python.txt
+│   │   ├── 📄create-UI-page.txt
+│   │   └── 📄prompt-tip.md
 │   ├── 📂n8n/
 │   │   ├── 📄hacker_new_to_email.json
 │   │   └── 📄浅尝n8n.md
@@ -61,7 +68,7 @@
 │   ├── 📄AI SDK-2-RSC.md
 │   ├── 📄Cursor编程的15条经验建议.md
 │   ├── 📄resources.md
-│   └── 📄prompt-tip.md
+│   └── 
 ```
 
 ## Accessiblity
