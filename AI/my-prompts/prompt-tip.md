@@ -18,4 +18,6 @@ Start by showing a calculation and let the user submit the reply. The show the r
 Show all past response below the game screen
 
 This is a multiplication game. I want to expand it and let the user choose sum, subtraction, multiplication and division. At the start, you can have the first option selected by default. The options must show at the top above the game window. The user can change the option at anytime and you should keep the score and past answers when options are changes.
+
+Make the radio buttons for the options to look like normal buttons. use blue background and white text.
 ```
