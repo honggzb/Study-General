@@ -9,7 +9,13 @@
 |[智能分析代码结构,生成全面Wiki](https://github.com/AsyncFuncAI/deepwiki-open)|智能分析|接收新项目或许阅读开源代码库, 利用AI智能分析代码结构，自动生成全面的文档和可视化图表，并将所有内容组织成一个易于导航的 Wiki，让复杂代码库变得一目了然<br> - 一键将任何GitHub或GitLab仓库转换为交互式wiki文档<br> - 支持私有仓库访问，确保项目安全性<br> - AI 驱动的智能代码分析和关系理解<br> - 自动生成 Mermaid 图表显示架构和数据流<br> - 简洁直观的界面方便探索整个项目结构|
 |[智能分析GitHub代码库](https://github.com/antarixxx/gitsummarize)|智能分析|将任何 GitHub 代码库生成可视化文档的开源工具：GitSummarize<br> - 提供清晰的项目架构图、流程图、每个目录和文件的概要，还有具体重点业务逻辑处理的介绍<br> - 基于 Gemini 模型生成，适合用来快速了解一个新的开源项目，特别是那些没有 README 文件介绍的项目|
 |[系统设计面试资源列表](https://github.com/systemdesign42/system-design)|面试|一份精心收集整理的系统设计面试资源列表：system-design<br>提供很多知名科技公司的实战案例，如实时游戏排行榜、缓存一致性、实时协作、数据库迁移策略等<br>另外，还收集了很多有关系统设计的基础知识，以助大家学习|
+
+## prompt提示词
+
+|project|类型|说明|
+|---|---|---|
 |[Prompt模板mcp-prompt-server](https://github.com/joeseesun/mcp-prompt-server)|提示词模板生成|把常用的 Prompt 变成了可调用的工具，将每个 Prompt 模板注册为 MCP 工具，支持自然语言调用，还能在 Raycast、Cursor、Windsurf 等工具中通用<br> - 丰富的内置 Prompt 模板，涵盖代码、写作、产品设计等场景<br> - 所有Prompt自动注册为工具，支持参数化调用<br> - 只需添加 YAML 文件即可扩展新功能<br> - 自然语言对话即可调用，还能组合多个工具实现复杂工作流<br> - 通过 npm install 安装后配置到 MCP 客户端即可使用|
+|[ChatGPT中文提示词调教指南](https://github.com/PlexPt/awesome-chatgpt-prompts-zh)|prompt|各种场景提示词使用指南|
 
 
 ### other
