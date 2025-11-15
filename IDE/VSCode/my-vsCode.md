@@ -66,6 +66,7 @@
 *npm intellisense            |   
 *open in browser             |
 *Path Autocomplete           | 路径智能补全
+*any-rule                    | 正则大全
 Code Runner                  | 在vscode上直接运行TypeScript文件
  bracket pair colorizer      |
  auto import                 |
@@ -90,12 +91,16 @@ Code Runner                  | 在vscode上直接运行TypeScript文件
 Docs View                    | displays hover documentation in the sidebar or panel(https://marketplace.visualstudio.com/items?itemName=bierner.docs-view)
 *CodeSnap                    | 代码屏幕截图
 Prettier(optional)           | 代码格式化工具
-indent-rainbow               | 缩进层次以不同颜色高亮显示
-Power Mode                   | 键盘输入时候的宫廷效果
+*indent-rainbow              | 缩进层次以不同颜色高亮显示
+*Power Mode                  | 键盘输入时候的宫廷效果
 Draw.io                      | Diagram
 'Cascadia Code'  font        | on Dracula theme
 'Fira Code'  font            | on One Dark Pro theme
+Gradient Theme               | Gradient Theme
+vscode-icons                 |  
 Lorem ipsum                  | Lorem sentences
+Rainbow Fart                 | 🌈彩虹屁
+Emoji                        | A simple plugin to insert emoji from the command palette
 ```
 
 ```js
