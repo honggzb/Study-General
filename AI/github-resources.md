@@ -17,7 +17,6 @@
 |[Prompt模板mcp-prompt-server](https://github.com/joeseesun/mcp-prompt-server)|提示词模板生成|把常用的 Prompt 变成了可调用的工具，将每个 Prompt 模板注册为 MCP 工具，支持自然语言调用，还能在 Raycast、Cursor、Windsurf 等工具中通用<br> - 丰富的内置 Prompt 模板，涵盖代码、写作、产品设计等场景<br> - 所有Prompt自动注册为工具，支持参数化调用<br> - 只需添加 YAML 文件即可扩展新功能<br> - 自然语言对话即可调用，还能组合多个工具实现复杂工作流<br> - 通过 npm install 安装后配置到 MCP 客户端即可使用|
 |[ChatGPT中文提示词调教指南](https://github.com/PlexPt/awesome-chatgpt-prompts-zh)|prompt|各种场景提示词使用指南|
 
-
 ### other
 
 |project|类型|说明|
@@ -26,6 +25,7 @@
 |[AI会议助手Speakr](https://github.com/murtaza-nasir/speakr)|commercial|把会议录音转成文字、生成摘要，还能让我们通过聊天方式进行内容问答，所有数据都保持到本地安全隐私<br> - 支持拖放上传各种格式音频文件(MP3、WAV、M4A)进行转录<br> - 自动生成简洁标题和会议内容摘要，帮助快速理解重点<br> - 通过聊天界面提问，与会议内容进行交互式对话<br> - <br> - 内置搜索、收件箱和高亮功能，方便查找和处理关键信息<br> - 提供强大的管理员面板，可查看系统统计和管理用户<br> - 通过 Docker 一键部署，只需要几分钟即可使用，比较适合那些对数据隐私比较注重的同学使用|
 |[各种Awesome-xxx的资源列表](https://github.com/sindresorhus/awesome)|resource|各种Awesome-xxx的资源列表，但其实收藏这一个364K⭐的就够了↓<br>Awesome 项目是各种 Awesome 列表的集合。以后要找Awesome资源，聪这个总的出发就行了|
 |[一键复制网页内容并转换为Markdown 格式](https://github.com/ysm-dev/cpdown)|tools|浏览器插件：cpdown，可一键复制网页内容并转换为 Markdown 格式<br> - 一键复制任何网页内容为干净的 Markdown 格式<br> - 支持 YouTube 视频字幕提取和转换<br> - 自动去除广告、导航栏等无用 HTML 元素<br> - 显示内容的 token 数量，方便给 LLM 使用|
+|[awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)|resources|A list of Free Software network services and web applications which can be hosted on your own servers|
 
 ```
 1. github.com/eyaltoledano/claude-task-master
