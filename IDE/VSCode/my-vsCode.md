@@ -67,6 +67,7 @@
 *open in browser             |
 *Path Autocomplete           | 路径智能补全
 *any-rule                    | 正则大全
+project-tree                 | 自动生成项目结构 generates a tree directory in README.md.
 Code Runner                  | 在vscode上直接运行TypeScript文件
  bracket pair colorizer      |
  auto import                 |
@@ -100,7 +101,10 @@ Gradient Theme               | Gradient Theme
 vscode-icons                 |  
 Lorem ipsum                  | Lorem sentences
 Rainbow Fart                 | 🌈彩虹屁
+超越鼓励师                     | 在 VS Code 中连续写代码一小时（时间可配置），会有杨超越提醒你该休息啦~
 小霸王                        | vscode的nes游戏插件
+前端每日一题                   |
+Qwerty Learner               | 
 Emoji                        | A simple plugin to insert emoji from the command palette
 Incredibly In Your Face      |  shows you Incredible 'Ouch Faces' that correlate to the number of errors in your code!
 
