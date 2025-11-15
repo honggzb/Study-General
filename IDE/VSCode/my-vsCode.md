@@ -90,7 +90,7 @@ Code Runner                  | 在vscode上直接运行TypeScript文件
                              | https://marketplace.visualstudio.com/items?itemName=meganrogge.template-string-converter
 Docs View                    | displays hover documentation in the sidebar or panel(https://marketplace.visualstudio.com/items?itemName=bierner.docs-view)
 *CodeSnap                    | 代码屏幕截图
-Prettier(optional)           | 代码格式化工具
+Prettier                     | 代码格式化工具
 *indent-rainbow              | 缩进层次以不同颜色高亮显示
 *Power Mode                  | 键盘输入时候的宫廷效果
 Draw.io                      | Diagram
@@ -100,6 +100,7 @@ Gradient Theme               | Gradient Theme
 vscode-icons                 |  
 Lorem ipsum                  | Lorem sentences
 Rainbow Fart                 | 🌈彩虹屁
+小霸王                        | vscode的nes游戏插件
 Emoji                        | A simple plugin to insert emoji from the command palette
 Incredibly In Your Face      |  shows you Incredible 'Ouch Faces' that correlate to the number of errors in your code!
 
