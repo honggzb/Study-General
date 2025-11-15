@@ -101,6 +101,8 @@ vscode-icons                 |
 Lorem ipsum                  | Lorem sentences
 Rainbow Fart                 | 🌈彩虹屁
 Emoji                        | A simple plugin to insert emoji from the command palette
+Incredibly In Your Face      |  shows you Incredible 'Ouch Faces' that correlate to the number of errors in your code!
+
 ```
 
 ```js
