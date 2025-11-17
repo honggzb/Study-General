@@ -1,0 +1,21 @@
+
+docker命令：
+如果是在 Windows cmd 中，则需要使用 ^ 进行换行
+在 PowerShell 中，需要使用反引号 (`) 进行换行
+
+docker run -it --rm \
+  --name n8n \
+  -p 5678:5678 \
+  -v n8n_data:/home/node/.n8n \
+  -v ~/Downloads/md:/home/node \
+  -e N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true \
+  docker.n8n.io/n8nio/n8n //自动下载镜像，如果已存在就不下载
+
+
+docker pull unclecode/crawl4ai:all-amd64(或all-arm64)
+
+docker run --rm -it \
+  -e CRAWL4AI_API_TOKEN=12345 \
+  -p 11235:11235 \
+  unclecode/crawl4ai:all-amd64
+

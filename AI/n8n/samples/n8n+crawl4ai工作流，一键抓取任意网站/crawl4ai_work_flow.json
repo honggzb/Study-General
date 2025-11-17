@@ -1,0 +1,588 @@
+{
+  "name": "My workflow 7",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -2880,
+        480
+      ],
+      "id": "d09804e2-33b1-42f0-b45a-31baf26ee405",
+      "name": "When chat message received",
+      "webhookId": "0f5fbbdf-2d53-4b73-bbba-22622396cf46"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.chatInput }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2700,
+        440
+      ],
+      "id": "50d24ace-15ad-4753-ae15-616170e0cf5f",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [
+        -2500,
+        420
+      ],
+      "id": "03eb1d75-261b-4b10-aecc-df95eb8841ec",
+      "name": "XML"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "urlset.url",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -2320,
+        460
+      ],
+      "id": "6a0a6c98-a3d5-4c26-9ab6-51c86db5b7b8",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -2120,
+        440
+      ],
+      "id": "c59e41cc-3961-49c2-bf97-0a8f9b6f66e0",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -1920,
+        420
+      ],
+      "id": "e6d5c36d-8d0d-47fa-b9d5-00dde67604c3",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:11235/crawl",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "urls",
+              "value": "={{ $json.loc }}"
+            },
+            {
+              "name": "priority",
+              "value": "10"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1640,
+        440
+      ],
+      "id": "c4e4e8e6-0c7a-425b-9c37-457910ccf2df",
+      "name": "HTTP Request1",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "57vY2EUtpziMydLC",
+          "name": "Header Auth account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 6
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1200,
+        420
+      ],
+      "id": "6d8dfa71-f81a-449c-bab1-441a439958e2",
+      "name": "Wait",
+      "webhookId": "c8186be7-9578-4621-b806-25036f990025"
+    },
+    {
+      "parameters": {
+        "url": "=http://host.docker.internal:11235/task/{{ $json.task_id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1000,
+        380
+      ],
+      "id": "493eb051-d2b3-4753-8236-434a19c8ab9b",
+      "name": "HTTP Request2",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "57vY2EUtpziMydLC",
+          "name": "Header Auth account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "807b8fa3-6760-4a9e-aeb3-6c891e0a01b8",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "completed",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -760,
+        420
+      ],
+      "id": "224c43f8-6848-4631-b49b-3ab80707632c",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=角色设定：\n你是一名信息结构化和知识库开发的专家，请始终保持专业态度。你的任务是将 markdown 数据整理为适合 LLM 驱动的 RAG 知识库的结构化、易读格式。\n\n任务要求：  \n\n1. 内容解析  \n   - 识别 markdown 数据中的关键内容和主要结构。  \n\n2. 结构化整理  \n   - 以清晰的标题和分层逻辑组织信息，使其易于检索和理解。  \n   - 保留所有可能对回答用户查询有价值的细节。  \n\n3. 创建 FAQ（如适用）  \n   - 根据内容提炼出常见问题，并提供清晰、直接的解答。  \n\n4. 提升可读性  \n   - 采用项目符号、编号列表、段落分隔等格式优化排版，使内容更直观。  \n\n5. 优化输出  \n   - 严格去除 AI 生成的附加说明，仅保留清理后的核心数据。 \n\n响应规则：  \n\n1. 完整性：确保所有相关信息完整保留，避免丢失对搜索和理解有价值的内容。  \n2. 精准性：FAQ 需紧密围绕内容，确保清晰、简洁且符合用户需求。  \n3. 结构优化：确保最终输出便于分块存储、向量化处理，并支持高效检索。\n\n数据输入：\n<markdown>{{ $json.result.markdown }}</markdown>\n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        -580,
+        280
+      ],
+      "id": "702abaf7-42bb-4c5f-8515-4004e48c4e15",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5bb8dde4-4808-4005-94a3-56a8e88567a4",
+              "name": "task_id",
+              "value": "={{ $('HTTP Request1').item.json.task_id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -600,
+        500
+      ],
+      "id": "1dce6569-d835-4f7a-9f1d-e9ffae461b1a",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "toText",
+        "sourceProperty": "output",
+        "options": {
+          "fileName": "={{new Date().toISOString()}}.md"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        -200,
+        120
+      ],
+      "id": "f6328bbf-a99f-49fc-8773-6e58279e034b",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=/home/node/{{new Date().toISOString()}}.md",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "35b693a2-6594-4864-ac7a-9f8d9bf467b2",
+      "name": "Read/Write Files from Disk"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1480,
+        520
+      ],
+      "id": "93f64e97-b9e8-403b-8853-82f278bd968a",
+      "name": "Wait1",
+      "webhookId": "ea1444ec-e5d8-44b5-9fed-22e72793c219"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=把{{ $json.output }}写入/home/node/{{new Date().toISOString()}}.md文件中",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        -180,
+        -420
+      ],
+      "id": "5092c114-9c11-4ca6-a9a5-0f01a19872a3",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        100,
+        -180
+      ],
+      "id": "e1c475d2-6fa2-495c-b586-bf5f29cedb9f",
+      "name": "MCP Client",
+      "credentials": {
+        "mcpClientApi": {
+          "id": "kSc1ABvxzdmYzMz4",
+          "name": "MCP Client (STDIO) account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeTool",
+        "toolName": "=write_file",
+        "toolParameters": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Tool_Parameters', ``, 'json') }}"
+      },
+      "type": "n8n-nodes-mcp.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -180
+      ],
+      "id": "fc80f903-b284-4a33-bcd3-6421eb674b70",
+      "name": "MCP Client1",
+      "credentials": {
+        "mcpClientApi": {
+          "id": "kSc1ABvxzdmYzMz4",
+          "name": "MCP Client (STDIO) account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        500
+      ],
+      "id": "f3ee5841-27a7-4a37-ab2a-8bae52baed67",
+      "name": "DeepSeek Chat Model",
+      "credentials": {
+        "deepSeekApi": {
+          "id": "r18ROW1LYH3RRIFM",
+          "name": "DeepSeek account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        -200
+      ],
+      "id": "48650f4b-05a5-430a-b104-11f1de1d5a3c",
+      "name": "DeepSeek Chat Model1",
+      "credentials": {
+        "deepSeekApi": {
+          "id": "r18ROW1LYH3RRIFM",
+          "name": "DeepSeek account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "XML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XML": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1498fc4c-9ee2-428c-9ffa-ce07331f5447",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "842e089ebeca6cebf71676a6a2ba2cddf5a9039b264a25f6a7ee9230b3376b1b"
+  },
+  "id": "q45hhPQpfRuXDqqp",
+  "tags": []
+}
