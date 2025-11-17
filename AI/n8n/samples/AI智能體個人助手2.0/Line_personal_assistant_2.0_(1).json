@@ -1,0 +1,784 @@
+{
+  "name": "Line personal assistant 2.0",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "line",
+        "options": {
+          "binaryPropertyName": "data"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        160
+      ],
+      "id": "fb222d73-0925-4c43-a1f0-5ff8b8516d81",
+      "name": "Webhook",
+      "webhookId": "deec4b27-6b9c-4d45-b768-e372cce39b47"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c2e8db2b-10a0-4fa7-a98f-82ab53b88862",
+              "name": "text",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        160
+      ],
+      "id": "d7fff9d7-fed0-4dbb-a14e-962ea85ca512",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "efe490a0-0d2d-4fb6-ba28-ee01ecbf4ea2",
+              "name": "text",
+              "value": "={{ $json.body.events[0].message.text }}",
+              "type": "string"
+            },
+            {
+              "id": "3d6c4009-ca7a-4c41-963e-50bdad68d3ae",
+              "name": "type",
+              "value": "={{ $json.body.events[0].message.type }}",
+              "type": "string"
+            },
+            {
+              "id": "7e9a3863-a101-45fe-8331-d0dae7624ec5",
+              "name": "userId",
+              "value": "={{ $json.body.events[0].source.userId }}",
+              "type": "string"
+            },
+            {
+              "id": "29daaf93-26ce-4f79-b4a5-5a29deec8435",
+              "name": "replyToken",
+              "value": "={{ $json.body.events[0].replyToken }}",
+              "type": "string"
+            },
+            {
+              "id": "92c9d926-3921-46b6-b2e7-a87e869b2c7b",
+              "name": "message.id",
+              "value": "={{ $json.body.events[0].message.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        60,
+        160
+      ],
+      "id": "3de8bdbb-07d4-46d0-9f2d-aaadf5f5f7a3",
+      "name": "資料整理"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        980,
+        440
+      ],
+      "id": "cb761ec5-4c0c-438b-ac6b-968b8287228f",
+      "name": "Calculator"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        440
+      ],
+      "id": "48279227-daaa-487e-af3c-fae8aba08291",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.text }}",
+        "options": {
+          "systemMessage": "=你是终极个人助理。你的工作是将用户的请求发送给正确的工具。你永远不应该自己写邮件，甚至不需要做摘要，你只需要调用正确的工具即可。\n\n工具\nThink（思考）：当你遇到难题或者卡住时，使用这个工具进行深入思考\n\n邮件助手：用于执行邮件相关操作\n\n日程助手：用于执行日历相关操作\n\n联系人助手：用于获取、更新或添加联系人\n\n内容助手：用于创建博客文章，也可以利用perplexity进行网页搜索\n\nPerplexity：用于网页搜索时，启用perplexcity工具进行搜索\n\n\n\n规则\n某些操作需要你先查找联系信息。对于以下操作，你必须先获取邮箱地址，然后再发送给对应的代理工具：\n\n发送邮件\n\n起草邮件\n\n创建包含参与者的日历事件\n\n如果是图片文件，可以直接输出图片的分析\n\n操作指令\n根据用户请求调用所需的工具\n\n每次操作后都要使用 \"Think\" 工具来验证你是否做了正确的步骤\n\n示例\n输入：给 Harry Lee 发送一封邮件，问他想几点离开\n\n操作：使用 contactAgent 获取 Harry Lee的邮箱\n\n操作：使用 emailAgent 发送邮件。你将传递给工具类似 \"send Harry Lee email to ask what time he wants to leave. here is his email: [email address]\" 的请求\n\n输出：邮件已发送给 Harry Lee。还有其他需要帮忙的吗？\n\n最后提醒\n当前日期/时间：{{ $now }}\n\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        1080,
+        100
+      ],
+      "id": "7580d609-1e57-4f36-9d76-4e29dcfbd53f",
+      "name": "个人助手2.0"
+    },
+    {
+      "parameters": {
+        "name": "emailAgent",
+        "description": "Call this tool for any email actions.",
+        "workflowId": {
+          "__rl": true,
+          "value": "Q1KeBN0eJGa8huQd",
+          "mode": "list",
+          "cachedResultName": "Email agent 2.0"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        420
+      ],
+      "id": "3b93d8bc-60c2-4c7e-bf28-d9d4d5956e29",
+      "name": "邮件助手"
+    },
+    {
+      "parameters": {
+        "name": "contentCreator",
+        "description": "Call this tool to create blog posts.",
+        "workflowId": {
+          "__rl": true,
+          "value": "Gw9HgLNHCGyHTU3n",
+          "mode": "list",
+          "cachedResultName": "Contant agant 2.0"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1500,
+        420
+      ],
+      "id": "31072465-8260-4530-ac5f-cfe5c8233376",
+      "name": "内容助手"
+    },
+    {
+      "parameters": {
+        "name": "contactAgent",
+        "description": "Call this tool for any contact related actions.",
+        "workflowId": {
+          "__rl": true,
+          "value": "wuH2AWsBEEsUp4SC",
+          "mode": "list",
+          "cachedResultName": "Contact agent 2.0"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1500,
+        300
+      ],
+      "id": "826350d0-66d4-48aa-b1d0-f9ca0d8a373b",
+      "name": "联系人助手"
+    },
+    {
+      "parameters": {
+        "name": "calendarAgent",
+        "description": "Call this tool for any calendar action.",
+        "workflowId": {
+          "__rl": true,
+          "value": "S8ScAfthOM6VieuH",
+          "mode": "list",
+          "cachedResultName": "Calendar agent 2.0"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        300
+      ],
+      "id": "1a864349-fffc-4172-b86a-b820594aa28f",
+      "name": "日程助手"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        980,
+        300
+      ],
+      "id": "58f13c82-c96d-4c80-ad3a-258c205c25a6",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "WdNCSir4qi0cxfNj",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.line.me/v2/bot/message/reply",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify((() => {\n  return {\n    replyToken: $('資料整理').item.json.replyToken,\n    messages: [\n      {\n        type: \"text\",\n        text: $json.output\n      }\n    ]\n  };\n})()) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1480,
+        -20
+      ],
+      "id": "af7c0600-3e78-43b3-87be-361bcab3cb89",
+      "name": "Line回复",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "Bl1KNs21hT4Edgwo",
+          "name": "Line"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Webhook').item.json.body.events[0].source.userId }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1120,
+        300
+      ],
+      "id": "7cfd1200-b9a3-4754-aa33-e57613a7cdda",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c2e8db2b-10a0-4fa7-a98f-82ab53b88862",
+              "name": "text",
+              "value": "={{ $json.text }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        660,
+        360
+      ],
+      "id": "46566263-eac1-40a9-ac06-0abb38cb59fb",
+      "name": "文字"
+    },
+    {
+      "parameters": {
+        "url": "={{ `https://api-data.line.me/v2/bot/message/${$json.message.id}/content` }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        160
+      ],
+      "id": "4bd7bd86-3b5c-4cb2-abe7-e44726a2ced3",
+      "name": "下载语音",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "Bl1KNs21hT4Edgwo",
+          "name": "Line"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ `https://api-data.line.me/v2/bot/message/${$json.message.id}/content` }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        -20
+      ],
+      "id": "f2633055-0dcc-4297-b981-8b47365f467a",
+      "name": "下载图片",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "Bl1KNs21hT4Edgwo",
+          "name": "Line"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "text": "=**分析图片，重点理解其视觉语境中的文本内容。**\n\n1. **识别图片类型和语境**：简要描述图片的外观（例如，网页截图、带字幕的视频帧、文档章节、演示文稿幻灯片、带有叠加文字的照片）。整体的视觉语境是什么？\n2. **提取突出文本**：准确转录可见的最重要或最突出的文本。如果文本量较大，请重点关注标题、说明或传达主要思想的首句。\n3. **确定文本的角色和主题**：根据提取的文本和视觉语境，*此特定图片*中显示的文本的**目的或主要主题**是什么？ （例如，“这是一个新闻标题”、“它解释了一个用户界面元素”、“它是幻灯片的关键要点”、“它是描述场景的标题。”）\n4. **关键信息**：这个图片主要的核心信息时什么？（非常简短的摘要或重述）。\n\n**输出应优先考虑转录的突出文本及其确定的角色/主题。**仅当其他视觉元素对于理解文本上下文至关重要时，才简要提及它们。\n",
+        "inputType": "base64",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        660,
+        -20
+      ],
+      "id": "0b7875d5-e29b-4ada-b778-f690db58721f",
+      "name": "分析图片",
+      "credentials": {
+        "openAiApi": {
+          "id": "WdNCSir4qi0cxfNj",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {}
+      },
+      "id": "d6f41430-3782-4cd0-9c51-b7ad70a46650",
+      "name": "转文字",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.6,
+      "position": [
+        660,
+        160
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "WdNCSir4qi0cxfNj",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d7a0a0d7-1321-413b-855b-b877253f5004",
+              "name": "output",
+              "value": "={{ $json.content }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        -20
+      ],
+      "id": "91d5c3a8-eade-4390-8e14-df40480f4247",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e30a648a-c937-4928-8ff7-08b708368737",
+                    "leftValue": "={{ $json.type  }}",
+                    "rightValue": "image",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "image"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "f1530000-3a45-4c6b-a7e8-2266f3c187a3",
+                    "leftValue": "={{ $json.type }}",
+                    "rightValue": "audio",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "voice"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1302bb3f-3a13-4e5b-84bb-75cbc2bbbb6c",
+                    "leftValue": "={{ $json.type }}",
+                    "rightValue": "text",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "text"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        260,
+        160
+      ],
+      "id": "332e1f32-a041-40ad-9953-9dc309a48739",
+      "name": "Switch"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "資料整理": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "資料整理",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "个人助手2.0",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "个人助手2.0",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "邮件助手": {
+      "ai_tool": [
+        [
+          {
+            "node": "个人助手2.0",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "内容助手": {
+      "ai_tool": [
+        [
+          {
+            "node": "个人助手2.0",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "联系人助手": {
+      "ai_tool": [
+        [
+          {
+            "node": "个人助手2.0",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "日程助手": {
+      "ai_tool": [
+        [
+          {
+            "node": "个人助手2.0",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "个人助手2.0",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "个人助手2.0": {
+      "main": [
+        [
+          {
+            "node": "Line回复",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "个人助手2.0",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "个人助手2.0",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "文字": {
+      "main": [
+        [
+          {
+            "node": "个人助手2.0",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "下载语音": {
+      "main": [
+        [
+          {
+            "node": "转文字",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "下载图片": {
+      "main": [
+        [
+          {
+            "node": "分析图片",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "分析图片": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "转文字": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Line回复",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "下载图片",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "下载语音",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "文字",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "9eacdf00-963f-4768-8c71-099195a7d250",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "78fda1add35c93dc0024c98cb79ca18abaf100f2da4d66f7e1f7cf6b91bd719a"
+  },
+  "id": "2DmXEsqa7MNZxt5H",
+  "tags": []
+}
