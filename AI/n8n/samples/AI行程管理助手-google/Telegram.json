@@ -1,0 +1,543 @@
+{
+  "name": "Telegram",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=## From Telegram\n{{ $json.message.text }}\n\n## From Gmail\n{{ $json.threadId }}\n{{ $json.snippet }}\n{{ $json.From }}\n{{ $json.Subject }}",
+        "options": {
+          "systemMessage": "=你是一個聰明貼心的 AI 助理，請依據你收到的資訊來回覆訊息，回覆時請參考以下要點：\n- 使用繁體中文來回達訊息。 \n- 現在的時間是：{{ $now }}\n\n## 關於行程\n- 如果我請你新增行程，但沒有提供行程的結束時間，則行程預設時長設為 1 小時。\n- 如果我請你修改行程，請先使用 Google Calendar Tool 取得該行程的原始資訊，然後再去修改該行程的內容。\n\n## 如果收到新郵件\n請先檢查這個會議行程是否與我的其它行程有衝突：\n- 如果「沒有」：請傳送一則 Telegram 訊息給我，說明會議的名稱、時間和地點，並將該行程自動加入我的行事曆。\n- 如果「有」：請傳送一則 Telegram 訊息給我說明與其衝突的行程，並且詢問我希望的處理方式。\n\n## 關於寫信和回覆郵件\n- 如果我沒有要求直接寄出 Email，則將寫好的信件先存放在草稿匣。\n- 如有需要，你可以在 Google Contacts Tool 中查詢收件者的 Email 地址。\n- 寄出的郵件請署名為 Papaya。"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "022a2087-372a-4153-b36f-b50e24e1ae19",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "memory"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        352,
+        192
+      ],
+      "id": "9e782b26-e198-497a-8855-6f6e1a592471",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        224,
+        368
+      ],
+      "id": "43561f10-b76f-498a-9d9d-8c9bd954c1f9",
+      "name": "OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "PEFHBYecxBu9U6fY",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "papayaclass@gmail.com",
+          "mode": "list",
+          "cachedResultName": "行事曆"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        496,
+        192
+      ],
+      "id": "d50f7a8b-20a6-4697-898a-c1f40461dce4",
+      "name": "Create",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "HP3zCbIJEXjz8Knq",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "calendar": {
+          "__rl": true,
+          "value": "papayaclass@gmail.com",
+          "mode": "list",
+          "cachedResultName": "行事曆"
+        },
+        "eventId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Event_ID', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        624,
+        192
+      ],
+      "id": "aef1fa3f-985b-47fb-85e7-5dd7245921b5",
+      "name": "Delete",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "HP3zCbIJEXjz8Knq",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "papayaclass@gmail.com",
+          "mode": "list",
+          "cachedResultName": "行事曆"
+        },
+        "limit": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Limit', ``, 'number') }}",
+        "timeMin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('After', ``, 'string') }}",
+        "timeMax": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Before', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        752,
+        192
+      ],
+      "id": "bc81e582-5265-4e66-9750-843bf54ab146",
+      "name": "Get Many",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "HP3zCbIJEXjz8Knq",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "calendar": {
+          "__rl": true,
+          "value": "papayaclass@gmail.com",
+          "mode": "list",
+          "cachedResultName": "行事曆"
+        },
+        "eventId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Event_ID', ``, 'string') }}",
+        "updateFields": {
+          "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+          "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        880,
+        192
+      ],
+      "id": "290c3b3a-af99-4c0a-8f64-a3ec44780d14",
+      "name": "Update",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "HP3zCbIJEXjz8Knq",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        -64
+      ],
+      "id": "f58d58f0-e39a-4b42-bc6b-b87adb1c59e8",
+      "name": "Telegram Trigger",
+      "webhookId": "32317cd1-53cb-4e19-abb9-b13ec651f4f3",
+      "credentials": {
+        "telegramApi": {
+          "id": "WHGEDQmRgusG9Uzt",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "7836981200",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        624,
+        -48
+      ],
+      "id": "9d7d0584-8d6f-4450-9398-e72cea40d1a2",
+      "name": "Send a text message",
+      "webhookId": "fdd3899d-475b-4fe8-9936-93d27d1b5b77",
+      "credentials": {
+        "telegramApi": {
+          "id": "WHGEDQmRgusG9Uzt",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "filters": {}
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -336,
+        128
+      ],
+      "id": "3b87fdd2-4389-4c52-9b61-c4cb88959c9c",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "MOM3vPfOL1UiiKjX",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputText": "={{ $json.snippet }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "會議相關"
+            },
+            {
+              "category": "會議無關"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        -160,
+        128
+      ],
+      "id": "56e47dc3-baf0-4b12-aab1-140bd51d8bc0",
+      "name": "Text Classifier"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        416,
+        368
+      ],
+      "id": "de7f4e6d-60ae-4aec-8f00-987fc19b6dc0",
+      "name": "Send",
+      "webhookId": "1b9cd89a-759f-4ee5-b46c-ddceeda82cc2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "MOM3vPfOL1UiiKjX",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "reply",
+        "messageId": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message_ID', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        576,
+        368
+      ],
+      "id": "5af2d702-ef46-41d3-a040-7a255a1d1b46",
+      "name": "Reply",
+      "webhookId": "1b9cd89a-759f-4ee5-b46c-ddceeda82cc2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "MOM3vPfOL1UiiKjX",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "draft",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "replyTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Send_Replies_To', ``, 'string') }}",
+          "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To_Email', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        736,
+        368
+      ],
+      "id": "580079f7-0f8e-4728-8d62-1067a64fabbf",
+      "name": "Draft",
+      "webhookId": "1b9cd89a-759f-4ee5-b46c-ddceeda82cc2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "MOM3vPfOL1UiiKjX",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "fields": [
+          "names",
+          "emailAddresses"
+        ],
+        "useQuery": true,
+        "query": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Query', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.googleContactsTool",
+      "typeVersion": 1,
+      "position": [
+        896,
+        368
+      ],
+      "id": "25d3984d-0580-4efb-b84b-9eb38c4b0594",
+      "name": "Contacts",
+      "credentials": {
+        "googleContactsOAuth2Api": {
+          "id": "rMyW4smoZv22MBSI",
+          "name": "Google Contacts account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Many": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reply": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Draft": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contacts": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "024ac756-1a89-49ee-a1bd-cbd0196cc14a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "93aecaa8674a2fe8942e0a68767f0458d95e777e3c273c1435ba5bda9e85e09b"
+  },
+  "id": "AjmECHT62aPPvO3P",
+  "tags": []
+}
