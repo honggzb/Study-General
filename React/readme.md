@@ -46,10 +46,16 @@
 
 ## Version
 
-- https://github.com/facebook/react/releases
-- version 18.0.0 (March 29, 2022)
-- version 17.0.0 (October 20, 2020)
+|key major releases|date|highlights|
+|---|---|---|
+|15|April 2016| - focused on stability, eliminating deprecation warnings, and improving rendering performance<br> - It also introduced support for SVG elements|
+|16|sept. 2017|- a milestone release that introduced the Fiber reconciliation engine<br>- significant features like Error Boundaries, Portals, and Fragments. It also brought a new core architecture (Fiber) for improved performance and responsiveness|
+|17|Oct. 2020|- Primarily a "no-new-features" release, focusing on making upgrades easier and enabling gradual adoption of new React features. <br> - It introduced new JSX transform|
+|18|Mar. 2022| concurrent features like `startTransition` and `useDeferredValue`, along with automatic batching for improved performance in complex applications|
+|19|Dec. 2024|
 
+- https://github.com/facebook/react/releases
+  
 ## using typescript
 
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
