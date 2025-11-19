@@ -5,7 +5,11 @@
 - [Difference between the pre-rendering types available in Next.js](#difference-between-the-pre-rendering-types-available-in-nextjs)
 - [What is client-side rendering, and how does it differ from server-side rendering?](#what-is-client-side-rendering-and-how-does-it-differ-from-server-side-rendering)
 - [How do you pass data between pages in a Next.js application?](#how-do-you-pass-data-between-pages-in-a-nextjs-application)
-
+- [Authentication and Authorization](#authentication-and-authorization)
+  - [What is JWT and how does it work?](#what-is-jwt-and-how-does-it-work)
+  - [OAuth](#oauth)
+  - [react and oauth2](#react-and-oauth2)
+----------------------------------------------------
 
 ![nextJS](./images/nextJS.png)
 
@@ -61,6 +65,47 @@ Next.js works as a React framework that handles rendering, routing, and optimiza
 - **Router API**: Use Next.js routing to programmatically navigate and pass state.
 - **State Management Libraries**: Use tools like Redux or React Context to share data across pages.
 - **Server-Side Data Fetching**: Use `getServerSideProps` to fetch data on the server and pass it as props to the page component.
+
+[⬆ back to top](#top)
+
+## Authentication and Authorization
+
+- **Authentication** is the process of verifying the identity of a user or system. It ensures that the entity attempting to access a system is who they claim to be
+- **Authorization** determines what an authenticated user is allowed to do. It defines the permissions and access levels granted to the user
+
+### What is JWT and how does it work?
+
+- "JSON Web Token (JWT) is a compact, URL-safe token used to represent claims between two parties. It works by encoding a JSON object into a string, which is then signed using a cryptographic algorithm to ensure its integrity and authenticity."
+- consists of three parts: 
+  - **header**：contains metadata about the token and the algorithm used for signing
+  - **payload**：holds the claims
+  - **signature**： ensures the token's integrity
+
+### OAuth
+
+- OAuth (Open Authorization) is an open standard for access delegation. It allows users to grant third-party applications limited access to their resources without exposing their credentials
+- Key Concepts of OAuth
+  - **Resource Owner**: The user who owns the data
+  - **Client**: The application requesting access to the resource
+  - **Resource Server**: The server hosting the protected resources
+  - **Authorization Server**: The server that authenticates the resource owner and issues access tokens
+  - **Access Token**: A token that grants the client access to the resource server
+- OAuth Flow
+  - Authorization Request: The client requests authorization from the resource owner.
+  - Authorization Grant: The resource owner grants permission.
+  - Access Token Request: The client exchanges the authorization grant for an access token from the authorization server.
+  - Access Token Response: The authorization server issues an access token.
+  - Resource Request: The client uses the access token to access protected resources from the resource server.
+  - Resource Response: The resource server returns the requested data to the client
+- Common Authentication Methods
+  - Basic Authentication: nvolves sending a username and password with each request, typically encoded in Base64. It is simple but not secure unless used over HTTPS.
+  - Token-Based Authentication: (like JWT) to authenticate users. Tokens are issued upon successful login and are sent with each request
+  - Multi-Factor Authentication (MFA): Requires two or more verification methods, enhancing security by combining something you know (password)
+
+### react and oauth2
+
+- [Auth0](https://www.auth0.com)
+- [Clerk](https://clerk.com/docs): for nextJS app
 
 [⬆ back to top](#top)
 
