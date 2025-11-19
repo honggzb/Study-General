@@ -6,6 +6,8 @@
 - [How do you pass data between pages in a Next.js application?](#how-do-you-pass-data-between-pages-in-a-nextjs-application)
 
 
+![nextJS](./images/nextJS.png)
+
 ## What is the difference between Next.js and React JS?
 
 |Next.js|React|
