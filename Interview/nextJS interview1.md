@@ -1,5 +1,6 @@
 [Next.js Interview Questions and Answers](#top)
 
+- [How Next.js Works?](#how-nextjs-works)
 - [What is the difference between Next.js and React JS?](#what-is-the-difference-between-nextjs-and-react-js)
 - [Difference between the pre-rendering types available in Next.js](#difference-between-the-pre-rendering-types-available-in-nextjs)
 - [What is client-side rendering, and how does it differ from server-side rendering?](#what-is-client-side-rendering-and-how-does-it-differ-from-server-side-rendering)
@@ -7,6 +8,18 @@
 
 
 ![nextJS](./images/nextJS.png)
+
+## How Next.js Works?
+Next.js works as a React framework that handles rendering, routing, and optimization automatically, making web apps faster and SEO-friendly.
+
+- <mark>Pre-rendering</mark>: Pages can be rendered on the server (SSR) or per-rendered at build time (SSG) for faster load and better SEO.
+- <mark>File-based routing</mark> automatically maps pages to URLs.
+- <mark>API Routes</mark>: Allows backend functionality within the application. Each file inside pages/api/ automatically becomes an API endpoint.
+- <mark>Automatic Code Splitting</mark>: Loads only the necessary JavaScript for each page, improving performance.
+- Optimized Builds</mark>: Bundling, minification, and image optimization happen out-of-the-box.
+- <mark>Easy Deployment</mark>: Supports multiple deployment options like static site hosting and serverless functions, simplifying the release process
+
+[⬆ back to top](#top)
 
 ## What is the difference between Next.js and React JS?
 
