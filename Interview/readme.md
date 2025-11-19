@@ -17,6 +17,7 @@
 │   │   │   ├──📄coderbyte- solutions -javascript .pdf
 │   │   │   └──📄javascript-tt.js
 │   │   ├── 📄Javascript面试之数组的几个不low操作.md
+│   │   ├── 📄javascript-interview-questions.md
 │   │   └── 📄前端面试基本知识点—javascript.md
 │   ├── 📄1. 一次性加载几万条数据，要求不卡住界面.md
 │   ├── 📄2. 10 个 Ajax 同时发起请求.md
@@ -26,8 +27,13 @@
 │   ├── 📄NodeJs interview.md
 │   ├── 📄Soft-skill.md
 │   ├── 📄System Design Interview.md
+│   ├── 📄System-design-principle.md
 │   ├── 📄angular vs angularJS.md
 │   ├── 📄angular-interview.md
+│   ├── 📄angular-interview1.md
+│   ├── 📄metholody for project manage.md
+│   ├── 📄mongodb-interview.md
+│   ├── 📄react-Tic-Tac-Toe.md
 │   └── 📄react interview.md
 ```
 
