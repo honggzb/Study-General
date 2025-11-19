@@ -123,7 +123,7 @@ My team and I decided to adopt a react MVVM architecture, where we make codes lo
 To design and execute the evolution, we followed these steps:
 
 1. Analyze the existing system and identify the core business domains and functionalities that can be separated into microservices or modules. Prioritize the most critical and frequently used features, and plan to migrate them first.
-2. We created a new interface for the legacy system, using Strangler Fig pattern, which allowed us to by gradually replacing specific pieces of functionality with new applications and services, without affecting the users. 
+2. We created a new interface for the legacy system, using **<mark>Strangler Fig pattern</mark>**, which allowed us to by gradually replacing specific pieces of functionality with new applications and services, without affecting the users. 
 3. Develop the main modules using React MVVM pattern gradually, following the best practices of software engineering, such as test-driven development, continuous integration, and continuous delivery. We also set up backup and rollback plan.
 4. We tested and validated the function and UI using unit testing, integration testing, performance testing, and user acceptance testing. We also collected feedback from the stakeholders and the users, and incorporated their suggestions and requirements into the next iterations of the development cycle.
 5. We repeated the process for the remaining features and functionalities, until we completely replaced the legacy system with the new UI. We also documented the design and implementation of the system, and provided training and support for the maintenance and enhancement of the system.
