@@ -6,6 +6,7 @@
 - [State vs props](#state-vs-props)
 - [The Virtual DOM (VDOM)](#the-virtual-dom-vdom)
 - [React Component Lifecycle](#react-component-lifecycle)
+- [React render theory](#react-render-theory)
 - [Passing Data between Parent and Child Component](#passing-data-between-parent-and-child-component)
   - [using useState](#using-usestate)
   - [using callback function](#using-callback-function)
@@ -40,15 +41,17 @@ is an in-memory representation of Real DOM. The representation of a UI is kept i
 - ![React Lifecycle Methods diagram](./images/React-Lifecycle-diagram.png)
 - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
-**React render** 
+[🚀back to top](#top)
+
+## React render theory
 
 -  React renders by calling your component functions to get a description of the UI, comparing that description to the previous one (via the Virtual DOM and reconciliation), and then efficiently applying only the necessary changes to the actual browser DOM
-1. Render Phase
+1. <mark>Render Phase</mark>
    1. **Trigger a render**: A render is initiated when a component's state or props change, or during the initial mounting of the application
    2. **Calling Components**: React calls the component function(s) that need to be updated. These functions execute, returning a description of the UI (JSX)
    3. **Virtual DOM creation**: React uses the returned JSX to construct or update a "Virtual DOM" tree in memory. This Virtual DOM is a lightweight representation of the actual browser DOM
    4. **Reconciliation(Diffing)**: If it's a re-render, React performs a "diffing" algorithm to compare the new Virtual DOM tree with the previous one. This process identifies the minimal set of changes required to update the actual DOM
-2. Commit Phase
+2. <mark>Commit Phase</mark>
    1. **DOM updates**: Based on the identified changes from the reconciliation process, React applies these updates to the actual browser DOM. This is the point where the UI visually changes
    2. **Browser repaint**: The browser then repaints the screen to reflect the updated DOM, making the changes visible to the user
 
