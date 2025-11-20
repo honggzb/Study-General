@@ -3,17 +3,22 @@
 ```
 ├── 📂React
 │     ├──  📂NextJS/
-│     │    ├── 📄Main Concepts of NextJS
+│     │    ├── 📂codes/
+│     │    ├── 📄Main Concepts of NextJS-2023.md
 │     │    ├── 📄NextJs学习-App Router.md
 │     │    ├── 📄NextJs学习-Data Fetching.md
+│     │    ├── 📄NextJs学习-Next.js多环境部署.md
 │     │    ├── 📄NextJs学习-Zod and React-Hook-Form.md
 │     │    ├── 📄NextJs学习-authentication-AuthJS.md
 │     │    ├── 📄NextJs学习-authentication-clerk.md
-│     │    ├── 📄NextJs学习-NextJs学习-debugging NextJS.md
+│     │    ├── 📄NextJs学习-debugging NextJS.md
 │     │    ├── 📄NextJs学习-在Next.js中集成swagger文档.md
 │     │    ├── 📄NextJs学习-概述.md
 │     │    ├── 📄Nextjs学习小结2024.md
 │     │    ├── 📄前端基础渲染模式-CSR、SSR、同构、静态化.md
+│     │    └──
+│     ├──  📂React Native/
+│     │    ├── 📄React Native学习之1-基础2024.md
 │     │    └── 
 │     ├──  📂React性能优化/
 │     │    ├── 📄React性能优化之1-组件优化.md
@@ -24,6 +29,8 @@
 │     │    ├── 📂Tic-Tac-Toe/
 │     │    └── reactSampleBasic-04062016.rar
 │     ├── 📄React State Management libraries in 2024.md
+│     ├── 📄React学习-Context.md
+│     ├── 📄React学习-Design Patterns.md
 │     ├── 📄React学习-Handle errors in React.md
 │     ├── 📄React学习-Hooks.md
 │     ├── 📄React学习-Jest-2023年.md
@@ -31,6 +38,7 @@
 │     ├── 📄React学习-Reduce-2023年.md
 │     ├── 📄React学习-Social Media Integration.md
 │     ├── 📄React学习-cypress-2023年.md
+│     ├── 📄React学习-i18n.md
 │     ├── 📄React学习-react+rxjs.md
 │     ├── 📄React学习-react中useRef详细总结.md
 │     ├── 📄React学习-router.md
@@ -40,6 +48,10 @@
 │     ├── 📄React学习-配置-vite分块打包.md
 │     ├── 📄React学习-大众点评.md
 │     ├── 📄React学习资源汇总.md
+│     ├── 📄React常见状态管理库对比（Redux、Recoil、Zustand、Valtio、Jotai.md
+│     ├── 📄react-18-note-2024.md
+│     ├── 📄react-18个开源项目-2024.md
+│     ├── 📄react-Useful Types.md
 │     ├── 📄React常见问题讨论.md
 │     ├── 📄react-official-document-study.md
 │     └── 📄react官网学习小结-2023版.md
