@@ -1,4 +1,6 @@
-[NextJS Interview Questions & Answers](#top)
+[Next.js Interview Questions and Answers](https://www.geeksforgeeks.org/reactjs/next-js-interview-questions-answers/)
+
+[top](#top)
 
 <!-- Group Start -->
 
