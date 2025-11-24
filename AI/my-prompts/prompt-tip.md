@@ -7,8 +7,14 @@
 |create a component that lists three places to visit in Paris|
 |Refactor the duplicated logic within the update method to extract it into a reusable function|
 |move the css codes into seperate files|
-|
-
+|我要做一个AI导航站，请帮我收集网站素材和设计网站结构、页面、sitemap等信息|
+|Constraints/Rules - [rules I need to abide by] - Defines boundaries, limitations, and guidelines for operation|
+|Role/Scope - [what am I an expert of?] - Establishes the agent's purpose, identity, and overall objective|
+|Inputs - [tell me what inputs I'm receiving] - Specifies expected data formats & parameters (inc. examples)|
+|Tools - [what resources can I access? e.g. web search] - Outlines available resources, functions, and capabilities|
+|Instructions/Tasklist - [order of tasks] - Provides step-by-step procedures with examples|
+|Conclusions/Outputs - [what output am I providing (examples)] - Defines expected response formats and deliverables|
+|Solutions/Error handling - [what do I do if I don't get the information I expected to?] - Addresses troubleshooting and exception|
 
 ```
 Create a game to practice the multiplication table. There should be a score showing how many correct and incorrect answers the user has.
