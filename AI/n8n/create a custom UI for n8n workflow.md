@@ -42,7 +42,7 @@ On the left, I want there to be a sidebar that displays previous chats. I want i
 
 1. create 'webhook' node at the beginning
 2. create 'respond to webhook'
-3. ![con-to-n8n1](con-to-n8n1.png)
+3. ![con-to-n8n1](,/images/con-to-n8n1.png)
 
 > references
 - https://lovable.dev/
