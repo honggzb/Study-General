@@ -33,6 +33,13 @@ function unique(array){
 }
 ```
 
+-----------------------------
+- [JavaScript 单行代码](#javascript-单行代码)
+- [数组中flat方法](#数组中flat方法)
+- [失败重载](#失败重载)
+- [下载各种文件](#下载各种文件)
+- [Recommended IDE Setup](#recommended-ide-setup)
+
 ## JavaScript 单行代码
 
 |||
@@ -64,3 +71,93 @@ function unique(array){
 |计算两个日期之间的间隔|`const dayDiff = (d1, d2) => Math.ceil(Math.abs(d1.getTime() - d2.getTime()) / 86400000)`|
 |找出该日期是一年中的第几天|`const dayInYear = (d) => Math.floor((d - new Date(d.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24)`|
 
+## 数组中flat方法
+
+```js
+let data = {
+    type1:[
+        {id:1,title:'title1',value:"value1"},
+        {id:2,title:'title2',value:"value2"},
+    ],
+    type2:[
+        {id:5,title:'title5',value:"value5"},
+        {id:6,title:'title6',value:"value6"},
+    ]
+}
+let values = Object.values(data);
+let flatArr = values.flat();
+// [{id: 1, title: 'title1', value: 'value1'}, {…}, {id: 5, title: 'title5', value: 'value5'}, {…}]
+```
+
+## 失败重载
+
+```js
+function request() {
+    return new Promise((resolve, reject) => {
+        // 随机数模拟请求成功与失败
+        let num = Math.random() * 5;
+
+        if (num > 3) {
+            resolve("成功")
+        } else {
+            reject("失败")
+        }
+    })
+}
+function reload(fn, n) {
+    // fn:请求函数，n:重试次数
+    return new Promise(async (reslove, reject) => {
+        // 限定次数完还没请求成功就不再执行
+        while (n--) {
+            try {
+                let res = await fn();
+                reslove("请求成功", res)
+                // 请求成功就直接跳出循环不再执行
+                break;
+            } catch (err) {
+                if (n <= 0) {
+                    reject("次数用完仍然没请求成功")
+                }
+            }
+
+        }
+    })
+}
+reload(request, 3).then(res =>{
+    console.log(res)
+}).catch(err =>{
+    console.log(err)
+})
+function getData(){
+    return axios.get("http://xxxx")
+}
+reload(getData, 3).then(res =>{
+    console.log(res)
+}).catch(err =>{
+    console.log(err)
+})
+```
+
+## 下载各种文件
+
+```js
+<input type="text" id="fileUrl">
+<button id="btn">下载</button>
+async function download() {
+    let url = fileUrl.value
+    let response = await fetch(url)
+    let file = await response.blob()
+    let link = document.createElement("a")
+    link.href = URL.createObjectURL(file)
+    link.download = `文件${new Date()}`
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    URL.revokeObjectURL(link.href)
+}
+btn.onclick = download
+```
+
+## Recommended IDE Setup
+
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
