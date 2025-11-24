@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画板</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="btns">
+        <label>
+            画笔颜色
+            <input id="color" type="color">
+        </label>
+        <label>
+            画笔大小
+            <input value="3" id="size" max="20" min="1" type="range">
+        </label>
+     
+        <label>
+            <button id="reback" data-type="back">撤销</button>
+            <button id="cancelreback" data-type="cancelback">取消撤销</button>
+            <button id="clear">清空</button>
+
+        </label>
+        <button id="downLoand">下载</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

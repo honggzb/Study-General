@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(50, 50, 49);
+      }
+      .box {
+        display: table;
+        margin: 150px auto;
+        border-collapse: collapse;
+        color: rgb(217, 216, 216);
+      }
+      .row {
+        /* display: flex; */
+        display: table-row;
+      }
+      .title {
+        background-color: rgb(77, 185, 243);
+        color: #ffff;
+      }
+      .row div {
+        display: table-cell;
+        border: 1.5px solid rgb(236, 240, 243);
+        text-align: center;
+        min-width: 80px;
+        /* height: 40px; */
+        line-height: 40px;
+        padding: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="row title">
+        <div>名称</div>
+        <div>价格</div>
+        <div>数量</div>
+        <div>描述</div>
+        <div>备注</div>
+      </div>
+      <div class="row">
+        <div>苹果</div>
+        <div>5999</div>
+        <div>10</div>
+        <div>好用</div>
+        <div>好用</div>
+      </div>
+      <div class="row">
+        <div>小米</div>
+        <div>1999</div>
+        <div>10</div>
+        <div>好用是好用就是有亿点与人具有发烫</div>
+        <div>好用</div>
+      </div>
+      <div class="row">
+        <div>华为</div>
+        <div>8999</div>
+        <div>10</div>
+        <div>好用</div>
+        <div>好用</div>
+      </div>
+      <div class="row">
+        <div>oppo</div>
+        <div>2999</div>
+        <div>10</div>
+        <div>好用</div>
+        <div>好用45455646</div>
+      </div>
+    </div>
+  </body>
+</html>

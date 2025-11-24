@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #010101;
+}
+
+.candle {
+    width: 100px;
+    height: 100px;
+    margin: 300px auto;
+    position: relative;
+}
+
+.candle .fire{
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 100%;
+    animation: animate 2s linear infinite;
+    transform-origin: bottom right;
+    filter: drop-shadow(0 0 50px #fff);
+}
+.fire1{
+    width: 50px;
+    height: 100px;
+    background: #f8ddab;
+}
+.fire2{
+    width:25px;
+    height:60px;
+    background-color: #fabf8d;
+    left:25px
+}
+.fire3{
+    width:15px;
+    height:25px;
+    background-color: #faa79e;
+    left:35px;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg) scale(1.1);
+    }
+    50%{
+        transform: rotate(15deg);
+    }
+    100%{
+        transform: rotate(0deg) scale(1.1);
+    }
+}
+.body{
+    width:50px;
+    height:200px;
+    border-radius: 10px 10px 0 0 ;
+    background-color: #fff;
+    position: absolute;
+    bottom: -200px;
+    left:20px;
+}

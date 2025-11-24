@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        body{
+            text-align: center;
+        }
+        .text{
+            text-anchor: middle;
+        }
+        .btn{
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: aqua;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <svg height="700" width="700" >
+       <!-- 第一个圆为底色圆 -->
+       <circle cx="350" cy="350" r="300" fill="none"  stroke-width="40" stroke="grey"></circle>
+       <!-- 进度条圆形 -->
+       <circle class="process" 
+       transform="rotate(-90,350,350)" //与常见旋转起点不符合所以这里旋转-90度
+       cx="350"
+       cy="350"
+       r="300"
+       fill="none"
+       stroke="red"
+       stroke-width="40"
+       stroke-linecap="round"
+       stroke-dasharray="1,9000"
+       ></circle>
+       <text class="text" x="350" y="350" font-size="200" fill="red">1%</text>
+    </svg>
+
+    <div class=" btn add">+1</div>
+    <div class=" btn sub">-1</div>
+    <script src="./index.js"></script>
+</body>
+</html>

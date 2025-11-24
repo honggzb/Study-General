@@ -1,0 +1,26 @@
+body{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.text-box {
+    width: 1500px;
+    height: 500px;
+    background: linear-gradient(to right, black 50%, #fff 50%);
+    mix-blend-mode: hue;
+    border: 1px solid black;
+    margin: 200px auto;
+    line-height: 500px;
+    font-weight: 600;
+}
+
+.text {
+  color: #FFF;
+  font-size: 50px;
+  font-weight: 600;
+  mix-blend-mode: difference;
+  transition: all 0.2s;
+}
+.text-box:hover>.text{
+    transform: translate(550px);
+}

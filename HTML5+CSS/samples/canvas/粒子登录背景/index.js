@@ -1,0 +1,70 @@
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
+
+const ctx = canvas.getContext("2d")
+const mouse = {
+    x:0,
+    y:0
+}
+class Dot {
+    constructor(x, y) {
+        this.x = x
+        this.y = y
+        // x,y移动方向
+        this.dirX = Math.random() * 10 - 5
+        this.dirY = Math.random() * 10 - 5
+        this.color = `hsl(${Math.random() * 360},50%,50%)`
+    }
+    draw() {
+        ctx.beginPath()
+        ctx.fillStyle = this.color
+        ctx.arc(this.x, this.y, 5, 0, Math.PI * 2)
+        ctx.fill()
+        ctx.closePath()
+    }
+    updated() {
+        if (this.x > canvas.width || this.x <= 0) {
+            this.dirX = -this.dirX
+        }
+        if (this.y > canvas.height || this.y <= 0) {
+            this.dirY = -this.dirY
+        }
+        this.x += this.dirX
+        this.y += this.dirY
+        this.draw()
+    }
+}
+
+const arr = []
+function init() {
+    for (let i = 0; i < 100; i++) {
+        let dots = new Dot(Math.random() * canvas.height, Math.random() * canvas.height)
+        arr.push(dots)
+    }
+}
+init()
+function animate() {
+    requestAnimationFrame(animate)
+    ctx.fillStyle = "#000"
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    arr.forEach((item, index) => {
+        arr.forEach((items, indexs) => {
+            if (index == indexs) return
+            if (Math.abs(item.x - items.x) < 120 && Math.abs(item.y - items.y) < 120) {
+               item.color = `hsl(${Math.random() * 360},50%,50%)`
+                drawLine(item.x, item.y, items.x, items.y, item.color)
+            }
+        })
+        item.updated()
+    })
+}
+
+function drawLine(x, y, x1, y1, color) {
+    console.log(x, y, x1, y1)
+    ctx.beginPath()
+    ctx.strokeStyle = color
+    ctx.moveTo(x, y)
+    ctx.lineTo(x1, y1)
+    ctx.stroke()
+}
+animate()

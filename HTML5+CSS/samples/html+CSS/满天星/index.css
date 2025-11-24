@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000;
+    min-height: 100vh;
+}
+.balls {
+    display: flex;
+    align-items: center;
+}
+.balls span{
+    width: 30px;
+    height: 30px;
+    background-color: hsl(calc(var(--i) * 60), 100%, 70%);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin: 0 5px;
+    animation: animate 10s infinite linear;
+    animation-duration: calc(50s / var(--i));
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+   100%{
+        transform: translateY(-30px) scale(1);
+    }
+}

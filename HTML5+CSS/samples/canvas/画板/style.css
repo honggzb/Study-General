@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    background: #f6f3ec;
+    height: 100vh;
+    overflow: hidden;
+   
+  }
+  .btns{
+    width: 300px;
+    height: 100%;
+    float: right;
+    background-color: #b3a689;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .btns label{
+    margin: 15px 0;
+  }
+  button{
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+  }

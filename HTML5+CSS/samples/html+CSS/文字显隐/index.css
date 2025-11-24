@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color:#1d1c1c;
+    display: flex;
+}
+.content{
+    margin: auto;
+    color: #FFF;
+    font-size: 70px;
+    font-weight:bolder;
+    position: relative;
+}
+.content::before{
+    content:"HTML CSS JAVASCRIPT";
+    color: #06ee99;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 5px solid #06ee99;
+    animation: animate 8s linear infinite;
+    filter:drop-shadow(0 0 50px #06ee99)
+}
+@keyframes animate {
+    0%{
+        width: 0;
+    }
+    100%{
+       width: 100%;
+    }
+}

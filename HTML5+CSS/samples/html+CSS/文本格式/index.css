@@ -1,0 +1,19 @@
+body{
+    background-color: antiquewhite;
+    /* display: flex; */
+}
+div{
+    width: 100%;
+    height:500px;
+    border: 1px solid rgb(248, 151, 151);
+}
+textarea{
+    width:100%;
+    height: 200px;
+    margin-bottom: 30px;
+    outline: none;
+}
+
+.content{
+    white-space: pre;
+}

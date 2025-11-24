@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link  href="index.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="APP">
+      <button data-num="5">按钮</button>
+      <button data-num="5">按钮</button>
+
+    </div>
+    <script>
+      let btn1  = document.querySelector("button[data-num='5']");
+      setTimeout(() => {
+        btn1.setAttribute("data-num",555)
+        console.log(btn1.getAttribute('data-num'))
+      }, 2000);
+     
+
+    </script>
+</body>
+</html>

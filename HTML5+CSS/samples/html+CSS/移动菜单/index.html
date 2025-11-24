@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="tab">
+        <div class="item">首页</div>
+        <div class="item">购物车</div>
+        <div class="item">关于</div>
+        <div class="item">我的</div>
+        <div class="slide"></div>
+    </div>
+    <script>
+        let tab = document.querySelector(".tab");
+        let slide = document.querySelector(".slide")
+        tab.onclick = function (e) {
+            let items = this.querySelectorAll(".item");
+            items.forEach(item => {
+                item.style.color = "#5c5858"
+            })
+            // slide.style.width = e.target.offsetLeft + e.target.offsetWidth + 'px';
+            slide.style.left = e.target.offsetLeft + "px"
+            slide.ontransitionend = () => {
+                // slide.style.width = e.target.offsetWidth + 'px'
+                slide.style.left = e.target.offsetLeft + "px";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #66fcf7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poup {
+    width: 250px;
+    height: 100px;
+    background: #FFF;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 20px;
+    color: #7e7777;
+    position: relative;
+filter:drop-shadow(0 0 5px #797777)
+}
+.poup::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-top-color: #FFF;
+    position: absolute;
+    left: 15px;
+
+
+}

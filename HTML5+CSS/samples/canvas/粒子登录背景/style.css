@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#canvas{
+    background-color: #000;
+}
+body{
+    height: 100vh;
+    overflow: hidden;
+}
