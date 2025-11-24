@@ -1,5 +1,6 @@
 ```
 ├── 📂 Database/
+│   ├── 📄 4typesofSQL-joins.jpg
 │   ├── 📄 MongoDB-study.md
 │   ├── 📄 MongoDB的使用.md
 │   ├── 📄 MySql的安装和设置.md
