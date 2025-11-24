@@ -38,7 +38,6 @@ function unique(array){
 - [数组中flat方法](#数组中flat方法)
 - [失败重载](#失败重载)
 - [下载各种文件](#下载各种文件)
-- [Recommended IDE Setup](#recommended-ide-setup)
 
 ## JavaScript 单行代码
 
@@ -158,6 +157,3 @@ async function download() {
 btn.onclick = download
 ```
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
