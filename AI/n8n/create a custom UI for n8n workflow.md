@@ -56,8 +56,8 @@ On the left, I want there to be a sidebar that displays previous chats. I want i
 
 ## Sample 2 - Package Your n8n Workflows Into Full Web Apps
 
-- ![n8n-arch](n8n-arch.png)
-- ![con-to-n8n2](con-to-n8n2.png)
+- ![n8n-arch](./images/n8n-arch.png)
+- ![con-to-n8n2](./images/con-to-n8n2.png)
 - Payment: 
   - separate automation vs Stripe integrated
 - Platforms:
