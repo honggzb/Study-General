@@ -14,6 +14,8 @@
 │   │   ├── 📄create-UI-page.txt
 │   │   └── 📄prompt-tip.md
 │   ├── 📂n8n/
+│   │   ├── 📂samples/
+│   │   ├── 📄create a custom UI for n8n workflow.md
 │   │   ├── 📄hacker_new_to_email.json
 │   │   └── 📄浅尝n8n.md
 │   ├── 📄AI SDK by Vercel.md
