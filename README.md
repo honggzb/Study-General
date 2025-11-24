@@ -4,6 +4,7 @@
 - [Accessiblity](#accessiblity)
 - [AngularJS-study](#angularjs-study)
 - [Angular-Study](#angular-study)
+- [Axios](#axios)
 - [CI-CD](#ci-cd)
 - [Cloud-study](#cloud-study)
 - [Configuration Study - Build tools](#configuration-study---build-tools)
@@ -13,12 +14,14 @@
 - [Electron](#electron)
 - [Git Study](#git-study)
 - [GraphQL](#graphql)
-- [HTML5](#html5)
+- [HTML5+CSS](#html5+CSS)
 - [Hybrid Web](#hybrid-web)
 - [IDE](#ide)
+- [Interview](#interview)
 - [JAVA-Study](#java-study)
 - [Javascript-related-javascript学习过程中的小tip](#javascript-related-javascript学习过程中的小tip)
 - [Machine-Learning+AI](#machine-learningai)
+- [Micro-FrontEnd](#micro-frontEnd)
 - [Miscellaneous杂项](#miscellaneous杂项)
   - [Regular Expression - 正则表达式](#regular-expression---正则表达式)
 - [NodeJS 学习](#nodejs-学习)
@@ -42,6 +45,7 @@
 - [VirtualReality](#virtualreality)
 - [Visualisation+graphic](#visualisationgraphic)
 - [Vue](#vue)
+- [qita](#qita)
 
 --------------------------------------
 ## AI
@@ -62,6 +66,8 @@
 │   │   ├── 📄create-UI-page.txt
 │   │   └── 📄prompt-tip.md
 │   ├── 📂n8n/
+│   │   ├── 📂samples/
+│   │   ├── 📄Integrate n8n to web UI.md
 │   │   ├── 📄hacker_new_to_email.json
 │   │   └── 📄浅尝n8n.md
 │   ├── 📄AI SDK by Vercel.md
@@ -454,19 +460,26 @@
 
 [⬆ back to top](#top)
 
+## Axios
 ## CI-CD
 ## Cloud-study
 
 ```
+├── 📂Axios
+│       ├── 📄Axios请求与浏览器缓存控制.md
+│       └──
+├── 📂CI-CD
+│       ├── 📄Jenkins保姆级教程.md
+│       └── 
 ├── 📂Cloud-study
 │   ├── 📂AWS/
-│   │   ├── basic of aws.md
-│   │   └── Cloud computing focusing on AWS - DevOps - June 14.pdf
+│   │   ├── 📄basic of aws.md
+│   │   └── 📄Cloud computing focusing on AWS - DevOps - June 14.pdf
 │   ├── 📂Azure/
-│   │   ├── azure-path.jpg
-│   │   ├── AZ-900.md
-│   │   ├── DP-900.md
-│   │   └── az-90.md
+│   │   ├── 📄azure-path.jpg
+│   │   ├── 📄AZ-900.md
+│   │   ├── 📄DP-900.md
+│   │   └── 📄az-90.md
 ```
 
 [⬆ back to top](#top)
@@ -617,6 +630,7 @@
 
 ```
 ├── 📂 Database/
+│   ├── 📄 4typesofSQL-joins.jpg
 │   ├── 📄 MongoDB-study.md
 │   ├── 📄 MongoDB的使用.md
 │   ├── 📄 MySql的安装和设置.md
@@ -628,6 +642,16 @@
 ## Electron
 
 ```
+├── 📂Debug-Skill调试技巧/
+│   ├── 📄Chrome DevTools基础技巧.md
+│   ├── 📄Chrome中设置可以CROS.md
+│   ├── 📄Remote-Debugging-IOS.md
+│   ├── 📄VS code中Debug Angular应用.md
+│   ├── 📄Chrome DevTools技巧.md
+│   ├── 📄chrome developer tool调试技巧.md
+│   ├── 📄性能调试之RAIL模式.md
+│   ├── 📄性能调试之memory分析.md
+│   └── 
 ├── 📂Electron/
 │   ├── 📄Electron学习1--初识.md
 │   ├── 📄Electron学习2--托盘Tray.md
@@ -647,48 +671,83 @@
 |    └── 📄git常用命令速查表.md   
 ```
 
+[⬆ back to top](#top)
+
 ## GraphQL
-## HTML5
 
 ```
-├── 📂Database学习/
-│   ├──MySql的安装和设置.md
-│   ├──Redis安装、配置和使用.md
-│   ├──MongoDB的使用.md
-│   └──
-│
-├── 📂Debug-Skill调试技巧/
-│   ├── Chrome DevTools基础技巧.md
-│   ├── Chrome中设置可以CROS.md
-│   ├── Remote-Debugging-IOS.md
-│   ├── VS code中Debug Angular应用.md
-│   ├── Chrome DevTools技巧.md
-│   ├── chrome developer tool调试技巧.md
-│   ├── 性能调试之RAIL模式.md
-│   ├── 性能调试之memory分析.md
-│   └── 
-│
-├── 📂Git Study/
-│   ├── name-contest/   # test案例
-│   ├──readme.md
-│   └──
-│
 ├── 📂GraphQL/
 │    ├── 📂name-contests/                 ---create scalable GraphQL API project
 |    ├── 📂vue3-nest-graphql-prisma/      ---
 │    ├── 📄Apollo Client support for the Next.js App Router.md
 │    ├── 📄GraphQL General Concept.md
+│    └── 📄graphql-basic.md.md
+```
+
+## HTML5+CSS
+
+```
+├── 📂HTML5+CSS/
+│    ├── 📂HTML5原生JS-全面/                 --- HTML5原生API示例
+|    ├── 📂samples/
+|    |    ├── 📂canvas/
+│    |    |      ├── 📂任意多边形/
+│    |    |      ├── 📂烟花/
+│    |    |      ├── 📂爆炸/
+│    |    |      ├── 📂画板/
+│    |    |      ├── 📂碰壁折返线条/
+│    |    |      ├── 📂粒子登录背景/
+│    |    |      ├── 📂跟随鼠标旋转/
+│    |    |      └── 📂鼠标效果/
+|    |    └── 📂html+CSS/
+│    |           ├── 📂displaytable/
+│    |           ├── 📂flexbox/
+│    |           ├── 📂input验证/
+│    |           ├── 📂loading/
+│    |           ├── 📂loading合集/
+│    |           ├── 📂svg圆形进度条/
+│    |           ├── 📂下雨/
+│    |           ├── 📂交错的环/
+│    |           ├── 📂包围阴影/
+│    |           ├── 📂发光灯泡/
+│    |           ├── 📂小球穿梭放大loading动画/
+│    |           ├── 📂小角标/
+│    |           ├── 📂打字信/
+│    |           ├── 📂按钮/
+│    |           ├── 📂按钮效果/
+│    |           ├── 📂换衣服/
+│    |           ├── 📂摇晃小瓶/
+│    |           ├── 📂文字包围/
+│    |           ├── 📂文字显隐/
+│    |           ├── 📂文字跳动loading/
+│    |           ├── 📂文字顺序显示/
+│    |           ├── 📂文本格式/
+│    |           ├── 📂旋涡/
+│    |           ├── 📂标签通信/
+│    |           ├── 📂模拟杯子水面/
+│    |           ├── 📂满天星/
+│    |           ├── 📂灯笼/
+│    |           ├── 📂盒子/
+│    |           ├── 📂移动菜单/
+│    |           ├── 📂简易导航栏/
+│    |           ├── 📂菜单按钮/
+│    |           ├── 📂蜡烛/
+│    |           ├── 📂融合效果/
+│    |           ├── 📂角向渐变线条 border 效果/
+│    |           ├── 📂跟随鼠标旋转/
+│    |           ├── 📂边框转动按钮/
+│    |           ├── 📂锥形渐变/
+│    |           ├── 📂音乐-表白demon/
+│    |           ├── 📂颜色自适应/
+│    |           └── 📄Radio button and number input both within label.html
+│    ├── 📄Service Workers- HTML5 Web push notifications桌面通知.md
+│    ├── 📄Web Worker- JS多线程编程.md
+│    ├── 📄Web Worker- JS多线程编程源码.rar
+│    ├── 📄getUserMedia-使用HTML5技术控制电脑或手机上的摄像头.md
+│    ├── 📄web-workers-demo-master.zip
+│    ├── 📄应用缓存App Cache指南.md
+│    ├── 📄让webApp更快的HTML5最佳实践.md
 │    └── 
-│
-├── 📂HTML5/
-│   ├── getUserMedia-使用HTML5技术控制电脑或手机上的摄像头.md
-│   ├── Web Worker- JS多线程编程.md
-│   │   ├── Web Worker- JS多线程编程源码
-│   │   └── web-workers-demo-master.zip
-│   ├── 让web app更快的HTML5最佳实践.md
-│   ├── 应用缓存App Cache指南.md
-│   ├── IntersectionObserver API: defer, lazy-load.md
-│   └── Service Workers- HTML5 Web push notifications桌面通知.md
 ```
 
 [⬆ back to top](#top)
@@ -719,7 +778,6 @@
 [⬆ back to top](#top)
 
 ## IDE
-## JAVA-Study
 
 ```
 ├── 📂IDE/
@@ -749,12 +807,44 @@
 |    ├── 📄Source Map应用技巧.md
 |    ├── 📄my-chrome-extension.md
 |    ├── 📄node+npm_update.md
-│    └── 📦notepad++-plugin.zip                  # JSONFormat, Markdown view     
+│    └── 📦notepad++-plugin.zip                  # JSONFormat, Markdown view
 ```
 
 [⬆ back to top](#top)
 
-## Javascript-related-javascript学习过程中的小tip
+## JAVA-Study
+## Interview
+
+```
+├── 📂JAVA-Study
+├── 📂interview
+│   ├── 📂Javascript-code/
+│   │   ├──📂Coderbyte/
+│   │   │   ├──📂angular/
+│   │   │   ├──📂easy/
+│   │   │   ├──📂hard/
+│   │   │   ├──📂medium/
+│   │   │   ├──📄angular-tic-tac-toe.js
+│   │   │   ├──📄coderbyte- solutions -javascript .pdf
+│   │   │   └──📄javascript-tt.js
+│   │   ├──📄Javascript面试之数组的几个不low操作.md
+│   │   └── 📄前端面试基本知识点—javascript.md
+│   ├── 📄1. 一次性加载几万条数据，要求不卡住界面.md
+│   ├── 📄2. 10 个 Ajax 同时发起请求.md
+│   ├── 📄Behavioral Interview.md
+│   ├── 📄Lead Front end Developer questions.md
+│   ├── 📄Leadership Principles.md
+│   ├── 📄NodeJs interview.md
+│   ├── 📄Soft-skill.md
+│   ├── 📄System Design Interview.md
+│   ├── 📄angular vs angularJS.md
+│   ├── 📄angular-interview.md
+│   └── 📄react interview.md
+```
+
+[⬆ back to top](#top)
+
+## Javascript+JQuery+Typescript
 
 ```
 ├── 📂Javascript+JQuery+Typescript
@@ -927,12 +1017,6 @@
 ## PWA
 ## Python+R
 ## React
-## Salesforce
-## Security   --安全
-## Storybook
-## System-Design+Algrithm+performances
-## Theory 理论和源码
-## VirtualReality   #虚拟现实
 
 ```
 ├── 📂NODEJS-Study
@@ -1039,7 +1123,18 @@
 │     ├── 📄React常见问题讨论.md
 │     ├── 📄react-official-document-study.md
 │     └── 📄react官网学习小结-2023版.md
-│
+```
+
+[⬆ back to top](#top)
+
+## Salesforce
+## Security   --安全
+## Storybook
+## System-Design+Algrithm+performances
+## Theory 理论和源码
+## VirtualReality   #虚拟现实
+
+```
 ├── 📂Salesforce/
 │
 ├── 📂Security   --安全
@@ -1089,69 +1184,31 @@
 
 [⬆ back to top](#top)
 
-## interview
-## qita
 ## thirdParty-lib
 ## UX
 ## VirtualReality
 
 ```
-├── 📂interview
-│   ├── 📂Javascript-code/
-│   │   ├──📂Coderbyte/
-│   │   │   ├──📂angular/
-│   │   │   ├──📂easy/
-│   │   │   ├──📂hard/
-│   │   │   ├──📂medium/
-│   │   │   ├──📄angular-tic-tac-toe.js
-│   │   │   ├──📄coderbyte- solutions -javascript .pdf
-│   │   │   └──📄javascript-tt.js
-│   │   ├──📄Javascript面试之数组的几个不low操作.md
-│   │   └── 📄前端面试基本知识点—javascript.md
-│   ├── 📄1. 一次性加载几万条数据，要求不卡住界面.md
-│   ├── 📄2. 10 个 Ajax 同时发起请求.md
-│   ├── 📄Behavioral Interview.md
-│   ├── 📄Lead Front end Developer questions.md
-│   ├── 📄Leadership Principles.md
-│   ├── 📄NodeJs interview.md
-│   ├── 📄Soft-skill.md
-│   ├── 📄System Design Interview.md
-│   ├── 📄angular vs angularJS.md
-│   ├── 📄angular-interview.md
-│   └── 📄react interview.md
-│
-├── qita/
-│   ├── Microsoft-Teams/
-│   │   ├── images/
-│   │   └── teams-tip.md
-│   ├── scrum/
-│   │   ├── Scrum-study note.md
-│   │   └── scrum-in-JIRA-study-note.md
-│   ├── Apache ActiveMQ-intro.md
-│   ├── Financial Statements.md
-│   ├── Team-structure.md
-│   ├── convert-octet-stream-to-image.md
-│   ├──fareware.md
-│   ├──gameTools.md
-│   ├── investment bank.md
-│   └── window-user-password.md
-|
-├── thirdParty-lib
+├── 📂thirdParty-lib/
 │   ├── thirdParty-library/
 │   ├── autoNumber-study.md
 │   ├── lodash学习笔记.md
 │   ├── moment-study.md
 │   ├── undersore-booknote.md   
 │   └── 
-│
-├── VirtualReality   #虚拟现实
+├── 📂UX/  
+├── 📂VirtualReality/   #虚拟现实
 │   ├── resource.md
 │   └── Detect WebVR Support with JavaScript.md
+│
 ```
+
+[⬆ back to top](#top)
 
 ## Visualisation+graphic
 
 ```
+├── 📂Visualisation+graphic/
 │   ├── 📂Canvas/
 │   │   ├── 📄char-raining-effect.html
 │   │   └──   
@@ -1273,6 +1330,8 @@
 │   └── 
 ```
 
+[⬆ back to top](#top)
+
 ## Vue
 
 ```
@@ -1339,6 +1398,28 @@
 └──常用对照表.md
 ```
 
+[⬆ back to top](#top)
+
+## qita
+
+```
+│
+├── qita/
+│   ├── Microsoft-Teams/
+│   │   ├── images/
+│   │   └── teams-tip.md
+│   ├── scrum/
+│   │   ├── Scrum-study note.md
+│   │   └── scrum-in-JIRA-study-note.md
+│   ├── Apache ActiveMQ-intro.md
+│   ├── Financial Statements.md
+│   ├── Team-structure.md
+│   ├── convert-octet-stream-to-image.md
+│   ├──fareware.md
+│   ├──gameTools.md
+│   ├── investment bank.md
+│   └── window-user-password.md
+```
 [front-end-handbook-2017](https://www.gitbook.com/book/frontendmasters/front-end-handbook-2017/details)
 
 Framework| Benifits| Drawbacks
