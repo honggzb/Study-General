@@ -79,5 +79,6 @@
 
 > references
 - [React and the JAMstack: Building Modern Web Applications in 2025](https://www.growin.com/blog/react-and-the-jamstack-web-applications-2025/)
+- [awesome-jamstack](https://github.com/automata/awesome-jamstack) github
 
 
