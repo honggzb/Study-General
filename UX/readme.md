@@ -9,6 +9,7 @@
 ## resources
 
 - [bosenger's gitee](https://gitee.com/bosenger)
+- [推荐20个Figma插件，不仅好用还免费！](https://pixso.cn/designskills/figmaplugins/)
 
 ## UX AI tools
 
