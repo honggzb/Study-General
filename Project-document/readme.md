@@ -54,4 +54,11 @@ mail-ai        | Shadcn ui,Tailwind          | ui library             | toggle t
                | PostgreSQL, neon            | DB                     |
                | Prisma                      | DB ORM                 |
                | OpenAI(Embeddings)          |                        |
+---------------|-----------------------------|------------------------|--------------------------
+               | NextAuth                    | Authentication         | login/logout auth
+               | Prisma                      | DB ORM                 |
+AI Quiz        | lucide-react                | icon library           |
+               | OpenAI                      |                        |
+               | react-d3-cloud              | word cloud             |
+               | react query                 | state management       |
 ```
