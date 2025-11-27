@@ -30,6 +30,8 @@ const {
   } = useForm<SignUpSchema>({
     resolver: zodResolver(registerFormSchema)
   });
+// ...
+<input {...register("phoneNo")} ...
 ```
 
 ## project structure
