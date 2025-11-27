@@ -11,6 +11,27 @@
 
 1. create 'utils\zod-schemas.ts'
    1. define `registerFormSchema` schema
-   2. define `SignUpSchema` type
-   3. define `SignUpFields` type
+   2. define `SignUpSchema` type --> `useForm` all form
+   3. define `SignUpFields` type --> each field of form
 2. use it in react-hook-form
+
+## project structure
+
+```
+react-hook-form-zod
+├─ 📂app
+│  ├─ 📂api/
+│  │  └─ 📂register/
+│  │     └─ 📄route.ts     # test api
+│  ├─ 📂react-hook-form-with-zod/
+│  │   └─ 📄page.tsx
+│  ├─ 📂simple-form/
+│  │   └─ 📄page.tsx
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  └─ page.tsx
+├─ 📂public/
+├─ tsconfig.json
+└─ 📂utils/
+   └─ 📄zod-schemas.ts
+```
