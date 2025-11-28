@@ -57,11 +57,14 @@
 
 ```
 -----------------------------|-------------------------------------------------------------------------
+*ES7 React/Redux/GraphQL     | 代码快捷键如rafce
+</React-Native snippets      |
 *beautify                    |良好的拓展性，可以格式化JSON|JS|HTML|CSS|SCSS,比内置格式化好用
 *auto close tag              | 匹配标签，关闭对应的标签。很实用【HTML/XML】
 *auto rename tag             | Auto Rename Tag : sublime和webstorm也有这个内置功能， 改变标签的时候同时改动开闭合标签；【HTML/XML】
 *change-case                 | 各种字符格式化
-*json2ts                     | converts a JSON to TypeScript interfaces
+*Paste JSON as Code          | converts a JSON to any language
+json2ts                      | converts a JSON to TypeScript interfaces
 *npm                         |
 *npm intellisense            |   
 *open in browser             |

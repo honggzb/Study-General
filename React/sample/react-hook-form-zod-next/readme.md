@@ -14,6 +14,9 @@
    2. define <mark>`SignUpSchema`</mark> type --> `useForm` all form
    3. define <mark>`SignUpFields`</mark> type --> each field of form
 2. use it in react-hook-form
+3. enter in browser
+   - `localhost:3000/simple-form`
+   - `localhost:3000/react-hook-form-with-zod`
 
 ```ts
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -27,6 +30,8 @@ const {
   } = useForm<SignUpSchema>({
     resolver: zodResolver(registerFormSchema)
   });
+// ...
+<input {...register("phoneNo")} ...
 ```
 
 ## project structure
