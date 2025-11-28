@@ -21,6 +21,7 @@
 │  └─ 📂ui/                  - shadcn ui
 │     ├─ 📄card.tsx
 │     └─ 📄skeleton.tsx
+├─ 📂generated/              - prisma
 ├─ 📂lib/
 │  ├─ 📄prisma.ts
 │  └─ 📄utils.ts             - shadcn ui
