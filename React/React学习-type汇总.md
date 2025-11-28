@@ -1,13 +1,13 @@
 ## React学习-type汇总
 
 ```ts
-// --------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
 // 1. 
 function MyButton({ title }: { title: string }) {
   return ( ... );
 }
 
-// --------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
 // 2. inline syntax
 interface MyButtonProps {
   title: string;
@@ -17,7 +17,7 @@ function MyButton({ title, disabled }: MyButtonProps) {
    return ( ... );
 }
 
-// --------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
 // 3. useState
    // Explicitly set the type to "boolean"
 const [enabled, setEnabled] = useState<boolean>(false);
@@ -32,7 +32,7 @@ type RequestState =
   | { status: 'error', error: Error };
 const [requestState, setRequestState] = useState<RequestState>({ status: 'idle' });
 
-// --------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
 // 4. useReducer: takes a reducer function and an initial state
 nterface State {     // describes the shape of the reducer’s state
    count: number
@@ -62,19 +62,19 @@ export default function App() {
   const [state, dispatch] = useReducer<State>(stateReducer, initialState);
 }
 
-// --------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
 // 5. useContext: type of the value provided by the context is inferred from the value passed to the createContext call
 import { createContext, useContext, useState } from 'react';
 type Theme = "light" | "dark" | "system";
 const ThemeContext = createContext<Theme>("system");
 const useGetTheme = () => useContext(ThemeContext);
 
-// --------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
 // 6. useMemo: The result of calling the Hook is inferred from the return value from the function in the first parameter
    // The type of visibleTodos is inferred from the return value of filterTodos
 const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]);
 
-// --------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
 // 7. useCallback: the function’s type is inferred from the return value of the function in the first parameter,
  const [value, setValue] = useState("Change me");
  const handleChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>((event) => {
