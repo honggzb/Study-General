@@ -24,11 +24,18 @@
 │     │    ├── 📄React性能优化之0-general.md
 │     │    ├── 📄React性能优化之1-组件优化.md
 │     │    └── 
-│     ├──  📂The Complete React Developer Course -w Hooks and Redux- Andrew Mead/
 │     ├──  📂sample/
 │     │    ├── 📂DazhongDianPint-React/docs/
+│     │    ├── 📂The Complete React Developer Course -w Hooks and Redux- Andrew Mead/
 │     │    ├── 📂Tic-Tac-Toe/
-│     │    └── reactSampleBasic-04062016.rar
+│     │    ├── 📂nextJS/
+│     │    │     ├── 📂 01-fetching-basic-api-dynamic-route/
+│     │    │     ├── 📂 02--fetching-api-CRUD/
+│     │    │     └── 📂
+│     │    ├── 📂react-hook-form-zod-next
+│     │    ├── 📄Tic-Tac-Toe.js
+│     │    ├── 📄reactSampleBasic-04062016.rar
+│     │    └── 📄scrolling to bottom while text showing.md
 │     ├── 📄React State Management libraries in 2024.md
 │     ├── 📄React学习-Context.md
 │     ├── 📄React学习-Design Patterns.md
