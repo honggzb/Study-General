@@ -1,6 +1,7 @@
 [有用的和常用的](#top)
 
 - [在nextjs中使用外部image](#在nextjs中使用外部image)
+- [Enabling Next.js MCP Server for Coding Agents](#enabling-nextjs-mcp-server-for-coding-agents)
 - [Prisma setup](#prisma-setup)
 - [Data fetch-CRUD](https://github.com/honggzb/Study-General/blob/master/React/NextJS/NextJs%E5%AD%A6%E4%B9%A0-Data%20Fetching-2024.md)
 - [using google font in nextjs](#using-google-font-in-nextjs)
@@ -25,6 +26,24 @@ const nextConfig: NextConfig = {
     ],
   },
 };
+
+## Enabling Next.js MCP Server for Coding Agents
+
+- need Next.js 16+
+1. install [next-devtools-mcp](https://www.npmjs.com/package/next-devtools-mcp) package
+   - `npm i next-devtools-mcp`
+2. Add 'next-devtools-mcp' to the `.mcp.json` file at the root of your project
+
+```JSON
+{
+  "mcpServers": {
+    "next-devtools": {
+      "command": "npx",
+      "args": ["-y", "next-devtools-mcp@latest"]
+    }
+  }
+}
+```
 
 ## Prisma setup
 
