@@ -1,0 +1,560 @@
+[00:00:03.960] Server  LOG      ✓ Ready in 2.7s
+[00:00:07.119] Server  LOG      ○ Compiling /products ...
+[00:00:12.615] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:16.397] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:19.384] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:01:47.547] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:15.519] Server  LOG      ✓ Compiled in 767ms
+[00:02:20.180] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.223] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.240] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.253] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.256] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.271] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.273] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.279] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.285] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:20.307] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.318] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.320] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.329] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.330] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.333] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.335] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.337] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:20.340] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:23.365] Server  LOG      ○ Compiling /_error ...
+[00:02:24.586] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.587] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.589] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.590] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.596] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.598] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.599] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.599] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.600] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:24.606] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.607] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.619] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.639] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.664] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.688] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.703] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.719] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:24.734] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:25.084] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.154] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.171] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.204] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.206] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.217] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.218] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.220] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.233] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:25.240] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.254] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.256] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.269] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.270] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.272] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.273] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.285] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.286] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:25.522] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.534] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.535] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.538] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.548] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.551] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.556] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.567] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.572] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:25.586] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.588] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.589] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.599] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.600] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.601] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.603] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.604] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.616] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:25.886] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.887] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.889] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.890] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.903] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.904] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.906] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.916] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.918] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:25.933] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.934] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.937] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.939] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.950] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.953] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.954] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.956] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:25.986] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:26.352] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.354] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.367] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.385] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.399] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.405] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.422] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.438] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.452] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:26.467] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.472] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.481] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.486] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.488] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.503] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.505] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.507] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:26.516] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:27.017] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.038] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.083] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.100] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.132] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.139] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.152] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.164] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.171] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:27.181] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.196] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.216] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.233] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.239] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.257] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.269] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.282] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.298] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:27.798] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.802] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.915] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.982] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:27.998] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.014] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.016] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.018] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.019] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:28.031] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.035] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.039] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.134] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.184] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.207] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.221] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.223] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.233] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:28.899] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.918] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.940] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.955] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.973] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:28.987] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.004] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.013] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.019] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:29.031] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.050] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.056] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.100] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.104] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.106] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.118] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.120] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.137] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:29.284] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.285] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.289] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.317] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.338] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.354] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.356] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.372] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.401] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:29.407] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.413] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.423] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.445] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.497] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.531] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.551] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.556] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.564] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:29.835] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.848] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.850] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.852] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.855] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.857] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.867] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.872] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.901] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:29.906] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.923] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.934] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:29.938] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.036] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.080] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.206] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.215] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.281] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:30.615] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.622] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.644] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.670] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.680] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.683] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.685] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.688] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.690] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:30.704] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.705] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.706] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.714] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.737] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.752] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.767] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.771] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.783] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:30.939] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.944] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.948] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.950] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.951] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.952] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.953] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.954] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.955] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:30.966] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.967] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.970] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.971] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:30.973] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.112] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.121] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.133] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.185] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:31.672] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.681] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.686] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.688] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.698] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.703] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.706] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.715] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.736] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:31.768] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.770] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.780] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.785] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.789] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.807] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.835] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.840] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:31.851] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:32.301] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.302] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.303] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.315] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.318] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.319] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.331] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.334] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.335] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:32.350] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.351] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.360] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.363] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.365] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.366] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.368] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.381] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.382] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:32.655] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.656] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.669] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.705] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.716] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.722] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.730] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.732] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.734] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:32.767] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.772] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.803] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.830] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.850] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.868] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.894] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.916] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:32.928] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:33.686] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.690] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.723] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.750] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.807] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.822] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.834] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.854] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.865] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:33.882] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.886] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.887] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.889] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.897] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.903] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.905] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.906] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:33.913] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:34.136] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.146] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.150] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.169] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.179] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.183] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.235] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.254] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.270] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:34.298] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.304] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_next_dist_235e25e2._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.306] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.339] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.350] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.369] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.373] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.384] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:02:34.387] Server  ERROR    ⨯ Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:35.822] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/products/[productid]/page"
+[00:02:50.106] Server  LOG      ✓ Compiled in 278ms
+[00:02:52.002] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:01.616] Server  LOG      ✓ Compiled in 0ms
+[00:03:03.148] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:30.098] Server  LOG      ✓ Compiled in 55ms
+[00:03:31.203] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:40.923] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:42.771] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:45.834] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:49.085] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:51.915] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:14.603] Server  LOG      ✓ Compiled in 131ms
+[00:06:09.332] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:11.502] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_473cc24e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:11.582] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__d0094920._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:11.600] Server  WARN    Error: Route "/products/[productid]" used `params.productid`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:06:11.837] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__d0094920._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:06:11.850] Server  ERROR    ⨯ Error: could not get product
+[00:06:13.087] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:13.087] Browser ERROR   uncaughtError: Error: could not get product
+[00:08:23.519] Server  LOG      ✓ Compiled in 58ms
+[00:08:23.957] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_473cc24e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:23.959] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__d0094920._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:23.959] Server  WARN    Error: Route "/products/[productid]" used `params.productid`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:08:24.327] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__d0094920._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:24.328] Server  ERROR    ⨯ Error: could not get product
+[00:08:25.325] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:25.325] Browser ERROR   uncaughtError: Error: could not get product
+[00:08:33.605] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:34.426] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:08:34.974] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_473cc24e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:34.975] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__d0094920._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:34.976] Server  WARN    Error: Route "/products/[productid]" used `params.productid`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:08:35.084] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__d0094920._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:08:35.085] Server  ERROR    ⨯ Error: could not get product
+[00:08:35.422] Browser ERROR   uncaughtError: Error: could not get product
+[00:08:44.505] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:45.021] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:12:38.958] Server  LOG      ✓ Compiled in 55ms
+[00:12:59.740] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:00.293] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__d0094920._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:13:00.301] Server  ERROR    ⨯ ReferenceError: params is not defined
+[00:13:01.508] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:01.739] Browser ERROR   uncaughtError: ReferenceError: params is not defined
+[00:13:16.401] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:16.912] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:13:21.256] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__d0094920._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:13:21.257] Server  ERROR    ⨯ ReferenceError: params is not defined
+[00:13:21.507] Browser ERROR   uncaughtError: ReferenceError: params is not defined
+[00:17:12.958] Server  LOG      ✓ Compiled in 62ms
+[00:17:14.339] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:20.126] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:17:23.036] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:23.643] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:17:24.011] Server  LOG     Slug: undefined
+[00:17:25.102] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:04.761] Server  LOG      ✓ Compiled in 72ms
+[00:18:05.042] Server  LOG     Slug: undefined
+[00:18:05.163] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_473cc24e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:05.191] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\client\lib\console.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:05.193] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\node-environment-extensions\console-file.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:05.194] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\node-environment-extensions\console-exit.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:05.196] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\node-environment-extensions\console-dim.external.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:05.209] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:05.211] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__d0094920._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:05.212] Server  WARN    Error: Route "/products/[productid]" used `...params` or similar expression. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:18:05.212] Server  LOG     {}
+[00:18:10.309] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:11.413] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:18:15.161] Server  LOG     Slug: undefined
+[00:18:15.163] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_473cc24e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:15.167] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\client\lib\console.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:15.168] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\node-environment-extensions\console-file.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:15.169] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\node-environment-extensions\console-exit.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:15.170] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\node-environment-extensions\console-dim.external.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:15.173] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:15.173] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__d0094920._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:18:15.174] Server  WARN    Error: Route "/products/[productid]" used `...params` or similar expression. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:18:15.174] Server  LOG     {}
+[00:19:16.547] Server  LOG      ✓ Compiled in 77ms
+[00:19:16.758] Server  LOG     productid: "1"
+[00:19:16.811] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_473cc24e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:16.812] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\client\lib\console.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:16.813] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\node-environment-extensions\console-file.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:16.820] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\node-environment-extensions\console-exit.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:16.822] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\node-environment-extensions\console-dim.external.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:16.844] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:16.846] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__d0094920._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:16.846] Server  WARN    Error: Route "/products/[productid]" used `...params` or similar expression. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:19:16.846] Server  LOG     {}
+[00:19:23.674] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:24.505] Server  LOG     productid: "1"
+[00:19:24.510] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\node_modules_473cc24e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:24.511] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\client\lib\console.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:24.512] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\node-environment-extensions\console-file.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:24.514] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\node-environment-extensions\console-exit.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:24.521] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\node-environment-extensions\console-dim.external.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:24.524] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:24.525] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__d0094920._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:19:24.526] Server  WARN    Error: Route "/products/[productid]" used `...params` or similar expression. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+[00:19:24.526] Server  LOG     {}
+[00:19:25.388] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:28.798] Server  LOG      ✓ Compiled in 67ms
+[00:20:29.178] Server  LOG     productid: "1"
+[00:20:33.775] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:36.106] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:36.482] Server  LOG     productid: "1"
+[00:20:37.431] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:52.846] Server  LOG      ✓ Compiled in 67ms
+[00:20:53.042] Server  LOG     productid: "1"
+[00:20:53.081] Server  LOG     {}
+[00:20:57.065] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:57.756] Server  LOG     productid: "2"
+[00:20:57.955] Server  LOG     {}
+[00:20:58.860] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:36.481] Server  LOG      ✓ Compiled in 140ms
+[00:24:41.899] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:43.475] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:25:40.308] Browser ERROR   ./app/products/[productid]/page.tsx:3:1
+Parsing ecmascript source code failed
+  1 | import SingleProduct from
+  2 |
+> 3 | async function getProduct(productid: string) {
+    | ^^^^^
+  4 |   const res = await fetch(`https://dummyjson.com/products/${productid}`);
+  5 |   if (!res.ok) {
+  6 |     throw new Error("could not get product data");
+
+Unexpected token `async`. Expected a string literal
+[00:26:25.463] Server  LOG      ✓ Compiled in 174ms
+[00:26:27.810] Server  LOG     productid: "1"
+[00:26:28.015] Server  LOG     {}
+[00:26:28.077] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__f935bf1c._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:26:28.079] Server  ERROR    ⨯ ReferenceError: singleProductData is not defined
+[00:26:28.317] Browser ERROR   uncaughtError: ReferenceError: singleProductData is not defined
+[00:26:45.021] Server  LOG      ✓ Compiled in 47ms
+[00:26:45.401] Server  LOG     productid: "1"
+[00:26:45.779] Server  LOG     {}
+[00:26:47.007] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:47.300] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:26:47.300] Browser ERROR   Image is missing required "alt" property. Please add Alternative Text to describe the image for screen readers and search engines.
+[00:26:53.971] Server  LOG     productid: "2"
+[00:26:54.063] Server  LOG     {}
+[00:26:54.246] Browser ERROR   Image is missing required "alt" property. Please add Alternative Text to describe the image for screen readers and search engines.
+[00:26:54.246] Browser ERROR   Image is missing required "alt" property. Please add Alternative Text to describe the image for screen readers and search engines.
+[00:26:59.450] Server  LOG     productid: "5"
+[00:26:59.517] Server  LOG     {}
+[00:26:59.717] Browser ERROR   Image is missing required "alt" property. Please add Alternative Text to describe the image for screen readers and search engines.
+[00:26:59.717] Browser ERROR   Image is missing required "alt" property. Please add Alternative Text to describe the image for screen readers and search engines.
+[00:28:12.495] Server  LOG      ✓ Compiled in 103ms
+[00:28:29.200] Server  LOG      ✓ Compiled in 1494ms
+[00:28:57.634] Server  LOG      ✓ Compiled in 262ms
+[00:29:03.814] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:04.567] Server  LOG     productid: "1"
+[00:29:04.990] Server  LOG     {}
+[00:29:05.808] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:06.099] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:29:06.099] Browser ERROR   Image is missing required "alt" property. Please add Alternative Text to describe the image for screen readers and search engines.
+[00:30:09.031] Server  LOG      ✓ Compiled in 306ms
+[00:30:09.705] Server  LOG     productid: "1"
+[00:30:09.731] Server  LOG     {}
+[00:30:15.693] Server  LOG     productid: "2"
+[00:30:15.797] Server  LOG     {}
+[00:30:20.029] Server  LOG     productid: "3"
+[00:30:20.236] Server  LOG     {}
+[00:32:27.791] Server  LOG      ✓ Compiled in 245ms
+[00:32:28.137] Server  LOG     productid: "3"
+[00:32:28.234] Server  LOG     {}
+[00:32:39.501] Server  LOG     productid: "6"
+[00:32:39.620] Server  LOG     {}
+[00:32:45.730] Server  LOG     productid: "7"
+[00:32:46.095] Server  LOG     {}
+[00:33:18.986] Server  LOG     productid: "11"
+[00:33:19.195] Server  LOG     {}
+[00:33:25.111] Server  LOG     productid: "9"
+[00:33:25.187] Server  LOG     {}
+[00:33:43.595] Server  LOG     productid: "12"
+[00:33:43.751] Server  LOG     {}
+[00:34:34.695] Server  LOG     productid: "17"
+[00:34:34.887] Server  LOG     {}
+[00:49:16.804] Server  LOG     productid: "24"
+[00:49:17.034] Server  LOG     {}
+[00:49:28.288] Server  LOG     productid: "29"
+[00:49:28.445] Server  LOG     {}
+[01:04:19.980] Server  LOG      ✓ Compiled in 69ms
+[01:04:35.013] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:35.612] Server  LOG     productid: "25"
+[01:04:35.965] Server  LOG     {}
+[01:04:37.243] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:37.481] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/groceries/green-bell-pepper/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:04:40.634] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:41.075] Server  LOG     productid: "27"
+[01:04:41.395] Server  LOG     {}
+[01:04:42.414] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:42.711] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/groceries/honey-jar/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:04:46.496] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:47.784] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:05:38.609] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:05:40.183] Server  LOG     productid: "26"
+[01:05:40.483] Server  LOG     {}
+[01:05:41.442] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:05:41.701] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/groceries/green-chili-pepper/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:09:00.341] Server  LOG      ✓ Compiled in 89ms
+[01:09:00.746] Server  LOG     productid: "26"
+[01:09:00.762] Server  LOG     {}
+[01:09:10.314] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:09:11.201] Server  LOG     productid: "2"
+[01:09:11.653] Server  LOG     {}
+[01:09:12.544] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:09:12.830] Browser WARN    Image with src "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/1.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[01:09:54.991] Server  LOG     productid: "29"
+[01:09:55.178] Server  LOG     {}

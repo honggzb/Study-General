@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/project/react-study/react-hook-form-zod/app/page.tsx"],"sourcesContent":["import Link from \"next/link\";\n\nexport default function Home() {\n  return (\n    <main className=\"flex flex-col items-center justify-between min-h-screen p-24\">\n      <h1 className=\"text-6xl\">Welcome to product project</h1>\n      <Link href={\"/products\"} className=\"text-2xl underline mt-4\">\n        Explore Products\n      </Link>\n    </main>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS;IACtB,qBACE,8OAAC;QAAK,WAAU;;0BACd,8OAAC;gBAAG,WAAU;0BAAW;;;;;;0BACzB,8OAAC,0LAAI;gBAAC,MAAM;gBAAa,WAAU;0BAA0B;;;;;;;;;;;;AAKnE"}}]
+}
