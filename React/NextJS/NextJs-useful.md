@@ -26,6 +26,7 @@ const nextConfig: NextConfig = {
     ],
   },
 };
+```
 
 ## Enabling Next.js MCP Server for Coding Agents
 
