@@ -10,8 +10,7 @@
 - 🚨 Tutorial
 - 👉 goto
 - 📦
-- 📂
-- 📄
+- 📂 📄 
 - ✅
 
 ## Highlight && Strikethrough
