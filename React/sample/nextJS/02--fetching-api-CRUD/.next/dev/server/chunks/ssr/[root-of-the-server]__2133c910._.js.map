@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/project/react-study/react-hook-form-zod/app/products/%5Bproductid%5D/page.js"],"sourcesContent":["import React from 'react'\r\n\r\nconst ProductPage = () => {\r\n  return (\r\n    <div>ProductPage</div>\r\n  )\r\n}\r\n\r\nexport default ProductPage"],"names":[],"mappings":";;;;;AAAA;;;AAEA,MAAM,cAAc;IAClB,qBACE,8OAAC;kBAAI;;;;;;AAET;uCAEe"}}]
+}

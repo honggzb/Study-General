@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/project/react-study/react-hook-form-zod/app/products/page.tsx"],"sourcesContent":["import React from 'react'\r\n\r\nasync function getProducts() {\r\n  const res = await fetch('https://fakestoreapi.com/products');\r\n  if(!res.ok) {\r\n    throw new Error('Failed to fetch products');\r\n  }\r\n  const data = await res.json()\r\n  return data.products;\r\n}\r\n\r\nconst ProductsPage = async () => {\r\n  const products = await getProducts();\r\n  console.log(products);\r\n\r\n  return (\r\n    <div>Products</div>\r\n  )\r\n}\r\n\r\nexport default ProductsPage"],"names":[],"mappings":";;;;;;AAEA,eAAe;IACb,MAAM,MAAM,MAAM,MAAM;IACxB,IAAG,CAAC,IAAI,EAAE,EAAE;QACV,MAAM,IAAI,MAAM;IAClB;IACA,MAAM,OAAO,MAAM,IAAI,IAAI;IAC3B,OAAO,KAAK,QAAQ;AACtB;AAEA,MAAM,eAAe;IACnB,MAAM,WAAW,MAAM;IACvB,QAAQ,GAAG,CAAC;IAEZ,qBACE,8OAAC;kBAAI;;;;;;AAET;uCAEe"}}]
+}

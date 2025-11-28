@@ -1,0 +1,45 @@
+[00:00:03.832] Server  LOG      ✓ Ready in 2.6s
+[00:00:08.217] Server  LOG      ○ Compiling / ...
+[00:00:11.565] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:11.596] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\node_modules_bf894a0d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:11.601] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:11.612] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:11.615] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:11.617] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:11.623] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:11.628] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:11.630] Server  ERROR   Error: No response is returned from route handler '[project]/app/api/list/route.ts'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+[00:00:11.667] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__26b5e72e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:00:11.679] Server  ERROR    ⨯ Error: Failed to fetch data
+[00:00:12.650] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:12.891] Browser ERROR   uncaughtError: Error: Failed to fetch data
+[00:01:45.848] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:01:45.899] Server  LOG      ✓ Compiled in 161ms
+[00:01:46.524] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:46.545] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\node_modules_bf894a0d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:46.547] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:46.548] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:46.549] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:46.550] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:46.552] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:46.554] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:46.556] Server  ERROR   Error: No response is returned from route handler '[project]/app/api/list/route.ts'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+[00:01:46.572] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__26b5e72e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:01:46.574] Server  ERROR    ⨯ Error: Failed to fetch data
+[00:01:47.958] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:47.958] Browser ERROR   uncaughtError: Error: Failed to fetch data
+[00:03:10.762] Server  LOG      ✓ Compiled in 121ms
+[00:03:10.765] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:03:11.640] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\compiled\next-server\app-route-turbo.runtime.dev.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:11.642] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\node_modules_bf894a0d._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:11.644] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\base-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:11.646] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\next-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:11.648] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:11.650] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:11.651] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:11.657] Server  ERROR   C:\project\react-study\react-hook-form-zod\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:11.659] Server  ERROR   Error: No response is returned from route handler '[project]/app/api/list/route.ts'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+[00:03:11.676] Server  ERROR   C:\project\react-study\react-hook-form-zod\.next\dev\server\chunks\ssr\[root-of-the-server]__26b5e72e._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[00:03:11.678] Server  ERROR    ⨯ Error: Failed to fetch data
+[00:03:13.320] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:13.320] Browser ERROR   uncaughtError: Error: Failed to fetch data

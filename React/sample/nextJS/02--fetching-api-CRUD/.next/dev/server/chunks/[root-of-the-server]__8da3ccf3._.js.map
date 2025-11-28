@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/project/react-study/react-hook-form-zod/app/api/list/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\nimport { prisma } from \"@/utils/prisma\";\r\n\r\nexport async function POST(request: Request) {\r\n\r\n  const data = await request.json();\r\n\r\n  try {\r\n    const newList = await prisma.list.create({\r\n      data: {\r\n        title: data.title,\r\n        description: data.description,\r\n      }\r\n    });\r\n    if(newList) {\r\n      return NextResponse.json({\r\n        success: true,\r\n        message: \"data created successfully\",\r\n      });\r\n    }\r\n\r\n  } catch (error) {\r\n\r\n    return NextResponse.json({\r\n      success: false,\r\n      message: error,\r\n    });\r\n\r\n  }\r\n\r\n  return NextResponse.json({ created: true });\r\n}"],"names":[],"mappings":";;;;AAAA;;;;;;;;AAGO,eAAe,KAAK,OAAgB;IAEzC,MAAM,OAAO,MAAM,QAAQ,IAAI;IAE/B,IAAI;QACF,MAAM,UAAU,MAAM,OAAO,IAAI,CAAC,MAAM,CAAC;YACvC,MAAM;gBACJ,OAAO,KAAK,KAAK;gBACjB,aAAa,KAAK,WAAW;YAC/B;QACF;QACA,IAAG,SAAS;YACV,OAAO,gJAAY,CAAC,IAAI,CAAC;gBACvB,SAAS;gBACT,SAAS;YACX;QACF;IAEF,EAAE,OAAO,OAAO;QAEd,OAAO,gJAAY,CAAC,IAAI,CAAC;YACvB,SAAS;YACT,SAAS;QACX;IAEF;IAEA,OAAO,gJAAY,CAAC,IAAI,CAAC;QAAE,SAAS;IAAK;AAC3C"}}]
+}
