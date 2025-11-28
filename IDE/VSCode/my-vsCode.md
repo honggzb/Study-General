@@ -110,7 +110,7 @@ Rainbow Fart                 | 🌈彩虹屁
 Qwerty Learner               | 
 Emoji                        | A simple plugin to insert emoji from the command palette
 Incredibly In Your Face      |  shows you Incredible 'Ouch Faces' that correlate to the number of errors in your code!
-
+project-tree                 | generate a tree structure of the project in the README.md file.
 ```
 
 ```js
