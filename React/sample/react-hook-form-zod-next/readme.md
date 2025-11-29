@@ -8,8 +8,8 @@
 ```
 ├─ 📂app/
 │  ├─ 📂api/
-│  │  ├─ 📂register/
-│  │  │   └─ 📄route.ts        - server api
+│  │  └─ 📂register/
+│  │      └─ 📄route.ts        - server api
 │  ├─ 📂react-hook-form-with-zod/
 │  │  └─ 📄index.tsx
 │  ├─ 📂simple-form/
