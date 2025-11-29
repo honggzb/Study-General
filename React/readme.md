@@ -4,11 +4,11 @@
 ├── 📂React
 │     ├──  📂NextJS/
 │     │    ├──  📂codes/
-│     │    │      ├──  📂1.Foundation of NEXTJS/
-│     │    │      ├──  📂2.next-js-product-list-dummyjson/
-│     │    │      ├──  📂3.next-js-shop-list-prisma-MongoDB/
-│     │    │      ├──  📂4.next-js-talent-list-prisma-MongoDB-action/
-│     │    │      ├──  📂5.next-ts-talent-post-prisma-MongoDB-authjsToGithub/
+│     │    │      ├── 📂1.Foundation of NEXTJS/
+│     │    │      ├── 📂2.next-js-product-list-dummyjson/
+│     │    │      ├── 📂3.next-js-shop-list-prisma-MongoDB/
+│     │    │      ├── 📂4.next-js-talent-list-prisma-MongoDB-action/
+│     │    │      ├── 📂5.next-ts-talent-post-prisma-MongoDB-authjsToGithub/
 │     │    │      └── 📂6.NextJs学习-Zod and React-Hook-Form/
 │     │    ├── 📄Main Concepts of NextJS-2023.md
 │     │    ├── 📄NextJs-useful.md
