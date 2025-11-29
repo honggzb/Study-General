@@ -5,8 +5,6 @@
 - [Plugin](#plugin)
 - [useful Tool plugin](#useful-tool-plugin)
 - [功能性](#功能性)
-- [代码片段插件](#代码片段插件)
-  - [语法校验](#语法校验)
 - [Open code Outline](#open-code-outline)
 - [自定义设置参考](#自定义设置参考)
   - [Auto Close Tag设置- settings.json](#auto-close-tag设置--settingsjson)
@@ -97,6 +95,7 @@ Docs View                    | displays hover documentation in the sidebar or pa
 Prettier                     | 代码格式化工具
 *indent-rainbow              | 缩进层次以不同颜色高亮显示
 *Power Mode                  | 键盘输入时候的宫廷效果
+*Paul's TypeScript Toolkit   | automate the type destructure declaration
 Draw.io                      | Diagram
 'Cascadia Code'  font        | on Dracula theme
 'Fira Code'  font            | on One Dark Pro theme
@@ -114,6 +113,8 @@ project-tree                 | generate a tree structure of the project in the R
 Error Lens                   | stand out error, highlighting the entire line
 ```
 
+- **Power Mode setup**
+  
 ```js
 //settings.json -- Power Mode  
 "powermode.enabled": true,
@@ -126,13 +127,18 @@ Error Lens                   | stand out error, highlighting the entire line
 "window.zoomLevel": 1,
 ```
 
-[⬆ back to top](#top)
+- **keyboard shortcut setup for Paul's TypeScript Toolkit**
 
-## useful Tool plugin
-
-- json2ts: converts a JSON to TypeScript interfaces
-  - create a json file
-  - press ctrl+Alt+V at end of json file
+```json
+{
+  "key": "ctrl+shift+cmd+e",
+  "command": "editor.action.refactor",
+  "args": {
+    "kind": "refactor.extract.object-type-literal",
+    "apply": "ifSingle"
+  }
+}
+```
 
 [⬆ back to top](#top)
 
@@ -142,12 +148,6 @@ Error Lens                   | stand out error, highlighting the entire line
 - Syncing: 这个同步插件要比官方市场那个最高下载量的要好，支持删除同步！！！
 - Version Lens : 可以及时看到package.json内部版本的变动，很实用
 - Output Colorizer : 可以终端日志输出着色，实用
-
-## 代码片段插件
-
-- JavaScript (ES6) code snippets : ES6的代码片段，实用
-- JavaScript Snippet Pack : ES5及以下的代码片段，实用
-- Angular Language Service
 
 ## 语法校验
 
@@ -208,4 +208,6 @@ scrollBeyondLastLine
 
 ## Theme
 
-- Panda
+- Gradient Theme
+- Material Icon Theme
+- Panda Theme

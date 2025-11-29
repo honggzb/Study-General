@@ -3,27 +3,38 @@
 ```
 ├── 📂React
 │     ├──  📂NextJS/
-│     │    ├── 📂codes/
+│     │    ├──  📂codes/
+│     │    │      ├── 📂1.Foundation of NEXTJS/
+│     │    │      ├── 📂2.next-js-product-list-dummyjson/
+│     │    │      ├── 📂3.next-js-shop-list-prisma-MongoDB/
+│     │    │      ├── 📂4.next-js-talent-list-prisma-MongoDB-action/
+│     │    │      ├── 📂5.next-ts-talent-post-prisma-MongoDB-authjsToGithub/
+│     │    │      └── 📂6.NextJs学习-Zod and React-Hook-Form/
 │     │    ├── 📄Main Concepts of NextJS-2023.md
+│     │    ├── 📄NextJs-useful.md
 │     │    ├── 📄NextJs学习-App Router.md
-│     │    ├── 📄NextJs学习-Data Fetching.md
+│     │    ├── 📄NextJs学习-Data Fetching-2024.md
 │     │    ├── 📄NextJs学习-Next.js多环境部署.md
+│     │    ├── 📄NextJs学习-SEO.md
 │     │    ├── 📄NextJs学习-Zod and React-Hook-Form.md
 │     │    ├── 📄NextJs学习-authentication-AuthJS.md
 │     │    ├── 📄NextJs学习-authentication-clerk.md
-│     │    ├── 📄NextJs学习-debugging NextJS.md
+│     │    ├── 📄NextJs学习-NextJs学习-debugging NextJS.md
 │     │    ├── 📄NextJs学习-在Next.js中集成swagger文档.md
 │     │    ├── 📄NextJs学习-概述.md
 │     │    ├── 📄Nextjs学习小结2024.md
 │     │    ├── 📄前端基础渲染模式-CSR、SSR、同构、静态化.md
-│     │    └──
+│     │    └── 
 │     ├──  📂React Native/
 │     │    ├── 📄React Native学习之1-基础2024.md
 │     │    └── 
 │     ├──  📂React性能优化/
 │     │    ├── 📄React性能优化之0-general.md
 │     │    ├── 📄React性能优化之1-组件优化.md
-│     │    └── 
+│     │    └──
+│     ├──  📂resources/
+│     │    ├── 📄icons-1.tsx
+│     │    └── 📄icons-2.tsx
 │     ├──  📂sample/
 │     │    ├── 📂DazhongDianPint-React/docs/
 │     │    ├── 📂The Complete React Developer Course -w Hooks and Redux- Andrew Mead/
@@ -60,7 +71,6 @@
 │     ├── 📄React常见状态管理库对比（Redux、Recoil、Zustand、Valtio、Jotai.md
 │     ├── 📄react-18-note-2024.md
 │     ├── 📄react-18个开源项目-2024.md
-│     ├── 📄react-Useful Types.md
 │     ├── 📄React常见问题讨论.md
 │     ├── 📄react-official-document-study.md
 │     └── 📄react官网学习小结-2023版.md
