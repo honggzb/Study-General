@@ -94,6 +94,10 @@ function onSubmit(event: React.FormEvent) {
     email: formData.get('email)
   }
 }
+    // The object instance formData is more opaque and is not the same kind of object,
+    // const formValues = { ...formData } did not work, need to use Object.fromEntries
+    const formValues = Object.fromEntries(formData)
+    console.log(formValues) // output: { name: 'my name', email: 'name@someemail.com' }
 ```
 
 |Types|||
