@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/project/react-study/react-hook-form-zod/app/products/%5Bproductid%5D/page.tsx"],"sourcesContent":["\r\nasync function getProduct(productid: string) {\r\n  const res = await fetch(`https://dummyjson.com/products/${productid}`);\r\n  if (!res.ok) {\r\n    throw new Error(\"could not get product data\");\r\n  }\r\n\r\n  const data = await res.json();\r\n  return data;\r\n}\r\n\r\nconst ProductPage = async ({ params } : { params: Promise<{ productid: string }>}) => {\r\n  const { productid } = await params;\r\n  console.log(\"productid:\", productid);\r\n\r\n  const product =  await getProduct(productid);\r\n  console.log(product);\r\n\r\n  return (\r\n    <div>ProductPage</div>\r\n  )\r\n}\r\n\r\nexport default ProductPage"],"names":[],"mappings":";;;;;;AACA,eAAe,WAAW,SAAiB;IACzC,MAAM,MAAM,MAAM,MAAM,CAAC,+BAA+B,EAAE,WAAW;IACrE,IAAI,CAAC,IAAI,EAAE,EAAE;QACX,MAAM,IAAI,MAAM;IAClB;IAEA,MAAM,OAAO,MAAM,IAAI,IAAI;IAC3B,OAAO;AACT;AAEA,MAAM,cAAc,OAAO,EAAE,MAAM,EAA8C;IAC/E,MAAM,EAAE,SAAS,EAAE,GAAG,MAAM;IAC5B,QAAQ,GAAG,CAAC,cAAc;IAE1B,MAAM,UAAW,MAAM,WAAW;IAClC,QAAQ,GAAG,CAAC;IAEZ,qBACE,8OAAC;kBAAI;;;;;;AAET;uCAEe"}}]
+}

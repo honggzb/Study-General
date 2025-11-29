@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Talent {
+  id       String   @id @default(uuid()) @map("_id")
+  name     String
+  email    String
+  title    String
+  skills   String
+  createAt DateTime @default(now())
+}

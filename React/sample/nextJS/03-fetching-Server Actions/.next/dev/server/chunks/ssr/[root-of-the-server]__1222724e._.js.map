@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/project/react-study/react-hook-form-zod/app/page.tsx"],"sourcesContent":["\n\nexport default function Home() {\n  return (\n    <main className=\"flex flex-col min-h-screen items-center p-24\">\n      <h1 className=\"text-6xl font-bold text-center\">💼Talenti</h1>\n      <p>Save money, hire best talents</p>\n    </main>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAEe,SAAS;IACtB,qBACE,8OAAC;QAAK,WAAU;;0BACd,8OAAC;gBAAG,WAAU;0BAAiC;;;;;;0BAC/C,8OAAC;0BAAE;;;;;;;;;;;;AAGT"}}]
+}

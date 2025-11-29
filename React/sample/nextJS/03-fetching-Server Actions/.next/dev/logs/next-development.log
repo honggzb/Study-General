@@ -1,0 +1,416 @@
+[00:00:03.343] Server  LOG      ✓ Ready in 2.6s
+[00:00:06.413] Server  LOG      ○ Compiling / ...
+[00:00:09.076] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:23.340] Server  LOG      ✓ Compiled in 609ms
+[00:07:29.974] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:43.380] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:31.450] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.452] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.493] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.494] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.497] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.498] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.500] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.502] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.503] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.505] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.506] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.507] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.509] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.511] Server  ERROR    ⨯ ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:11:31.527] Server  LOG      ✓ Compiled in 183ms
+[00:11:33.091] Browser ERROR   ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+https://nextjs.org/docs/messages/module-not-found
+[00:11:46.163] Browser ERROR   ./app/layout.tsx
+Module not found: Can't resolve 'next/font/google/target.css'
+Unknown font
+
+Debug info:
+- Execution of <ModuleAssetContext as AssetContext>::resolve_asset failed
+- Execution of resolve failed
+- Execution of resolve_internal failed
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+Error while looking up import map: Unknown font
+
+Debug info:
+- Execution of NextFontGoogleReplacer::import_map_result failed
+- Execution of *get_font_css_properties failed
+- Execution of font_options_from_query_map failed
+- Unknown font
+
+https://nextjs.org/docs/messages/module-not-found
+[00:14:58.847] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:01.617] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:57.909] Server  LOG      ✓ Compiled in 69ms
+[00:16:18.235] Server  LOG      ✓ Compiled in 114ms
+[00:16:21.255] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:44.739] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:06.740] Server  LOG      ✓ Compiled in 68ms
+[00:21:28.674] Server  LOG      ✓ Compiled in 258ms
+[00:22:22.009] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:24.378] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:46.560] Server  LOG      ✓ Compiled in 128ms
+[06:24:49.886] Server  LOG      ✓ Compiled in 323ms
+[06:25:01.623] Server  LOG      ✓ Compiled in 275ms
+[07:05:33.672] Server  LOG      ✓ Compiled in 98ms
+[07:06:26.330] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:06:30.367] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:06:35.251] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:18:47.196] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:18:52.215] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:18:54.918] Browser ERROR   ./app/page.tsx:7:22
+Parsing ecmascript source code failed
+   5 | export default function Home() {
+   6 |
+>  7 |   const talentData = await prisma.talent.findMany();
+     |                      ^^^^^
+   8 |
+   9 |   return (
+  10 |     <main className="flex flex-col w-10/12 min-h-screen items-center p-24 mx-auto">
+
+await isn't allowed in non-async function
+[07:21:56.651] Server  LOG      ✓ Compiled in 356ms

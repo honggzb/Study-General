@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/project/react-study/react-hook-form-zod/components/add-talent/index.tsx"],"sourcesContent":["import React from 'react'\r\n\r\nconst AddTalent = () => {\r\n  return (\r\n    <div>\r\n      AddTalent\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default AddTalent\r\n"],"names":[],"mappings":";;;;;;AAEA,MAAM,YAAY;IAChB,qBACE,8OAAC;kBAAI;;;;;;AAIT;uCAEe"}},
+    {"offset": {"line": 38, "column": 0}, "map": {"version":3,"sources":["file:///C:/project/react-study/react-hook-form-zod/app/page.tsx"],"sourcesContent":["import AddTalent from \"@/components/add-talent\";\n\nexport default function Home() {\n  return (\n    <main className=\"flex flex-col w-10/12 min-h-screen items-center p-24 mx-auto\">\n      <h1 className=\"text-6xl font-bold text-center\">💼Talenti</h1>\n      <p>Save money, hire best talents</p>\n      <AddTalent />\n    </main>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS;IACtB,qBACE,8OAAC;QAAK,WAAU;;0BACd,8OAAC;gBAAG,WAAU;0BAAiC;;;;;;0BAC/C,8OAAC;0BAAE;;;;;;0BACH,8OAAC,gJAAS;;;;;;;;;;;AAGhB"}}]
+}
