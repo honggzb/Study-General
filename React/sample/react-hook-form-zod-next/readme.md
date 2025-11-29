@@ -1,3 +1,9 @@
+## use tip
+
+1. go to `localhost:3000/simple-form`
+2. go to `localhost:3000/react-hook-form-with-zod`
+-------------------------------------------------
+
 ## setup
 
 1. `npm install react-hook-form`
