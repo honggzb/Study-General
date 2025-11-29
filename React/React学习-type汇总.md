@@ -71,15 +71,29 @@ const useGetTheme = () => useContext(ThemeContext);
 
 // ----------------------------------------------------------------------------------------------------------
 // 6. useMemo: The result of calling the Hook is inferred from the return value from the function in the first parameter
+
    // The type of visibleTodos is inferred from the return value of filterTodos
 const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]);
 
 // ----------------------------------------------------------------------------------------------------------
-// 7. useCallback: the function’s type is inferred from the return value of the function in the first parameter,
+// 7. useCallback: the function’s type is inferred from the return value of the function in the first parameter
+
  const [value, setValue] = useState("Change me");
  const handleChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>((event) => {
     setValue(event.currentTarget.value);
  }, [setValue])
+
+// ----------------------------------------------------------------------------------------------------------
+// 8. FormData: a JavaScript standard since 2010
+
+function onSubmit(event: React.FormEvent) {
+  event.preventDefault()
+  const formData = new FormData(event.target)
+  const formValues = {
+    name: formData.get('name')
+    email: formData.get('email)
+  }
+}
 ```
 
 |Types|||
