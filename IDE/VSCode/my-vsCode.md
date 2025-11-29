@@ -5,8 +5,6 @@
 - [Plugin](#plugin)
 - [useful Tool plugin](#useful-tool-plugin)
 - [功能性](#功能性)
-- [代码片段插件](#代码片段插件)
-  - [语法校验](#语法校验)
 - [Open code Outline](#open-code-outline)
 - [自定义设置参考](#自定义设置参考)
   - [Auto Close Tag设置- settings.json](#auto-close-tag设置--settingsjson)
@@ -144,26 +142,12 @@ Error Lens                   | stand out error, highlighting the entire line
 
 [⬆ back to top](#top)
 
-## useful Tool plugin
-
-- json2ts: converts a JSON to TypeScript interfaces
-  - create a json file
-  - press ctrl+Alt+V at end of json file
-
-[⬆ back to top](#top)
-
 ## 功能性
 
 - HTML CSS Support : 这个也是必备插件之一
 - Syncing: 这个同步插件要比官方市场那个最高下载量的要好，支持删除同步！！！
 - Version Lens : 可以及时看到package.json内部版本的变动，很实用
 - Output Colorizer : 可以终端日志输出着色，实用
-
-## 代码片段插件
-
-- JavaScript (ES6) code snippets : ES6的代码片段，实用
-- JavaScript Snippet Pack : ES5及以下的代码片段，实用
-- Angular Language Service
 
 ## 语法校验
 
@@ -224,4 +208,6 @@ scrollBeyondLastLine
 
 ## Theme
 
-- Panda
+- Gradient Theme
+- Material Icon Theme
+- Panda Theme
