@@ -5,6 +5,22 @@
 
 ## project structure
 
+```
+├─ 📂app/
+│  ├─ 📂api/
+│  │  ├─ 📂register/
+│  │  │   └─ 📄route.ts        - server api
+│  ├─ 📂react-hook-form-with-zod/
+│  │  └─ 📄index.tsx
+│  ├─ 📂simple-form/
+│  │  └─ 📄index.tsx
+│  ├─ 📄layout.tsx
+│  └─ 📄page.tsx
+├─ 📂utils/
+│     └─ 📄zod-schemas.ts      - zod schema defination
+├─ 📄next.config.ts
+```
+
 -------------------------------------------------
 
 ## setup
