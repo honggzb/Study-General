@@ -131,7 +131,6 @@ Error Lens                   | stand out error, highlighting the entire line
 
 - **keyboard shortcut setup for Paul's TypeScript Toolkit**
 
-
 ```json
 {
   "key": "ctrl+shift+cmd+e",
@@ -141,6 +140,7 @@ Error Lens                   | stand out error, highlighting the entire line
     "apply": "ifSingle"
   }
 }
+```
 
 [⬆ back to top](#top)
 
