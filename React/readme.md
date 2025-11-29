@@ -31,7 +31,10 @@
 │     ├──  📂React性能优化/
 │     │    ├── 📄React性能优化之0-general.md
 │     │    ├── 📄React性能优化之1-组件优化.md
-│     │    └── 
+│     │    └──
+│     ├──  📂resources/
+│     │    ├── 📄icons-1.tsx
+│     │    └── 📄icons-2.tsx
 │     ├──  📂sample/
 │     │    ├── 📂DazhongDianPint-React/docs/
 │     │    ├── 📂The Complete React Developer Course -w Hooks and Redux- Andrew Mead/
