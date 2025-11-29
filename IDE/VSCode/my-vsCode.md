@@ -97,6 +97,7 @@ Docs View                    | displays hover documentation in the sidebar or pa
 Prettier                     | 代码格式化工具
 *indent-rainbow              | 缩进层次以不同颜色高亮显示
 *Power Mode                  | 键盘输入时候的宫廷效果
+*Paul's TypeScript Toolkit   | automate the type destructure declaration
 Draw.io                      | Diagram
 'Cascadia Code'  font        | on Dracula theme
 'Fira Code'  font            | on One Dark Pro theme
@@ -114,6 +115,8 @@ project-tree                 | generate a tree structure of the project in the R
 Error Lens                   | stand out error, highlighting the entire line
 ```
 
+- **Power Mode setup**
+  
 ```js
 //settings.json -- Power Mode  
 "powermode.enabled": true,
@@ -125,6 +128,19 @@ Error Lens                   | stand out error, highlighting the entire line
 "editor.fontSize": 16,
 "window.zoomLevel": 1,
 ```
+
+- **keyboard shortcut setup for Paul's TypeScript Toolkit**
+
+
+```json
+{
+  "key": "ctrl+shift+cmd+e",
+  "command": "editor.action.refactor",
+  "args": {
+    "kind": "refactor.extract.object-type-literal",
+    "apply": "ifSingle"
+  }
+}
 
 [⬆ back to top](#top)
 
