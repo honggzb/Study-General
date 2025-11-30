@@ -184,3 +184,6 @@ export function SignOut() {
 - `<p className="text-sm font-light ml-auto">{formatDistance(new Date(postData.createAt), new Date())}</p>`
 
 [⬆ back to top](#top)
+
+> https://github.com/machadop1407/nextjs-15-authentication-next-auth/tree/main
+> [NextJS 15 Authentication Tutorial - Learn Next-Auth in 30 Minutes](https://www.youtube.com/watch?v=n-fVrzaikBQ)
