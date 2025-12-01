@@ -37,16 +37,16 @@
 
 |||||
 |---|---|---|---|
-|⬆ back to top|👉 goto|🤖 Introduction|⚙️ Tech Stack|
+|⬆ 🚀back to top|👉 goto|🤖 Introduction|⚙️ Tech Stack|
 |🔋 Features|🤸 Quick Start|🕸️ Snippets|🔗 Links|
-|🚀 More|🚨 Tutorial|📚 Storybook|⚛️ React |
-|🪝 Hooks|⚡️ Optimized performance| |🛠 Tools|
+|🔗Links|🚨 Tutorial|📚 Storybook|⚛️ React |
+|🪝 Hooks|⚡️ Optimized performance|📦📂📄 file, package|🛠 Tools|
 |🧩 ShadCN |🎨 Tailwind|📱💻🖥️ responsive|🔑 Token|
 |🌳 Tree-shakeable|🧪 Ready to test|🗄️DB |🌐 API Call|
 |💅 Emotion|✨ Prettier|🚥 GitHub Actions|📐 ESLint|
 |✅ Chromatic |📦 npm |💳 payments|♿ Accessibility|
 |other|---|---|---|
-|💯 ✨|⚒️|🖌 画笔|🖼️ 📃 导出|
+|💯 ✨|⚒️✅|🖌 画笔|🖼️ 📃 导出|
 |🎨 主题|💾 save 📈 |🔒 Privacy|📤 Import/Export|
 |💥 Actions to |🎛 Controls to interactively |📂📝📕📧 Docss|🔍 Interactions|
 |🏎 Test-runner|☁ Cloud|🏡🐈|⭐🌙晚安|
