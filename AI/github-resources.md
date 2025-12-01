@@ -4,6 +4,7 @@
 
 |project|类型|说明|
 |---|---|---|
+|[awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules)|resources|custom rules of Cursor AI Editor|
 |[AI 编程工具 ruler](https://github.com/intellectronica/ruler)|编程|统一管理各种 AI 编程工具的配置文件<br> - 通过集中式的 `.ruler/` 目录存储所有规则，然后自动分发到各个 AI 工具的配置文件中，目前已支持 GitHub Copilot、Claude Code、Cursor、Gemini CLI 等十多种主流工具<br>主要功能：<br> - 统一规则管理，用 Markdown 文件编写一套配置适用所有工具<br> - 自动分发配置到各 AI 助手的专用文件中，无需手动复制<br>- 支持 MCP 服务器配置管理，可以让 AI 获得更丰富的项目上下文<br> - 自动更新 `.gitignore` 文件，保持版本控制的整洁<br>- 灵活的 CLI 命令，可选择性地应用到特定工具<br>- 具备完整的回滚功能，安全地撤销所有配置变更|
 |[微信小程序开发资源汇总](https://github.com/justjavac/awesome-wechat-weapp)|编程|收集了微信小程序开发过程中会使用到的资料、问题以及第三方组件库。本文不是一篇关于如何学习微信小程序的入门指南，也非参考手册，只是一些资料的整理|
 |[智能分析代码结构,生成全面Wiki](https://github.com/AsyncFuncAI/deepwiki-open)|智能分析|接收新项目或许阅读开源代码库, 利用AI智能分析代码结构，自动生成全面的文档和可视化图表，并将所有内容组织成一个易于导航的 Wiki，让复杂代码库变得一目了然<br> - 一键将任何GitHub或GitLab仓库转换为交互式wiki文档<br> - 支持私有仓库访问，确保项目安全性<br> - AI 驱动的智能代码分析和关系理解<br> - 自动生成 Mermaid 图表显示架构和数据流<br> - 简洁直观的界面方便探索整个项目结构|
