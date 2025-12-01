@@ -28,6 +28,7 @@
 |[各种Awesome-xxx的资源列表](https://github.com/sindresorhus/awesome)|resource|各种Awesome-xxx的资源列表，但其实收藏这一个364K⭐的就够了↓<br>Awesome 项目是各种 Awesome 列表的集合。以后要找Awesome资源，聪这个总的出发就行了|
 |[一键复制网页内容并转换为Markdown 格式](https://github.com/ysm-dev/cpdown)|tools|浏览器插件：cpdown，可一键复制网页内容并转换为 Markdown 格式<br> - 一键复制任何网页内容为干净的 Markdown 格式<br> - 支持 YouTube 视频字幕提取和转换<br> - 自动去除广告、导航栏等无用 HTML 元素<br> - 显示内容的 token 数量，方便给 LLM 使用|
 |[awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)|resources|A list of Free Software network services and web applications which can be hosted on your own servers|
+|[awesome-LLM-resources](https://github.com/WangRongsheng/awesome-LLM-resources)resources|全世界最好的LLM资料总结<br> - 语音视频生成、Agent、辅助编程、数据处理、模型训练、模型推理、o1 模型、MCP、小语言模型、视觉语言模型|
 
 ```
 1. github.com/eyaltoledano/claude-task-master
