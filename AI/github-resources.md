@@ -15,6 +15,8 @@
 |project|类型|说明|
 |---|---|---|
 |[Prompt模板mcp-prompt-server](https://github.com/joeseesun/mcp-prompt-server)|提示词模板生成|把常用的 Prompt 变成了可调用的工具，将每个 Prompt 模板注册为 MCP 工具，支持自然语言调用，还能在 Raycast、Cursor、Windsurf 等工具中通用<br> - 丰富的内置 Prompt 模板，涵盖代码、写作、产品设计等场景<br> - 所有Prompt自动注册为工具，支持参数化调用<br> - 只需添加 YAML 文件即可扩展新功能<br> - 自然语言对话即可调用，还能组合多个工具实现复杂工作流<br> - 通过 npm install 安装后配置到 MCP 客户端即可使用|
+|[AI提示词工程与工作流集合](https://github.com/NeekChaw/RIPER-5)||神级Cursor Rule<br> - 收录和展示一系列高质量、结构化的 AI 提示词（Prompts）和工作流（Workflows）|
+|[Awesome Prompts提示词合集](https://github.com/NeekChaw/awesome-prompt)|prompt|✨ 让你一眼惊艳的提示词合集 ✨|
 |[ChatGPT中文提示词调教指南](https://github.com/PlexPt/awesome-chatgpt-prompts-zh)|prompt|各种场景提示词使用指南|
 |[AI Gis](https://github.com/yarin-zhang/AI-Gist)AI 提示词管理工具|prompt|提供基础的 AI 提示词管理功能，旨在帮助用户高效地创建、组织和使用 AI 提示词。支持 Jinja 模板<br> - 变量填充：调用模板时动态填入变量，结构清晰灵活，支持 Jinja 模板<br> - 筛选分类：快速筛选、查找、组织提示词，支持标签、分类、评分、收藏等功能<br> - 多种历史记录：便于重复调用与持续优化，事后可回溯|
 |[prompt-optimizer提示词优化器](https://github.com/linshenkx/prompt-optimizer)|prompt|AI提示词优化工具，帮助你编写更好的AI提示词，提升AI输出质量。支持Web应用、桌面应用、Chrome插件和Docker部署四种使用方式|
