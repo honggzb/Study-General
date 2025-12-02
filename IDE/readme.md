@@ -37,18 +37,18 @@
 
 |||||
 |---|---|---|---|
-|⬆ 🚀back to top|👉 goto|🤖 Introduction|⚙️ Tech Stack|
+|⬆ 🚀back to top|👉 goto|🤖 Introduction|⚙️⚒️ Tech Stack|
 |🔋 Features|🤸 Quick Start|🕸️ Snippets|🔗 Links|
 |🔗Links|🚨 Tutorial|📚 Storybook|⚛️ React |
-|🪝 Hooks|⚡️ Optimized performance|📦📂📄 file, package|🛠 Tools|
+|🪝 Hooks|⚡️ Optimized performance|📦📂📄📝📕📧 Docs|🛠 Tools|
 |🧩 ShadCN |🎨 Tailwind|📱💻🖥️ responsive|🔑 Token|
 |🌳 Tree-shakeable|🧪 Ready to test|🗄️DB |🌐 API Call|
 |💅 Emotion|✨ Prettier|🚥 GitHub Actions|📐 ESLint|
 |✅ Chromatic |📦 npm |💳 payments|♿ Accessibility|
 |other|---|---|---|
-|💯 ✨|⚒️✅|🖌 画笔|🖼️ 📃 导出|
-|🎨 主题|💾 save 📈 |🔒 Privacy|📤 Import/Export|
-|💥 Actions to |🎛 Controls to interactively |📂📝📕📧 Docss|🔍 Interactions|
+|📞|🧠💬|🖌 画笔|🖼️📃📤📩 导出Import/Export|
+|🎨 主题|💾 save 📈 |🔒 Privacy|💯 ✨|
+|💥 Actions to |🎛 Controls to interactively | |🔍 Interactions|
 |🏎 Test-runner|☁ Cloud|🏡🐈|⭐🌙晚安|
 |🍜|🍞zασα|☾˚‧º· 𝓖𝓸𝓸𝓭 𝓝𝓲𝓰𝓱𝓽 ☾˚‧º·|🛌🎶|
 |🌷 | ◡̈近日欣喜|🧸|( 展开|
