@@ -1,7 +1,6 @@
 [有用的和常用的](#top)
 
 - [Components in NextJS](#components-in-nextjs)
-- [Components in NextJS](#components-in-nextjs-1)
 - [NextJS route](#nextjs-route)
   - [nextJS route types](#nextjs-route-types)
   - [Navigating](#navigating)
@@ -21,8 +20,6 @@
 -------------------------------------------------------------------------
 
 - `npx create-next-app@latest --typescript --eslint`
-
-## Components in NextJS
 
 ```
          NextJS                             |    reactJS
