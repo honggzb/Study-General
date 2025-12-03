@@ -17,7 +17,9 @@
 2. Create a theme provider -> 'components/theme-provider.tsx'
 3. Wrap theme provider to root layout('app/layout.tsx')
 4. Add a mode toggle component 'components/toggle-theme.tsx'
-5. use toggle component in other component such as 'app/toggle-test/page.tsx'
+  1. <-- `useTheme` from next-themes
+  2. using `dark:scale-0` and `dark:scale-100` to switch sun/moon icon
+6. use toggle component in other component such as 'app/toggle-test/page.tsx'
 
 ```ts
 // components/theme-provider.tsx
