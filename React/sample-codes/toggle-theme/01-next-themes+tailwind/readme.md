@@ -1,4 +1,3 @@
-
 ## Theme toggle in NextJS + shadcn + tailwindCSS
 
 ```
@@ -6,22 +5,21 @@
 │  ├─ 📂toggle-test/
 │  │   └─ 📄page.tsx
 │  ├─ 📄globals.css
+│  ├─ 📄page.tsx
 │  └─ 📄layout.tsx
 ├─ 📂components/
+│  ├─ 📄Navbar.tsx
 │  ├─ 📄theme-provider.tsx
 │  └─ 📄toggle-theme.tsx
 ```
 
 1. `npm install next-themes`
-2. add `@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));` to 'app\globals.css'
-3. Create a theme provider -> 'components/theme-provider.tsx'
-4. Wrap theme provider to root layout('app/layout.tsx')
-5. Add a mode toggle component 'components/toggle-theme.tsx'
-6. use toggle component in other component such as 'app/toggle-test/page.tsx'
+2. Create a theme provider -> 'components/theme-provider.tsx'
+3. Wrap theme provider to root layout('app/layout.tsx')
+4. Add a mode toggle component 'components/toggle-theme.tsx'
+5. use toggle component in other component such as 'app/toggle-test/page.tsx'
 
 ```ts
-// app\globals.css
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 // components/theme-provider.tsx
 "use client"
 import * as React from "react"
@@ -34,7 +32,9 @@ export function ThemeProvider({
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }
 //app/layout.tsx
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider";
+import { Navbar } from "@/components/Navbar";
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
@@ -43,6 +43,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <body>
         <!-- wrapping with ThemeProvider -->
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            <Navbar />
             {children}
           </ThemeProvider>
         </body>
@@ -53,22 +54,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
 //components/toggle-theme.tsx
 "use client"
 import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
+import { useTheme } from "next-themes";
+import { Button } from "./ui/button";
+
 const ToggleThemePage = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
   return (
       <>
-        <button onClick={() => setTheme("dark")} className='bg-transparent p-3 hover:bg-zinc-200 rounded-xl text-black dark:text-white'>
-           <Sun />{theme}
-        </button>
-        <button onClick={() => setTheme("light")} className='bg-transparent p-3 hover:bg-zinc-200 rounded-xl text-black dark:text-white'>
-           <Moon />{theme}
-        </button>
+        <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} >
+            <Sun className=" size-5 transition-all scale-0 rotate-0 dark:rotate-90 dark:scale-100" />
+            <Moon className="size-5 absolute transition-all scale-100 rotate-0 dark:rotate-0 dark:scale-0" />
+        </Button>
     </>
   )
 }
 export default ToggleThemePage
 // app/toggle-test/page.tsx
+//components/Navbar.tsx
+<div><ToggleThemePage /></div>
 ```
 
 > https://ui.shadcn.com/docs/dark-mode/next
