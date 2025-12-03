@@ -12,6 +12,31 @@
 |sr-only, lg:not-sr-only|will hide in screen, but only for screen reader|
 |typography |such as prose|
 
+## some tips
+
+```html
+{/* Fluid text */}
+      <p className='text-[min(10vw,70px)]'>Something Fluid</p>
+      <br /><hr /><br />
+      {/* Accent */}
+      <div className='my-4 flex flex-col'>
+        <label htmlFor=""><input type="checkbox" checked className='accent-green-500' />browser default</label>
+        <label htmlFor=""><input type="checkbox" checked className='accent-pink-500' />browser default</label>
+      </div>
+      <br /><hr /><br />
+      {/* highlight */}
+      <div className='selection:bg-green-400 selection:text-white'>
+        <p>Consectetur aliqua mollit magna deserunt amet ut ullamco quis non reprehenderit irure eu id culpa. Excepteur laborum proident nulla Lorem qui labore. Reprehenderit proident adipisicing exercitation exercitation minim Lorem veniam laborum aliquip aliquip in do deserunt. Quis dolore laboris labore eu nisi. Aute irure nisi exercitation non eu nulla cupidatat. Excepteur irure sint duis aute reprehenderit.</p>
+      </div>
+      <br /><hr /><br />
+      {/* using file */}
+      <input type="file" className='block w-full text-sm text-slate-500 file:mr-4 file:rounded-full file:border-0 file:bg-violet-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-gray-500' />
+      {/* less javascript */}
+      <br /><hr /><br />
+      {/* Caret */}
+      <textarea className='w-full caret-green-500 p-2' name="" id=""></textarea>
+```
+
 ## using variables
 
 1. using `cn`
