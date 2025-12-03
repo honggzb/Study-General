@@ -8,7 +8,7 @@
 │  ├─ 📄page.tsx
 │  └─ 📄layout.tsx
 ├─ 📂components/
-│  ├─ 📄Navbar.tsx
+│  ├─ 📄Navbar.tsx               - use class expression {cn("...", pathname==navigation.href ? "text-foreground" : "text-foreground/60" )}
 │  ├─ 📄theme-provider.tsx
 │  └─ 📄toggle-theme.tsx
 ```
