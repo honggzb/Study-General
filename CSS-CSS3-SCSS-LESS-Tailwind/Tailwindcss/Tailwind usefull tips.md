@@ -39,7 +39,7 @@
       <textarea className='w-full caret-green-500 p-2' name="" id=""></textarea>
 ```
 
-![alt text](./tips1.png)
+![alt text](./tips-1.png)
 
 ## using variables
 
