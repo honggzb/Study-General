@@ -1,3 +1,5 @@
+## class tips
+
 |class|Scene|
 |---|---|
 |container||
@@ -36,6 +38,8 @@
 {/* Caret */}
       <textarea className='w-full caret-green-500 p-2' name="" id=""></textarea>
 ```
+
+![alt text](./tips1.png)
 
 ## using variables
 
