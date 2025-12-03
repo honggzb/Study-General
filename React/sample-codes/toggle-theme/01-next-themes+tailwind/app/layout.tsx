@@ -36,8 +36,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>   <!-- add suppressHydrationWarning -->
       <body className={`${montserrat.className} ${geistSans.className} ${geistMono.variable} antialiased`}>
+        <!-- add ThemeProvider -->
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
