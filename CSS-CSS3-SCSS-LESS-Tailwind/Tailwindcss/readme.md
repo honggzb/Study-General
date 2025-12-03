@@ -4,6 +4,7 @@
 │   │     │      ├── 📂1/
 │   │     │      ├── 📂2-toggle主题/
 │   │     │      └── 📂3-shadcn-next-theme-toggle/
+│   │     ├── 📄Tailwind Guide.pdf
 │   │     ├── 📄Tailwind usefull tips.md
 │   │     ├── 📄Tailwind-basic.md
 │   │     ├── 📄Tailwindcss学习-2023版.md
