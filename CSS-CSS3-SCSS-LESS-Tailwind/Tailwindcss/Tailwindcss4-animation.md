@@ -8,7 +8,7 @@
 |`animate-bounce`|
 |`animate-none`|
 |`animate-(<custom-property>)`|
-|`animate-[<value>`|
+|`animate-[<value>]`|
 
 ## Customizing with the Apply Directive
 
