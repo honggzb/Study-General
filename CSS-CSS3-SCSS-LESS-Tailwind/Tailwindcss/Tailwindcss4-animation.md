@@ -93,10 +93,10 @@
    bg-indigo-200'>Hover me for a wiggle</button>
 </div>
 <!-- ----------------------------------------------------------------------------- -->
-{/* 6.combine with Arbitrary Values */}
+{/* group-hover */}
 <div className='h-40 flex flex-col items-center justify-center'>
     <div className="group p-4 bg-gray-100 inline-block">
-      <Image src="/card.png" width={30} height={30} alt='as' className='inline-blocgroup-hover:animate-bounce' />
+      <Image src="/card.png" width={30} height={30} alt='as' className='inline-block group-hover:animate-bounce' />
      <span> Hove the picture to bounce it</span>
    </div>
 </div>
