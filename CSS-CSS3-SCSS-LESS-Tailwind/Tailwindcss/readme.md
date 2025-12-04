@@ -14,3 +14,7 @@
 │   │     ├── 📄点击三角形打开隐藏content-vue.md
 │   │     └── 📄
 ```
+
+## Resources
+
+- [uiverse](https://uiverse.io/): The Largest Library of Open-Source TailwindCSS/CSS UI
