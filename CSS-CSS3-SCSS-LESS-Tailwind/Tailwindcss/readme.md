@@ -7,6 +7,7 @@
 │   │     ├── 📄Tailwind Guide.pdf
 │   │     ├── 📄Tailwind usefull tips.md
 │   │     ├── 📄Tailwind-basic.md
+│   │     ├── 📄Tailwindcss4-animation.md
 │   │     ├── 📄Tailwindcss学习-2023版.md
 │   │     ├── 📄tips-1.png
 │   │     ├── 📄渐变光圈动画-按钮动画.md
