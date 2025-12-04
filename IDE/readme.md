@@ -56,3 +56,19 @@
 |⏳👥|💬|📹 📸📺🎥|⏰ 📤 🤖 ⚖️ ☕ 💃 🎤🔥|
 |🚶🏿‍♀️🚶🏿|🧹🏪|||
 
+- 🤔 What is Spec-Driven Development?
+- ⚡ Get Started
+- 📽️ Video Overview
+- 🤖 Supported AI Agents
+- 🔧 Specify CLI Reference
+- 📚 Core Philosophy
+- 🌟 Development Phases
+- 🎯 Experimental Goals
+- 🔧 Prerequisites
+- 📖 Learn More
+- 📋 Detailed Process
+- 🔍 Troubleshooting
+- 👥 Maintainers
+- 💬 Support
+- 🙏 Acknowledgements
+- 📄 License
