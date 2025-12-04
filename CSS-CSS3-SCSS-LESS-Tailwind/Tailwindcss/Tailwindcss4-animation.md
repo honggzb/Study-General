@@ -18,6 +18,7 @@
 ```css
  /* globals.css */
 @theme {
+  /* customised animation */
   --animate-wiggle: wiggle 0.5s ease-in-out infinite;
   --animate-fadeIn: fadeIn 5s ease-in forwards;
   @keyframes wiggle {
