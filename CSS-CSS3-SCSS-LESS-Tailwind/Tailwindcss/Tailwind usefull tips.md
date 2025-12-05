@@ -8,6 +8,14 @@
   - [using directive](#using-directive)
 - [using cn+clsx](#using-cn)
 -----------------------------------------------------
+
+1. `@layer`: define custom CSS
+   - `@layer base { }`
+   -` @layer components { }`
+   - `@layer utilities { }`
+2. `@theme`
+3. `@plugin`: `@plugin "@tailwindcss/typography`
+   
 ## class tips
 
 |class|Scene|
