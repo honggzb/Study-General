@@ -53,3 +53,5 @@ react-hook-form-zod
 └─ 📂utils/
    └─ 📄zod-schemas.ts
 ```
+
+> https://ui.shadcn.com/docs/forms/react-hook-form
