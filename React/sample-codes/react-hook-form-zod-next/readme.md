@@ -1,7 +1,6 @@
 ```
 "next": "16.0.5",
 "react": "19.2.0",
-"react-dom": "19.2.0",
 "react-hook-form": "^7.66.1",
  "zod": "^4.1.13"
  "tailwindcss": "^4",
