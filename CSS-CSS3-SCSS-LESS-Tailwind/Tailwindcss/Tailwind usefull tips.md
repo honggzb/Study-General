@@ -170,6 +170,18 @@ const className = cn("bg-red-500", {
   "text-gray-500": !isActive,
 });
 console.log(className); // "bg-red-500 text-white"
+
+const MyButton = ({ isDisabled, isPrimary }) => {
+  const buttonClasses = cn(
+    'px-4 py-2 rounded-md', // Base classes
+    {
+      'bg-blue-600 text-white': isPrimary, // Conditional primary styles
+      'bg-gray-400 text-gray-700 cursor-not-allowed': isDisabled, // Conditional disabled styles
+    },
+    isDisabled && 'opacity-50' // More conditional styles
+  );
+  return <button className={buttonClasses} disabled={isDisabled}>Click Me</button>;
+};
 ```
 
 -[10 Tailwind Classes I Wish I Knew Earlier](https://www.youtube.com/watch?v=x1RJ5Q09PqM)
