@@ -1,3 +1,11 @@
+```
+"next": "16.0.5",
+"react": "19.2.0",
+"react-hook-form": "^7.66.1",
+ "zod": "^4.1.13"
+ "tailwindcss": "^4",
+ ```
+-----------------------------------------------------------------
 ## setup
 
 1. `npm install react-hook-form`
@@ -53,3 +61,5 @@ react-hook-form-zod
 └─ 📂utils/
    └─ 📄zod-schemas.ts
 ```
+
+> https://ui.shadcn.com/docs/forms/react-hook-form
