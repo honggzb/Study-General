@@ -28,7 +28,7 @@
   - If application uses the **pages** directory, please also see the [Pages Router](https://nextjs.org/docs/pages/building-your-application/routing) documentation
 - Note: 
   - The App Router takes priority over the Pages Router
-  - By default, components inside **app** are React Server Components, but can be set to a Client Component
+  - <mark>By default, components inside **app** are React Server Components</mark>, but can be set to a Client Component
   - 默认还是 pages 模式，可在配置中开启 app 模式
 
 ```ts
