@@ -62,5 +62,6 @@ export default async function Profile({ params }: { params: { id: string } }) {
 
 ## Resouces
 
-- [nextjs文档](https://nextjs.frontendx.cn/)
 - [nextJs example-official](https://github.com/vercel/next.js/tree/canary/examples)
+- [tutorialspoint-nextjs](https://www.tutorialspoint.com/nextjs/index.htm)
+- [nextjs文档](https://nextjs.frontendx.cn/)
