@@ -270,7 +270,7 @@ function Todos() {
 > references
 - [official example](https://github.com/TanStack/query/tree/main/examples)
 - [Beginner's Guide to React Query](https://refine.dev/blog/react-query-guide/#why-use-react-query)
-- https://github.com/samudrajovanka/nextjs-react-query-template/
+- https://github.com/samudrajovanka/nextjs-react-query-template/: pages+next14+react18
 - [【ReactQuery】结合场景理解useQuery的各种用法](https://juejin.cn/post/7324186292297203762)
   - https://github.com/PaddyChen75/next-react-query-demo
 - https://github.com/bonnie/udemy-REACT-QUERY:  vite+react
