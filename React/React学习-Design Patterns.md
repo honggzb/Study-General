@@ -12,5 +12,6 @@ Conditional Rendering Pattern         | display different components based on di
 
 - [7 Best React Design Patterns That Every Developer Should Know](https://www.geeksforgeeks.org/reactjs/react-design-patterns/)
 - [A Dive into React Design Patterns](https://medium.com/@ignatovich.dm/a-dive-into-react-design-patterns-76dcd62ccd19)
+- [Software Architecture & Design Tutorial](https://www.tutorialspoint.com/software_architecture_design/index.htm)
 
 [🚀back to top](#top)
