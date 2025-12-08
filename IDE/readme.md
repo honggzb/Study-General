@@ -44,7 +44,7 @@
 |🧩 ShadCN |🎨 Tailwind|📱💻🖥️ responsive|🔑 Token|
 |🌳 Tree-shakeable|🧪 Ready to test|🗄️DB |🌐 API Call|
 |💅 Emotion|✨ Prettier|🚥 GitHub Actions|📐 ESLint|
-|✅ Chromatic |📦 npm |💳 payments|♿ Accessibility|
+|✅ Chromatic ❌ |📦 npm |💳 payments|♿ Accessibility|
 |other|---|---|---|
 |📞|🧠💬|🖌 画笔|🖼️📃📤📩 导出Import/Export|
 |🎨 主题|💾 save 📈 |🔒 Privacy|💯 ✨|
