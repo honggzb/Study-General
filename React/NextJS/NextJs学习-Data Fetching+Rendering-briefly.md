@@ -111,7 +111,7 @@ export async function getStaticProps() {
 
 - **By default, Next.js pre-renders every page**
 - The process of loading JavaScript to pre-rendered HTML page is called **hydration**
-  - ![hydration](hydration.png)
+  - ![hydration](./images/hydration.png)
 
 ### Pre-Rendering
 
