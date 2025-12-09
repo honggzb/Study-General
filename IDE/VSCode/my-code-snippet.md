@@ -4,12 +4,12 @@
 "Print to console": {
 		"prefix": "mmap",
 		"body": [
-			"{ data.map((item, index) => {",
-			"    return (",
-			"        <div key={item.id}>",
+			"{data.map((item, index) => {",
+			"  return (",
+			"      <div key={item.id}>",
 			"",
-			"        </div>",
-			"    )",
+			"      </div>",
+			"  )",
 			"})}"
 		],
 		"description": "react map function"
