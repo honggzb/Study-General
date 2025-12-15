@@ -16,6 +16,23 @@
   - Repository: handle data access operations
   - Service: business Logic
   - Controller: manages HTTP requests
+1. `npm install tsyringe`
+2. add following to 'tsconfig.json'
+3. Add a polyfill for the Reflect API
+   1. [reflect-metadata](https://www.npmjs.com/package/reflect-metadata)
+   2. The Reflect polyfill import should only be added once(such as root directory of react project), and before DI is used
+
+```ts
+//tsconfig.json
+{
+  "compileroptions": {
+    "experimentaldecorators": true,
+    "emitdecoratormetadata": true
+  }
+}
+// main.ts
+import "reflect-metadata";
+```
   
 ## Repository
 
