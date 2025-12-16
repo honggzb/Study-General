@@ -201,6 +201,26 @@ class BookController {
 export default BookController;
 ```
 
+- ???
+
+```ts
+// in service layer file --> RoleMappingService
+static TOKEN = Symbol('RoleMappingService');
+// in controller layer file --> useRoleMappingService
+export function useRoleMappingService() {
+    try {
+        return container.resolve<RoleMappingService>(RoleMappingService.TOKEN);
+    } catch {
+        container.register<RoleMappingService>(RoleMappingService.TOKEN, {
+            useFactory: instanceCachingFactory<RoleMappingService>(c =>
+                c.resolve<RoleMappingService>(RoleMappingService)
+            ),
+        });
+        return container.resolve<RoleMappingService>(RoleMappingService.TOKEN);
+    }
+}
+```
+
 [⬆ back to top](#top)
 
 ## Set Up Express Routes - handle HTTP requests by using controller
