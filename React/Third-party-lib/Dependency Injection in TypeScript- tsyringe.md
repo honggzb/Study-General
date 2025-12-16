@@ -120,6 +120,7 @@ export default BookService;
 
 - Create the BookController with Auto-bind Decorator
 - handles HTTP requests and uses the service to perform operations
+- `container.resolve()` in constructor
 
 ```ts
 import { Request, Response } from "express";
