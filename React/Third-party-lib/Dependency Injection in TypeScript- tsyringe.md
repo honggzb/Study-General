@@ -265,6 +265,18 @@ describe('MyDependency', () => {
     container.resolve(MyDependency);
   });
 });
+//--------------------------
+import { container, UserCommands } from "@/core/user/user.commands"
+describe("test ftw", () => {
+    let userAdapterMock: UserAdapterMock
+    let userCommands: UserCommands
+    beforeEach(() => {
+        userAdapterMock = new UserAdapter()
+        container.registerInstance<UserAdapter>("UserAdapter", userAdapter)
+        userCommands = container.resolve<UserCommands>("UserCommands")
+    });
+    ...
+});
 ```
 
 - [Implementing Dependency Injection in TypeScript with Mongoose and tsyringe](https://blog.devgenius.io/implementing-dependency-injection-in-typescript-with-mongoose-and-tsyringe-dae3b19a3b79)
