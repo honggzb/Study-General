@@ -281,3 +281,7 @@ describe("test ftw", () => {
 ```
 
 - [Implementing Dependency Injection in TypeScript with Mongoose and tsyringe](https://blog.devgenius.io/implementing-dependency-injection-in-typescript-with-mongoose-and-tsyringe-dae3b19a3b79)
+- [Using Dependency Injection in an Express API with TypeScript](https://www.ronnydelgado.com/my-blog/dependency-injection-expressjs-typescript)
+- [How to Implement Dependency Injection in TypeScript Like a Pro](https://namatery.medium.com/how-to-implement-dependency-injection-in-typescript-like-a-pro-843aa76342ad)
+  - https://github.com/alireza12prom/medium-how-to-implement-dependency-injection-like-a-pro
+- https://github.com/kriscfoster/typescript-dependency-injection
