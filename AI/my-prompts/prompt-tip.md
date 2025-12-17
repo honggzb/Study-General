@@ -87,3 +87,57 @@ Make the radio buttons for the options to look like normal buttons. use blue bac
   "city": "New York"
 }
 ```
+
+## software developemen
+
+
+```
+请创建Vite + Vue3.5 + Element Plus 2.7的项目（项目名：{{project_name}}），要求：
+
+1. 技术栈版本：Vue {{vue_version}}、Vue Router {{router_version}}、Pinia {{pinia_version}}；
+
+2. 核心配置：vite.config.js设置@别名指向src、端口{{port}}、开发环境/api代理。
+
+-------------------------------------------------
+设计登录界面，需满足以下要求：
+
+1. 布局：顶部显示"智能汇AI"字样及logo，中间为圆形头像（支持上传，路径从环境变量VITE_API_BASE_URL获取），下方是"登录""注册"选项卡（"登录"默认选中，配橙色下划线）；
+
+2. 技术栈：Vue 3.5 + Element Plus 2.7；
+
+3. 细节：表单验证用Element Plus的Form组件规则，风格简约清新。
+
+---------------------------------------------------
+
+生成用户信息卡片组件（技术栈：Vue 3.5 + Element Plus 2.7），需符合以下规范：
+
+1. 样式：卡片阴影用el-card的shadow="hover"，字体14px（正文）、16px（标题）；
+
+2. 交互：点击右侧"编辑"按钮弹出抽屉，表单验证用Element Plus的rules；
+
+3. 数据：接收props为userInfo（含id、name、avatar字段）。
+
+------------------------------------------------
+
+生成用户列表接口的请求函数（技术栈：Axios + TypeScript），要求：
+
+1. 接口信息：地址/api/user/list，请求方式GET；
+
+2. 参数：支持page（默认1）、limit（默认10）、keyword（可选）；
+
+3. 类型：定义UserListParams和UserListItem接口，禁止使用any；
+
+4. 注意：用Axios拦截器统一处理错误，不使用已废弃的axios.create({timeout: 5000})。
+
+-------------------------------------------------
+
+实现AI聊天的多轮对话功能（技术栈：Vue 3.5 + Pinia），核心需求：
+
+1. 上下文记忆：messages数组格式为[{role: string, content: string}]，role仅支持"user""assistant""system"；
+
+2. 消息处理：用户发消息后自动入历史，AI响应前添加"thinking"状态（显示加载动画）；
+
+3. 业务规则：超过10条历史消息时，自动压缩最早5条为“历史对话摘要”（仅显首条+末条，中间用“...”代替）。
+
+-------------------------------------------------------
+```
