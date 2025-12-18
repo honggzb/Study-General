@@ -168,7 +168,7 @@ export default function App() {
 
 ## Generate paginated tables with jspdf-html2canvas
 
-- Manual Pagination with 'jsPDF' and 'html2canvas'
+- **Manual Pagination with 'jsPDF' and 'html2canvas'**
   - Divide your content into logical sections(e.g., `<section>` or `<div>` elements).
   - Use html2canvas on each section individually.
   - Create a jsPDF instance.
@@ -177,7 +177,7 @@ export default function App() {
   - Add the next canvas image to the new page.
   - Save the final document using doc.save().
 - Tips and Tricks
-  - add the `data-html2canvas-ignore` attribute to the html element. `html2canvas` will ignore these elements during canvas conversion
+  - add the **`data-html2canvas-ignore`** attribute to the html element. `html2canvas` will ignore these elements during canvas conversion
   - `<div data-html2canvas-ignore><SearchInput ... onChange={onChangeSearchKeywords} /></div>`
 
 ```ts
