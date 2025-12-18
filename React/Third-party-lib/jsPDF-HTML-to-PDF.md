@@ -13,6 +13,9 @@
 ## General
 
 - `new jsPDF()`: Initialize a new instance
+  - `new jsPDF('p', 'pt', 'a4');  // orientation, unit, format`
+- `addPage()`
+- `addImage(imageData, format, x, y, width, height, alias, compression, rotation)`:
 - `doc.html()`: convert HTML to PDF, It takes two arguments
   - the HTML elementm, use `useRef()` to get HTML reference
   - a callback function
@@ -22,7 +25,6 @@
 // Initialize a new instance of `jsPDF`:
 const doc = new jsPDF();
 // customise 
-
 const doc = new jsPDF({
   orientation: 'landscape', // or "portrait"
   unit: 'px', // "mm", "cm", "in" also supported
@@ -33,6 +35,17 @@ doc.html(html_element, {
     await doc.save('pdf_name');
   },
 });
+//
+const pdf = new jsPDF(); // focus is on the first page
+pdf.addPage(); // now focus is on the second page
+pdf.addImage(
+  imageData,    // imageData - DataUrl, CanvasElement ...
+  'PNG',        // format - 'PNG', 'JPEG' ...
+  x,            // x - x position against left edge of the page
+  y,            // y - y position against upper edge of the page
+  imgWidth,     // width - width of the image
+  imgHeight,    // height - height of the image
+);
 ```
 
 [⬆ back to top](#top)
