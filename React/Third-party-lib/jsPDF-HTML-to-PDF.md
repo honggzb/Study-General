@@ -156,7 +156,7 @@ export default function App() {
 ## Generate paginated tables with jspdf-html2canvas
 
 - Manual Pagination with 'jsPDF' and 'html2canvas'
-  - Divide your content into logical sections (e.g., <section> or <div> elements).
+  - Divide your content into logical sections(e.g., `<section>` or `<div>` elements).
   - Use html2canvas on each section individually.
   - Create a jsPDF instance.
   - Add the first section's canvas as an image to the first page.
