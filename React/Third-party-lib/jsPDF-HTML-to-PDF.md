@@ -7,7 +7,7 @@
 - [Generate paginated tables with jspdf-autotable](#generate-paginated-tables-with-jspdf-autotable)
 - [Encrypt and password‑protect your PDF (built‑in)](#encrypt-and-passwordprotect-your-pdf-builtin)
 - [Add metadata to your PDF](#add-metadata-to-your-pdf)
-
+- [Add watermark to your PDF](#add-watermark-to-your-pdf)
 
 ## General
 
@@ -241,6 +241,27 @@ export default function App() {
     </>
   );
 }
+```
+
+[⬆ back to top](#top)
+
+## Add watermark to your PDF
+
+```ts
+const addWatermark = () => {
+  const watermarkImg = getWatermarkImg();
+  pdf.addImage(
+    watermarkImg,
+    'PNG',
+    0,
+    0,
+    WATERMARK_WIDTH,
+    WATERMARK_HEIGHT,
+  );
+};
+// ... for example, add the watermark before add a new page
+addWatermark();
+pdf.addPage();
 ```
 
 [⬆ back to top](#top)
