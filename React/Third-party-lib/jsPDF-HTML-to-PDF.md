@@ -4,6 +4,7 @@
 - [Adding the markup](#adding-the-markup)
 - [limitations of jsPDF](#limitations-of-jspdf)
 - [Capture styled components with html2canvas](#capture-styled-components-with-html2canvas)
+- [Generate paginated tables with jspdf-html2canvas](#generate-paginated-tables-with-jspdf-html2canvas)
 - [Generate paginated tables with jspdf-autotable](#generate-paginated-tables-with-jspdf-autotable)
 - [Encrypt and password‑protect your PDF (built‑in)](#encrypt-and-passwordprotect-your-pdf-builtin)
 - [Add metadata to your PDF](#add-metadata-to-your-pdf)
@@ -148,6 +149,92 @@ export default function App() {
     </>
   );
 }
+```
+
+[⬆ back to top](#top)
+
+## Generate paginated tables with jspdf-html2canvas
+
+- Manual Pagination with 'jsPDF' and 'html2canvas'
+  - Divide your content into logical sections (e.g., <section> or <div> elements).
+  - Use html2canvas on each section individually.
+  - Create a jsPDF instance.
+  - Add the first section's canvas as an image to the first page.
+  - Use doc.addPage() to create a new page for each subsequent section.
+  - Add the next canvas image to the new page.
+  - Save the final document using doc.save().
+
+```ts
+import React, { useRef } from 'react';
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
+const PdfGenerator = () => {
+  // Refs for each content section that should be a separate page
+  const page1Ref = useRef(null);
+  const page2Ref = useRef(null);
+  const page3Ref = useRef(null);
+  // ... more refs for more pages
+  const downloadPdf = async () => {
+    const pdf = new jsPDF('p', 'mm', 'a4'); // 'p' portrait, 'mm' units, 'a4' format
+    const margin = 10; // mm
+    let position = margin;
+    const pages = [page1Ref, page2Ref, page3Ref]; // Array of all page refs
+    for (let i = 0; i < pages.length; i++) {
+      const input = pages[i].current;
+      if (input) {
+        const canvas = await html2canvas(input, { scale: 2 }); // Scale for better resolution
+        const imgData = canvas.toDataURL('image/png');
+        const imgWidth = 210 - 2 * margin; // A4 width (210mm) minus margins
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        
+        // Add page if it's not the first one
+        if (i > 0) {
+          pdf.addPage();
+        }
+        // Add the image data to the PDF
+        pdf.addImage(imgData, 'PNG', margin, position, imgWidth, imgHeight);
+      }
+    }
+    pdf.save('download.pdf');
+  };
+  return (
+    <div>
+      <button onClick={downloadPdf}>Download Multi-Page PDF</button>
+      <div ref={page1Ref}>
+        {/* Content for Page 1 */}
+        <h1>Page 1 Title</h1>
+        <p>This is the content for the first page of the PDF.</p>
+      </div>
+      <div ref={page2Ref}>
+        {/* Content for Page 2 */}
+        <h1>Page 2 Title</h1>
+        <p>This is the content for the second page of the PDF.</p>
+      </div>
+      <div ref={page3Ref}>
+        {/* Content for Page 3 */}
+        <h1>Page 3 Title</h1>
+        <p>This is the content for the third page of the PDF.</p>
+      </div>
+      {/* ... more content divs */}
+    </div>
+  );
+};
+export default PdfGenerator;
+```
+
+- **another choice is html2pdf.js**
+  - Automatic Page Breaks: It can automatically avoid breaking elements (like images, table rows, or paragraphs) across pages using the `avoid-all` mode or specific CSS selectors.
+  - CSS-based Breaks: You can use standard CSS properties (`break-before`, `break-after`, and `break-inside`) or add a class like `html2pdf__page-break` to an element to force a page break.
+
+```js
+html2pdf(element, {
+  margin: 10,
+  filename: 'document.pdf',
+  image: { type: 'jpeg', quality: 0.98 },
+  html2canvas: { scale: 2 },
+  jsPDF: { unit: 'mm', format: 'a4', orientation: 'p' },
+  pagebreak: { mode: ['css', 'avoid-all'] } // Use CSS and avoid breaking elements
+});
 ```
 
 [⬆ back to top](#top)
