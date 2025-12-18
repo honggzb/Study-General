@@ -176,6 +176,9 @@ export default function App() {
   - Use doc.addPage() to create a new page for each subsequent section.
   - Add the next canvas image to the new page.
   - Save the final document using doc.save().
+- Tips and Tricks
+  - add the `data-html2canvas-ignore` attribute to the html element. `html2canvas` will ignore these elements during canvas conversion
+  - `<div data-html2canvas-ignore><SearchInput ... onChange={onChangeSearchKeywords} /></div>`
 
 ```ts
 import React, { useRef } from 'react';
