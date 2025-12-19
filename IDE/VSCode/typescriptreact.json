@@ -1,0 +1,101 @@
+{
+	// Place your snippets for typescriptreact here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	"react map function": {
+		"prefix": "mmap",
+		"body": [
+			"{data.map((item, index) => {",
+			"  return (",
+			"    <div key={item.id}>",
+			"",
+			"    </div>",
+			"  )",
+			"})}"
+		],
+		"description": "react map function"
+	},
+	"arrow function in a line": {
+		"prefix": "alr",
+		"body": [
+			"($1) => { }",
+		],
+		"description": "arrow function in a line"
+	},
+	"React useState": {
+		"prefix": "us",
+		"body": [
+		"const [$1, set$2] = useState($3);"
+		]
+	},
+	"React useEffect": {
+		"prefix": "ue",
+		"body": [
+		"useEffect(() => {",
+		"  $1",
+		"}, [$2]);"
+		]
+	},
+	"React useCallback": {
+		"prefix": "ucb",
+		"body": [
+		"useCallback(() => {",
+		"  $1",
+		"}, [$2]);"
+		]
+	},
+	"React useMemo": {
+		"prefix": "umm",
+		"body": [
+		"useMemo(() => {",
+		"  $1",
+		"}, [$2]);"
+		]
+	},
+	"Async React Function Component": {
+		"prefix": "arjsfc",
+		"body": [
+		"const $1 = async () => {",
+		"  return $2;",
+		"};",
+		"",
+		"export default $1;"
+		]
+	},
+	"Async React Function Component with Props": {
+		"prefix": "arjsfcp",
+		"body": [
+		"interface $1Props {}",
+		"",
+		"const $1 = async ({}: $1Props) => {",
+		"  return $2;",
+		"};",
+		"",
+		"export default $1;"
+		]
+	},
+	"React Function Component": {
+		"prefix": "rjsfc",
+		"body": [
+		"const $1 = () => {",
+		"  return $2;",
+		"};",
+		"",
+		"export default $1;"
+		]
+	},
+	"React Function Component with Props": {
+		"prefix": "rjsfcp",
+		"body": [
+		"interface $1Props {}",
+		"",
+		"const $1 = ({}: $1Props) => {",
+		"  return $2;",
+		"};",
+		"",
+		"export default $1;"
+		]
+	}
+}
