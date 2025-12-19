@@ -7,9 +7,9 @@
 	"react map function": {
 		"prefix": "mmap",
 		"body": [
-			"{data.map((item, index) => {",
+			"{$1s.map(($1, index) => {",
 			"  return (",
-			"    <div key={item.id}>",
+			"    <div key={$1.$2}>",
 			"",
 			"    </div>",
 			"  )",
