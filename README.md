@@ -1119,6 +1119,13 @@
 │     │    ├── 📄React性能优化之1-组件优化.md
 │     │    └──
 │     ├──  📂Third-party-lib/
+│     │    ├── 📂React-query/
+│     │    │    ├── 📂React query pattern/
+│     │    │    ├── 📄React Query 简单用法总结.md
+│     │    │    ├── 📄React query pattern.md
+│     │    │    └── 📄React学习-React Query-2025.md
+│     │    ├── 📂tsyringe+axios/
+│     │    ├── 📄Dependency Injection in TypeScript- tsyringe.md
 │     │    ├── 📄date-fns.md
 │     │    ├── 📄jsPDF-HTML-to-PDF.md
 │     │    └──
