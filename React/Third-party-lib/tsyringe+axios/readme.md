@@ -1,5 +1,7 @@
 ## axios + tsyringe
 
+**Service layer**
+
 ```
 - src\services\http-service\http-service.interface.ts   --> HttpService interface(CRUD)               --> 
 - src\services\http-service\generic-http-service.ts     --> GenericHttpService(auth, CRUD)            --> 
@@ -7,7 +9,11 @@
 - src\services\http-service\register-service.ts         --> DI
   - `import { container, instanceCachingFactory } from 'tsyringe';`
   - `registerService, registerAndResolveService`
+```
 
+**Controller Layer**
+
+```
 others service   <-- using `registerService, registerAndResolveService` from 'src\services\http-service\register-service.ts'
 
 - `constructor() { this.api = registerAndResolveService<DviApiService>(DviApiService) }`
