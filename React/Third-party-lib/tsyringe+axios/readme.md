@@ -24,7 +24,7 @@ classDiagram
     HTTPService-Interface: +get()
     HTTPService-Interface: +post()
     HTTPService-Interface: +put()
-    HTTPService-nterface: +patch()
+    HTTPService-Interface: +patch()
     HTTPService-Interface <|-- GenericHttpService
     GenericHttpService <|--HttpService
     class GenericHttpService{
