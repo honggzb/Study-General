@@ -33,6 +33,7 @@ classDiagram
       +getxxxBasePath()
         
     }
+    note for HttpService "Symbol('HttpService') is primarily used in JavaScript/TypeScript to create a unique identifier"
     class HttpService{
         +Symbol token
         +requestInterceptor()
