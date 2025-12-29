@@ -8,7 +8,7 @@
   - `import { container, instanceCachingFactory } from 'tsyringe';`
   - `registerService, registerAndResolveService`
 
-others service   <-- 
+others service   <-- using `registerService, registerAndResolveService` from 'src\services\http-service\register-service.ts'
 
 - `constructor() { this.api = registerAndResolveService<DviApiService>(DviApiService) }`
 - `asynic getxxxAttributes() {...}`
@@ -33,7 +33,7 @@ classDiagram
       +getxxxBasePath()
         
     }
-    note for HttpService "Symbol('HttpService') is primarily used in JavaScript/TypeScript to create a unique identifier"
+    note for HttpService "Symbol('HttpService') <br>is primarily used in JavaScript/TypeScript <br>to create a unique identifier"
     class HttpService{
         +Symbol token
         +requestInterceptor()
