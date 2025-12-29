@@ -272,7 +272,9 @@ import { persistor, store } from './store/store';
   - ✔ Created 1 file: --> lib\utils.ts 
 3. `npx shadcn@latest add button`
 4. `import { Button } from "@/components/ui/button"`, `<Button>Click me</Button>`
-5. https://ui.shadcn.com/
+5. Icon: `import { Search } from "lucide-react";`
+  - https://lucide.dev/icons/
+6. https://ui.shadcn.com/
 
 [⬆ back to top](#top)
 
