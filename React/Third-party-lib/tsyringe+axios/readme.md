@@ -17,3 +17,26 @@ hooks   <--
 - `import { container, instanceCachingFactory } from 'tsyringe';`
 - `export function usexxxService(){ return container.resolve<DviService>(DviService.TOKEN); }`
 ```
+
+```mermaid
+classDiagram
+    HTTPService: +delete()
+    HTTPService: +get()
+    HTTPService: +post()
+    HTTPService: +put()
+    HTTPService: +patch()
+    HTTPService <|-- GenericHttpService
+    GenericHttpService <|--HttpService
+    class GenericHttpService{
+      +string basePath
+      +AxiosInstance axiosInstance
+      +getDvIBasePath()
+        
+    }
+    class HttpService{
+        +Symbol token
+        +requestInterceptor()
+        +responseInterceptor()
+        +errorInterceptor()
+    }
+```
