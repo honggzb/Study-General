@@ -20,12 +20,12 @@ hooks   <--
 
 ```mermaid
 classDiagram
-    HTTPService Interface: +delete()
-    HTTPService Interface: +get()
-    HTTPService Interface: +post()
-    HTTPService Interface: +put()
-    HTTPService Interface: +patch()
-    HTTPService Interface <|-- GenericHttpService
+    HTTPService-Interface: +delete()
+    HTTPService-Interface: +get()
+    HTTPService-Interface: +post()
+    HTTPService-Interface: +put()
+    HTTPService-nterface: +patch()
+    HTTPService-Interface <|-- GenericHttpService
     GenericHttpService <|--HttpService
     class GenericHttpService{
       +string basePath
