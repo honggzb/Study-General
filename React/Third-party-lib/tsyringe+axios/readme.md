@@ -30,7 +30,7 @@ classDiagram
     class GenericHttpService{
       +string basePath
       +AxiosInstance axiosInstance
-      +getDvIBasePath()
+      +getxxxBasePath()
         
     }
     class HttpService{
