@@ -6,14 +6,15 @@
 - src\services\http-service\http-service.interface.ts   --> HttpService interface(CRUD)               --> 
 - src\services\http-service\generic-http-service.ts     --> GenericHttpService(auth, CRUD)            --> 
 - src\services\http-service\http.service.ts             --> HttpService, interceptor(Global error)    -->
-- src\services\http-service\register-service.ts         --> DI
-  - `import { container, instanceCachingFactory } from 'tsyringe';`
-  - `registerService, registerAndResolveService`
 ```
 
 **Controller Layer**
 
 ```
+- src\services\http-service\register-service.ts         --> DI
+  - `import { container, instanceCachingFactory } from 'tsyringe';`
+  - `registerService, registerAndResolveService`
+
 others service   <-- using `registerService, registerAndResolveService` from 'src\services\http-service\register-service.ts'
 
 - `constructor() { this.api = registerAndResolveService<DviApiService>(DviApiService) }`
