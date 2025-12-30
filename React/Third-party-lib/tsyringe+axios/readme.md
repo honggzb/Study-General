@@ -1,6 +1,6 @@
 ## axios + tsyringe
 
-**Service layer**
+## Service layer
 
 ```
 - src\services\http-service\http-service.interface.ts   --> HttpService interface(CRUD)               --> 
@@ -8,7 +8,7 @@
 - src\services\http-service\http.service.ts             --> HttpService, interceptor(Global error)    -->
 ```
 
-**Controller Layer**
+## Controller Layer
 
 ```
 - src\services\http-service\register-service.ts         --> DI
