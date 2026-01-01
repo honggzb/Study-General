@@ -28,6 +28,7 @@
 
 |project|类型|说明|
 |---|---|---|
+|[GitHubDaily](github.com/GitHubDaily/GitHubDaily)|resource|GitHub 上高质量、有趣实用的开源技术教程、开发者工具、编程网站、技术资讯|
 |[Next AI Draw.io](https://github.com/DayuanJiang/next-ai-draw-io)|图表创建|AI驱动的图表创建工具 - 对话、绘制、可视化|
 |[《一人企业方法论》V2.1](https://github.com/easychen/one-person-businesses-methodology-v2.0)|book|适合做其他副业（比如自媒体、电商、数字商品）的非技术人群|
 |[微舆](https://github.com/666ghj/BettaFish)|commercial|“微舆” 是一个从0实现的创新型 多智能体 舆情分析系统，帮助大家破除信息茧房，还原舆情原貌，预测未来走向，辅助决策。用户只需像聊天一样提出分析需求，智能体开始全自动分析 国内外30+主流社媒 与 数百万条大众评论|
