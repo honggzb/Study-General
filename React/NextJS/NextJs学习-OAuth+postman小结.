@@ -1,4 +1,5 @@
-- [Authorization Code flow with  PKCE](#top)
+## [Authorization Code flow with  PKCE](#top)
+
 - [Authorization for Single-page apps(browser-based apps)](#authorization-for-single-page-appsbrowser-based-apps)
 - [set up Authorization Code flow (with PKCE) in Postman](#set-up-authorization-code-flow-with-pkce-in-postman)
 
