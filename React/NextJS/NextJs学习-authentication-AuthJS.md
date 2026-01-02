@@ -186,5 +186,5 @@ export function SignOut() {
 [⬆ back to top](#top)
 
 > References
-- https://github.com/machadop1407/nextjs-15-authentication-next-auth/tree/main
+- https://github.com/machadop1407/nextjs-15-authentication-next-auth
 - [NextJS 15 Authentication Tutorial - Learn Next-Auth in 30 Minutes](https://www.youtube.com/watch?v=n-fVrzaikBQ)
