@@ -83,7 +83,7 @@ sequenceDiagram
 - Select a '**Grant Type**' of `Authorization Code (With PKCE)`
 - The '**Code Challenge Method**' can be either SHA-256 or Plain
 - You can also optionally provide a custom **Code Verifier**
-- ![OAuth-swimlane](OAuth-swimlane.png)
+- ![set up Authorization Code flow (with PKCE)](./images/set up Authorization Code flow (with PKCE).gif)
 
 > References
 - [OAuth 2 Simplified](https://aaronparecki.com/oauth-2-simplified/#single-page-apps)
