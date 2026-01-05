@@ -1,3 +1,4 @@
+/ * https://github.com/jonat-m/cursor-nextjs-jsonserver-reactquery-demo */
 import Link from 'next/link'
 
 export default function Home() {
