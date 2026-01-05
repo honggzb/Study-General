@@ -28,10 +28,10 @@
   4. If the application identity is authenticated and the authorization grant is valid, the authorization server (API) issues an access token to the application. Authorization is complete.
   5. The application requests the resource from the resource server (API) and presents the access token for authentication
   6. If the access token is valid, the resource server (API) serves the resource to the application
-
-<img src="./images/authJS-OAuth.svg">
-
+- <img src="./images/authJS-OAuth.svg">
+  - from https://authjs.dev/concepts/oauth
 - ![authjs-oauth-swim-lane](./images/authjs-oauth-swim-lane.png)
+  - from https://aaronparecki.com/oauth-2-simplified/
 
 ### Session strategies
 
@@ -186,5 +186,5 @@ export function SignOut() {
 [⬆ back to top](#top)
 
 > References
-- https://github.com/machadop1407/nextjs-15-authentication-next-auth/tree/main
+- https://github.com/machadop1407/nextjs-15-authentication-next-auth
 - [NextJS 15 Authentication Tutorial - Learn Next-Auth in 30 Minutes](https://www.youtube.com/watch?v=n-fVrzaikBQ)

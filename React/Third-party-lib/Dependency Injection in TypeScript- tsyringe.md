@@ -12,10 +12,10 @@
 ## General
 
 - Dependency Injection (DI) is a design pattern that helps create loosely coupled, maintainable, and testable code
-- layers
-  - Repository: handle data access operations
-  - Service: business Logic
-  - Controller: manages HTTP requests
+- **layers**
+  - **Repository**: handle data access operations
+  - **Service**: business Logic
+  - **Controller**: manages HTTP requests
 1. `npm install tsyringe`
 2. add following to 'tsconfig.json'
 3. Add a polyfill for the Reflect API
