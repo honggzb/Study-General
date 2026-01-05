@@ -4,7 +4,7 @@
 │     │    │    ├── 📂React query + json server/
 │     │    │    │      ├── 📂01-respository/
 │     │    │    │      ├── 📂02-hooks/
-│     │    │    │      └── 📂03-rest+graphql/
+│     │    │    │      └── 📂03-next+rest+graphql/
 │     │    │    ├── 📂React query pattern/
 │     │    │    ├── 📄React Query 简单用法总结.md
 │     │    │    ├── 📄React query pattern.md
