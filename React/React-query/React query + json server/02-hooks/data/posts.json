@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "id": "a0f0",
+      "title": "Primeiro post",
+      "content": "Primeiro comentário"
+    },
+    {
+      "id": "3bff",
+      "title": "Segundo post",
+      "content": "Segundo comentário"
+    },
+    {
+      "id": "b621",
+      "title": "Terceiro post",
+      "content": "Terceiro comentário"
+    }
+  ]
+}
