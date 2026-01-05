@@ -1,0 +1,39 @@
+{
+  "name": "cursor-nextjs-jsonserver-react-query-demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm run json-server\" \"pnpm run json-graphql-server\" \"next dev --turbopack\"",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "json-server": "json-server --watch ./json-server/db.json --port 3001",
+    "json-graphql-server": "json-graphql-server ./json-server/db.json --port 3002"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.76.1",
+    "graphql": "^16.11.0",
+    "next": "15.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "concurrently": "^9.1.2",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.2",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "json-graphql-server": "^3.2.1",
+    "json-server": "1.0.0-beta.3",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
