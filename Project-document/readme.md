@@ -61,4 +61,14 @@ AI Quiz        | lucide-react                | icon library           |
                | OpenAI                      |                        |
                | react-d3-cloud              | word cloud             |
                | react query                 | state management       |
+ rag-chatbot   |       Tech Stack            |     function           |  implementation
+---------------|-----------------------------|------------------------|--------------------------
+               | @clerk/nextjs               | authentication         | login/logout auth
+               | Shadcn ui                   | ui library             |
+ RAG chatbot   | Neon                        | Vector database        |
+               | drizzle-kit, drizzle-orm    | DB ORM                 |
+               | AI SDK, AI element          | AI, chatbot components |
+               | @langchain/textsplitters    | text chunks, embeddings|
+               | pdf-parse                   | pdf file handler       |
+---------------|-----------------------------|------------------------|--------------------------
 ```
