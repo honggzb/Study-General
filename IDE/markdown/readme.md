@@ -20,6 +20,36 @@
 |Strikethrough|~~The world is flat.~~ We now know that the world is round|`~~The world is flat.~~ We now know that the world is round`|
 |粗体+颜色|<strong style="color:#DD5145">粗体+颜色</strong>|`<strong style="color:#DD5145">粗体</strong>`|
 |斜体+颜色|<i style="color:gray;font-weight:bold">斜体+颜色</i>|`<i style="color:gray;font-weight:bold">颜色</i>`|
+|folder(折叠)||`<details>`|
+
+
+<details>
+
+<summary>Tips for collapsed sections</summary>
+
+## You can add a header
+You can add text within a collapsed section.
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
+```
+</details>
+
+```
+<details>
+
+<summary>Tips for collapsed sections</summary>
+
+## You can add a header
+You can add text within a collapsed section.
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
+```
+</details>
+```
 
 ## Table
 
