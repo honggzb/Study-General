@@ -64,3 +64,56 @@ You can add an image or a code block, too.
 | :---        |    :----:   |          ---: |
 | Header      | Title       | Here's this   |
 | Paragraph And more   | Text        | And more  And more    |
+
+## Visualization
+
+### infographic
+
+```infographic
+infographic list-grid-badge-card
+data
+  title 年度核心指标
+  desc 2025年度业绩概览
+  items
+    - label 总营收
+      desc 12.8 亿元 | YoY +23.5%
+      icon mdi/currency-usd
+    - label 净利润
+      desc 12.8 | YoY+23.5%
+      icon mdi/chart-line
+    - label 新增客户
+      desc 12.8 | YoY+23.5%
+      icon mdi/account-plus
+      - label summary
+      desc 12.8 | YoY+23.5%
+      icon mdi/star
+    - label 客户满意度
+      desc 12.8 | YoY+23.5%
+      icon mdi/chart-pie
+    - label 行业领先
+      desc 12.8 | YoY+23.5%
+      icon mdi/refresh
+```
+
+### vega-lite
+
+```vega-lite
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": "A simple bar chart with embedded data.",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "values": [
+      {"a": "A", "b": 28}, {"a": "B", "b": 55}, {"a": "C", "b": 43},
+      {"a": "D", "b": 91}, {"a": "E", "b": 81}, {"a": "F", "b": 53},
+      {"a": "G", "b": 19}, {"a": "H", "b": 87}, {"a": "I", "b": 52}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "a", "type": "nominal", "axis": {"labelAngle": 0}},
+    "y": {"field": "b", "type": "quantitative"}
+  }
+}
+```
