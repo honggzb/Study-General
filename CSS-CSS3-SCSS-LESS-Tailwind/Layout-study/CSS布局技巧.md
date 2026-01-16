@@ -87,7 +87,7 @@ h1 {
 
 ## 带侧边栏的响应式布局 & 漂亮的文本下划线
 
-![alt text](a362a8f776f577d1941f489fbf86a3ba.png)
+![带侧边栏的响应式布局](./images/带侧边栏的响应式布局.png)
 
 ```html
 <div class="container">
