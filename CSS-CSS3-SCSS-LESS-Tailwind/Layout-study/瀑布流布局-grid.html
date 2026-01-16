@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>瀑布流布局-grid</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .grid-content {
+      display: flex;
+    }
+
+    img {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="grid-item">
+      <div class="grid-content">
+        <img src="https://api.ckvv.net/photos/random?id=1" alt="Random Photo">
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-content">
+        <img src="https://api.ckvv.net/photos/random?id=2" alt="Random Photo">
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-content">
+        <img src="https://api.ckvv.net/photos/random?id=3" alt="Random Photo">
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-content">
+        <img src="https://api.ckvv.net/photos/random?id=4" alt="Random Photo">
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-content">
+        <img src="https://api.ckvv.net/photos/random?id=5" alt="Random Photo">
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-content">
+        <img src="https://api.ckvv.net/photos/random?id=6" alt="Random Photo">
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-content">
+        <img src="https://api.ckvv.net/photos/random?id=7" alt="Random Photo">
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-content">
+        <img src="https://api.ckvv.net/photos/random?id=8" alt="Random Photo">
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-content">
+        <img src="https://api.ckvv.net/photos/random?id=9" alt="Random Photo">
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="grid-content">
+        <img src="https://api.ckvv.net/photos/random?id=10" alt="Random Photo">
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  const grid = document.querySelector(".grid-container");
+  const allItems = document.querySelectorAll(".grid-item");
+
+  const resizeGridItem = (item) => {
+    const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue("grid-auto-rows"));
+    const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue("grid-row-gap"));
+    const contentHeight = item.querySelector(".grid-content").getBoundingClientRect().height;
+    const rowSpan = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
+    item.style.gridRowEnd = `span ${rowSpan}`;
+  };
+
+  const resizeAllGridItems = () => {
+    allItems.forEach((item) => resizeGridItem(item));
+  };
+
+  window.onload = () => {
+    resizeAllGridItems();
+    const images = document.querySelectorAll(".grid-content img");
+    images.forEach((img) => img.addEventListener("load", resizeAllGridItems));
+  };
+
+  window.addEventListener("resize", resizeAllGridItems);
+</script>
+
+</html>
