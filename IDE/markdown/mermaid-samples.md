@@ -312,5 +312,5 @@ sequenceDiagram
 
 
 > References
-- [mermaid official samples](https://docs.mermaidchart.com/mermaid-oss/syntax/examples.html#examples)
+- [mermaid official samples](https://mermaid.ai/open-source/intro/)
 - [Sequence Diagrams in Markdown with Mermaid.js](https://newdevsguide.com/2023/04/10/mermaid-sequence-diagrams/)
