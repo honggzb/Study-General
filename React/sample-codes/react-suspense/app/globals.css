@@ -1,0 +1,135 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root {
+  --foreground-rgb: rgb(0, 0, 0);
+  --background-end-rgb: rgb(180, 187, 188);
+  --background-start-rgb: rgb(255, 255, 255);
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  100% {
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes slideFromRightXl {
+  0% {
+    transform: translateX(-15px);
+    -webkit-transform: translateX(-15px);
+  }
+  100% {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRightMed {
+  0% {
+    transform: translateX(10px);
+    -webkit-transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRightSmall {
+  0% {
+    opacity: 0;
+    transform: translateX(5px);
+    -webkit-transform: translateX(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
+}
+
+@keyframes opacityPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.app {
+  animation: moveUp 0.3s ease-out;
+  -webkit-animation: moveUp 0.3s ease-out;
+}
+
+.label {
+  animation: slideFromRightMed 0.5s ease-out forwards;
+  -webkit-animation: slideFromRightMed 0.5s ease-out forwards;
+  transform: translateX(15px);
+}
+
+.value {
+  animation: slideFromRightMed 0.5s ease-out forwards;
+  -webkit-animation: slideFromRightMed 0.5s ease-out forwards;
+  transform: translateX(15px);
+}
+
+.status {
+  animation: pulse 1s ease-in-out infinite alternate;
+  -webkit-animation: pulse 1s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+.image {
+  animation: slideFromRightXl 0.2s ease-out forwards;
+  -webkit-animation: slideFromRightXl 0.2s ease-out forwards;
+}
+
+.variance {
+  animation: slideFromRightSmall 0.4s ease-out forwards;
+  -webkit-animation: slideFromRightSmall 0.4s ease-out forwards;
+  animation-delay: 0.1s;
+  transform: translateX(15px);
+  opacity: 0;
+}
+
+.suspense-element {
+  animation: opacityPulse 1.5s ease-out infinite;
+  -webkit-animation: opacityPulse 1.5s ease-out infinite;
+  opacity: 0.6;
+}
