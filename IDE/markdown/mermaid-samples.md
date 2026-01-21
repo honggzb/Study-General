@@ -6,6 +6,7 @@
   - [SequenceDiagram: Loops, alt and opt](#sequencediagram-loops-alt-and-opt)
   - [SequenceDiagram: Message to self in loop](#sequencediagram-message-to-self-in-loop)
   - [Sequence Diagram: Indicating Activation](#sequence-diagram-indicating-activation)
+- [flowchart](#flowchart)
 
 ## sequence diagram
 
@@ -310,7 +311,24 @@ sequenceDiagram
 
 [⬆ back to top](#top)
 
+## flowchart
+
+```
+flowchart LR
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+```
+
+```mermaid
+flowchart LR
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+```
 
 > References
-- [mermaid official samples](https://docs.mermaidchart.com/mermaid-oss/syntax/examples.html#examples)
+- [mermaid official samples](https://mermaid.ai/open-source/intro/)
 - [Sequence Diagrams in Markdown with Mermaid.js](https://newdevsguide.com/2023/04/10/mermaid-sequence-diagrams/)

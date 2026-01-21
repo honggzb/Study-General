@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页脚始终位于页面底部</title>
+  <style>
+    body, body {
+      height: 100%; /* 1. 让 html 和 body 占满整个视口高度 */
+      margin: 0;
+      min-height: 100vh;
+    }
+    body {
+      display: flex;
+      flex-direction: column;  /* 2. 主轴垂直排列 */
+      align-items: center; /* 可选：水平居中内容 */
+    }
+    .content-wrap {
+      flex: 1; /* 3. 主内容区域伸展填满剩余空间 */
+      /* 也可以直接对 main 应用 flex: 1; */
+    }
+    footer {
+      /* 4. 页脚自然置底，如果内容不足就贴在视口底部 */
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrap">
+    <main>你的主要内容</main>
+  </div>
+  <footer>你的页脚</footer>
+</body>
+</html>

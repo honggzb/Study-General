@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>瀑布流布局-multi-column</title>
+  <style>
+    .masonry{
+      column-count: 3;
+      column-gap: 10px;
+      padding: 10px;
+    }
+    .masonry .item{
+      border:1px solid #999;
+      margin-bottom: 10px;
+      break-inside: avoid;
+    }
+    .masonry .item img{
+      width: 100%;
+      vertical-align: middle;
+    }
+    .masonry .item .title{
+      display: block;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- https://codesandbox.io/s/masonry-column-2-nnw63 -->
+  <!-- multi-column布局中子元素的排列顺序是先从上往下再从左至右，所以这种方式仅适用于数据固定不变的情况，对于滚动加载更多等可动态添加数据的情况就并不适用了 -->
+  <div class="masonry">
+    <div class="item">
+        <img src="https://i.pinimg.com/236x/7f/24/8c/7f248c9e18abe79de0d6c79617e03361.jpg"/>
+        <span class="title">Consequatur in ipsa ab sapiente enim. Accusantium aut est voluptas sequi. Quibusdam neque aperiam dolor. Excepturi sunt a minus fuga autem excepturi cupiditate. Fuga aspernatur incidunt aliquid.</span>
+    </div>
+    <div class="item">
+        <img src="https://i.pinimg.com/236x/a6/cd/0a/a6cd0a15d5b2909539dd7944201127d2.jpg"/>
+        <span class="title">Sit qui consequuntur vel quibusdam sit ea sint. Repellendus unde ducimus sed dolor sint iste. Expedita voluptas iste adipisci eos. Impedit dignissimos ratione animi dolorem est.</span>
+    </div>
+    <div class="item">
+        <img src="https://i.pinimg.com/236x/d7/fb/60/d7fb60b2321149a83ab5dbe94744ced6.jpg"/>
+        <span class="title">Fugiat deserunt doloremque molestiae veritatis beatae aut. Eveniet voluptas sunt accusamus. Quis quos hic itaque. Eveniet est repellendus. Odit sed sint. Repellendus est et.</span>
+    </div>
+    <div class="item">
+        <img src="https://i.pinimg.com/236x/44/d4/c3/44d4c397ff1831222a32620006d3e4ae.jpg"/>
+        <span class="title">Quas et fuga eos ducimus reprehenderit necessitatibus. Molestiae fuga maiores nobis id. Id debitis id dignissimos magni repellendus quae. Neque aut officia quia dolorem consequatur facilis esse. Ipsam et in aut est voluptatibus qui labore. Esse qui harum dolores.</span>
+    </div>
+    <div class="item">
+        <img src="https://i.pinimg.com/236x/44/cb/7f/44cb7fc19131e851f639f6e24acbdec6.jpg"/>
+        <span class="title">Eligendi mollitia est alias molestiae et voluptas ut natus aliquid. Dolorem autem saepe. Accusamus quae quia excepturi iure sint eum vitae. Voluptas rerum soluta rerum ex unde.</span>
+    </div>
+    <div class="item">
+        <img src="https://i.pinimg.com/236x/65/aa/58/65aa58f9ec28f1a889a2cce245d23110.jpg"/>
+        <span class="title">Provident rerum fugiat qui. Soluta eos reiciendis alias rerum et sunt animi commodi. Omnis temporibus quia accusantium laudantium distinctio porro nostrum dolores voluptas. Quibusdam assumenda laudantium exercitationem ipsam. Quia repellendus ut a ea sed recusandae debitis. In velit odit alias quod est nulla maxime est reprehenderit.</span>
+    </div>
+    <div class="item">
+        <img src="https://i.pinimg.com/236x/3d/90/bc/3d90bc862205b58b4cba9d8ccf2ada3d.jpg"/>
+        <span class="title">Aliquam laborum sit ipsam. Odit possimus culpa voluptatem.</span>
+    </div>
+    <div class="item">
+        <img src="https://i.pinimg.com/236x/6a/b0/d9/6ab0d93ee045cde3a25b5a0a22cd6435.jpg"/>
+        <span class="title">Veritatis eum aut officiis ut libero sed accusantium neque mollitia. Quisquam velit ratione adipisci at quos officiis nulla porro. Expedita soluta iure accusamus eius modi accusantium temporibus. Cumque omnis et. Voluptatem officiis labore molestiae nostrum numquam quia. Dolorem itaque et maiores atque beatae.</span>
+    </div>
+    <div class="item">
+        <img src="https://i.pinimg.com/236x/0f/41/f6/0f41f6073f27a4c8baf57d26f76b4b9a.jpg"/>
+        <span class="title">Magnam dolor vel reprehenderit. Tenetur perspiciatis nam rerum quo molestias eligendi itaque atque. Reprehenderit laboriosam qui ipsam dolorum hic. Aut enim odit tempore et sed saepe dignissimos. Praesentium sapiente optio aut consequatur et est. Quaerat nam enim natus consequuntur temporibus."</span>
+    </div>
+    <div class="item">
+        <img src="https://i.pinimg.com/236x/ce/87/3b/ce873bc16d0e03cf21ab687d9d3c8ced.jpg"/>
+        <span class="title">Sed et rerum tenetur. Veritatis blanditiis harum aut voluptatem unde quisquam neque ab quod. Doloribus sequi adipisci at quae amet molestiae voluptatem impedit expedita. Iusto nam unde molestiae enim deserunt quos. Quasi voluptatem amet voluptatibus eius et.",</span>
+    </div>
+    <div class="item">
+        <img src="https://i.pinimg.com/236x/a1/2b/ab/a12babee7999f15e09d908fb2bcbdf52.jpg"/>
+        <span class="title">Dicta dolor dolorem repellendus perspiciatis. Voluptates ut consequatur eos quaerat laudantium. Molestias atque magnam tempora numquam molestias distinctio et maxime.</span>
+    </div>
+    <div class="item">
+        <img src="https://i.pinimg.com/236x/a1/2b/ab/a12babee7999f15e09d908fb2bcbdf52.jpg"/>
+        <span class="title">Dicta dolor dolorem repellendus perspiciatis. Voluptates ut consequatur eos quaerat laudantium. Molestias atque magnam tempora numquam molestias distinctio et maxime.</span>
+    </div>
+  </div>
+</body>
+</html>
