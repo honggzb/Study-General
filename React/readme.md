@@ -57,8 +57,9 @@
 │     │    ├── 📂nextJS/
 │     │    │     ├── 📂 01-fetching-basic-api-dynamic-route/
 │     │    │     ├── 📂 02--fetching-api-CRUD/
-│     │    │     └── 📂 03-fetching-Server Actions
-│     │    ├── 📂react-hook-form-zod-next
+│     │    │     └── 📂 03-fetching-Server Actions/
+│     │    ├── 📂react-hook-form-zod-next/
+│     │    ├── 📂react-suspense/
 │     │    ├── 📂toggle-theme/
 │     │    │     ├── 📂 01-next-themes+tailwind/
 │     │    │     ├── 📂 02-react useContext+tailwind/
@@ -76,7 +77,7 @@
 │     ├── 📄React学习-Reduce-2023年.md
 │     ├── 📄React学习-Social Media Integration.md
 │     ├── 📄React学习-cypress-2023年.md
-│     ├── 📄React学习-react-suspense.md
+│     ├── 📄React学习-react Suspense.md
 │     ├── 📄React学习-i18n.md
 │     ├── 📄React学习-react+rxjs.md
 │     ├── 📄React学习-react中useRef详细总结.md
