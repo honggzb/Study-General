@@ -36,10 +36,8 @@ project
 
 - [usufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) - Convert documentation websites into Claude Skills
 
-## ✏️ Creating Your First Skill
-
 <details>
-<summary><strong>Step-by-Step Guide</strong></summary>
+<summary><strong>✏️Creating Your First Skill: Step-by-Step Guide</strong></summary>
 
 ### Method 1: Use skill-creator (Recommended)
 
