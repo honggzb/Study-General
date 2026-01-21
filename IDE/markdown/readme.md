@@ -31,9 +31,8 @@
 You can add text within a collapsed section.
 You can add an image or a code block, too.
 
-```ruby
-   puts "Hello World"
-```
+puts "Hello World"
+
 </details>
 
 ```
@@ -44,10 +43,8 @@ You can add an image or a code block, too.
 ## You can add a header
 You can add text within a collapsed section.
 You can add an image or a code block, too.
+puts "Hello World"
 
-```ruby
-   puts "Hello World"
-```
 </details>
 ```
 
