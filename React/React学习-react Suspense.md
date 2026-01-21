@@ -75,7 +75,7 @@ const App = () => (
 
 ### Handling multiple asynchronous operations
 
-- 
+- '/sample-codes/react-suspense'
 
 [🚀back to top](#top)
 
