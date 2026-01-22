@@ -159,14 +159,6 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 
 ## Resources
 
-- Agent Skill 官方规范：https://agentskills.io/home
-- Skills explained（含 Anthropic 对 Skill vs MCP 解释）：https://claude.com/blog/skills-explained
-- Claude Code 接入说明：https://code.claude.com/docs/en/skills
-- Claude Code 安装配置: https://docs.bigmodel.cn/cn/guide/develop/claude
-- Codex 接入说明：https://developers.openai.com/codex/skills/
-- Cursor 接入说明：https://cursor.com/cn/docs/context/skills
-- VS Code 接入说明：https://code.visualstudio.com/docs/copilot/customization/agent-skills
-
 | ||
 | --- | --- | 
 |**Official Skills**||
@@ -176,10 +168,11 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[obra/superpowers](https://github.com/obra/superpowers)**|Core skills library for Claude Code with 20+ software development skills|
 |**[obra/superpowers-lab](https://github.com/obra/superpowers-lab)**|Install from `superpowers-marketplace` plugin|
 |**[wshobson claude plugin](https://github.com/wshobson/agents/tree/main/plugins)**| claude plugin, including many skills|
-|**Tools+Resources**||
+|**Tools+资源平台**||
 |**[SkillsMP: Agent Skills Marketplace](https://skillsmp.com/zh)**|Agent Skills 资源平台|
-|**Individual Skills**||
 |**[UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**|building professional UI/UX across multiple platforms and frameworks|
+|**Individual Skills**||
+|**[everything-claude-code](https://github.com/affaan-m/everything-claude-code)**|Complete Claude Code configuration collection - agents, skills, hooks, commands, rules, MCPs|
 |**[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)**|A curated list of awesome Claude Skills, resources|
 | **[ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)** | iOS app building, navigation, and testing through automation |
 | **[ffuf-web-fuzzing](https://github.com/jthack/ffuf_claude_skill)** | Expert guidance for ffuf web fuzzing during penetration testing, including authenticated fuzzing with raw requests, auto-calibration, and result analysis |A curated list of awesome Claude Skills, resources|
@@ -189,3 +182,11 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 | **[web-asset-generator](https://github.com/alonw0/web-asset-generator)** | Generates web assets like favicons, app icons, and social media images |
 | **[loki-mode](https://github.com/asklokesh/claudeskill-loki-mode)** | Multi-agent autonomous startup system - orchestrates 37 AI agents across 6 swarms to build, deploy, and operate a complete startup from PRD to revenue |
 | **[Trail of Bits Security Skills](https://github.com/trailofbits/skills)** | Security skills for static analysis with CodeQL/Semgrep, variant analysis, code auditing, and vulnerability detection |
+
+- Agent Skill 官方规范：https://agentskills.io/home
+- Skills explained（含 Anthropic 对 Skill vs MCP 解释）：https://claude.com/blog/skills-explained
+- Claude Code 接入说明：https://code.claude.com/docs/en/skills
+- Claude Code 安装配置: https://docs.bigmodel.cn/cn/guide/develop/claude
+- Codex 接入说明：https://developers.openai.com/codex/skills/
+- Cursor 接入说明：https://cursor.com/cn/docs/context/skills
+- VS Code 接入说明：https://code.visualstudio.com/docs/copilot/customization/agent-skills
