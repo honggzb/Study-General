@@ -159,7 +159,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[obra/superpowers-lab](https://github.com/obra/superpowers-lab)**|Install from `superpowers-marketplace` plugin|
 |**[wshobson claude plugin](https://github.com/wshobson/agents/tree/main/plugins)**| claude plugin, including many skills|
 |**Tools+Resources**||
-|**[Skills Map](https://skillsmp.com/zh)**|Agent Skills 资源平台|
+|**[SkillsMP: Agent Skills Marketplace](https://skillsmp.com/zh)**|Agent Skills 资源平台|
 |**Individual Skills**||
 |**[UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**|building professional UI/UX across multiple platforms and frameworks|
 |**[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)**|A curated list of awesome Claude Skills, resources|
