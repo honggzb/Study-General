@@ -159,8 +159,9 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[obra/superpowers-lab](https://github.com/obra/superpowers-lab)**|Install from `superpowers-marketplace` plugin|
 |**[wshobson claude plugin](https://github.com/wshobson/agents/tree/main/plugins)**| claude plugin, including many skills|
 |**Tools+Resources**||
-|**[Agent Skills 资源-cn](https://skillsmp.com/zh)**||
+|**[Skills Map](https://skillsmp.com/zh)**|Agent Skills 资源平台|
 |**Individual Skills**||
+|**[UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**|building professional UI/UX across multiple platforms and frameworks|
 |**[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)**|A curated list of awesome Claude Skills, resources|
 | **[ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)** | iOS app building, navigation, and testing through automation |
 | **[ffuf-web-fuzzing](https://github.com/jthack/ffuf_claude_skill)** | Expert guidance for ffuf web fuzzing during penetration testing, including authenticated fuzzing with raw requests, auto-calibration, and result analysis |A curated list of awesome Claude Skills, resources|
