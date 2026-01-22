@@ -50,7 +50,7 @@ project
   
 <details>
 
-<summary><strong>Using Skill creator</strong>strong></summary>
+<summary>Using Skill creator</summary>
 
 1. copy 'skill-creator' folder to claude 'skills' folder
 2. 在claude在输入文字：
@@ -64,12 +64,8 @@ project
 </details>
 <br>
 
-### Skill_Seekers
-
-- [usufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) - Convert documentation websites into Claude Skills
-
 <details>
-<summary><strong>✏️Creating Your Skill: Step-by-Step Guide</strong></summary>
+<summary>✏️Creating Your Skill: Step-by-Step Guide</summary>
 
 ### Method 1: Use skill-creator (Recommended)
 
@@ -139,6 +135,11 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 
 </details>
 
+
+### Skill_Seekers
+
+- [usufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) - Convert documentation websites into Claude Skills
+
 ## Resources
 
 - Agent Skill 官方规范：https://agentskills.io/home
@@ -157,7 +158,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[obra/superpowers](https://github.com/obra/superpowers)**|Core skills library for Claude Code with 20+ software development skills|
 |**[obra/superpowers-lab](https://github.com/obra/superpowers-lab)**|Install from `superpowers-marketplace` plugin|
 |**[wshobson claude plugin](https://github.com/wshobson/agents/tree/main/plugins)**| claude plugin, including many skills|
-|**Tools**||
+|**Tools+Resources**||
 |**[Agent Skills 资源-cn](https://skillsmp.com/zh)**||
 |**Individual Skills**||
 |**[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)**|A curated list of awesome Claude Skills, resources|
