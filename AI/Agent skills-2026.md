@@ -116,21 +116,21 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 - Cursor 接入说明：https://cursor.com/cn/docs/context/skills
 - VS Code 接入说明：https://code.visualstudio.com/docs/copilot/customization/agent-skills
 
-| Skill | Description |
-| --- | --- |
-|**Official Skills**||
-|**[anthropics/skills](https://github.com/anthropics/skills/tree/main/skills)**| Official public repository for Skills|
-|**[Claude Cookbooks - Skills](https://github.com/anthropics/claude-cookbooks/tree/main/skills)**|Example notebooks and tutorials|
+| Skill |
+| --- | 
+|**Official Skills**|
+|**[anthropics/skills](https://github.com/anthropics/skills/tree/main/skills)** - Official public repository for Skills|
+|**[Claude Cookbooks - Skills](https://github.com/anthropics/claude-cookbooks/tree/main/skills)** - Example notebooks and tutorials|
 |**Community Skills**||
-|**[obra/superpowers](https://github.com/obra/superpowers)**|Core skills library for Claude Code with 20+ software development skills|
-|**[obra/superpowers-lab](https://github.com/obra/superpowers-lab)**|Install from `superpowers-marketplace` plugin|
+|**[obra/superpowers](https://github.com/obra/superpowers)** - Core skills library for Claude Code with 20+ software development skills|
+|**[obra/superpowers-lab](https://github.com/obra/superpowers-lab)** - Install from `superpowers-marketplace` plugin|
 |**Individual Skills**||
-|**[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)**|A curated list of awesome Claude Skills, resources|
-| **[ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)** | iOS app building, navigation, and testing through automation |
-| **[ffuf-web-fuzzing](https://github.com/jthack/ffuf_claude_skill)** | Expert guidance for ffuf web fuzzing during penetration testing, including authenticated fuzzing with raw requests, auto-calibration, and result analysis |A curated list of awesome Claude Skills, resources|
-| **[playwright-skill](https://github.com/lackeyjb/playwright-skill)** | General-purpose browser automation using Playwright |
+|**[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)** - A curated list of awesome Claude Skills, resources|
+| **[ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)**  -  iOS app building, navigation, and testing through automation |
+| **[ffuf-web-fuzzing](https://github.com/jthack/ffuf_claude_skill)**  -  Expert guidance for ffuf web fuzzing during penetration testing, including authenticated fuzzing with raw requests, auto-calibration, and result analysis |A curated list of awesome Claude Skills, resources|
+| **[playwright-skill](https://github.com/lackeyjb/playwright-skill)** | - General-purpose browser automation using Playwright |
 | **[claude-d3js-skill](https://github.com/chrisvoncsefalvay/claude-d3js-skill)** | Visualizations in d3.js |
-| **[claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills)** | Comprehensive collection of ready-to-use scientific skills, including working with specialized scientific libraries and databases |
+| **[claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills)**  -  Comprehensive collection of ready-to-use scientific skills, including working with specialized scientific libraries and databases |
 | **[web-asset-generator](https://github.com/alonw0/web-asset-generator)** | Generates web assets like favicons, app icons, and social media images |
-| **[loki-mode](https://github.com/asklokesh/claudeskill-loki-mode)** | Multi-agent autonomous startup system - orchestrates 37 AI agents across 6 swarms to build, deploy, and operate a complete startup from PRD to revenue |
-| **[Trail of Bits Security Skills](https://github.com/trailofbits/skills)** | Security skills for static analysis with CodeQL/Semgrep, variant analysis, code auditing, and vulnerability detection |
+| **[loki-mode](https://github.com/asklokesh/claudeskill-loki-mode)** | - Multi-agent autonomous startup system - orchestrates 37 AI agents across 6 swarms to build, deploy, and operate a complete startup from PRD to revenue |
+| **[Trail of Bits Security Skills](https://github.com/trailofbits/skills)**  -  Security skills for static analysis with CodeQL/Semgrep, variant analysis, code auditing, and vulnerability detection |
