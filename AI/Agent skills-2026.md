@@ -13,7 +13,7 @@
 ```
 project
 ├── 📂.claude/skills/skill-name/
-│       ├── 📄SKILL.md
+│       ├── 📄SKILL.md                 - 文件名必须大写
 │       ├── 📂scripts/
 │       │     └── main.py
 │       ├── 📂references/
@@ -118,6 +118,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 
 | Skill | Description |
 | --- | --- |
+|**Official Skills**||
 |**[anthropics/skills](https://github.com/anthropics/skills/tree/main/skills)**| Official public repository for Skills|
 |**[Claude Cookbooks - Skills](https://github.com/anthropics/claude-cookbooks/tree/main/skills)**|Example notebooks and tutorials|
 |**Community Skills**||
