@@ -2,9 +2,6 @@
   - [Agent Skill的基本用法](#agent-skill的基本用法)
   - [Reference + Script](#reference--script)
 - [Tools](#tools)
-  - [Method 1: Use skill-creator (Recommended)](#method-1-use-skill-creator-recommended)
-  - [Method 2: Manual Creation](#method-2-manual-creation)
-  - [Best Practices](#best-practices)
 - [Resources](#resources)
 
 -----------------------------------------------------------------
