@@ -62,7 +62,6 @@ project
    2. 注意，生成的skill中markdown文件和代码注释都使用中文简体
 
 </details>
-<br>
 
 <details>
 <summary>✏️Creating Your Skill: Step-by-Step Guide</summary>
@@ -145,6 +144,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 - Agent Skill 官方规范：https://agentskills.io/home
 - Skills explained（含 Anthropic 对 Skill vs MCP 解释）：https://claude.com/blog/skills-explained
 - Claude Code 接入说明：https://code.claude.com/docs/en/skills
+- Claude Code 安装配置: https://docs.bigmodel.cn/cn/guide/develop/claude
 - Codex 接入说明：https://developers.openai.com/codex/skills/
 - Cursor 接入说明：https://cursor.com/cn/docs/context/skills
 - VS Code 接入说明：https://code.visualstudio.com/docs/copilot/customization/agent-skills
