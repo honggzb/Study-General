@@ -2,6 +2,8 @@
   - [Agent Skill的基本用法](#agent-skill的基本用法)
   - [Reference + Script](#reference--script)
 - [Tools](#tools)
+  - [official skill-creator](#official-skill-creator)
+  - [Skill\_Seekers](#skill_seekers)
 - [Resources](#resources)
 
 -----------------------------------------------------------------
@@ -42,10 +44,32 @@ project
 
 ## Tools
 
+### official skill-creator
+
+- https://github.com/anthropics/skills/tree/main/skills/skill-creator
+  
+<details>
+
+<summary><strong>Using Skill creator</strong>strong></summary>
+
+1. copy 'skill-creator' folder to claude 'skills' folder
+2. 在claude在输入文字：
+   1. 生成一个skill，功能如下：
+      1. 从一个本地文件夹中读取多个pdf格式的求职简历
+      2. 分析这些简历的内容，并进行筛选，筛选规则需要参考公司的文档：包括销售人员招聘标准，开发人员招聘标准
+      3. 分析完成后生成一份报告，报告格式需要参考一个本地模板文件
+      4. 最后，如果用户需要发送报告，则把报告通过email发送出去，否则不发送
+   2. 注意，生成的skill中markdown文件和代码注释都使用中文简体
+
+</details>
+<br>
+
+### Skill_Seekers
+
 - [usufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) - Convert documentation websites into Claude Skills
 
 <details>
-<summary><strong>✏️Creating Your First Skill: Step-by-Step Guide</strong></summary>
+<summary><strong>✏️Creating Your Skill: Step-by-Step Guide</strong></summary>
 
 ### Method 1: Use skill-creator (Recommended)
 
@@ -132,6 +156,9 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**Community Skills**||
 |**[obra/superpowers](https://github.com/obra/superpowers)**|Core skills library for Claude Code with 20+ software development skills|
 |**[obra/superpowers-lab](https://github.com/obra/superpowers-lab)**|Install from `superpowers-marketplace` plugin|
+|**[wshobson claude plugin](https://github.com/wshobson/agents/tree/main/plugins)**| claude plugin, including many skills|
+|**Tools**||
+|**[Agent Skills 资源-cn](https://skillsmp.com/zh)**||
 |**Individual Skills**||
 |**[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)**|A curated list of awesome Claude Skills, resources|
 | **[ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)** | iOS app building, navigation, and testing through automation |
