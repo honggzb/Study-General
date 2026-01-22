@@ -4,6 +4,7 @@
 - [Tools](#tools)
   - [official skill-creator](#official-skill-creator)
   - [Skill\_Seekers](#skill_seekers)
+  - [skill-lookup](#skill-lookup)
 - [Resources](#resources)
 
 -----------------------------------------------------------------
@@ -138,6 +139,23 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 ### Skill_Seekers
 
 - [usufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) - Convert documentation websites into Claude Skills
+
+### skill-lookup
+
+- https://github.com/f/awesome-chatgpt-prompts/tree/main/plugins/claude/prompts.chat/skills
+
+<details>
+
+<summary>Using skill-lookup</summary>
+
+1. copy 'skill-lookup' folder to claude 'skills' folder
+2. Asks for Agent Skills ("Find me a code review skill")
+    - Wants to search for skills ("What skills are available for testing?")
+    - Needs to retrieve a specific skill ("Get skill XYZ")
+    - Wants to install a skill ("Install the documentation skill")
+    - Mentions extending Claude's capabilities with skills
+
+</details>
 
 ## Resources
 
