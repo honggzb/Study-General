@@ -7,6 +7,7 @@
 - [The Virtual DOM (VDOM)](#the-virtual-dom-vdom)
 - [React Component Lifecycle](#react-component-lifecycle)
 - [React render theory](#react-render-theory)
+- [class vs function component](#class-vs-function-component)
 - [Passing Data between Parent and Child Component](#passing-data-between-parent-and-child-component)
   - [using useState](#using-usestate)
   - [using callback function](#using-callback-function)
@@ -18,13 +19,13 @@
 --------------------------------------------------------------------------
 ## State vs props
 
-```
-                          state                           |    props
-an object that holds some information that may change     | inputs to components
-over the lifetime of the component                        | pass data to child component
-used for internal communication inside a component        | props.reactProp
-useState()                                                | 
-```
+|Props|	State|
+|---|---|
+|The data remains unchanged from component to component|Data is the current snapshot of data stored in a component’s Props. It changes over the lifecycle of the component|
+|The data is read-only	|The data can be asynchronous|
+|The data in props cannot be modified:` props.reactProp`	|The data in state can be modified using `this.setState`|
+|pass data to child component|	State is managed within the component|
+||used for internal communication inside a component|
 
 ## The Virtual DOM (VDOM) 
 
@@ -62,6 +63,10 @@ is an in-memory representation of Real DOM. The representation of a UI is kept i
 - **Fiber**: React's internal reconciliation engine, which enables features like incremental rendering and pausing/resuming work
   
 [⬆ back to top](#top)
+
+## class vs function component
+
+- ![class-function-component](./images/class-function-component.png)
 
 ## Passing Data between Parent and Child Component
 
