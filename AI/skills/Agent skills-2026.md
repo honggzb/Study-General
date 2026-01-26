@@ -13,7 +13,7 @@
 
 - MCP connects model to data
 - Skills teach model what to do with that data
-- ![MCP-vs-skills](./images/MCP-vs-skills.png)
+- ![MCP-vs-skills](../images/MCP-vs-skills.png)
 
 ||||
 |---|---|---|
@@ -165,7 +165,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[anthropics/skills](https://github.com/anthropics/skills/tree/main/skills)**| Official public repository for Skills|
 |**[Claude Cookbooks - Skills](https://github.com/anthropics/claude-cookbooks/tree/main/skills)**|Example notebooks and tutorials|
 |**Community Skills**||
-|**[obra/superpowers](https://github.com/obra/superpowers)**|Core skills library for Claude Code with 20+ software development skills|
+|**[obra/superpowers](https://github.com/obra/superpowers)**|Core skills library for Claude Code with 20+ <mark>software development</mark> skills|
 |**[obra/superpowers-lab](https://github.com/obra/superpowers-lab)**|Install from `superpowers-marketplace` plugin|
 |**[wshobson claude plugin](https://github.com/wshobson/agents/tree/main/plugins)**| claude plugin, including many skills|
 |**Tools+资源平台**||
@@ -173,8 +173,13 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[SkillsMP: Agent Skills Marketplace](https://skillsmp.com/zh)**|Agent Skills 资源平台|
 |**[UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**|building professional UI/UX across multiple platforms and frameworks|
 |**Individual Skills**||
+|**[MrGoonie ClaudeKit](https://github.com/mrgoonie/claudekit-skills)**|<mark> Web development</mark>|
 |**[everything-claude-code](https://github.com/affaan-m/everything-claude-code)**|Complete Claude Code configuration collection - agents, skills, hooks, commands, rules, MCPs|
 |**[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)**|A curated list of awesome Claude Skills, resources|
+|**[eliasjudin](https://github.com/eliasjudin/oai-skills/)**|<mark>pdf,excel</mark>|
+|**[behisecc](https://github.com/behisecc/awesome-claude-skills)**|collection of skills|
+|**[czlonkowski- N8N skills](https://github.com/czlonkowski/n8n-skills)**|<mark>N8N skills</mark>|
+|**[voltagent](https://github.com/voltagent/awesome-claude-skills)**|skills collection of many teams, focus on <mark>workflow<mark>|
 | **[ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)** | iOS app building, navigation, and testing through automation |
 | **[ffuf-web-fuzzing](https://github.com/jthack/ffuf_claude_skill)** | Expert guidance for ffuf web fuzzing during penetration testing, including authenticated fuzzing with raw requests, auto-calibration, and result analysis |A curated list of awesome Claude Skills, resources|
 | **[playwright-skill](https://github.com/lackeyjb/playwright-skill)** | General-purpose browser automation using Playwright |
@@ -183,6 +188,8 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 | **[web-asset-generator](https://github.com/alonw0/web-asset-generator)** | Generates web assets like favicons, app icons, and social media images |
 | **[loki-mode](https://github.com/asklokesh/claudeskill-loki-mode)** | Multi-agent autonomous startup system - orchestrates 37 AI agents across 6 swarms to build, deploy, and operate a complete startup from PRD to revenue |
 | **[Trail of Bits Security Skills](https://github.com/trailofbits/skills)** | Security skills for static analysis with CodeQL/Semgrep, variant analysis, code auditing, and vulnerability detection |
+|**[k-dense-ai scientific skills](https://github.com/k-dense-ai/claude-scientific-skills)**||
+|**[bear2u](https://github.com/bear2u/my-skills)**|个人效率工具集|
 
 - Agent Skill 官方规范：https://agentskills.io/home
 - Skills explained（含 Anthropic 对 Skill vs MCP 解释）：https://claude.com/blog/skills-explained
