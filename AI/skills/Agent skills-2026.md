@@ -35,12 +35,12 @@ project
 
 ### Agent Skill的基本用法
 
-![Agent-Skill](./images/Agent-Skill.png)
+![Agent-Skill](../images/Agent-Skill.png)
 
 ### Reference + Script
 
-![Agent-Skill-reference](./images/Agent-Skill-reference.png)
-![Agent-Skill-script](./images/Agent-Skill-script.png)
+![Agent-Skill-reference](../images/Agent-Skill-reference.png)
+![Agent-Skill-script](../images/Agent-Skill-script.png)
 - 官方建议将 Reference 归类至 references/ 文件夹，Script 归类至 scripts/ 文件夹，以保持结构清晰
 
 ## Tools
