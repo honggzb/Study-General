@@ -31,7 +31,12 @@ type RequestState =
   | { status: 'success', data: any }
   | { status: 'error', error: Error };
 const [requestState, setRequestState] = useState<RequestState>({ status: 'idle' });
-
+// ----------------------------------------------------------------------------------------------------------
+// 3. useRef
+const inputElementRef = useRef<HTMLInputElement>(null);
+const containerRef = useRef<HTMLDivElement>(null);
+const audioRef = useRef<ElementRef<'audio'>>(null);
+const countRef = useRef<number>(0); 
 // ----------------------------------------------------------------------------------------------------------
 // 4. useReducer: takes a reducer function and an initial state
 nterface State {     // describes the shape of the reducer’s state
