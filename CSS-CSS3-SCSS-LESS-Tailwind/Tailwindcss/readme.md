@@ -18,3 +18,4 @@
 ## Resources
 
 - [uiverse](https://uiverse.io/): The Largest Library of Open-Source TailwindCSS/CSS UI
+- [Box Shadows for Tailwind CSS](https://ui.aceternity.com/tools/box-shadows)
