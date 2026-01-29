@@ -171,6 +171,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**Tools+资源平台**||
 |**[awesomeclaude](https://awesomeclaude.ai/awesome-claude-skills)**|offical skills资源平台|
 |**[SkillsMP: Agent Skills Marketplace](https://skillsmp.com/zh)**|Agent Skills 资源平台|
+|**[Skills.sh](https://skills.sh/)**|The Open Agent Skills Ecosystem|
 |**[UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**|building professional UI/UX across multiple platforms and frameworks|
 |**Individual Skills**||
 |**[MrGoonie ClaudeKit](https://github.com/mrgoonie/claudekit-skills)**|<mark> Web development</mark>|
