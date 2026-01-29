@@ -13,6 +13,7 @@
 - [using bootstrap](#using-bootstrap)
 - [using shadcn for nextjs project](#using-shadcn-for-nextjs-project)
 - [install and setup tailwindcss3](#install-and-setup-tailwindcss3)
+  - [using Tailwind CSS in Vite](#using-tailwind-css-in-vite-1)
 - [updating whole packages to latest version](#updating-whole-packages-to-latest-version)
 - [using context](#using-context)
 - [using SCSS](#using-scss)
@@ -310,6 +311,15 @@ content: ["./src/**/*.{html,tsx,ts}"],
 @tailwind components;
 @tailwind utilities;
 ```
+
+[⬆ back to top](#top)
+
+### using Tailwind CSS in Vite
+
+- [using Tailwind CSS in Vite](https://tailwindcss.com/docs/installation/using-vite)
+   1. `npm install tailwindcss @tailwindcss/vite`
+   2. Configure the Vite plugin -> add `plugins: [tailwindcss()],` to 'vite.config.js`
+   3. add `@import "tailwindcss";` to 'index.css'
 
 [⬆ back to top](#top)
 
