@@ -1,5 +1,8 @@
 [Tips of react three fiber](#top)
 
+- [using typescript](#using-typescript)
+- [covert glb Model file](#covert-glb-model-file)
+- [using glb model in react](#using-glb-model-in-react)
 - [transform and load glb model](#transform-and-load-glb-model)
 - [远模糊近清晰的动画效果](#远模糊近清晰的动画效果)
 - [reflection plane反射地面(平面)](#reflection-plane反射地面平面)
@@ -10,6 +13,62 @@
 - [UI(HTML) button over screen and interaction effect](#uihtml-button-over-screen-and-interaction-effect)
 
 -------------------------------------------------------------------------------
+- `npm i three @react-three/drei @react-three/fiber`
+------------------------------------------------------------------------------
+
+## using typescript
+
+- `npm install @types/three`
+- `npm install three @types/three @react-three/fiber @react-three/drei`
+- https://r3f.docs.pmnd.rs/getting-started/introduction
+- https://r3f.docs.pmnd.rs/api/typescript
+
+##  covert glb Model file
+
+1. method 1
+   1. `npx gltfjsx public/models/WawaOffice.glb` -> it will generate 'WawaOffice.jsx' in root directory
+      1. `npx gltfjsx --types public/models/WawaOffice.glb`  <-- <mark>add typescript type</mark>
+   2. create 'src\components\Office.jsx` and copy all 'WawaOffice.jsx' code in it
+   3. https://github.com/pmndrs/gltfjsx
+2. method 2:
+   1. https://gltf.pmnd.rs/
+   2. note: you can choose typescript
+
+[🚀back to top](#top)
+
+## using glb model in react
+
+- using `<Supspense>` of 'react'
+- using `<Float>`, `Html`, `useProgress` of '@react-three/drei'
+
+```js
+import { OrbitControls, Float, Preload } from '@react-three/drei';
+import { Suspense } from "react";
+//...
+<Canvas camera={{ position: [0, 1, 3] }}>
+   <Suspense fallback={<Loader />}>
+      <Float>
+         <Astronaut scale={1} position={[1, -1.5, 0]} />
+         <OrbitControls />
+      </Float>
+   </Suspense>
+   <Preload all />
+</Canvas>
+// Loader.jsx
+"use client";
+import { Html, useProgress } from "@react-three/drei";
+const Loader = () => {
+  const { progress } = useProgress();
+  return (
+    <Html center className="text-xl font-normal text-center">
+      {progress}% Loaded
+    </Html>
+  );
+};
+export default Loader;
+```
+
+[🚀back to top](#top)
 
 ## transform and load glb model
 
