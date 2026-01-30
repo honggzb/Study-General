@@ -19,6 +19,7 @@
 ## using typescript
 
 - `npm install @types/three`
+- `const { nodes, materials, animations } = useGLTF('/models/tenhun_falling_spaceman_fanart.glb') as unknown as GLTFResult;`  -> <mark>as unknown as GLTFResult</mark>
 - https://r3f.docs.pmnd.rs/getting-started/introduction
 - https://r3f.docs.pmnd.rs/api/typescript
 
