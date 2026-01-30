@@ -19,7 +19,6 @@
 ## using typescript
 
 - `npm install @types/three`
-- `npm install three @types/three @react-three/fiber @react-three/drei`
 - https://r3f.docs.pmnd.rs/getting-started/introduction
 - https://r3f.docs.pmnd.rs/api/typescript
 
