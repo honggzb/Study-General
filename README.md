@@ -1134,9 +1134,6 @@
 │     │    ├── 📄date-fns.md
 │     │    ├── 📄jsPDF-HTML-to-PDF.md
 │     │    └──
-│     ├──  📂resources/
-│     │    ├── 📄icons-1.tsx
-│     │    └── 📄icons-2.tsx
 │     ├──  📂sample-codes/
 │     │    ├── 📂DazhongDianPint-React/docs/
 │     │    ├── 📂The Complete React Developer Course -w Hooks and Redux- Andrew Mead/
@@ -1180,6 +1177,11 @@
 │     ├── 📄React常见问题讨论.md
 │     ├── 📄react-official-document-study.md
 │     └── 📄react官网学习小结-2023版.md
+├──  📂resources/
+│    ├── 📂logos/
+│    ├── 📂socials/
+│    ├── 📄icons-1.tsx
+│    └── 📄icons-2.tsx
 ```
 
 [⬆ back to top](#top)
@@ -1262,10 +1264,10 @@
 
 [⬆ back to top](#top)
 
-## Visualisation+graphic
+## Visualisation+animation+3d
 
 ```
-├── 📂Visualisation+graphic/
+├── 📂Visualisation+animation+3d/
 │   ├── 📂Canvas/
 │   │   ├── 📄char-raining-effect.html
 │   │   └──   
@@ -1353,6 +1355,9 @@
 │   │   ├── 📄d3-3.柱状图3动画过渡.html
 │   │   ├── 📄todo-list.md
 │   │   └── 📄file-list.md
+│   ├── 📂Framer-motion/
+│   │   │   ├── 📂sample-codes/
+│   │   │   └──
 │   ├── 📂Highcharts/
 │   │   ├── 📂highcharts + angular/
 │   │   │   ├── 📂Demo/
