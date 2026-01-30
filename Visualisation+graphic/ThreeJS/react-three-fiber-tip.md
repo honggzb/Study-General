@@ -27,7 +27,7 @@
 1. method 1
    1. `npx gltfjsx public/models/WawaOffice.glb` -> it will generate 'WawaOffice.jsx' in root directory
       1. `npx gltfjsx --types public/models/WawaOffice.glb`  <-- <mark>add typescript type</mark>
-   2. create 'src\components\Office.jsx` and copy all 'WawaOffice.jsx' code in it
+   2. create 'src\components\Office.jsx/tsx` and copy all 'WawaOffice.jsx/tsx' code in it
    3. https://github.com/pmndrs/gltfjsx
 2. method 2:
    1. https://gltf.pmnd.rs/
