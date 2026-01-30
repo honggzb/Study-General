@@ -59,6 +59,8 @@
       <textarea className='w-full caret-green-500 p-2' name="" id=""></textarea>
 {/* 大段文字滚动时候底部半透明效果 */
 <div className='h-40 overflow-auto pb-20 mask-[linear-gradient(to_top,transparent_20%,black_80%)]'>a long text...</div>
+{/* button 3D动画 */
+<div className='[perpective::1000px] [transform-style:perserve-3d]'><button>3D button</button></div>
 ```
 
 ![alt text](./tips-1.png)
