@@ -1,3 +1,10 @@
+## github resourses
+
+- [Public APIs for free](http://github.com/public-apis/public-apis)
+
+
+## svg resources
+
 ```
   icons-1    | icons-2
 -------------|-------------------
