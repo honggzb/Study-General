@@ -6,7 +6,7 @@
 ## svg resources
 
 ```
-  icons-1    | icons-2
+icons-1.tsx  | icons-2.tsx
 -------------|-------------------
 twitter      | activityIcon
 gitHub       | CoinsIcon
