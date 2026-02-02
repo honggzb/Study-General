@@ -402,3 +402,4 @@ export const ContactNumber = ({ contactId }: ContactNumberProps) => {
 > references
 - https://github.com/cosdensolutions/code/tree/master/videos/long/react-query-tutorial
 - https://github.com/youssefbenlemlih/react-patterns
+- https://github.com/josefbender/react-patterns/
