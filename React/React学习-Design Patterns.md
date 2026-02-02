@@ -10,6 +10,9 @@ Conditional Rendering Pattern         | display different components based on di
 |React Hooks Design Pattern|allow you to use state and other React features without writing a class<br>With custom hooks, you can share logic between components without repeating code|
 |Extensible Styles Pattern|encourages the use of reusable, customizable styles<br>In React, this is commonly achieved using styled-components or CSS-in-JS solutions.|
 
+> References
+- [React Design Patterns](https://refine.dev/blog/react-design-patterns)
+- [React Design Patterns: A Practical Guide](https://www.syncfusion.com/blogs/post/react-design-patterns)
 - [7 Best React Design Patterns That Every Developer Should Know](https://www.geeksforgeeks.org/reactjs/react-design-patterns/)
 - [A Dive into React Design Patterns](https://medium.com/@ignatovich.dm/a-dive-into-react-design-patterns-76dcd62ccd19)
 - [Software Architecture & Design Tutorial](https://www.tutorialspoint.com/software_architecture_design/index.htm)
