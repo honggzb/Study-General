@@ -12,7 +12,7 @@ import ChangeNumber from '@/components/6ChangeNumber';
 export default function Home() {
   return (
     <>
-      <AnimateButton />
+      {*<AnimateButton />
       <CardContent />
       <Dashboard />
       <MotionHooks />
@@ -20,7 +20,7 @@ export default function Home() {
       <Layout />
       <Navbar />
       <ChangeNumber />
-      <ChangeTextButton />
+      <ChangeTextButton />*}
       <TextAnimations />
     </>
   );
