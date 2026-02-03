@@ -31,6 +31,13 @@ type RequestState =
   | { status: 'success', data: any }
   | { status: 'error', error: Error };
 const [requestState, setRequestState] = useState<RequestState>({ status: 'idle' });
+  // set type  - using Dispatch
+  import { useState, Dispatch } from 'react';
+  export const yourComponent = () => {
+    const [user, setUser] = useState<boolean>(false);
+    const clickHander = (stateSetter: Dispatch<boolean>) => stateSetter({name : 'Jane'});
+    return <button onClick={() => { clickHander(setUser) }}>Change Name</button>
+  }
 // ----------------------------------------------------------------------------------------------------------
 // 3. useRef
 const inputElementRef = useRef<HTMLInputElement>(null);
