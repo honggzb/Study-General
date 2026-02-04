@@ -1,4 +1,9 @@
-## React学习-type汇总
+[React学习-type汇总](#top)
+
+- [General](#general)
+- [children type](#children-type)
+
+## General
 
 ```ts
 // ----------------------------------------------------------------------------------------------------------
@@ -118,6 +123,35 @@ function onSubmit(event: React.FormEvent) {
 |Children |`children: React.ReactNode;`,<br> `children: React.ReactElement;`||
 |Style Props|`style: React.CSSProperties;`||
 
+[🚀back to top](#top)
+
+## children type
+
+1. **React.ReactNode**
+   - is the recommended and most flexible type for most use cases, as it covers nearly everything React can render
+2. **JSX.Element**
+   1. **Allows**: A <mark>single</mark> React element (e.g., `<p>Hello</p>`)
+   2. **Does not allow**: Multiple elements, plain strings, numbers, null, etc..
+   3. **Use case**: For components designed to wrap exactly one child element
+3. Utility Type: **React.PropsWithChildren**
+   - Instead of explicitly defining `children: ReactNode` in every interface, can use the `React.PropsWithChildren<P>` utility type
+   - This merges component's specific props (P) with an optional children prop typed as `ReactNode`
+4. Note: `React.FC` **Deprecation** after React V18+
+
+```ts
+import { PropsWithChildren } from 'react';
+interface ButtonProps {
+  // other props like onClick, type, etc.
+  onClick: () => void;
+}
+const Button = ({ children, onClick }: PropsWithChildren<ButtonProps>) => (
+  <button onClick={onClick}>{children}</button>
+);
+```
+
+[🚀back to top](#top)
+
+> References
 - [Using TypeScript in react](https://react.dev/learn/typescript)
 - [The TypeScript handbook](https://www.typescriptlang.org/docs/handbook/)
 - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
