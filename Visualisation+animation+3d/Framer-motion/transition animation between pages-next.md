@@ -45,7 +45,7 @@ export default PageTransition
 - 'components\Stairs.tsx'
 const reverseIndex = (index: number) => {
   - -> six vertical div with white vertical background, animate by delay according to `reverseIndex`
-  - ![Stairs](Stairs.png)
+  - ![Stairs](./images/Stairs.png)
 
 ```ts
 // 'components\StairEffect.tsx'
