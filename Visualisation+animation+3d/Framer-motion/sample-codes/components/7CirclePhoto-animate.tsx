@@ -20,7 +20,7 @@ const CirclePhoto = () => {
                 }}
                 className="absolute w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten"
             >
-                 <img src="./assets/photo.png" quality={100} alt="" className="object-contain" />
+                 <img src="./photo.png" quality={100} alt="" className="object-contain" />
             </motion.div>
             {/* circle */}
             <motion.svg
