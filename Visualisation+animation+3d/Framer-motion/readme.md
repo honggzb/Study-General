@@ -13,7 +13,7 @@
  5Navbar.tsx           | Layout Animations                               | menu items animation
  6ChangeNumber.tsx     | Animation Sequence: `useAnimate`                |
  66ChangeText.tsx      | Animation Sequence: `useAnimate`                | words逐个显示
- 6ChangeTextButton.tsx | Animation Sequence: `useAnimate`                | 点击button后，先显示loading再消失button再显示tick
+ 6ChangeTextButton.tsx | Animation Sequence: `useAnimate`                | 点击button后，先显示loading再消失button再显示tick, tick <- svg animation
 ```
 
 
