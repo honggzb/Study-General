@@ -7,6 +7,7 @@
   - [Theme variables](#theme-variables)
   - [using directive](#using-directive)
 - [using cn+clsx](#using-cn)
+- [group-hover for custmer class- define a user group name](#group-hover-for-custmer-class--define-a-user-group-name)
 -----------------------------------------------------
 
 1. `@layer`: define custom CSS
@@ -107,6 +108,7 @@
 - [default theme variable reference](https://tailwindcss.com/docs/theme#default-theme-variable-reference)
 
 ```css
+/*Tailwind CSS v4 */
 @import "tailwindcss";
 @theme {
   --color-mint-500: oklch(0.72 0.11 178);
@@ -136,6 +138,22 @@
 |`--ease-*`	|Transition timing function utilities like ease-out|
 |`--animate-*`	|Animation utilities like animate-spin|
 
+**Tailwind CSS v3**
+
+```js
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#5c6ac4',
+        secondary: '#ecc94b',
+      },
+    },
+  },
+  plugins: [],
+};
+```
 
 [⬆ back to top](#top)
 
@@ -195,5 +213,9 @@ const MyButton = ({ isDisabled, isPrimary }) => {
   return <button className={buttonClasses} disabled={isDisabled}>Click Me</button>;
 };
 ```
+
+[⬆ back to top](#top)
+
+## group-hover for custmer class- define a user group name
 
 -[10 Tailwind Classes I Wish I Knew Earlier](https://www.youtube.com/watch?v=x1RJ5Q09PqM)
