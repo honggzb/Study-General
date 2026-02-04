@@ -218,4 +218,21 @@ const MyButton = ({ isDisabled, isPrimary }) => {
 
 ## group-hover for custmer class- define a user group name
 
+```html
+<div className="my-num-group group">
+  <div classname="text-outline group-hover:text-outline-hover"> ... </div>
+</div>
+```
+
+```css
+.text-outline {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+  .my-num-group:hover .group-hover\:text-outline-hover{
+    -webkit-text-stroke: 1px #00ff99;
+  }
+```
+
+[⬆ back to top](#top)
+
 -[10 Tailwind Classes I Wish I Knew Earlier](https://www.youtube.com/watch?v=x1RJ5Q09PqM)
