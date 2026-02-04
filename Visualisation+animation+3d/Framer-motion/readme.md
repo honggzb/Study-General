@@ -15,6 +15,7 @@
  66ChangeText.tsx      | Animation Sequence: `useAnimate`                | words逐个显示
  6ChangeTextButton.tsx | Animation Sequence: `useAnimate`                | 1. 点击button后，先显示loading再消失button再显示tick,
                        |                                                 | 2. tick <- svg animation(same effect-'react-countup' library)
+ 7CirclePhoto-animate  |                                                 | circle animation around a image <- svg animation
 ```
 
 
