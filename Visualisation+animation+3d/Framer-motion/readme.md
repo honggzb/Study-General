@@ -11,9 +11,10 @@
  4Timeline.tsx         | Hooks: `useInView`                              | content animation when scrolling to view
  5Layout.tsx           | Layout Animations                               | Popup window animation
  5Navbar.tsx           | Layout Animations                               | menu items animation
- 6ChangeNumber.tsx     | Animation Sequence: `useAnimate`                |
+ 6ChangeNumber.tsx     | Animation Sequence: `useAnimate`                | number counting animation
  66ChangeText.tsx      | Animation Sequence: `useAnimate`                | words逐个显示
- 6ChangeTextButton.tsx | Animation Sequence: `useAnimate`                | 点击button后，先显示loading再消失button再显示tick, tick <- svg animation
+ 6ChangeTextButton.tsx | Animation Sequence: `useAnimate`                | 1. 点击button后，先显示loading再消失button再显示tick,
+                       |                                                 | 2. tick <- svg animation
 ```
 
 
