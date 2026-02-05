@@ -23,6 +23,7 @@
 ```
 parallax project
 ├── 📂app/
+│   ├── 📄globals.css
 │   └── 📄page.tsx
 ├── 📂components/
 │   └── 📄Parallax.tsx
