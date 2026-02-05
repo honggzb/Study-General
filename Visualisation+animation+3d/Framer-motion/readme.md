@@ -21,7 +21,14 @@
 ```
 
 ```
-
+parallax project
+├── 📂app/
+│   └── 📄page.tsx
+├── 📂components/
+│   └── 📄Parallax.tsx
+├── 📂public/
+│   ├── 📄mountains.png
+│   └── 📄xxx.png
 ```
 
 [framer Motion for React](#top)
