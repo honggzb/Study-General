@@ -45,10 +45,11 @@ parallax-portofolio1    | parallax animation
 personal-portofolio1    | stair animation page transition(App route)
                         | circle around image animation
 ------------------------|-----------------------------------------------
+                        | text change animation in home page
                         | navigation animation when click sidebar mene
 personal-portofolio2    | project's demo/code showing overlay animation
                         | progressing bar animation
-                        | icon over a image animation
+                        | icons around a image animation
 ```
 
 [framer Motion for React](#top)
