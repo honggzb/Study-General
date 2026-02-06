@@ -15,6 +15,10 @@
 - Skills teach model what to do with that data
 - ![MCP-vs-skills](../images/MCP-vs-skills.png)
 
+<details>
+
+<summary>Skill structure</summary>
+
 ||||
 |---|---|---|
 |Matedata|必须mandatory| 目录|
@@ -43,6 +47,8 @@ project
 ![Agent-Skill-script](../images/Agent-Skill-script.png)
 - 官方建议将 Reference 归类至 references/ 文件夹，Script 归类至 scripts/ 文件夹，以保持结构清晰
 
+</details>
+  
 ## Tools
 
 ### official skill-creator
