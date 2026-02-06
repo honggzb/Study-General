@@ -17,8 +17,8 @@
                        |                                                 | 2. tick <- svg animation(same effect-'react-countup' library)
  7CirclePhoto-animate  |                                                 | circle animation around a image <- svg animation
  7TextAnimations.tsx   |                                                 | 3 text animation should be known
- parallax              |useScroll, useSpring, useTransform               | parallax scrolling effect
- TransitionLink        |without using Framer motion                      | page transition
+ parallax📂           |useScroll, useSpring, useTransform               | parallax scrolling effect
+ TransitionLink 📂    |without using Framer motion                      | page transition
 ```
 
 ```
