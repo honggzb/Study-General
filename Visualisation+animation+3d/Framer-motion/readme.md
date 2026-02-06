@@ -37,20 +37,20 @@ parallax project
 
 ```
    project              |       function
-------------------------|-----------------------------------------------
+------------------------|-----------------------------------------------|-----------------------------------------------
 coffee-shop             |
-------------------------|-----------------------------------------------
+------------------------|-----------------------------------------------|-----------------------------------------------
 parallax-portofolio1    | parallax animation
-------------------------|-----------------------------------------------
-                        | animation between pages
-personal-portofolio1    | stair animation page transition(App route)
-                        | circle around image animation
-------------------------|-----------------------------------------------
-                        | text change animation in home page
-                        | navigation animation when click sidebar mene
-personal-portofolio2    | project's demo/code showing overlay animation
-                        | progressing bar animation
-                        | icons around a image animation
+------------------------|-----------------------------------------------|-----------------------------------------------
+                        | animation between pages                       |
+personal-portofolio1    | stair animation page transition(App route)    |
+                        | circle around image animation                 |  components\Photos.tsx
+------------------------|-----------------------------------------------|-----------------------------------------------
+                        | text change animation in home page            |  components\Hero.tsx
+                        | navigation animation when click sidebar mene  |  components\Navbar.ts  `scrollToSection`
+personal-portofolio2    | project's demo/code showing overlay animation |  components\skills.tsx
+                        | progressing bar animation                     |
+                        | icons around a image animation                |
 ```
 
 [framer Motion for React](#top)
