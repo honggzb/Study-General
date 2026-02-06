@@ -17,7 +17,7 @@
 
 <details>
 
-<summary>Skill structure</summary>
+<summary>**Skill structure**</summary>
 
 ||||
 |---|---|---|
@@ -57,7 +57,7 @@ project
   
 <details>
 
-<summary>Using Skill creator</summary>
+<summary>**Using Skill creator**</summary>
 
 1. copy 'skill-creator' folder to claude 'skills' folder
 2. 在claude在输入文字：
