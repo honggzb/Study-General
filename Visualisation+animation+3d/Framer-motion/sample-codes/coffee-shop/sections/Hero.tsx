@@ -1,5 +1,5 @@
 "use client";
-
+// https://www.youtube.com/watch?v=pzStWJuCucw&list=PLt2fZkYs6q_lP8nscOwRYxOg41CXOM-gT
 import { motion } from 'motion/react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
