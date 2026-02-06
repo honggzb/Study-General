@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairEffect from "@/components/StairEffect";
+import CurveEffect from "@/components/CurveEffect";
+import CloseDoorEffect from "@/components/CloseDoorEffect";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +33,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <StairEffect />
+        {/* <StairEffect /> */}
+        {/* <CurveEffect /> */}
+        <CloseDoorEffect />
         <PageTransition>
           {children}
         </PageTransition>
