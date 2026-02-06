@@ -18,6 +18,7 @@
  7CirclePhoto-animate  |                                                 | circle animation around a image <- svg animation
  7TextAnimations.tsx   |                                                 | 3 text animation should be known
  parallax              |useScroll, useSpring, useTransform               | parallax scrolling effect
+ TransitionLink        |without using Framer motion                      | page transition
 ```
 
 ```
@@ -30,6 +31,26 @@ parallax project
 ├── 📂public/
 │   ├── 📄mountains.png
 │   └── 📄xxx.png
+```
+
+## next + framer motion + tailwind CSS + typescript
+
+```
+   project              |       function
+------------------------|-----------------------------------------------|-----------------------------------------------
+coffee-shop             |
+------------------------|-----------------------------------------------|-----------------------------------------------
+parallax-portofolio1    | parallax animation
+------------------------|-----------------------------------------------|-----------------------------------------------
+                        | animation between pages                       |
+personal-portofolio1    | stair animation page transition(App route)    |
+                        | circle around image animation                 |  components\Photos.tsx
+------------------------|-----------------------------------------------|-----------------------------------------------
+                        | text change animation in home page            |  components\Hero.tsx
+                        | navigation animation when click sidebar mene  |  components\Navbar.ts  `scrollToSection`
+personal-portofolio2    | project's demo/code showing overlay animation |  components\skills.tsx
+                        | progressing bar animation                     |
+                        | icons around a image animation                |
 ```
 
 [framer Motion for React](#top)
