@@ -31,6 +31,7 @@
 
 ## Resource
 
+- [Antigravity + Gemini CLI OAuth Plugin for Opencode](https://github.com/NoeFabris/opencode-antigravity-auth)- 让opencode使用Gemini模型
 - https://diagrammingai.com/
 - https://github.com/enescingoz/awesome-n8n-templates
 - https://github.com/Zie619/n8n-workflows
