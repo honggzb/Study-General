@@ -172,7 +172,8 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[awesomeclaude](https://awesomeclaude.ai/awesome-claude-skills)**|offical skills资源平台|
 |**[SkillsMP: Agent Skills Marketplace](https://skillsmp.com/zh)**|Agent Skills 资源平台|
 |**[Skills.sh](https://skills.sh/)**|The Open Agent Skills Ecosystem|
-|**[UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**|building professional UI/UX across multiple platforms and frameworks|
+|**[UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**|<mark>building professional UI/UX</mark> across multiple platforms and frameworks|
+|**[UI/UX Pro Max 中文教程网站](https://github.com/bbylw/ui-ux-pro-max-skill-cn)**||
 |**Individual Skills**||
 |**[MrGoonie ClaudeKit](https://github.com/mrgoonie/claudekit-skills)**|<mark> Web development</mark>|
 |**[everything-claude-code](https://github.com/affaan-m/everything-claude-code)**|Complete Claude Code configuration collection - agents, skills, hooks, commands, rules, MCPs|
@@ -183,10 +184,12 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[voltagent](https://github.com/voltagent/awesome-claude-skills)**|skills collection of many teams, focus on <mark>workflow<mark>|
 | **[ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)** | iOS app building, navigation, and testing through automation |
 | **[ffuf-web-fuzzing](https://github.com/jthack/ffuf_claude_skill)** | Expert guidance for ffuf web fuzzing during penetration testing, including authenticated fuzzing with raw requests, auto-calibration, and result analysis |A curated list of awesome Claude Skills, resources|
+|**[csv-data-summarizer](https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill)**|分析csv文件并生成报表|
 | **[playwright-skill](https://github.com/lackeyjb/playwright-skill)** | General-purpose browser automation using Playwright |
 | **[claude-d3js-skill](https://github.com/chrisvoncsefalvay/claude-d3js-skill)** | Visualizations in d3.js |
 | **[claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills)** | Comprehensive collection of ready-to-use scientific skills, including working with specialized scientific libraries and databases |
 | **[web-asset-generator](https://github.com/alonw0/web-asset-generator)** | Generates web assets like favicons, app icons, and social media images |
+|**[notebooklm-skill](https://github.com/PleasePrompto/notebooklm-skill)**|communicate directly with Google NotebookLM notebooks. Queryuploaded documents and answers exclusively from your own knowledge base|
 | **[loki-mode](https://github.com/asklokesh/claudeskill-loki-mode)** | Multi-agent autonomous startup system - orchestrates 37 AI agents across 6 swarms to build, deploy, and operate a complete startup from PRD to revenue |
 | **[Trail of Bits Security Skills](https://github.com/trailofbits/skills)** | Security skills for static analysis with CodeQL/Semgrep, variant analysis, code auditing, and vulnerability detection |
 |**[k-dense-ai scientific skills](https://github.com/k-dense-ai/claude-scientific-skills)**||
