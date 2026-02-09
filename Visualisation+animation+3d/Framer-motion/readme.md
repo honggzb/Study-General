@@ -40,9 +40,12 @@ parallax project
 ------------------------|-----------------------------------------------|--------------------------------------------------------------
 coffee-shop             |
 ------------------------|-----------------------------------------------|--------------------------------------------------------------
-parallax-portofolio1    | parallax animation
+                        | FlipWords                                     | components\FlipWords.tsx
+parallax-portofolio1    | parallax animation                            | components\ParallaxBackground.tsx
+                        | 3D model load                                 | @react-three/fiber, sections\Hero.tsx
+                        | copyEmail button anmination                   | components\CopyEmailButton.tsx
 ------------------------|-----------------------------------------------|----------------------------------------------------------------
-                        | pages transition effect(App route)            | PageTransitio.tsx
+                        | pages transition effect(App route)            | PageTransition.tsx
                         |   -- curve, Stair, CloseDoor                  | CurveTransition.tsx, Stair.tsx, CloseDoorTransition.tsx
 personal-portofolio1    | number animation                              | components\Stats.ts(react-countup library)
                         | circle around image animation                 | components\Photos.ts
