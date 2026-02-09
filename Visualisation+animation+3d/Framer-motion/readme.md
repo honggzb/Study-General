@@ -18,7 +18,7 @@
  7CirclePhoto-animate  |                                                 | circle animation around a image <- svg animation
  7TextAnimations.tsx   |                                                 | 3 text animation should be known
  parallax📂           |useScroll, useSpring, useTransform               | parallax scrolling effect
- TransitionLink 📂    |without using Framer motion                      | page transition
+ TransitionLink 📂    |without using Framer motion                      | page transition(without using Framer motion)
 ```
 
 ```
@@ -42,10 +42,10 @@ coffee-shop             |
 ------------------------|-----------------------------------------------|--------------------------------------------------------------
 parallax-portofolio1    | parallax animation
 ------------------------|-----------------------------------------------|----------------------------------------------------------------
-                        | pages transition effect                       |
+                        | pages transition effect(App route)            | PageTransitio.tsx
                         |   -- curve, Stair, CloseDoor                  | CurveTransition.tsx, Stair.tsx, CloseDoorTransition.tsx
-personal-portofolio1    | stair animation page transition(App route)    |
-                        | circle around image animation                 |  components\Photos.tsx
+personal-portofolio1    | number animation                              | components\Stats.ts(react-countup library)
+                        | circle around image animation                 | components\Photos.ts
 ------------------------|-----------------------------------------------|---------------------------------------------------------------
                         | text change animation in home page            |  components\Hero.tsx
                         | navigation animation when click sidebar mene  |  components\Navbar.ts  `scrollToSection`
