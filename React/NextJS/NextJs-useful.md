@@ -265,15 +265,21 @@ export default function Page() {
 - modify 'src\app\layout.js'
 
 ```ts
-//app\layout.tsx
-import { Montserrat } from "next/font/google";
+//1. define  --> app\layout.tsx
+import { Montserrat, Lobster } from "next/font/google";
 const montserrat = Montserrat({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   weight: ["400", "700"]
 });
-//...
-<body className={`${montserrat.className} ${geistMono.variable} antialiased`}>
+const lobster = Lobster({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap', // 'swap' ensures the font loads with minimal layout shift
+});
+<body className={`${montserrat.className} ${geistMono.variable} ${lobster.className} antialiased`}>
+//2. using in component
+<h1 className={lobster.className}>Welcome to my site!</h1>
 ```
 
 [⬆ back to top](#top)
