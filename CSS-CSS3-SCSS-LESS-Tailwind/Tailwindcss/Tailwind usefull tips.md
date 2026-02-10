@@ -1,4 +1,5 @@
-[top(#top)]
+## [some useful tips](#top)
+
 - [class tips](#class-tips)
 - [some tips](#some-tips)
 - [responsive](#responsive)
