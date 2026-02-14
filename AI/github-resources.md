@@ -17,6 +17,7 @@
 |project|类型|说明|
 |---|---|---|
 |[Prompt模板mcp-prompt-server](https://github.com/joeseesun/mcp-prompt-server)|提示词模板生成|把常用的 Prompt 变成了可调用的工具，将每个 Prompt 模板注册为 MCP 工具，支持自然语言调用，还能在 Raycast、Cursor、Windsurf 等工具中通用<br> - 丰富的内置 Prompt 模板，涵盖代码、写作、产品设计等场景<br> - 所有Prompt自动注册为工具，支持参数化调用<br> - 只需添加 YAML 文件即可扩展新功能<br> - 自然语言对话即可调用，还能组合多个工具实现复杂工作流<br> - 通过 npm install 安装后配置到 MCP 客户端即可使用|
+|[Prompt Optimizer (提示词优化器)](https://github.com/linshenkx/prompt-optimizer)|Prompt|AI提示词优化工具，帮助你编写更好的AI提示词，提升AI输出质量。支持Web应用、桌面应用、Chrome插件和Docker部署四种使用方式|
 |[AI提示词工程与工作流集合](https://github.com/NeekChaw/RIPER-5)||神级Cursor Rule<br> - 收录和展示一系列高质量、结构化的 AI 提示词（Prompts）和工作流（Workflows）|
 |[Awesome Prompts提示词合集](https://github.com/NeekChaw/awesome-prompt)|prompt|✨ 让你一眼惊艳的提示词合集 ✨|
 |[system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)|prompt|all AI tools's prompts and AI models<br>Augment Code, Claude Code, Cluely, CodeBuddy, Comet, <br>Cursor, Devin AI, Junie, Kiro, Leap.new, Lovable, Manus, NotionAI, Orchids.app,<br> Perplexity, Poke, Qoder, Replit, Same.dev, Trae, Traycer AI,<br> VSCode Agent, Warp.dev, Windsurf, Xcode, Z.ai Code, Dia & v0|
