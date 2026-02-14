@@ -89,11 +89,21 @@
 │   │   └── 📄file-list.md
 │   ├── 📂Framer-motion/
 │   │   ├── 📂sample-codes/
-│   │   │   ├── 📂sample-basic/
-│   │   │   ├── 📂sample-basic/
-│   │   │   ├── 📂sample-basic/
-│   │   │   └── 📂sample-basic/
-│   │   └── 📄 transition animation between pages-next.md  
+│   │   │   ├── 📂General/
+│   │   │   ├── 📂TransitionLink/
+│   │   │   ├── 📂coffee-shop/
+│   │   │   ├── 📂parallax-portofolio1/
+│   │   │   ├── 📂personal-portofolio1/
+│   │   │   └── 📂personal-portofolio2/
+│   │   └── 📄 transition animation between pages-next.md
+│   ├── 📂GSAP/
+│   │   ├── 📂sample-codes/
+│   │   │   ├── 📦Keyboard
+│   │   │   ├── 📦luxury
+│   │   │   └── 📦Skateboard
+│   │   ├── 📄 ParallaxBackground.tsx
+│   │   ├── 📄 gsap-study.md
+│   │   └──    
 │   ├── 📂Highcharts/
 │   │   ├── 📂highcharts + angular/
 │   │   │   ├── 📂Demo/
