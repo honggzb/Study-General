@@ -181,6 +181,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**|<mark>building professional UI/UX</mark> across multiple platforms and frameworks|
 |**[UI/UX Pro Max 中文教程网站](https://github.com/bbylw/ui-ux-pro-max-skill-cn)**||
 |**Individual Skills**||
+|**[Agent Skills 终极指南：快速入门、推荐技能、最新资讯与实战案例](https://github.com/libukai/awesome-agent-skills)**||
 |**[MrGoonie ClaudeKit](https://github.com/mrgoonie/claudekit-skills)**|<mark> Web development</mark>|
 |**[everything-claude-code](https://github.com/affaan-m/everything-claude-code)**|Complete Claude Code configuration collection - agents, skills, hooks, commands, rules, MCPs|
 |**[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)**|A curated list of awesome Claude Skills, resources|
