@@ -21,6 +21,7 @@
                         |    (when mouse hover)                         | components\Team\SkaterScribble.tsx
                         | youtube video lazyLoader                      | components\Video\LazyYouTubePlayer.tsx
                         | 2D physics engine effect (matter-js)          | components\Footer\FooterPhysics.tsx
+                        | https://suburbia-skate.netlify.app/
 ------------------------|-----------------------------------------------|------------------------------------------
                         | FadeIn animations (text, image)               | components\FadeIn.tsx
                         | page transition(next-view-transitions)        | app/layout.tsx
