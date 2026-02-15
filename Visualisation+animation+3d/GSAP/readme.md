@@ -12,7 +12,7 @@
 ```
    project              |       function
 ------------------------|-----------------------------------------------|-----------------------------------------
-                        | 3D model loading and interactive              | components\Hero\
+                        | 3D model loading and interactive              | components\Skateboard.tsx
                         | SlideIn animations (text, image)              | components\SlideIn.tsx
                         | parallax animation --->                       |
                         |  1. parallax(css--`sticky`, `--topNumber`)    | components\TextAndImage\index.tsx
@@ -30,10 +30,24 @@
                         | youtube video lazyLoader                      |
                         | https://coteroyalecourse.netlify.app/
 ------------------------|-----------------------------------------------|-------------------------------------------
-                        | 3D model loading                              | components\Hero\
+                        | 3D model loading                              | components\Keyboard.tsx, keycap.tsx
                         | FadeIn animations (text, image)               | components\FadeIn.tsx
   keyboard              | 3D model interactive and sound effect         | components\RevealText.tsx
-                        | 3D model texture change                       | components\SColorChanger\
+                        | 3D model texture change                       | components\ColorChanger\
                         | Marquee text scroll                           | components\Marquee\
                         | https://nimbus-keyboards.vercel.app/
+------------------------|-----------------------------------------------|-------------------------------------------
+                        | 3D model loading                              | components\SodaCan.tsx
+                        | Singe Canvas, multiple View                   | app\layout.tsx, components\ViewCanvas.tsx
+                        | text Slide in(GSAP)                           | components\Hero\index.tsx
+                        | useuseMediaQuery hook                         |
+   fizzi-3d             | 3D model -Bubbles                             | components\Hero\Bubbles.tsx
+                        | 3D model texture change                       | components\AlternatingText\
+                        | dive effect -  3D model +                     |
+                        |    Cloud + 2D Text(react-three/drei)          | components\SkyDive\
+                        | https://fizzi.vercel.app/
+------------------------|-----------------------------------------------|-------------------------------------------
+                        | 3D model loading                              | components\Scene.tsx
+  Kitchen               | Counter(react-three/drei)                     | components\Pirce.tsx
+                        | 3D Select(react-three/postprocessing)         | select and show price
 ```
