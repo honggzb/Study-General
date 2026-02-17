@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+html,
+body,
+#root {
+  position: fixed;
+  top: 0;
+  left: 0;
+   width: 100vw;
+  height: 100vh;
+  background: linear-gradient(0deg, #060617 0%, #103039 100%);
+  overflow: hidden;
+}
+
+.canvas > div {
+  mix-blend-mode: multiply;
+}
