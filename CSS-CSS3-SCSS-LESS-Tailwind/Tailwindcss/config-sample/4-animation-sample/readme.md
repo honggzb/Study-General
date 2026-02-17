@@ -1,0 +1,1 @@
+next + react + tailwindcss + typescript
