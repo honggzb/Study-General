@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowDownIcon } from "lucide-react";
-import memojiImage from "@/public/images/memoji-smile.png";
+import memojiImage from "@/public/images/memoji-computer.png";
 import gainImage from "@/public/images/grain.jpg";
 import StarIcon from "@/public/icons/star.svg";
 import SparkeIcon from "@/public/icons/sparkle.svg";
@@ -50,7 +50,7 @@ const Hero = () => {
         </div>
         <div className="container mx-auto">
             <div className="flex flex-col justify-center items-center">
-                <Image src={memojiImage} alt="Person peeking from behind laptop" className="size-[100px] object-cover" />
+                <Image src={memojiImage} alt="Person peeking from behind laptop" className="size-[150px] object-cover" />
                 <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-3 rounded-lg">
                     <div className="bg-green-500 size-2.5 rounded-full relative">
                         <div className="absolute bg-green-500 inset-0 rounded-full animate-ping"></div>
