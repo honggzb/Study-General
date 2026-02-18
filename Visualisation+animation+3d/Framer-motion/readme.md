@@ -1,3 +1,6 @@
+- `npm install motion`
+- `import { motion } from "motion/react"`
+
 ## sample-codes
 
 ```
