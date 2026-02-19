@@ -1,3 +1,6 @@
+- `npm install motion`
+- `import { motion } from "motion/react"`
+
 ## sample-codes
 
 ```
@@ -36,25 +39,32 @@ parallax project
 ## next + framer motion + tailwind CSS + typescript
 
 ```
-   project              |       function
-------------------------|-----------------------------------------------|--------------------------------------------------------------
-coffee-shop             |
-------------------------|-----------------------------------------------|--------------------------------------------------------------
-                        | FlipWords                                     | components\FlipWords.tsx
-parallax-portofolio1    | parallax animation                            | components\ParallaxBackground.tsx
-                        | 3D model load                                 | @react-three/fiber, sections\Hero.tsx
-                        | copyEmail button anmination                   | components\CopyEmailButton.tsx
-------------------------|-----------------------------------------------|----------------------------------------------------------------
-                        | pages transition effect(App route)            | PageTransition.tsx
-                        |   -- curve, Stair, CloseDoor                  | CurveTransition.tsx, Stair.tsx, CloseDoorTransition.tsx
-personal-portofolio1    | number animation                              | components\Stats.ts(react-countup library)
-                        | circle around image animation                 | components\Photos.ts
-------------------------|-----------------------------------------------|---------------------------------------------------------------
-                        | text change animation in home page            |  components\Hero.tsx
-                        | navigation animation when click sidebar mene  |  components\Navbar.ts  `scrollToSection`
-personal-portofolio2    | project's demo/code showing overlay animation |  components\skills.tsx
-                        | progressing bar animation                     |
-                        | icons around a image animation                |
+   project               |       function                                |
+-------------------------|-----------------------------------------------|--------------------------------------------------------------
+coffee-shop              |
+-------------------------|-----------------------------------------------|--------------------------------------------------------------
+                         | FlipWords                                     | components\FlipWords.tsx
+parallax-portofolio1     | parallax animation                            | components\ParallaxBackground.tsx
+                         | 3D model load                                 | @react-three/fiber, sections\Hero.tsx
+                         | copyEmail button anmination                   | components\CopyEmailButton.tsx
+-------------------------|-----------------------------------------------|----------------------------------------------------------------
+                         | pages transition effect(App route)            | PageTransition.tsx
+                         |   -- curve, Stair, CloseDoor                  | CurveTransition.tsx, Stair.tsx, CloseDoorTransition.tsx
+personal-portofolio1     | number animation                              | components\Stats.ts(react-countup library)
+                         | circle around image animation                 | components\Photos.ts
+-------------------------|-----------------------------------------------|---------------------------------------------------------------
+                         | text change animation in home page            |  components\Hero.tsx
+                         | navigation animation when click sidebar mene  |  components\Navbar.ts  `scrollToSection`
+personal-portofolio2     | project's demo/code showing overlay animation |  components\skills.tsx
+                         | progressing bar animation                     |
+                         | icons around a image animation                |
+-------------------------|-----------------------------------------------|--------------------------------------------------------------
+                         | 3D model loading                              | client\pages\components\canvas\CanvasModel.tsx
+                         | Framer motion animation                       | client\pages\config\motion.ts
+AI-Tshirt-cross-dressing | state management (valtio)                     | client\pages\store\index.ts
+                         | create image by using Open AI                 | server\routes\dalle.routes.js, client\pages\components\AIPicker.tsx
+                         |                                               | client\pages\components\customizer\index.tsx
+                         | generate prompt by Microphone(speaking)       | client\pages\components\AIPicker.tsx
 ```
 
 [framer Motion for React](#top)

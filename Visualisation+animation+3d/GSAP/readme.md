@@ -1,16 +1,20 @@
 ```
 │   ├── 📂GSAP/
 │   │   ├── 📂sample-codes/
-│   │   │   ├── 📦Keyboard
-│   │   │   ├── 📦luxury
-│   │   │   └── 📦Skateboard
+│   │   │   ├── 📦Keyboard/
+│   │   │   ├── 📦Kitchen/
+│   │   │   ├── 📦ScrollAnimation/
+│   │   │   ├── 📦Shoes/
+│   │   │   ├── 📦Skateboard/
+│   │   │   ├── 📦fizzi-3d/
+│   │   │   └── 📦luxury/
 │   │   ├── 📄 ParallaxBackground.tsx
 │   │   ├── 📄 gsap-study.md
 │   │   └──
 ```
 
 ```
-   project              |       function
+   project              |       function                                |
 ------------------------|-----------------------------------------------|-----------------------------------------
                         | 3D model loading and interactive              | components\Skateboard.tsx
                         | SlideIn animations (text, image)              | components\SlideIn.tsx
@@ -50,4 +54,11 @@
                         | 3D model loading                              | components\Scene.tsx
   Kitchen               | Counter(react-three/drei)                     | components\Pirce.tsx
                         | 3D Select(react-three/postprocessing)         | select and show price
+------------------------|-----------------------------------------------|-------------------------------------------
+                        | 3D model loading                              | components\Jordan.tsx
+  Shoes                 | glowing background(TailwindCSS)               | components\About.tsx
+                        | 3D animation(GSAP)                            | components\Jordan.tsx
+------------------------|-----------------------------------------------|-------------------------------------------  
+ ScrollAnimation        | 3D model/background Scrolling(GSAP)           | ScrollManager.tsx
+------------------------|-----------------------------------------------|-------------------------------------------
 ```
