@@ -100,13 +100,14 @@
 │   │   └── 📄 transition animation between pages-next.md
 │   ├── 📂GSAP/
 │   │   ├── 📂sample-codes/
+│   │   │   ├── 📂award-cartoon/
 │   │   │   ├── 📂Keyboard/
 │   │   │   ├── 📂Kitchen/
 │   │   │   ├── 📂ScrollAnimation/
 │   │   │   ├── 📂Shoes/
 │   │   │   ├── 📂fizzi-3d/
 │   │   │   ├── 📂luxury/
-│   │   │   └── 📦Keyboard, Kitchen, ScrollAnimation, Shoes, fizzi-3d,luxury
+│   │   │   └── 📦award-cartoon, Keyboard, Kitchen, ScrollAnimation, Shoes, fizzi-3d,luxury
 │   │   ├── 📄 ParallaxBackground.tsx
 │   │   ├── 📄 gsap-study.md
 │   │   └──    
