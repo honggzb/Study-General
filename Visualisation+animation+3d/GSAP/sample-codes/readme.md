@@ -43,7 +43,18 @@
                         | 3D model loading                              | components\Jordan.tsx
   Shoes                 | glowing background(TailwindCSS)               | components\About.tsx
                         | 3D animation(GSAP)                            | components\Jordan.tsx
-------------------------|-----------------------------------------------|-------------------------------------------  
+------------------------|-----------------------------------------------|-------------------------------------------
+                        | video animation                               |
+                        |  1. mouse move to center show small view      | \components\hero\VideoPreview.tsx
+                        |  2. click small view play next video          | \components\hero\index.tsx
+                        |  3. scroll down clip video shape(GSAP-clipPath)| \components\hero\index.tsx
+award-cartoon           | image Clip/filter('mask/svg filter' class)    | \components\Story.tsx+global.css
+                        | play audio                                    | \components\Navbar.tsx
+                        | top navbar showing when scrolling(react-use)  | \components\Navbar.tsx
+                        | animation Title                               | \components\AnimatedTitle.tsx
+                        | image enlarge/shunk while scrolling           | \components\About.tsx
+                        | Radial gradient hover effect in butto         | \components\features\BentoCard.tsx
+------------------------|-----------------------------------------------|------------------------------------------- 
  ScrollAnimation        | 3D model/background Scrolling(GSAP)           | ScrollManager.tsx
 ------------------------|-----------------------------------------------|-------------------------------------------
 ```

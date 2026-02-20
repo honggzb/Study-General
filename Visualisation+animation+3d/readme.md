@@ -89,7 +89,9 @@
 │   │   └── 📄file-list.md
 │   ├── 📂Framer-motion/
 │   │   ├── 📂sample-codes/
+│   │   │   ├── 📂AI-Tshirt-cross-dressing/
 │   │   │   ├── 📂General/
+│   │   │   ├── 📂Next.js 15 Animations Masterclass/
 │   │   │   ├── 📂TransitionLink/
 │   │   │   ├── 📂coffee-shop/
 │   │   │   ├── 📂parallax-portofolio1/
@@ -98,9 +100,14 @@
 │   │   └── 📄 transition animation between pages-next.md
 │   ├── 📂GSAP/
 │   │   ├── 📂sample-codes/
-│   │   │   ├── 📦Keyboard
-│   │   │   ├── 📦luxury
-│   │   │   └── 📦Skateboard
+│   │   │   ├── 📂award-cartoon/
+│   │   │   ├── 📂Keyboard/
+│   │   │   ├── 📂Kitchen/
+│   │   │   ├── 📂ScrollAnimation/
+│   │   │   ├── 📂Shoes/
+│   │   │   ├── 📂fizzi-3d/
+│   │   │   ├── 📂luxury/
+│   │   │   └── 📦award-cartoon, Keyboard, Kitchen, ScrollAnimation, Shoes, fizzi-3d,luxury
 │   │   ├── 📄 ParallaxBackground.tsx
 │   │   ├── 📄 gsap-study.md
 │   │   └──    
@@ -127,7 +134,7 @@
 │   │   │  └── 📄pieGraphDirective.html
 │   │   ├── 📄SVG displacement filter.html
 │   │   └── 📄CSS filters with SVGs.md
-│   ├── 📂ThreeJS/
+│   ├── 📂ThreeJS+R3F/
 │   │   ├── 📂Project-demo/
 │   │   ├── 📂demo-elementary-r73-2018-10/
 │   │   ├── 📄ThreeJS-study-notebook-2023版.md

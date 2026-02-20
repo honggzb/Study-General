@@ -1,16 +1,17 @@
 ```
 │   ├── 📂GSAP/
 │   │   ├── 📂sample-codes/
-│   │   │   ├── 📦Keyboard/
-│   │   │   ├── 📦Kitchen/
-│   │   │   ├── 📦ScrollAnimation/
-│   │   │   ├── 📦Shoes/
-│   │   │   ├── 📦Skateboard/
-│   │   │   ├── 📦fizzi-3d/
-│   │   │   └── 📦luxury/
+│   │   │   ├── 📂award-cartoon/
+│   │   │   ├── 📂Keyboard/
+│   │   │   ├── 📂Kitchen/
+│   │   │   ├── 📂ScrollAnimation/
+│   │   │   ├── 📂Shoes/
+│   │   │   ├── 📂fizzi-3d/
+│   │   │   ├── 📂luxury/
+│   │   │   └── 📦award-cartoon, Keyboard, Kitchen, ScrollAnimation, Shoes, fizzi-3d,luxury
 │   │   ├── 📄 ParallaxBackground.tsx
 │   │   ├── 📄 gsap-study.md
-│   │   └──
+│   │   └──   
 ```
 
 ```
@@ -58,7 +59,27 @@
                         | 3D model loading                              | components\Jordan.tsx
   Shoes                 | glowing background(TailwindCSS)               | components\About.tsx
                         | 3D animation(GSAP)                            | components\Jordan.tsx
-------------------------|-----------------------------------------------|-------------------------------------------  
+------------------------|-----------------------------------------------|-------------------------------------------
+                        | 3D model loading                              | components\Developer.tsx,HackerRoom.tsx,...
+  3D Portofolio         | 3D model texture(video) change animation      | components\Projects\index.tsx+DemoComputer.tsx
+                        | 3D model change when hover                    | components\Experience\index.tsx+Developer.tsx
+------------------------|-----------------------------------------------|-------------------------------------------
+                        | 3D model loading + texture change             | components\Iphone.tsx
+  Apple web             | Singe Canvas,multiple View                    | components\ModelView.tsx+Model.tsx
+                        |  +animation switch Views                      |
+                        | GSAP animation                                | utils\animations.ts
+------------------------|-----------------------------------------------|-------------------------------------------
+                        | video animation                               |
+                        |  1. mouse move to center show small view      | \components\hero\VideoPreview.tsx
+                        |  2. click small view play next video          | \components\hero\index.tsx
+                        |  3. scroll down clip video shape(GSAP-clipPath)| \components\hero\index.tsx
+award-cartoon(GSAP)     | image Clip/filter('mask/svg filter' class)    | \components\Story.tsx+global.css
+                        | play audio                                    | \components\Navbar.tsx
+                        | top navbar showing when scrolling(react-use)  | \components\Navbar.tsx
+                        | animation Title                               | \components\AnimatedTitle.tsx
+                        | image enlarge/shunk while scrolling           | \components\About.tsx
+                        | Radial gradient hover effect in butto         | \components\features\BentoCard.tsx
+------------------------|-----------------------------------------------|-------------------------------------------
  ScrollAnimation        | 3D model/background Scrolling(GSAP)           | ScrollManager.tsx
 ------------------------|-----------------------------------------------|-------------------------------------------
 ```

@@ -1,3 +1,7 @@
+## R3F skills
+
+- [R3f Textures skill](https://skillsclaude.com/guides/skills/r3f-textures#google_vignette)
+
 ## resource
 
 |function|web site|
