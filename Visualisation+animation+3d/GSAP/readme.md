@@ -58,7 +58,16 @@
                         | 3D model loading                              | components\Jordan.tsx
   Shoes                 | glowing background(TailwindCSS)               | components\About.tsx
                         | 3D animation(GSAP)                            | components\Jordan.tsx
-------------------------|-----------------------------------------------|-------------------------------------------  
+------------------------|-----------------------------------------------|-------------------------------------------
+                        | 3D model loading                              | components\Developer.tsx,HackerRoom.tsx,...
+  3D Portofolio         | 3D model texture(video) change animation      | components\Projects\index.tsx+DemoComputer.tsx
+                        | 3D model change when hover                    | components\Experience\index.tsx+Developer.tsx
+------------------------|-----------------------------------------------|-------------------------------------------
+                        | 3D model loading + texture change             | components\Iphone.tsx
+  Apple web             | Singe Canvas,multiple View                    | components\ModelView.tsx+Model.tsx
+                        |  +animation switch Views                      |
+                        | GSAP animation                                | utils\animations.ts
+------------------------|-----------------------------------------------|-------------------------------------------
  ScrollAnimation        | 3D model/background Scrolling(GSAP)           | ScrollManager.tsx
 ------------------------|-----------------------------------------------|-------------------------------------------
 ```
