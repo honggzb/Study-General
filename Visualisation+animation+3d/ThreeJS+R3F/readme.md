@@ -3,6 +3,7 @@
 │   │   ├── 📂Project-demo/
 │   │   ├── 📂demo-elementary-r73-2018-10/
 │   │   ├── 📄ThreeJS-study-notebook-2023版.md
+│   │   ├── 📄View of react-three-drei.md
 │   │   ├── 📄problems-react-three-fiber.md
 │   │   ├── 📄react-three-fiber-tip.md
 │   │   └── 
