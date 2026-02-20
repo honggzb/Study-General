@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000000;
+  color: #ffffff;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Roboto", system-ui;
+}
+
+.wrapper,
+.content {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.intro {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: auto;
+  bottom: auto;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+}
+
+.intro h1 {
+  font-size: 2rem;
+  font-family: "Roboto", serif;
+}
+.intro p {
+  font-size: 8rem;
+  font-weight: bolder;
+  font-family: "Lobster", system-ui;
+}
+
+.content {
+  overflow-x: hidden;
+}
+
+.content .section {
+  width: 100vw;
+  height: 100vh;
+}
+
+.content .section.hero-section {
+  background-image: url(https://images.pexels.com/photos/2745258/pexels-photo-2745258.jpeg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  perspective: 500px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  position: relative;
+  z-index: 1;
+}
+
+.content .about-section {
+  padding: 150px 30px;
+  height: auto;
+}
+
+.content .about-section p {
+  position: relative;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
+@media (max-width: 575.98px) {
+  .intro h1 {
+    font-size: 1.5rem;
+  }
+  .intro p {
+    font-size: 4rem;
+  }
+}
