@@ -1,3 +1,19 @@
+```
+│   ├── 📂Framer-motion/
+│   │   ├── 📂sample-codes/
+│   │   │   ├── 📂AI-Tshirt-cross-dressing/
+│   │   │   ├── 📂General/
+│   │   │   ├── 📂Next.js 15 Animations Masterclass/
+│   │   │   ├── 📂TransitionLink/
+│   │   │   ├── 📂coffee-shop/
+│   │   │   ├── 📂parallax-portofolio1/
+│   │   │   ├── 📂personal-portofolio1/
+│   │   │   └── 📂personal-portofolio2/
+│   │   ├── 📄 framer-motion-study-2026.md
+│   │   ├── 📄 page transition-app route.md
+│   │   └── 📄 page transition-pages route.md
+```
+
 ## General
 
 - `npm install motion`
