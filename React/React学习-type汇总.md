@@ -155,4 +155,4 @@ const Button = ({ children, onClick }: PropsWithChildren<ButtonProps>) => (
 - [Using TypeScript in react](https://react.dev/learn/typescript)
 - [The TypeScript handbook](https://www.typescriptlang.org/docs/handbook/)
 - [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
-- 
+- [React with TypeScript](https://stevekinney.com/courses/react-typescript)
