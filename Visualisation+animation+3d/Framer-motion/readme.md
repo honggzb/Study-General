@@ -88,6 +88,7 @@ AI-Tshirt-cross-dressing | state management (valtio)                     | clien
 
 - [codse animata](https://animata.design): Hand-crafted ✍️ interaction animations and effects from around the internet 🛜 to copy and paste into your project
      - https://github.com/codse/animata
+- [Aceternity UI](https://ui.aceternity.com/)
 
 
 
