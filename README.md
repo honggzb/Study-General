@@ -1102,11 +1102,14 @@
 │     │    ├── 📄NextJs学习-App Router.md
 │     │    ├── 📄NextJs学习-Data Fetching-2024.md
 │     │    ├── 📄NextJs学习-Next.js多环境部署.md
+│     │    ├── 📄NextJs学习-OAuth+postman小结.md
+│     │    ├── 📄NextJs学习-Pages Router.md
 │     │    ├── 📄NextJs学习-SEO.md
 │     │    ├── 📄NextJs学习-Zod and React-Hook-Form.md
 │     │    ├── 📄NextJs学习-authentication-AuthJS.md
 │     │    ├── 📄NextJs学习-authentication-clerk.md
-│     │    ├── 📄NextJs学习-NextJs学习-debugging NextJS.md
+│     │    ├── 📄NextJs学习-debugging NextJS.md
+│     │    ├── 📄NextJs学习-stripe intergration.md
 │     │    ├── 📄NextJs学习-在Next.js中集成swagger文档.md
 │     │    ├── 📄NextJs学习-概述.md
 │     │    ├── 📄Nextjs学习小结2024.md
@@ -1134,6 +1137,18 @@
 │     │    ├── 📄date-fns.md
 │     │    ├── 📄jsPDF-HTML-to-PDF.md
 │     │    └──
+│     ├──  📂react-design-pattern
+│     │    ├── 📄React学习-Design Patterns.md
+│     │    ├── 📄Supspense Pattern.md
+│     │    └──
+│     ├──  📂react-typescript
+│     │    ├── 📄0-Linting and Formatting.md
+│     │    ├── 📄1-Everyday TypeScript Mechanics.md
+│     │    ├── 📄React学习-type汇总.md
+│     │    └──
+│     ├──  📂resources/
+│     │    ├── 📄icons-1.tsx
+│     │    └── 📄icons-2.tsx
 │     ├──  📂sample-codes/
 │     │    ├── 📂DazhongDianPint-React/docs/
 │     │    ├── 📂The Complete React Developer Course -w Hooks and Redux- Andrew Mead/
@@ -1141,8 +1156,9 @@
 │     │    ├── 📂nextJS/
 │     │    │     ├── 📂 01-fetching-basic-api-dynamic-route/
 │     │    │     ├── 📂 02--fetching-api-CRUD/
-│     │    │     └── 📂 03-fetching-Server Actions
-│     │    ├── 📂react-hook-form-zod-next
+│     │    │     └── 📂 03-fetching-Server Actions/
+│     │    ├── 📂react-hook-form-zod-next/
+│     │    ├── 📂react-suspense/
 │     │    ├── 📂toggle-theme/
 │     │    │     ├── 📂 01-next-themes+tailwind/
 │     │    │     ├── 📂 02-react useContext+tailwind/
@@ -1152,7 +1168,6 @@
 │     │    └── 📄scrolling to bottom while text showing.md
 │     ├── 📄React State Management libraries in 2024.md
 │     ├── 📄React学习-Context.md
-│     ├── 📄React学习-Design Patterns.md
 │     ├── 📄React学习-Handle errors in React.md
 │     ├── 📄React学习-Hooks.md
 │     ├── 📄React学习-Jest-2023年.md
@@ -1160,12 +1175,12 @@
 │     ├── 📄React学习-Reduce-2023年.md
 │     ├── 📄React学习-Social Media Integration.md
 │     ├── 📄React学习-cypress-2023年.md
+│     ├── 📄React学习-react Suspense.md
 │     ├── 📄React学习-i18n.md
 │     ├── 📄React学习-react+rxjs.md
 │     ├── 📄React学习-react中useRef详细总结.md
 │     ├── 📄React学习-router.md
 │     ├── 📄React学习-show and hide Password.md
-│     ├── 📄*** React学习-type汇总.md                               *******
 │     ├── 📄React学习-upload files上传文件.md
 │     ├── 📄React学习-配置-Jest+Vite+ts设置.md
 │     ├── 📄React学习-配置-vite分块打包.md
@@ -1177,11 +1192,6 @@
 │     ├── 📄React常见问题讨论.md
 │     ├── 📄react-official-document-study.md
 │     └── 📄react官网学习小结-2023版.md
-├──  📂resources/
-│    ├── 📂logos/
-│    ├── 📂socials/
-│    ├── 📄icons-1.tsx
-│    └── 📄icons-2.tsx
 ```
 
 [⬆ back to top](#top)
