@@ -15,11 +15,14 @@
 │     │    ├── 📄NextJs学习-App Router.md
 │     │    ├── 📄NextJs学习-Data Fetching-2024.md
 │     │    ├── 📄NextJs学习-Next.js多环境部署.md
+│     │    ├── 📄NextJs学习-OAuth+postman小结.md
+│     │    ├── 📄NextJs学习-Pages Router.md
 │     │    ├── 📄NextJs学习-SEO.md
 │     │    ├── 📄NextJs学习-Zod and React-Hook-Form.md
 │     │    ├── 📄NextJs学习-authentication-AuthJS.md
 │     │    ├── 📄NextJs学习-authentication-clerk.md
-│     │    ├── 📄NextJs学习-NextJs学习-debugging NextJS.md
+│     │    ├── 📄NextJs学习-debugging NextJS.md
+│     │    ├── 📄NextJs学习-stripe intergration.md
 │     │    ├── 📄NextJs学习-在Next.js中集成swagger文档.md
 │     │    ├── 📄NextJs学习-概述.md
 │     │    ├── 📄Nextjs学习小结2024.md
@@ -47,6 +50,15 @@
 │     │    ├── 📄date-fns.md
 │     │    ├── 📄jsPDF-HTML-to-PDF.md
 │     │    └──
+│     ├──  📂react-design-pattern
+│     │    ├── 📄React学习-Design Patterns.md
+│     │    ├── 📄Supspense Pattern.md
+│     │    └──
+│     ├──  📂react-typescript
+│     │    ├── 📄0-Linting and Formatting.md
+│     │    ├── 📄1-Everyday TypeScript Mechanics.md
+│     │    ├── 📄React学习-type汇总.md
+│     │    └──
 │     ├──  📂resources/
 │     │    ├── 📄icons-1.tsx
 │     │    └── 📄icons-2.tsx
@@ -69,7 +81,6 @@
 │     │    └── 📄scrolling to bottom while text showing.md
 │     ├── 📄React State Management libraries in 2024.md
 │     ├── 📄React学习-Context.md
-│     ├── 📄React学习-Design Patterns.md
 │     ├── 📄React学习-Handle errors in React.md
 │     ├── 📄React学习-Hooks.md
 │     ├── 📄React学习-Jest-2023年.md
@@ -83,7 +94,6 @@
 │     ├── 📄React学习-react中useRef详细总结.md
 │     ├── 📄React学习-router.md
 │     ├── 📄React学习-show and hide Password.md
-│     ├── 📄*** React学习-type汇总.md                               *******
 │     ├── 📄React学习-upload files上传文件.md
 │     ├── 📄React学习-配置-Jest+Vite+ts设置.md
 │     ├── 📄React学习-配置-vite分块打包.md
