@@ -330,5 +330,5 @@ flowchart LR
 ```
 
 > References
-- [mermaid official samples](https://mermaid.ai/open-source/intro/)
+- [mermaid official samples](https://mermaid.ai/open-source/intro/](https://mermaid.ai/docs/mermaid-oss/syntax/flowchart.html)
 - [Sequence Diagrams in Markdown with Mermaid.js](https://newdevsguide.com/2023/04/10/mermaid-sequence-diagrams/)
