@@ -97,7 +97,9 @@
 │   │   │   ├── 📂parallax-portofolio1/
 │   │   │   ├── 📂personal-portofolio1/
 │   │   │   └── 📂personal-portofolio2/
-│   │   └── 📄 transition animation between pages-next.md
+│   │   ├── 📄 framer-motion-study-2026.md
+│   │   ├── 📄 page transition-app route.md
+│   │   └── 📄 page transition-pages route.md
 │   ├── 📂GSAP/
 │   │   ├── 📂sample-codes/
 │   │   │   ├── 📂3D Portofolio
