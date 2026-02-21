@@ -67,6 +67,11 @@ AI-Tshirt-cross-dressing | state management (valtio)                     | clien
                          | generate prompt by Microphone(speaking)       | client\pages\components\AIPicker.tsx
 ```
 
+## resources
+
+- [codse animata](https://animata.design): Hand-crafted ✍️ interaction animations and effects from around the internet 🛜 to copy and paste into your project
+     - https://github.com/codse/animata
+
 [framer Motion for React](#top)
 
 ## Animation
