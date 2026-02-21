@@ -9,7 +9,7 @@
 │   │   │   ├── 📂parallax-portofolio1/
 │   │   │   ├── 📂personal-portofolio1/
 │   │   │   ├── 📂personal-portofolio2/
-│   │   │   └── 📂codse animata.zip
+│   │   │   └── 📦codse animata.zip
 │   │   ├── 📄 framer-motion-study-2026.md
 │   │   ├── 📄 page transition-app route.md
 │   │   └── 📄 page transition-pages route.md
