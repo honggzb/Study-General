@@ -3,6 +3,7 @@
 - [Supsense](#supsense)
   - [Render-as-you-Fetch methodology- Supsense](#render-as-you-fetch-methodology--supsense)
   - [Fetch-On-Render methodology- useEffect](#fetch-on-render-methodology--useeffect)
+  - [React Suspense vs React Query](#react-suspense-vs-react-query)
 - [Implementation with TypeScript and use()](#implementation-with-typescript-and-use)
 - [Implementation with TypeScript and a Data Fetching Library](#implementation-with-typescript-and-a-data-fetching-library)
   - [using TanStack Query (React Query)](#using-tanstack-query-react-query)
@@ -69,7 +70,7 @@ flowchart LR
 
 [back to top](#🚀)
 
-###　React Suspense vs. React Query
+### React Suspense vs React Query
 
 |Suspense|React Query|
 |---|---|
