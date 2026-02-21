@@ -1,11 +1,14 @@
+## General
+
 - `npm install motion`
 - `import { motion } from "motion/react"`
 
 ## sample-codes
 
 ```
+-----------------------|-------------------------------------------------|--------------------------------------------------------------
      file              |                                                 |     effect
------------------------|-------------------------------------------------|------------------------
+-----------------------|-------------------------------------------------|--------------------------------------------------------------
  1AnimateButton.tsx    | basic                                           | button: shadow animation/3d rotate
  2Card.tsx             | Hover & Exit Animations: `whileHover`           | Card
  3Dashboard.tsx        | Variants: `variants`                            | sidebar: open/close animation, sidebar's children animation
@@ -20,11 +23,9 @@
                        |                                                 | 2. tick <- svg animation(same effect-'react-countup' library)
  7CirclePhoto-animate  |                                                 | circle animation around a image <- svg animation
  7TextAnimations.tsx   |                                                 | 3 text animation should be known
- parallax📂           |useScroll, useSpring, useTransform               | parallax scrolling effect
- TransitionLink 📂    |without using Framer motion                      | page transition(without using Framer motion)
-```
-
-```
+ parallax📂            |useScroll, useSpring, useTransform               | parallax scrolling effect
+ TransitionLink 📂     |without using Framer motion                      | page transition(without using Framer motion)
+-----------------------|-------------------------------------------------|--------------------------------------------------------------
 parallax project
 ├── 📂app/
 │   ├── 📄globals.css
@@ -36,9 +37,8 @@ parallax project
 │   └── 📄xxx.png
 ```
 
-## next + framer motion + tailwind CSS + typescript
-
 ```
+-------------------------|-----------------------------------------------|--------------------------------------------------------------
    project               |       function                                |
 -------------------------|-----------------------------------------------|--------------------------------------------------------------
 coffee-shop              |
@@ -65,6 +65,7 @@ AI-Tshirt-cross-dressing | state management (valtio)                     | clien
                          | create image by using Open AI                 | server\routes\dalle.routes.js, client\pages\components\AIPicker.tsx
                          |                                               | client\pages\components\customizer\index.tsx
                          | generate prompt by Microphone(speaking)       | client\pages\components\AIPicker.tsx
+-------------------------|-----------------------------------------------|----------------------------------------------------------------
 ```
 
 ## resources
