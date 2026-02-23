@@ -86,3 +86,7 @@ award-cartoon(GSAP)     | image Clip/filter('mask/svg filter' class)    | \compo
  ScrollAnimation        | 3D model/background Scrolling(GSAP)           | ScrollManager.tsx
 ------------------------|-----------------------------------------------|-------------------------------------------
 ```
+
+## Resources
+
+- https://freefrontend.com/   -> free samples(tailwind+bootstrap)
