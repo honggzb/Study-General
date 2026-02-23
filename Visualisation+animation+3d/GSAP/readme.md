@@ -18,7 +18,7 @@
 ```
 
 - `npm i gsap`
-- `npm install @npm install @gsap/react/react`
+- `npm i @gsap/react`
 
 ```ts
 import { useRef } from "react";
