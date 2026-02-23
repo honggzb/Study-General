@@ -129,6 +129,7 @@ function onSubmit(event: React.FormEvent) {
 
 1. **React.ReactNode**
    - is the recommended and most flexible type for most use cases, as it covers nearly everything React can render
+   - `type ReactNode = | ReactElement | string | number | Iterable<ReactNode> | ReactPortal | boolean | null | undefined;`
 2. **JSX.Element**
    1. **Allows**: A <mark>single</mark> React element (e.g., `<p>Hello</p>`)
    2. **Does not allow**: Multiple elements, plain strings, numbers, null, etc..
