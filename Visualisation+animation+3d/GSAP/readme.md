@@ -17,6 +17,33 @@
 │   │   └──   
 ```
 
+- `npm i gsap`
+- `npm install @npm install @gsap/react/react`
+
+```ts
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import { SplitText } from "gsap/all";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, ScrollToPlugin, SplitText);
+
+const container = useRef();
+useGSAP(() => {
+  // gsap code here...
+  gsap.to(".box", {x: 100}); // <-- automatically reverted
+
+}, { scope: container }); // <-- easily add a scope for selector text (optional)
+```
+
+## Resources
+
+- [GSAP official demo](https://demos.gsap.com/explore/)
+- https://freefrontend.com/   -> free samples(tailwind+bootstrap)
+
 ```
    project              |       function                                |
 ------------------------|-----------------------------------------------|-----------------------------------------
@@ -87,7 +114,3 @@ award-cartoon(GSAP)     | image Clip/filter('mask/svg filter' class)    | \compo
 ------------------------|-----------------------------------------------|-------------------------------------------
 ```
 
-## Resources
-
-- [GSAP official demo](https://demos.gsap.com/explore/)
-- https://freefrontend.com/   -> free samples(tailwind+bootstrap)
