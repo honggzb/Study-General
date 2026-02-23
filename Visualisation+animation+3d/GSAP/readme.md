@@ -89,4 +89,5 @@ award-cartoon(GSAP)     | image Clip/filter('mask/svg filter' class)    | \compo
 
 ## Resources
 
+- [GSAP official demo](https://demos.gsap.com/explore/)
 - https://freefrontend.com/   -> free samples(tailwind+bootstrap)
