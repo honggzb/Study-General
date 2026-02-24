@@ -54,7 +54,7 @@ function reducer(state: number, action: Action): number {
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Type Guards - Narrowing tools
 
@@ -106,7 +106,7 @@ function processDate(value: Date | string) {
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Operator Type Guards
 
@@ -133,7 +133,7 @@ const DynamicRender = (props: TextProps | ComponentProps) => {
 };
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Custom Type Guards
 
@@ -174,7 +174,7 @@ function processData(data: unknown) {
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Array Type Guards
 
@@ -279,6 +279,8 @@ const EmailInput = () => {
 };
 ```
 
+[🚀back to top](#top)
+
 ## Advanced Patterns
 
 - **Discriminated Unions with Multiple Fields**
@@ -306,7 +308,7 @@ function handleResponse<T>(response: Response<T>) {
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Never and Exhaustiveness
 
@@ -343,7 +345,7 @@ function reducer(state: State, action: Action): State {
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Optional Chaining and Narrowing
 
@@ -361,7 +363,7 @@ const city = user.address?.city;           // city is string | undefined
 const name = user?.name ?? 'Anonymous';    // name is string (never undefined or null)
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Type Narrowing in React
 
@@ -393,7 +395,7 @@ const Button = (props: ButtonProps) => {
 };
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ### Conditional Rendering
 
@@ -419,7 +421,7 @@ function DataDisplay<T>({ state }: { state: DataState<T> }) {
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ### Form Validation
 
@@ -534,7 +536,7 @@ const FormComponent = ({ form }: { form: Form }) => {
 };
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Advanced Patterns
 
@@ -563,7 +565,7 @@ function handleResponse<T>(response: Response<T>) {
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ### Combining Type Guards
 
@@ -591,7 +593,7 @@ function hasPermission(person: Person, permission: string): boolean {
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ### Narrowing with Generics
 
@@ -610,7 +612,7 @@ function filterDefined<T>(items: (T | undefined)[]): T[] {
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Best Practices
 
@@ -662,5 +664,4 @@ if (isString(value)) {
 console.log((value as string).toUpperCase());
 ```
 
-[back to top](#🚀)
-
+[🚀back to top](#top)
