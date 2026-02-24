@@ -1,11 +1,11 @@
 ## toggle Dark mode - tailwind 4 + react
 
 1. modify 'global.css'
-  - `@custom-variant dark (&:where(.dark, .dark *));`  -->  Enable class-based dark mode (default is media query)
-  - https://tailwindcss.com/docs/dark-mode
+    - `@custom-variant dark (&:where(.dark, .dark *));`  -->  Enable class-based dark mode (default is media query)
+    - https://tailwindcss.com/docs/dark-mode
 2. Create the Theme Switcher Component
 3. Prevent Flash of Inaccurate Color (FOUC) --> add `suppressHydrationWarning` to 'layout.tsx'
-   - To prevent the page from flashing white before switching to dark mode
+     - To prevent the page from flashing white before switching to dark mode
 
 ```ts
 /* app/globals.css */
