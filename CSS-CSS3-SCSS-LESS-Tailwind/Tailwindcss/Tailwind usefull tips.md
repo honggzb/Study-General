@@ -11,10 +11,13 @@
 - [group-hover for custmer class- define a user group name](#group-hover-for-custmer-class--define-a-user-group-name)
 -----------------------------------------------------
 
+- https://play.tailwindcss.com/
+
 1. `@layer`: define custom CSS
-   - `@layer base { }`
-   -` @layer components { }`
-   - `@layer utilities { }`
+   - `@layer base { }`      <-- globally, based on project, like `h1`,`p`
+   -` @layer components { }`<-- 
+   - `@layer utilities { }` <-- atomic styles, like `margins`, `padding`, `colors`
+3. `@apply`   <--  apply tailwindcss style to 
 2. `@theme`
 3. `@plugin`: `@plugin "@tailwindcss/typography`
    
@@ -53,12 +56,12 @@
         <p>Consectetur aliqua mollit magna deserunt amet ut ullamco quis non reprehenderit irure eu id culpa. Excepteur laborum proident nulla Lorem qui labore. Reprehenderit proident adipisicing exercitation exercitation minim Lorem veniam laborum aliquip aliquip in do deserunt. Quis dolore laboris labore eu nisi. Aute irure nisi exercitation non eu nulla cupidatat. Excepteur irure sint duis aute reprehenderit.</p>
       </div>
       <br /><hr /><br />
-{/* using file */}
-      <input type="file" className='block w-full text-sm text-slate-500 file:mr-4 file:rounded-full file:border-0 file:bg-violet-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-gray-500' />
+{/* using file: */}
+      <input type="file" class="block w-full text-sm text-slate-500 file:mr-4 file:rounded-full file:border-0 file:bg-violet-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-violet-700 hover:file:bg-violet-100" />
 {/* less javascript */}
       <br /><hr /><br />
 {/* Caret */}
-      <textarea className='w-full caret-green-500 p-2' name="" id=""></textarea>
+      <textarea className='w-full caret-green-500 p-2 text-white' name="" id="" placeholder="type something nice..."></textarea>
 {/* 大段文字滚动时候底部半透明效果 */
 <div className='h-40 overflow-auto pb-20 mask-[linear-gradient(to_top,transparent_20%,black_80%)]'>a long text...</div>
 {/* button 3D动画 */
