@@ -15,7 +15,7 @@
 
 1. `@layer`: define custom CSS
    - `@layer base { }`      <-- globally, based on project, like `h1`,`p`
-   -` @layer components { }`<-- 
+   - ` @layer components { }`<-- 
    - `@layer utilities { }` <-- atomic styles, like `margins`, `padding`, `colors`
 3. `@apply`   <--  apply tailwindcss style to 
 2. `@theme`
