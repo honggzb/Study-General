@@ -149,7 +149,7 @@ function ConditionalButton({ show }: { show: boolean }): ReactNode {
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Render Props with Children
 
@@ -182,7 +182,7 @@ function DataFetcher({ url, children }: DataFetcherProps) {
 </DataFetcher>;
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## React.Children.map
 
@@ -209,7 +209,7 @@ function AddClassToChildren({ children }: WrapperProps) {
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## React.Children.only- need exactly one child element
 
@@ -237,7 +237,7 @@ function SingleChildWrapper({ children }: SingleChildProps) {
 </SingleChildWrapper>
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Type Guards for Children- when different types of children
 
@@ -281,7 +281,7 @@ function SmartList({ children }: SmartListProps) {
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Polymorphic Components and the as Prop
 
@@ -378,7 +378,7 @@ const Button: ButtonComponent = forwardRef(
 Button.displayName = 'Button';
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ### Reusable Polymorphic Type
 
@@ -405,7 +405,7 @@ const Card: PolymorphicComponent<'div', CardProps> = forwardRef(
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ### Real-World Use Cases
 
@@ -421,4 +421,4 @@ const Text: PolymorphicComponent<'span', TextProps> = /* ... */;
 <Text as="label" variant="caption" weight="medium">Form label</Text>
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
