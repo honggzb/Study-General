@@ -110,6 +110,11 @@ award-cartoon(GSAP)     | image Clip/filter('mask/svg filter' class)    | \compo
                         | image enlarge/shunk while scrolling           | \components\About.tsx
                         | Radial gradient hover effect in butto         | \components\features\BentoCard.tsx
 ------------------------|-----------------------------------------------|-------------------------------------------
+                        | video animation- play when scrolling page     | \components\hero\index.tsx
+wine-cartoon(GSAP)      | image mask animation(.masked-img)             | \components\Art\index.tsx+global.css
+                        | animation Text/image                          | 
+                        | slider animation(GSAP+currentIndex)           | \components\Menu\index.tsx
+------------------------|-----------------------------------------------|-------------------------------------------
  ScrollAnimation        | 3D model/background Scrolling(GSAP)           | ScrollManager.tsx
 ------------------------|-----------------------------------------------|-------------------------------------------
 ```
