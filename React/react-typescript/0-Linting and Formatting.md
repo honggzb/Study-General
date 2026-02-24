@@ -46,7 +46,7 @@ npm install -D prettier eslint-config-prettier
 }
 ```
 
-[back to top](#🚀)
+[🚀back to top](#top)
 
 ## Recommended ESLint Rules for TypeScript and React
 
@@ -77,4 +77,4 @@ npm install -D prettier eslint-config-prettier
 |`react-hooks/rules-of-hooks: “error”`| Enforces React Hooks rules: only call hooks at top level, only call from React functions. Critical for hooks to work correctly|
 |`react-hooks/exhaustive-deps: “warn”`| Warns when dependencies are missing from `useEffect`, `useCallback`, `useMemo` dependency arrays. Helps prevent bugs from stale closures|
 
-[back to top](#🚀)
+[🚀back to top](#top)
