@@ -109,7 +109,7 @@ function Modal({ trigger, children }: ModalProps) {
 
 <details>
 
-<summary><strong>Question 2: Do you need to clone or inspect the element?</strong></summary>
+<summary><strong style="color: blue">Question 3: Are you constraining return types?</strong></summary>
 
 ```ts
 /* Question 3: Are you constraining return types? */
@@ -120,6 +120,7 @@ function ConditionalComponent({ show }: { show: boolean }): ReactNode {
 }
 
 </details>
+
 
 <details>
 
