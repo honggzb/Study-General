@@ -66,12 +66,21 @@ type JSX.Element = ReactElement<any, any>;
 2. **Consider ReactElement** only when you need to **manipulate** the <mark>element</mark>-rare (clone, inspect props, etc.)
 3. **Avoid JSX.Element for children** — it’s too restrictive and doesn’t add value
 
+<detail>
+
+<summary>**Question 1: Are you typing children props?**</summary>
+
 ```ts
 /* Question 1: Are you typing children props? */
 // → Use ReactNode (99% of cases)
 interface ContainerProps {
   children: ReactNode; // ✅ Maximum flexibility
 }
+```
+
+</detail>
+
+```
 /* Question 2: Do you need to clone or inspect the element? */
 // → Use ReactElement: need to manipulate the element(clone trigger)
 interface ModalProps {
