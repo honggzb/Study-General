@@ -68,7 +68,7 @@ type JSX.Element = ReactElement<any, any>;
 
 <details>
 
-<summary><strong style="color:#DD5145">Question 1: Are you typing children props?</strong></summary>
+<summary><mark>Question 1: Are you typing children props?</mark></summary>
 
 ```ts
 /* Question 1: Are you typing children props? */
@@ -82,7 +82,7 @@ interface ContainerProps {
 
 <details>
 
-<summary><strong style="color:#DD5145">Question 2: Do you need to clone or inspect the element?</strong></summary>
+<summary><mark>Question 2: Do you need to clone or inspect the element?</mark></summary>
 
 ```ts
 /* Question 2: Do you need to clone or inspect the element? */
@@ -109,7 +109,7 @@ function Modal({ trigger, children }: ModalProps) {
 
 <details>
 
-<summary><strong style="color:#DD5145">Question 3: Are you constraining return types?</strong></summary>
+<summary><mark>Question 3: Are you constraining return types?</mark></summary>
 
 ```ts
 /* Question 3: Are you constraining return types? */
@@ -123,7 +123,7 @@ function ConditionalComponent({ show }: { show: boolean }): ReactNode {
 
 <details>
 
-<summary><strong style="color:#DD5145">Question 4: Do you need specific prop types preserved?</strong></summary>
+<summary><mark>Question 4: Do you need specific prop types preserved?</mark></summary>
 
 ```ts
 /* Question 4: Do you need specific prop types preserved? */
@@ -135,6 +135,8 @@ function processElement(element: ReactElement<{ className?: string }>) {
 ```
 
 </details>
+
+
 
 ### When to Use These Specific Types
 
