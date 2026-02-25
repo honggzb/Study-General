@@ -121,7 +121,6 @@ function ConditionalComponent({ show }: { show: boolean }): ReactNode {
 
 </details>
 
-
 <details>
 
 <summary><strong style="color:#DD5145">Question 4: Do you need specific prop types preserved?</strong></summary>
@@ -134,6 +133,7 @@ function processElement(element: ReactElement<{ className?: string }>) {
   const className = element.props.className || 'default';
   return cloneElement(element, { className: `${className} processed` });
 ```
+
 </details>
 
 ### When to Use These Specific Types
