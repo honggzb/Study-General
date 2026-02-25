@@ -118,6 +118,7 @@ function ConditionalComponent({ show }: { show: boolean }): ReactNode {
   if (!show) return null; // ✅ ReactNode allows null
   return <div>Content</div>;
 }
+```
 
 </details>
 
@@ -135,7 +136,6 @@ function processElement(element: ReactElement<{ className?: string }>) {
 ```
 
 </details>
-
 
 
 ### When to Use These Specific Types
