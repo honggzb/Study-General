@@ -5,15 +5,13 @@
 - [Operator Type Guards](#operator-type-guards)
 - [Custom Type Guards](#custom-type-guards)
 - [Array Type Guards](#array-type-guards)
-- [Type Narrowing in React](#type-narrowing-in-react)
-- [Advanced Patterns](#advanced-patterns)
 - [Never and Exhaustiveness](#never-and-exhaustiveness)
 - [Optional Chaining and Narrowing](#optional-chaining-and-narrowing)
-- [Type Narrowing in React](#type-narrowing-in-react-1)
+- [Type Narrowing in React](#type-narrowing-in-react)
   - [Component Props](#component-props)
   - [Conditional Rendering](#conditional-rendering)
   - [Form Validation](#form-validation)
-- [Advanced Patterns](#advanced-patterns-1)
+- [Advanced Patterns](#advanced-patterns)
   - [Discriminated Unions with Multiple Fields](#discriminated-unions-with-multiple-fields)
   - [Combining Type Guards](#combining-type-guards)
   - [Narrowing with Generics](#narrowing-with-generics)
@@ -195,119 +193,6 @@ function isString(value: unknown): value is string {
 const strings = mixedArray.filter(isString);     // strings is string[]
 ```
 
-## Type Narrowing in React
-
-- Component Props
-- Conditional Rendering
-- Form Validation
-- Discriminated Unions with Multiple Fields
-
-```ts
-/* Component Props */
-type ButtonProps =
-  | { variant: 'primary'; onClick: () => void }
-  | { variant: 'link'; href: string }
-  | { variant: 'disabled' };
-const Button = (props: ButtonProps) => {
-  switch (props.variant) {
-    case 'primary':         // props has onClick
-      return (
-        <button className="btn-primary" onClick={props.onClick}>
-          Click me
-        </button>
-      );
-    case 'link':            // props has href
-      return (
-        <a className="btn-link" href={props.href}>
-          Visit
-        </a>
-      );
-    case 'disabled':       // props has no additional properties
-      return (
-        <button className="btn-disabled" disabled>
-          Disabled
-        </button>
-      );
-    default:
-      const exhaustive: never = props;
-      throw new Error(`Unhandled variant: ${exhaustive}`);
-  }
-};
-/* Conditional Rendering */
-interface DataState<T> {
-  status: 'idle' | 'loading' | 'success' | 'error';
-  data?: T;
-  error?: Error;
-}
-function DataDisplay<T>({ state }: { state: DataState<T> }) {
-  if (state.status === 'idle') {
-    return <div>Ready to load</div>;
-  }
-  if (state.status === 'loading') {
-    return <div>Loading...</div>;
-  }
-  if (state.status === 'error') {
-    return <div>Error: {state.error?.message}</div>;   // TypeScript knows error exists when status is 'error'
-  }
-  return <div>Data: {JSON.stringify(state.data)}</div>;  // state.status is 'success', data should exist
-}
-/* Form Validation */
-type ValidationResult =
-  | { valid: true; value: string }
-  | { valid: false; error: string };
-function validateEmail(input: string): ValidationResult {
-  if (!input.includes('@')) {
-    return { valid: false, error: 'Invalid email format' };
-  }
-  return { valid: true, value: input.trim().toLowerCase() };
-}
-const EmailInput = () => {
-  const [input, setInput] = useState('');
-  const handleSubmit = () => {
-    const result = validateEmail(input);
-    if (result.valid) {
-      // result.value is available
-      submitEmail(result.value);
-    } else {
-      // result.error is available
-      showError(result.error);
-    }
-  };
-  return (
-    <input value={input} onChange={e => setInput(e.target.value)} onBlur={handleSubmit} />
-  );
-};
-```
-
-[🚀back to top](#top)
-
-## Advanced Patterns
-
-- **Discriminated Unions with Multiple Fields**
-
-```ts
-/* Discriminated Unions with Multiple Fields */
-type Response<T> =
-  | { status: 'success'; data: T; timestamp: Date }
-  | { status: 'error'; error: Error; retryAfter?: number }
-  | { status: 'pending'; progress?: number };
-function handleResponse<T>(response: Response<T>) {
-  if (response.status === 'success') {
-    // All success fields are available
-    console.log(`Success at ${response.timestamp}: ${response.data}`);
-  } else if (response.status === 'error') {
-    // All error fields are available
-    console.error(`Error: ${response.error.message}`);
-    if (response.retryAfter) {
-      setTimeout(retry, response.retryAfter);
-    }
-  } else {
-    // response.status === 'pending'
-    console.log(`Pending... ${response.progress ?? 0}%`);
-  }
-}
-```
-
 [🚀back to top](#top)
 
 ## Never and Exhaustiveness
@@ -366,6 +251,11 @@ const name = user?.name ?? 'Anonymous';    // name is string (never undefined or
 [🚀back to top](#top)
 
 ## Type Narrowing in React
+
+- Component Props
+- Conditional Rendering
+- Form Validation
+- Discriminated Unions with Multiple Fields
 
 ### Component Props
 
@@ -616,6 +506,10 @@ function filterDefined<T>(items: (T | undefined)[]): T[] {
 
 ## Best Practices
 
+<details>
+
+<summary><mark>1. Use Discriminated Unions</mark></summary>
+
 ```ts
 //1. Use Discriminated Unions
 // ✅ Good - Easy to narrow
@@ -626,6 +520,15 @@ interface Result<T> {
   data?: T;
   error?: string;
 }
+```
+
+</details>
+
+<details>
+
+<summary><mark>2. Make Invalid States Unrepresentable</mark></summary>
+
+```ts
 //2. Make Invalid States Unrepresentable
 // ✅ Good - Can't have both data and error
 type State<T> =
@@ -639,6 +542,15 @@ interface State<T> {
   data?: T;
   error?: Error;
 }
+```
+
+</details>
+
+<details>
+
+<summary><mark>3. Use Exhaustive Checks</mark></summary>
+
+```
 //3. Use Exhaustive Checks
 // ✅ Always include exhaustive checks
 function handle(value: 'a' | 'b') {
@@ -652,6 +564,15 @@ function handle(value: 'a' | 'b') {
       throw new Error(`Unhandled value: ${exhaustive}`);
   }
 }
+```
+
+</details>
+
+<details>
+
+<summary><mark>4. Prefer Type Guards Over Type Assertions</mark></summary>
+
+```ts
 //4. Prefer Type Guards Over Type Assertions
 // ✅ Good - Safe type narrowing
 function isString(value: unknown): value is string {
@@ -663,5 +584,7 @@ if (isString(value)) {
 // ❌ Avoid - Unsafe type assertion
 console.log((value as string).toUpperCase());
 ```
+
+</details>
 
 [🚀back to top](#top)
