@@ -95,7 +95,7 @@ useGSAP(() => {
                         | 3D model change when hover                    | components\Experience\index.tsx+Developer.tsx
 ------------------------|-----------------------------------------------|-------------------------------------------
                         | 3D model loadinlg                             |
- 3D Portofolio2         | up slider animation(<mark>useful</mark>)                   | \components\Services.tsx+AnimatedHeaderSection.tsx
+ 3D Portofolio2         | up slider animation(useful)                   | \components\Services.tsx+AnimatedHeaderSection.tsx
                         | show image animation when hovrer              | \components\Works.tsx
 ------------------------|-----------------------------------------------|-------------------------------------------
                         | 3D model loading(SelectiveBloom control)      | \components\home\
