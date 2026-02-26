@@ -94,6 +94,15 @@ useGSAP(() => {
   3D Portofolio         | 3D model texture(video) change animation      | components\Projects\index.tsx+DemoComputer.tsx
                         | 3D model change when hover                    | components\Experience\index.tsx+Developer.tsx
 ------------------------|-----------------------------------------------|-------------------------------------------
+                        | 3D model loadinlg                             |
+ 3D Portofolio2         | up slider animation(<mark>useful</mark>)                   | \components\Services.tsx+AnimatedHeaderSection.tsx
+                        | show image animation when hovrer              | \components\Works.tsx
+------------------------|-----------------------------------------------|-------------------------------------------
+                        | 3D model loading(SelectiveBloom control)      | \components\home\
+                        | card with 3D float model                      | \components\TechStack\
+ 3D Portofolio3         | text inline slider(CSS-wordSlider)            | \global.css
+                        | marquee(CSS-marquee)                          | \global.css
+------------------------|-----------------------------------------------|-------------------------------------------
                         | 3D model loading + texture change             | components\Iphone.tsx
   Apple web             | Singe Canvas,multiple View                    | components\ModelView.tsx+Model.tsx
                         |  +animation switch Views                      |
