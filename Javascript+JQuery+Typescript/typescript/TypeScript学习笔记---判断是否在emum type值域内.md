@@ -6,8 +6,9 @@
 
 ```ts
 type IdentifierShort = 'L' | 'R' | 'P' | 'V' | 'S' | 'G' | 'M' | 'T';
-const validIdentifiers = ['L', 'R', 'P', 'V', 'S', 'G', 'M', 'T'] as const;
+
 // Method 1: Using includes() with a Type Guard Function
+const validIdentifiers = ['L', 'R', 'P', 'V', 'S', 'G', 'M', 'T'] as const;
 if (typeof value === 'string' && validIdentifiers.includes(value as any)) {
     // In this block, value is type 'IdentifierShort'
    console.log(`Valid identifier: ${value}`);
