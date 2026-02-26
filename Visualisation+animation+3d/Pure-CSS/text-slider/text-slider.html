@@ -6,61 +6,94 @@
  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <title>Document</title>
 <style type="text/tailwindcss">
-  @theme {
-    --color-clifford: #da373d;
+  slide {
+    display: inline-block;
+    flex-direction: column;
+    transition: all cubic-bezier(0.71, 0.03, 0.34, 1);
   }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    animation: wordSlider 21s infinite cubic-bezier(0.9, 0.01, 0.3, 0.99);
+  }
+  @keyframes wordSlider {
+    0% {
+      transform: translateY(0.5%);
+    }
+    12.5% {
+      transform: translateY(-12.5%);
+    }
+    25% {
+      transform: translateY(-25%);
+    }
+    37.5% {
+      transform: translateY(-37.5%);
+    }
+    50% {
+      transform: translateY(-50%);
+    }
+    62.5% {
+      transform: translateY(-62.5%);
+    }
+    75% {
+      transform: translateY(-75%);
+    }
+    87.5% {
+      transform: translateY(-87.5%);
+    }
+}
 </style>
 </head>
-<body class="bg-black">
+<body class="bg-black text-white">
   <div class="flex flex-col justify-center md:text-[40px] text-[30px] font-semibold relative z-10 pointer-events-none">
     <h1>
       Shaping
-      <span class="absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden">
+      <span class="slide absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden">
         <span class="wrapper">
           <span class="flex items-center md:gap-3 gap-1 pb-2">
-            <img src="./ideas.svg" alt="person"
+            <img src="https://github.com/honggzb/Study-General/blob/master/Visualisation%2Banimation%2B3d/Pure-CSS/text-slider/ideas.svg" alt="person"
               class="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50">
             <span>Ideas</span>
           </span>
           <span
             class="flex items-center md:gap-3 gap-1 pb-2">
-            <img src="./concepts.svg" alt="person"
+            <img src="https://github.com/honggzb/Study-General/blob/master/Visualisation%2Banimation%2B3d/Pure-CSS/text-slider/concepts.svg" alt="person"
               class="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50">
               <span>Concepts</span>
           </span>
           <span
             class="flex items-center md:gap-3 gap-1 pb-2">
-            <img src="./designs.svg" alt="person"
+            <img src="https://github.com/honggzb/Study-General/blob/master/Visualisation%2Banimation%2B3d/Pure-CSS/text-slider/designs.svg" alt="person"
               class="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50">
               <span>Designs</span>
           </span>
           <span
             class="flex items-center md:gap-3 gap-1 pb-2">
-            <img src="./code.svg" alt="person"
+            <img src="https://github.com/honggzb/Study-General/blob/master/Visualisation%2Banimation%2B3d/Pure-CSS/text-slider/code.svg" alt="person"
               class="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50">
               <span>Code</span>
           </span>
           <span
             class="flex items-center md:gap-3 gap-1 pb-2">
-            <img src="./ideas.svg" alt="person"
+            <img src="https://github.com/honggzb/Study-General/blob/master/Visualisation%2Banimation%2B3d/Pure-CSS/text-slider/ideas.svg" alt="person"
               class="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50">
               <span>Ideas</span>
           </span>
           <span
             class="flex items-center md:gap-3 gap-1 pb-2">
-            <img src="./concepts.svg" alt="person"
+            <img src="https://github.com/honggzb/Study-General/blob/master/Visualisation%2Banimation%2B3d/Pure-CSS/text-slider/concepts.svg" alt="person"
               class="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50">
               <span>Concepts</span>
           </span>
           <span
             class="flex items-center md:gap-3 gap-1 pb-2">
-            <img src="./designs.svg" alt="person"
+            <img src="https://github.com/honggzb/Study-General/blob/master/Visualisation%2Banimation%2B3d/Pure-CSS/text-slider/designs.svg" alt="person"
               class="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50">
               <span>Designs</span>
           </span>
           <span
             class="flex items-center md:gap-3 gap-1 pb-2">
-            <img src="./code.svg" alt="person"
+            <img src="https://github.com/honggzb/Study-General/blob/master/Visualisation%2Banimation%2B3d/Pure-CSS/text-slider/code.svg" alt="person"
               class="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50">
               <span>Code</span>
           </span>
