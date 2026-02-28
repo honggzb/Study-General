@@ -22,7 +22,7 @@
   - **Type safety**: TypeScript knows about your defaults at compile time
   - **Locality**: Defaults are visible right where the component is defined
   - **Performance**: No extra property merging at runtime
-  - **Future-proof**Works with React’s Compiler and other optimizations
+  - **Future-proof**: Works with React’s Compiler and other optimizations
 
 ## Primitive Props
 
@@ -158,11 +158,11 @@ interface FormProps {
 
 ```ts
 interface SearchProps {
-  onSearch: (query: string) => void;  // Simple callback
-  onSubmit: (query: string) => Promise<void>;  // Async callback with error handling
-  onFilter: (category: string, tags: string[]) => void;  // Callback with multiple parameters
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;  // Optional callback with event
-  validator?: (value: string) => string | undefined; // Callback that returns a value: returns error message
+  onSearch: (query: string) => void;                                // ➡️Simple callback
+  onSubmit: (query: string) => Promise<void>;                       // ➡️Async callback with error handling
+  onFilter: (category: string, tags: string[]) => void;             // ➡️Callback with multiple parameters
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;  // ➡️Optional callback with event
+  validator?: (value: string) => string | undefined;                // ➡️Callback that returns a value: returns error message
 }
 function Search({ onSearch, onSubmit, onChange }: SearchProps) {
   const [query, setQuery] = useState('');
@@ -306,11 +306,11 @@ export function TextField(props: TextFieldProps) {
 
 ## Extending HTML Element Props
 
-- using spreading `...`   --> extending props
-- using `Omit`            --> Omitting specific HTML props
+- using spreading `...`   ➡️ extending props
+- using `Omit`            ➡️ Omitting specific HTML props
 
 ```ts
-//1. using spreading ...   --> extending props
+//1. using spreading ...   ➡️ extending props
 interface CustomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary';
   loading?: boolean;
@@ -320,7 +320,7 @@ function CustomButton({
   loading,
   children,
   disabled,
-  ...rest                       // using spread
+  ...rest                 // using spread
 }: CustomButtonProps) {
   return (
     <button
@@ -332,13 +332,13 @@ function CustomButton({
     </button>
   );
 }
-//2. using Omit            --> Omitting specific HTML props
+//2. using Omit            ➡️ Omitting specific HTML props
 interface InputProps extends Omit<                 // using Omit
   React.InputHTMLAttributes<HTMLInputElement>,
   'type' | 'onChange'
 > {
-  type?: 'text' | 'email' | 'password';  // Restrict to specific types
-  onChange: (value: string) => void;     // Simplify onChange signature
+  type?: 'text' | 'email' | 'password';            // Restrict to specific types
+  onChange: (value: string) => void;               // Simplify onChange signature
 }
 
 function Input({ onChange, ...props }: InputProps) {  // ...
@@ -423,7 +423,7 @@ function Input({ value, onChange, placeholder }: InputProps) {
 ```ts
 // Creating a type helper that strips children from any props
 type LeafComponent<P> = React.FC<PropsWithoutChildren<P>>;
-// Now you can create leaf components with guaranteed no children
+// Now can create leaf components with guaranteed no children
 const StatusBadge: LeafComponent<{ status: 'online' | 'offline' }> = ({ status }) => {
   return <span className={`badge badge--${status}`}>{status}</span>;
 };
