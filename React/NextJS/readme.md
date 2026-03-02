@@ -37,7 +37,7 @@
 |---|---|---|---|
 |useSearchParams|access the parameters of the current URL|`get()`, `has()`, `getAll()`, `keys()`, <br>`values()`, `entries()`,<br> `forEach()`, `toString()`|read-only URLSearchParams|
 |usePathname|a string of the current URL's pathname||`/blog/hello-world` --> return '/blog/hello-world'<br>`/dashboard?v=2`--> return '/dashboard'|
-|useRouter|enables navigation between routes within client components|`push()`,`replace()`,<br>`prefetch()`,`forward()`,<br>`back()`, `query`|'pages/[slug].js' <=>`router.query.slug` ||
+|useRouter| app router- import { useRouter } from 'next/navigation'<br>page router - import { useRouter } from 'next/router'<br>enables navigation between routes within client components|`push()`,`replace()`,<br>`prefetch()`,`forward()`,<br>`back()`, `query`|'pages/[slug].js' <=>`router.query.slug` ||
 
 - `URLSearchParams` is a Web API that provides utility methods for manipulating the URL query parameters. Instead of creating a complex string literal, you can use it to get the params string like ?page=1&query=a
 - [Adding Search and Pagination-nextjs official course](https://nextjs.org/learn/dashboard-app/adding-search-and-pagination)
