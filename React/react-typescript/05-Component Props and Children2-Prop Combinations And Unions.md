@@ -16,6 +16,7 @@
 |---------------|-----------------------------------------------|
 ||Components with multiple variants that need different props|
 |Limit patterns|Preventing props that don’t make sense together|
+||Creating focused, single-purpose interfaces|
 |---------------|-----------------------------------------------|
 ||Accessibility requirements must be enforced|
 |Require patterns |Props have strong dependencies (e.g., validation rules)|
