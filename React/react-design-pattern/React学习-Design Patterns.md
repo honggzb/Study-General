@@ -1,3 +1,24 @@
+## React Patterns
+
+- https://www.patterns.dev/react/
+- Design patterns
+  - HOC pattern
+  - Hooks pattern
+  - Compound pattern
+  - Container/Presentational pattern
+  - Render props pattern
+  - AI UI pattern
+  - React Stack pattern
+- Rendering Patterns
+  - Client-side Rendering
+  - Server-side Rendering
+  - Static Rendering
+  - Incremental static Generation
+  - Progressive Hydration
+  - Streaming Server-side Rendering
+  - React Server Components
+  - Selective Hydration
+ ------------------------------------------------------------
 | React Design Patterns ||
 |---|---|
 |Layout Components Pattern      ||
