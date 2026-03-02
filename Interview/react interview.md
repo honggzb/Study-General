@@ -19,6 +19,8 @@
 --------------------------------------------------------------------------
 ## State vs props
 
+- State is an **object** that holds some information that may change over **the lifetime of the component**
+
 |Props|	State|
 |---|---|
 |The data remains unchanged from component to component|Data is the current snapshot of data stored in a component’s Props. It changes over the lifecycle of the component|
