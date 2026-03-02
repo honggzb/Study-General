@@ -5,6 +5,7 @@
 - [Pattern 3: Require Dependent Props](#pattern-3-require-dependent-props)
 - [Real-World Example: Form Field Combinations](#real-world-example-form-field-combinations)
 - [Advanced Pattern: Function Overloads](#advanced-pattern-function-overloads)
+- [Runtime Validation with Zod](#runtime-validation-with-zod)
 
 -------------------------------------------------------------------------
 
@@ -368,3 +369,41 @@ function Toast(props: {
 ```
 
 [🚀back to top](#top)
+
+## Runtime Validation with Zod
+
+- For components that receive props from external sources, **combine TypeScript patterns with runtime validation**
+
+```ts
+import { z } from 'zod';
+const ControlledDialogSchema = z.object({
+  open: z.boolean(),
+  onOpenChange: z.function().args(z.boolean()).returns(z.void()),
+  defaultOpen: z.undefined(),
+});
+const UncontrolledDialogSchema = z.object({
+  defaultOpen: z.boolean().optional(),
+  open: z.undefined(),
+  onOpenChange: z.undefined(),
+});
+const DialogPropsSchema = z
+  .object({
+    children: z.any(),
+    title: z.string().optional(),
+  })
+  .and(z.union([ControlledDialogSchema, UncontrolledDialogSchema]));
+type DialogProps = z.infer<typeof DialogPropsSchema>;
+
+function Dialog(props: DialogProps) {
+  // Runtime validation for props from external sources
+  const validatedProps = DialogPropsSchema.safeParse(props);
+  if (!validatedProps.success) {
+    throw new Error(`Invalid props: ${validatedProps.error.message}`);
+  }
+  // component logic here...
+}
+```
+
+[🚀back to top](#top)
+
+
