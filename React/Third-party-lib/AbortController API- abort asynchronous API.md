@@ -1,6 +1,5 @@
 [AbortController API- abort asynchronous API](#top)
 
-- [AbortController](#abortcontroller)
 - [AbortController with the Fetch API](#abortcontroller-with-the-fetch-api)
 - [AbortController with fs.readFile](#abortcontroller-with-fsreadfile)
 - [use AbortSignal to time out async operations](#use-abortsignal-to-time-out-async-operations)
