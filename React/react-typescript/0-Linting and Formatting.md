@@ -7,11 +7,11 @@
 
 1. install
 2. Create '.eslintrc.json' and '.prettierrc.json'
+3. `npm install -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin`
+4. `npm install -D eslint-plugin-react eslint-plugin-react-hooks`
+5. `npm install -D prettier eslint-config-prettier`
 
 ```json
-npm install -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
-npm install -D eslint-plugin-react eslint-plugin-react-hooks
-npm install -D prettier eslint-config-prettier
 # .eslintrc.json
 {
   "extends": [
