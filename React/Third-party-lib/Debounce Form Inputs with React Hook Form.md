@@ -4,6 +4,11 @@
 - [debounce+useCallback-Lodash](#debounce+usecallback-lodash)
 - [debounce with Dynamic UI](#debounce-with-dynamic-ui)
 
+-------------------------------------
+- `useEffect`：每次依赖变化都立即执行
+- `useDebounce`：防抖执行，等待一段时间内不再变化才执行
+- `useThrottle`：节流执行，每隔一段时间执行一次
+
 ## user-defined debounce Hook
 
 ```ts
