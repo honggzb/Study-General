@@ -1,7 +1,7 @@
 [Debounce Form Inputs with React Hook Form](#top)
 
 - [user-defined debounce Hook](#user-defined-debounce-hook)
-- [debounce+useCallback-Lodash](#debounce+useCallback-Lodash)
+- [debounce+useCallback-Lodash](#debounce+usecallback-lodash)
 - [debounce with Dynamic UI](#debounce-with-dynamic-ui)
 
 ## user-defined debounce Hook
