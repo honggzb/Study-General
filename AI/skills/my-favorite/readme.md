@@ -15,3 +15,14 @@
   - responsive-design
   - visual-design-foundations
   - web-component-design
+
+```
+npx skills add vercel-labs/agent-skills@vercel-react-best-practices
+npx skills add google-labs-code/stitch-skills@react:components
+npx skills add resend/react-email@react-email
+npx skills add wshobson/agents@typescript-advanced-types
+npx skills add softaworks/agent-toolkit@openapi-to-typescript
+npx skills add github/awesome-copilot@javascript-typescript-jest
+npx skills add sickn33/antigravity-awesome-skills@typescript-expert
+npx skills add dotneet/claude-code-marketplace@typescript-react-reviewer
+  ```
