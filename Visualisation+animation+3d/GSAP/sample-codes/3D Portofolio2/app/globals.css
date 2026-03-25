@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@theme {
+  --color-primary: #e5e5e0;
+  --color-DarkLava: #393632;
+  --color-SageGray: #8b8b73;
+  --color-gold: #cfa355;
+  --font-amiamie: "Amiamie", sans-serif;
+  --font-amiamie-round: "Amiamie-Round", sans-serif;
+  --animate-marquee: marquee 40s infinite linear;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+body {
+  background: #e5e5e0;
+  color: black;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: var(--font-amiamie);
+}
+
+@layer utility {
+    clip-path {
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    }
+    banner-text-responsive {
+        @apply text-[68px] sm:text-[118px] md:text-[126px] lg:text-[152px] leading-9 sm:leading-16 lg:leading-20;
+    }
+    value-text-responsive {
+        @apply text-2xl md:text-[26px] lg:text-[32px];
+    }
+    marquee-text-responsive {
+        @apply text-[28px] sm:text-[36px] lg:text-[42px];
+    }
+    contact-text-responsive {
+        @apply text-[42px] sm:text-[52px] md:text-[62px] lg:text-[100px];
+    }
+}

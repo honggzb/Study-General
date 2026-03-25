@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@layer base {
+    body {
+        @apply m-0 w-screen h-screen bg-linear-to-br from-[#5a47ce]/80 to-[#232323]/80 overflow-hidden;
+    }
+}
+
+.outline-text {
+  -webkit-text-stroke: 1px white;
+}
+
+.animate-horizontal-scroll {
+  animation: marquee 20s linear infinite;
+}
+
+.animate-horizontal-scroll-2 {
+  animation: marquee2 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0); /* start at original position */
+  }
+  100% {
+    transform: translateX(-100%); /* move completely out of view to the left */
+  }
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(0); /* start at original position */
+  }
+  100% {
+    transform: translateX(100%); /* move completely out of view to the left */
+  }
+}
