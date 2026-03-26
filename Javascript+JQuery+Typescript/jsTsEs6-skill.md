@@ -292,3 +292,16 @@ btn.onclick = download
 ```
 
 [🚀back to top](#top)
+
+## 字符format常用方法-toSentenceCase
+
+```ts
+// sentense Case format首字母大写
+const toSentenceCase = (str: string) => {
+        if (!str) return '';
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+};
+```
+
+[🚀back to top](#top)
+
