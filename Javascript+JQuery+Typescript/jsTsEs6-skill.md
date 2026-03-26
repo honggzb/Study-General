@@ -37,7 +37,13 @@ function unique(array){
 
 -----------------------------
 - [JavaScript 单行代码](#javascript-单行代码)
-- [数组中flat方法](#数组中flat方法)
+- [行代码实现debounce和throttle](#行代码实现debounce和throttle)
+- [Copy to Clipboard Without Plugins](#copy-to-clipboard-without-plugins)
+- [Safe JSON Parsing](#safe-json-parsing)
+- [Destructure With Defaults带默认值的解构](#destructure-with-defaults带默认值的解构)
+- [一行代码扁平化数组](#一行代码扁平化数组)
+- [分组数组](#分组数组)
+- [极简的localstorage封装](#极简的localstorage封装) 
 - [失败重载](#失败重载)
 - [下载各种文件](#下载各种文件)
 
@@ -77,9 +83,94 @@ function unique(array){
 |计算两个日期之间的间隔|`const dayDiff = (d1, d2) => Math.ceil(Math.abs(d1.getTime() - d2.getTime()) / 86400000)`|
 |找出该日期是一年中的第几天|`const dayInYear = (d) => Math.floor((d - new Date(d.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24)`|
 
-## 数组中flat方法
+## 行代码实现debounce和throttle
 
-```js
+```ts
+function debounce(fn, delay = 300) {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => fn(...args), delay);
+  };
+}
+input.addEventListener("input", debounce(e => {
+  console.log(e.target.value);
+}, 500));
+//
+const throttle = (func, limit) => {
+  let lastFunc;
+  let lastRan;
+  return (...args) => {
+    if (!lastRan) {
+      func(...args);
+      lastRan = Date.now();
+    } else {
+      clearTimeout(lastFunc);
+      lastFunc = setTimeout(() => {
+        if (Date.now() - lastRan >= limit) {
+          func(...args);
+          lastRan = Date.now();
+        }
+      }, limit - (Date.now() - lastRan));
+    }
+  };
+};
+//  Memoization- Cache function results for faster repeated calls
+const memoize = fn => {
+  const cache = {};
+  return (...args) => {
+    const key = JSON.stringify(args);
+    if (!cache[key]) cache[key] = fn(...args);
+    return cache[key];
+  };
+};
+```
+
+[🚀back to top](#top)
+
+## Copy to Clipboard Without Plugins
+
+```ts
+async function copyText(text) {
+  await navigator.clipboard.writeText(text);
+  alert("Copied to clipboard!");
+}
+```
+
+[🚀back to top](#top)
+
+## Safe JSON Parsing
+
+```ts
+function safeParse(str, fallback = {}) {
+  try {
+    return JSON.parse(str);
+  } catch {
+    return fallback;
+  }
+}
+```
+
+[🚀back to top](#top)
+
+## Destructure With Defaults带默认值的解构
+
+```ts
+function greet({ name = "Guest", age = "N/A" } = {}) {
+  console.log(`Hello ${name}, Age: ${age}`);
+}
+greet({name: "Ali"})   //. Hello Ail, age: N/A
+greet()                // Hello Guest, age: N/A
+```
+
+[🚀back to top](#top)
+
+## 一行代码扁平化数组
+
+```ts
+const flat = arr => arr.flat(Infinity);
+flat([1,[1,[2, [3,4]]]])     // [1, 1, 2, 3, 4]
+//数组中flat方法
 let data = {
     type1:[
         {id:1,title:'title1',value:"value1"},
@@ -94,6 +185,40 @@ let values = Object.values(data);
 let flatArr = values.flat();
 // [{id: 1, title: 'title1', value: 'value1'}, {…}, {id: 5, title: 'title5', value: 'value5'}, {…}]
 ```
+
+[🚀back to top](#top)
+
+## 分组数组
+
+```ts
+function groupBy(arr, key) {
+   return arr.reduce((acc, obj) => {
+      (acc[obj[key]] = acc[obj[key]] || []).push(obj);
+      return acc;
+   }, {})
+}
+groupBy([
+   {name: "Sara", team: "A"},
+   {name: "Ali", team: "B"},
+   {name: "John", team: "A"},
+], 'team')
+// { A: [{name: 'Sara', team: 'A'}, {name: 'John', team: 'A'}], B: [{name: 'Ali', team: 'B'}]}
+```
+
+[🚀back to top](#top)
+
+## 极简的localstorage封装
+
+```ts
+const store = {
+   get: (k) => JSON.parse(localStorage.getItem(k)),
+   set: (k, v) => LocalStorage.setItem(k, JSON.stringify(v)),
+   remove: (k) => localStorage.removeItem(k),
+}
+store.set("user", [name: "sara"]);
+```
+
+[🚀back to top](#top)
 
 ## 失败重载
 
@@ -144,6 +269,8 @@ reload(getData, 3).then(res =>{
 })
 ```
 
+[🚀back to top](#top)
+
 ## 下载各种文件
 
 ```js
@@ -164,3 +291,4 @@ async function download() {
 btn.onclick = download
 ```
 
+[🚀back to top](#top)
