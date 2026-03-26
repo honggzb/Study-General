@@ -45,11 +45,11 @@ function unique(array){
 
 |||
 |---|---|
-|`user.name ?? 'Guest';` | Nullish Coalescing`??`   ->  assign a default value|
-|`user?.contact?.address?.city;` |Optional Chaining -> access deeply nested properties without checking each level|
+|`user.name ?? 'Guest';` | <mark>Nullish Coalescing`??`</mark>   ->  assign a default value|
+|`user?.contact?.address?.city;` |<mark>Optional Chaining</mark> -> access deeply nested properties without checking each level|
 |`startsWith, endsWith, includes`|String Methods   ->  to execute conditions|
 |`Number.parseInt('42', 10);`|Number Methods  -> Convert numbers safely|
-|`new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });`<br>`formatter.format(1000); // $1,000.00`|Use |`Intl` for currency, date, and number formatting|
+|`new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });`<br>`formatter.format(1000); // $1,000.00`|Use `Intl` for currency, date, and number formatting|
 |反转字符串|`str.split('').reverse().join('')`|
 |标题大小写为字符串|`sentence.replace(/\b\w/g, char => char.toUpperCase());`|
 |变量之间交换值|`[a, b] = [b, a];`|
