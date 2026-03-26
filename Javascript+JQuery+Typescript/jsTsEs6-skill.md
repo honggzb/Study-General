@@ -3,7 +3,7 @@
 |||||
 |---|---|---|---|
 |利用解构2赋值交换变量的值|`[a, b] = [b,a]`||
-|sort|<br>`xxx.sort((a, b) => b.balance - a.balance)`|return Array|for Object Array|
+|sort|`xxx.sort((a, b) => b.balance - a.balance)`|return Array|for Object Array|
 |filter|`xxx = xxx.filter((a) => a.type === type)`|return Array|for Object Array|
 |delete|`xxx = xxx.filter((a) => a.type !== type)`|return Array|for Object Array<br>`str.splice(i,1)` for string|
 |find|`pet = pets.find(pet => pet.type ==='Dog' && pet.name === 'Tommy')`|return Object|for Object Array||
