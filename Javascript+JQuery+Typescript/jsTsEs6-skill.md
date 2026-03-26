@@ -1,12 +1,12 @@
 ## Array sort/filter/delete/find
 
-||||
-|---|---|---|
+|||||
+|---|---|---|---|
 |利用解构2赋值交换变量的值|`[a, b] = [b,a]`||
-|sort|for Object Array<br>`xxx.sort((a, b) => b.balance - a.balance)`<br>return Array||
-|filter|for Object Array<br>`xxx = xxx.filter((a) => a.type === type)`<br>return Array||
-|delete|for Object Array<br>`xxx = xxx.filter((a) => a.type !== type)`<br>return Array|`str.splice(i,1)` for string|
-|find|for Object Array<br>`pet = pets.find(pet => pet.type ==='Dog' && pet.name === 'Tommy')`<br>return Object||
+|sort|<br>`xxx.sort((a, b) => b.balance - a.balance)`|return Array|for Object Array|
+|filter|for Object Array<br>`xxx = xxx.filter((a) => a.type === type)`|return Array|for Object Array|
+|delete|for Object Array<br>`xxx = xxx.filter((a) => a.type !== type)`|return Array|for Object Array<br>`str.splice(i,1)` for string|
+|find|for Object Array<br>`pet = pets.find(pet => pet.type ==='Dog' && pet.name === 'Tommy')`|return Object|for Object Array||
 
 ## 数组去重
 
