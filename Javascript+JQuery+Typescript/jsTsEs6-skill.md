@@ -46,6 +46,7 @@ function unique(array){
 - [极简的localstorage封装](#极简的localstorage封装) 
 - [失败重载](#失败重载)
 - [下载各种文件](#下载各种文件)
+- [字符format常用方法-toSentenceCase,numToLocalstr](#字符format常用方法-toSentenceCase,numToLocalstr)
 
 ## JavaScript 单行代码
 
@@ -293,7 +294,7 @@ btn.onclick = download
 
 [🚀back to top](#top)
 
-## 字符format常用方法-toSentenceCase
+## 字符format常用方法-toSentenceCase,numToLocalstr
 
 ```ts
 // sentense Case format首字母大写
@@ -301,6 +302,19 @@ const toSentenceCase = (str: string) => {
         if (!str) return '';
         return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 };
+//数字转字符串
+const numToLocalstr = (val: any) => {
+    if (val) {
+        return val.toLocaleString(undefined, {
+            currency: 'USD',
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        });
+    } else {
+        return '0.00';
+    }
+};
+numToLocalstr(21.3124)  //21.31
 ```
 
 [🚀back to top](#top)
