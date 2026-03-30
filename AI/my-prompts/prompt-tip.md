@@ -90,6 +90,19 @@ Make the radio buttons for the options to look like normal buttons. use blue bac
 
 ## software developemen
 
+- 结构化
+
+```
+【角色】你是一个资深的react工程师
+【任务】创建一个用户列表组件
+【技术要求】
+1. 使用React18+typescript
+2. 支持分页功能（每页20条）
+3. 支持搜索过滤（按用户名）
+4. 使用Tanstack query管理数据
+5. 包含加载状态和错误处理
+6. 使用Tailwind CSS样式
+```
 
 ```
 请创建Vite + Vue3.5 + Element Plus 2.7的项目（项目名：{{project_name}}），要求：
