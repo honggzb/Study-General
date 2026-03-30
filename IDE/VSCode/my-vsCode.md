@@ -63,6 +63,9 @@
 *change-case                 | 各种字符格式化
 *Paste JSON as Code          | converts a JSON to any language
 json2ts                      | converts a JSON to TypeScript interfaces
+*Git History                 | View git log, file history, compare branches or commits
+*GitLens                     | built and maintained by GitKraken
+Git Extension Pack           | Included git history, project manager, gitlens ...
 *npm                         |
 *npm intellisense            |   
 *open in browser             |
