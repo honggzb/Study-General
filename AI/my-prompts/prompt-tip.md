@@ -102,6 +102,18 @@ Make the radio buttons for the options to look like normal buttons. use blue bac
 4. 使用Tanstack query管理数据
 5. 包含加载状态和错误处理
 6. 使用Tailwind CSS样式
+【输入数据】
+interface User {
+  id: number
+  name: string
+  email: string
+  createdAt: string
+}
+【输出要求】
+- 组件名为 UserList'
+- 导出类型定义
+- 添加必要的注释
+请生成完整可运行代码
 ```
 
 ```
