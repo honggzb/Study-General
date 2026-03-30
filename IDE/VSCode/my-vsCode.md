@@ -69,6 +69,7 @@ json2ts                      | converts a JSON to TypeScript interfaces
 *Path Autocomplete           | 路径智能补全
 *any-rule                    | 正则大全
 project-tree                 | 自动生成项目结构 generates a tree directory in README.md.
+Mintlify                     | Ai自动生成注释和文档
 Code Runner                  | 在vscode上直接运行TypeScript文件
  bracket pair colorizer      |
  auto import                 |
