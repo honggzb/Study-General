@@ -170,6 +170,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**Official Skills**||
 |**[anthropics/skills](https://github.com/anthropics/skills/tree/main/skills)**| Official public repository for Skills|
 |**[Claude Cookbooks - Skills](https://github.com/anthropics/claude-cookbooks/tree/main/skills)**|Example notebooks and tutorials|
+|**[github/awesome-copilot](https://github.com/github/awesome-copilot/tree/main/skills)**|copilot official skills|
 |**Community Skills**||
 |**[obra/superpowers](https://github.com/obra/superpowers)**|Core skills library for Claude Code with 20+ <mark>software development</mark> skills|
 |**[obra/superpowers-lab](https://github.com/obra/superpowers-lab)**|Install from `superpowers-marketplace` plugin|
