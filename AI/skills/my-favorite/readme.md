@@ -25,4 +25,5 @@ npx skills add softaworks/agent-toolkit@openapi-to-typescript
 npx skills add github/awesome-copilot@javascript-typescript-jest
 npx skills add sickn33/antigravity-awesome-skills@typescript-expert
 npx skills add dotneet/claude-code-marketplace@typescript-react-reviewer
-  ```
+npx skills add langgenius/dify --skill frontend-code-review
+```
