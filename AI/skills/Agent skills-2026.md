@@ -241,3 +241,4 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 - Codex 接入说明：https://developers.openai.com/codex/skills/
 - Cursor 接入说明：https://cursor.com/cn/docs/context/skills
 - VS Code 接入说明：https://code.visualstudio.com/docs/copilot/customization/agent-skills
+  - https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-skills
