@@ -54,6 +54,7 @@ function unique(array){
 |---|---|
 |`user.name ?? 'Guest';` | <mark>Nullish Coalescing`??`</mark>   ->  assign a default value|
 |`user?.contact?.address?.city;` |<mark>Optional Chaining</mark> -> access deeply nested properties without checking each level|
+|`const aa = bb(organizationId!)`|`organizationId!` === `const organizationId: string | null`|
 |`startsWith, endsWith, includes`|String Methods   ->  to execute conditions|
 |`Number.parseInt('42', 10);`|Number Methods  -> Convert numbers safely|
 |`const format = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });`<br>`formatter.format(1000); // $1,000.00`|Use `Intl` for currency, date, and number formatting|
