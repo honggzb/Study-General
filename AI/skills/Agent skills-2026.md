@@ -1,10 +1,11 @@
-- [Agent skills](#agent-skills)
+- [Agent skills介绍](#agent-skills)
   - [Agent Skill的基本用法](#agent-skill的基本用法)
   - [Reference + Script](#reference--script)
 - [Tools](#tools)
   - [official skill-creator](#official-skill-creator)
   - [Skill\_Seekers](#skill_seekers)
   - [skill-lookup](#skill-lookup)
+- [Basic](#basic)
 - [Resources](#resources)
 
 -----------------------------------------------------------------
@@ -163,9 +164,36 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 
 </details>
 
+[🚀back to top](#top)
+
+## Basic
+
+|||
+|---|---|
+|Skills Website|https://skills.sh|
+|Skills CLI|https://github.com/vercel-labs/skills|
+|Installing the Skills CLI|`npx skills`|
+|Finding Skills|`npx skills find <keywords>`|
+|Installing Skills|`npx skills add https://github.com/twostraws/swiftui-agent-skill`|
+|Installing Only One Skill From a Repo|`npx skills add https://github.com/twostraws/swiftui-agent-skill --skill swiftui-pro`|
+|Listing Installed Skills|`npx skills list`|
+|Removing Skills|`npx skills remove <skill-name>`|
+
+- suggestion skills
+
+|||
+|---|---|
+|`npx skills add https://github.com/dotneet/claude-code-marketplace --skill typescript-react-reviewer`|TypeScript and React 19 applications with deep anti-pattern detection|
+|`npx skills add https://github.com/millionco/react-doctor --skill react-doctor`|detects security, performance, correctness, and architecture issues|
+|`npx skills add https://github.com/giuseppe-trisciuoglio/developer-kit --skill react-code-review`|provides structured, comprehensive code review for React applications|
+|`npx skills add https://github.com/giuseppe-trisciuoglio/developer-kit --skill nextjs-code-review`|Evaluates Next.js App Router code against best practices for Server Components, Client Components, Server Actions, caching strategies, and production-readiness criteria|
+|`npx skills add facebook/react fix`||
+
+[🚀back to top](#top)
+
 ## Resources
 
-| ||
+|||
 | --- | --- | 
 |**Official Skills**||
 |**[anthropics/skills](https://github.com/anthropics/skills/tree/main/skills)**| Official public repository for Skills|
