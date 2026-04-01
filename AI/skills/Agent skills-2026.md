@@ -179,15 +179,17 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |Listing Installed Skills|`npx skills list`|
 |Removing Skills|`npx skills remove <skill-name>`|
 
-- suggestion skills
+### suggestion skills
 
-|||
-|---|---|
-|`npx skills add https://github.com/dotneet/claude-code-marketplace --skill typescript-react-reviewer`|TypeScript and React 19 applications with deep anti-pattern detection|
-|`npx skills add https://github.com/millionco/react-doctor --skill react-doctor`|detects security, performance, correctness, and architecture issues|
-|`npx skills add https://github.com/giuseppe-trisciuoglio/developer-kit --skill react-code-review`|provides structured, comprehensive code review for React applications|
-|`npx skills add https://github.com/giuseppe-trisciuoglio/developer-kit --skill nextjs-code-review`|Evaluates Next.js App Router code against best practices for Server Components, Client Components, Server Actions, caching strategies, and production-readiness criteria|
-|`npx skills add facebook/react fix`||
+- `npx skills add https://github.com/dotneet/claude-code-marketplace --skill typescript-react-reviewer`
+   - TypeScript and React 19 applications with deep anti-pattern detection
+- `npx skills add https://github.com/millionco/react-doctor --skill react-doctor`
+   - detects security, performance, correctness, and architecture issues
+- `npx skills add https://github.com/giuseppe-trisciuoglio/developer-kit --skill react-code-review`
+   - provides structured, comprehensive code review for React applications
+- `npx skills add https://github.com/giuseppe-trisciuoglio/developer-kit --skill nextjs-code-review`
+   - Evaluates Next.js App Router code against best practices for Server Components, Client Components, Server Actions, caching strategies, and production-readiness criteria
+- `npx skills add facebook/react fix`
 
 [🚀back to top](#top)
 
