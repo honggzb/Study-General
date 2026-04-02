@@ -217,6 +217,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**https://github.com/libukai/awesome-agent-skills**|Agent Skills 终极指南：快速入门、推荐技能、最新资讯与实战案例|
 |**https://github.com/tsuirak/skills**|个人的技能树仓库，主要包含个人机器学习以及深度学习的笔记|
 |**[MrGoonie ClaudeKit](https://github.com/mrgoonie/claudekit-skills)**|<mark> Web development</mark>|
+|**https://github.com/Mindrally/skills**|240+ Claude Code skills Collection|
 |**[everything-claude-code](https://github.com/affaan-m/everything-claude-code)**|Complete Claude Code configuration collection - agents, skills, hooks, commands, rules, MCPs|
 |**[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)**|A curated list of awesome Claude Skills, resources|
 |**[eliasjudin](https://github.com/eliasjudin/oai-skills/)**|<mark>pdf,excel</mark>|
