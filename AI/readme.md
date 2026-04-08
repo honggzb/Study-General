@@ -37,3 +37,7 @@
 - https://github.com/enescingoz/awesome-n8n-templates
 - https://github.com/Zie619/n8n-workflows
 
+## Youtube
+
+- [技术爬爬虾  TechShrimp](https://www.youtube.com/@tech-shrimp)
+
