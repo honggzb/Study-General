@@ -36,6 +36,7 @@
 - https://diagrammingai.com/
 - https://github.com/enescingoz/awesome-n8n-templates
 - https://github.com/Zie619/n8n-workflows
+- [OpenClaw 完全指南（花园版）](https://my.feishu.cn/wiki/QzGAwOH4LiZOYXktGyhcHoLUnRe)
 
 ## Youtube
 
