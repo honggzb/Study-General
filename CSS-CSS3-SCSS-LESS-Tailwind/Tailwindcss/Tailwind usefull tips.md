@@ -20,7 +20,7 @@
 3. `@apply`   <--  apply tailwindcss style to 
 2. `@theme`
 3. `@plugin`: `@plugin "@tailwindcss/typography`
-   
+
 ## class tips
 
 |class|Scene|
@@ -38,6 +38,34 @@
 |typography |such as prose|
 
 [⬆ back to top](#top)
+
+## @variant
+
+```css
+ /* @variant - apply a Tailwind variant to my-element class*/
+.my-element {
+  background: white;
+  @variant dark {
+    @variant hover {
+      background: black;
+    }
+  }
+}
+/* @utility */
+@utility content-auto {
+  content-visibility: auto;
+}
+<div class="content-auto">
+/* @custom-variant */
+@custom-variant theme-midnight {
+  &:where([data-theme="midnight"] *) {
+    @slot;
+  }
+}
+<html data-theme="midnight">
+  <button class="theme-midnight:bg-black ..."></button>
+</html>
+```
 
 ## some tips
 
