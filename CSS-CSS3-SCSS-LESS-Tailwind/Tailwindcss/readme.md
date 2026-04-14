@@ -15,6 +15,14 @@
 │   │     └── 📄
 ```
 
+|||
+|---|---|
+|`@layer base`| default base style|
+|`@layer component`|custom styles , override with utility classes|
+|`@variant`|apply a Tailwind variant within custom CSS|
+|`@utility`|add a custom utility|
+|`@custom-variant`| Adding custom variants|
+
 ## Resources
 
 - [design your own Perfect shadcn/ui Theme](https://tweakcn.com/editor/theme)
