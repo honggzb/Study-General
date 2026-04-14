@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/test-code/AI-related/tRPC-study/app/components/todolist.tsx"],"sourcesContent":["\"use client\";\r\n\r\nimport { useTRPC } from \"@trpc/client\";\r\nimport { useQuery } from '@tanstack/react-query';\r\n\r\nconst Todolist = () => {\r\n  const trpc = useTRPC();\r\n  const getTodos = trpc.getTodos.useQuery();\r\n  return (\r\n    <div>{JSON.stringify(getTodos.data)}</div>\r\n  )\r\n}\r\n\r\nexport default Todolist"],"names":["Todolist","trpc","getTodos","useQuery","JSON","stringify","data"],"mappings":";;;;;AAEA;AAAA;;;AAFA;;AAKA,MAAMA,WAAW;;IACf,MAAMC,OAAO,IAAA,gKAAO;IACpB,MAAMC,WAAWD,KAAKC,QAAQ,CAACC,QAAQ;IACvC,qBACE,6LAAC;kBAAKC,KAAKC,SAAS,CAACH,SAASI,IAAI;;;;;;AAEtC;GANMN;;QACS,gKAAO;;;KADhBA;uCAQSA"}}]
+}
