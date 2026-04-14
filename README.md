@@ -1555,7 +1555,3 @@ Vue| <ol><li>Empowered HTML. This means that Vue.js has many similar characteris
 - [ECMAScript 6 compatibility table](http://kangax.github.io/compat-table/es6/)
 - http://kangax.github.io/
 - [前端开发博客](http://caibaojian.com/)
-
-
-- b加拿大退休海外养老全攻略：CPP/OAS/GIS 领取规则离境前必做这几件事！
-- https://www.youtube.com/watch?v=OMsmPgYCVoI
