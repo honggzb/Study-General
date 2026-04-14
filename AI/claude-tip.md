@@ -7,3 +7,10 @@ Explain the technical architecture, the structure of the codebase and how the va
 
 It should be very engaging to read; don't make it sound like boring technical documentation/textbook. Where appropriate, use analogies and anecdotes to make it more understandable and memorable."
 ```
+
+
+## resources
+
+|name||
+|---|---|
+| [superpowers](https://github.com/obra/superpowers)| An agentic skills framework & software development methodology that works|
