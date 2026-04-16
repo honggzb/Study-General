@@ -196,3 +196,33 @@ flowchart TD
    on  --> 资源释放(资源释放)
    自动断开  --> 资源释放(资源释放)
 ```
+
+```ts
+// 改进版：带超时和自动清理
+function streamChatWithTimeout(
+  message: string, 
+  onChunk: (chunk: string) => void,
+  timeout = 30000
+) {
+  const eventSource = new EventSource(`/api/chat?message=${encodeURIComponent(message)}`);
+  // 超时保护
+  const timer = setTimeout(() => {
+    eventSource.close();
+    onChunk('\n\n[响应超时]');
+  }, timeout);
+  eventSource.onmessage = (event) => {
+    clearTimeout(timer);               // 收到消息就重置超时
+    onChunk(event.data);
+    // 重新设置超时（防止中间停顿太久）
+    setTimeout(() => eventSource.close(), timeout);
+  };
+   eventSource.onerror = () => {
+    clearTimeout(timer);
+    eventSource.close();
+  };
+  return () => {
+    clearTimeout(timer);
+    eventSource.close();
+  };
+}
+```
