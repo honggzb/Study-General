@@ -176,6 +176,16 @@ export function useAIChat({ apiUrl, apiKey, model = 'qwen-turbo' }: UseAIChatOpt
 }
 ```
 
+```mermaid
+flowchart LR
+   用户输入(用户输入)  --> useAIChat(useAIChat Hook)
+   useAIChat --> 发送API请求(发送API请求) --> 接受流式响应(接受流式响应) --> 实时更新UI(实时更新UI) --> 显示完整回复(显示完整回复)
+   useAIChat  --> 用户操作{用户操作}
+   useAIChat  --> 类型安全检查(类型安全检查)
+   useAIChat  --> 错误处理(错误处理)
+   用户操作  --> 请求取消(请求取消)
+```
+
 [🚀back to top](#top)
 
 ## 异步资源管理-SEE连接管理避免内存泄露
