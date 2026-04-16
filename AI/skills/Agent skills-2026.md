@@ -207,7 +207,9 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[wshobson claude plugin](https://github.com/wshobson/agents/tree/main/plugins)**| claude plugin, including many skills|
 |**Tools+资源平台**||
 |**[awesomeclaude](https://awesomeclaude.ai/awesome-claude-skills)**|offical skills资源平台|
-|**[SkillsMP: Agent Skills Marketplace](https://skillsmp.com/zh)**|Agent Skills 资源平台|
+|**[SkillsMP: Agent Skills Marketplace](https://skillsmp.com/zh)**|Agent Skills最大资源仓库|
+|**[skews skills sh](https://skills.sh/)**|Agent Skills 资源|
+|**[skillstore](https://skillstore.io/zh-hans)**|Agent Skills资源仓库|
 |**[claude skills-library](https://skillsclaude.com/guides/skills-library)**|claude skills-library资源平台|
 |**[Skills.sh](https://skills.sh/)**|The Open Agent Skills Ecosystem|
 |**[UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**|<mark>building professional UI/UX</mark> across multiple platforms and frameworks|
