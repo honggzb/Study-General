@@ -183,7 +183,6 @@ flowchart LR
    useAIChat  --> 用户操作(用户操作)
    useAIChat  --> 类型安全检查(类型安全检查)
    useAIChat  --> 错误处理(错误处理)
-   用户操作  --> 请求取消(请求取消)
 ```
 
 [🚀back to top](#top)
