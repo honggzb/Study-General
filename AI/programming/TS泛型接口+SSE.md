@@ -84,6 +84,97 @@ function renderMessage(message: AIMessage) {    //
 
 - SSE: Server-Sent Events, 单向通讯，服务器推送AI生成的文本片段，前端实时渲染
 - 流式输出： <mark>前端建立连接  ➡️ 后端边生成边推送 ➡️ 前端逐字显示（打字机效果）</mark>
+- sample: 类型安全的聊天Hook
+
+```ts
+import { useState, useCallback, useRef } from 'react';
+
+interface ChatMessage { 
+  role: 'user' | 'assistant'; 
+  content: string; 
+}
+interface UseAIChatOptions { 
+  apiUrl: string; apiKey: 
+  string; model?: string; 
+}
+
+export function useAIChat({ apiUrl, apiKey, model = 'qwen-turbo' }: UseAIChatOptions) {
+
+  const [messages, setMessages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const abortControllerRef = useRef(null);
+
+  const sendMessage = useCallback(async (userMessage: string) => {
+    // 添加用户消息    
+    setMessages((prev) => [...prev, { role: 'user', content: userMessage }]);
+    setIsLoading(true);
+    // 创建中止控制器（用于取消请求）    
+    abortControllerRef.current = new AbortController();
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          model,
+          messages: [...messages, { role: 'user', content: userMessage }],
+          stream: true         // 开启流式输出        
+        }),
+        signal: abortControllerRef.current.signal 
+      });
+      if (!response.ok) { 
+        throw new Error(`API 请求失败: ${response.status}`);
+      }
+      // 处理流式响应      
+      const reader = response.body?.getReader();
+      if (!reader) throw new Error('无法读取响应流');
+      let aiReply = ''; while (true) {
+        const { done, value } = await reader.read(); 
+        if (done) break;
+        // 解码数据块        
+        const chunk = new TextDecoder().decode(value); 
+        const lines = chunk.split('\n');
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = line.slice(6); if (data === '[DONE]') break;
+            try {
+              const parsed = JSON.parse(data); const content = parsed.choices?.[0]?.delta?.content || '';
+              aiReply += content;      // 实时更新 AI 回复              
+              setMessages((prev) => {
+                const lastMsg = prev[prev.length - 1];
+                if (lastMsg?.role === 'assistant') {
+                  return [...prev.slice(0, -1), { ...lastMsg, content: aiReply }];
+                } else {
+                  return [...prev, { role: 'assistant', content: aiReply }];
+                }
+              });
+            } catch (e) {
+              // 忽略解析错误（可能是空行）            
+            }
+          }
+        }
+      }
+    } catch (error) {
+      if (error instanceof Error && error.name === 'AbortError') {
+        console.log('请求已取消');
+      } else {
+        console.error('聊天错误:', error);
+        setMessages((prev) => [...prev, { role: 'assistant', content: '抱歉，出错了，请重试' }]);
+      }
+    }
+    finally { setIsLoading(false); abortControllerRef.current = null; }
+  }, [apiUrl, apiKey, model, messages]);
+  
+  // 取消当前请求  
+  const cancelRequest = useCallback(() => { 
+    abortControllerRef.current?.abort(); 
+  }, []);
+
+  return { messages, isLoading, sendMessage, cancelRequest };
+}
+```
 
 [🚀back to top](#top)
 
