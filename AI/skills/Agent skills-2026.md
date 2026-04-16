@@ -212,6 +212,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[Skills.sh](https://skills.sh/)**|The Open Agent Skills Ecosystem|
 |**[UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)**|<mark>building professional UI/UX</mark> across multiple platforms and frameworks|
 |**[UI/UX Pro Max 中文教程网站](https://github.com/bbylw/ui-ux-pro-max-skill-cn)**||
+|**[awesome-design-md](https://github.com/VoltAgent/awesome-design-md)**|<mark>https://getdesign.md/: collection of DESIGN.md file</mark>|
 |**[](https://github.com/voltagent/awesome-openclaw-skills)**|collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry|
 |**Individual Skills**||
 |**https://github.com/libukai/awesome-agent-skills**|Agent Skills 终极指南：快速入门、推荐技能、最新资讯与实战案例|
