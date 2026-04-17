@@ -15,3 +15,23 @@
 ### Set node path
 
 - `SET PATH=C:\Program Files\Nodejs;%PATH%`
+
+## my plugin
+
+- Auto Close Tag
+- Change-case
+- CodeSnap
+- Emoji
+- ES7+ React/Redux/React-Native snippets
+- ESLint
+- Git Graph
+- Highlight Match
+- indent-rainbow
+- Lorem ipsum
+- Markdown All in one
+- Paste JSON as Code
+- Path intellisense
+- Power Mode
+- Prettier
+- project-tree
+- vscode-icons
