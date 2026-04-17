@@ -35,8 +35,13 @@ function unique(array){
 }
 ```
 
+[🚀back to top](#top)
+
 -----------------------------
 - [JavaScript 单行代码](#javascript-单行代码)
+- [使用联合类型Union type替代enum](#使用联合类型union-type替代enum)
+- [用Record正确标注对象类型](#用record正确标注对象类型)
+- [使用模版字面量类型Template Literal Type生成类型组合](#使用模版字面量类型template-literal-type生成类型组合)
 - [行代码实现debounce和throttle](#行代码实现debounce和throttle)
 - [Copy to Clipboard Without Plugins](#copy-to-clipboard-without-plugins)
 - [Safe JSON Parsing](#safe-json-parsing)
@@ -84,6 +89,59 @@ function unique(array){
 |------------------------|------------------------------|
 |计算两个日期之间的间隔|`const dayDiff = (d1, d2) => Math.ceil(Math.abs(d1.getTime() - d2.getTime()) / 86400000)`|
 |找出该日期是一年中的第几天|`const dayInYear = (d) => Math.floor((d - new Date(d.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24)`|
+
+[🚀back to top](#top)
+
+## 使用联合类型Union type替代enum
+
+```ts
+const STATUS = {
+  IDLE: "idle",
+  LOADING: "loading",
+  SUCCESS: "success",
+  ERROR: "error",
+} as const;
+type Status = typeof STATUS[keyof typeof STATUS];
+Object.values(STATUS).forEach((status) => {
+  console.log(status);
+});
+```
+
+[🚀back to top](#top)
+
+## 用Record正确标注对象类型
+
+```ts
+type Role = "admin" | "user" | "guest";
+type Permission = Record<Role, string[]>;
+const perms: Permission = {
+  admin: ["read", "write", "delete"],
+  user: ["read", "write"],
+  guest: ["read"],
+};
+```
+
+[🚀back to top](#top)
+
+## 使用模版字面量类型Template Literal Type生成类型组合
+
+```ts
+// css工具类
+type Spacing = "0" | "1" | "2" | "3" | "4";
+type Direction = "t" | "r" | "b" | "l";
+type MarginClass = `m${Direction}-${Spacing}`;
+
+//事件处理函数名
+type DomEvent = "click" | "hover" | "focus";
+type HandlerName = `on${Capitalize<DomEvent>}`;
+
+//API路由路径
+type Resource = "users" | "posts" | "comments";
+type Method = "get" | "post" | "put" | "delete";
+type ApiRoute = `/${Resource}/${Method}`;
+```
+
+[🚀back to top](#top)
 
 ## 行代码实现debounce和throttle
 
