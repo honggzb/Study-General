@@ -62,6 +62,6 @@ flowchart
   用户提问(用户提问) -->Embedding(Embedding找相关资料)  -->Token管理(Token管理<br>控制输入长度) --> LLM生成回答(LLM生成回答) --> 展示给用户(展示给用户)
   Embedding --> 向量知识库(向量知识库) 
   向量知识库 --> Embedding
-  Token管理 --> 上下文截断(上下文截断) 
-  上下文截断 --> Token管理
+  Token管理 -.->上下文截断(上下文截断) 
+  上下文截断 -.-> Token管理
 ```
