@@ -24,6 +24,9 @@
 ## Basic Concepts
 
 - Tables:  `await ctx.db.insert("friends", { name: "Jamie" });`
+  - System Tables: 
+    - "_scheduled_functions" table contains metadata for scheduled functions
+    - "_storage" table contains metadata for stored files
 - Documents:
   - Tables contain documents,
   - Documents are very similar to JavaScript objects.:  `{"name": {"first": "Ari", "second": "Cole"}, "age": 60}`
