@@ -18,6 +18,11 @@
 ## Tools
 
 - [WebAIM Contrast Checker- Color Contrast tool](https://webaim.org/resources/contrastchecker/)
+
+## CheckList
+
+- [WebAIM's WCAG 2 Checklist](https://webaim.org/standards/wcag/checklist)
+- [Checklist from The A11Y Project](https://www.a11yproject.com/checklist/)
   
 ## Studying
 
