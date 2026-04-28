@@ -15,6 +15,10 @@
 - [The 21st Century Communications and Video Accessibility Act (CVAA) (U.S.) (law)](https://www.fcc.gov/consumers/guides/21st-century-communications-and-video-accessibility-act-cvaa)
 - [The Accessibility for Ontarians with Disabilities Act (AODA) (Ontario, Canada) (law)](https://www.ontario.ca/laws/statute/05a11)
 
+## Tools
+
+- [WebAIM Contrast Checker- Color Contrast tool](https://webaim.org/resources/contrastchecker/)
+  
 ## Studying
 
 - https://axesslab.com/articles/
