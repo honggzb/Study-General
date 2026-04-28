@@ -6,3 +6,4 @@
 |Multi-Step Form||
 |[Multistep Form With React Hook Form](https://www.youtube.com/watch?v=lW_0InDuejU)<br>https://github.com/HamedBahram/next-multistep-form/| animation of step's line --> `transition-colors`<br>zod validation|
 |[Build a Multi-Step Form in React Like a Pro](https://www.youtube.com/watch?v=vKJe95pqn8E)<br>[https://github.com/HamedBahram/next-multistep-form/](https://github.com/cosdensolutions/code/blob/master/videos/long/multi-step-form-react/)| zustand persistence(to localStorage)  --> `if (!useOnboardingStore.persist.hasHydrated) return;`<br>zod validation|
+|[Advanced Multistep Forms with React Hook Form](https://claritydev.net/blog/advanced-multistep-forms-with-react)<br>https://github.com/Clarity-89/multistep-hook-form/tree/advanced-forms|`useImperativeHandle` button|
