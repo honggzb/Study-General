@@ -1,18 +1,26 @@
 [tips for React Accessiblity](#top)
 
+- [Resources](#resources)
 - [Accessibility Linter](#accessibility-linter)
 - [AutoFocus](#autofocus)
 - [Refs \& UseEffect()](#refs--useeffect)
 - [Page Titles](#page-titles)
-
 ------------------------------------------------------
+
 
 Web accessibility (also referred to as a11y)
 
-- WAI-ARIA -  HTML attributes
 - Semantic HTML
+- WAI-ARIA -  HTML attributes
 - Notifying the user of errors
-- Focus Control   
+- Keyboard Navigation and Focus Management
+  - Ensure that all clickable and interactive elements (like buttons and links) are focusable
+  - Manage focus for modals, dialogs, and dynamic components
+  - Use the `tabIndex` attribute to control the order of focusable elements
+
+## Resources
+
+- [Accessibility in React-MDN](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_accessibility)
 
 ## Accessibility Linter
 
