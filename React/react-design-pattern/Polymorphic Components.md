@@ -2,6 +2,7 @@
 - [using polymorphic prop as](#using-polymorphic-prop-as)
   - [Basic Polymorphic Components](#basic-polymorphic-components)
   - [Polymorphic Components support refs](#polymorphic-components-support-refs)
+- [using polymorphic Slot component](#using-polymorphic-slot-component)
 
 ---------------------------------------
 
@@ -108,4 +109,52 @@ export const Text = React.forwardRef<C extends React.ElementType = "span">(  // 
 ```
 
 [🚀back to top](#top)
+
+## using polymorphic Slot component
+
+```ts
+// define Slot component
+import clsx from "clsx";
+import { isValidElement, cloneElement, Children, type HTMLAttributes, type ReactElement } from "react";
+export const Slot = ({
+    children,
+    ...props
+}: HTMLAttributes<HTMLElement> & {
+    children: ReactElement;
+}) => {
+    if (isValidElement<HTMLAttributes<HTMLElement>>(children)) {
+        return cloneElement(children, {
+            ...props,
+            ...children.props,
+            className: clsx(children.props.className, props.className),
+        });
+    }
+    throw new TypeError(`Single element child is required in Slot`);
+};
+// using Slot
+import { type ReactElement, type ButtonHTMLAttributes } from "react";
+import { Slot } from "./Slot";
+interface UIButtonProps
+    extends ButtonHTMLAttributes<HTMLButtonElement> {
+    asChild: true;
+    children: ReactElement;
+}
+export const UIButton = ({
+    asChild: _,
+    ...props
+}: UIButtonProps) => {
+    return (
+        <Slot
+            {...props}
+            className={clsx( "your classes to make it look nice", props.className )}
+        />
+    );
+};
+```
+
+- [Polymorphic components in React](https://typeofweb.com/polymorphic-components-in-react)
+
+[🚀back to top](#top)
+
+
 
