@@ -2,13 +2,18 @@
 │     ├──  📂react-typescript
 │     │    ├── 📄0-Linting and Formatting.md
 │     │    ├── 📄01-Everyday TypeScript Mechanics.md
-│     │    ├── 📄02-
-│     │    ├── 📄03-
-│     │    ├── 📄04-
-│     │    ├── 📄05-
-│     │    ├── 📄06-
-│     │    ├── 📄07-
-│     │    ├── 📄08-
+│     │    ├── 📄02-Discriminated Unions.md
+│     │    ├── 📄02-Type Narrowing and Control Flow.md
+│     │    ├── 📄03-Component type.md
+│     │    ├── 📄04-Component Props and Children1-basic props.md
+│     │    ├── 📄04-Component Props and Children2-Prop Combinations And Unions.md
+│     │    ├── 📄04-Component Props and Children3-Render Props(HOC Alternatives).md
+│     │    ├── 📄05-State Management1-useState with TypeScript.md
+│     │    ├── 📄05-State Management2-useReducer with TypeScript.md
+│     │    ├── 📄05-State Management3-data-fetching pattern.md
+│     │    ├── 📄05-State Management4-loading state+error handling.md
+│     │    ├── 📄05-State Management5-CRUD.md
+│     │    ├── 📄05
 │     │    ├── 📄readme.md                              - React学习-type汇总.md
 │     │    └──
 ```
