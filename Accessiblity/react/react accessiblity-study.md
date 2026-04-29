@@ -4,7 +4,7 @@
 - [Accessible Form Elements](#accessible-form-elements)
   - [Semantic HTML structure for form components](#semantic-html-structure-for-form-components)
   - [Mouse and pointer events on options](#mouse-and-pointer-events-on-options)
-- [Immediate feedback on form validation and errors](#immediate-feedback-on-form-validation-and-errors)
+  - [Immediate feedback on form validation and errors](#immediate-feedback-on-form-validation-and-errors)
 
 ----------------------------------------------
 
@@ -132,7 +132,7 @@ const OuterClickExample = () => {
 }
 ```
 
-## Immediate feedback on form validation and errors
+### Immediate feedback on form validation and errors
 
 - Providing helpful error messages and guidance
 
