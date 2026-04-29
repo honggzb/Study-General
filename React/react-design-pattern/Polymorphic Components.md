@@ -7,7 +7,7 @@
 
 - **Polymorphic Components** is one that can dynamically change the type of element rendered
   - **polymorphic components render as different elements based on props passed to them**
-- ![Polymorphic component](Polymorphic.png)
+- ![Polymorphic component](./images/Polymorphic.png)
 - methods
   - polymorphic prop `as`, asChild
   - Slot
