@@ -1,0 +1,12 @@
+- `npx skills add openai/skills@figma -g -y`
+- `npx skills add vercel-labs/agent-skills@vercel-react-best-practices`
+  - review一个react页面，判断是否存在不必要渲染或不合理的数据获取
+- `npx skills add vercel-labs/agent-skills@web-design-guidelines`
+  - UI review, 检查信息层级、按钮优先级和可读性
+- `npx skills add mindrally/skills@nextjs-react-typescript`   
+  - startup, 如搭建一个app router+ts+components+hooks+api的基础架构
+- `npx skills add dimillian/skills@react-component-performance`
+  - 检查哪些组件在重复渲染、哪些状态应该拆分
+- `npx skills add chromedevtools/chrome-devtools-mcp@chrome-devtools`
+  - 结合devtools分析请求瀑布、脚本加载和渲染阻塞
+- https://github.com/jezweb/claude-skills/
