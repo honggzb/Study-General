@@ -81,6 +81,7 @@
 │     │    ├── 📦reactSampleBasic-04062016.rar
 │     │    └── 📄scrolling to bottom while text showing.md
 │     ├── 📄React State Management libraries in 2024.md
+│     ├── 📄React学习-CompositionEvent Handler.md
 │     ├── 📄React学习-Context.md
 │     ├── 📄React学习-Handle errors in React.md
 │     ├── 📄React学习-Hooks.md
@@ -96,6 +97,8 @@
 │     ├── 📄React学习-router.md
 │     ├── 📄React学习-show and hide Password.md
 │     ├── 📄React学习-upload files上传文件.md
+│     ├── 📄React学习-use SVG in react.md
+│     ├── 📄React学习-use hook(19+).md
 │     ├── 📄React学习-配置-Jest+Vite+ts设置.md
 │     ├── 📄React学习-配置-vite分块打包.md
 │     ├── 📄React学习-大众点评.md
