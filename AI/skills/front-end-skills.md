@@ -9,4 +9,10 @@
   - 检查哪些组件在重复渲染、哪些状态应该拆分
 - `npx skills add chromedevtools/chrome-devtools-mcp@chrome-devtools`
   - 结合devtools分析请求瀑布、脚本加载和渲染阻塞
+- https://github.com/vercel/next.js/tree/canary/.claude-plugin/plugin/cache-components
+  - `npx skills add https://github.com/vercel/next.js --skill cache-components`
+- https://github.com/langgenius/dify
+  - `npx skills add https://github.com/langgenius/dify --skill frontend-code-review`
+- https://github.com/facebook/react
+  - `npx skills add https://github.com/facebook/react --skill fix`
 - https://github.com/jezweb/claude-skills/
