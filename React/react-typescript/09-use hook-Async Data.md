@@ -13,7 +13,7 @@
 -------------------------------------------------------------
 
 - **use()** hook: version 19+
-- ![use-hook](use-hook.png)
+- ![use-hook](./images/use-hook.png)
 
 ## Basic Typing Promise-based data
 
