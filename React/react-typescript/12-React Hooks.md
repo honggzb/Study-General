@@ -22,6 +22,7 @@
   - [Advanced Custom Hook Patterns - with configuration options](#advanced-custom-hook-patterns---with-configuration-options)
 - [useContext Patterns](#usecontext-patterns)
 - [Hook Composition Patterns - use hooks in hook](#hook-composition-patterns---use-hooks-in-hook)
+- [forwardRef vs. memo vs. displayName](#forwardref-vs-memo-vs-displayname)
 
 ## Best Practices
 
@@ -773,3 +774,30 @@ function useConditionalFeature(enabled: boolean) {
 ```
 
 [🚀back to top](#top)
+
+## forwardRef vs. memo vs. displayName
+
+### forwardRef
+
+- ✅ Building reusable UI components (inputs, buttons)
+- ✅ Creating component libraries
+- ✅ When parent components need imperative access to DOM elements
+- ❌ Every component (only use when refs are actually needed)
+
+### memo
+
+- ✅ Components that receive stable props most of the time
+- ✅ Expensive components that render frequently
+- ✅ Components in large lists (with stable keys)
+- ❌ Components that always receive new props
+- ❌ Very cheap components (the memo check might cost more than re-rendering)
+  
+### displayName
+
+- ✅ Always use with HOCs (memo, forwardRef, etc.)
+- ✅ Complex component compositions
+- ✅ Component libraries (for better DX)
+- ❌ Simple components without HOCs (React infers the name from the function)
+
+[🚀back to top](#top)
+
