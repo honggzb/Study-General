@@ -53,10 +53,11 @@
 - 生成代码  -->  https://v0.dev/chat
 - 生成代码  -->  https://www.reweb.so/
 - Github项目分析  -->  https://zread.ai/
-- 
+
 
 ## Resource
 
+- [freellmapi- 14个大模型免费额度使用](https://github.com/tashfeenahmed/freellmapi)
 - [Antigravity + Gemini CLI OAuth Plugin for Opencode](https://github.com/NoeFabris/opencode-antigravity-auth)- 让opencode使用Gemini模型
 - https://diagrammingai.com/
 - https://github.com/enescingoz/awesome-n8n-templates
