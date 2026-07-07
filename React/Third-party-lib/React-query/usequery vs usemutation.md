@@ -63,7 +63,6 @@ const { data, isLoading, isError, error, refetch } = useQuery({
 |queryFn|The function used to fetch data (usually a fetch or axios call).|
 |staleTim|:How long (in ms) the data stays “fresh” before being considered stale. Example: staleTime: 10000 means data is fresh for 10s.|
 |cacheTime|How long (in ms) inactive data remains in memory before it’s garbage-collected. Default is 5 minutes (300000 ms).|
-c|acheTime| How long (in ms) inactive data remains in memory before it’s garbage-collected. Default is 5 minutes (300000 ms).|
 |refetchOnMount|Controls refetching when the component mounts. Can be 'always', 'mount', or false|
 |refetchOnWindowFocus|Whether to refetch when the window regains focus. Default: true.|
 |enabled|If false, the query won’t run automatically until refetch() is called.|
