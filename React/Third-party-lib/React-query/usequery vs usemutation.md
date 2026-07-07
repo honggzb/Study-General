@@ -1,7 +1,14 @@
+- [usequery vs usemutation](#usequery-vs-usemutation)
+- [useQuery](#usequery)
+  - [Key Options for useQuery](#key-options-for-usequery)
+  - [Returned Values](#returned-values)
+- [useMutation](#usemutation)
 
-
+----------------------------------------------------------------------------------------------
+```
 - server-side data: react query
 - client-side data: zustand
+```
 
 ## usequery vs usemutation
 
@@ -40,7 +47,9 @@ export const useUpdateDLRenewal = () => {
 };
 ```
 
-![usequery vs usemutationt](./images/usequery-vs-usemutation.png)
+[🚀back to top](#top)
+
+![usequery vs usemutationt](usequery-vs-usemutation.png)
 
 ## useQuery
 
@@ -51,15 +60,18 @@ const { data, isLoading, isError, error, refetch } = useQuery({
     queryKey: ['users'],
     queryFn: () => fetch('/api/users').then(res => res.json()),
     staleTime: 0,              // Data is immediately considered stale
-    cacheTime: 300000,         // Cached for 5 minutes
+    cacheTime: 300000,         // Cached for 5 minutes(data stays in cache for 5 minutes after no use)
     refetchOnMount: 'always',  // Always refetch on mount, every time the component mounts, it refetches
     refetchOnWindowFocus: true,
     retry: 2,
 })
 ```
 
-|queryKey: |A unique key that identifies the query and its cached data.|
+### Key Options for useQuery
+
+|||
 |---|---|
+|queryKey: |A unique key that identifies the query and its cached data.|
 |queryFn|The function used to fetch data (usually a fetch or axios call).|
 |staleTim|:How long (in ms) the data stays “fresh” before being considered stale. Example: staleTime: 10000 means data is fresh for 10s.|
 |cacheTime|How long (in ms) inactive data remains in memory before it’s garbage-collected. Default is 5 minutes (300000 ms).|
@@ -69,3 +81,46 @@ const { data, isLoading, isError, error, refetch } = useQuery({
 |retry| Number of retry attempts when a request fails (default: 3).|
 |refetchInterval |Interval (in ms) to refetch data automatically. Useful for live updates.|
 |onSuccess / onError| Callback functions that trigger after success or failure.|
+
+- ![staletime-cacheTime](./images/staletime-cacheTime.png)
+
+### Returned Values
+
+|||
+|---|---|
+|data| The fetched data (or cached data if available).|
+|isLoading| true while fetching data for the first time.|
+|isFetching| true during any active fetch, including background refetches.|
+|isError| true if the fetch failed. error The error object (if any).|
+|refetch| A function to manually trigger a refetch|
+
+[🚀back to top](#top)
+
+## useMutation
+
+- useMutation is used for creating, updating, or deleting data on the server — actions that change state
+
+```ts
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+function AddUser() {
+  const queryClient = useQueryClient()
+  const mutation = useMutation({
+    mutationFn: (newUser) => fetch('/api/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newUser),
+    }),
+    onSuccess: () => {
+      // Invalidate and refetch the 'users' query
+      queryClient.invalidateQueries(['users'])
+    },
+  })
+  return (
+    <button onClick={() => mutation.mutate({ name: 'John' })}>
+      Add User
+    </button>
+  )
+}
+```
+
+[🚀back to top](#top)
