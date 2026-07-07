@@ -99,6 +99,18 @@ const { data, isLoading, isError, error, refetch } = useQuery({
 ## useMutation
 
 - useMutation is used for creating, updating, or deleting data on the server — actions that change state
+- Handle **submit** operations on form submissions
+- **Trigger state changes** only when a specific event occurs (e.g., user clicks a button)
+- Why Choose useMutation Over useEffect
+  - Better **Separation of Concerns**
+    - useEffect is primarily designed to run side effects when a component mounts or re-renders
+    - useMutation:  you have full control over when and how the operation is executed, avoiding unnecessary re-renders
+  - More Control Over **Asynchronous Flows**
+    - In useEffect, you would have to manually track these states and add more logic to handle them
+    - useMutation offers built-in properties like isLoading, isSuccess, and isError to manage the state more cleanly
+  - **Avoiding Dependency Pitfalls**: One of the biggest challenges with useEffect is managing its dependency array. If the dependencies aren’t defined correctly, the useEffect can trigger too many times or not at all, leading to bugs
+  - **Optimistic Updates and Rollback**: 
+  - 
 
 ```ts
 import { useMutation, useQueryClient } from '@tanstack/react-query'
