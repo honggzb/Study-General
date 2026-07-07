@@ -49,7 +49,7 @@ export const useUpdateDLRenewal = () => {
 
 [🚀back to top](#top)
 
-![usequery vs usemutationt](usequery-vs-usemutation.png)
+![usequery vs usemutationt](./images/usequery-vs-usemutation.png)
 
 ## useQuery
 
