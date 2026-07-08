@@ -79,19 +79,4 @@ Remove-item alias:curl
 Explanation: There's a CmdLet called Invoke-WebRequest which has an alias of curl. So when you execute this command, rather than using curl, it tries to use Invoke-WebRequest. Removing this alias allows you to execute curl as you intended.
 
 Windows Terminal seems to have Invoke-WebRequest set up by default
- ----------------------------------------------
-
-Ubuntu
-
-wsl --install
-wsl.exe -d Ubuntu
-
- default Unix user account: honggzb   honggzb
- 
- ls -al
- pwd
- ls /mnt
- cd /mnt/c/   -> c:
- sudo apt update  -> update all packages
- gedit                    -> open notepad
 ```
