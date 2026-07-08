@@ -67,4 +67,27 @@
 ## Youtube
 
 - [技术爬爬虾  TechShrimp](https://www.youtube.com/@tech-shrimp)
+```
+ Remove-item alias:curl
+ 
+ This question ranks highly on Google for some reason, which means I regularly click through here when I encounter this issue. For the sake of my sanity, and anyone else who arrives here, here's the answer:
 
+Execute this in the command prompt:
+
+Remove-item alias:curl
+Explanation: There's a CmdLet called Invoke-WebRequest which has an alias of curl. So when you execute this command, rather than using curl, it tries to use Invoke-WebRequest. Removing this alias allows you to execute curl as you intended.
+
+Windows Terminal seems to have Invoke-WebRequest set up by default
+ ----------------------------------------------
+wsl --install
+wsl.exe -d Ubuntu
+
+ default Unix user account: honggzb   honggzb
+ 
+ ls -al
+ pwd
+ ls /mnt
+ cd /mnt/c/   -> c:
+ sudo apt update  -> update all packages
+ gedit                    -> open notepad
+```
