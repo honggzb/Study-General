@@ -68,6 +68,7 @@
 
 - [技术爬爬虾  TechShrimp](https://www.youtube.com/@tech-shrimp)
 ```
+curl
  Remove-item alias:curl
  
  This question ranks highly on Google for some reason, which means I regularly click through here when I encounter this issue. For the sake of my sanity, and anyone else who arrives here, here's the answer:
@@ -79,6 +80,9 @@ Explanation: There's a CmdLet called Invoke-WebRequest which has an alias of cur
 
 Windows Terminal seems to have Invoke-WebRequest set up by default
  ----------------------------------------------
+
+Ubuntu
+
 wsl --install
 wsl.exe -d Ubuntu
 
