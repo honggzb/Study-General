@@ -87,16 +87,7 @@ pages/                        # Next.js Pages Router — one file per route
   home/                       # /home route (default landing)
   access-management/          # User/group/role management screens
   audit/                      # Audit log screens
-  driver-record-summary/
-  financial-management/
   notifications-management/   # Notification templates and management
-  office-finances/
-  orders/
-  plates/
-  product-management/
-  renew-driver-licence/
-  till-finances/
-  vehicle/
   logout/                     # Sign-out handler
   unauthorized/               # Access denied (query codes: ?1=1, ?2=2, ?3=3)
   … (auth/, sitemap/, api/ helper routes)
