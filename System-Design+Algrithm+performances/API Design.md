@@ -167,7 +167,7 @@ sequenceDiagram
 |ACL(Access Control List)|Each resource has its own permission list<br>such as Google Docs sharing|
 |Real system ofen combine multiple models||
 
-- ![Authorization-sample1](Authorization-sample1.png)
-- ![Authorization-sample2](Authorization-sample2.png)
+- ![Authorization-sample1](./images/Authorization-sample1.png)
+- ![Authorization-sample2](./images/Authorization-sample2.png)
 
 [🚀back to top](#top)
