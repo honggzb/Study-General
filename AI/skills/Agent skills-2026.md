@@ -221,6 +221,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)**|<mark>一个单一的 CLAUDE.md 文件，用于改善Claude Code的行为, 四个原则</mark>|
 |**[fveracoechea](https://github.com/fveracoechea/fveracoechea.com/)**|Personal website featuring a custom implementation of the Islands Architecture|
 |**https://github.com/libukai/awesome-agent-skills**|Agent Skills 终极指南：快速入门、推荐技能、最新资讯与实战案例|
+|**[宝玉分享的 AI Agent 技能集](https://github.com/JimLiu/baoyu-skills)**|article-illustrator, push to x, xiaohongshu...|
 |**https://github.com/tsuirak/skills**|个人的技能树仓库，主要包含个人机器学习以及深度学习的笔记|
 |**[MrGoonie ClaudeKit](https://github.com/mrgoonie/claudekit-skills)**|<mark> Web development</mark>|
 |**https://github.com/Mindrally/skills**|240+ Claude Code skills Collection|
