@@ -243,6 +243,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 | **[Trail of Bits Security Skills](https://github.com/trailofbits/skills)** | Security skills for static analysis with CodeQL/Semgrep, variant analysis, code auditing, and vulnerability detection |
 |**[k-dense-ai scientific skills](https://github.com/k-dense-ai/claude-scientific-skills)**||
 |**[bear2u](https://github.com/bear2u/my-skills)**|个人效率工具集|
+|**[AI内容营销智能体](https://github.com/yikart/AiToEarn)**|AiToEarn 通过 AI Agent自动化，帮助 OPC（一人公司）、创作者、品牌与企业在全球主流平台上构建、分发并变现内容。<br>支持渠道： 抖音、小红书（Rednote）、快手、哔哩哔哩、视频号、TikTok、YouTube、Facebook、Instagram、Threads、Twitter（X）、Pinterest、LinkedIn|
 
 - Agent Skill 官方规范：https://agentskills.io/home
 - Skills explained（含 Anthropic 对 Skill vs MCP 解释）：https://claude.com/blog/skills-explained
