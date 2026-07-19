@@ -229,6 +229,7 @@ The easiest way to create a skill is to use the built-in `skill-creator`:
 |**[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)**|A curated list of awesome Claude Skills, resources|
 |**[eliasjudin](https://github.com/eliasjudin/oai-skills/)**|<mark>pdf,excel</mark>|
 |**[behisecc](https://github.com/behisecc/awesome-claude-skills)**|collection of skills|
+|**[MiniMax Skills](https://github.com/MiniMax-AI/skills/blob/main/README_zh.md)**|<mark>面向 AI 编程工具的开发技能库</mark>|
 |**[czlonkowski- N8N skills](https://github.com/czlonkowski/n8n-skills)**|<mark>N8N skills</mark>|
 |**[voltagent](https://github.com/voltagent/awesome-claude-skills)**|skills collection of many teams, focus on <mark>workflow<mark>|
 | **[ios-simulator-skill](https://github.com/conorluddy/ios-simulator-skill)** | iOS app building, navigation, and testing through automation |
