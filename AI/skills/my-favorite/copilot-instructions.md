@@ -164,8 +164,6 @@ src/
   mocks/                      # Mock data for tests and development
 
   models/                     # TypeScript interfaces/types organized by domain
-    audit/ auth/ driver/ dvi/ financial-management/ group/ notifications/
-    office/ permission/ product/ role/ user/ …
 
   notificationTemplateContext/ # React context for notification template editing
 
@@ -196,11 +194,6 @@ src/
 
   store/
     store.tsx                 # React Context + reducer (useStateValue)
-    actions.ts / reducers.ts / state.ts / types.ts
-    notificationStore.ts      # Zustand stores (domain-specific client state)
-    orderStore.ts
-    uamStore.ts
-    userPermissionStore.ts
 
   theme/                      # Styled-components global style and design tokens.
                               # Exports: color, spacing, typography, media (breakpoints),
