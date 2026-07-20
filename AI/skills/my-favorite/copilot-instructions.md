@@ -279,3 +279,28 @@ npm run lint && npm run format
 - **Azure DevOps** (`devops/azure-pipelines.yml`). Trigger is **manual** (`trigger: none`).
 - Stages: Build → DEV → IST → UAT → STG → PROD (plus a parallel Stream2 track for DEV2/IST2/UAT2).
 - The pipeline does **not run tests or lint** — it only does Docker build + Kubernetes deploy.
+
+## Git and Source Control Standards
+
+### Commit Message Formatting
+* Use the Conventional Commits specification for every single commit message.
+* Format structure: `<type>(<optional scope>): <description>` followed by a blank line and body if necessary.
+* Allowed types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`.
+* Keep the subject line under 50 characters, capitalized, with no trailing period.
+* Use the imperative mood in the subject (e.g., "add feature" instead of "added feature").
+
+### Branch Naming Policy
+* Never generate code intended for `main` or `master` branches directly.
+* Group branches using prefix hierarchies: `feature/`, `bugfix/`, `hotfix/`, `release/`, `chore/`.
+* Separate words in branch names strictly with hyphens, not underscores (e.g., `feature/user-authentication`).
+* Include the relevant issue tracker ID in the branch name if available (e.g., `bugfix/gh-404-login-crash`).
+
+### Pull Request Guidelines
+* Structure pull request descriptions with sections for Context, Changes Made, and Testing Instructions.
+* Always list breaking changes explicitly with a warning header: `### ⚠️ BREAKING CHANGES`.
+* Automate issue closing in the description by using keywords like "Closes #123" or "Fixes #456".
+
+### Code Review Expectations
+* When reviewing code or analyzing diffs, prioritize logical correctness over minor style choices.
+* Flag any secrets, hardcoded API keys, or credentials committed accidentally to source control immediately.
+* Check that modified functions have matching updated unit tests before marking a task complete.
