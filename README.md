@@ -1011,7 +1011,7 @@
 │          ├── 📄TypeScript学习笔记---tsconfig.json配置文件.md
 │          ├── 📄TypeScript学习笔记---4联合类型和交叉类型.md
 │          ├── 📄六个typescript高级技巧.md
-│          └── 
+│          └── 📄箭头函数注意事项.md
 ```
 
 [⬆ back to top](#top)
