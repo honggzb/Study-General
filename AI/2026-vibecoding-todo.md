@@ -10,3 +10,4 @@
 - [2026年真正能让你coding效率起飞的12个Claude-Code-Codex高星GitHub仓库](https://juejin.cn/post/7653601975863050294)
 - https://github.com/rohitg00/awesome-claude-code-toolkit#skills
 - vercel-react-best-practices
+- https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me
