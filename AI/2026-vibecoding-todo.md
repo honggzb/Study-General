@@ -16,4 +16,5 @@
 
 - https://github.com/obra/superpowers
 - https://github.com/thedotmack/claude-mem
-- 
+- https://github.com/oyj123321/claude-code-eight-principles
+- https://github.com/mattpocock/skills
