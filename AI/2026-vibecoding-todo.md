@@ -11,3 +11,9 @@
 - https://github.com/rohitg00/awesome-claude-code-toolkit#skills
 - vercel-react-best-practices
 - https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me
+
+## use
+
+- https://github.com/obra/superpowers
+- https://github.com/thedotmack/claude-mem
+- 
