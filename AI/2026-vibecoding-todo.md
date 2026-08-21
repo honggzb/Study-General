@@ -18,3 +18,8 @@
 - https://github.com/thedotmack/claude-mem
 - https://github.com/oyj123321/claude-code-eight-principles
 - https://github.com/mattpocock/skills
+
+## Todo list
+
+- https://www.uwarp.design/blog/img2threejs-image-to-procedural-threejs-guide
+  - https://github.com/img2threejs/img2threejs
