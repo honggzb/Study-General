@@ -12,7 +12,7 @@
   "dependencies": {
     "art-template": "^4.13.0",
     "body-parser": "^1.18.3",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "express": "^4.16.3",
     "express-art-template": "^1.0.1"
   }
