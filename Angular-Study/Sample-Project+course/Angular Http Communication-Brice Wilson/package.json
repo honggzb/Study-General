@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "7.0.0",
     "@angular/router": "7.0.0",
     "body-parser": "~1.18.2",
-    "bootstrap": "~3.3.7",
+    "bootstrap": "~3.4.1",
     "cookie-parser": "~1.4.3",
     "core-js": "~2.4.1",
     "debug": "~3.1.0",
