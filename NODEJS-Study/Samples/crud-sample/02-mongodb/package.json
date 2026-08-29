@@ -15,6 +15,6 @@
     "bootstrap": "^3.3.7",
     "express": "^4.16.3",
     "express-art-template": "^1.0.1",
-    "mongoose": "^5.3.0"
+    "mongoose": "^5.13.15"
   }
 }
