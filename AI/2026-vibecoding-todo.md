@@ -23,3 +23,8 @@
 
 - https://www.uwarp.design/blog/img2threejs-image-to-procedural-threejs-guide
   - https://github.com/img2threejs/img2threejs
+
+
+## lessons
+
+- https://github.com/mlabonne/llm-course
