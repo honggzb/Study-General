@@ -10,6 +10,9 @@ flowchart LR
     B -->|Structure| C
 
     %% Light Theme Colors
+    style Architectural fill:#EFF6FF,stroke:#3B82F6,stroke-width:3px,color:#1F2937
+    style Organization fill:#F0FDF4,stroke:#22C55E,stroke-width:3px,color:#1F2937
+    style Context fill:#FAF5FF,stroke:#A855F7,stroke-width:3px,color:#1F2937
     style A fill:#EFF6FF,stroke:#3B82F6,stroke-width:3px,color:#1F2937
     style B fill:#F0FDF4,stroke:#22C55E,stroke-width:3px,color:#1F2937
     style C fill:#FAF5FF,stroke:#A855F7,stroke-width:3px,color:#1F2937
