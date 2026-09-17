@@ -1,3 +1,15 @@
+```mermaid
+flowchart LR
+    A["🧠 Architectural Thinking<br/>Raw understanding<br/><br/>• Decisions<br/>• Tradeoffs<br/>• Edge cases"]
+    B["📁 Organize It<br/>Not from scratch<br/><br/>• Group ideas<br/>• Structure decisions<br/>• Separate concerns"]
+    C["Six-File Context System<br/><br/>• Overview<br/>• Architecture<br/>• Data Model<br/>• Flows<br/>• Decisions<br/>• Constraints<br/><br/>Lives with the project"]
+
+    A -->|Extract| B
+    B -->|Structure| C
+
+    classDef box fill:#1e293b,color:#fff,stroke:#3b82f6,stroke-width:2px;
+    class A,B,C box;
+```
 
 |||
 |---|---|
