@@ -1,15 +1,24 @@
+
 ```mermaid
 flowchart LR
-    A["🧠 Architectural Thinking<br/>Raw understanding<br/><br/>• Decisions<br/>• Tradeoffs<br/>• Edge cases"]
-    B["📁 Organize It<br/>Not from scratch<br/><br/>• Group ideas<br/>• Structure decisions<br/>• Separate concerns"]
-    C["Six-File Context System<br/><br/>• Overview<br/>• Architecture<br/>• Data Model<br/>• Flows<br/>• Decisions<br/>• Constraints<br/><br/>Lives with the project"]
+    Architectural --> Organization --> Context[Context System]
+    A["🧠<br/> Architectural Thinking<br/>Raw understanding<br/><br/>• Decisions<br/>• Tradeoffs<br/>• Edge cases"]
+    B["📁<br/> Organize It<br/>Not from scratch<br/><br/>• Group ideas<br/>• Structure decisions<br/>• Separate concerns"]
+    C["📚<br/> Six-File Context System<br/><br/>• Overview<br/>• Architecture<br/>• Data Model<br/>• Flows<br/>• Decisions<br/>• Constraints<br/><br/>Lives with the project"]
 
     A -->|Extract| B
     B -->|Structure| C
 
-    classDef box fill:#1e293b,color:#fff,stroke:#3b82f6,stroke-width:2px;
-    class A,B,C box;
+    %% Light Theme Colors
+    style A fill:#EFF6FF,stroke:#3B82F6,stroke-width:3px,color:#1F2937
+    style B fill:#F0FDF4,stroke:#22C55E,stroke-width:3px,color:#1F2937
+    style C fill:#FAF5FF,stroke:#A855F7,stroke-width:3px,color:#1F2937
+
+    %% Arrow Styling
+    linkStyle 0 stroke:#64748B,stroke-width:2px,color:#475569
+    linkStyle 1 stroke:#64748B,stroke-width:2px,color:#475569
 ```
+
 
 |||
 |---|---|
