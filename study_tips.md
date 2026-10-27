@@ -1,6 +1,10 @@
   - [javascript判断数组中是否包含指定元素](#javascript判断数组中是否包含指定元素)
   - [npm如何升级自身](#npm如何升级自身)
-  
+
+  ## 排除.gitignore自身
+
+  - `git update-index --skip-worktree .gitignore`
+    
   ## javascript判断数组中是否包含指定元素
 
   可以使用数组的indexOf()方法，如果返回值为-1则说明不存在，如果返回值为大于-1的整数，则说明存在。
