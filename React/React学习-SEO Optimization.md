@@ -13,7 +13,7 @@
 
 ----------------------
 
-![React SEO Optimization techiques](images/React SEO Optimization techiques.png)
+![React SEO Optimization techiques](https://github.com/honggzb/Study-General/blob/master/React/images/React%20SEO%20Optimization%20techiques.png)
 
 ## Sitemap and Crawl Budget
 
