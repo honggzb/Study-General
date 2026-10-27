@@ -13,7 +13,7 @@
 
 ----------------------
 
-![React SEO Optimization techiques](React SEO Optimization techiques.png)
+![React SEO Optimization techiques](./images/React SEO Optimization techiques.png)
 
 ## Sitemap and Crawl Budget
 
