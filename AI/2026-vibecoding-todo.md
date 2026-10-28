@@ -3,6 +3,7 @@
 |github||
 |---|---|
 |[codegraph](https://colbymchenry.github.io/codegraph/)|codegraph|
+|[Obsidian Memory Workflow](https://github.com/yangyangleo-ai/obsidian-memory-workflow)|Obsidian × AI 长期记忆工作流|
 
 ```mermaid
 flowchart LR
