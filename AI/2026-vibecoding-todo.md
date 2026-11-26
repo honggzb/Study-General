@@ -64,3 +64,7 @@ flowchart LR
 ## lessons
 
 - https://github.com/mlabonne/llm-course
+
+## others
+
+- https://interviewstack.io/
