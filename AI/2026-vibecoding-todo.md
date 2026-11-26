@@ -35,7 +35,10 @@ flowchart LR
 |[受Karpathy启发的Claude Code指南=andrej-karpathy-skills](https://github.com/multica-ai/s/blob/main/README.zh.md)|用于运行和管理编码智能体,支持可复用的技能|
 |[GitNexus](https://github.com/abhigyanpatwari/GitNexus)|client-side knowledge graph creator,|
 |[humanlayer](https://github.com/humanlayer/skills/)|把常用的做事方法，整理成可反复调用的技能<br>rpi-> `Researches a change`<br>show-me-> `Explains the current topic with concise diagrams, code-shape sketches, and focused HTML artifacts.`|
-|[]()||
+|[Anthropic 官方 Skills](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fanthropics%2Fskills)||
+|[企业级 Skills](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fmrgoonie%2Fclaudekit-skills)||
+|[awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)||
+|[Copilot 官方 Skills](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fgithub%2Fawesome-copilot%2Ftree%2Fmain%2Fskills)||
 
 - [2026年真正能让你coding效率起飞的12个Claude-Code-Codex高星GitHub仓库](https://juejin.cn/post/7653601975863050294)
 - https://github.com/rohitg00/awesome-claude-code-toolkit#skills
