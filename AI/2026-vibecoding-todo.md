@@ -7,6 +7,17 @@
 |[awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)|
 |[Copilot 官方 Skills](https://github.com/github/awesome-copilot/tree/main/skills)|
 
+|||
+|---|---|
+|[codegraph](https://colbymchenry.github.io/codegraph/)|codegraph|
+|[Obsidian Memory Workflow](https://github.com/yangyangleo-ai/obsidian-memory-workflow)|Obsidian × AI 长期记忆工作流|
+|[claude code八荣八耻](https://juejin.cn/post/7652160519214727195)|写AI代码总翻车？3份配置直接抄|
+|[受Karpathy启发的Claude Code指南=andrej-karpathy-skills](https://github.com/multica-ai/s/blob/main/README.zh.md)|用于运行和管理编码智能体,支持可复用的技能|
+|[GitNexus](https://github.com/abhigyanpatwari/GitNexus)|client-side knowledge graph creator,|
+|[humanlayer](https://github.com/humanlayer/skills/)|把常用的做事方法，整理成可反复调用的技能<br>rpi-> `Researches a change`<br>show-me-> `Explains the current topic with concise diagrams, code-shape sketches, and focused HTML artifacts.`|
+
+**codegraph**
+
 ```mermaid
 flowchart LR
     Architectural --> Organization --> Context[Context System]
@@ -29,16 +40,6 @@ flowchart LR
     linkStyle 0 stroke:#64748B,stroke-width:2px,color:#475569
     linkStyle 1 stroke:#64748B,stroke-width:2px,color:#475569
 ```
-
-
-|||
-|---|---|
-|[codegraph](https://colbymchenry.github.io/codegraph/)|codegraph|
-|[Obsidian Memory Workflow](https://github.com/yangyangleo-ai/obsidian-memory-workflow)|Obsidian × AI 长期记忆工作流|
-|[claude code八荣八耻](https://juejin.cn/post/7652160519214727195)|写AI代码总翻车？3份配置直接抄|
-|[受Karpathy启发的Claude Code指南=andrej-karpathy-skills](https://github.com/multica-ai/s/blob/main/README.zh.md)|用于运行和管理编码智能体,支持可复用的技能|
-|[GitNexus](https://github.com/abhigyanpatwari/GitNexus)|client-side knowledge graph creator,|
-|[humanlayer](https://github.com/humanlayer/skills/)|把常用的做事方法，整理成可反复调用的技能<br>rpi-> `Researches a change`<br>show-me-> `Explains the current topic with concise diagrams, code-shape sketches, and focused HTML artifacts.`|
 
 - [2026年真正能让你coding效率起飞的12个Claude-Code-Codex高星GitHub仓库](https://juejin.cn/post/7653601975863050294)
 - https://github.com/rohitg00/awesome-claude-code-toolkit#skills
