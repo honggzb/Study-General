@@ -7,11 +7,6 @@
 |[awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)|
 |[Copilot 官方 Skills](https://github.com/github/awesome-copilot/tree/main/skills)|
 
-|github||
-|---|---|
-|[codegraph](https://colbymchenry.github.io/codegraph/)|codegraph|
-|[Obsidian Memory Workflow](https://github.com/yangyangleo-ai/obsidian-memory-workflow)|Obsidian × AI 长期记忆工作流|
-
 ```mermaid
 flowchart LR
     Architectural --> Organization --> Context[Context System]
@@ -38,6 +33,8 @@ flowchart LR
 
 |||
 |---|---|
+|[codegraph](https://colbymchenry.github.io/codegraph/)|codegraph|
+|[Obsidian Memory Workflow](https://github.com/yangyangleo-ai/obsidian-memory-workflow)|Obsidian × AI 长期记忆工作流|
 |[claude code八荣八耻](https://juejin.cn/post/7652160519214727195)|写AI代码总翻车？3份配置直接抄|
 |[受Karpathy启发的Claude Code指南=andrej-karpathy-skills](https://github.com/multica-ai/s/blob/main/README.zh.md)|用于运行和管理编码智能体,支持可复用的技能|
 |[GitNexus](https://github.com/abhigyanpatwari/GitNexus)|client-side knowledge graph creator,|
