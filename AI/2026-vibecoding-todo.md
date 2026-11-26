@@ -2,10 +2,10 @@
 
 |官方 Skills|
 |---|
-|[Anthropic 官方 Skills](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fanthropics%2Fskills)|
-|[企业级 Skills](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fmrgoonie%2Fclaudekit-skills)|
+|[Anthropic 官方 Skills](https://github.com/anthropics/skills)|
+|[企业级 Skills](https://github.com/mrgoonie/claudekit-skills)|
 |[awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)|
-|[Copilot 官方 Skills](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fgithub%2Fawesome-copilot%2Ftree%2Fmain%2Fskills)|
+|[Copilot 官方 Skills](https://github.com/github/awesome-copilot/tree/main/skills)|
 
 |github||
 |---|---|
